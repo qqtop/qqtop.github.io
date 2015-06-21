@@ -1452,7 +1452,7 @@ showTimeseries takes a Ts object as input as well as a header string for the dat
 </dd>
 <dt id="initPf"><a name="initPf,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initPf</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">PF</span></pre></dt>
 <dd>
-initPf<blockquote><p>init a new empty account object</p></blockquote>
+initPf<blockquote><p>init a new empty account object<pre><span class="Keyword">var</span> <span class="Identifier">myAccount</span> <span class="Operator">=</span> <span class="Identifier">initPf</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre></p></blockquote>
 
 
 </dd>
@@ -1460,13 +1460,16 @@ initPf<blockquote><p>init a new empty account object</p></blockquote>
 <dd>
 <p>initNf</p>
 <p>init a new empty portfolio object</p>
-
+<pre><span class="Keyword">var</span> <span class="Identifier">myETFportfolio</span> <span class="Operator">=</span> <span class="Identifier">initNf</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="initDf"><a name="initDf,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initDf</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Df</span></pre></dt>
 <dd>
 <p>initDf</p>
-<p>init stock data object </p>
+<p>init stock data object</p>
+<dl class="docutils"><dt>## .. code-block:: nim</dt>
+<dd>var mystockData = initDf()</dd>
+</dl>
 
 
 </dd>
@@ -1474,7 +1477,7 @@ initPf<blockquote><p>init a new empty account object</p></blockquote>
 <dd>
 <p>initCf</p>
 <p>init a Cf object to hold basic forex data</p>
-
+<pre><span class="Keyword">var</span> <span class="Identifier">myForex</span> <span class="Operator">=</span> <span class="Identifier">initCf</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="initTs"><a name="initTs,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initTs</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Ts</span></pre></dt>
@@ -1488,7 +1491,7 @@ initPf<blockquote><p>init a new empty account object</p></blockquote>
 <dd>
 <p>initPool</p>
 <p>init pools , which are sequences of Df objects used in portfolio building</p>
-
+<pre><span class="Keyword">var</span> <span class="Identifier">mystockPool</span> <span class="Operator">=</span> <span class="Identifier">initPool</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="getTerminalWidth"><a name="getTerminalWidth,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalWidth</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
@@ -1496,19 +1499,26 @@ initPf<blockquote><p>init a new empty account object</p></blockquote>
 <p>getTerminalWidth</p>
 <p>utility to easily draw correctly sized lines on linux terminals</p>
 <p>and get linux terminal width</p>
-<p>for windows this currently is set to terminalwidth 80 </p>
+<p>for windows this currently is set to terminalwidth 80</p>
+<pre><span class="Identifier">echo</span> <span class="StringLit">&quot;Terminalwidth : &quot;</span><span class="Punctuation">,</span><span class="Identifier">tw</span>
+<span class="Identifier">echo</span> <span class="Identifier">aline</span></pre><p>tw and aline are exported but of course you also can do</p>
+<pre><span class="Keyword">var</span> <span class="Identifier">mytermwidth</span> <span class="Operator">=</span> <span class="Identifier">getTerminalWidth</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">repeat</span><span class="Punctuation">(</span><span class="StringLit">&quot;*&quot;</span><span class="Punctuation">,</span><span class="Identifier">mytermwidth</span><span class="Punctuation">)</span></pre><p>in case you want to use another line building char </p>
 
 
 </dd>
 <dt id="decho"><a name="decho,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">decho</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">.}</span></pre></dt>
 <dd>
-blank lines 
+<p>decho</p>
+<p>blank lines creator</p>
+<pre><span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">)</span></pre><p>to create 10 blank lines   </p>
+
 
 </dd>
 <dt id="stockDf"><a name="stockDf,Df"></a><pre><span class="Keyword">proc</span> <span class="Identifier">stockDf</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">dx</span><span class="Other">:</span> <span class="Identifier">Df</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>stockDf</p>
-<p>get the stock name from a Df object and return as string </p>
+<p>get the stock name from a Df object and return as string (will be deprecated shortly) (</p>
 
 
 </dd>
@@ -1539,15 +1549,17 @@ Produce a string of one or more stock codes coming from a pool  Df object
 <dt id="showCurrentStocks"><a name="showCurrentStocks,Nf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentStocks</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">apf</span><span class="Other">:</span> <span class="Identifier">Nf</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">.}</span></pre></dt>
 <dd>
 <p>showCurrentStocks</p>
-<p>callable display routine for currentStocks with Nf portfolio object passed in </p>
+<p>callable display routine for currentStocks with Nf portfolio object passed in</p>
+<pre><span class="Identifier">showCurrentStocks</span><span class="Punctuation">(</span><span class="Identifier">myAccount</span><span class="Operator">.</span><span class="Identifier">Portfolio</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre><p>This means get all stock codes of the first portfolio in myAccount for full example see nimFinT5.nim </p>
 
 
 </dd>
 <dt id="showCurrentStocks"><a name="showCurrentStocks,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentStocks</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">stcks</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">.}</span></pre></dt>
 <dd>
 <p>showCurrentStocks</p>
-<p>callable display routine for currentStocks with stockstring passed in </p>
-
+<p>callable display routine for currentStocks with stockstring passed in</p>
+<pre><span class="Identifier">showCurrentStocks</span><span class="Punctuation">(</span><span class="StringLit">&quot;IBM+BP.L+0001.HK&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="day"><a name="day,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">day</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
@@ -1804,7 +1816,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-06-21 13:08:34 UTC</small>
+        <small>Made with Nim. Generated: 2015-06-21 13:34:35 UTC</small>
       </div>
     </div>
   </div>
