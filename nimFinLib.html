@@ -1452,8 +1452,9 @@ showTimeseries takes a Ts object as input as well as a header string for the dat
 </dd>
 <dt id="initPf"><a name="initPf,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initPf</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">PF</span></pre></dt>
 <dd>
-initPf<blockquote><p>init a new empty account object<pre><span class="Keyword">var</span> <span class="Identifier">myAccount</span> <span class="Operator">=</span> <span class="Identifier">initPf</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre></p></blockquote>
-
+<p>initPf</p>
+<p>init a new empty account object</p>
+<pre><span class="Keyword">var</span> <span class="Identifier">myAccount</span> <span class="Operator">=</span> <span class="Identifier">initPf</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="initNf"><a name="initNf,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initNf</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Nf</span></pre></dt>
@@ -1467,10 +1468,7 @@ initPf<blockquote><p>init a new empty account object<pre><span class="Keyword">v
 <dd>
 <p>initDf</p>
 <p>init stock data object</p>
-<dl class="docutils"><dt>## .. code-block:: nim</dt>
-<dd>var mystockData = initDf()</dd>
-</dl>
-
+<pre><span class="Keyword">var</span> <span class="Identifier">mystockData</span> <span class="Operator">=</span> <span class="Identifier">initDf</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="initCf"><a name="initCf,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initCf</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Cf</span></pre></dt>
@@ -1550,7 +1548,8 @@ Produce a string of one or more stock codes coming from a pool  Df object
 <dd>
 <p>showCurrentStocks</p>
 <p>callable display routine for currentStocks with Nf portfolio object passed in</p>
-<pre><span class="Identifier">showCurrentStocks</span><span class="Punctuation">(</span><span class="Identifier">myAccount</span><span class="Operator">.</span><span class="Identifier">Portfolio</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre><p>This means get all stock codes of the first portfolio in myAccount for full example see nimFinT5.nim </p>
+<pre><span class="Identifier">showCurrentStocks</span><span class="Punctuation">(</span><span class="Identifier">myAccount</span><span class="Operator">.</span><span class="Identifier">Portfolio</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre><p>This means get all stock codes of the first portfolio in myAccount</p>
+<p>for full example see nimFinT5.nim </p>
 
 
 </dd>
@@ -1816,7 +1815,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-06-21 13:34:35 UTC</small>
+        <small>Made with Nim. Generated: 2015-06-21 13:36:09 UTC</small>
       </div>
     </div>
   </div>
