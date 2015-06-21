@@ -1315,12 +1315,24 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#msgg.t,stmt"
     title="msgg*(code: stmt): stmt"><wbr />msgg</a></li>
+  <li><a class="reference" href="#msggb.t,stmt"
+    title="msggb*(code: stmt): stmt"><wbr />msggb</a></li>
   <li><a class="reference" href="#msgy.t,stmt"
     title="msgy*(code: stmt): stmt"><wbr />msgy</a></li>
+  <li><a class="reference" href="#msgyb.t,stmt"
+    title="msgyb*(code: stmt): stmt"><wbr />msgyb</a></li>
   <li><a class="reference" href="#msgr.t,stmt"
     title="msgr*(code: stmt): stmt"><wbr />msgr</a></li>
+  <li><a class="reference" href="#msgrb.t,stmt"
+    title="msgrb*(code: stmt): stmt"><wbr />msgrb</a></li>
   <li><a class="reference" href="#msgc.t,stmt"
     title="msgc*(code: stmt): stmt"><wbr />msgc</a></li>
+  <li><a class="reference" href="#msgcb.t,stmt"
+    title="msgcb*(code: stmt): stmt"><wbr />msgcb</a></li>
+  <li><a class="reference" href="#msgw.t,stmt"
+    title="msgw*(code: stmt): stmt"><wbr />msgw</a></li>
+  <li><a class="reference" href="#msgwb.t,stmt"
+    title="msgwb*(code: stmt): stmt"><wbr />msgwb</a></li>
   <li><a class="reference" href="#hdx.t,stmt"
     title="hdx*(code: stmt): stmt"><wbr />hdx</a></li>
 
@@ -1792,10 +1804,20 @@ head means oldest rows
 <dl class="item">
 <dt id="msgg"><a name="msgg.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgg</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span> <span class="Other">{.</span><span class="Identifier">immediate</span><span class="Other">.}</span></pre></dt>
 <dd>
-msgX templates convenience templates for colored text output the assumption is that the terminal is white text and black background naming of the templates is like msg+color so msgy =&gt; yellow use like : msgg() do : echo &quot;How nice, it's in green&quot;
+msgX templates convenience templates for colored text output the assumption is that the terminal is white text and black background naming of the templates is like msg+color so msgy =&gt; yellow msg+color+b turns on the bright flag<pre><span class="Identifier">msgg</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Keyword">do</span> <span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="StringLit">&quot;How nice, it's in green&quot;</span></pre>
+
+</dd>
+<dt id="msggb"><a name="msggb.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msggb</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span> <span class="Other">{.</span><span class="Identifier">immediate</span><span class="Other">.}</span></pre></dt>
+<dd>
+msggb<pre><span class="Identifier">msggb</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Keyword">do</span> <span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="StringLit">&quot;How nice, it's in bright green&quot;</span></pre>
 
 </dd>
 <dt id="msgy"><a name="msgy.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgy</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span> <span class="Other">{.</span><span class="Identifier">immediate</span><span class="Other">.}</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="msgyb"><a name="msgyb.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgyb</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span> <span class="Other">{.</span><span class="Identifier">immediate</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
@@ -1805,7 +1827,27 @@ msgX templates convenience templates for colored text output the assumption is t
 
 
 </dd>
+<dt id="msgrb"><a name="msgrb.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgrb</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span> <span class="Other">{.</span><span class="Identifier">immediate</span><span class="Other">.}</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="msgc"><a name="msgc.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgc</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span> <span class="Other">{.</span><span class="Identifier">immediate</span><span class="Other">.}</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="msgcb"><a name="msgcb.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgcb</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span> <span class="Other">{.</span><span class="Identifier">immediate</span><span class="Other">.}</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="msgw"><a name="msgw.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgw</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span> <span class="Other">{.</span><span class="Identifier">immediate</span><span class="Other">.}</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="msgwb"><a name="msgwb.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgwb</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span> <span class="Other">{.</span><span class="Identifier">immediate</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
@@ -1825,7 +1867,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-06-21 13:50:00 UTC</small>
+        <small>Made with Nim. Generated: 2015-06-21 13:57:03 UTC</small>
       </div>
     </div>
   </div>
