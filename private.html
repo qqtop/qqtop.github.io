@@ -1164,6 +1164,10 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#PStyle"
     title="PStyle* = terminal.Style"><wbr />PStyle</a></li>
+  <li><a class="reference" href="#Pfg"
+    title="Pfg* = terminal.ForegroundColor"><wbr />Pfg</a></li>
+  <li><a class="reference" href="#Pbg"
+    title="Pbg* = terminal.BackgroundColor"><wbr />Pbg</a></li>
 
   </ul>
 </li>
@@ -1262,6 +1266,19 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="print*[T](st: T; cols: varargs[string, `$`] = @ [white])"><wbr />print</a></li>
   <li><a class="reference" href="#printLn,T,varargs[string,]"
     title="printLn*[T](st: T; cols: varargs[string, `$`])"><wbr />print<wbr />Ln</a></li>
+  <li><a class="reference" href="#printLnBR,string,ForegroundColor,BackgroundColor"
+    title="printLnBR*(astring: string; fg: ForegroundColor; bg: BackgroundColor)"><wbr />print<wbr />Ln<wbr />BR</a></li>
+  <li><a class="reference" href="#printBR,string,ForegroundColor,BackgroundColor"
+    title="printBR*(astring: string; fg: ForegroundColor = fgWhite; bg: BackgroundColor = bgBlack)"><wbr />print<wbr />BR</a></li>
+  <li><a class="reference" href="#printLnBF,string,ForegroundColor,BackgroundColor"
+    title="printLnBF*(astring: string; fg: ForegroundColor = fgWhite;
+           bg: BackgroundColor = bgBlack)"><wbr />print<wbr />Ln<wbr />BF</a></li>
+  <li><a class="reference" href="#printBF,string,ForegroundColor,BackgroundColor"
+    title="printBF*(astring: string; fg: ForegroundColor = fgWhite; bg: BackgroundColor = bgBlack)"><wbr />print<wbr />BF</a></li>
+  <li><a class="reference" href="#printLnBB,T,ForegroundColor,BackgroundColor"
+    title="printLnBB*[T](astring: T; fg: ForegroundColor = fgWhite; bg: BackgroundColor = bgBlack)"><wbr />print<wbr />Ln<wbr />BB</a></li>
+  <li><a class="reference" href="#printBB,T,ForegroundColor,BackgroundColor"
+    title="printBB*[T](astring: T; fg: ForegroundColor = fgWhite; bg: BackgroundColor = bgBlack)"><wbr />print<wbr />BB</a></li>
   <li><a class="reference" href="#printG,string"
     title="printG*(s: string)"><wbr />print<wbr />G</a></li>
   <li><a class="reference" href="#printGb,string"
@@ -1592,6 +1609,16 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 make terminal style constants available in the calling prog
 
 </dd>
+<dt id="Pfg"><a name="Pfg"></a><pre><span class="Identifier">Pfg</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">terminal</span><span class="Other">.</span><span class="Identifier">ForegroundColor</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="Pbg"><a name="Pbg"></a><pre><span class="Identifier">Pbg</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">terminal</span><span class="Other">.</span><span class="Identifier">BackgroundColor</span></pre></dt>
+<dd>
+
+
+</dd>
 
 </dl></div>
 <div class="section" id="8">
@@ -1838,6 +1865,53 @@ forward declaration
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;{} : {} {}  --&gt;   {}&quot;</span><span class="Operator">.</span><span class="Identifier">fmt</span><span class="Punctuation">(</span><span class="DecNumber">123</span><span class="Punctuation">,</span><span class="StringLit">&quot;Nice&quot;</span><span class="Punctuation">,</span><span class="DecNumber">456</span><span class="Punctuation">,</span><span class="FloatNumber">768.5</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">brightwhite</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">cyan</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;blah&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">white</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">cyan</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;blah yep 1234      333122.12  [12,45] wahahahaha&quot;</span><span class="Punctuation">,</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">brightred</span><span class="Punctuation">,</span><span class="Identifier">black</span><span class="Punctuation">,</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="Identifier">cyan</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="printLnBR"><a name="printLnBR,string,ForegroundColor,BackgroundColor"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnBR</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">ForegroundColor</span><span class="Other">;</span> <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printLnB</p>
+<p>print a string in bright fg color and bright bg color and issue a new line</p>
+<pre class = "listing"><span class="Identifier">printLnB</span><span class="Punctuation">(</span><span class="StringLit">&quot;This is the string &quot;</span><span class="Punctuation">,</span><span class="Identifier">fgBlue</span><span class="Punctuation">,</span><span class="Identifier">bgBlack</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="printBR"><a name="printBR,string,ForegroundColor,BackgroundColor"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBR</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">ForegroundColor</span> <span class="Other">=</span> <span class="Identifier">fgWhite</span><span class="Other">;</span>
+             <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printB</p>
+<p>print a string in bright fg color and bright bg color</p>
+<pre class = "listing"><span class="Identifier">printB</span><span class="Punctuation">(</span><span class="StringLit">&quot;This is the string &quot;</span><span class="Punctuation">,</span><span class="Identifier">fgBlue</span><span class="Punctuation">,</span><span class="Identifier">bgBlack</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="printLnBF"><a name="printLnBF,string,ForegroundColor,BackgroundColor"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnBF</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">ForegroundColor</span> <span class="Other">=</span> <span class="Identifier">fgWhite</span><span class="Other">;</span>
+               <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printLnBF</p>
+<p>print a string in bright fg color  and  non bright bg color and issue a new line</p>
+<pre class = "listing"><span class="Identifier">printLnBF</span><span class="Punctuation">(</span><span class="StringLit">&quot;This is the string &quot;</span><span class="Punctuation">,</span><span class="Identifier">fgBlue</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="printBF"><a name="printBF,string,ForegroundColor,BackgroundColor"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBF</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">ForegroundColor</span> <span class="Other">=</span> <span class="Identifier">fgWhite</span><span class="Other">;</span>
+             <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printBF</p>
+<p>print a string in bright fg color  and non bright bg color</p>
+<pre class = "listing"><span class="Identifier">printLnB</span><span class="Punctuation">(</span><span class="StringLit">&quot;This is the string &quot;</span><span class="Punctuation">,</span><span class="Identifier">fgBlue</span><span class="Punctuation">,</span><span class="Identifier">bgBlack</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="printLnBB"><a name="printLnBB,T,ForegroundColor,BackgroundColor"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnBB</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">ForegroundColor</span> <span class="Other">=</span> <span class="Identifier">fgWhite</span><span class="Other">;</span>
+                  <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printLnBB</p>
+<p>print a string in non bright fg color and bright bg color and issue a new line</p>
+<pre class = "listing"><span class="Identifier">printLnBB</span><span class="Punctuation">(</span><span class="StringLit">&quot;This is the string &quot;</span><span class="Punctuation">,</span><span class="Identifier">fgBlue</span><span class="Punctuation">,</span><span class="Identifier">bgBlack</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="printBB"><a name="printBB,T,ForegroundColor,BackgroundColor"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBB</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">ForegroundColor</span> <span class="Other">=</span> <span class="Identifier">fgWhite</span><span class="Other">;</span>
+                <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printBB</p>
+<p>print a string in non bright fg color and bright bg color</p>
+<pre class = "listing"><span class="Identifier">printBB</span><span class="Punctuation">(</span><span class="StringLit">&quot;This is the string &quot;</span><span class="Punctuation">,</span><span class="Identifier">fgBlue</span><span class="Punctuation">,</span><span class="Identifier">bgBlack</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="printG"><a name="printG,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printG</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span></pre></dt>
@@ -2958,7 +3032,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-08 19:51:14 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-09 13:52:34 UTC</small>
       </div>
     </div>
   </div>
