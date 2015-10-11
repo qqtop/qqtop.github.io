@@ -1302,10 +1302,10 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="printTK*[T](st: T; cols: varargs[string, `$`] = @ [white])"><wbr />print<wbr />TK</a></li>
   <li><a class="reference" href="#printLnTK,T,varargs[string,]"
     title="printLnTK*[T](st: T; cols: varargs[string, `$`])"><wbr />print<wbr />Ln<wbr />TK</a></li>
-  <li><a class="reference" href="#printLn,T,string,string"
-    title="printLn*[T](astring: T; fg: string = white; bg: string = black)"><wbr />print<wbr />Ln</a></li>
   <li><a class="reference" href="#print,T,string,string"
     title="print*[T](astring: T; fg: string = white; bg: string = black)"><wbr />print</a></li>
+  <li><a class="reference" href="#printLn,T,string,string"
+    title="printLn*[T](astring: T; fg: string = white; bg: string = black)"><wbr />print<wbr />Ln</a></li>
   <li><a class="reference" href="#printG,T"
     title="printG*[T](s: T)"><wbr />print<wbr />G</a></li>
   <li><a class="reference" href="#printGb,T"
@@ -1939,6 +1939,13 @@ forward declaration
 <span class="Identifier">printLnTK</span><span class="Punctuation">(</span><span class="StringLit">&quot;blah yep 1234      333122.12  [12,45] wahahahaha&quot;</span><span class="Punctuation">,</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">brightred</span><span class="Punctuation">,</span><span class="Identifier">black</span><span class="Punctuation">,</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="Identifier">cyan</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre>
 
 </dd>
+<dt id="print"><a name="print,T,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>print</p>
+<p>same as printLn without new line</p>
+
+
+</dd>
 <dt id="printLn"><a name="printLn,T,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printLn</p>
@@ -1949,13 +1956,6 @@ forward declaration
 <p>white,red,green,blue,yellow,cyan,magenta,black,clrainbow brightwhite,brightred,brightgreen,brightblue,brightyellow,brightcyan,brightmagenta,brightblack</p>
 <p>color names supported for background color:</p>
 <p>white,red,green,blue,yellow,cyan,magenta,black brightwhite,brightred,brightgreen,brightblue,brightyellow,brightcyan,brightmagenta,brightblack</p>
-
-
-</dd>
-<dt id="print"><a name="print,T,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>print</p>
-<p>same as printLn without new line</p>
 
 
 </dd>
@@ -2183,7 +2183,7 @@ printLnBlb  brightmagenta
 <dt id="printLnColStr"><a name="printLnColStr,string,varargs[string,]_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnColStr</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">colstr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mvastr</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printLnColStr</p>
-<p>similar to printColStr but issues a writeln() command that is</p>
+<p>similar to printColStr but issues a writeLine() command that is</p>
 <p>every item will be shown on a new line in the same given color</p>
 <p>and most everything passed in will be converted to string</p>
 <pre class = "listing"><span class="Identifier">printLnColStr</span> <span class="Identifier">green</span><span class="Punctuation">,</span><span class="StringLit">&quot;Nice try 1&quot;</span><span class="Punctuation">,</span> <span class="FloatNumber">2.52234</span><span class="Punctuation">,</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">4</span><span class="Punctuation">,</span> <span class="DecNumber">5</span><span class="Punctuation">,</span> <span class="DecNumber">6</span><span class="Punctuation">]</span></pre>
@@ -2930,7 +2930,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-11 20:19:19 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-11 22:32:34 UTC</small>
       </div>
     </div>
   </div>
