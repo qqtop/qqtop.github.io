@@ -2989,7 +2989,7 @@ returns true if <cite>name</cite> is a known color name
 <p>color names supported for background color:</p>
 <p>white,red,green,blue,yellow,cyan,magenta,black brightwhite,brightred,brightgreen,brightblue,brightyellow,brightcyan,brightmagenta,brightblack</p>
 <p>As a side effect we also can do this now:</p>
-<p>echo(yellowgreen,&quot;aha nice&quot;,termwhite)</p>
+<blockquote><p>echo(yellowgreen,&quot;aha nice&quot;,termwhite) echo(rosybrown) echo(&quot;grizzly bear&quot;) echo(termwhite)  # reset to usual terminal white color</p></blockquote>
 <p>that is we print the string in yellowgreen , but need to reset the color manually</p>
 <p>if next line does not have this color requirement.</p>
 
@@ -3789,7 +3789,7 @@ msgX templates convenience templates for colored text output the assumption is t
 <dd>
 <p>loopy</p>
 <p>the lazy programmers quick for-loop template</p>
-<blockquote><p>var z = 0.. 100 loopy(z,printLnTK(&quot;The house&quot;,brightwhite,brightblack))</p></blockquote>
+<blockquote><p>loopy(0.. 100,printLnTK(&quot;The house is in the back&quot;,brightwhite,brightblack,salmon,yellowgreen))</p></blockquote>
 
 
 </dd>
@@ -3803,7 +3803,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-14 19:24:58 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-14 19:48:42 UTC</small>
       </div>
     </div>
   </div>
