@@ -1263,21 +1263,21 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
       <li><a class="reference" href="#PRIVATLIBVERSION"
     title="PRIVATLIBVERSION* = &quot;0.8.8&quot;"><wbr />PRIVATLIBVERSION</a></li>
   <li><a class="reference" href="#termred"
-    title="termred* = f(fgRed)"><wbr />termred</a></li>
+    title="termred* = getfg(fgRed)"><wbr />termred</a></li>
   <li><a class="reference" href="#termgreen"
-    title="termgreen* = f(fgGreen)"><wbr />termgreen</a></li>
+    title="termgreen* = getfg(fgGreen)"><wbr />termgreen</a></li>
   <li><a class="reference" href="#termblue"
-    title="termblue* = f(fgBlue)"><wbr />termblue</a></li>
+    title="termblue* = getfg(fgBlue)"><wbr />termblue</a></li>
   <li><a class="reference" href="#termcyan"
-    title="termcyan* = f(fgCyan)"><wbr />termcyan</a></li>
+    title="termcyan* = getfg(fgCyan)"><wbr />termcyan</a></li>
   <li><a class="reference" href="#termyellow"
-    title="termyellow* = f(fgYellow)"><wbr />termyellow</a></li>
+    title="termyellow* = getfg(fgYellow)"><wbr />termyellow</a></li>
   <li><a class="reference" href="#termwhite"
-    title="termwhite* = f(fgWhite)"><wbr />termwhite</a></li>
+    title="termwhite* = getfg(fgWhite)"><wbr />termwhite</a></li>
   <li><a class="reference" href="#termblack"
-    title="termblack* = f(fgBlack)"><wbr />termblack</a></li>
+    title="termblack* = getfg(fgBlack)"><wbr />termblack</a></li>
   <li><a class="reference" href="#termmagenta"
-    title="termmagenta* = f(fgMagenta)"><wbr />termmagenta</a></li>
+    title="termmagenta* = getfg(fgMagenta)"><wbr />termmagenta</a></li>
   <li><a class="reference" href="#brightred"
     title="brightred* = fbright(fgRed)"><wbr />brightred</a></li>
   <li><a class="reference" href="#brightgreen"
@@ -1297,21 +1297,21 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <li><a class="reference" href="#clrainbow"
     title="clrainbow* = &quot;clrainbow&quot;"><wbr />clrainbow</a></li>
   <li><a class="reference" href="#bred"
-    title="bred* = b(bgRed)"><wbr />bred</a></li>
+    title="bred* = getbg(bgRed)"><wbr />bred</a></li>
   <li><a class="reference" href="#bgreen"
-    title="bgreen* = b(bgGreen)"><wbr />bgreen</a></li>
+    title="bgreen* = getbg(bgGreen)"><wbr />bgreen</a></li>
   <li><a class="reference" href="#bblue"
-    title="bblue* = b(bgBlue)"><wbr />bblue</a></li>
+    title="bblue* = getbg(bgBlue)"><wbr />bblue</a></li>
   <li><a class="reference" href="#bcyan"
-    title="bcyan* = b(bgCyan)"><wbr />bcyan</a></li>
+    title="bcyan* = getbg(bgCyan)"><wbr />bcyan</a></li>
   <li><a class="reference" href="#byellow"
-    title="byellow* = b(bgYellow)"><wbr />byellow</a></li>
+    title="byellow* = getbg(bgYellow)"><wbr />byellow</a></li>
   <li><a class="reference" href="#bwhite"
-    title="bwhite* = b(bgWhite)"><wbr />bwhite</a></li>
+    title="bwhite* = getbg(bgWhite)"><wbr />bwhite</a></li>
   <li><a class="reference" href="#bblack"
-    title="bblack* = b(bgBlack)"><wbr />bblack</a></li>
+    title="bblack* = getbg(bgBlack)"><wbr />bblack</a></li>
   <li><a class="reference" href="#bmagenta"
-    title="bmagenta* = b(bgMagenta)"><wbr />bmagenta</a></li>
+    title="bmagenta* = getbg(bgMagenta)"><wbr />bmagenta</a></li>
   <li><a class="reference" href="#bbrightred"
     title="bbrightred* = bbright(bgRed)"><wbr />bbrightred</a></li>
   <li><a class="reference" href="#bbrightgreen"
@@ -1698,8 +1698,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="printHl*(s: string; substr: string; col: string = &quot;termwhite&quot;)"><wbr />print<wbr />Hl</a></li>
   <li><a class="reference" href="#printLnHl,string,string,string"
     title="printLnHl*(s: string; substr: string; col: string = &quot;termwhite&quot;)"><wbr />print<wbr />Ln<wbr />Hl</a></li>
-  <li><a class="reference" href="#printStyledsimple,T,string,set[Style]_2"
-    title="printStyledsimple*[T](astr: T; fg: string; astyle: set[Style])"><wbr />print<wbr />Styledsimple</a></li>
+  <li><a class="reference" href="#printStyledSimple,T,string,set[Style]_2"
+    title="printStyledSimple*[T](astr: T; fg: string; astyle: set[Style])"><wbr />print<wbr />Styled<wbr />Simple</a></li>
   <li><a class="reference" href="#printStyled,string,string,string,set[Style]_2"
     title="printStyled*(s: string; substr: string; col: string; astyle: set[Style])"><wbr />print<wbr />Styled</a></li>
   <li><a class="reference" href="#printLnStyled,string,string,string,set[Style]"
@@ -2027,42 +2027,42 @@ check execution timing with one line see doFinish
 
 
 </dd>
-<dt id="termred"><a name="termred"></a><pre><span class="Identifier">termred</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">f</span><span class="Other">(</span><span class="Identifier">fgRed</span><span class="Other">)</span></pre></dt>
+<dt id="termred"><a name="termred"></a><pre><span class="Identifier">termred</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getfg</span><span class="Other">(</span><span class="Identifier">fgRed</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="termgreen"><a name="termgreen"></a><pre><span class="Identifier">termgreen</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">f</span><span class="Other">(</span><span class="Identifier">fgGreen</span><span class="Other">)</span></pre></dt>
+<dt id="termgreen"><a name="termgreen"></a><pre><span class="Identifier">termgreen</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getfg</span><span class="Other">(</span><span class="Identifier">fgGreen</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="termblue"><a name="termblue"></a><pre><span class="Identifier">termblue</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">f</span><span class="Other">(</span><span class="Identifier">fgBlue</span><span class="Other">)</span></pre></dt>
+<dt id="termblue"><a name="termblue"></a><pre><span class="Identifier">termblue</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getfg</span><span class="Other">(</span><span class="Identifier">fgBlue</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="termcyan"><a name="termcyan"></a><pre><span class="Identifier">termcyan</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">f</span><span class="Other">(</span><span class="Identifier">fgCyan</span><span class="Other">)</span></pre></dt>
+<dt id="termcyan"><a name="termcyan"></a><pre><span class="Identifier">termcyan</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getfg</span><span class="Other">(</span><span class="Identifier">fgCyan</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="termyellow"><a name="termyellow"></a><pre><span class="Identifier">termyellow</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">f</span><span class="Other">(</span><span class="Identifier">fgYellow</span><span class="Other">)</span></pre></dt>
+<dt id="termyellow"><a name="termyellow"></a><pre><span class="Identifier">termyellow</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getfg</span><span class="Other">(</span><span class="Identifier">fgYellow</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="termwhite"><a name="termwhite"></a><pre><span class="Identifier">termwhite</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">f</span><span class="Other">(</span><span class="Identifier">fgWhite</span><span class="Other">)</span></pre></dt>
+<dt id="termwhite"><a name="termwhite"></a><pre><span class="Identifier">termwhite</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getfg</span><span class="Other">(</span><span class="Identifier">fgWhite</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="termblack"><a name="termblack"></a><pre><span class="Identifier">termblack</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">f</span><span class="Other">(</span><span class="Identifier">fgBlack</span><span class="Other">)</span></pre></dt>
+<dt id="termblack"><a name="termblack"></a><pre><span class="Identifier">termblack</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getfg</span><span class="Other">(</span><span class="Identifier">fgBlack</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="termmagenta"><a name="termmagenta"></a><pre><span class="Identifier">termmagenta</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">f</span><span class="Other">(</span><span class="Identifier">fgMagenta</span><span class="Other">)</span></pre></dt>
+<dt id="termmagenta"><a name="termmagenta"></a><pre><span class="Identifier">termmagenta</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getfg</span><span class="Other">(</span><span class="Identifier">fgMagenta</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -2112,42 +2112,42 @@ check execution timing with one line see doFinish
 
 
 </dd>
-<dt id="bred"><a name="bred"></a><pre><span class="Identifier">bred</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">b</span><span class="Other">(</span><span class="Identifier">bgRed</span><span class="Other">)</span></pre></dt>
+<dt id="bred"><a name="bred"></a><pre><span class="Identifier">bred</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getbg</span><span class="Other">(</span><span class="Identifier">bgRed</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="bgreen"><a name="bgreen"></a><pre><span class="Identifier">bgreen</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">b</span><span class="Other">(</span><span class="Identifier">bgGreen</span><span class="Other">)</span></pre></dt>
+<dt id="bgreen"><a name="bgreen"></a><pre><span class="Identifier">bgreen</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getbg</span><span class="Other">(</span><span class="Identifier">bgGreen</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="bblue"><a name="bblue"></a><pre><span class="Identifier">bblue</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">b</span><span class="Other">(</span><span class="Identifier">bgBlue</span><span class="Other">)</span></pre></dt>
+<dt id="bblue"><a name="bblue"></a><pre><span class="Identifier">bblue</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getbg</span><span class="Other">(</span><span class="Identifier">bgBlue</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="bcyan"><a name="bcyan"></a><pre><span class="Identifier">bcyan</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">b</span><span class="Other">(</span><span class="Identifier">bgCyan</span><span class="Other">)</span></pre></dt>
+<dt id="bcyan"><a name="bcyan"></a><pre><span class="Identifier">bcyan</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getbg</span><span class="Other">(</span><span class="Identifier">bgCyan</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="byellow"><a name="byellow"></a><pre><span class="Identifier">byellow</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">b</span><span class="Other">(</span><span class="Identifier">bgYellow</span><span class="Other">)</span></pre></dt>
+<dt id="byellow"><a name="byellow"></a><pre><span class="Identifier">byellow</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getbg</span><span class="Other">(</span><span class="Identifier">bgYellow</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="bwhite"><a name="bwhite"></a><pre><span class="Identifier">bwhite</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">b</span><span class="Other">(</span><span class="Identifier">bgWhite</span><span class="Other">)</span></pre></dt>
+<dt id="bwhite"><a name="bwhite"></a><pre><span class="Identifier">bwhite</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getbg</span><span class="Other">(</span><span class="Identifier">bgWhite</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="bblack"><a name="bblack"></a><pre><span class="Identifier">bblack</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">b</span><span class="Other">(</span><span class="Identifier">bgBlack</span><span class="Other">)</span></pre></dt>
+<dt id="bblack"><a name="bblack"></a><pre><span class="Identifier">bblack</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getbg</span><span class="Other">(</span><span class="Identifier">bgBlack</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="bmagenta"><a name="bmagenta"></a><pre><span class="Identifier">bmagenta</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">b</span><span class="Other">(</span><span class="Identifier">bgMagenta</span><span class="Other">)</span></pre></dt>
+<dt id="bmagenta"><a name="bmagenta"></a><pre><span class="Identifier">bmagenta</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">getbg</span><span class="Other">(</span><span class="Identifier">bgMagenta</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -2994,7 +2994,9 @@ forward declaration
 </dd>
 <dt id="checkColor"><a name="checkColor,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkColor</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">colname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
-returns true if <cite>name</cite> is a known color name 
+<p>checkColor</p>
+<p>returns true if colname is a known color name , obviously</p>
+
 
 </dd>
 <dt id="hline"><a name="hline,int,string_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">hline</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">)</span></pre></dt>
@@ -3210,7 +3212,7 @@ returns true if <cite>name</cite> is a known color name
 
 
 </dd>
-<dt id="printStyledsimple"><a name="printStyledsimple,T,string,set[Style]_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyledsimple</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astr</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<dt id="printStyledSimple"><a name="printStyledSimple,T,string,set[Style]_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyledSimple</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astr</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printStyledsimple</p>
 <p>an extended version of writestyled to enable colors</p>
@@ -3687,7 +3689,7 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
 <dt id="fastsplit"><a name="fastsplit,string,char"></a><pre><span class="Keyword">proc</span> <span class="Identifier">fastsplit</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span></pre></dt>
 <dd>
 fastsplit<blockquote><p>code by jehan lifted from Nim Forum</p></blockquote>
-<p>for best results compile prog with : nim cc -d:release --gc:markandsweep</p>
+<p>maybe best results compile prog with : nim cc -d:release --gc:markandsweep</p>
 <p>seperator must be a char type </p>
 
 
@@ -3765,7 +3767,7 @@ lifted from terminal.nim and removed new line used in printStyled
 <dl class="item">
 <dt id="msgg"><a name="msgg.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgg</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
 <dd>
-msgX templates convenience templates for colored text output the assumption is that the terminal is white text and black background naming of the templates is like msg+color so msgy =&gt; yellow use like : msgg() do : echo &quot;How nice, it's in green&quot;
+msgX templates convenience templates for colored text output the assumption is that the terminal is white text and black background naming of the templates is like msg+color so msgy =&gt; yellow use like : msgg() do : echo &quot;How nice, it's in green&quot; these templates have now been superceded by various print procs but still maybe usefull from time to time.
 
 </dd>
 <dt id="msggb"><a name="msggb.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msggb</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
@@ -3892,7 +3894,7 @@ msgX templates convenience templates for colored text output the assumption is t
 <dd>
 <p>loopy</p>
 <p>the lazy programmers quick for-loop template</p>
-<blockquote><p>loopy(0.. 100,printLnTK(&quot;The house is in the back&quot;,brightwhite,brightblack,salmon,yellowgreen))</p></blockquote>
+<blockquote><p>loopy(0.. 100,printLnTK(&quot;The house is in the back.&quot;,brightwhite,brightblack,salmon,yellowgreen))</p></blockquote>
 
 
 </dd>
@@ -3906,7 +3908,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-15 14:29:03 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-15 19:44:32 UTC</small>
       </div>
     </div>
   </div>
