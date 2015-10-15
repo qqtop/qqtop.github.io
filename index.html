@@ -49,14 +49,14 @@ manage accounts ,portfolios,stocks and perform basic calculations.</p>
 <h2>
 <a id="example1nim-" class="anchor" href="#example1nim-" aria-hidden="true"><span class="octicon octicon-link"></span></a>example1.nim </h2>
 
-<div class="highlight highlight-nimrod"><pre><span class="pl-k">import</span> nimFinLib,times,strfmt,strutils
+<div class="highlight highlight-source-nim"><pre><span class="pl-k">import</span> nimFinLib,times,strfmt,strutils
 
 <span class="pl-c"># show latest stock quotes</span>
 <span class="pl-c1">showCurrentStocks</span>(<span class="pl-s">"IBM+BP.L+0001.HK"</span>)
 <span class="pl-c1">decho</span>(<span class="pl-c1">2</span>)
 
 <span class="pl-c"># get latest historic data for a stock</span>
-<span class="pl-v"><span class="pl-k">var </span><span class="pl-v">ibm</span> =</span> <span class="pl-c1">initDf</span>()
+<span class="pl-k">var</span> ibm = <span class="pl-c1">initDf</span>()
 ibm = <span class="pl-c1">getsymbol2</span>(<span class="pl-s">"IBM"</span>,<span class="pl-s">"2000-01-01"</span>,<span class="pl-c1">getDateStr</span>())
 
 <span class="pl-c"># show recent 5 historical data rows</span>
@@ -85,18 +85,22 @@ ibm = <span class="pl-c1">getsymbol2</span>(<span class="pl-s">"IBM"</span>,<spa
 <h3>
 <a id="snippet-and-small-projects-collections" class="anchor" href="#snippet-and-small-projects-collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Snippet and small projects collections</h3>
 
-<p>Small utilities and programming efforts are collected in this repositories :<br><br>
-<a href="https://github.com/qqtop/Nim-Snippets">Nim-Snippets</a><br><br> 
-Current items include:<br>
-       geodistance  calculate distance between two locations<br>
-       indo6        utility for quick translation in a linux terminal</p><br>
+<p>Small utilities and programming efforts are collected in this repositories :
+<a href="https://github.com/qqtop/Nim-Snippets">Nim-Snippets</a></p>
 
-<p><a href="https://github.com/qqtop/LanguageProjects">LanguageProjects</a><br>
-Mainly python 2.7.x based programs to facilitate lookup in dictionaries<br>
-mostly to facilitate studying efforts for Bahasa Indonesia and Japanese.</p><br>
+<p>Current items include:  </p>
+
+<pre><code>   private      more colors for the terminal and many utility procs
+   geodistance  calculate distance between two locations
+   indo6        utility for quick translation in a linux terminal
+</code></pre>
+
+<p><a href="https://github.com/qqtop/LanguageProjects">LanguageProjects</a>
+Mainly python 2.7.x based programs to facilitate lookup in dictionaries
+mostly to facilitate studying efforts for Bahasa Indonesia and Japanese.</p>
 
 <p><a href="https://github.com/qqtop/Dabble">Dabble</a> 
-Small programs for financial calculations in R and python 2.7.x</p><br>
+Small programs for financial calculations in R and python 2.7.x</p>
 
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
