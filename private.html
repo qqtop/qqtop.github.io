@@ -1652,6 +1652,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="printStyledsimple*[T](astr: T; fg: string; astyle: set[Style])"><wbr />print<wbr />Styledsimple</a></li>
   <li><a class="reference" href="#printStyled,string,string,string,set[Style]"
     title="printStyled*(s: string; substr: string; col: string; astyle: set[Style])"><wbr />print<wbr />Styled</a></li>
+  <li><a class="reference" href="#print,T,string,string"
+    title="print*[T](astring: T; fg: string = white; bg: string = black)"><wbr />print</a></li>
   <li><a class="reference" href="#checkColor,string"
     title="checkColor*(colname: string): bool"><wbr />check<wbr />Color</a></li>
   <li><a class="reference" href="#hline,int,string_2"
@@ -1670,7 +1672,9 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="curDn*(x: int = 1)"><wbr />cur<wbr />Dn</a></li>
   <li><a class="reference" href="#clearup,int"
     title="clearup*(x: int = 80)"><wbr />clearup</a></li>
-  <li><a class="reference" href="#print,T,string,string"
+  <li><a class="reference" href="#rainbow,T_2"
+    title="rainbow*[T](s: T)"><wbr />rainbow</a></li>
+  <li><a class="reference" href="#print,T,string,string_2"
     title="print*[T](astring: T; fg: string = white; bg: string = black)"><wbr />print</a></li>
   <li><a class="reference" href="#printLn,T,string,string"
     title="printLn*[T](astring: T; fg: string = white; bg: string = black)"><wbr />print<wbr />Ln</a></li>
@@ -1678,8 +1682,6 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="printTK*[T](st: T; cols: varargs[string, `$`] = @ [white])"><wbr />print<wbr />TK</a></li>
   <li><a class="reference" href="#printLnTK,T,varargs[string,]"
     title="printLnTK*[T](st: T; cols: varargs[string, `$`])"><wbr />print<wbr />Ln<wbr />TK</a></li>
-  <li><a class="reference" href="#rainbow,T_2"
-    title="rainbow*[T](s: T)"><wbr />rainbow</a></li>
   <li><a class="reference" href="#printRainbow,T,set[Style]"
     title="printRainbow*[T](s: T; astyle: set[Style])"><wbr />print<wbr />Rainbow</a></li>
   <li><a class="reference" href="#printLnRainbow,T,set[Style]"
@@ -1704,6 +1706,10 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="printStyled*(s: string; substr: string; col: string; astyle: set[Style])"><wbr />print<wbr />Styled</a></li>
   <li><a class="reference" href="#printLnStyled,string,string,string,set[Style]"
     title="printLnStyled*(s: string; substr: string; col: string; astyle: set[Style])"><wbr />print<wbr />Ln<wbr />Styled</a></li>
+  <li><a class="reference" href="#cecho,string,varargs[string,]"
+    title="cecho*(col: string; ggg: varargs[string, `$`] = @ [&quot;&quot;])"><wbr />cecho</a></li>
+  <li><a class="reference" href="#cechoLn,string,varargs[string,]"
+    title="cechoLn*(col: string; ggg: varargs[string, `$`] = @ [&quot;&quot;])"><wbr />cecho<wbr />Ln</a></li>
   <li><a class="reference" href="#showColors,"
     title="showColors*()"><wbr />show<wbr />Colors</a></li>
   <li><a class="reference" href="#validdate,string"
@@ -2992,6 +2998,11 @@ forward declaration
 forward declaration
 
 </dd>
+<dt id="print"><a name="print,T,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="checkColor"><a name="checkColor,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkColor</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">colname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 <p>checkColor</p>
@@ -3061,7 +3072,15 @@ forward declaration
 
 
 </dd>
-<dt id="print"><a name="print,T,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">)</span></pre></dt>
+<dt id="rainbow"><a name="rainbow,T_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rainbow</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>rainbow</p>
+<p>multicolored string</p>
+<p>may not work with certain Rune </p>
+
+
+</dd>
+<dt id="print"><a name="print,T,string,string_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>print</p>
 <p>same as printLn without new line</p>
@@ -3082,6 +3101,7 @@ forward declaration
 <blockquote><p>echo(yellowgreen,&quot;aha nice&quot;,termwhite) echo(rosybrown) echo(&quot;grizzly bear&quot;) echo(termwhite)  # reset to usual terminal white color</p></blockquote>
 <p>that is we print the string in yellowgreen , but need to reset the color manually</p>
 <p>if next line does not have this color requirement.</p>
+<p>even better use procs  cecho and cechoLn</p>
 
 
 </dd>
@@ -3117,14 +3137,6 @@ forward declaration
 <span class="Identifier">printLnTK</span><span class="Punctuation">(</span><span class="StringLit">&quot;{} : {} {}  --&gt;   {}&quot;</span><span class="Operator">.</span><span class="Identifier">fmt</span><span class="Punctuation">(</span><span class="DecNumber">123</span><span class="Punctuation">,</span><span class="StringLit">&quot;Nice&quot;</span><span class="Punctuation">,</span><span class="DecNumber">456</span><span class="Punctuation">,</span><span class="FloatNumber">768.5</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">brightwhite</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">cyan</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnTK</span><span class="Punctuation">(</span><span class="StringLit">&quot;blah&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">white</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">cyan</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnTK</span><span class="Punctuation">(</span><span class="StringLit">&quot;blah yep 1234      333122.12  [12,45] wahahahaha&quot;</span><span class="Punctuation">,</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">brightred</span><span class="Punctuation">,</span><span class="Identifier">black</span><span class="Punctuation">,</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="Identifier">cyan</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<dt id="rainbow"><a name="rainbow,T_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rainbow</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>rainbow</p>
-<p>multicolored string</p>
-<p>may not work with certain Rune </p>
-
 
 </dd>
 <dt id="printRainbow"><a name="printRainbow,T,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printRainbow</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
@@ -3264,6 +3276,26 @@ forward declaration
 
 <span class="Comment"># this highlights all T in rainbow colors , no style is applied</span>
 <span class="Identifier">printStyled</span><span class="Punctuation">(</span><span class="StringLit">&quot;HELLO THIS IS A TEST&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;T&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="cecho"><a name="cecho,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cecho</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">ggg</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="StringLit">&quot;&quot;</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>cecho</p>
+<p>color echo w/o new line</p>
+<blockquote><p><p>import private,strfmt</p>
+<p>cecho(salmon,&quot;{:&lt;10} : {} ==&gt; {} --&gt; {}&quot;.fmt(&quot;this &quot;, &quot;zzz &quot;,123 ,&quot; color is something else&quot;))</p>
+</p></blockquote>
+
+
+</dd>
+<dt id="cechoLn"><a name="cechoLn,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cechoLn</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">ggg</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="StringLit">&quot;&quot;</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>cechoLn</p>
+<p>color echo with new line</p>
+<blockquote><p><p>import private,strutils</p>
+<p>cechoLn(steelblue,&quot;We made it in $1 hours !&quot; % $5)</p>
+</p></blockquote>
+
 
 </dd>
 <dt id="showColors"><a name="showColors,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showColors</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
@@ -3775,7 +3807,8 @@ lifted from terminal.nim and removed new line used in printStyled
 <dl class="item">
 <dt id="msgg"><a name="msgg.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgg</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
 <dd>
-msgX templates convenience templates for colored text output the assumption is that the terminal is white text and black background naming of the templates is like msg+color so msgy =&gt; yellow use like : msgg() do : echo &quot;How nice, it's in green&quot; these templates have now been superceded by various print procs but still maybe usefull from time to time.
+msgX templates convenience templates for colored text output the assumption is that the terminal is white text and black background naming of the templates is like msg+color so msgy =&gt; yellow use like : msgg() do : echo &quot;How nice, it's in green&quot; these templates have by large been superceded by various print and echo procs but are useful to have ins ome circumstances like draw a yellow line with width 40<blockquote><p>msgy() do: dline(40)</p></blockquote>
+
 
 </dd>
 <dt id="msggb"><a name="msggb.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msggb</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
@@ -3916,7 +3949,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-15 20:33:02 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-16 16:23:37 UTC</small>
       </div>
     </div>
   </div>
