@@ -1649,9 +1649,9 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <li><a class="reference" href="#rainbow,T"
     title="rainbow*[T](s: T)"><wbr />rainbow</a></li>
   <li><a class="reference" href="#printStyledsimple,T,string,set[Style]"
-    title="printStyledsimple*[T](astr: T; fg: string; astyle: set[Style])"><wbr />print<wbr />Styledsimple</a></li>
-  <li><a class="reference" href="#printStyled,string,string,string,set[Style]"
-    title="printStyled*(s: string; substr: string; col: string; astyle: set[Style])"><wbr />print<wbr />Styled</a></li>
+    title="printStyledsimple*[T](ss: T; fg: string; astyle: set[Style])"><wbr />print<wbr />Styledsimple</a></li>
+  <li><a class="reference" href="#printStyled,T,string,string,set[Style]"
+    title="printStyled*[T](ss: T; substr: string; col: string; astyle: set[Style])"><wbr />print<wbr />Styled</a></li>
   <li><a class="reference" href="#print,T,string,string"
     title="print*[T](astring: T; fg: string = white; bg: string = black)"><wbr />print</a></li>
   <li><a class="reference" href="#checkColor,string"
@@ -1701,11 +1701,11 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <li><a class="reference" href="#printLnHl,string,string,string"
     title="printLnHl*(s: string; substr: string; col: string = &quot;termwhite&quot;)"><wbr />print<wbr />Ln<wbr />Hl</a></li>
   <li><a class="reference" href="#printStyledSimple,T,string,set[Style]_2"
-    title="printStyledSimple*[T](astr: T; fg: string; astyle: set[Style])"><wbr />print<wbr />Styled<wbr />Simple</a></li>
-  <li><a class="reference" href="#printStyled,string,string,string,set[Style]_2"
-    title="printStyled*(s: string; substr: string; col: string; astyle: set[Style])"><wbr />print<wbr />Styled</a></li>
-  <li><a class="reference" href="#printLnStyled,string,string,string,set[Style]"
-    title="printLnStyled*(s: string; substr: string; col: string; astyle: set[Style])"><wbr />print<wbr />Ln<wbr />Styled</a></li>
+    title="printStyledSimple*[T](ss: T; fg: string; astyle: set[Style])"><wbr />print<wbr />Styled<wbr />Simple</a></li>
+  <li><a class="reference" href="#printStyled,T,string,string,set[Style]_2"
+    title="printStyled*[T](ss: T; substr: string; col: string; astyle: set[Style])"><wbr />print<wbr />Styled</a></li>
+  <li><a class="reference" href="#printLnStyled,T,string,string,set[Style]"
+    title="printLnStyled*[T](ss: T; substr: string; col: string; astyle: set[Style])"><wbr />print<wbr />Ln<wbr />Styled</a></li>
   <li><a class="reference" href="#cecho,string,varargs[string,]"
     title="cecho*(col: string; ggg: varargs[string, `$`] = @ [&quot;&quot;])"><wbr />cecho</a></li>
   <li><a class="reference" href="#cechoLn,string,varargs[string,]"
@@ -2988,12 +2988,12 @@ forward declaration
 forward declaration
 
 </dd>
-<dt id="printStyledsimple"><a name="printStyledsimple,T,string,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyledsimple</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astr</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<dt id="printStyledsimple"><a name="printStyledsimple,T,string,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyledsimple</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 forward declaration
 
 </dd>
-<dt id="printStyled"><a name="printStyled,string,string,string,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyled</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<dt id="printStyled"><a name="printStyled,T,string,string,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyled</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 forward declaration
 
@@ -3232,14 +3232,14 @@ forward declaration
 
 
 </dd>
-<dt id="printStyledSimple"><a name="printStyledSimple,T,string,set[Style]_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyledSimple</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astr</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<dt id="printStyledSimple"><a name="printStyledSimple,T,string,set[Style]_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyledSimple</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printStyledsimple</p>
 <p>an extended version of writestyled to enable colors</p>
 
 
 </dd>
-<dt id="printStyled"><a name="printStyled,string,string,string,set[Style]_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyled</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<dt id="printStyled"><a name="printStyled,T,string,string,set[Style]_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyled</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printStyled</p>
 <p>extended version of writestyled and printHl to allow color and styles</p>
@@ -3258,7 +3258,7 @@ forward declaration
 <span class="Identifier">printStyled</span><span class="Punctuation">(</span><span class="StringLit">&quot;HELLO THIS IS A TEST&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;T&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="printLnStyled"><a name="printLnStyled,string,string,string,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnStyled</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<dt id="printLnStyled"><a name="printLnStyled,T,string,string,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnStyled</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printLnStyled</p>
 <p>extended version of writestyled and printHl to allow color and styles</p>
@@ -3949,7 +3949,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-16 16:23:37 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-16 17:04:55 UTC</small>
       </div>
     </div>
   </div>
