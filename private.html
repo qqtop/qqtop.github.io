@@ -3245,10 +3245,16 @@ forward declaration
 <dd>
 <p>printStyled</p>
 <p>extended version of writestyled and printHl to allow color and styles</p>
-<p>to print and highlight all appearances of a substring of a string</p>
+<p>to print and highlight all appearances of a substring</p>
 <p>styles may and in some cases not have the desired effect</p>
 <p>available styles :</p>
-<p>styleBright = 1,            ## bright text styleDim,                   ## dim text styleUnknown,               ## unknown styleUnderscore = 4,        ## underscored text styleBlink,                 ## blinking/bold text styleReverse = 7,           ## reverses currentforground and backgroundcolor styleHidden                 ## hidden text</p>
+<p>styleBright = 1,            ## bright text</p>
+<p>styleDim,                   ## dim text</p>
+<p>styleUnknown,               ## unknown</p>
+<p>styleUnderscore = 4,        ## underscored text</p>
+<p>styleBlink,                 ## blinking/bold text</p>
+<p>styleReverse = 7,           ## reverses currentforground and backgroundcolor</p>
+<p>styleHidden                 ## hidden text</p>
 <p>with a certain color</p>
 <pre class = "listing"><span class="Comment"># this highlights all T in green and underscore them</span>
 <span class="Identifier">printStyled</span><span class="Punctuation">(</span><span class="StringLit">&quot;HELLO THIS IS A TEST&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;T&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Identifier">styleUnderScore</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
@@ -3264,12 +3270,8 @@ forward declaration
 <dd>
 <p>printLnStyled</p>
 <p>extended version of writestyled and printHl to allow color and styles</p>
-<p>to print and highlight all appearances of a substring of a string and issue a new line</p>
+<p>to print and highlight all appearances of a substring and issue a new line</p>
 <p>styles may and in some cases not have the desired effect</p>
-<p>if substr == &quot;&quot; the color and style will be applied to the whole string s</p>
-<p>available styles :</p>
-<p>styleBright = 1,            ## bright text styleDim,                   ## dim text styleUnknown,               ## unknown styleUnderscore = 4,        ## underscored text styleBlink,                 ## blinking/bold text styleReverse = 7,           ## unknown styleHidden                 ## hidden text</p>
-<p>with a certain color</p>
 <pre class = "listing"><span class="Comment"># this highlights all T in green and underscore them</span>
 <span class="Identifier">printStyled</span><span class="Punctuation">(</span><span class="StringLit">&quot;HELLO THIS IS A TEST&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;T&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Identifier">styleUnderScore</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
 
@@ -3958,7 +3960,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-16 21:02:32 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-16 21:32:32 UTC</small>
       </div>
     </div>
   </div>
