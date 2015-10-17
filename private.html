@@ -3099,12 +3099,15 @@ forward declaration
 <p>see testPrintLn.nim for usage examples</p>
 <p>all colornames are supported for font color:</p>
 <p>color names supported for background color:</p>
-<p>white,red,green,blue,yellow,cyan,magenta,black brightwhite,brightred,brightgreen,brightblue,brightyellow,brightcyan,brightmagenta,brightblack</p>
-<p>As a side effect we also can do this now:</p>
-<blockquote><p>echo(yellowgreen,&quot;aha nice&quot;,termwhite) echo(rosybrown) echo(&quot;grizzly bear&quot;) echo(termwhite)  # reset to usual terminal white color</p></blockquote>
-<p>that is we print the string in yellowgreen , but need to reset the color manually</p>
-<p>if next line does not have this color requirement.</p>
-<p>even better use procs  cecho and cechoLn</p>
+<p>white,red,green,blue,yellow,cyan,magenta,black</p>
+<p>brightwhite,brightred,brightgreen,brightblue,brightyellow,</p>
+<p>brightcyan,brightmagenta,brightblack</p>
+<p>As a side effect we also can do this now :</p>
+<pre class = "listing"><span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Identifier">yellowgreen</span><span class="Punctuation">,</span><span class="StringLit">&quot;aha nice&quot;</span><span class="Punctuation">,</span><span class="Identifier">termwhite</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Identifier">rosybrown</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="StringLit">&quot;grizzly bear&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Identifier">termwhite</span><span class="Punctuation">)</span>  <span class="Comment"># reset to usual terminal white color</span></pre><p>that is we print the string in yellowgreen , but need to reset the color manually</p>
+<p>even better use procs  cecho and cechoLn  below</p>
 
 
 </dd>
@@ -3956,7 +3959,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-17 10:29:17 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-17 10:48:01 UTC</small>
       </div>
     </div>
   </div>
