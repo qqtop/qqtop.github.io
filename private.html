@@ -1772,9 +1772,9 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <li><a class="reference" href="#showHosts,string"
     title="showHosts*(dm: string)"><wbr />show<wbr />Hosts</a></li>
   <li><a class="reference" href="#getRandomInt,int,int"
-    title="getRandomInt*(mi: int = 0; ma: int = 1000000000): int"><wbr />get<wbr />Random<wbr />Int</a></li>
+    title="getRandomInt*(mi: int = 0; ma: int = int.high): int"><wbr />get<wbr />Random<wbr />Int</a></li>
   <li><a class="reference" href="#createSeqInt,int,int,int"
-    title="createSeqInt*(n: int = 10; mi: int = 0; ma: int = 1000000000): seq[int]"><wbr />create<wbr />Seq<wbr />Int</a></li>
+    title="createSeqInt*(n: int = 10; mi: int = 0; ma: int = int.high): seq[int]"><wbr />create<wbr />Seq<wbr />Int</a></li>
   <li><a class="reference" href="#ff,float,int64"
     title="ff*(zz: float; n: int64 = 5): string"><wbr />ff</a></li>
   <li><a class="reference" href="#getRandomFloat,"
@@ -3537,15 +3537,18 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="getRandomInt"><a name="getRandomInt,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1000000000</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dt id="getRandomInt"><a name="getRandomInt,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">int</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 <p>getRandomInt</p>
-<p>convenience proc so we do not need to import random</p>
-<p>in calling prog</p>
-
+<p>convenience proc so we do not need to import random in calling prog</p>
+<pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">private</span><span class="Punctuation">,</span><span class="Identifier">math</span>
+<span class="Keyword">var</span> <span class="Identifier">ps</span> <span class="Punctuation">:</span> <span class="Identifier">Runningstat</span>
+<span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">1000000</span><span class="Punctuation">,</span><span class="Identifier">ps</span><span class="Operator">.</span><span class="Identifier">push</span><span class="Punctuation">(</span><span class="Identifier">getRandomInt</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">10000</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+<span class="Identifier">showStats</span><span class="Punctuation">(</span><span class="Identifier">ps</span><span class="Punctuation">)</span>
+<span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="createSeqInt"><a name="createSeqInt,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSeqInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1000000000</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span></pre></dt>
+<dt id="createSeqInt"><a name="createSeqInt,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSeqInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">int</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span></pre></dt>
 <dd>
 <p>createSeqInt</p>
 <p>convenience proc to create a seq of random int with</p>
@@ -3586,13 +3589,13 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
 <p>getRandomPointInCircle</p>
 <p>based on answers found in</p>
 <p><a class="reference external" href="http://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly">http://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly</a></p>
-<pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">private</span><span class="Punctuation">,</span><span class="Identifier">math</span>
+<pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">private</span><span class="Punctuation">,</span><span class="Identifier">math</span><span class="Punctuation">,</span><span class="Identifier">strfmt</span>
 <span class="Comment"># get randompoints in a circle</span>
 <span class="Keyword">var</span> <span class="Identifier">crad</span><span class="Punctuation">:</span><span class="Identifier">float</span> <span class="Operator">=</span> <span class="DecNumber">1</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">100</span><span class="Punctuation">:</span>
    <span class="Keyword">var</span> <span class="Identifier">k</span> <span class="Operator">=</span> <span class="Identifier">getRandomPointInCircle</span><span class="Punctuation">(</span><span class="Identifier">crad</span><span class="Punctuation">)</span>
    <span class="Identifier">assert</span> <span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span> <span class="Operator">&lt;=</span> <span class="Identifier">crad</span> <span class="Keyword">and</span> <span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span> <span class="Operator">&lt;=</span> <span class="Identifier">crad</span>
-   <span class="Identifier">echo</span> <span class="Identifier">k</span>
+   <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;{:&lt;25}  :  {}&quot;</span><span class="Operator">.</span><span class="Identifier">fmt</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
@@ -3943,7 +3946,7 @@ msgX templates convenience templates for colored text output the assumption is t
 <dt id="loopy"><a name="loopy.t,T,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">loopy</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ite</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">st</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>loopy</p>
-<p>the lazy programmers quick for-loop template</p>
+<p>the lazy programmer's quick for-loop template</p>
 <pre class = "listing"><span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">100</span><span class="Punctuation">,</span><span class="Identifier">printLnTK</span><span class="Punctuation">(</span><span class="StringLit">&quot;The house is in the back.&quot;</span><span class="Punctuation">,</span><span class="Identifier">brightwhite</span><span class="Punctuation">,</span><span class="Identifier">brightblack</span><span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
@@ -3957,7 +3960,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-17 11:03:43 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-17 13:30:16 UTC</small>
       </div>
     </div>
   </div>
