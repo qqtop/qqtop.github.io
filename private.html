@@ -3817,8 +3817,7 @@ lifted from terminal.nim and removed new line used in printStyled
 <dl class="item">
 <dt id="msgg"><a name="msgg.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgg</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
 <dd>
-msgX templates convenience templates for colored text output the assumption is that the terminal is white text and black background naming of the templates is like msg+color so msgy =&gt; yellow use like : msgg() do : echo &quot;How nice, it's in green&quot; these templates have by large been superceded by various print and echo procs but are useful to have ins ome circumstances like draw a yellow line with width 40<blockquote><p>msgy() do: dline(40)</p></blockquote>
-
+msgX templates convenience templates for colored text output the assumption is that the terminal is white text and black background naming of the templates is like msg+color so msgy =&gt; yellow use like : msgg() do : echo &quot;How nice, it's in green&quot; these templates have by large been superceded by various print and echo procs but are useful to have ins ome circumstances like draw a yellow line with width 40<pre class = "listing"><span class="Identifier">msgy</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Keyword">do</span><span class="Punctuation">:</span> <span class="Identifier">dline</span><span class="Punctuation">(</span><span class="DecNumber">40</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="msggb"><a name="msggb.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msggb</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
@@ -3945,8 +3944,7 @@ msgX templates convenience templates for colored text output the assumption is t
 <dd>
 <p>loopy</p>
 <p>the lazy programmers quick for-loop template</p>
-<blockquote><p>loopy(0.. 100,printLnTK(&quot;The house is in the back.&quot;,brightwhite,brightblack,salmon,yellowgreen))</p></blockquote>
-
+<pre class = "listing"><span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">100</span><span class="Punctuation">,</span><span class="Identifier">printLnTK</span><span class="Punctuation">(</span><span class="StringLit">&quot;The house is in the back.&quot;</span><span class="Punctuation">,</span><span class="Identifier">brightwhite</span><span class="Punctuation">,</span><span class="Identifier">brightblack</span><span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 
@@ -3959,7 +3957,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-17 10:51:35 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-17 11:03:43 UTC</small>
       </div>
     </div>
   </div>
