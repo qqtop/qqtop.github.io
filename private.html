@@ -1164,10 +1164,6 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#PStyle"
     title="PStyle* = terminal.Style"><wbr />PStyle</a></li>
-  <li><a class="reference" href="#Pfg"
-    title="Pfg* = terminal.ForegroundColor"><wbr />Pfg</a></li>
-  <li><a class="reference" href="#Pbg"
-    title="Pbg* = terminal.BackgroundColor"><wbr />Pbg</a></li>
 
   </ul>
 </li>
@@ -1819,6 +1815,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="fastsplit*(s: string; sep: char): seq[string]"><wbr />fastsplit</a></li>
   <li><a class="reference" href="#splitty,string,string"
     title="splitty*(txt: string; sep: string): seq[string]"><wbr />splitty</a></li>
+  <li><a class="reference" href="#flyNim,string,string,float"
+    title="flyNim*(astring: string = &quot;Nim&quot;; col: string = red; tx: float = 0.08&#x27;f64)"><wbr />fly<wbr />Nim</a></li>
   <li><a class="reference" href="#qqTop,"
     title="qqTop*()"><wbr />qq<wbr />Top</a></li>
   <li><a class="reference" href="#doInfo,"
@@ -1920,16 +1918,6 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <dt id="PStyle"><a name="PStyle"></a><pre><span class="Identifier">PStyle</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">terminal</span><span class="Other">.</span><span class="Identifier">Style</span></pre></dt>
 <dd>
 make terminal style constants available in the calling prog
-
-</dd>
-<dt id="Pfg"><a name="Pfg"></a><pre><span class="Identifier">Pfg</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">terminal</span><span class="Other">.</span><span class="Identifier">ForegroundColor</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="Pbg"><a name="Pbg"></a><pre><span class="Identifier">Pbg</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">terminal</span><span class="Other">.</span><span class="Identifier">BackgroundColor</span></pre></dt>
-<dd>
-
 
 </dd>
 
@@ -3766,6 +3754,14 @@ fastsplit<blockquote><p>code by jehan lifted from Nim Forum</p></blockquote>
 
 
 </dd>
+<dt id="flyNim"><a name="flyNim,string,string,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">flyNim</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;Nim&quot;</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">red</span><span class="Other">;</span> <span class="Identifier">tx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">0.08'f64</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>flyNim</p>
+<p>small animation demo</p>
+<pre class = "listing"><span class="Identifier">flyNim</span><span class="Punctuation">(</span><span class="Identifier">col</span> <span class="Operator">=</span> <span class="Identifier">brightred</span><span class="Punctuation">)</span>
+<span class="Identifier">flyNim</span><span class="Punctuation">(</span><span class="StringLit">&quot; Have a nice day !&quot;</span><span class="Punctuation">,</span> <span class="Identifier">col</span> <span class="Operator">=</span> <span class="Identifier">hotpink</span><span class="Punctuation">,</span><span class="Identifier">tx</span> <span class="Operator">=</span> <span class="FloatNumber">0.1</span><span class="Punctuation">)</span></pre>
+
+</dd>
 <dt id="qqTop"><a name="qqTop,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">qqTop</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>qqTop</p>
@@ -3965,7 +3961,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-19 10:26:05 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-19 13:52:28 UTC</small>
       </div>
     </div>
   </div>
