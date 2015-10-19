@@ -1734,6 +1734,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="compareDates*(startDate, endDate: string): int"><wbr />compare<wbr />Dates</a></li>
   <li><a class="reference" href="#sleepy,T"
     title="sleepy*[T: float | int](s: T)"><wbr />sleepy</a></li>
+  <li><a class="reference" href="#printBigNumber,int,string,string"
+    title="printBigNumber*(bn: int; fgr: string = yellowgreen; bgr: string = black)"><wbr />print<wbr />Big<wbr />Number</a></li>
   <li><a class="reference" href="#dayOfWeekJulianA,int,int,int"
     title="dayOfWeekJulianA*(day, month, year: int): WeekDay"><wbr />day<wbr />Of<wbr />Week<wbr />Julian<wbr />A</a></li>
   <li><a class="reference" href="#dayOfWeekJulian,string"
@@ -3372,6 +3374,19 @@ interval procs returns time elapsed between two dates in secs,hours etc.
 
 
 </dd>
+<dt id="printBigNumber"><a name="printBigNumber,int,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigNumber</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">bn</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printBigNumber</p>
+<p>prints an integer in big block font</p>
+<pre class = "listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">999900.</span><span class="Operator">.</span> <span class="DecNumber">1000504</span><span class="Punctuation">:</span>
+     <span class="Identifier">clearup</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+     <span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span>
+     <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.008</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+
+<span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="DecNumber">23456345</span><span class="Punctuation">,</span><span class="Identifier">blue</span><span class="Punctuation">)</span></pre>
+
+</dd>
 <dt id="dayOfWeekJulianA"><a name="dayOfWeekJulianA,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dayOfWeekJulianA</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">day</span><span class="Other">,</span> <span class="Identifier">month</span><span class="Other">,</span> <span class="Identifier">year</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">WeekDay</span></pre></dt>
 <dd>
 
@@ -3961,7 +3976,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-19 13:52:28 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-19 23:52:44 UTC</small>
       </div>
     </div>
   </div>
