@@ -1734,8 +1734,12 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="compareDates*(startDate, endDate: string): int"><wbr />compare<wbr />Dates</a></li>
   <li><a class="reference" href="#sleepy,T"
     title="sleepy*[T: float | int](s: T)"><wbr />sleepy</a></li>
-  <li><a class="reference" href="#printBigNumber,int,string,string"
-    title="printBigNumber*(bn: int; fgr: string = yellowgreen; bgr: string = black)"><wbr />print<wbr />Big<wbr />Number</a></li>
+  <li><a class="reference" href="#printBigNumber,string,string,string,int"
+    title="printBigNumber*(anumber: string; fgr: string = yellowgreen; bgr: string = black;
+                xpos: int = 1)"><wbr />print<wbr />Big<wbr />Number</a></li>
+  <li><a class="reference" href="#printSlimNumber,string,string,string,int"
+    title="printSlimNumber*(anumber: string; fgr: string = yellowgreen; bgr: string = black;
+                 xpos: int = 1)"><wbr />print<wbr />Slim<wbr />Number</a></li>
   <li><a class="reference" href="#dayOfWeekJulianA,int,int,int"
     title="dayOfWeekJulianA*(day, month, year: int): WeekDay"><wbr />day<wbr />Of<wbr />Week<wbr />Julian<wbr />A</a></li>
   <li><a class="reference" href="#dayOfWeekJulian,string"
@@ -3374,17 +3378,43 @@ interval procs returns time elapsed between two dates in secs,hours etc.
 
 
 </dd>
-<dt id="printBigNumber"><a name="printBigNumber,int,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigNumber</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">bn</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">)</span></pre></dt>
+<dt id="printBigNumber"><a name="printBigNumber,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigNumber</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
+                    <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printBigNumber</p>
-<p>prints an integer in big block font</p>
-<pre class = "listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">999900.</span><span class="Operator">.</span> <span class="DecNumber">1000504</span><span class="Punctuation">:</span>
+<p>prints a string in big block font</p>
+<p>available 1234567890:</p>
+<p>usufull for big counter etc , a clock can also be build easily but running in a tight while loop just uses up cpu cycles needlessly.</p>
+<pre class = "listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">990.</span><span class="Operator">.</span> <span class="DecNumber">1005</span><span class="Punctuation">:</span>
      <span class="Identifier">clearup</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-     <span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span>
+     <span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">)</span>
      <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.008</span><span class="Punctuation">)</span>
+
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
+
+<span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="DecNumber">23456345</span><span class="Punctuation">,</span><span class="Identifier">steelblue</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="printSlimNumber"><a name="printSlimNumber,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printSlimNumber</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
+                     <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printBigNumber</p>
+<p>prints an string in big block font</p>
+<p>available chars 123456780,.:</p>
+<p>usufull for big counter etc , a clock can also be build easily but running in a tight while loop just uses up cpu cycles needlessly.</p>
+<pre class = "listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">990.</span><span class="Operator">.</span> <span class="DecNumber">1005</span><span class="Punctuation">:</span>
+     <span class="Identifier">clearup</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+     <span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">)</span>
+     <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.075</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 
-<span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="DecNumber">23456345</span><span class="Punctuation">,</span><span class="Identifier">blue</span><span class="Punctuation">)</span></pre>
+<span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="DecNumber">23456345</span><span class="Punctuation">,</span><span class="Identifier">blue</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
+<span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="StringLit">&quot;1234567:345,23.789&quot;</span><span class="Punctuation">,</span><span class="Identifier">fgr</span><span class="Operator">=</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="DecNumber">20</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
+<span class="Keyword">import</span> <span class="Identifier">times</span>
+<span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">getClockStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">fgr</span><span class="Operator">=</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="DecNumber">20</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="dayOfWeekJulianA"><a name="dayOfWeekJulianA,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dayOfWeekJulianA</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">day</span><span class="Other">,</span> <span class="Identifier">month</span><span class="Other">,</span> <span class="Identifier">year</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">WeekDay</span></pre></dt>
@@ -3976,7 +4006,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-19 23:59:36 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-20 13:56:54 UTC</small>
       </div>
     </div>
   </div>
