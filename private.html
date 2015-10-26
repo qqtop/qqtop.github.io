@@ -1672,8 +1672,16 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="curUp*(x: int = 1)"><wbr />cur<wbr />Up</a></li>
   <li><a class="reference" href="#curDn,int"
     title="curDn*(x: int = 1)"><wbr />cur<wbr />Dn</a></li>
+  <li><a class="reference" href="#curBk,int"
+    title="curBk*(x: int = 1)"><wbr />cur<wbr />Bk</a></li>
+  <li><a class="reference" href="#curFw,int"
+    title="curFw*(x: int = 1)"><wbr />cur<wbr />Fw</a></li>
+  <li><a class="reference" href="#curSet,int"
+    title="curSet*(x: int)"><wbr />cur<wbr />Set</a></li>
   <li><a class="reference" href="#clearup,int"
     title="clearup*(x: int = 80)"><wbr />clearup</a></li>
+  <li><a class="reference" href="#clearLine,"
+    title="clearLine*()"><wbr />clear<wbr />Line</a></li>
   <li><a class="reference" href="#rainbow,T_2"
     title="rainbow*[T](s: T)"><wbr />rainbow</a></li>
   <li><a class="reference" href="#print,T,string,string_2"
@@ -1802,6 +1810,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="createSeqFloat*(n: int = 10): seq[float]"><wbr />create<wbr />Seq<wbr />Float</a></li>
   <li><a class="reference" href="#getRandomPointInCircle,float"
     title="getRandomPointInCircle*(radius: float): seq[float]"><wbr />get<wbr />Random<wbr />Point<wbr />In<wbr />Circle</a></li>
+  <li><a class="reference" href="#centerMark,bool"
+    title="centerMark*(showpos: bool = false)"><wbr />center<wbr />Mark</a></li>
   <li><a class="reference" href="#tupleToStr,"
     title="tupleToStr*(xs: tuple): string"><wbr />tuple<wbr />To<wbr />Str</a></li>
   <li><a class="reference" href="#harmonics,int64"
@@ -1838,6 +1848,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="fastsplit*(s: string; sep: char): seq[string]"><wbr />fastsplit</a></li>
   <li><a class="reference" href="#splitty,string,string"
     title="splitty*(txt: string; sep: string): seq[string]"><wbr />splitty</a></li>
+  <li><a class="reference" href="#futureIsNim,int"
+    title="futureIsNim*(posx: int = 0)"><wbr />future<wbr />Is<wbr />Nim</a></li>
   <li><a class="reference" href="#flyNim,string,string,float"
     title="flyNim*(astring: string = &quot;Fly Nim&quot;; col: string = red; tx: float = 0.08&#x27;f64)"><wbr />fly<wbr />Nim</a></li>
   <li><a class="reference" href="#centerNim,"
@@ -3118,10 +3130,38 @@ forward declaration
 
 
 </dd>
+<dt id="curBk"><a name="curBk,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">curBk</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>curBkn</p>
+<p>mirrors terminal cursorBackward</p>
+
+
+</dd>
+<dt id="curFw"><a name="curFw,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">curFw</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>curFw</p>
+<p>mirrors terminal cursorForward</p>
+
+
+</dd>
+<dt id="curSet"><a name="curSet,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">curSet</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>curSet</p>
+<p>mirrors terminal setCursorXPos</p>
+
+
+</dd>
 <dt id="clearup"><a name="clearup,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">clearup</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">80</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>clearup</p>
-<p>a convenience proc to clear monitor </p>
+<p>a convenience proc to clear monitor x rows </p>
+
+
+</dd>
+<dt id="clearLine"><a name="clearLine,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">clearLine</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>clearLine</p>
+<p>mirrors terminal eraseLine</p>
 
 
 </dd>
@@ -3755,6 +3795,13 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
+<dt id="centerMark"><a name="centerMark,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerMark</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">showpos</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>centerMark</p>
+<p>draws a red dot in the middle of the screen xpos only and also can show pos </p>
+
+
+</dd>
 <dt id="tupleToStr"><a name="tupleToStr,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">tupleToStr</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">xs</span><span class="Other">:</span> <span class="Keyword">tuple</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>tupleToStr</p>
@@ -3915,6 +3962,21 @@ fastsplit<blockquote><p>code by jehan lifted from Nim Forum</p></blockquote>
 <p>Nice weather in Djibouti</p>
 <p>with the original split()</p>
 
+
+</dd>
+<dt id="futureIsNim"><a name="futureIsNim,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">futureIsNim</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">posx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>futureIsNim</p>
+<p>demo example of a box drawn with doty procs and 2 text lines</p>
+<p>max xpos = 20</p>
+<pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">private</span>
+<span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
+    <span class="Identifier">centerMark</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+    <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+    <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.1</span><span class="Punctuation">)</span>
+<span class="Identifier">flyNim</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">futureisnim</span><span class="Punctuation">(</span><span class="DecNumber">25</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="flyNim"><a name="flyNim,string,string,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">flyNim</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;Fly Nim&quot;</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">red</span><span class="Other">;</span> <span class="Identifier">tx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">0.08'f64</span><span class="Other">)</span></pre></dt>
@@ -4161,7 +4223,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-26 14:34:45 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-26 22:31:44 UTC</small>
       </div>
     </div>
   </div>
