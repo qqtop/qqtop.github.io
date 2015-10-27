@@ -1248,6 +1248,27 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
               (&quot;pastelorange&quot;, pastelorange), (&quot;pastelpink&quot;, pastelpink),
               (&quot;pastelwhite&quot;, pastelwhite), (&quot;pastelyellow&quot;, pastelyellow),
               (&quot;pastelyellowgreen&quot;, pastelyellowgreen), (&quot;truetomato&quot;, truetomato)]"><wbr />color<wbr />Names</a></li>
+  <li><a class="reference" href="#cards"
+    title="cards* = @ [&quot;\xF0\x9F\x82\xA1&quot;, &quot;\xF0\x9F\x82\xB1&quot;, &quot;\xF0\x9F\x83\x81&quot;,
+         &quot;\xF0\x9F\x83\x91&quot;, &quot;\xF0\x9F\x82\xA2&quot;, &quot;\xF0\x9F\x82\xB2&quot;,
+         &quot;\xF0\x9F\x83\x82&quot;, &quot;\xF0\x9F\x83\x92&quot;, &quot;\xF0\x9F\x82\xA3&quot;,
+         &quot;\xF0\x9F\x82\xB3&quot;, &quot;\xF0\x9F\x83\x83&quot;, &quot;\xF0\x9F\x83\x93&quot;,
+         &quot;\xF0\x9F\x82\xA4&quot;, &quot;\xF0\x9F\x82\xB4&quot;, &quot;\xF0\x9F\x83\x84&quot;,
+         &quot;\xF0\x9F\x83\x94&quot;, &quot;\xF0\x9F\x82\xA5&quot;, &quot;\xF0\x9F\x82\xB5&quot;,
+         &quot;\xF0\x9F\x83\x85&quot;, &quot;\xF0\x9F\x83\x95&quot;, &quot;\xF0\x9F\x82\xA6&quot;,
+         &quot;\xF0\x9F\x82\xB6&quot;, &quot;\xF0\x9F\x83\x86&quot;, &quot;\xF0\x9F\x83\x96&quot;,
+         &quot;\xF0\x9F\x82\xA7&quot;, &quot;\xF0\x9F\x82\xB7&quot;, &quot;\xF0\x9F\x83\x87&quot;,
+         &quot;\xF0\x9F\x83\x97&quot;, &quot;\xF0\x9F\x82\xA8&quot;, &quot;\xF0\x9F\x82\xB8&quot;,
+         &quot;\xF0\x9F\x83\x88&quot;, &quot;\xF0\x9F\x83\x98&quot;, &quot;\xF0\x9F\x82\xA9&quot;,
+         &quot;\xF0\x9F\x82\xB9&quot;, &quot;\xF0\x9F\x83\x89&quot;, &quot;\xF0\x9F\x83\x99&quot;,
+         &quot;\xF0\x9F\x82\xAA&quot;, &quot;\xF0\x9F\x82\xBA&quot;, &quot;\xF0\x9F\x83\x8A&quot;,
+         &quot;\xF0\x9F\x83\x9A&quot;, &quot;\xF0\x9F\x82\xAB&quot;, &quot;\xF0\x9F\x82\xBB&quot;,
+         &quot;\xF0\x9F\x83\x8B&quot;, &quot;\xF0\x9F\x83\x9B&quot;, &quot;\xF0\x9F\x82\xAC&quot;,
+         &quot;\xF0\x9F\x82\xBC&quot;, &quot;\xF0\x9F\x83\x8C&quot;, &quot;\xF0\x9F\x83\x9C&quot;,
+         &quot;\xF0\x9F\x82\xAD&quot;, &quot;\xF0\x9F\x82\xBD&quot;, &quot;\xF0\x9F\x83\x8D&quot;,
+         &quot;\xF0\x9F\x83\x9D&quot;, &quot;\xF0\x9F\x82\xAE&quot;, &quot;\xF0\x9F\x82\xBE&quot;,
+         &quot;\xF0\x9F\x83\x8E&quot;, &quot;\xF0\x9F\x83\x9E&quot;, &quot;\xF0\x9F\x82\xA0&quot;,
+         &quot;\xF0\x9F\x82\xBF&quot;, &quot;\xF0\x9F\x83\x8F&quot;, &quot;\xF0\x9F\x83\x9F&quot;]"><wbr />cards</a></li>
   <li><a class="reference" href="#start"
     title="start* = epochTime()"><wbr />start</a></li>
 
@@ -1628,7 +1649,9 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#getTerminalWidth,"
+      <li><a class="reference" href="#randCol,"
+    title="randCol*(): string"><wbr />rand<wbr />Col</a></li>
+  <li><a class="reference" href="#getTerminalWidth,"
     title="getTerminalWidth*(): int"><wbr />get<wbr />Terminal<wbr />Width</a></li>
   <li><a class="reference" href="#printColStr,string,string"
     title="printColStr*(colstr: string; astr: string)"><wbr />print<wbr />Col<wbr />Str</a></li>
@@ -1682,6 +1705,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="clearup*(x: int = 80)"><wbr />clearup</a></li>
   <li><a class="reference" href="#clearLine,"
     title="clearLine*()"><wbr />clear<wbr />Line</a></li>
+  <li><a class="reference" href="#sleepy,T"
+    title="sleepy*[T: float | int](s: T)"><wbr />sleepy</a></li>
   <li><a class="reference" href="#rainbow,T_2"
     title="rainbow*[T](s: T)"><wbr />rainbow</a></li>
   <li><a class="reference" href="#print,T,string,string_2"
@@ -1755,8 +1780,6 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="intervalyears*(startDate, endDate: string): float"><wbr />intervalyears</a></li>
   <li><a class="reference" href="#compareDates,string,string"
     title="compareDates*(startDate, endDate: string): int"><wbr />compare<wbr />Dates</a></li>
-  <li><a class="reference" href="#sleepy,T"
-    title="sleepy*[T: float | int](s: T)"><wbr />sleepy</a></li>
   <li><a class="reference" href="#printBigNumber,string,string,string,int"
     title="printBigNumber*(anumber: string; fgr: string = yellowgreen; bgr: string = black;
                 xpos: int = 1)"><wbr />print<wbr />Big<wbr />Number</a></li>
@@ -1858,6 +1881,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="printNimSx*(col: string = yellowgreen; xpos: int = 1)"><wbr />print<wbr />Nim<wbr />Sx</a></li>
   <li><a class="reference" href="#movNim,"
     title="movNim*()"><wbr />mov<wbr />Nim</a></li>
+  <li><a class="reference" href="#randomCards,"
+    title="randomCards*()"><wbr />random<wbr />Cards</a></li>
   <li><a class="reference" href="#qqTop,"
     title="qqTop*()"><wbr />qq<wbr />Top</a></li>
   <li><a class="reference" href="#doInfo,"
@@ -2055,6 +2080,30 @@ terminalwidth available in tw
               <span class="Other">(</span><span class="StringLit">&quot;pastelorange&quot;</span><span class="Other">,</span> <span class="Identifier">pastelorange</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;pastelpink&quot;</span><span class="Other">,</span> <span class="Identifier">pastelpink</span><span class="Other">)</span><span class="Other">,</span>
               <span class="Other">(</span><span class="StringLit">&quot;pastelwhite&quot;</span><span class="Other">,</span> <span class="Identifier">pastelwhite</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;pastelyellow&quot;</span><span class="Other">,</span> <span class="Identifier">pastelyellow</span><span class="Other">)</span><span class="Other">,</span>
               <span class="Other">(</span><span class="StringLit">&quot;pastelyellowgreen&quot;</span><span class="Other">,</span> <span class="Identifier">pastelyellowgreen</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;truetomato&quot;</span><span class="Other">,</span> <span class="Identifier">truetomato</span><span class="Other">)</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cards"><a name="cards"></a><pre><span class="Identifier">cards</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="StringLit">&quot;\xF0\x9F\x82\xA1&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xB1&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x81&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x83\x91&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xA2&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xB2&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x83\x82&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x92&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xA3&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x82\xB3&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x83&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x93&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x82\xA4&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xB4&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x84&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x83\x94&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xA5&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xB5&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x83\x85&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x95&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xA6&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x82\xB6&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x86&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x96&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x82\xA7&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xB7&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x87&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x83\x97&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xA8&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xB8&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x83\x88&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x98&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xA9&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x82\xB9&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x89&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x99&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x82\xAA&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xBA&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x8A&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x83\x9A&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xAB&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xBB&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x83\x8B&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x9B&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xAC&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x82\xBC&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x8C&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x9C&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x82\xAD&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xBD&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x8D&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x83\x9D&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xAE&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xBE&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x83\x8E&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x9E&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xA0&quot;</span><span class="Other">,</span>
+         <span class="StringLit">&quot;\xF0\x9F\x82\xBF&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x8F&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x9F&quot;</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
@@ -2989,6 +3038,13 @@ check execution timing with one line see doFinish
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
+<dt id="randCol"><a name="randCol,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randCol</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+<p>randCol</p>
+<p>get a randomcolor from colorNames</p>
+<pre class = "listing"><span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello Random Color&quot;</span><span class="Punctuation">,</span><span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+
+</dd>
 <dt id="getTerminalWidth"><a name="getTerminalWidth,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalWidth</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 <p>getTerminalWidth</p>
@@ -3162,6 +3218,11 @@ forward declaration
 <dd>
 <p>clearLine</p>
 <p>mirrors terminal eraseLine</p>
+
+
+</dd>
+<dt id="sleepy"><a name="sleepy,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sleepy</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
+<dd>
 
 
 </dd>
@@ -3508,11 +3569,6 @@ interval procs returns time elapsed between two dates in secs,hours etc.
 
 </dd>
 <dt id="compareDates"><a name="compareDates,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">compareDates</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="sleepy"><a name="sleepy,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sleepy</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -4001,12 +4057,21 @@ fastsplit<blockquote><p>code by jehan lifted from Nim Forum</p></blockquote>
 </dd>
 <dt id="movNim"><a name="movNim,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">movNim</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
 <dd>
-moving NIM demo<pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">private</span>
+<p>movNim</p>
+<p>Demo moving Nim</p>
+<pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">private</span>
 <span class="Identifier">printNimSx</span><span class="Punctuation">(</span><span class="Identifier">yellowgreen</span><span class="Punctuation">,</span><span class="DecNumber">170</span><span class="Punctuation">)</span>
 <span class="Identifier">clearup</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Identifier">movNim</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Identifier">printNimSx</span><span class="Punctuation">(</span><span class="Identifier">salmon</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="randomCards"><a name="randomCards,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randomCards</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>randomCards</p>
+<p>Demo for colorful cards deck ...</p>
+
 
 </dd>
 <dt id="qqTop"><a name="qqTop,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">qqTop</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
@@ -4223,7 +4288,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-26 22:31:44 UTC</small>
+        <small>Made with Nim. Generated: 2015-10-27 23:07:29 UTC</small>
       </div>
     </div>
   </div>
