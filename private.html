@@ -1170,7 +1170,9 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <li>
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#colorNames"
+      <li><a class="reference" href="#nimsx"
+    title="nimsx* = @ [NIMX1, NIMX2, NIMX3, NIMX4, NIMX5]"><wbr />nimsx</a></li>
+  <li><a class="reference" href="#colorNames"
     title="colorNames* = @ [(&quot;aliceblue&quot;, aliceblue), (&quot;antiquewhite&quot;, antiquewhite),
               (&quot;aqua&quot;, aqua), (&quot;aquamarine&quot;, aquamarine), (&quot;azure&quot;, azure),
               (&quot;beige&quot;, beige), (&quot;bisque&quot;, bisque), (&quot;black&quot;, black),
@@ -1274,7 +1276,7 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <a class="reference reference-toplevel" href="#10" id="60">Consts</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#PRIVATLIBVERSION"
-    title="PRIVATLIBVERSION* = &quot;0.9.1&quot;"><wbr />PRIVATLIBVERSION</a></li>
+    title="PRIVATLIBVERSION* = &quot;0.9.2&quot;"><wbr />PRIVATLIBVERSION</a></li>
   <li><a class="reference" href="#termred"
     title="termred* = getfg(fgRed)"><wbr />termred</a></li>
   <li><a class="reference" href="#termgreen"
@@ -1678,7 +1680,7 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <li><a class="reference" href="#cleanScreen,"
     title="cleanScreen*()"><wbr />clean<wbr />Screen</a></li>
   <li><a class="reference" href="#centerPos,string"
-    title="centerPos*(astring: string): string"><wbr />center<wbr />Pos</a></li>
+    title="centerPos*(astring: string)"><wbr />center<wbr />Pos</a></li>
   <li><a class="reference" href="#checkColor,string"
     title="checkColor*(colname: string): bool"><wbr />check<wbr />Color</a></li>
   <li><a class="reference" href="#hline,int,string_2"
@@ -1883,20 +1885,6 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="splitty*(txt: string; sep: string): seq[string]"><wbr />splitty</a></li>
   <li><a class="reference" href="#showTerminalSize,"
     title="showTerminalSize*()"><wbr />show<wbr />Terminal<wbr />Size</a></li>
-  <li><a class="reference" href="#futureIsNimDemo,int"
-    title="futureIsNimDemo*(posx: int = 0)"><wbr />future<wbr />Is<wbr />Nim<wbr />Demo</a></li>
-  <li><a class="reference" href="#flyNimDemo,string,string,float"
-    title="flyNimDemo*(astring: string = &quot;Fly Nim&quot;; col: string = red; tx: float = 0.08&#x27;f64)"><wbr />fly<wbr />Nim<wbr />Demo</a></li>
-  <li><a class="reference" href="#centerNimDemo,"
-    title="centerNimDemo*()"><wbr />center<wbr />Nim<wbr />Demo</a></li>
-  <li><a class="reference" href="#printNimSx,string,int"
-    title="printNimSx*(col: string = yellowgreen; xpos: int = 1)"><wbr />print<wbr />Nim<wbr />Sx</a></li>
-  <li><a class="reference" href="#movNimDemo,"
-    title="movNimDemo*()"><wbr />mov<wbr />Nim<wbr />Demo</a></li>
-  <li><a class="reference" href="#randomCardsDemo,"
-    title="randomCardsDemo*()"><wbr />random<wbr />Cards<wbr />Demo</a></li>
-  <li><a class="reference" href="#ndlLineDemo,"
-    title="ndlLineDemo*()"><wbr />ndl<wbr />Line<wbr />Demo</a></li>
   <li><a class="reference" href="#qqTop,"
     title="qqTop*()"><wbr />qq<wbr />Top</a></li>
   <li><a class="reference" href="#doInfo,"
@@ -1996,6 +1984,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <p>Project     : <a class="reference external" href="https://github.com/qqtop/Nim-Snippets">https://github.com/qqtop/Nim-Snippets</a></p>
 <p>Docs        : <a class="reference external" href="http://qqtop.github.io/private.html">http://qqtop.github.io/private.html</a></p>
 <p>Tested      : on Ubuntu 14.04 , OpenSuse 13.2 , Mint 17</p>
+<p>Related     : privateDemo.nim   repository for some demos</p>
+<blockquote><p>privateTest.nim   rough test for procs and demos</p></blockquote>
 <p>Programming : qqTop</p>
 <p>Note        : may be improved at any time</p>
 <p>Required    : see imports for modules currently expected to be available</p>
@@ -2019,6 +2009,11 @@ make terminal style constants available in the calling prog
 <div class="section" id="9">
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
+<dt id="nimsx"><a name="nimsx"></a><pre><span class="Identifier">nimsx</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="Identifier">NIMX1</span><span class="Other">,</span> <span class="Identifier">NIMX2</span><span class="Other">,</span> <span class="Identifier">NIMX3</span><span class="Other">,</span> <span class="Identifier">NIMX4</span><span class="Other">,</span> <span class="Identifier">NIMX5</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="colorNames"><a name="colorNames"></a><pre><span class="Identifier">colorNames</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="Other">(</span><span class="StringLit">&quot;aliceblue&quot;</span><span class="Other">,</span> <span class="Identifier">aliceblue</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;antiquewhite&quot;</span><span class="Other">,</span> <span class="Identifier">antiquewhite</span><span class="Other">)</span><span class="Other">,</span>
               <span class="Other">(</span><span class="StringLit">&quot;aqua&quot;</span><span class="Other">,</span> <span class="Identifier">aqua</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;aquamarine&quot;</span><span class="Other">,</span> <span class="Identifier">aquamarine</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;azure&quot;</span><span class="Other">,</span> <span class="Identifier">azure</span><span class="Other">)</span><span class="Other">,</span>
               <span class="Other">(</span><span class="StringLit">&quot;beige&quot;</span><span class="Other">,</span> <span class="Identifier">beige</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;bisque&quot;</span><span class="Other">,</span> <span class="Identifier">bisque</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;black&quot;</span><span class="Other">,</span> <span class="Identifier">black</span><span class="Other">)</span><span class="Other">,</span>
@@ -2136,7 +2131,7 @@ check execution timing with one line see doFinish
 <div class="section" id="10">
 <h1><a class="toc-backref" href="#10">Consts</a></h1>
 <dl class="item">
-<dt id="PRIVATLIBVERSION"><a name="PRIVATLIBVERSION"></a><pre><span class="Identifier">PRIVATLIBVERSION</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;0.9.1&quot;</span></pre></dt>
+<dt id="PRIVATLIBVERSION"><a name="PRIVATLIBVERSION"></a><pre><span class="Identifier">PRIVATLIBVERSION</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;0.9.2&quot;</span></pre></dt>
 <dd>
 
 
@@ -3143,12 +3138,13 @@ forward declaration
 
 
 </dd>
-<dt id="centerPos"><a name="centerPos,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerPos</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dt id="centerPos"><a name="centerPos,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerPos</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>centerpos</p>
-<p>tries to return the the string centered in a terminal ready for printing</p>
+<p>tries to move cursor so that string is centered when printing</p>
 <pre class = "listing"><span class="Keyword">var</span> <span class="Identifier">s</span> <span class="Operator">=</span> <span class="StringLit">&quot;Hello I am centered&quot;</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">centerpos</span><span class="Punctuation">(</span><span class="Identifier">s</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">gray</span><span class="Punctuation">)</span></pre>
+<span class="Identifier">centerPos</span><span class="Punctuation">(</span><span class="Identifier">s</span><span class="Punctuation">)</span>
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">s</span><span class="Punctuation">,</span><span class="Identifier">gray</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="checkColor"><a name="checkColor,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkColor</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">colname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
@@ -4112,68 +4108,6 @@ fastsplit<blockquote><p>code by jehan lifted from Nim Forum</p></blockquote>
 
 
 </dd>
-<dt id="futureIsNimDemo"><a name="futureIsNimDemo,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">futureIsNimDemo</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">posx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>futureIsNim</p>
-<p>demo example of a box drawn with doty procs and 2 text lines</p>
-<p>max xpos = 20</p>
-<pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">private</span>
-<span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
-    <span class="Identifier">centerMark</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-    <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-    <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.1</span><span class="Punctuation">)</span>
-<span class="Identifier">flyNimDemo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">futureIsNimDemo</span><span class="Punctuation">(</span><span class="DecNumber">25</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<dt id="flyNimDemo"><a name="flyNimDemo,string,string,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">flyNimDemo</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;Fly Nim&quot;</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">red</span><span class="Other">;</span> <span class="Identifier">tx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">0.08'f64</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>flyNim</p>
-<p>small animation demo</p>
-<pre class = "listing"><span class="Identifier">flyNimDemo</span><span class="Punctuation">(</span><span class="Identifier">col</span> <span class="Operator">=</span> <span class="Identifier">brightred</span><span class="Punctuation">)</span>
-<span class="Identifier">flyNimDemo</span><span class="Punctuation">(</span><span class="StringLit">&quot; Have a nice day !&quot;</span><span class="Punctuation">,</span> <span class="Identifier">col</span> <span class="Operator">=</span> <span class="Identifier">hotpink</span><span class="Punctuation">,</span><span class="Identifier">tx</span> <span class="Operator">=</span> <span class="FloatNumber">0.1</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<dt id="centerNimDemo"><a name="centerNimDemo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerNimDemo</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="printNimSx"><a name="printNimSx,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printNimSx</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>printNimSx</p>
-<p>prints large Nim</p>
-
-
-</dd>
-<dt id="movNimDemo"><a name="movNimDemo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">movNimDemo</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>movNim</p>
-<p>Demo moving Nim</p>
-<pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">private</span>
-<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
-<span class="Identifier">movNimDemo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">printNimSx</span><span class="Punctuation">(</span><span class="Identifier">salmon</span><span class="Punctuation">)</span>
-<span class="Identifier">printNimSx</span><span class="Punctuation">(</span><span class="Identifier">lime</span><span class="Punctuation">,</span><span class="DecNumber">55</span><span class="Punctuation">)</span>
-<span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<dt id="randomCardsDemo"><a name="randomCardsDemo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randomCardsDemo</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>randomCards</p>
-<p>Demo for colorful cards deck ...</p>
-
-
-</dd>
-<dt id="ndlLineDemo"><a name="ndlLineDemo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">ndlLineDemo</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>demoNDLine</p>
-<p>Numbered dots line demo</p>
-<p>test with bash terminal only , styleBlink may not work with some terminals</p>
-
-
-</dd>
 <dt id="qqTop"><a name="qqTop,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">qqTop</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>qqTop</p>
@@ -4398,7 +4332,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-11-01 19:24:55 UTC</small>
+        <small>Made with Nim. Generated: 2015-11-01 23:08:57 UTC</small>
       </div>
     </div>
   </div>
