@@ -1240,6 +1240,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
               (&quot;pastelorange&quot;, pastelorange), (&quot;pastelpink&quot;, pastelpink),
               (&quot;pastelwhite&quot;, pastelwhite), (&quot;pastelyellow&quot;, pastelyellow),
               (&quot;pastelyellowgreen&quot;, pastelyellowgreen), (&quot;truetomato&quot;, truetomato)]"><wbr />color<wbr />Names</a></li>
+  <li><a class="reference" href="#rxCol"
+    title="rxCol* = toSeq(colorNames.low .. colorNames.high)"><wbr />rx<wbr />Col</a></li>
   <li><a class="reference" href="#cards"
     title="cards* = @ [&quot;\xF0\x9F\x82\xA1&quot;, &quot;\xF0\x9F\x82\xB1&quot;, &quot;\xF0\x9F\x83\x81&quot;,
          &quot;\xF0\x9F\x83\x91&quot;, &quot;\xF0\x9F\x82\xA2&quot;, &quot;\xF0\x9F\x82\xB2&quot;,
@@ -1637,6 +1639,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="yellow* = &quot;\x1B[38;2;255;255;0m&quot;"><wbr />yellow</a></li>
   <li><a class="reference" href="#yellowgreen"
     title="yellowgreen* = &quot;\x1B[38;2;154;205;50m&quot;"><wbr />yellowgreen</a></li>
+  <li><a class="reference" href="#wideDot"
+    title="wideDot* = &quot;\xE2\x8F\xBA &quot;"><wbr />wide<wbr />Dot</a></li>
 
   </ul>
 </li>
@@ -1647,6 +1651,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="randCol*(): string"><wbr />rand<wbr />Col</a></li>
   <li><a class="reference" href="#getTerminalWidth,"
     title="getTerminalWidth*(): int"><wbr />get<wbr />Terminal<wbr />Width</a></li>
+  <li><a class="reference" href="#getTerminalHeight,"
+    title="getTerminalHeight*(): int"><wbr />get<wbr />Terminal<wbr />Height</a></li>
   <li><a class="reference" href="#printColStr,string,string"
     title="printColStr*(colstr: string; astr: string)"><wbr />print<wbr />Col<wbr />Str</a></li>
   <li><a class="reference" href="#printLnColStr,string,varargs[string,]"
@@ -1696,7 +1702,7 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <li><a class="reference" href="#curSetx,int"
     title="curSetx*(x: int)"><wbr />cur<wbr />Setx</a></li>
   <li><a class="reference" href="#curSet,int,int"
-    title="curSet*(x: int; y: int)"><wbr />cur<wbr />Set</a></li>
+    title="curSet*(x: int = 0; y: int = 0)"><wbr />cur<wbr />Set</a></li>
   <li><a class="reference" href="#clearup,int"
     title="clearup*(x: int = 80)"><wbr />clearup</a></li>
   <li><a class="reference" href="#clearLine,"
@@ -1752,6 +1758,12 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="doty*(d: int; col: string = white; bgr = black)"><wbr />doty</a></li>
   <li><a class="reference" href="#dotyLn,int,string"
     title="dotyLn*(d: int; col: string = white; bgr = black)"><wbr />doty<wbr />Ln</a></li>
+  <li><a class="reference" href="#printDotPos,int,string,bool"
+    title="printDotPos*(xpos: int; dotCol: string; blink: bool)"><wbr />print<wbr />Dot<wbr />Pos</a></li>
+  <li><a class="reference" href="#drawRect,int,int,string,string,string,int,bool"
+    title="drawRect*(h: int = 0; w: int = 3; frhLine: string = &quot;_&quot;; frVLine: string = &quot;|&quot;;
+          frCol: string = darkgreen; dotCol = truetomato; xpos: int = 1;
+          blink: bool = false)"><wbr />draw<wbr />Rect</a></li>
   <li><a class="reference" href="#validdate,string"
     title="validdate*(adate: string): bool"><wbr />validdate</a></li>
   <li><a class="reference" href="#day,string"
@@ -1776,12 +1788,6 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="intervalyears*(startDate, endDate: string): float"><wbr />intervalyears</a></li>
   <li><a class="reference" href="#compareDates,string,string"
     title="compareDates*(startDate, endDate: string): int"><wbr />compare<wbr />Dates</a></li>
-  <li><a class="reference" href="#printBigNumber,string,string,string,int"
-    title="printBigNumber*(anumber: string; fgr: string = yellowgreen; bgr: string = black;
-                xpos: int = 1)"><wbr />print<wbr />Big<wbr />Number</a></li>
-  <li><a class="reference" href="#printSlimNumber,string,string,string,int"
-    title="printSlimNumber*(anumber: string; fgr: string = yellowgreen; bgr: string = black;
-                 xpos: int = 1)"><wbr />print<wbr />Slim<wbr />Number</a></li>
   <li><a class="reference" href="#dayOfWeekJulianA,int,int,int"
     title="dayOfWeekJulianA*(day, month, year: int): WeekDay"><wbr />day<wbr />Of<wbr />Week<wbr />Julian<wbr />A</a></li>
   <li><a class="reference" href="#dayOfWeekJulian,string"
@@ -1796,6 +1802,12 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="getFirstMondayYearMonth*(aym: string): string"><wbr />get<wbr />First<wbr />Monday<wbr />Year<wbr />Month</a></li>
   <li><a class="reference" href="#getNextMonday,string"
     title="getNextMonday*(adate: string): string"><wbr />get<wbr />Next<wbr />Monday</a></li>
+  <li><a class="reference" href="#printBigNumber,string,string,string,int"
+    title="printBigNumber*(anumber: string; fgr: string = yellowgreen; bgr: string = black;
+                xpos: int = 1)"><wbr />print<wbr />Big<wbr />Number</a></li>
+  <li><a class="reference" href="#printSlimNumber,string,string,string,int"
+    title="printSlimNumber*(anumber: string; fgr: string = yellowgreen; bgr: string = black;
+                 xpos: int = 1)"><wbr />print<wbr />Slim<wbr />Number</a></li>
   <li><a class="reference" href="#superHeader,string"
     title="superHeader*(bstring: string)"><wbr />super<wbr />Header</a></li>
   <li><a class="reference" href="#superHeader,string,string,string"
@@ -1869,18 +1881,22 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="fastsplit*(s: string; sep: char): seq[string]"><wbr />fastsplit</a></li>
   <li><a class="reference" href="#splitty,string,string"
     title="splitty*(txt: string; sep: string): seq[string]"><wbr />splitty</a></li>
+  <li><a class="reference" href="#showTerminalSize,"
+    title="showTerminalSize*()"><wbr />show<wbr />Terminal<wbr />Size</a></li>
   <li><a class="reference" href="#futureIsNimDemo,int"
     title="futureIsNimDemo*(posx: int = 0)"><wbr />future<wbr />Is<wbr />Nim<wbr />Demo</a></li>
-  <li><a class="reference" href="#flyNim,string,string,float"
-    title="flyNim*(astring: string = &quot;Fly Nim&quot;; col: string = red; tx: float = 0.08&#x27;f64)"><wbr />fly<wbr />Nim</a></li>
-  <li><a class="reference" href="#centerNim,"
-    title="centerNim*()"><wbr />center<wbr />Nim</a></li>
+  <li><a class="reference" href="#flyNimDemo,string,string,float"
+    title="flyNimDemo*(astring: string = &quot;Fly Nim&quot;; col: string = red; tx: float = 0.08&#x27;f64)"><wbr />fly<wbr />Nim<wbr />Demo</a></li>
+  <li><a class="reference" href="#centerNimDemo,"
+    title="centerNimDemo*()"><wbr />center<wbr />Nim<wbr />Demo</a></li>
   <li><a class="reference" href="#printNimSx,string,int"
     title="printNimSx*(col: string = yellowgreen; xpos: int = 1)"><wbr />print<wbr />Nim<wbr />Sx</a></li>
-  <li><a class="reference" href="#movNim,"
-    title="movNim*()"><wbr />mov<wbr />Nim</a></li>
+  <li><a class="reference" href="#movNimDemo,"
+    title="movNimDemo*()"><wbr />mov<wbr />Nim<wbr />Demo</a></li>
   <li><a class="reference" href="#randomCardsDemo,"
     title="randomCardsDemo*()"><wbr />random<wbr />Cards<wbr />Demo</a></li>
+  <li><a class="reference" href="#ndlLineDemo,"
+    title="ndlLineDemo*()"><wbr />ndl<wbr />Line<wbr />Demo</a></li>
   <li><a class="reference" href="#qqTop,"
     title="qqTop*()"><wbr />qq<wbr />Top</a></li>
   <li><a class="reference" href="#doInfo,"
@@ -1917,6 +1933,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#tw.t,"
     title="tw*(): int"><wbr />tw</a></li>
+  <li><a class="reference" href="#th.t,"
+    title="th*(): int"><wbr />th</a></li>
   <li><a class="reference" href="#msgg.t,stmt"
     title="msgg*(code: stmt): stmt"><wbr />msgg</a></li>
   <li><a class="reference" href="#msggb.t,stmt"
@@ -2072,6 +2090,11 @@ make terminal style constants available in the calling prog
               <span class="Other">(</span><span class="StringLit">&quot;pastelyellowgreen&quot;</span><span class="Other">,</span> <span class="Identifier">pastelyellowgreen</span><span class="Other">)</span><span class="Other">,</span> <span class="Other">(</span><span class="StringLit">&quot;truetomato&quot;</span><span class="Other">,</span> <span class="Identifier">truetomato</span><span class="Other">)</span><span class="Other">]</span></pre></dt>
 <dd>
 
+
+</dd>
+<dt id="rxCol"><a name="rxCol"></a><pre><span class="Identifier">rxCol</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">toSeq</span><span class="Other">(</span><span class="Identifier">colorNames</span><span class="Other">.</span><span class="Identifier">low</span> <span class="Operator">..</span> <span class="Identifier">colorNames</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span></pre></dt>
+<dd>
+index into colorNames
 
 </dd>
 <dt id="cards"><a name="cards"></a><pre><span class="Identifier">cards</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="StringLit">&quot;\xF0\x9F\x82\xA1&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x82\xB1&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\xF0\x9F\x83\x81&quot;</span><span class="Other">,</span>
@@ -3028,6 +3051,11 @@ check execution timing with one line see doFinish
 
 
 </dd>
+<dt id="wideDot"><a name="wideDot"></a><pre><span class="Identifier">wideDot</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\xE2\x8F\xBA &quot;</span></pre></dt>
+<dd>
+
+
+</dd>
 
 </dl></div>
 <div class="section" id="12">
@@ -3044,8 +3072,14 @@ check execution timing with one line see doFinish
 <dt id="getTerminalWidth"><a name="getTerminalWidth,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalWidth</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 <p>getTerminalWidth</p>
-<p>utility to easily draw correctly sized lines on linux terminals</p>
-<p>and get linux terminal width </p>
+<p>and get linux terminal width in columns </p>
+
+
+</dd>
+<dt id="getTerminalHeight"><a name="getTerminalHeight,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalHeight</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dd>
+<p>getTerminalHeight</p>
+<p>get linux terminal height in rows </p>
 
 
 </dd>
@@ -3203,7 +3237,7 @@ forward declaration
 
 
 </dd>
-<dt id="curSet"><a name="curSet,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">curSet</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span></pre></dt>
+<dt id="curSet"><a name="curSet,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">curSet</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>curSet</p>
 <p>mirrors terminal setCursorPos</p>
@@ -3495,11 +3529,12 @@ forward declaration
 <dd>
 <p>doty</p>
 <p>prints number d of ⏺  style dots in given fore/background color</p>
-<p>each dot is of char length 3</p>
+<p>each dot is of char length 4 added a space in the back to avoid half drawn dots</p>
 <pre class = "listing">import private
 printLnBiCol(&quot;Test for  :  doty\n&quot;,&quot;:&quot;,truetomato,lime)
 dotyLn(22 ,lime)
-dotyLn(18 ,salmon,blue)</pre><p>color clrainbow is not supported and will be in white </p>
+dotyLn(18 ,salmon,blue)
+dotyLn(tw div 2,red)  # full line</pre><p>color clrainbow is not supported and will be in white </p>
 
 
 </dd>
@@ -3507,9 +3542,37 @@ dotyLn(18 ,salmon,blue)</pre><p>color clrainbow is not supported and will be in 
 <dd>
 <p>dotyLn</p>
 <p>prints number d of ⏺  style dots given fore/background color and issues new line</p>
-<p>each dot is of char length 3</p>
+<p>each dot is of char length 4</p>
 <p>color clrainbow is not supported and will be in white</p>
 
+
+</dd>
+<dt id="printDotPos"><a name="printDotPos,int,string,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printDotPos</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">dotCol</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">blink</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printDotPos</p>
+<p>prints a widedot at xpos in col dotCol and may blink ... </p>
+
+
+</dd>
+<dt id="drawRect"><a name="drawRect,int,int,string,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">drawRect</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">frhLine</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;_&quot;</span><span class="Other">;</span> <span class="Identifier">frVLine</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;|&quot;</span><span class="Other">;</span>
+              <span class="Identifier">frCol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">darkgreen</span><span class="Other">;</span> <span class="Identifier">dotCol</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span>
+              <span class="Identifier">blink</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>drawRect</p>
+<p>a simple proc to draw a rectangle with corners marked with widedots. widedots are of len 4.</p>
+<p>h  height w  width frhLine framechar horizontal frVLine framechar vertical frCol   color of line dotCol  color of corner dotCol xpos    topleft start position blink   true or false to blink the dots</p>
+<pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">private</span>
+<span class="Identifier">clearUp</span><span class="Punctuation">(</span><span class="DecNumber">18</span><span class="Punctuation">)</span>
+<span class="Identifier">curSet</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">15</span><span class="Punctuation">,</span><span class="DecNumber">24</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;+&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="Identifier">wideDot</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">8</span><span class="Punctuation">)</span>
+<span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">12</span><span class="Punctuation">)</span>
+<span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">9</span><span class="Punctuation">,</span><span class="DecNumber">20</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;=&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="Identifier">wideDot</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">blink</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
+<span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">12</span><span class="Punctuation">)</span>
+<span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">9</span><span class="Punctuation">,</span><span class="DecNumber">20</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;=&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="Identifier">wideDot</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">35</span><span class="Punctuation">,</span><span class="Identifier">blink</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
+<span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">)</span>
+<span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">6</span><span class="Punctuation">,</span><span class="DecNumber">14</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;~&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;$&quot;</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">70</span><span class="Punctuation">,</span><span class="Identifier">blink</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
+<span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="validdate"><a name="validdate,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">validdate</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">adate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
@@ -3578,58 +3641,6 @@ interval procs returns time elapsed between two dates in secs,hours etc.
 
 
 </dd>
-<dt id="printBigNumber"><a name="printBigNumber,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigNumber</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
-                    <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>printBigNumber</p>
-<p>prints a string in big block font</p>
-<p>available 1234567890:</p>
-<p>usufull for big counter etc , a clock can also be build easily but running in a tight while loop just uses up cpu cycles needlessly.</p>
-<pre class = "listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">990.</span><span class="Operator">.</span> <span class="DecNumber">1105</span><span class="Punctuation">:</span>
-     <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-     <span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">)</span>
-     <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.008</span><span class="Punctuation">)</span>
-
-<span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-
-<span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="DecNumber">23456345</span><span class="Punctuation">,</span><span class="Identifier">steelblue</span><span class="Punctuation">)</span></pre><pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">private</span>
-<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="Identifier">countdown</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-     <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-     <span class="Keyword">if</span> <span class="Identifier">x</span> <span class="Operator">==</span> <span class="DecNumber">5</span><span class="Punctuation">:</span>
-         <span class="Keyword">for</span> <span class="Identifier">y</span> <span class="Keyword">in</span> <span class="Identifier">countup</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="DecNumber">25</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-             <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-             <span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">y</span><span class="Punctuation">,</span><span class="Identifier">tomato</span><span class="Punctuation">)</span>
-             <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.5</span><span class="Punctuation">)</span>
-     <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-     <span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">)</span>
-     <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">)</span>
-<span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<dt id="printSlimNumber"><a name="printSlimNumber,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printSlimNumber</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
-                     <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>printSlimNumber</p>
-<p>prints an string in big slim font</p>
-<p>available chars 123456780,.:</p>
-<p>usufull for big counter etc , a clock can also be build easily but running in a tight while loop just uses up cpu cycles needlessly.</p>
-<pre class = "listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">990.</span><span class="Operator">.</span> <span class="DecNumber">1005</span><span class="Punctuation">:</span>
-     <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-     <span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">)</span>
-     <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.075</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-
-<span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="DecNumber">23456345</span><span class="Punctuation">,</span><span class="Identifier">blue</span><span class="Punctuation">)</span>
-<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
-<span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="StringLit">&quot;1234567:345,23.789&quot;</span><span class="Punctuation">,</span><span class="Identifier">fgr</span><span class="Operator">=</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="DecNumber">20</span><span class="Punctuation">)</span>
-<span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">1.5</span><span class="Punctuation">)</span>
-<span class="Keyword">import</span> <span class="Identifier">times</span>
-<span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
-<span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">getClockStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">fgr</span><span class="Operator">=</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="DecNumber">20</span><span class="Punctuation">)</span>
-<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span></pre>
-
-</dd>
 <dt id="dayOfWeekJulianA"><a name="dayOfWeekJulianA,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dayOfWeekJulianA</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">day</span><span class="Other">,</span> <span class="Identifier">month</span><span class="Other">,</span> <span class="Identifier">year</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">WeekDay</span></pre></dt>
 <dd>
 
@@ -3687,6 +3698,64 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
     <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="Identifier">dw</span><span class="Punctuation">)</span>
     <span class="Identifier">echo</span> <span class="Identifier">dw</span></pre><p>in case of invalid dates nil will be returned </p>
 
+
+</dd>
+<dt id="printBigNumber"><a name="printBigNumber,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigNumber</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
+                    <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printBigNumber</p>
+<p>prints a string in big block font</p>
+<p>available 1234567890:</p>
+<p>usufull for big counter etc , a clock can also be build easily but running in a tight while loop just uses up cpu cycles needlessly.</p>
+<pre class = "listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">990.</span><span class="Operator">.</span> <span class="DecNumber">1105</span><span class="Punctuation">:</span>
+     <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+     <span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">)</span>
+     <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.008</span><span class="Punctuation">)</span>
+
+<span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+
+<span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="DecNumber">23456345</span><span class="Punctuation">,</span><span class="Identifier">steelblue</span><span class="Punctuation">)</span></pre><pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">private</span>
+<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="Identifier">countdown</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+     <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+     <span class="Keyword">if</span> <span class="Identifier">x</span> <span class="Operator">==</span> <span class="DecNumber">5</span><span class="Punctuation">:</span>
+         <span class="Keyword">for</span> <span class="Identifier">y</span> <span class="Keyword">in</span> <span class="Identifier">countup</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="DecNumber">25</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+             <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+             <span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">y</span><span class="Punctuation">,</span><span class="Identifier">tomato</span><span class="Punctuation">)</span>
+             <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.5</span><span class="Punctuation">)</span>
+     <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+     <span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">)</span>
+     <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">)</span>
+<span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="printSlimNumber"><a name="printSlimNumber,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printSlimNumber</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
+                     <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printSlimNumber</p>
+<p>prints an string in big slim font</p>
+<p>available chars 123456780,.:</p>
+<p>usufull for big counter etc , a clock can also be build easily but running in a tight while loop just uses up cpu cycles needlessly.</p>
+<pre class = "listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">990.</span><span class="Operator">.</span> <span class="DecNumber">1005</span><span class="Punctuation">:</span>
+     <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+     <span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">)</span>
+     <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.075</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+
+<span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="DecNumber">23456345</span><span class="Punctuation">,</span><span class="Identifier">blue</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
+<span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="StringLit">&quot;1234567:345,23.789&quot;</span><span class="Punctuation">,</span><span class="Identifier">fgr</span><span class="Operator">=</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="DecNumber">20</span><span class="Punctuation">)</span>
+<span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">1.5</span><span class="Punctuation">)</span>
+<span class="Keyword">import</span> <span class="Identifier">times</span>
+<span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
+<span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">getClockStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">fgr</span><span class="Operator">=</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="DecNumber">20</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
+
+<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="Identifier">rxCol</span><span class="Punctuation">:</span>
+   <span class="Identifier">printSlimNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">colorNames</span><span class="Punctuation">[</span><span class="Identifier">x</span><span class="Punctuation">]</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
+   <span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span>
+   <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.05</span><span class="Punctuation">)</span>
+<span class="Identifier">curdn</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span>  </pre>
 
 </dd>
 <dt id="superHeader"><a name="superHeader,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">superHeader</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">bstring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span></pre></dt>
@@ -4034,6 +4103,15 @@ fastsplit<blockquote><p>code by jehan lifted from Nim Forum</p></blockquote>
 
 
 </dd>
+<dt id="showTerminalSize"><a name="showTerminalSize,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showTerminalSize</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>showTerminalSize</p>
+<p>displays current terminal dimensions</p>
+<p>width is always available via tw</p>
+<p>height is always available via th</p>
+
+
+</dd>
 <dt id="futureIsNimDemo"><a name="futureIsNimDemo,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">futureIsNimDemo</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">posx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>futureIsNim</p>
@@ -4049,7 +4127,7 @@ fastsplit<blockquote><p>code by jehan lifted from Nim Forum</p></blockquote>
 <span class="Identifier">futureisnim</span><span class="Punctuation">(</span><span class="DecNumber">25</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="flyNim"><a name="flyNim,string,string,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">flyNim</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;Fly Nim&quot;</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">red</span><span class="Other">;</span> <span class="Identifier">tx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">0.08'f64</span><span class="Other">)</span></pre></dt>
+<dt id="flyNimDemo"><a name="flyNimDemo,string,string,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">flyNimDemo</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;Fly Nim&quot;</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">red</span><span class="Other">;</span> <span class="Identifier">tx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">0.08'f64</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>flyNim</p>
 <p>small animation demo</p>
@@ -4057,7 +4135,7 @@ fastsplit<blockquote><p>code by jehan lifted from Nim Forum</p></blockquote>
 <span class="Identifier">flyNim</span><span class="Punctuation">(</span><span class="StringLit">&quot; Have a nice day !&quot;</span><span class="Punctuation">,</span> <span class="Identifier">col</span> <span class="Operator">=</span> <span class="Identifier">hotpink</span><span class="Punctuation">,</span><span class="Identifier">tx</span> <span class="Operator">=</span> <span class="FloatNumber">0.1</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="centerNim"><a name="centerNim,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerNim</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
+<dt id="centerNimDemo"><a name="centerNimDemo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerNimDemo</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -4069,7 +4147,7 @@ fastsplit<blockquote><p>code by jehan lifted from Nim Forum</p></blockquote>
 
 
 </dd>
-<dt id="movNim"><a name="movNim,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">movNim</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
+<dt id="movNimDemo"><a name="movNimDemo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">movNimDemo</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>movNim</p>
 <p>Demo moving Nim</p>
@@ -4085,6 +4163,14 @@ fastsplit<blockquote><p>code by jehan lifted from Nim Forum</p></blockquote>
 <dd>
 <p>randomCards</p>
 <p>Demo for colorful cards deck ...</p>
+
+
+</dd>
+<dt id="ndlLineDemo"><a name="ndlLineDemo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">ndlLineDemo</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>demoNDLine</p>
+<p>Numbered dots line demo</p>
+<p>test with bash terminal only , styleBlink may not work with some terminals</p>
 
 
 </dd>
@@ -4163,6 +4249,11 @@ lifted from terminal.nim and removed new line used in printStyled
 <dt id="tw"><a name="tw.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">tw</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 latest terminalwidth always available in tw
+
+</dd>
+<dt id="th"><a name="th.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">th</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dd>
+latest terminalwidth always available in th
 
 </dd>
 <dt id="msgg"><a name="msgg.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgg</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
@@ -4307,7 +4398,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-10-28 22:42:25 UTC</small>
+        <small>Made with Nim. Generated: 2015-11-01 19:19:04 UTC</small>
       </div>
     </div>
   </div>
