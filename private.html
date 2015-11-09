@@ -1764,6 +1764,10 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <li><a class="reference" href="#printLnPos,T,string,string"
     title="printLnPos*[T](astring: T; fgr: string = white; bgr: string = black; xpos = - 1;
                fitLine = true)"><wbr />print<wbr />Ln<wbr />Pos</a></li>
+  <li><a class="reference" href="#printCenter,string,string,string"
+    title="printCenter*(astring: string; fg: string = termwhite; bg: string = termblack)"><wbr />print<wbr />Center</a></li>
+  <li><a class="reference" href="#printLnCenter,string,string,string"
+    title="printLnCenter*(astring: string; fg: string = termwhite; bg: string = termblack)"><wbr />print<wbr />Ln<wbr />Center</a></li>
   <li><a class="reference" href="#printTK,T,varargs[string,]"
     title="printTK*[T](st: T; cols: varargs[string, `$`] = @ [white])"><wbr />print<wbr />TK</a></li>
   <li><a class="reference" href="#printLnTK,T,varargs[string,]"
@@ -3465,6 +3469,22 @@ forward declaration
 <span class="Identifier">printLnPos</span><span class="Punctuation">(</span><span class="StringLit">&quot;This is nice&quot;</span><span class="Punctuation">,</span> <span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="Identifier">tw</span> <span class="Keyword">div</span> <span class="DecNumber">2</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Punctuation">)</span></pre>
 
 </dd>
+<dt id="printCenter"><a name="printCenter,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printCenter</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termblack</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printCenter</p>
+<p>attempts to print a string centered in terminal</p>
+<p>fore and backgroundcolor can be set </p>
+
+
+</dd>
+<dt id="printLnCenter"><a name="printLnCenter,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnCenter</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termblack</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printLnCenter</p>
+<p>attempts to print a string centered in terminal and issues new line</p>
+<p>fore and backgroundcolor can be set </p>
+
+
+</dd>
 <dt id="printTK"><a name="printTK,T,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printTK</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">st</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="Identifier">white</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printTK</p>
@@ -4330,7 +4350,7 @@ latest terminalheight always available in th
 </dd>
 <dt id="msgg"><a name="msgg.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msgg</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
 <dd>
-msgX templates convenience templates for colored text output the assumption is that the terminal is white text and black background naming of the templates is like msg+color so msgy =&gt; yellow use like : msgg() do : echo &quot;How nice, it's in green&quot; these templates have by large been superceded by various print and echo procs but are useful to have ins ome circumstances like draw a yellow line with width 40<pre class = "listing"><span class="Identifier">msgy</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Keyword">do</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="StringLit">&quot;yellow&quot;</span></pre>
+msgX templates convenience templates for colored text output the assumption is that the terminal is white text and black background naming of the templates is like msg+color so msgy =&gt; yellow use like : msgg() do : echo &quot;How nice, it's in green&quot; these templates have by large been superceded by various print and echo procs but are useful in some circumstances where a statement needs to be passed.<pre class = "listing"><span class="Identifier">msgy</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Keyword">do</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="StringLit">&quot;yellow&quot;</span></pre>
 
 </dd>
 <dt id="msggb"><a name="msggb.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">msggb</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
@@ -4410,6 +4430,8 @@ msgX templates convenience templates for colored text output the assumption is t
 </dd>
 <dt id="hdx"><a name="hdx.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">hdx</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
 <dd>
+<p>hdx</p>
+<p>a simple sandwich frame made with + </p>
 
 
 </dd>
@@ -4535,7 +4557,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-11-08 21:43:06 UTC</small>
+        <small>Made with Nim. Generated: 2015-11-09 10:46:03 UTC</small>
       </div>
     </div>
   </div>
