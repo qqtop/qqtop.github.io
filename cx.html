@@ -1226,6 +1226,11 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="hybx* = @ [hy1, hy2, hy3, hy4, hy5]"><wbr />hybx</a></li>
   <li><a class="reference" href="#plbx"
     title="plbx* = @ [pl1, pl2, pl3, pl4, pl5]"><wbr />plbx</a></li>
+  <li><a class="reference" href="#ulbx"
+    title="ulbx* = @ [ul1, ul2, ul3, ul4, ul5]"><wbr />ulbx</a></li>
+  <li><a class="reference" href="#bigLetters"
+    title="bigLetters* = @ [abx, bbx, cbx, dbx, ebx, fbx, gbx, hbx, ibx, jbx, kbx, lbx, mbx, nbx, obx, pbx,
+              qbx, rbx, sbx, tbx, ubx, vbx, wbx, xbx, ybx, zbx, hybx, plbx, ulbx]"><wbr />big<wbr />Letters</a></li>
   <li><a class="reference" href="#nimsx"
     title="nimsx* = @ [NIMX1, NIMX2, NIMX3, NIMX4, NIMX5]"><wbr />nimsx</a></li>
   <li><a class="reference" href="#emojis"
@@ -1906,9 +1911,12 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="getFirstMondayYearMonth*(aym: string): string"><wbr />get<wbr />First<wbr />Monday<wbr />Year<wbr />Month</a></li>
   <li><a class="reference" href="#getNextMonday,string"
     title="getNextMonday*(adate: string): string"><wbr />get<wbr />Next<wbr />Monday</a></li>
-  <li><a class="reference" href="#printBigNumber,string,string,string,int"
+  <li><a class="reference" href="#printBigNumber,string,string,string,int,bool"
     title="printBigNumber*(anumber: string; fgr: string = yellowgreen; bgr: string = black;
-                xpos: int = 1)"><wbr />print<wbr />Big<wbr />Number</a></li>
+                xpos: int = 1; fun: bool = false)"><wbr />print<wbr />Big<wbr />Number</a></li>
+  <li><a class="reference" href="#printBigLetters,string,string,string,int,int,bool"
+    title="printBigLetters*(aword: string; fgr: string = yellowgreen; bgr: string = black;
+                 xpos: int = 1; k: int = 7; fun: bool = false)"><wbr />print<wbr />Big<wbr />Letters</a></li>
   <li><a class="reference" href="#printSlimNumber,string,string,string,int"
     title="printSlimNumber*(anumber: string; fgr: string = yellowgreen; bgr: string = black;
                  xpos: int = 1)"><wbr />print<wbr />Slim<wbr />Number</a></li>
@@ -2267,6 +2275,17 @@ make terminal style constants available in the calling prog
 
 </dd>
 <dt id="plbx"><a name="plbx"></a><pre><span class="Identifier">plbx</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="Identifier">pl1</span><span class="Other">,</span> <span class="Identifier">pl2</span><span class="Other">,</span> <span class="Identifier">pl3</span><span class="Other">,</span> <span class="Identifier">pl4</span><span class="Other">,</span> <span class="Identifier">pl5</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="ulbx"><a name="ulbx"></a><pre><span class="Identifier">ulbx</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="Identifier">ul1</span><span class="Other">,</span> <span class="Identifier">ul2</span><span class="Other">,</span> <span class="Identifier">ul3</span><span class="Other">,</span> <span class="Identifier">ul4</span><span class="Other">,</span> <span class="Identifier">ul5</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="bigLetters"><a name="bigLetters"></a><pre><span class="Identifier">bigLetters</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="Identifier">abx</span><span class="Other">,</span> <span class="Identifier">bbx</span><span class="Other">,</span> <span class="Identifier">cbx</span><span class="Other">,</span> <span class="Identifier">dbx</span><span class="Other">,</span> <span class="Identifier">ebx</span><span class="Other">,</span> <span class="Identifier">fbx</span><span class="Other">,</span> <span class="Identifier">gbx</span><span class="Other">,</span> <span class="Identifier">hbx</span><span class="Other">,</span> <span class="Identifier">ibx</span><span class="Other">,</span> <span class="Identifier">jbx</span><span class="Other">,</span> <span class="Identifier">kbx</span><span class="Other">,</span> <span class="Identifier">lbx</span><span class="Other">,</span> <span class="Identifier">mbx</span><span class="Other">,</span> <span class="Identifier">nbx</span><span class="Other">,</span> <span class="Identifier">obx</span><span class="Other">,</span> <span class="Identifier">pbx</span><span class="Other">,</span>
+              <span class="Identifier">qbx</span><span class="Other">,</span> <span class="Identifier">rbx</span><span class="Other">,</span> <span class="Identifier">sbx</span><span class="Other">,</span> <span class="Identifier">tbx</span><span class="Other">,</span> <span class="Identifier">ubx</span><span class="Other">,</span> <span class="Identifier">vbx</span><span class="Other">,</span> <span class="Identifier">wbx</span><span class="Other">,</span> <span class="Identifier">xbx</span><span class="Other">,</span> <span class="Identifier">ybx</span><span class="Other">,</span> <span class="Identifier">zbx</span><span class="Other">,</span> <span class="Identifier">hybx</span><span class="Other">,</span> <span class="Identifier">plbx</span><span class="Other">,</span> <span class="Identifier">ulbx</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
@@ -4059,12 +4078,14 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
 
 
 </dd>
-<dt id="printBigNumber"><a name="printBigNumber,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigNumber</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
-                    <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
+<dt id="printBigNumber"><a name="printBigNumber,string,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigNumber</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
+                    <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">fun</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printBigNumber</p>
 <p>prints a string in big block font</p>
 <p>available 1234567890:</p>
+<p>if fun parameter = true then foregrouncolor will be ignored and every block</p>
+<p>element colored individually</p>
 <p>usufull for big counter etc , a clock can also be build easily but running in a tight while loop just uses up cpu cycles needlessly.</p>
 <pre class = "listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">990.</span><span class="Operator">.</span> <span class="DecNumber">1105</span><span class="Punctuation">:</span>
      <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
@@ -4085,6 +4106,19 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
      <span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">)</span>
      <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="printBigLetters"><a name="printBigLetters,string,string,string,int,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigLetters</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">aword</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
+                     <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">k</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">7</span><span class="Other">;</span> <span class="Identifier">fun</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>printBigLetters</p>
+<p>prints big block letters in desired color at desired position</p>
+<p>note position must be specified as global in format :   var xpos = 5</p>
+<p>if fun parameter = true then foregrouncolor will be ignored and every block</p>
+<p>element colored individually</p>
+<p>k parameter specifies character distance reasonable values are 7,8,9,10 . Default = 7</p>
+<p>also note that depending on terminal width only a limited number of chars can be displayed</p>
+
 
 </dd>
 <dt id="printSlimNumber"><a name="printSlimNumber,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printSlimNumber</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
@@ -4347,7 +4381,7 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
 <p>requires unicode</p>
 <pre class = "listing"><span class="Comment"># create a string of chinese or CJK chars</span>
 <span class="Comment"># with max length 20 and show it in green</span>
-<span class="Identifier">msgg</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Keyword">do</span> <span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="Identifier">newWordCJK</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">)</span></pre>
+<span class="Identifier">msgg</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Keyword">do</span> <span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="Identifier">newWordCJK</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">,</span><span class="DecNumber">20</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="newWord"><a name="newWord,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newWord</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
@@ -4754,7 +4788,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-11-11 10:37:30 UTC</small>
+        <small>Made with Nim. Generated: 2015-11-12 16:36:29 UTC</small>
       </div>
     </div>
   </div>
