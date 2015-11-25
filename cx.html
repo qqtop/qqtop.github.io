@@ -1794,6 +1794,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="hline*(n: int = tw; col: string = white)"><wbr />hline</a></li>
   <li><a class="reference" href="#hlineLn,int,string"
     title="hlineLn*(n: int = tw; col: string = white)"><wbr />hline<wbr />Ln</a></li>
+  <li><a class="reference" href="#showRune,string"
+    title="showRune*(s: string): string"><wbr />show<wbr />Rune</a></li>
   <li><a class="reference" href="#unquote,string"
     title="unquote*(s: string): string"><wbr />unquote</a></li>
   <li><a class="reference" href="#cleanScreen,"
@@ -3546,6 +3548,15 @@ forward declaration
 forward declaration
 
 </dd>
+<dt id="showRune"><a name="showRune,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRune</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+<p>showRune</p>
+<p>utility proc to show a single unicode char</p>
+<p>note that not all unicode chars may be available on all systems</p>
+<blockquote><p>print(showRune(&quot;FFEA&quot;),lime) print(showRune(&quot;FFEC&quot;),red)</p></blockquote>
+
+
+</dd>
 <dt id="unquote"><a name="unquote,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">unquote</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>unquote</p>
@@ -4785,7 +4796,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-11-23 20:26:07 UTC</small>
+        <small>Made with Nim. Generated: 2015-11-25 21:04:28 UTC</small>
       </div>
     </div>
   </div>
