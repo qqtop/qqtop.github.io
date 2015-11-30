@@ -1262,6 +1262,10 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="showCurrentStocks*(apf: Portfolio; xpos: int = 1)"><wbr />show<wbr />Current<wbr />Stocks</a></li>
   <li><a class="reference" href="#showCurrentStocks,string,int"
     title="showCurrentStocks*(stcks: string; xpos: int = 1)"><wbr />show<wbr />Current<wbr />Stocks</a></li>
+  <li><a class="reference" href="#showCurrentSTX,Portfolio,int"
+    title="showCurrentSTX*(apf: Portfolio; xpos: int = 1)"><wbr />show<wbr />Current<wbr />STX</a></li>
+  <li><a class="reference" href="#showCurrentSTX,string,int"
+    title="showCurrentSTX*(stcks: string; xpos: int = 1)"><wbr />show<wbr />Current<wbr />STX</a></li>
   <li><a class="reference" href="#ymonth,string"
     title="ymonth*(aDate: string): string"><wbr />ymonth</a></li>
   <li><a class="reference" href="#getSymbol2,string,string,string"
@@ -1573,10 +1577,10 @@ showTimeseries takes a Ts object as input as well as a header string for the dat
 </dd>
 <dt id="showCurrentIDX"><a name="showCurrentIDX,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentIDX</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">idxs</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">.}</span></pre></dt>
 <dd>
-<p>showCurrentIndexes</p>
+<p>showCurrentIDX</p>
 <p>callable display routine for currentIDX with a string of format IDX1+IDX2+IDX3 ..</p>
 <p>passed in . Note this will use big slim letters to display inex value</p>
-<p>xpos allows x positioning</p>
+<pre class = "listing"><span class="Identifier">showCurrentIDX</span><span class="Punctuation">(</span><span class="StringLit">&quot;^HSI+^GDAXI+^FTSE+^NYA&quot;</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">5</span><span class="Punctuation">)</span></pre><p>xpos allows x positioning</p>
 
 
 </dd>
@@ -1584,6 +1588,7 @@ showTimeseries takes a Ts object as input as well as a header string for the dat
 <dd>
 <p>showCurrentStocks</p>
 <p>callable display routine for currentStocks with Portfolio object passed in</p>
+<p>wide display style</p>
 <pre class = "listing"><span class="Identifier">showCurrentStocks</span><span class="Punctuation">(</span><span class="Identifier">myAccount</span><span class="Operator">.</span><span class="Identifier">pf</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre><p>This means get all stock codes of the first portfolio in myAccount</p>
 <p>Note : Yahoo servers maybe down sometimes which will make this procs fail.</p>
 <p>Just wait a bit and try again. Stay calm ! Do not panic !</p>
@@ -1595,6 +1600,30 @@ showTimeseries takes a Ts object as input as well as a header string for the dat
 <dd>
 <p>showCurrentStocks</p>
 <p>callable display routine for currentStocks with stockstring passed in</p>
+<p>wide display style</p>
+<pre class = "listing"><span class="Identifier">showCurrentStocks</span><span class="Punctuation">(</span><span class="StringLit">&quot;IBM+BP.L+0001.HK&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span></pre><p>Note : Yahoo servers maybe down sometimes which will make this procs fail.</p>
+<p>Just wait a bit and try again. Stay calm ! Do not panic ! </p>
+
+
+</dd>
+<dt id="showCurrentSTX"><a name="showCurrentSTX,Portfolio,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentSTX</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">apf</span><span class="Other">:</span> <span class="Identifier">Portfolio</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">.}</span></pre></dt>
+<dd>
+<p>showCurrentSTX</p>
+<p>callable display routine for currentSTX with Portfolio object passed in</p>
+<p>compact display style</p>
+<pre class = "listing"><span class="Identifier">showCurrentStocks</span><span class="Punctuation">(</span><span class="Identifier">myAccount</span><span class="Operator">.</span><span class="Identifier">pf</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre><p>This means get all stock codes of the first portfolio in myAccount</p>
+<p>Note : Yahoo servers maybe down sometimes which will make this procs fail.</p>
+<p>Just wait a bit and try again. Stay calm ! Do not panic !</p>
+<p>for full example see nimFinT5.nim </p>
+
+
+</dd>
+<dt id="showCurrentSTX"><a name="showCurrentSTX,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentSTX</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">stcks</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">.}</span></pre></dt>
+<dd>
+<p>showCurrentSTX</p>
+<p>callable display routine for currentSTX with stockstring passed in</p>
+<p>compact display style</p>
 <pre class = "listing"><span class="Identifier">showCurrentStocks</span><span class="Punctuation">(</span><span class="StringLit">&quot;IBM+BP.L+0001.HK&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span></pre><p>Note : Yahoo servers maybe down sometimes which will make this procs fail.</p>
 <p>Just wait a bit and try again. Stay calm ! Do not panic ! </p>
@@ -1893,7 +1922,7 @@ head means oldest rows
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-11-26 19:01:36 UTC</small>
+        <small>Made with Nim. Generated: 2015-11-30 21:43:13 UTC</small>
       </div>
     </div>
   </div>
