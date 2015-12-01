@@ -1986,9 +1986,10 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="katakana*(): seq[string]"><wbr />katakana</a></li>
   <li><a class="reference" href="#boxChars,"
     title="boxChars*(): seq[string]"><wbr />box<wbr />Chars</a></li>
-  <li><a class="reference" href="#drawBox,int,int,int,int,string,string,int,bool"
+  <li><a class="reference" href="#drawBox,int,int,int,int,string,string,string,int,bool"
     title="drawBox*(hy: int = 1; wx: int = 1; hsec: int = 1; vsec: int = 1; frCol: string = yellowgreen;
-         cornerCol: string = truetomato; xpos: int = 1; blink: bool = false)"><wbr />draw<wbr />Box</a></li>
+         brCol: string = black; cornerCol: string = truetomato; xpos: int = 1;
+         blink: bool = false)"><wbr />draw<wbr />Box</a></li>
   <li><a class="reference" href="#fastsplit,string,char"
     title="fastsplit*(s: string; sep: char): seq[string]"><wbr />fastsplit</a></li>
   <li><a class="reference" href="#splitty,string,string"
@@ -4464,9 +4465,9 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
 
 
 </dd>
-<dt id="drawBox"><a name="drawBox,int,int,int,int,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">drawBox</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">hy</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">wx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">hsec</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">vsec</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span>
-             <span class="Identifier">frCol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">cornerCol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span>
-             <span class="Identifier">blink</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
+<dt id="drawBox"><a name="drawBox,int,int,int,int,string,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">drawBox</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">hy</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">wx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">hsec</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">vsec</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span>
+             <span class="Identifier">frCol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">brCol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
+             <span class="Identifier">cornerCol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">blink</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>drawBox</p>
 <p>WORK IN PROGRESS FOR A BOX DRAWING PROC USING UNICODE BOX CHARS </p>
@@ -4803,7 +4804,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-11-29 14:36:50 UTC</small>
+        <small>Made with Nim. Generated: 2015-12-01 16:33:41 UTC</small>
       </div>
     </div>
   </div>
