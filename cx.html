@@ -1160,17 +1160,11 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   </ul>
 </li>
 <li>
-  <a class="reference reference-toplevel" href="#7" id="57">Types</a>
-  <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#PStyle"
-    title="PStyle* = terminal.Style"><wbr />PStyle</a></li>
-
-  </ul>
-</li>
-<li>
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#abx"
+      <li><a class="reference" href="#start"
+    title="start* = epochTime()"><wbr />start</a></li>
+  <li><a class="reference" href="#abx"
     title="abx* = @ [a1, a2, a3, a4, a5]"><wbr />abx</a></li>
   <li><a class="reference" href="#bbx"
     title="bbx* = @ [b1, b2, b3, b4, b5]"><wbr />bbx</a></li>
@@ -1336,8 +1330,6 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
          &quot;\xF0\x9F\x82\xBF&quot;, &quot;\xF0\x9F\x83\x8F&quot;, &quot;\xF0\x9F\x83\x9F&quot;]"><wbr />cards</a></li>
   <li><a class="reference" href="#rxCards"
     title="rxCards* = toSeq(cards.low .. cards.high)"><wbr />rx<wbr />Cards</a></li>
-  <li><a class="reference" href="#start"
-    title="start* = epochTime()"><wbr />start</a></li>
 
   </ul>
 </li>
@@ -1778,10 +1770,11 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="getTerminalWidth*(): int"><wbr />get<wbr />Terminal<wbr />Width</a></li>
   <li><a class="reference" href="#getTerminalHeight,"
     title="getTerminalHeight*(): int"><wbr />get<wbr />Terminal<wbr />Height</a></li>
-  <li><a class="reference" href="#rainbow,T"
-    title="rainbow*[T](s: T)"><wbr />rainbow</a></li>
-  <li><a class="reference" href="#print,T,string,string,int"
-    title="print*[T](astring: T; fgr: string = white; bgr: string = black; xpos: int = 0; fitLine = false)"><wbr />print</a></li>
+  <li><a class="reference" href="#rainbow,T,int,bool,bool"
+    title="rainbow*[T](s: T; xpos: int = 0; fitLine: bool = false; centered: bool = false)"><wbr />rainbow</a></li>
+  <li><a class="reference" href="#print,T,string,string,int,bool,bool"
+    title="print*[T](astring: T; fgr: string = white; bgr: string = black; xpos: int = 0;
+          fitLine: bool = false; centered: bool = false)"><wbr />print</a></li>
   <li><a class="reference" href="#printBiCol,string,string,string,string,int"
     title="printBiCol*(s: string; sep: string; colLeft: string = yellowgreen;
             colRight: string = termwhite; xpos: int = 0)"><wbr />print<wbr />Bi<wbr />Col</a></li>
@@ -1806,13 +1799,14 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="centerPos*(astring: string)"><wbr />center<wbr />Pos</a></li>
   <li><a class="reference" href="#checkColor,string"
     title="checkColor*(colname: string): bool"><wbr />check<wbr />Color</a></li>
-  <li><a class="reference" href="#print,T,string,string,int_2"
-    title="print*[T](astring: T; fgr: string = white; bgr: string = black; xpos: int = 0; fitLine = false)"><wbr />print</a></li>
-  <li><a class="reference" href="#printLn,T,string,string,int"
+  <li><a class="reference" href="#print,T,string,string,int,bool,bool_2"
+    title="print*[T](astring: T; fgr: string = white; bgr: string = black; xpos: int = 0;
+          fitLine: bool = false; centered: bool = false)"><wbr />print</a></li>
+  <li><a class="reference" href="#printLn,T,string,string,int,bool,bool"
     title="printLn*[T](astring: T; fgr: string = white; bgr: string = black; xpos: int = 0;
-            fitLine = false)"><wbr />print<wbr />Ln</a></li>
-  <li><a class="reference" href="#rainbow,T_2"
-    title="rainbow*[T](s: T)"><wbr />rainbow</a></li>
+            fitLine: bool = false; centered: bool = false)"><wbr />print<wbr />Ln</a></li>
+  <li><a class="reference" href="#rainbow,T,int,bool,bool_2"
+    title="rainbow*[T](s: T; xpos: int = 0; fitLine: bool = false; centered: bool = false)"><wbr />rainbow</a></li>
   <li><a class="reference" href="#hline,int,string_2"
     title="hline*(n: int = tw; col: string = white)"><wbr />hline</a></li>
   <li><a class="reference" href="#hlineLn,int,string_2"
@@ -1825,11 +1819,6 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="decho*(z: int = 1)"><wbr />decho</a></li>
   <li><a class="reference" href="#sleepy,T"
     title="sleepy*[T: float | int](secs: T)"><wbr />sleepy</a></li>
-  <li><a class="reference" href="#printCenter,string,string,string"
-    title="printCenter*(astring: string; fgr: string = termwhite; bgr: string = termblack;
-             fitLine = true)"><wbr />print<wbr />Center</a></li>
-  <li><a class="reference" href="#printLnCenter,string,string,string"
-    title="printLnCenter*(astring: string; fg: string = termwhite; bg: string = termblack)"><wbr />print<wbr />Ln<wbr />Center</a></li>
   <li><a class="reference" href="#printTK,T,varargs[string,]"
     title="printTK*[T](st: T; cols: varargs[string, `$`] = @ [white])"><wbr />print<wbr />TK</a></li>
   <li><a class="reference" href="#printLnTK,T,varargs[string,]"
@@ -1860,10 +1849,10 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="cechoLn*(col: string; ggg: varargs[string, `$`] = @ [&quot;&quot;])"><wbr />cecho<wbr />Ln</a></li>
   <li><a class="reference" href="#showColors,"
     title="showColors*()"><wbr />show<wbr />Colors</a></li>
-  <li><a class="reference" href="#doty,int,string"
-    title="doty*(d: int; col: string = white; bgr = black)"><wbr />doty</a></li>
-  <li><a class="reference" href="#dotyLn,int,string"
-    title="dotyLn*(d: int; col: string = white; bgr = black)"><wbr />doty<wbr />Ln</a></li>
+  <li><a class="reference" href="#doty,int,string,int"
+    title="doty*(d: int; fgr: string = white; bgr = black; xpos: int = 1)"><wbr />doty</a></li>
+  <li><a class="reference" href="#dotyLn,int,string,int"
+    title="dotyLn*(d: int; fgr: string = white; bgr = black; xpos: int = 1)"><wbr />doty<wbr />Ln</a></li>
   <li><a class="reference" href="#printDotPos,int,string,bool"
     title="printDotPos*(xpos: int; dotCol: string; blink: bool)"><wbr />print<wbr />Dot<wbr />Pos</a></li>
   <li><a class="reference" href="#drawRect,int,int,string,string,string,int,bool"
@@ -1948,8 +1937,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="ff*(zz: float; n: int64 = 5): string"><wbr />ff</a></li>
   <li><a class="reference" href="#getRandomFloat,"
     title="getRandomFloat*(): float"><wbr />get<wbr />Random<wbr />Float</a></li>
-  <li><a class="reference" href="#createSeqFloat,int"
-    title="createSeqFloat*(n: int = 10): seq[float]"><wbr />create<wbr />Seq<wbr />Float</a></li>
+  <li><a class="reference" href="#createSeqFloat,BiggestInt"
+    title="createSeqFloat*(n: BiggestInt = 10): seq[float]"><wbr />create<wbr />Seq<wbr />Float</a></li>
   <li><a class="reference" href="#getRandomPointInCircle,float"
     title="getRandomPointInCircle*(radius: float): seq[float]"><wbr />get<wbr />Random<wbr />Point<wbr />In<wbr />Circle</a></li>
   <li><a class="reference" href="#centerMark,bool"
@@ -2068,8 +2057,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="msgm*(code: stmt): stmt"><wbr />msgm</a></li>
   <li><a class="reference" href="#msgmb.t,stmt"
     title="msgmb*(code: stmt): stmt"><wbr />msgmb</a></li>
-  <li><a class="reference" href="#hdx.t,stmt"
-    title="hdx*(code: stmt): stmt"><wbr />hdx</a></li>
+  <li><a class="reference" href="#hdx.t,stmt,string"
+    title="hdx*(code: stmt; frm: string = &quot;+&quot;): stmt"><wbr />hdx</a></li>
   <li><a class="reference" href="#withFile.t,expr,string,FileMode,stmt"
     title="withFile*(f: expr; filename: string; mode: FileMode; body: stmt): stmt"><wbr />with<wbr />File</a></li>
   <li><a class="reference" href="#curUp.t,int"
@@ -2132,19 +2121,14 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <dl class="item">
 <a class="reference external" href="os.html">os</a>, <a class="reference external" href="osproc.html">osproc</a>, <a class="reference external" href="macros.html">macros</a>, <a class="reference external" href="posix.html">posix</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="math.html">math</a>, <a class="reference external" href="unicode.html">unicode</a>, <a class="reference external" href="times.html">times</a>, <a class="reference external" href="tables.html">tables</a>, <a class="reference external" href="json.html">json</a>, <a class="reference external" href="sets.html">sets</a>, <a class="reference external" href="sequtils.html">sequtils</a>, <a class="reference external" href="parseutils.html">parseutils</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="httpclient.html">httpclient</a>, <a class="reference external" href="rawsockets.html">rawsockets</a>, <a class="reference external" href="browsers.html">browsers</a>, <a class="reference external" href="intsets.html">intsets</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="random.html">random</a>, <a class="reference external" href="strfmt.html">strfmt</a>
 </dl></div>
-<div class="section" id="7">
-<h1><a class="toc-backref" href="#7">Types</a></h1>
-<dl class="item">
-<dt id="PStyle"><a name="PStyle"></a><pre><span class="Identifier">PStyle</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">terminal</span><span class="Other">.</span><span class="Identifier">Style</span></pre></dt>
-<dd>
-make terminal style constants available in the calling prog
-
-</dd>
-
-</dl></div>
 <div class="section" id="9">
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
+<dt id="start"><a name="start"></a><pre><span class="Identifier">start</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">epochTime</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
+<dd>
+check execution timing with one line see doFinish
+
+</dd>
 <dt id="abx"><a name="abx"></a><pre><span class="Identifier">abx</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="Identifier">a1</span><span class="Other">,</span> <span class="Identifier">a2</span><span class="Other">,</span> <span class="Identifier">a3</span><span class="Other">,</span> <span class="Identifier">a4</span><span class="Other">,</span> <span class="Identifier">a5</span><span class="Other">]</span></pre></dt>
 <dd>
 
@@ -2423,11 +2407,6 @@ index into colorNames
 <dt id="rxCards"><a name="rxCards"></a><pre><span class="Identifier">rxCards</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">toSeq</span><span class="Other">(</span><span class="Identifier">cards</span><span class="Other">.</span><span class="Identifier">low</span> <span class="Operator">..</span> <span class="Identifier">cards</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span></pre></dt>
 <dd>
 index into cards
-
-</dd>
-<dt id="start"><a name="start"></a><pre><span class="Identifier">start</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Identifier">epochTime</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
-<dd>
-check execution timing with one line see doFinish
 
 </dd>
 
@@ -3514,13 +3493,13 @@ check execution timing with one line see doFinish
 
 
 </dd>
-<dt id="rainbow"><a name="rainbow,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rainbow</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
+<dt id="rainbow"><a name="rainbow,T,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rainbow</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
 <dd>
 forward declaration
 
 </dd>
-<dt id="print"><a name="print,T,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-              <span class="Identifier">fitLine</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
+<dt id="print"><a name="print,T,string,string,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
+              <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -3569,7 +3548,7 @@ forward declaration
 <dt id="unquote"><a name="unquote,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">unquote</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>unquote</p>
-<p>remove any quotes from a string </p>
+<p>remove any double quotes from a string </p>
 
 
 </dd>
@@ -3597,18 +3576,19 @@ forward declaration
 
 
 </dd>
-<dt id="print"><a name="print,T,string,string,int_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-              <span class="Identifier">fitLine</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
+<dt id="print"><a name="print,T,string,string,int,bool,bool_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
+              <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>print</p>
 <p>same as printLn without new line , allows positioning</p>
 <p>for extended colorset background colors use printStyled with styleReverse</p>
-<p>fitLine = true will try to write the text into the current line irrespective of xpos </p>
+<p>fitLine = true will try to write the text into the current line irrespective of xpos</p>
+<p>centered = true will try to center and disregard xpos </p>
 
 
 </dd>
-<dt id="printLn"><a name="printLn,T,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-                <span class="Identifier">fitLine</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
+<dt id="printLn"><a name="printLn,T,string,string,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
+                <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printLn</p>
 <p>similar to echo but with foregroundcolor and backgroundcolor</p>
@@ -3629,12 +3609,15 @@ forward declaration
 
 
 </dd>
-<dt id="rainbow"><a name="rainbow,T_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rainbow</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
+<dt id="rainbow"><a name="rainbow,T,int,bool,bool_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rainbow</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>rainbow</p>
 <p>multicolored string</p>
-<p>may not work with certain Rune </p>
-
+<p>may not work with certain Rune</p>
+<pre class = "listing"><span class="Comment"># equivalent output</span>
+<span class="Identifier">rainbow</span><span class="Punctuation">(</span><span class="StringLit">&quot;what's up ?&quot;</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">println</span><span class="Punctuation">(</span><span class="StringLit">&quot;what's up ?&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="hline"><a name="hline,int,string_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">hline</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">)</span></pre></dt>
@@ -3689,23 +3672,6 @@ forward declaration
 
 
 </dd>
-<dt id="printCenter"><a name="printCenter,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printCenter</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termblack</span><span class="Other">;</span>
-                 <span class="Identifier">fitLine</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>printCenter</p>
-<p>attempts to print a string centered in terminal</p>
-<p>fore and backgroundcolor can be set </p>
-
-
-</dd>
-<dt id="printLnCenter"><a name="printLnCenter,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnCenter</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termblack</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>printLnCenter</p>
-<p>attempts to print a string centered in terminal and issues new line</p>
-<p>fore and backgroundcolor can be set </p>
-
-
-</dd>
 <dt id="printTK"><a name="printTK,T,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printTK</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">st</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="Identifier">white</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printTK</p>
@@ -3752,7 +3718,7 @@ forward declaration
 </dd>
 <dt id="printLnRainbow"><a name="printLnRainbow,T,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnRainbow</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
-<p>printLnRainbow</p>
+printLnRainbow<blockquote><p>## NOTE to be deprecated soon</p></blockquote>
 <p>print multicolored string with styles , for available styles see printStyled</p>
 <p>and issues a new line</p>
 <p>may not work with certain Rune</p>
@@ -3892,7 +3858,7 @@ forward declaration
 
 
 </dd>
-<dt id="doty"><a name="doty,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doty</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">)</span></pre></dt>
+<dt id="doty"><a name="doty,int,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doty</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>doty</p>
 <p>prints number d of ⏺  style dots in given fore/background color</p>
@@ -3906,7 +3872,7 @@ dotyLn(tw div 2,red)  # full widedotted line</pre><p>color clrainbow is not supp
 
 
 </dd>
-<dt id="dotyLn"><a name="dotyLn,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dotyLn</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">)</span></pre></dt>
+<dt id="dotyLn"><a name="dotyLn,int,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dotyLn</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>dotyLn</p>
 <p>prints number d of ⏺  style widedots given fore/background color and issues new line</p>
@@ -4019,6 +3985,7 @@ interval procs returns time elapsed between two dates in secs,hours etc.
 <p>dayOfWeekJulian</p>
 <p>returns the day of the week of a date given in format yyyy-MM-dd as string</p>
 <p>valid for dates up to 2099-12-31</p>
+<p>actually starts to fail with 2100-03-01 which shud be a monday but this proc says tuesday</p>
 
 
 </dd>
@@ -4117,7 +4084,7 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
 <p>printNimSxR</p>
 <p>prints large Letters or a word which have been predefined</p>
 <p>see values of nimsx1 and nimsx2 above</p>
-<pre class = "listing"><span class="Identifier">printNimSxR</span><span class="Punctuation">(</span><span class="Identifier">nimsx</span><span class="Punctuation">)</span></pre><p>allows x positioning</p>
+<pre class = "listing"><span class="Identifier">printNimSxR</span><span class="Punctuation">(</span><span class="Identifier">nimsx</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">10</span><span class="Punctuation">)</span></pre><p>allows x positioning</p>
 <p>in your calling code arrange that most right one is printed first </p>
 
 
@@ -4294,11 +4261,11 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
 
 
 </dd>
-<dt id="createSeqFloat"><a name="createSeqFloat,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSeqFloat</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
+<dt id="createSeqFloat"><a name="createSeqFloat,BiggestInt"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSeqFloat</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">BiggestInt</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
 <p>createSeqFloat</p>
 <p>convenience proc to create a seq of random floats with</p>
-<p>default length 10</p>
+<p>default length 10 ( always consider how much memory is in the system )</p>
 <p>form @[0.34,0.056,...] or similar</p>
 <pre class = "listing"><span class="Comment"># create a seq with 50 random floats</span>
 <span class="Identifier">echo</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">)</span></pre>
@@ -4676,10 +4643,10 @@ msgX templates convenience templates for colored text output the assumption is t
 
 
 </dd>
-<dt id="hdx"><a name="hdx.t,stmt"></a><pre><span class="Keyword">template</span> <span class="Identifier">hdx</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
+<dt id="hdx"><a name="hdx.t,stmt,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">hdx</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">;</span> <span class="Identifier">frm</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;+&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
 <dd>
 <p>hdx</p>
-<p>a simple sandwich frame made with + </p>
+<p>a simple sandwich frame made with + default or any string passed in </p>
 
 
 </dd>
@@ -4805,7 +4772,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-12-01 19:02:38 UTC</small>
+        <small>Made with Nim. Generated: 2015-12-09 21:11:26 UTC</small>
       </div>
     </div>
   </div>
