@@ -1337,7 +1337,39 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <a class="reference reference-toplevel" href="#10" id="60">Consts</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#CXLIBVERSION"
-    title="CXLIBVERSION* = &quot;0.9.3&quot;"><wbr />CXLIBVERSION</a></li>
+    title="CXLIBVERSION* = &quot;0.9.5&quot;"><wbr />CXLIBVERSION</a></li>
+  <li><a class="reference" href="#clearbol"
+    title="clearbol* = &quot;\x1B[1K&quot;"><wbr />clearbol</a></li>
+  <li><a class="reference" href="#cleareol"
+    title="cleareol* = &quot;\x1B[K&quot;"><wbr />cleareol</a></li>
+  <li><a class="reference" href="#clearscreen"
+    title="clearscreen* = &quot;\x1B[2J\x1B[H&quot;"><wbr />clearscreen</a></li>
+  <li><a class="reference" href="#clearline"
+    title="clearline* = &quot;\x1B[2K\x1B[G&quot;"><wbr />clearline</a></li>
+  <li><a class="reference" href="#clearbos"
+    title="clearbos* = &quot;\x1B[1J&quot;"><wbr />clearbos</a></li>
+  <li><a class="reference" href="#cleareos"
+    title="cleareos* = &quot;\x1B[J&quot;"><wbr />cleareos</a></li>
+  <li><a class="reference" href="#cup"
+    title="cup* = &quot;\x1B[A&quot;"><wbr />cup</a></li>
+  <li><a class="reference" href="#cdown"
+    title="cdown* = &quot;\x1B[B&quot;"><wbr />cdown</a></li>
+  <li><a class="reference" href="#cright"
+    title="cright* = &quot;\x1B[C&quot;"><wbr />cright</a></li>
+  <li><a class="reference" href="#cleft"
+    title="cleft* = &quot;\x1B[D&quot;"><wbr />cleft</a></li>
+  <li><a class="reference" href="#cend"
+    title="cend* = &quot;\x1B[F&quot;"><wbr />cend</a></li>
+  <li><a class="reference" href="#cpos1"
+    title="cpos1* = &quot;\x1B[H&quot;"><wbr />cpos1</a></li>
+  <li><a class="reference" href="#cins"
+    title="cins* = &quot;\x1B[2~&quot;"><wbr />cins</a></li>
+  <li><a class="reference" href="#cdel"
+    title="cdel* = &quot;\x1B[3~&quot;"><wbr />cdel</a></li>
+  <li><a class="reference" href="#cpgup"
+    title="cpgup* = &quot;\x1B[5~&quot;"><wbr />cpgup</a></li>
+  <li><a class="reference" href="#cpgdn"
+    title="cpgdn* = &quot;\x1B[6~&quot;"><wbr />cpgdn</a></li>
   <li><a class="reference" href="#termred"
     title="termred* = getfg(fgRed)"><wbr />termred</a></li>
   <li><a class="reference" href="#termgreen"
@@ -2075,8 +2107,6 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="curSet*(x: int = 0; y: int = 0)"><wbr />cur<wbr />Set</a></li>
   <li><a class="reference" href="#clearup.t,int"
     title="clearup*(x: int = 80)"><wbr />clearup</a></li>
-  <li><a class="reference" href="#clearLine.t,"
-    title="clearLine*()"><wbr />clear<wbr />Line</a></li>
   <li><a class="reference" href="#getCard.t,"
     title="getCard*(): auto"><wbr />get<wbr />Card</a></li>
   <li><a class="reference" href="#loopy.t,T,stmt"
@@ -2092,7 +2122,7 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <p class="module-desc"><blockquote><p><p>Library     : cx.nim</p>
 <p>Status      : stable</p>
 <p>License     : MIT opensource</p>
-<p>Version     : 0.9.3</p>
+<p>Version     : 0.9.5</p>
 <p>ProjectStart: 2015-06-20</p>
 <p>Compiler    : Nim 0.12.1 dev</p>
 <p>OS          : Linux</p>
@@ -2414,7 +2444,87 @@ index into cards
 <div class="section" id="10">
 <h1><a class="toc-backref" href="#10">Consts</a></h1>
 <dl class="item">
-<dt id="CXLIBVERSION"><a name="CXLIBVERSION"></a><pre><span class="Identifier">CXLIBVERSION</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;0.9.3&quot;</span></pre></dt>
+<dt id="CXLIBVERSION"><a name="CXLIBVERSION"></a><pre><span class="Identifier">CXLIBVERSION</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;0.9.5&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="clearbol"><a name="clearbol"></a><pre><span class="Identifier">clearbol</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[1K&quot;</span></pre></dt>
+<dd>
+clear to begin of line
+
+</dd>
+<dt id="cleareol"><a name="cleareol"></a><pre><span class="Identifier">cleareol</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[K&quot;</span></pre></dt>
+<dd>
+clear to end of line  
+
+</dd>
+<dt id="clearscreen"><a name="clearscreen"></a><pre><span class="Identifier">clearscreen</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[2J\x1B[H&quot;</span></pre></dt>
+<dd>
+clear screen
+
+</dd>
+<dt id="clearline"><a name="clearline"></a><pre><span class="Identifier">clearline</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[2K\x1B[G&quot;</span></pre></dt>
+<dd>
+clear line 
+
+</dd>
+<dt id="clearbos"><a name="clearbos"></a><pre><span class="Identifier">clearbos</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[1J&quot;</span></pre></dt>
+<dd>
+clear to begin of screen
+
+</dd>
+<dt id="cleareos"><a name="cleareos"></a><pre><span class="Identifier">cleareos</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[J&quot;</span></pre></dt>
+<dd>
+clear to end of screen
+
+</dd>
+<dt id="cup"><a name="cup"></a><pre><span class="Identifier">cup</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[A&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cdown"><a name="cdown"></a><pre><span class="Identifier">cdown</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[B&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cright"><a name="cright"></a><pre><span class="Identifier">cright</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[C&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cleft"><a name="cleft"></a><pre><span class="Identifier">cleft</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[D&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cend"><a name="cend"></a><pre><span class="Identifier">cend</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[F&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cpos1"><a name="cpos1"></a><pre><span class="Identifier">cpos1</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[H&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cins"><a name="cins"></a><pre><span class="Identifier">cins</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[2~&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cdel"><a name="cdel"></a><pre><span class="Identifier">cdel</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[3~&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cpgup"><a name="cpgup"></a><pre><span class="Identifier">cpgup</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[5~&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cpgdn"><a name="cpgdn"></a><pre><span class="Identifier">cpgdn</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[6~&quot;</span></pre></dt>
 <dd>
 
 
@@ -3556,7 +3666,7 @@ forward declaration
 <dd>
 <p>cleanScreen</p>
 <p>clear screen with escape seqs</p>
-<p>similar to terminal.eraseScreen() but seems to clean the terminal window completely </p>
+<p>similar to terminal.eraseScreen() but cleans the terminal window completely </p>
 
 
 </dd>
@@ -3731,6 +3841,7 @@ printLnRainbow<blockquote><p>## NOTE to be deprecated soon</p></blockquote>
 <dd>
 <p>printBiCol</p>
 <p>echos a line in 2 colors based on a seperators first occurance</p>
+<p>Note : clrainbow not useable for right side color</p>
 <pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">strutils</span><span class="Punctuation">,</span><span class="Identifier">strfmt</span>
 
 <span class="Keyword">for</span> <span class="Identifier">x</span>  <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="Operator">&lt;</span><span class="DecNumber">3</span><span class="Punctuation">:</span>
@@ -4739,13 +4850,6 @@ msgX templates convenience templates for colored text output the assumption is t
 
 
 </dd>
-<dt id="clearLine"><a name="clearLine.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">clearLine</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>clearLine</p>
-<p>mirrors terminal eraseLine</p>
-
-
-</dd>
 <dt id="getCard"><a name="getCard.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">getCard</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
 <dd>
 <p>getCard</p>
@@ -4772,7 +4876,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-12-11 22:42:50 UTC</small>
+        <small>Made with Nim. Generated: 2015-12-13 20:15:47 UTC</small>
       </div>
     </div>
   </div>
