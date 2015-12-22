@@ -1350,6 +1350,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="clearbos* = &quot;\x1B[1J&quot;"><wbr />clearbos</a></li>
   <li><a class="reference" href="#cleareos"
     title="cleareos* = &quot;\x1B[J&quot;"><wbr />cleareos</a></li>
+  <li><a class="reference" href="#resetcols"
+    title="resetcols* = &quot;\x1B[0m&quot;"><wbr />resetcols</a></li>
   <li><a class="reference" href="#cup"
     title="cup* = &quot;\x1B[A&quot;"><wbr />cup</a></li>
   <li><a class="reference" href="#cdown"
@@ -1370,6 +1372,14 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="cpgup* = &quot;\x1B[5~&quot;"><wbr />cpgup</a></li>
   <li><a class="reference" href="#cpgdn"
     title="cpgdn* = &quot;\x1B[6~&quot;"><wbr />cpgdn</a></li>
+  <li><a class="reference" href="#csave"
+    title="csave* = &quot;\x1B[s&quot;"><wbr />csave</a></li>
+  <li><a class="reference" href="#crestore"
+    title="crestore* = &quot;\x1B[u&quot;"><wbr />crestore</a></li>
+  <li><a class="reference" href="#chide"
+    title="chide* = &quot;\x1B[?25l&quot;"><wbr />chide</a></li>
+  <li><a class="reference" href="#cshow"
+    title="cshow* = &quot;\x1B[?25h&quot;"><wbr />cshow</a></li>
   <li><a class="reference" href="#termred"
     title="termred* = getfg(fgRed)"><wbr />termred</a></li>
   <li><a class="reference" href="#termgreen"
@@ -2479,6 +2489,11 @@ clear to begin of screen
 clear to end of screen
 
 </dd>
+<dt id="resetcols"><a name="resetcols"></a><pre><span class="Identifier">resetcols</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[0m&quot;</span></pre></dt>
+<dd>
+reset colors     
+
+</dd>
 <dt id="cup"><a name="cup"></a><pre><span class="Identifier">cup</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[A&quot;</span></pre></dt>
 <dd>
 
@@ -2525,6 +2540,26 @@ clear to end of screen
 
 </dd>
 <dt id="cpgdn"><a name="cpgdn"></a><pre><span class="Identifier">cpgdn</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[6~&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="csave"><a name="csave"></a><pre><span class="Identifier">csave</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[s&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="crestore"><a name="crestore"></a><pre><span class="Identifier">crestore</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[u&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="chide"><a name="chide"></a><pre><span class="Identifier">chide</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[?25l&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cshow"><a name="cshow"></a><pre><span class="Identifier">cshow</span><span class="Operator">*</span> <span class="Other">=</span> <span class="StringLit">&quot;\x1B[?25h&quot;</span></pre></dt>
 <dd>
 
 
@@ -3703,7 +3738,6 @@ forward declaration
 <p>printLn</p>
 <p>similar to echo but with foregroundcolor and backgroundcolor</p>
 <p>selection.</p>
-<p>see testPrintLn.nim for usage examples</p>
 <p>all colornames are supported for font color:</p>
 <p>color names supported for background color:</p>
 <p>white,red,green,blue,yellow,cyan,magenta,black</p>
@@ -3828,7 +3862,7 @@ forward declaration
 </dd>
 <dt id="printLnRainbow"><a name="printLnRainbow,T,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnRainbow</span><span class="Operator">*</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
-printLnRainbow<blockquote><p>## NOTE to mayve deprecated soon</p></blockquote>
+<p>printLnRainbow</p>
 <p>print multicolored string with styles , for available styles see printStyled</p>
 <p>and issues a new line</p>
 <p>may not work with certain Rune</p>
@@ -4876,7 +4910,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-12-19 17:33:35 UTC</small>
+        <small>Made with Nim. Generated: 2015-12-22 23:11:33 UTC</small>
       </div>
     </div>
   </div>
