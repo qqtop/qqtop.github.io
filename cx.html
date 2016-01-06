@@ -1870,6 +1870,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="dlineLn*(n: int = tw; lt: string = &quot;-&quot;; col: string = termwhite)"><wbr />dline<wbr />Ln</a></li>
   <li><a class="reference" href="#decho,int"
     title="decho*(z: int = 1)"><wbr />decho</a></li>
+  <li><a class="reference" href="#curMove,int,int,int,int"
+    title="curMove*(up: int = 0; dn: int = 0; fw: int = 0; bk: int = 0)"><wbr />cur<wbr />Move</a></li>
   <li><a class="reference" href="#sleepy,T"
     title="sleepy*[T: float | int](secs: T)"><wbr />sleepy</a></li>
   <li><a class="reference" href="#printTK,T,varargs[string,]"
@@ -3667,7 +3669,8 @@ reset colors
 <dt id="getTerminalWidth"><a name="getTerminalWidth,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalWidth</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 <p>getTerminalWidth</p>
-<p>and get linux terminal width in columns </p>
+<p>and get linux terminal width in columns</p>
+<p>for a similar attempt see: <a class="reference external" href="https://github.com/c-blake/cligen/blob/master/termwidth.nim">https://github.com/c-blake/cligen/blob/master/termwidth.nim</a> </p>
 
 
 </dd>
@@ -3757,7 +3760,7 @@ forward declaration
 <dt id="checkColor"><a name="checkColor,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkColor</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">colname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
 <dd>
 <p>checkColor</p>
-<p>returns true if colname is a known color name , obviously</p>
+<p>returns true if colname is a known color name in colorNames</p>
 
 
 </dd>
@@ -3854,6 +3857,15 @@ forward declaration
 <p>decho</p>
 <p>blank lines creator</p>
 <pre class = "listing"><span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">)</span></pre><p>to create 10 blank lines</p>
+
+
+</dd>
+<dt id="curMove"><a name="curMove,int,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">curMove</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">up</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">dn</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fw</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">bk</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>curMove</p>
+<p>conveniently move the cursor to where you need it</p>
+<p>relative of current postion , which you app need to track itself</p>
+<p>setting cursor off terminal will wrap output to next line </p>
 
 
 </dd>
@@ -4631,8 +4643,16 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
              <span class="Identifier">cornerCol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">blink</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>drawBox</p>
-<p>WORK IN PROGRESS FOR A BOX DRAWING PROC USING UNICODE BOX CHARS </p>
-
+<p>WORK IN PROGRESS FOR A BOX DRAWING PROC USING UNICODE BOX CHARS</p>
+<pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<span class="Identifier">cleanscreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
+<span class="Identifier">drawBox</span><span class="Punctuation">(</span><span class="Identifier">hy</span><span class="Operator">=</span><span class="DecNumber">10</span><span class="Punctuation">,</span> <span class="Identifier">wx</span><span class="Operator">=</span> <span class="DecNumber">60</span> <span class="Punctuation">,</span> <span class="Identifier">hsec</span> <span class="Operator">=</span> <span class="DecNumber">5</span> <span class="Punctuation">,</span><span class="Identifier">vsec</span> <span class="Operator">=</span> <span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">brCol</span><span class="Operator">=</span> <span class="Identifier">black</span> <span class="Punctuation">,</span><span class="Identifier">cornerCol</span> <span class="Operator">=</span> <span class="Identifier">truetomato</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">1</span><span class="Punctuation">,</span><span class="Identifier">blink</span> <span class="Operator">=</span> <span class="Identifier">false</span><span class="Punctuation">)</span>
+<span class="Identifier">curmove</span><span class="Punctuation">(</span><span class="Identifier">up</span><span class="Operator">=</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="Identifier">bk</span><span class="Operator">=</span><span class="DecNumber">11</span><span class="Punctuation">)</span>
+<span class="Identifier">print</span><span class="Punctuation">(</span><span class="Identifier">widedot</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;NIM &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">widedot</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
+<span class="Identifier">showTerminalSize</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="randpos"><a name="randpos,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randpos</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
@@ -4974,7 +4994,7 @@ msgX templates convenience templates for colored text output the assumption is t
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-12-29 22:32:23 UTC</small>
+        <small>Made with Nim. Generated: 2016-01-06 20:18:32 UTC</small>
       </div>
     </div>
   </div>
