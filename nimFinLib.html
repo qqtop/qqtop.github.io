@@ -1395,10 +1395,10 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 </dl>
 <p>Programming : qqTop</p>
 <p>Contributors: reactorMonk</p>
-<p>Requires    : strfmt,random modules , statistics.nim and cx.nim</p>
-<blockquote><p><p>get cx.nim like so</p>
-<p>git clone <a class="reference external" href="https://github.com/qqtop/NimCx.git">https://github.com/qqtop/NimCx.git</a></p>
-<p>then copy cx.nim into your dev directory or path</p>
+<p>Requires    : strfmt,random modules</p>
+<blockquote><p><p>cx libraries from NimCx are automatically pulled in</p>
+<p>in case of problems remove old cx-xxx dir in your nimble/pkgs directory</p>
+<p>and try again.</p>
 </p></blockquote>
 <p>Notes       : it is assumed that terminal color is black background</p>
 <blockquote><p><p>and white text. Other color schemes may not show all output.</p>
@@ -1406,9 +1406,7 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <p>Best results with terminals supporting truecolor.</p>
 </p></blockquote>
 <p>Tests       : For comprehensive tests and example usage see nfT52.nim and minifin.nim</p>
-<p>Installation: git clone <a class="reference external" href="https://github.com/qqtop/NimFinLib.git">https://github.com/qqtop/NimFinLib.git</a></p>
-<p>or</p>
-<p>nimble install nimFinLib</p>
+<p>Installation: nimble install nimFinLib</p>
 </p></blockquote>
 </p>
   <div class="section" id="6">
@@ -1425,7 +1423,7 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <dd>
 Account type holds all portfolios similar to a master account portfolios are Portfolio objects
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L102"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L96"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="Portfolio"><a name="Portfolio"></a><pre><span class="Identifier">Portfolio</span> <span class="Other">=</span> <span class="Keyword">object</span>
@@ -1435,7 +1433,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 Portfolio type holds one portfolio with all relevant historic stocks data
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L110"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L104"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="Stocks"><a name="Stocks"></a><pre><span class="Identifier">Stocks</span> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">Portfolio</span>
@@ -1457,7 +1455,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 Stocks type holds individual stocks history data and RunningStat for ohlcva columns even more items may be added like full company name etc in the future items are stock code, ohlcva, rc and rca .
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L118"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L112"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="Stockdata"><a name="Stockdata"></a><pre><span class="Identifier">Stockdata</span> <span class="Other">=</span> <span class="Keyword">object</span>
@@ -1485,7 +1483,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 Stockdata type holds additional stock data and statistics as currently available from yahoo 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L140"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L134"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="Ts"><a name="Ts"></a><pre><span class="Identifier">Ts</span> <span class="Other">=</span> <span class="Keyword">object</span>
@@ -1495,7 +1493,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 Ts type is a simple timeseries object which can hold one column of any OHLCVA data
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L166"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L160"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="Currencies"><a name="Currencies"></a><pre><span class="Identifier">Currencies</span> <span class="Other">=</span> <span class="Keyword">object</span>
@@ -1505,7 +1503,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 Currencies type a simple object to hold current currency data
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L175"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L169"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="YHobject"><a name="YHobject"></a><pre><span class="Identifier">YHobject</span> <span class="Other">=</span> <span class="Keyword">object</span>
@@ -1524,7 +1522,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 YHobject type a simple object to hold certain yahoo stock data
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L186"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L180"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 
@@ -1536,14 +1534,14 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L95"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L89"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="yahoourl"><a name="yahoourl"></a><pre><span class="Identifier">yahoourl</span> <span class="Other">=</span> <span class="StringLit">&quot;http://finance.yahoo.com/d/quotes.csv?s=$1&amp;f=snxl1d1t1ohvcm&quot;</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L97"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L91"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 
@@ -1558,7 +1556,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">timeseries</span><span class="Punctuation">(</span><span class="Identifier">myStocksObject</span><span class="Punctuation">,</span><span class="StringLit">&quot;o&quot;</span><span class="Punctuation">)</span></pre><p>this would return dates in dd and open prices in ts </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L210"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L204"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showTimeSeries"><a name="showTimeSeries,Ts,string,string,int,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showTimeSeries</span><span class="Other">(</span><span class="Identifier">ats</span><span class="Other">:</span> <span class="Identifier">Ts</span><span class="Other">;</span> <span class="Identifier">header</span><span class="Other">,</span> <span class="Identifier">ty</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">N</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
@@ -1574,7 +1572,7 @@ showTimeseries takes a Ts object as input as well as a header string for the dat
 <span class="Identifier">showTimeSeries</span><span class="Punctuation">(</span><span class="Identifier">mydT</span><span class="Punctuation">,</span><span class="StringLit">&quot;AdjClose&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;head&quot;</span><span class="Punctuation">,</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
 <span class="Identifier">showTimeSeries</span><span class="Punctuation">(</span><span class="Identifier">mydT</span><span class="Punctuation">,</span><span class="StringLit">&quot;AdjClose&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;tail&quot;</span><span class="Punctuation">,</span><span class="DecNumber">5</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L237"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L231"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="initAccount"><a name="initAccount,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initAccount</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Account</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -1583,7 +1581,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>init a new empty account object</p>
 <pre class = "listing"><span class="Keyword">var</span> <span class="Identifier">myAccount</span> <span class="Operator">=</span> <span class="Identifier">initAccount</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L277"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L271"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="initPortfolio"><a name="initPortfolio,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initPortfolio</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Portfolio</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -1592,7 +1590,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>init a new empty portfolio object</p>
 <pre class = "listing"><span class="Keyword">var</span> <span class="Identifier">myETFportfolio</span> <span class="Operator">=</span> <span class="Identifier">initPortfolio</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L290"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L284"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="initStocks"><a name="initStocks,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initStocks</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Stocks</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -1601,14 +1599,14 @@ class="link-seesrc" target="_blank">Source</a>
 <p>init stock data object</p>
 <pre class = "listing"><span class="Keyword">var</span> <span class="Identifier">mystockData</span> <span class="Operator">=</span> <span class="Identifier">initStocks</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L304"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L298"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="initYHobject"><a name="initYHobject,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initYHobject</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">YHobject</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L329"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L323"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="initCurrencies"><a name="initCurrencies,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initCurrencies</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Currencies</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -1617,7 +1615,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>init a Currencies object to hold basic forex data</p>
 <pre class = "listing"><span class="Keyword">var</span> <span class="Identifier">myForex</span> <span class="Operator">=</span> <span class="Identifier">initCurrencies</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L345"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L339"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="initTs"><a name="initTs,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initTs</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Ts</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -1626,7 +1624,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>init a timeseries object</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L358"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L352"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="initPool"><a name="initPool,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initPool</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Stocks</span><span class="Other">]</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -1635,21 +1633,21 @@ class="link-seesrc" target="_blank">Source</a>
 <p>init pools , which are sequences of Stocks objects used in portfolio building</p>
 <pre class = "listing"><span class="Keyword">var</span> <span class="Identifier">mystockPool</span> <span class="Operator">=</span> <span class="Identifier">initPool</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L367"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L361"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="aline"><a name="aline,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">aline</span><span class="Other">(</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L380"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L374"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="checkChange"><a name="checkChange,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkChange</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L384"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L378"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getCurrentQuote"><a name="getCurrentQuote,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getCurrentQuote</span><span class="Other">(</span><span class="Identifier">stcks</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
@@ -1660,7 +1658,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>gets the current price/quote from yahoo for 1 stock code</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L400"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L394"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getStocks"><a name="getStocks,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getStocks</span><span class="Other">(</span><span class="Identifier">aurl</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
@@ -1674,7 +1672,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>callable </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L419"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L413"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="yahooStocks"><a name="yahooStocks,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">yahooStocks</span><span class="Other">(</span><span class="Identifier">stock</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">YHobject</span><span class="Other">]</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span>
@@ -1686,7 +1684,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>easy moving about and unpacking </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L525"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L519"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showStocks"><a name="showStocks,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStocks</span><span class="Other">(</span><span class="Identifier">stock</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
@@ -1697,7 +1695,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>convenience proc to lists all stocks received by getStocks</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L559"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L553"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="buildStockString"><a name="buildStockString,Portfolio"></a><pre><span class="Keyword">proc</span> <span class="Identifier">buildStockString</span><span class="Other">(</span><span class="Identifier">apf</span><span class="Other">:</span> <span class="Identifier">Portfolio</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -1706,7 +1704,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>Produce a string of one or more stock codes coming from a Portfolio object</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L646"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L640"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="buildStockString"><a name="buildStockString,seq[Stocks]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">buildStockString</span><span class="Other">(</span><span class="Identifier">adf</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Stocks</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -1715,7 +1713,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>Produce a string of one or more stock codes coming from a pool Stocks object</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L656"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L650"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showCurrentIndexes"><a name="showCurrentIndexes,seq[Stocks],int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentIndexes</span><span class="Other">(</span><span class="Identifier">adf</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Stocks</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
@@ -1727,7 +1725,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>wide view </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L670"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L664"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showCurrentIndexes"><a name="showCurrentIndexes,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentIndexes</span><span class="Other">(</span><span class="Identifier">idxs</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span>
@@ -1741,7 +1739,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">showCurrentIDX</span><span class="Punctuation">(</span><span class="StringLit">&quot;^HSI+^GDAXI+^FTSE+^NYA&quot;</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">5</span><span class="Punctuation">)</span></pre><p>xpos allows x positioning</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L683"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L677"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showCurrentIDX"><a name="showCurrentIDX,seq[Stocks],int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentIDX</span><span class="Other">(</span><span class="Identifier">adf</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Stocks</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">,</span>
@@ -1752,7 +1750,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>compact view </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L700"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L694"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showCurrentIDX"><a name="showCurrentIDX,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentIDX</span><span class="Other">(</span><span class="Identifier">idxs</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
@@ -1765,7 +1763,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">showCurrentIDX</span><span class="Punctuation">(</span><span class="StringLit">&quot;^HSI+^GDAXI+^FTSE+^NYA&quot;</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">5</span><span class="Punctuation">)</span></pre><p>xpos allows x positioning</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L714"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L708"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showCurrentStocks"><a name="showCurrentStocks,Portfolio,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentStocks</span><span class="Other">(</span><span class="Identifier">apf</span><span class="Other">:</span> <span class="Identifier">Portfolio</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span>
@@ -1781,7 +1779,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>for full example see nimFinT5.nim </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L798"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L792"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showCurrentStocks"><a name="showCurrentStocks,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentStocks</span><span class="Other">(</span><span class="Identifier">stcks</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span>
@@ -1796,7 +1794,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>Just wait a bit and try again. Stay calm ! Do not panic ! </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L824"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L818"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showCurrentSTX"><a name="showCurrentSTX,Portfolio,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentSTX</span><span class="Other">(</span><span class="Identifier">apf</span><span class="Other">:</span> <span class="Identifier">Portfolio</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">,</span>
@@ -1811,7 +1809,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>for full example see nimFinT5.nim </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L845"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L839"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showCurrentSTX"><a name="showCurrentSTX,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentSTX</span><span class="Other">(</span><span class="Identifier">stcks</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">,</span>
@@ -1825,7 +1823,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>Just wait a bit and try again. Stay calm ! Do not panic ! </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L871"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L865"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="ymonth"><a name="ymonth,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">ymonth</span><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -1836,7 +1834,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>only used internally for yahoo url setup</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L894"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L888"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getSymbol2"><a name="getSymbol2,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getSymbol2</span><span class="Other">(</span><span class="Identifier">symb</span><span class="Other">,</span> <span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Stocks</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span>
@@ -1849,7 +1847,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>and then to parse into a Stocks object </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L909"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L903"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getSymbol3"><a name="getSymbol3,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getSymbol3</span><span class="Other">(</span><span class="Identifier">symb</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Stockdata</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
@@ -1886,7 +1884,7 @@ class="link-seesrc" target="_blank">Source</a>
 </p></blockquote>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1090"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1084"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showHistData"><a name="showHistData,Stocks,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showHistData</span><span class="Other">(</span><span class="Identifier">adf</span><span class="Other">:</span> <span class="Identifier">Stocks</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">FormatError</span><span class="Other">,</span> <span class="Identifier">RangeError</span><span class="Other">]</span><span class="Other">,</span>
@@ -1896,7 +1894,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>Show n recent rows historical stock data</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1236"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1230"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showHistData"><a name="showHistData,Stocks,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showHistData</span><span class="Other">(</span><span class="Identifier">adf</span><span class="Other">:</span> <span class="Identifier">Stocks</span><span class="Other">;</span> <span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">e</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other">{.</span>
@@ -1908,7 +1906,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>dates must be of format yyyy-MM-dd</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1251"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1245"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="last"><a name="last,seq[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">last</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
@@ -1918,28 +1916,28 @@ class="link-seesrc" target="_blank">Source</a>
 <p>last means most recent row </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1272"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1266"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="first"><a name="first,seq[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">first</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
 <dd>
 first means oldest row 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1285"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1279"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="tail"><a name="tail,seq[T],int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">tail</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
 <dd>
 tail means most recent rows 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1293"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1287"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="head"><a name="head,seq[T],int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">head</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
 <dd>
 head means oldest rows 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1305"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1299"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="lagger"><a name="lagger,T,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">lagger</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
@@ -1949,7 +1947,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>this functions provides this </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1318"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1312"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="dailyReturns"><a name="dailyReturns,seq[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dailyReturns</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span></pre></dt>
@@ -1958,7 +1956,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>daily returns calculation gives same results as dailyReturns in R / quantmod </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1332"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1326"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showDailyReturnsCl"><a name="showDailyReturnsCl,Stocks,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showDailyReturnsCl</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">Stocks</span><span class="Other">;</span> <span class="Identifier">N</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> <span class="Other">{.</span>
@@ -1969,7 +1967,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>formated output to show date and returns columns </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1344"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1338"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showDailyReturnsAdCl"><a name="showDailyReturnsAdCl,Stocks,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showDailyReturnsAdCl</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">Stocks</span><span class="Other">;</span> <span class="Identifier">N</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> <span class="Other">{.</span>
@@ -1980,7 +1978,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>formated output to only show date and returns </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1370"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1364"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="sumDailyReturnsCl"><a name="sumDailyReturnsCl,Stocks"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sumDailyReturnsCl</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">Stocks</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -1989,7 +1987,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns sum based on close price </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1393"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1387"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="sumDailyReturnsAdCl"><a name="sumDailyReturnsAdCl,Stocks"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sumDailyReturnsAdCl</span><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">Stocks</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -1999,7 +1997,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns sum based on adjc </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1408"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1402"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="statistics"><a name="statistics,RunningStat"></a><pre><span class="Keyword">proc</span> <span class="Identifier">statistics</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">RunningStat</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -2008,7 +2006,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>display statistsics output of a runningstat object </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1423"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1417"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showStatistics"><a name="showStatistics,Stocks"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStatistics</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">Stocks</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">FormatError</span><span class="Other">,</span> <span class="Identifier">RangeError</span><span class="Other">]</span><span class="Other">,</span>
@@ -2018,7 +2016,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>shows all statistics from a Stocks objects ohlcva columns </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1437"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1431"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showStatisticsT"><a name="showStatisticsT,Stocks"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStatisticsT</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">Stocks</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">FormatError</span><span class="Other">,</span> <span class="Identifier">RangeError</span><span class="Other">]</span><span class="Other">,</span>
@@ -2029,7 +2027,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>transposed display  , needs full terminal width </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1475"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1469"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="ema"><a name="ema,Stocks,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">ema</span><span class="Other">(</span><span class="Identifier">dx</span><span class="Other">:</span> <span class="Identifier">Stocks</span><span class="Other">;</span> <span class="Identifier">N</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">14</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Ts</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
@@ -2042,7 +2040,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>results match R quantmod/TTR </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1505"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1499"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showEma"><a name="showEma,Ts,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showEma</span><span class="Other">(</span><span class="Identifier">emx</span><span class="Other">:</span> <span class="Identifier">Ts</span><span class="Other">;</span> <span class="Identifier">N</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">FormatError</span><span class="Other">,</span> <span class="Identifier">RangeError</span><span class="Other">]</span><span class="Other">,</span>
@@ -2054,7 +2052,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>latest data is on top </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1561"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1555"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getCurrentForex"><a name="getCurrentForex,seq[string],int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getCurrentForex</span><span class="Other">(</span><span class="Identifier">curs</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Currencies</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
@@ -2069,7 +2067,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span> <span class="StringLit">&quot;Current EURHKD Rate : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;{:&lt;8}&quot;</span><span class="Operator">.</span><span class="Identifier">fmt</span><span class="Punctuation">(</span><span class="Identifier">curs</span><span class="Operator">.</span><span class="Identifier">ra</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1653"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1647"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showCurrentForex"><a name="showCurrentForex,seq[string],int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCurrentForex</span><span class="Other">(</span><span class="Identifier">curs</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span>
@@ -2081,7 +2079,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">showCurrentForex</span><span class="Punctuation">(</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="StringLit">&quot;EURUSD&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;GBPHKD&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;CADEUR&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;AUDNZD&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">10</span><span class="Punctuation">)</span>
 <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1732"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1726"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showStocksTable"><a name="showStocksTable,Portfolio,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStocksTable</span><span class="Other">(</span><span class="Identifier">apfdata</span><span class="Other">:</span> <span class="Identifier">Portfolio</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span>
@@ -2092,7 +2090,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>for usage example see nimFinT3 </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1749"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1743"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showStockdataTable"><a name="showStockdataTable,Stockdata"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStockdataTable</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">Stockdata</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">FormatError</span><span class="Other">,</span> <span class="Identifier">RangeError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -2102,7 +2100,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>shows all items of a Stockdata object </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1773"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1767"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showKitcoMetal"><a name="showKitcoMetal,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showKitcoMetal</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -2112,7 +2110,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>get and display kitco metal prices</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1833"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1827"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="presentValue"><a name="presentValue,T,T,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">presentValue</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
@@ -2144,7 +2142,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">PV</span> <span class="Operator">=</span> <span class="Identifier">presentValue</span><span class="Punctuation">(</span><span class="Identifier">FV</span><span class="Punctuation">,</span><span class="Identifier">r</span><span class="Punctuation">,</span><span class="Identifier">m</span><span class="Punctuation">,</span><span class="Identifier">t</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">PV</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1919"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1913"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="presentValue"><a name="presentValue,float,float,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">presentValue</span><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -2154,7 +2152,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">PV</span> <span class="Operator">=</span> <span class="Identifier">presentValue</span><span class="Punctuation">(</span><span class="Identifier">FV</span><span class="Punctuation">,</span><span class="FloatNumber">0.0925</span><span class="Punctuation">,</span><span class="FloatNumber">2.0</span><span class="Punctuation">,</span><span class="FloatNumber">12.0</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">PV</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1962"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1956"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="presentValueFV"><a name="presentValueFV,float,float,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">presentValueFV</span><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -2164,7 +2162,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">PV</span> <span class="Operator">=</span> <span class="Identifier">presentValueFV</span><span class="Punctuation">(</span><span class="Identifier">FV</span><span class="Punctuation">,</span><span class="FloatNumber">0.0625</span><span class="Punctuation">,</span><span class="DecNumber">10</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">PV</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1976"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1970"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="presentValueFV"><a name="presentValueFV,float,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">presentValueFV</span><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -2172,7 +2170,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">PV</span> <span class="Operator">=</span> <span class="Identifier">presentValueFV</span><span class="Punctuation">(</span><span class="Identifier">FV</span><span class="Punctuation">,</span><span class="FloatNumber">0.0625</span><span class="Punctuation">,</span><span class="FloatNumber">20.5</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">PV</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1991"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1985"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="logisticf"><a name="logisticf,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">logisticf</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -2181,7 +2179,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>maps the input z to an output between 0 and 1 </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L2002"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L1996"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="logisticf_derivative"><a name="logisticf_derivative,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">logisticf_derivative</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -2190,7 +2188,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns derivative of logisticf for gradient solutions </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L2011"
+href="https://github.com/qqtop/NimFinLib/blob/master/nimFinLib.nim#L2005"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 
@@ -2203,7 +2201,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2016-01-23 14:52:46 UTC</small>
+        <small>Made with Nim. Generated: 2016-01-23 14:59:52 UTC</small>
       </div>
     </div>
   </div>
