@@ -2263,8 +2263,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="msgm(code: stmt): stmt"><wbr />msgm</a></li>
   <li><a class="reference" href="#msgmb.t,stmt"
     title="msgmb(code: stmt): stmt"><wbr />msgmb</a></li>
-  <li><a class="reference" href="#hdx.t,stmt,string,int"
-    title="hdx(code: stmt; frm: string = &quot;+&quot;; width: int = getTerminalWidth().int): stmt"><wbr />hdx</a></li>
+  <li><a class="reference" href="#hdx.t,stmt,string,int,int"
+    title="hdx(code: stmt; frm: string = &quot;+&quot;; width: int = tw; xpos: int = 0): stmt"><wbr />hdx</a></li>
   <li><a class="reference" href="#withFile.t,expr,string,FileMode,stmt"
     title="withFile(f: expr; filename: string; mode: FileMode; body: stmt): stmt"><wbr />with<wbr />File</a></li>
   <li><a class="reference" href="#curUp.t,int"
@@ -6033,11 +6033,11 @@ class="link-seesrc" target="_blank">Source</a>
 href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1279"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
-<dt id="hdx"><a name="hdx.t,stmt,string,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">hdx</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">;</span> <span class="Identifier">frm</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;+&quot;</span><span class="Other">;</span> <span class="Identifier">width</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getTerminalWidth</span><span class="Other">(</span><span class="Other">)</span><span class="Other">.</span><span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
+<dt id="hdx"><a name="hdx.t,stmt,string,int,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">hdx</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">stmt</span><span class="Other">;</span> <span class="Identifier">frm</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;+&quot;</span><span class="Other">;</span> <span class="Identifier">width</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">stmt</span></pre></dt>
 <dd>
 <p>hdx</p>
 <p>a simple sandwich frame made with + default or any string passed in</p>
-<p>width can be adjusted </p>
+<p>width and xpos can be adjusted </p>
 
 &nbsp;&nbsp;<a
 href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1285"
@@ -6177,7 +6177,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2016-02-06 16:47:47 UTC</small>
+        <small>Made with Nim. Generated: 2016-02-06 20:58:54 UTC</small>
       </div>
     </div>
   </div>
