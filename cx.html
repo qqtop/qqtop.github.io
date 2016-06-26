@@ -4719,7 +4719,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns -1.0 or 1.0 float  to have a random positive or negative multiplier </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1359"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1360"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="fmtx"><a name="fmtx,openArray[string],varargs[T,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">fmtx</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">fmts</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fstrings</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
@@ -4747,7 +4747,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span> <span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;22.3&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="FloatNumber">234.43324234</span><span class="Punctuation">)</span>  <span class="Comment"># this formats float and aligns last char tp pos 22</span>
 <span class="Identifier">echo</span> <span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;22.3&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="FloatNumber">234.43324234</span><span class="Punctuation">)</span>   <span class="Comment"># this formats float but ignores position as no align operator given</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1432"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1433"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showRune"><a name="showRune,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRune</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -4758,7 +4758,7 @@ class="link-seesrc" target="_blank">Source</a>
 <blockquote><p>print(showRune(&quot;FFEA&quot;),lime) print(showRune(&quot;FFEC&quot;),red)</p></blockquote>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1544"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1545"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="unquote"><a name="unquote,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">unquote</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -4767,7 +4767,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>remove any double quotes from a string </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1559"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1560"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="cleanScreen"><a name="cleanScreen,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cleanScreen</span><span class="Other">(</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -4777,7 +4777,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>similar to terminal.eraseScreen() but cleans the terminal window completely </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1568"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1569"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="centerX"><a name="centerX,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerX</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -4786,7 +4786,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns an int with terminal center position</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1579"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1580"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="centerPos"><a name="centerPos,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerPos</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -4797,7 +4797,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">centerPos</span><span class="Punctuation">(</span><span class="Identifier">s</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">s</span><span class="Punctuation">,</span><span class="Identifier">gray</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1586"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1587"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="checkColor"><a name="checkColor,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkColor</span><span class="Other">(</span><span class="Identifier">colname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
@@ -4806,7 +4806,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns true if colname is a known color name in colorNames</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1602"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1603"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="print"><a name="print,T,string,string,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">bblack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
@@ -5590,8 +5590,8 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 <p>getRandomFloat</p>
 <p>convenience proc so we do not need to import random in calling prog</p>
-<p>to get positive or negative random floats multiply with makeRandomSignF</p>
-<pre class = "listing"><span class="Identifier">echo</span>  <span class="Identifier">getRandomFloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="Identifier">makeRandomSignF</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
+<p>to get positive or negative random floats multiply with getRandomSignF</p>
+<pre class = "listing"><span class="Identifier">echo</span>  <span class="Identifier">getRandomFloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="Identifier">getRandomSignF</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
 href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3451"
 class="link-seesrc" target="_blank">Source</a>
@@ -6304,7 +6304,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Finished&quot;</span><span class="Punctuation">,</span><span class="Identifier">clRainbow</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1482"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1483"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="curUp"><a name="curUp.t,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">curUp</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
@@ -6420,7 +6420,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2016-06-23 20:42:40 UTC</small>
+        <small>Made with Nim. Generated: 2016-06-26 09:33:47 UTC</small>
       </div>
     </div>
   </div>
