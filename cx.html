@@ -4842,7 +4842,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns true if a string is blank </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1358"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1361"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="isEmpty"><a name="isEmpty,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">isEmpty</span><span class="Other">(</span><span class="Identifier">val</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -4851,7 +4851,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns true if a string is empty if spaces are removed </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1366"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1369"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getRandomSignI"><a name="getRandomSignI,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomSignI</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -4860,7 +4860,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns -1 or 1 integer  to have a random positive or negative multiplier </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1375"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1378"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getRandomSignF"><a name="getRandomSignF,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomSignF</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -4869,7 +4869,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns -1.0 or 1.0 float  to have a random positive or negative multiplier </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1387"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1390"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="fmtx"><a name="fmtx,openArray[string],varargs[T,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">fmtx</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">fmts</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fstrings</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
@@ -4897,7 +4897,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span> <span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;22.3&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="FloatNumber">234.43324234</span><span class="Punctuation">)</span>  <span class="Comment"># this formats float and aligns last char tp pos 22</span>
 <span class="Identifier">echo</span> <span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;22.3&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="FloatNumber">234.43324234</span><span class="Punctuation">)</span>   <span class="Comment"># this formats float but ignores position as no align operator given</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1460"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1463"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showRune"><a name="showRune,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRune</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -4908,7 +4908,7 @@ class="link-seesrc" target="_blank">Source</a>
 <blockquote><p>print(showRune(&quot;FFEA&quot;),lime) print(showRune(&quot;FFEC&quot;),red)</p></blockquote>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1572"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1575"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="unquote"><a name="unquote,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">unquote</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -4917,7 +4917,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>remove any double quotes from a string </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1587"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1590"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="cleanScreen"><a name="cleanScreen,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cleanScreen</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -4927,7 +4927,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>similar to terminal.eraseScreen() but cleans the terminal window completely </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1596"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1599"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="centerX"><a name="centerX,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerX</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -4936,7 +4936,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns an int with terminal center position</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1607"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1610"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="centerPos"><a name="centerPos,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerPos</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -4947,7 +4947,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">centerPos</span><span class="Punctuation">(</span><span class="Identifier">s</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">s</span><span class="Punctuation">,</span><span class="Identifier">gray</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1614"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1617"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="checkColor"><a name="checkColor,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkColor</span><span class="Other">(</span><span class="Identifier">colname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -4956,7 +4956,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns true if colname is a known color name in colorNames</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1630"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1633"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="print"><a name="print,T,string,string,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">bblack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
@@ -4970,7 +4970,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>for extended colorset background colors use printStyled with styleReverse</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1671"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1674"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printLn"><a name="printLn,T,string,string,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">bblack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
@@ -4996,28 +4996,28 @@ class="link-seesrc" target="_blank">Source</a>
 <p>also see cechoLn</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1718"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1721"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="rainbow"><a name="rainbow,T,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rainbow</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1767"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1770"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="hline"><a name="hline,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">hline</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1804"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1807"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="hlineLn"><a name="hlineLn,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">hlineLn</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1819"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1822"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="dline"><a name="dline,int,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dline</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">lt</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;-&quot;</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5029,7 +5029,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">dline</span><span class="Punctuation">(</span><span class="DecNumber">30</span><span class="Punctuation">,</span><span class="StringLit">&quot;/+&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">dline</span><span class="Punctuation">(</span><span class="DecNumber">30</span><span class="Punctuation">,</span><span class="Identifier">col</span><span class="Operator">=</span> <span class="Identifier">yellow</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1835"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1838"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="dlineLn"><a name="dlineLn,int,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dlineLn</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">lt</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;-&quot;</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5043,7 +5043,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">dlineLn</span><span class="Punctuation">(</span><span class="DecNumber">30</span><span class="Punctuation">,</span><span class="StringLit">&quot;/+/&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">dlineLn</span><span class="Punctuation">(</span><span class="DecNumber">60</span><span class="Punctuation">,</span><span class="Identifier">col</span> <span class="Operator">=</span> <span class="Identifier">salmon</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1851"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1854"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="decho"><a name="decho,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">decho</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5053,7 +5053,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">)</span></pre><p>to create 10 blank lines</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1870"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1873"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="curMove"><a name="curMove,int,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">curMove</span><span class="Other">(</span><span class="Identifier">up</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">dn</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fw</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">bk</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5065,7 +5065,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>setting cursor off terminal will wrap output to next line </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1937"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1940"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="sleepy"><a name="sleepy,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sleepy</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">secs</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
@@ -5074,7 +5074,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>imitates sleep but in seconds suitable for shorter sleeps </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1951"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1954"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printRainbow"><a name="printRainbow,T,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printRainbow</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
@@ -5085,7 +5085,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">printRainBow</span><span class="Punctuation">(</span><span class="StringLit">&quot;WoW So Nice&quot;</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Identifier">styleUnderScore</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
 <span class="Identifier">printRainBow</span><span class="Punctuation">(</span><span class="StringLit">&quot;  --&gt; No Style&quot;</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1967"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1970"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printLnRainbow"><a name="printLnRainbow,T,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnRainbow</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
@@ -5097,7 +5097,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">printLnRainBow</span><span class="Punctuation">(</span><span class="StringLit">&quot;WoW So Nice&quot;</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Identifier">styleUnderScore</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnRainBow</span><span class="Punctuation">(</span><span class="StringLit">&quot;Aha --&gt; No Style&quot;</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1988"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1991"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printBiCol"><a name="printBiCol,T,string,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBiCol</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;:&quot;</span><span class="Other">;</span> <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
@@ -5105,7 +5105,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2006"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2009"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printLnBiCol"><a name="printLnBiCol,T,string,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnBiCol</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;:&quot;</span><span class="Other">;</span> <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
@@ -5113,7 +5113,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2060"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2063"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printHl"><a name="printHl,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printHl</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5125,7 +5125,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">printHl</span><span class="Punctuation">(</span><span class="StringLit">&quot;HELLO THIS IS A TEST&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;T&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">)</span></pre><p>this would highlight all T in green </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2116"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2119"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printLnHl"><a name="printLnHl,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnHl</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5137,21 +5137,21 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">printLnHl</span><span class="Punctuation">(</span><span class="StringLit">&quot;HELLO THIS IS A TEST&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;T&quot;</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span></pre><p>this would highlight all T in yellowgreen </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2136"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2139"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printStyledSimple"><a name="printStyledSimple,T,string,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyledSimple</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fg</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2153"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2156"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printStyled"><a name="printStyled,T,string,string,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printStyled</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2167"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2170"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printLnStyled"><a name="printLnStyled,T,string,string,set[Style]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnStyled</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astyle</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
@@ -5169,7 +5169,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Comment"># this highlights all T in rainbow colors , no style is applied</span>
 <span class="Identifier">printLnStyled</span><span class="Punctuation">(</span><span class="StringLit">&quot;HELLO THIS IS A TEST&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;T&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2220"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2223"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="cecho"><a name="cecho,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cecho</span><span class="Other">(</span><span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">ggg</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="StringLit">&quot;&quot;</span><span class="Other">]</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5183,7 +5183,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="StringLit">&quot;{:&lt;10} : {} ==&gt; {} --&gt; {}&quot;</span><span class="Operator">.</span><span class="Identifier">fmt</span><span class="Punctuation">(</span><span class="StringLit">&quot;this &quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;zzz &quot;</span><span class="Punctuation">,</span><span class="DecNumber">123</span> <span class="Punctuation">,</span><span class="StringLit">&quot; color is something else&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="StringLit">&quot;ok&quot;</span><span class="Punctuation">)</span>  <span class="Comment"># still salmon</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2247"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2250"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="cechoLn"><a name="cechoLn,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cechoLn</span><span class="Other">(</span><span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">ggg</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="StringLit">&quot;&quot;</span><span class="Other">]</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5197,7 +5197,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">strutils</span>
 <span class="Identifier">cechoLn</span><span class="Punctuation">(</span><span class="Identifier">steelblue</span><span class="Punctuation">,</span><span class="StringLit">&quot;We made it in $1 hours !&quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">5</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2270"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2273"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showColors"><a name="showColors,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showColors</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
@@ -5208,7 +5208,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>display all colorNames in color ! </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2293"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2296"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="doty"><a name="doty,int,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doty</span><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5225,7 +5225,7 @@ dotyLn(18 ,salmon,blue)
 dotyLn(centerX(),red)  # full widedotted line</pre><p>color clrainbow is not supported and will be in white </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2315"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2318"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="dotyLn"><a name="dotyLn,int,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dotyLn</span><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5236,7 +5236,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>each dot is of char length 4</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2341"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2344"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printDotPos"><a name="printDotPos,int,string,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printDotPos</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">dotCol</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">blink</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5246,7 +5246,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>prints a widedot at xpos in col dotCol and may blink ... </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2362"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2365"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="drawRect"><a name="drawRect,int,int,string,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">drawRect</span><span class="Other">(</span><span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">frhLine</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;_&quot;</span><span class="Other">;</span> <span class="Identifier">frVLine</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;|&quot;</span><span class="Other">;</span>
@@ -5269,7 +5269,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2377"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2380"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="validdate"><a name="validdate,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">validdate</span><span class="Other">(</span><span class="Identifier">adate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5280,7 +5280,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>wrong   : 2015-08-32 , 201508-15, 2015-13-10 etc. </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2440"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2443"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="day"><a name="day,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">day</span><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5289,21 +5289,21 @@ class="link-seesrc" target="_blank">Source</a>
 <p>a date string of format yyyy-MM-dd </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2486"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2489"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="month"><a name="month,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">month</span><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2493"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2496"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="year"><a name="year,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">year</span><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 Format yyyy
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2499"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2502"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="intervalsecs"><a name="intervalsecs,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">intervalsecs</span><span class="Other">(</span><span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5311,7 +5311,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 interval procs returns time elapsed between two dates in secs,hours etc.
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2503"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2506"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="intervalmins"><a name="intervalmins,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">intervalmins</span><span class="Other">(</span><span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5319,7 +5319,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2517"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2520"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="intervalhours"><a name="intervalhours,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">intervalhours</span><span class="Other">(</span><span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5327,7 +5327,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2522"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2525"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="intervaldays"><a name="intervaldays,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">intervaldays</span><span class="Other">(</span><span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5335,7 +5335,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2527"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2530"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="intervalweeks"><a name="intervalweeks,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">intervalweeks</span><span class="Other">(</span><span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5343,7 +5343,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2531"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2534"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="intervalmonths"><a name="intervalmonths,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">intervalmonths</span><span class="Other">(</span><span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5351,7 +5351,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2536"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2539"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="intervalyears"><a name="intervalyears,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">intervalyears</span><span class="Other">(</span><span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5359,7 +5359,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2540"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2543"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="compareDates"><a name="compareDates,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">compareDates</span><span class="Other">(</span><span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5367,14 +5367,14 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2545"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2548"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="dayOfWeekJulianA"><a name="dayOfWeekJulianA,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dayOfWeekJulianA</span><span class="Other">(</span><span class="Identifier">day</span><span class="Other">,</span> <span class="Identifier">month</span><span class="Other">,</span> <span class="Identifier">year</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">WeekDay</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2568"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2571"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="dayOfWeekJulian"><a name="dayOfWeekJulian,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dayOfWeekJulian</span><span class="Other">(</span><span class="Identifier">datestr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5386,7 +5386,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>actually starts to fail with 2100-03-01 which shud be a monday but this proc says tuesday</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2587"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2590"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="plusDays"><a name="plusDays,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">plusDays</span><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5399,7 +5399,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>the passed in date string must be a valid date or an error message will be returned </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2608"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2611"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="minusDays"><a name="minusDays,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">minusDays</span><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5412,7 +5412,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>the passed in date string must be a valid date or an error message will be returned </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2629"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2632"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getFirstMondayYear"><a name="getFirstMondayYear,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getFirstMondayYear</span><span class="Other">(</span><span class="Identifier">ayear</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5422,7 +5422,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns date of first monday of any given year should be ok for the next years but after 2100-02-28 all bets are off</p>
 <pre class = "listing"><span class="Identifier">echo</span>  <span class="Identifier">getFirstMondayYear</span><span class="Punctuation">(</span><span class="StringLit">&quot;2015&quot;</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2652"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2655"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getFirstMondayYearMonth"><a name="getFirstMondayYearMonth,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getFirstMondayYearMonth</span><span class="Other">(</span><span class="Identifier">aym</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5435,7 +5435,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span>  <span class="Identifier">getFirstMondayYearMonth</span><span class="Punctuation">(</span><span class="StringLit">&quot;2015-2&quot;</span><span class="Punctuation">)</span></pre><p>in case of invalid dates nil will be returned should be ok for the next years but after 2100-02-28 all bets are off</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2674"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2677"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getNextMonday"><a name="getNextMonday,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getNextMonday</span><span class="Other">(</span><span class="Identifier">adate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
@@ -5449,7 +5449,7 @@ getNextMonday<pre class = "listing"><span class="Identifier">echo</span>  <span 
     <span class="Identifier">echo</span> <span class="Identifier">dw</span></pre><p>in case of invalid dates nil will be returned </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2702"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2705"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printBigNumber"><a name="printBigNumber,,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigNumber</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">xnumber</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
@@ -5482,7 +5482,7 @@ class="link-seesrc" target="_blank">Source</a>
      <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.5</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2750"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2753"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printBigLetters"><a name="printBigLetters,string,string,string,int,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigLetters</span><span class="Other">(</span><span class="Identifier">aword</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
@@ -5499,7 +5499,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">printBigLetters</span><span class="Punctuation">(</span><span class="StringLit">&quot;ABA###RR#3&quot;</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">1</span><span class="Punctuation">)</span>
 <span class="Identifier">printBigLetters</span><span class="Punctuation">(</span><span class="StringLit">&quot;#&quot;</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">1</span><span class="Punctuation">)</span>   <span class="Comment"># the '#' char is used to denote a blank space or to overwrite</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2829"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2832"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printNimSxR"><a name="printNimSxR,seq[string],string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printNimSxR</span><span class="Other">(</span><span class="Identifier">nimsx</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5512,7 +5512,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>in your calling code arrange that most right one is printed first </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2914"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2917"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printSlimNumber"><a name="printSlimNumber,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printSlimNumber</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
@@ -5545,7 +5545,7 @@ class="link-seesrc" target="_blank">Source</a>
    <span class="Identifier">sleep</span><span class="Punctuation">(</span><span class="DecNumber">500</span><span class="Punctuation">)</span>
 <span class="Identifier">curdn</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2947"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2950"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="printSlim"><a name="printSlim,string,string,string,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printSlim</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">frg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termblack</span><span class="Other">;</span>
@@ -5565,7 +5565,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span>
 <span class="Identifier">printSlim</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="StringLit">&quot;33.87&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">25</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3050"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3053"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="superHeader"><a name="superHeader,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">superHeader</span><span class="Other">(</span><span class="Identifier">bstring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5577,7 +5577,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>for box with or without intersections see drawBox </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3096"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3099"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="superHeader"><a name="superHeader,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">superHeader</span><span class="Other">(</span><span class="Identifier">bstring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">strcol</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">frmcol</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5595,7 +5595,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">superheader</span><span class="Punctuation">(</span><span class="StringLit">&quot;Ok That's it for Now !&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">white</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3145"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3148"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="superHeaderA"><a name="superHeaderA,string,string,string,bool,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">superHeaderA</span><span class="Other">(</span><span class="Identifier">bb</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">strcol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">frmcol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">green</span><span class="Other">;</span>
@@ -5615,7 +5615,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">superheader</span><span class="Punctuation">(</span><span class="StringLit">&quot;Ok That's it for Now !&quot;</span><span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3219"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3222"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getWanIp"><a name="getWanIp,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getWanIp</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
@@ -5626,7 +5626,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>problems ? check : <a class="reference external" href="https://status.heroku.com">https://status.heroku.com</a>/</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3261"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3264"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showWanIp"><a name="showWanIp,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showWanIp</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
@@ -5636,7 +5636,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>show your current wan ip </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3285"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3288"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getIpInfo"><a name="getIpInfo,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getIpInfo</span><span class="Other">(</span><span class="Identifier">ip</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
@@ -5653,7 +5653,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span> <span class="Identifier">mpairs</span><span class="Punctuation">(</span><span class="Identifier">jz</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">jj</span><span class="Punctuation">[</span><span class="StringLit">&quot;city&quot;</span><span class="Punctuation">]</span><span class="Operator">.</span><span class="Identifier">getstr</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3293"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3296"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showIpInfo"><a name="showIpInfo,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showIpInfo</span><span class="Other">(</span><span class="Identifier">ip</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span>
@@ -5668,7 +5668,7 @@ class="link-seesrc" target="_blank">Source</a>
 <pre class = "listing"><span class="Identifier">showIpInfo</span><span class="Punctuation">(</span><span class="StringLit">&quot;208.80.152.201&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">showIpInfo</span><span class="Punctuation">(</span><span class="Identifier">getHosts</span><span class="Punctuation">(</span><span class="StringLit">&quot;bbc.com&quot;</span><span class="Punctuation">)</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3315"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3318"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getHosts"><a name="getHosts,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getHosts</span><span class="Other">(</span><span class="Identifier">dm</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5682,7 +5682,7 @@ class="link-seesrc" target="_blank">Source</a>
   <span class="Identifier">echo</span> <span class="Identifier">x</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3337"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3340"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showHosts"><a name="showHosts,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showHosts</span><span class="Other">(</span><span class="Identifier">dm</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5694,14 +5694,14 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">showHosts</span><span class="Punctuation">(</span><span class="StringLit">&quot;bbc.co.uk&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3382"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3385"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getRandomInt"><a name="getRandomInt,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomInt</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">int</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3411"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3414"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="createSeqInt"><a name="createSeqInt,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSeqInt</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1000</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">inline</span><span class="Other">,</span>
@@ -5715,7 +5715,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Comment"># including the limits 100 and 2000</span>
 <span class="Identifier">echo</span> <span class="Identifier">createSeqInt</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">,</span><span class="DecNumber">2000</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3438"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3441"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="sum"><a name="sum,seq[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sum</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">aseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
@@ -5725,7 +5725,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>same effect as math.sum </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3460"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3463"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="ff"><a name="ff,float,int64"></a><pre><span class="Keyword">proc</span> <span class="Identifier">ff</span><span class="Other">(</span><span class="Identifier">zz</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int64</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5734,7 +5734,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>formats a float to string with n decimals </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3471"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3474"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getRandomFloat"><a name="getRandomFloat,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomFloat</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5744,7 +5744,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>to get positive or negative random floats multiply with getRandomSignF</p>
 <pre class = "listing"><span class="Identifier">echo</span>  <span class="Identifier">getRandomFloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="Identifier">getRandomSignF</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3479"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3482"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="createSeqFloat"><a name="createSeqFloat,BiggestInt,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSeqFloat</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">BiggestInt</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">prec</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5761,7 +5761,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">)</span></pre><pre class = "listing"><span class="Comment"># create a seq with 50 random floats formated</span>
 <span class="Identifier">echo</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">,</span><span class="DecNumber">3</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3492"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3495"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getRandomPointInCircle"><a name="getRandomPointInCircle,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomPointInCircle</span><span class="Other">(</span><span class="Identifier">radius</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5778,7 +5778,7 @@ class="link-seesrc" target="_blank">Source</a>
    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;25&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;25&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot; :&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3527"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3530"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getRandomPoint"><a name="getRandomPoint,float,float,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomPoint</span><span class="Other">(</span><span class="Identifier">minx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="FloatNumber">500.0'f64</span><span class="Other">;</span> <span class="Identifier">maxx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">500.0'f64</span><span class="Other">;</span>
@@ -5792,7 +5792,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Keyword">var</span> <span class="Identifier">n</span> <span class="Operator">=</span> <span class="Identifier">getRandomPoint</span><span class="Punctuation">(</span><span class="Operator">-</span><span class="FloatNumber">500.00</span><span class="Punctuation">,</span><span class="FloatNumber">200.0</span><span class="Punctuation">,</span><span class="Operator">-</span><span class="FloatNumber">100.0</span><span class="Punctuation">,</span><span class="FloatNumber">300.00</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;5&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;5&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;x:&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">n</span><span class="Operator">.</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">7</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;y:&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">n</span><span class="Operator">.</span><span class="Identifier">y</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">7</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3562"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3565"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getRandomPoint"><a name="getRandomPoint,int,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomPoint</span><span class="Other">(</span><span class="Identifier">minx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="DecNumber">500</span><span class="Other">;</span> <span class="Identifier">maxx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">500</span><span class="Other">;</span> <span class="Identifier">miny</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="DecNumber">500</span><span class="Other">;</span> <span class="Identifier">maxy</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">500</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">RpointInt</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5805,7 +5805,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Keyword">var</span> <span class="Identifier">n</span> <span class="Operator">=</span> <span class="Identifier">getRandomPoint</span><span class="Punctuation">(</span><span class="Operator">-</span><span class="DecNumber">500</span><span class="Punctuation">,</span><span class="DecNumber">500</span><span class="Punctuation">,</span><span class="Operator">-</span><span class="DecNumber">500</span><span class="Punctuation">,</span><span class="DecNumber">200</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;5&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;5&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;x:&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">n</span><span class="Operator">.</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">7</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;y:&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">n</span><span class="Operator">.</span><span class="Identifier">y</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">7</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3609"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3612"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="checkNimCi"><a name="checkNimCi,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkNimCi</span><span class="Other">(</span><span class="Identifier">title</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span>
@@ -5820,7 +5820,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>Note : needs compilation with -d:ssl</p>
 <pre class = "listing"><span class="Identifier">checkNimCi</span><span class="Punctuation">(</span><span class="StringLit">&quot;nimFinLib&quot;</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3634"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3637"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="sortMe"><a name="sortMe,seq[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sortMe</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">xs</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">order</span> <span class="Other">=</span> <span class="Identifier">Ascending</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
@@ -5832,7 +5832,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">println</span><span class="Punctuation">(</span><span class="Identifier">sortMe</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">)</span>
 <span class="Identifier">println</span><span class="Punctuation">(</span><span class="Identifier">sortMe</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">,</span><span class="Identifier">Descending</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3702"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3705"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="reverseMe"><a name="reverseMe,openArray[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">reverseMe</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">xs</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
@@ -5843,7 +5843,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">)</span>
 <span class="Identifier">println</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Operator">.</span><span class="Identifier">reverseMe</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3719"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3722"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="ruler"><a name="ruler,int,int,int,string,string,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">ruler</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">xposE</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ypos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span>
@@ -5865,7 +5865,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Comment"># this will show a full terminal width ruler starting at a certain position</span>
 <span class="Identifier">ruler</span><span class="Punctuation">(</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">75</span><span class="Punctuation">,</span><span class="Identifier">fgr</span><span class="Operator">=</span><span class="Identifier">pastelblue</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3751"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3754"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="centerMark"><a name="centerMark,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerMark</span><span class="Other">(</span><span class="Identifier">showpos</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5874,7 +5874,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>draws a red dot in the middle of the screen xpos only and also can show pos </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3823"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3826"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="tupleToStr"><a name="tupleToStr,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">tupleToStr</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">xs</span><span class="Other">:</span> <span class="Keyword">tuple</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
@@ -5886,7 +5886,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span> <span class="Identifier">tupleToStr</span><span class="Punctuation">(</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">)</span>         <span class="Comment"># prints (3, 4)</span>
 <span class="Identifier">echo</span> <span class="Identifier">tupleToStr</span><span class="Punctuation">(</span><span class="Punctuation">(</span><span class="StringLit">&quot;A&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;B&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;C&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span> <span class="Comment"># prints (A, B, C)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3834"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3837"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="shift"><a name="shift,seq[T],Natural"></a><pre><span class="Keyword">proc</span> <span class="Identifier">shift</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">zz</span><span class="Other">:</span> <span class="Identifier">Natural</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
@@ -5897,14 +5897,14 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span> <span class="Identifier">shift</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">a</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3866"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3869"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="spellInteger"><a name="spellInteger,int64"></a><pre><span class="Keyword">proc</span> <span class="Identifier">spellInteger</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int64</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3916"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3919"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="spellFloat"><a name="spellFloat,float64,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">spellFloat</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">float64</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;.&quot;</span><span class="Other">;</span> <span class="Identifier">sepname</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot; dot &quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5916,7 +5916,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">println</span> <span class="Identifier">spellFloat</span><span class="Punctuation">(</span><span class="DecNumber">234</span><span class="Punctuation">)</span>
 <span class="Identifier">println</span> <span class="Identifier">spellFloat</span><span class="Punctuation">(</span><span class="Operator">-</span><span class="FloatNumber">2311.345</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3946"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3949"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showStats"><a name="showStats,RunningStat,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStats</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">RunningStat</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5933,7 +5933,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">showStats</span><span class="Punctuation">(</span><span class="Identifier">rs</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3972"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3975"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showRegression"><a name="showRegression,openArray[],openArray[]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRegression</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
@@ -5945,7 +5945,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Keyword">var</span> <span class="Identifier">b</span> <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="DecNumber">3</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">7</span><span class="Punctuation">]</span>
 <span class="Identifier">showRegression</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4004"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4007"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showRegression"><a name="showRegression,RunningRegress"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRegression</span><span class="Other">(</span><span class="Identifier">rr</span><span class="Other">:</span> <span class="Identifier">RunningRegress</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -5955,7 +5955,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>Displays RunningRegress data from an already formed RunningRegress </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4024"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4027"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="newDir"><a name="newDir,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newDir</span><span class="Other">(</span><span class="Identifier">dirname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">,</span>
@@ -5965,7 +5965,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>creates a new directory and provides some feedback</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4038"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4041"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="remDir"><a name="remDir,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">remDir</span><span class="Other">(</span><span class="Identifier">dirname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
@@ -5976,7 +5976,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>root and home directory removal is disallowed </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4054"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4057"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="dayOfYear"><a name="dayOfYear,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dayOfYear</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">range</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">365</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5991,7 +5991,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">printlnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Last Modified on day  : &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">mday</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Day of Current year   : &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">today</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4079"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4082"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="dayOfYear"><a name="dayOfYear,Time"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dayOfYear</span><span class="Other">(</span><span class="Identifier">tt</span><span class="Other">:</span> <span class="Identifier">Time</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">range</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">365</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6006,7 +6006,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">printlnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Last Modified on day  : &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">mday</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Day of Current year   : &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">today</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4099"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4102"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="doNimUp"><a name="doNimUp,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doNimUp</span><span class="Other">(</span><span class="Identifier">xpos</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">rev</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6015,7 +6015,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>A Nim dumbs up logo</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4118"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4121"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="checkClip"><a name="checkClip,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkClip</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
@@ -6025,7 +6025,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns the newest entry from the Clipboard needs linux utility xclip installed</p>
 <pre class = "listing"><span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Last Clipboard Entry : &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">checkClip</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4187"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4190"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="newWordCJK"><a name="newWordCJK,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newWordCJK</span><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6039,7 +6039,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Comment"># with max length 20 and show it in green</span>
 <span class="Identifier">msgg</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Keyword">do</span> <span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="Identifier">newWordCJK</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">,</span><span class="DecNumber">20</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4211"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4214"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="newWord"><a name="newWord,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newWord</span><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -6051,7 +6051,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>default max word length maxwl = 10 </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4239"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4242"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="newWord2"><a name="newWord2,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newWord2</span><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -6063,7 +6063,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>default max word length maxwl = 10 </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4268"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4271"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="newWord3"><a name="newWord3,int,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newWord3</span><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">nflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -6076,7 +6076,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>default max word length maxwl = 10 </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4295"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4298"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="newHiragana"><a name="newHiragana,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newHiragana</span><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -6088,7 +6088,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>default max word length maxwl = 10 </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4327"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4330"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="newKatakana"><a name="newKatakana,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newKatakana</span><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
@@ -6100,7 +6100,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>default max word length maxwl = 10 </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4355"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4358"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="iching"><a name="iching,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">iching</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6109,7 +6109,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns a seq containing iching unicode chars</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4383"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4386"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="ada"><a name="ada,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">ada</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6118,7 +6118,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns a seq containing ada language symbols </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4394"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4397"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="hiragana"><a name="hiragana,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">hiragana</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6127,7 +6127,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns a seq containing hiragana unicode chars</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4407"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4410"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="katakana"><a name="katakana,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">katakana</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6136,7 +6136,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns a seq containing full width katakana unicode chars </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4418"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4421"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="rainbow2"><a name="rainbow2,T,int,bool,bool,seq[]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rainbow2</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
@@ -6147,7 +6147,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>may not work with certain Rune</p>
 <pre class = "listing"><span class="Identifier">rainbow2</span><span class="Punctuation">(</span><span class="StringLit">&quot;what's up ?</span><span class="EscapeSequence">\n</span><span class="StringLit">&quot;</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">,</span><span class="Identifier">colorset</span> <span class="Operator">=</span> <span class="Identifier">pastelSet</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4431"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4434"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="boxChars"><a name="boxChars,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">boxChars</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6156,7 +6156,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns a seq containing unicode box drawing chars </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4477"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4480"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="drawBox"><a name="drawBox,int,int,int,int,string,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">drawBox</span><span class="Other">(</span><span class="Identifier">hy</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">wx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">hsec</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">vsec</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">frCol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
@@ -6177,7 +6177,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">showTerminalSize</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4491"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4494"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="randpos"><a name="randpos,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randpos</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6190,7 +6190,7 @@ class="link-seesrc" target="_blank">Source</a>
       <span class="Identifier">print</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">z</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="Identifier">randpos</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
    <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.0015</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4593"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4596"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="fastsplit"><a name="fastsplit,string,char"></a><pre><span class="Keyword">proc</span> <span class="Identifier">fastsplit</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6201,14 +6201,14 @@ class="link-seesrc" target="_blank">Source</a>
 <p>seperator must be a char type </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4618"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4621"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="splitty"><a name="splitty,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">splitty</span><span class="Other">(</span><span class="Identifier">txt</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4643"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4646"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showTerminalSize"><a name="showTerminalSize,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showTerminalSize</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6219,7 +6219,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>height is always available via th</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4676"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4679"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="qqTop"><a name="qqTop,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">qqTop</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6228,7 +6228,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>prints qqTop in custom color </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4694"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4697"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="doInfo"><a name="doInfo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doInfo</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
@@ -6238,7 +6238,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>A more than you want to know information proc</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4705"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4708"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="infoLine"><a name="infoLine,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">infoLine</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
@@ -6249,7 +6249,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>prints some info for current application </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4772"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4775"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="doFinish"><a name="doFinish,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doFinish</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
@@ -6262,7 +6262,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>and should be the last line of the application </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4789"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4792"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="handler"><a name="handler,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">handler</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">noconv</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
@@ -6278,7 +6278,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>or under some circumstances like being called during readLineFromStdin</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4806"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L4809"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 
@@ -6290,7 +6290,7 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1644"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1647"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 
@@ -6311,7 +6311,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>another way to show all colors </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2306"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L2309"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 
@@ -6478,8 +6478,8 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 <p>hdx</p>
 <p>a simple sandwich frame made with + default or any string passed in</p>
-<p>width and xpos can be adjusted </p>
-
+<p>width and xpos can be adjusted</p>
+<pre class = "listing"><span class="Identifier">hdx</span><span class="Punctuation">(</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nice things happen randomly&quot;</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">9</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">width</span> <span class="Operator">=</span> <span class="DecNumber">35</span><span class="Punctuation">,</span><span class="Identifier">nxpos</span> <span class="Operator">=</span> <span class="DecNumber">5</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
 href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1342"
 class="link-seesrc" target="_blank">Source</a>
@@ -6523,7 +6523,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Finished&quot;</span><span class="Punctuation">,</span><span class="Identifier">clRainbow</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1510"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1513"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="curUp"><a name="curUp.t,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">curUp</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
@@ -6532,7 +6532,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>mirrors terminal cursorUp</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1884"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1887"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="curDn"><a name="curDn.t,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">curDn</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
@@ -6541,7 +6541,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>mirrors terminal cursorDown</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1891"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1894"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="curBk"><a name="curBk.t,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">curBk</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
@@ -6550,7 +6550,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>mirrors terminal cursorBackward</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1898"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1901"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="curFw"><a name="curFw.t,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">curFw</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
@@ -6559,7 +6559,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>mirrors terminal cursorForward</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1905"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1908"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="curSetx"><a name="curSetx.t,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">curSetx</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span></pre></dt>
@@ -6568,7 +6568,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>mirrors terminal setCursorXPos</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1912"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1915"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="curSet"><a name="curSet.t,int,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">curSet</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
@@ -6577,7 +6577,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>mirrors terminal setCursorPos</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1919"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1922"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="clearup"><a name="clearup.t,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">clearup</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">80</span><span class="Other">)</span></pre></dt>
@@ -6586,7 +6586,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>a convenience proc to clear monitor x rows </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1928"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L1931"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="benchmark"><a name="benchmark.t,string,typed"></a><pre><span class="Keyword">template</span> <span class="Identifier">benchmark</span><span class="Other">(</span><span class="Identifier">benchmarkName</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">typed</span><span class="Other">)</span></pre></dt>
@@ -6606,7 +6606,7 @@ class="link-seesrc" target="_blank">Source</a>
   <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">100</span><span class="Punctuation">:</span>
       <span class="Identifier">doit</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3667"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3670"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getCard"><a name="getCard.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">getCard</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
@@ -6617,7 +6617,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">print</span><span class="Punctuation">(</span><span class="Identifier">getCard</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="Identifier">centerX</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>  <span class="Comment"># get card and print in random color at xpos</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3737"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3740"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="loopy"><a name="loopy.t,T,typed"></a><pre><span class="Keyword">template</span> <span class="Identifier">loopy</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ite</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">st</span><span class="Other">:</span> <span class="Identifier">typed</span><span class="Other">)</span></pre></dt>
@@ -6626,7 +6626,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>the lazy programmer's quick simple for-loop template</p>
 <pre class = "listing"><span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;The house is in the back.&quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3854"
+href="https://github.com/qqtop/NimCx/blob/master/cx.nim#L3857"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 
@@ -6639,7 +6639,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2016-07-17 21:00:58 UTC</small>
+        <small>Made with Nim. Generated: 2016-07-17 21:37:27 UTC</small>
       </div>
     </div>
   </div>
