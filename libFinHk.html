@@ -1245,7 +1245,7 @@ function main() {
 <p>Project     : <a class="reference external" href="https://github.com/qqtop/NimFinLib">https://github.com/qqtop/NimFinLib</a></p>
 <p>Tested on   : Linux</p>
 <p>ProjectStart: 2015-07-07</p>
-<p>Latest      : 2016-05-30</p>
+<p>Latest      : 2016-08-04</p>
 <p>ToDo        :</p>
 <p>Programming : qqTop</p>
 <p>Contributors:</p>
@@ -1320,14 +1320,15 @@ href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L95"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getHKEXcodesFromFile"><a name="getHKEXcodesFromFile,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getHKEXcodesFromFile</span><span class="Other">(</span><span class="Identifier">fname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">CsvError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">CsvError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getHKEXcodesFromFile</p>
 <p>read a csv file created with getHKEXcodes into three seqs</p>
 <p>stockcodes,companynames,boardlots</p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L188"
+href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L187"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="initHKEX"><a name="initHKEX,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initHKEX</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span>
@@ -1339,7 +1340,7 @@ class="link-seesrc" target="_blank">Source</a>
 <p>list of HK Stock Exchange mainboard listed stocks </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L242"
+href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L241"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="getHKEXseq"><a name="getHKEXseq,seq[string],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getHKEXseq</span><span class="Other">(</span><span class="Identifier">stockslist</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">acode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -1353,7 +1354,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span> <span class="Identifier">bigMseq</span></pre><p>here hkexcodes[0] holds the list of stockcodes in HKEX format this is used to query the hkexcodes for company name and boardlots </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L263"
+href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L262"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="hkPfseq"><a name="hkPfseq,Portfolio,seq[seq[string]]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">hkPfseq</span><span class="Other">(</span><span class="Identifier">anf</span><span class="Other">:</span> <span class="Identifier">Portfolio</span><span class="Other">;</span> <span class="Identifier">hkexcodes</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
@@ -1363,28 +1364,29 @@ class="link-seesrc" target="_blank">Source</a>
 <p>hkPfseq returns the index seq of stocks in a Portfolio objects dx Stocks </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L290"
+href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L289"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="showQuoteTableHk"><a name="showQuoteTableHk,Portfolio"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showQuoteTableHk</span><span class="Other">(</span><span class="Identifier">apfData</span><span class="Other">:</span> <span class="Identifier">Portfolio</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
     <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
-    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">CsvError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span>
-    <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">CsvError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
+    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showQuoteTable</p>
 <p>a table with kurtosis, stdDev close ,ema22 , company name and latest quote from yahoo</p>
 <p>for usage example see nimFinT3 </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L301"
+href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L300"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="hkRandomPortfolio"><a name="hkRandomPortfolio,int,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">hkRandomPortfolio</span><span class="Other">(</span><span class="Identifier">sz</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">startdate</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;2014-01-01&quot;</span><span class="Other">;</span>
                       <span class="Identifier">enddate</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getDateStr</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">Portfolio</span><span class="Other">,</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span>
     <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">CsvError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span>
-    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>hkRandomPf</p>
 <p>a fast automated random Portfolio generator</p>
@@ -1393,14 +1395,15 @@ class="link-seesrc" target="_blank">Source</a>
 <p>for example use see nimFinT4.nim </p>
 
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L342"
+href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L341"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="quickPortfolioHk"><a name="quickPortfolioHk,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">quickPortfolioHk</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span>
                                        <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span>
                                        <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
-                                       <span class="Identifier">CsvError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span>
-    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+                                       <span class="Identifier">CsvError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
+    <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>quickPortfolioHk</p>
 <p>just show a random portfolio of Hongkong stocks for quick demoing</p>
@@ -1409,7 +1412,7 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">quickPortfolioHk</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L387"
+href="https://github.com/qqtop/NimFinLib/blob/master/libFinHk.nim#L386"
 class="link-seesrc" target="_blank">Source</a>
 </dd>
 
@@ -1422,7 +1425,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2016-07-17 21:02:03 UTC</small>
+        <small>Made with Nim. Generated: 2016-08-04 15:12:31 UTC</small>
       </div>
     </div>
   </div>
