@@ -1504,7 +1504,7 @@ class="link-seesrc" target="_blank">Source</a>
            <span class="Identifier">colcolors</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">showframe</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">framecolor</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span>
            <span class="Identifier">header</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">headertext</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">leftalignflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span>
            <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
-                                <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
+                                <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
     <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showDf</p>
@@ -1517,7 +1517,8 @@ class="link-seesrc" target="_blank">Source</a>
 <p>showFrame  default = off</p>
 <p>header indicates if an actual header is available</p>
 <p>frame character can be shown in selectable color</p>
-<p>headerless data can be show with headertest supplied </p>
+<p>headerless data can be show with headertest supplied</p>
+<p>cols,colwd,colcolors parameters seqs must be of equal length and corresponding to each other </p>
 
 &nbsp;&nbsp;<a
 href="/tree/master/nimdataframe.nim#L275"
@@ -1532,9 +1533,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>some basic information of the dataframe </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L543"
+href="/tree/master/nimdataframe.nim#L558"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L543" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L558" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="getColData"><a name="getColData,nimdf,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getColData</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -1543,9 +1544,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>get one column from a nimdf dataframe </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L561"
+href="/tree/master/nimdataframe.nim#L576"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L561" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L576" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="getRowData"><a name="getRowData,nimdf,int,varargs[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRowData</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">row</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">dfcols</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -1556,9 +1557,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>gets one row of a nimdf dataframe </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L574"
+href="/tree/master/nimdataframe.nim#L589"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L574" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L589" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="getRowDataRange"><a name="getRowDataRange,nimdf,nimis,varargs[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRowDataRange</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">rows</span><span class="Other">:</span> <span class="Identifier">nimis</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="DecNumber">0</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">dfcols</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -1569,9 +1570,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>gets one row of a nimdf dataframe </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L599"
+href="/tree/master/nimdataframe.nim#L614"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L599" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L614" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="getCellData"><a name="getCellData,nimdf,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getCellData</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">row</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -1580,9 +1581,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>gets Data from a cell of the df at pos row/col </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L615"
+href="/tree/master/nimdataframe.nim#L630"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L615" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L630" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="sortcoldata"><a name="sortcoldata,nimss,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sortcoldata</span><span class="Other">(</span><span class="Identifier">coldata</span><span class="Other">:</span> <span class="Identifier">nimss</span><span class="Other">;</span> <span class="Identifier">hasheader</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">order</span> <span class="Other">=</span> <span class="Identifier">Ascending</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -1592,9 +1593,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>available order Ascending, Descending</p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L627"
+href="/tree/master/nimdataframe.nim#L642"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L627" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L642" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="sortdf"><a name="sortdf,nimdf,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sortdf</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -1603,9 +1604,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>sort df based on column number col</p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L644"
+href="/tree/master/nimdataframe.nim#L659"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L644" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L659" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="makeNimDf"><a name="makeNimDf,varargs[nimss]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">makeNimDf</span><span class="Other">(</span><span class="Identifier">dfcols</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">nimss</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -1616,9 +1617,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>creates a nimdf with passed in col data which is of type nimss </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L656"
+href="/tree/master/nimdataframe.nim#L671"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L656" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L671" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="createDataFrame"><a name="createDataFrame,string,int,char"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createDataFrame</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">char</span> <span class="Other">=</span> <span class="CharLit">','</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
@@ -1631,9 +1632,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>other should be clean , preprocess as needed</p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L671"
+href="/tree/master/nimdataframe.nim#L686"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L671" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L686" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -1646,7 +1647,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2016-09-23 23:12:30 UTC</small>
+        <small>Made with Nim. Generated: 2016-09-24 10:43:33 UTC</small>
       </div>
     </div>
   </div>
