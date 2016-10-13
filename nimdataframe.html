@@ -1230,7 +1230,7 @@ function main() {
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#NIMDATAFRAMEVERSION"
-    title="NIMDATAFRAMEVERSION = &quot;0.0.1.1&quot;"><wbr />NIMDATAFRAMEVERSION<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="NIMDATAFRAMEVERSION = &quot;0.0.1.2&quot;"><wbr />NIMDATAFRAMEVERSION<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1290,8 +1290,8 @@ function main() {
     title="makeNimDf(dfcols: varargs[nimss]): nimdf"><wbr />make<wbr />Nim<wbr />Df<span class="attachedType" style="visibility:hidden">nimss</span></a></li>
   <li><a class="reference" href="#createDataFrame,string,int,char"
     title="createDataFrame(filename: string; cols: int = 2; sep: char = &#x27;,&#x27;): nimdf"><wbr />create<wbr />Data<wbr />Frame<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
-  <li><a class="reference" href="#createRandomTestData,string"
-    title="createRandomTestData(filename: string = &quot;nimDfTestData.csv&quot;)"><wbr />create<wbr />Random<wbr />Test<wbr />Data<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#createRandomTestData,string,int"
+    title="createRandomTestData(filename: string = &quot;nimDfTestData.csv&quot;; datarows: int = 2000)"><wbr />create<wbr />Random<wbr />Test<wbr />Data<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1304,9 +1304,9 @@ function main() {
   <p class="module-desc"><blockquote><p><p>Library     : nimdataframe.nim</p>
 <p>Status      : development</p>
 <p>License     : MIT opensource</p>
-<p>Version     : 0.0.1.1</p>
+<p>Version     : 0.0.1.2</p>
 <p>ProjectStart: 2016-09-16</p>
-<p>Latest      : 2016-10-10</p>
+<p>Latest      : 2016-10-13</p>
 <p>Compiler    : Nim &gt;= 0.15</p>
 <p>OS          : Linux</p>
 <p>Description :</p>
@@ -1324,7 +1324,7 @@ function main() {
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
-<a class="reference external" href="cx.html">cx</a>, <a class="reference external" href="httpclient.html">httpclient</a>, <a class="reference external" href="browsers.html">browsers</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="parsecsv.html">parsecsv</a>, <a class="reference external" href="streams.html">streams</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="db_sqlite.html">db_sqlite</a>, <a class="reference external" href="typetraits.html">typetraits</a>, <a class="reference external" href="typeinfo.html">typeinfo</a>
+<a class="reference external" href="os.html">os</a>, <a class="reference external" href="cx.html">cx</a>, <a class="reference external" href="httpclient.html">httpclient</a>, <a class="reference external" href="browsers.html">browsers</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="parsecsv.html">parsecsv</a>, <a class="reference external" href="streams.html">streams</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="db_sqlite.html">db_sqlite</a>, <a class="reference external" href="typetraits.html">typetraits</a>, <a class="reference external" href="typeinfo.html">typeinfo</a>
 </dl></div>
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
@@ -1361,7 +1361,7 @@ class="link-seesrc" target="_blank">Source</a>
 <div class="section" id="9">
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
-<dt id="NIMDATAFRAMEVERSION"><a name="NIMDATAFRAMEVERSION"></a><pre><span class="Identifier">NIMDATAFRAMEVERSION</span> <span class="Other">=</span> <span class="StringLit">&quot;0.0.1.1&quot;</span></pre></dt>
+<dt id="NIMDATAFRAMEVERSION"><a name="NIMDATAFRAMEVERSION"></a><pre><span class="Identifier">NIMDATAFRAMEVERSION</span> <span class="Other">=</span> <span class="StringLit">&quot;0.0.1.2&quot;</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
@@ -1646,8 +1646,8 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 <dt id="sortdf"><a name="sortdf,nimdf,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sortdf</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">sortcol</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">sortorder</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">DbError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">DbEffect</span><span class="Other">,</span> <span class="Identifier">ReadDbEffect</span><span class="Other">,</span> <span class="Identifier">WriteDbEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">DbError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">DbEffect</span><span class="Other">,</span>
+    <span class="Identifier">ReadDbEffect</span><span class="Other">,</span> <span class="Identifier">WriteDbEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>sortdf</p>
 <p>sorts a dataframe asc or desc</p>
@@ -1670,9 +1670,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>creates a nimdf with passed in col data which is of type nimss </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L917"
+href="/tree/master/nimdataframe.nim#L918"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L917" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L918" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="createDataFrame"><a name="createDataFrame,string,int,char"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createDataFrame</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">char</span> <span class="Other">=</span> <span class="CharLit">','</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
@@ -1685,22 +1685,23 @@ class="link-seesrc" target="_blank">Source</a>
 <p>other should be clean , preprocess as needed</p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L932"
+href="/tree/master/nimdataframe.nim#L933"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L932" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L933" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<dt id="createRandomTestData"><a name="createRandomTestData,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createRandomTestData</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;nimDfTestData.csv&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="createRandomTestData"><a name="createRandomTestData,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createRandomTestData</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;nimDfTestData.csv&quot;</span><span class="Other">;</span>
+                         <span class="Identifier">datarows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2000</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>createRandomTestData</p>
 <p>a file will be created in current working directory</p>
 <p>default name nimDfTestData.csv or as given </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/nimdataframe.nim#L956"
+href="/tree/master/nimdataframe.nim#L957"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/nimdataframe.nim#L956" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/nimdataframe.nim#L957" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -1713,7 +1714,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2016-10-13 15:37:12 UTC</small>
+        <small>Made with Nim. Generated: 2016-10-13 21:37:04 UTC</small>
       </div>
     </div>
   </div>
