@@ -1335,19 +1335,21 @@ function main() {
        &quot;\xF0\x9F\x82\xBF&quot;, &quot;\xF0\x9F\x83\x8F&quot;, &quot;\xF0\x9F\x83\x9F&quot;]"><wbr />cards<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rxCards"
     title="rxCards =
-  var result440427: seq[type(low(cards) .. high(cards))] = []
-  block :tmp440451:
+  var i442202 = 0
+  var result442437 = newSeq(chckRange(len(0 .. high(cards)), 0, 9223372036854775807))
+  block :tmp442459:
       var
-        x440438
+        x442448
         :tmp
       :tmp = high(cards)
       var res = 0
-      block :tmp440453:
+      block :tmp442461:
           while res &lt;= int(:tmp):
-            x440438 = T(res)
-            add(result440427, x440438)
+            x442448 = T(res)
+            result442437[i442202] = x442448
+            inc i442202, 1
             inc(res, 1)
-  result440427"><wbr />rx<wbr />Cards<span class="attachedType" style="visibility:hidden"></span></a></li>
+  result442437"><wbr />rx<wbr />Cards<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -2933,19 +2935,21 @@ class="link-seesrc" target="_blank">Source</a>
 
 </dd>
 <dt id="rxCards"><a name="rxCards"></a><pre><span class="Identifier">rxCards</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">result</span><span class="DecNumber">440427</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">type</span><span class="Other">(</span><span class="Identifier">low</span><span class="Other">(</span><span class="Identifier">cards</span><span class="Other">)</span> <span class="Operator">..</span> <span class="Identifier">high</span><span class="Other">(</span><span class="Identifier">cards</span><span class="Other">)</span><span class="Other">)</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">[</span><span class="Other">]</span>
-  <span class="Keyword">block</span> <span class="Operator">:tmp440451</span><span class="Other">:</span>
+  <span class="Keyword">var</span> <span class="Identifier">i</span><span class="DecNumber">442202</span> <span class="Other">=</span> <span class="DecNumber">0</span>
+  <span class="Keyword">var</span> <span class="Identifier">result</span><span class="DecNumber">442437</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">chckRange</span><span class="Other">(</span><span class="Identifier">len</span><span class="Other">(</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="Identifier">high</span><span class="Other">(</span><span class="Identifier">cards</span><span class="Other">)</span><span class="Other">)</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">9223372036854775807</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">block</span> <span class="Operator">:tmp442459</span><span class="Other">:</span>
       <span class="Keyword">var</span>
-        <span class="Identifier">x</span><span class="DecNumber">440438</span>
+        <span class="Identifier">x</span><span class="DecNumber">442448</span>
         <span class="Operator">:tmp</span>
       <span class="Operator">:tmp</span> <span class="Other">=</span> <span class="Identifier">high</span><span class="Other">(</span><span class="Identifier">cards</span><span class="Other">)</span>
       <span class="Keyword">var</span> <span class="Identifier">res</span> <span class="Other">=</span> <span class="DecNumber">0</span>
-      <span class="Keyword">block</span> <span class="Operator">:tmp440453</span><span class="Other">:</span>
+      <span class="Keyword">block</span> <span class="Operator">:tmp442461</span><span class="Other">:</span>
           <span class="Keyword">while</span> <span class="Identifier">res</span> <span class="Operator">&lt;=</span> <span class="Identifier">int</span><span class="Other">(</span><span class="Operator">:tmp</span><span class="Other">)</span><span class="Other">:</span>
-            <span class="Identifier">x</span><span class="DecNumber">440438</span> <span class="Other">=</span> <span class="Identifier">T</span><span class="Other">(</span><span class="Identifier">res</span><span class="Other">)</span>
-            <span class="Identifier">add</span><span class="Other">(</span><span class="Identifier">result</span><span class="DecNumber">440427</span><span class="Other">,</span> <span class="Identifier">x</span><span class="DecNumber">440438</span><span class="Other">)</span>
+            <span class="Identifier">x</span><span class="DecNumber">442448</span> <span class="Other">=</span> <span class="Identifier">T</span><span class="Other">(</span><span class="Identifier">res</span><span class="Other">)</span>
+            <span class="Identifier">result</span><span class="DecNumber">442437</span><span class="Other">[</span><span class="Identifier">i</span><span class="DecNumber">442202</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">x</span><span class="DecNumber">442448</span>
+            <span class="Identifier">inc</span> <span class="Identifier">i</span><span class="DecNumber">442202</span><span class="Other">,</span> <span class="DecNumber">1</span>
             <span class="Identifier">inc</span><span class="Other">(</span><span class="Identifier">res</span><span class="Other">,</span> <span class="DecNumber">1</span><span class="Other">)</span>
-  <span class="Identifier">result</span><span class="DecNumber">440427</span></pre></dt>
+  <span class="Identifier">result</span><span class="DecNumber">442437</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
@@ -7822,7 +7826,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-05-28 10:18:36 UTC</small>
+        <small>Made with Nim. Generated: 2017-06-01 11:52:51 UTC</small>
       </div>
     </div>
   </div>
