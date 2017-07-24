@@ -2282,6 +2282,8 @@ function main() {
     title="nimcat(curFile: string; startline: int = - 1; endline = - 1)"><wbr />nimcat<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#checkHash,string,T"
     title="checkHash[T](kata: string; hsx: T)"><wbr />check<wbr />Hash<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#verifykHash,string,T"
+    title="verifykHash[T](kata: string; hsx: T): bool"><wbr />verifyk<wbr />Hash<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#createHash,string"
     title="createHash(kata: string): auto"><wbr />create<wbr />Hash<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showBench,"
@@ -7091,6 +7093,17 @@ class="link-seesrc" target="_blank">Source</a>
 <a href="/edit/devel/cx.nim#L3964" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
+<dt id="verifykHash"><a name="verifykHash,string,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">verifykHash</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">kata</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">hsx</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dd>
+<p>checkHash</p>
+<p>checks hash of a string and returns true or false </p>
+
+&nbsp;&nbsp;<a
+href="/tree/master/cx.nim#L3975"
+class="link-seesrc" target="_blank">Source</a>
+<a href="/edit/devel/cx.nim#L3975" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
 <dt id="createHash"><a name="createHash,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createHash</span><span class="Other">(</span><span class="Identifier">kata</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>createHash</p>
@@ -7102,9 +7115,9 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span> <span class="Identifier">ahash</span>
 <span class="Identifier">checkHash</span><span class="Punctuation">(</span><span class="Identifier">zz</span><span class="Punctuation">,</span> <span class="Identifier">ahash</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L3975"
+href="/tree/master/cx.nim#L3986"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L3975" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L3986" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="showBench"><a name="showBench,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showBench</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
@@ -7114,27 +7127,27 @@ class="link-seesrc" target="_blank">Source</a>
 <p>Displays results of all benchmarks </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4032"
+href="/tree/master/cx.nim#L4043"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4032" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4043" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="$"><a name="$,typedesc[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`$`</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">some</span><span class="Other">:</span> <span class="Identifier">typedesc</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4051"
+href="/tree/master/cx.nim#L4062"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4051" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4062" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="typeTest"><a name="typeTest,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">typeTest</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4052"
+href="/tree/master/cx.nim#L4063"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4052" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4063" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="sortMe"><a name="sortMe,seq[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sortMe</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">xs</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">order</span> <span class="Other">=</span> <span class="Identifier">Ascending</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
@@ -7146,9 +7159,9 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">sortMe</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">sortMe</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">,</span><span class="Identifier">Descending</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4058"
+href="/tree/master/cx.nim#L4069"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4058" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4069" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="fromCString"><a name="fromCString,pointer,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">fromCString</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">len</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -7157,9 +7170,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>convert C pointer to Nim string (code ex nim forum <a class="reference external" href="https://forum.nim-lang.org/t/3045">https://forum.nim-lang.org/t/3045</a> by jangko) </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4141"
+href="/tree/master/cx.nim#L4152"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4141" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4152" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="showPalette"><a name="showPalette,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showPalette</span><span class="Other">(</span><span class="Identifier">coltype</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;white&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -7172,9 +7185,9 @@ Displays palette with all coltype as found in  colorNames
 coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dark&quot;,&quot;light&quot;,&quot;pastel&quot; etc..</pre>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4150"
+href="/tree/master/cx.nim#L4161"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4150" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4161" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="shift"><a name="shift,seq[T],Natural"></a><pre><span class="Keyword">proc</span> <span class="Identifier">shift</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">zz</span><span class="Other">:</span> <span class="Identifier">Natural</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
@@ -7185,18 +7198,18 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">echo</span> <span class="Identifier">shift</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">a</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4165"
+href="/tree/master/cx.nim#L4176"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4165" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4176" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="spellInteger"><a name="spellInteger,int64"></a><pre><span class="Keyword">proc</span> <span class="Identifier">spellInteger</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int64</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4214"
+href="/tree/master/cx.nim#L4225"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4214" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4225" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="spellFloat"><a name="spellFloat,float64,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">spellFloat</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">float64</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;.&quot;</span><span class="Other">;</span> <span class="Identifier">sepname</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot; dot &quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -7209,9 +7222,9 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">printLn</span> <span class="Identifier">spellFloat</span><span class="Punctuation">(</span><span class="DecNumber">234</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span> <span class="Identifier">spellFloat</span><span class="Punctuation">(</span><span class="Operator">-</span><span class="FloatNumber">2311.345</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4244"
+href="/tree/master/cx.nim#L4255"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4244" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4255" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="showStats"><a name="showStats,RunningStat,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStats</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">RunningStat</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -7242,9 +7255,9 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">curdn</span><span class="Punctuation">(</span><span class="DecNumber">6</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4270"
+href="/tree/master/cx.nim#L4281"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4270" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4281" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="showRegression"><a name="showRegression,seq[],seq[],int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRegression</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
@@ -7256,9 +7269,9 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Keyword">var</span> <span class="Identifier">b</span> <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="DecNumber">3</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">7</span><span class="Punctuation">]</span>
 <span class="Identifier">showRegression</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4317"
+href="/tree/master/cx.nim#L4328"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4317" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4328" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="showRegression"><a name="showRegression,RunningRegress,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRegression</span><span class="Other">(</span><span class="Identifier">rr</span><span class="Other">:</span> <span class="Identifier">RunningRegress</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -7268,9 +7281,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>Displays RunningRegress data from an already formed RunningRegress </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4337"
+href="/tree/master/cx.nim#L4348"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4337" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4348" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="newDir"><a name="newDir,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newDir</span><span class="Other">(</span><span class="Identifier">dirname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
@@ -7280,9 +7293,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>creates a new directory and provides some feedback</p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4376"
+href="/tree/master/cx.nim#L4387"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4376" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4387" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="remDir"><a name="remDir,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">remDir</span><span class="Other">(</span><span class="Identifier">dirname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
@@ -7294,9 +7307,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>root and home directory removal is disallowed </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4392"
+href="/tree/master/cx.nim#L4403"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4392" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4403" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="localTime"><a name="localTime,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">localTime</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -7305,9 +7318,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>quick access to local time for printing </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4417"
+href="/tree/master/cx.nim#L4428"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4417" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4428" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="dayOfYear"><a name="dayOfYear,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dayOfYear</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">range</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">365</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -7322,9 +7335,9 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Last Modified on day  : &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">mday</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Day of Current year   : &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">today</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4425"
+href="/tree/master/cx.nim#L4436"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4425" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4436" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="dayOfYear"><a name="dayOfYear,Time"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dayOfYear</span><span class="Other">(</span><span class="Identifier">tt</span><span class="Other">:</span> <span class="Identifier">Time</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">range</span><span class="Other">[</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">365</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -7339,9 +7352,9 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Last Modified on day  : &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">mday</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Day of Current year   : &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">today</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4445"
+href="/tree/master/cx.nim#L4456"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4445" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4456" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="toTimeInfo"><a name="toTimeInfo,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">toTimeInfo</span><span class="Other">(</span><span class="Identifier">date</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;2000-01-01&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TimeInfo</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -7352,9 +7365,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>converts a date of format yyyy-mm-dd to timeInfo </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4464"
+href="/tree/master/cx.nim#L4475"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4464" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4475" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="epochSecs"><a name="epochSecs,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">epochSecs</span><span class="Other">(</span><span class="Identifier">date</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;2000-01-01&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -7365,9 +7378,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>converts a date into secs since unix time 0 </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4498"
+href="/tree/master/cx.nim#L4509"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4498" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4509" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="checkClip"><a name="checkClip,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkClip</span><span class="Other">(</span><span class="Identifier">sel</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;primary&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -7378,18 +7391,18 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns the newest entry from the Clipboard needs linux utility xclip installed</p>
 <pre class="listing"><span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Last Clipboard Entry : &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">checkClip</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4506"
+href="/tree/master/cx.nim#L4517"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4506" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4517" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="toClip"><a name="toClip,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">toClip</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4526"
+href="/tree/master/cx.nim#L4537"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4526" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4537" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="tableRune"><a name="tableRune,T,string,int,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">tableRune</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">18</span><span class="Other">;</span> <span class="Identifier">pause</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">0.05</span><span class="Other">)</span></pre></dt>
@@ -7401,27 +7414,27 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">hiragana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">truetomato</span><span class="Punctuation">)</span>
 <span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">geoshapes</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4535"
+href="/tree/master/cx.nim#L4546"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4535" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4546" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="uniall"><a name="uniall,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">uniall</span><span class="Other">(</span><span class="Identifier">showOrd</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4571"
+href="/tree/master/cx.nim#L4582"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4571" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4582" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="geoshapes"><a name="geoshapes,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">geoshapes</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4584"
+href="/tree/master/cx.nim#L4595"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4584" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4595" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="hiragana"><a name="hiragana,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">hiragana</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -7430,9 +7443,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns a seq containing hiragana unicode chars</p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4589"
+href="/tree/master/cx.nim#L4600"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4589" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4600" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="katakana"><a name="katakana,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">katakana</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -7441,18 +7454,18 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns a seq containing full width katakana unicode chars </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4599"
+href="/tree/master/cx.nim#L4610"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4599" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4610" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="cjk"><a name="cjk,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cjk</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 full cjk unicode range returned in a seq 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4612"
+href="/tree/master/cx.nim#L4623"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4612" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4623" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="iching"><a name="iching,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">iching</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -7461,9 +7474,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns a seq containing iching unicode chars</p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4633"
+href="/tree/master/cx.nim#L4644"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4633" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4644" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="apl"><a name="apl,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">apl</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -7472,9 +7485,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns a seq containing apl language symbols </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4643"
+href="/tree/master/cx.nim#L4654"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4643" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4654" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="rainbow2"><a name="rainbow2,T,int,bool,bool,seq[]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rainbow2</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
@@ -7485,9 +7498,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>may not work with certain Rune</p>
 <pre class="listing"><span class="Identifier">rainbow2</span><span class="Punctuation">(</span><span class="StringLit">&quot;what's up ?</span><span class="EscapeSequence">\n</span><span class="StringLit">&quot;</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">,</span><span class="Identifier">colorset</span> <span class="Operator">=</span> <span class="Identifier">colorsPalette</span><span class="Punctuation">(</span><span class="StringLit">&quot;green&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4655"
+href="/tree/master/cx.nim#L4666"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4655" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4666" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="boxChars"><a name="boxChars,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">boxChars</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -7496,9 +7509,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns a seq containing unicode box drawing chars </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4710"
+href="/tree/master/cx.nim#L4721"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4710" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4721" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="drawBox"><a name="drawBox,int,int,int,int,string,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">drawBox</span><span class="Other">(</span><span class="Identifier">hy</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">wx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">hsec</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">vsec</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">frCol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
@@ -7520,9 +7533,9 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">showTerminalSize</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4724"
+href="/tree/master/cx.nim#L4735"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4724" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4735" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="randpos"><a name="randpos,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randpos</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -7535,9 +7548,9 @@ class="link-seesrc" target="_blank">Source</a>
       <span class="Identifier">print</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">z</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="Identifier">randpos</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
    <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.0015</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4827"
+href="/tree/master/cx.nim#L4838"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4827" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4838" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="fastsplit"><a name="fastsplit,string,char"></a><pre><span class="Keyword">proc</span> <span class="Identifier">fastsplit</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -7548,18 +7561,18 @@ class="link-seesrc" target="_blank">Source</a>
 <p>seperator must be a char type </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4852"
+href="/tree/master/cx.nim#L4863"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4852" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4863" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="splitty"><a name="splitty,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">splitty</span><span class="Other">(</span><span class="Identifier">txt</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 forward declaration
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4877"
+href="/tree/master/cx.nim#L4888"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4877" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4888" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="showTerminalSize"><a name="showTerminalSize,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showTerminalSize</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
@@ -7571,9 +7584,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>height is always available via th</p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4910"
+href="/tree/master/cx.nim#L4921"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4910" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4921" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="qqTop"><a name="qqTop,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">qqTop</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
@@ -7583,9 +7596,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>prints qqTop in custom color </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4957"
+href="/tree/master/cx.nim#L4968"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4957" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4968" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="doInfo"><a name="doInfo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doInfo</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
@@ -7595,9 +7608,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>A more than you want to know information proc</p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4968"
+href="/tree/master/cx.nim#L4979"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4968" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4979" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="infoLine"><a name="infoLine,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">infoLine</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
@@ -7608,9 +7621,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>prints some info for current application </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L5035"
+href="/tree/master/cx.nim#L5046"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L5035" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L5046" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="doByeBye"><a name="doByeBye,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doByeBye</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
@@ -7620,9 +7633,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>a simple end program routine do give some feedback when exiting </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L5053"
+href="/tree/master/cx.nim#L5064"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L5053" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L5064" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="doFinish"><a name="doFinish,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doFinish</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
@@ -7635,9 +7648,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>and should be the last line of the application </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L5077"
+href="/tree/master/cx.nim#L5088"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L5077" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L5088" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="handler"><a name="handler,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">handler</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">noconv</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
@@ -7653,9 +7666,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>or under some circumstances like being called during readLineFromStdin</p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L5103"
+href="/tree/master/cx.nim#L5114"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L5103" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L5114" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -8016,9 +8029,9 @@ class="link-seesrc" target="_blank">Source</a>
 
 <span class="Identifier">showBench</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L3992"
+href="/tree/master/cx.nim#L4003"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L3992" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4003" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="withFile"><a name="withFile.t,untyped,untyped,untyped,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">withFile</span><span class="Other">(</span><span class="Identifier">f</span><span class="Other">,</span> <span class="Identifier">fn</span><span class="Other">,</span> <span class="Identifier">mode</span><span class="Other">,</span> <span class="Identifier">actions</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
@@ -8052,9 +8065,9 @@ class="link-seesrc" target="_blank">Source</a>
             <span class="Keyword">except</span><span class="Punctuation">:</span>
                 <span class="Keyword">break</span> </pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4076"
+href="/tree/master/cx.nim#L4087"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4076" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4087" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="loopy"><a name="loopy.t,T,typed"></a><pre><span class="Keyword">template</span> <span class="Identifier">loopy</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ite</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">st</span><span class="Other">:</span> <span class="Identifier">typed</span><span class="Other">)</span></pre></dt>
@@ -8063,9 +8076,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>the lazy programmer's quick simple for-loop template</p>
 <pre class="listing"><span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;The house is in the back.&quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4131"
+href="/tree/master/cx.nim#L4142"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4131" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4142" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="zipWith"><a name="zipWith.t,untyped,openArray[T1],openArray[T2]"></a><pre><span class="Keyword">template</span> <span class="Identifier">zipWith</span><span class="Other">[</span><span class="Identifier">T1</span><span class="Other">,</span> <span class="Identifier">T2</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">;</span> <span class="Identifier">xs</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T1</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">ys</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T2</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
@@ -8076,9 +8089,9 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
 <span class="Identifier">echo</span> <span class="Identifier">zs</span></pre><p>original code ex Nim Forum </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4350"
+href="/tree/master/cx.nim#L4361"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4350" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4361" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="currentFile"><a name="currentFile.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">currentFile</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
@@ -8087,9 +8100,9 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns path and current filename </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4369"
+href="/tree/master/cx.nim#L4380"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4369" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4380" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="infoProc"><a name="infoProc.t,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">infoProc</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
@@ -8102,9 +8115,9 @@ class="link-seesrc" target="_blank">Source</a>
 </p></blockquote>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4925"
+href="/tree/master/cx.nim#L4936"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4925" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4936" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="checkLocals"><a name="checkLocals.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">checkLocals</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
@@ -8113,27 +8126,27 @@ class="link-seesrc" target="_blank">Source</a>
 <p>check name,type and value of local variables needs to be called inside a proc calling from toplevel has no effect best placed at bottom end of a proc to pick up all Variables </p>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L4945"
+href="/tree/master/cx.nim#L4956"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L4945" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L4956" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="uname"><a name="uname.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">uname</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L5073"
+href="/tree/master/cx.nim#L5084"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L5073" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L5084" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <dt id="release"><a name="release.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">release</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 
 &nbsp;&nbsp;<a
-href="/tree/master/cx.nim#L5074"
+href="/tree/master/cx.nim#L5085"
 class="link-seesrc" target="_blank">Source</a>
-<a href="/edit/devel/cx.nim#L5074" class="link-seesrc" target="_blank" >Edit</a>
+<a href="/edit/devel/cx.nim#L5085" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -8146,7 +8159,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-07-23 13:35:12 UTC</small>
+        <small>Made with Nim. Generated: 2017-07-24 10:02:26 UTC</small>
       </div>
     </div>
   </div>
