@@ -2379,8 +2379,8 @@ function main() {
     title="doFinish()"><wbr />do<wbr />Finish<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#handler,"
     title="handler()"><wbr />handler<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxmain,"
-    title="cxmain()"><wbr />cxmain<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxm,"
+    title="cxm()"><wbr />cxm<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -2503,7 +2503,7 @@ OS          : Linux
 
 Description :
               
-              cx.nim is a collection of simple procs and templates
+              nimcx.nim is a collection of simple procs and templates
               
               for easy colored display in a linux terminal and also contains
               
@@ -2514,7 +2514,7 @@ Description :
               similar or better appear in the stdlib.
 
 
-Usage       : import cx
+Usage       : import nimcx
 
 Project     : https://github.com/qqtop/NimCx
 
@@ -4402,7 +4402,7 @@ rndSampleint returns an int random sample from an integer sequence
 <dd>
 <p>uniform</p>
 <p>returns a random float uniformly distributed between a and  b</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">stats</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">stats</span>
 <span class="Keyword">import</span> <span class="StringLit">&quot;random-0.5.3/random&quot;</span>
 <span class="Keyword">proc</span> <span class="Identifier">quickTest</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">=</span>
      <span class="Keyword">var</span> <span class="Identifier">ps</span> <span class="Punctuation">:</span> <span class="Identifier">Runningstat</span>
@@ -4510,7 +4510,7 @@ Operator chars : &lt;  &gt;  .
 Note that thousand separators are counted as position so 123456 needs
 echo fmtx([&quot;&lt;10.2&quot;],123456)    ---&gt;  123,456.00</pre>
 <p>Examples :</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">cxutils</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Identifier">echo</span> <span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;8.3&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; High : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;8&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">,</span><span class="StringLit">&quot;Open : &quot;</span><span class="Punctuation">,</span><span class="Identifier">unquote</span><span class="Punctuation">(</span><span class="StringLit">&quot;1234.5986&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="FloatNumber">3456.67</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">showRune</span><span class="Punctuation">(</span><span class="StringLit">&quot;FFEC&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">white</span><span class="Punctuation">,</span><span class="StringLit">&quot; Change:&quot;</span><span class="Punctuation">,</span><span class="Identifier">unquote</span><span class="Punctuation">(</span><span class="StringLit">&quot;-1.34 - 0.45%&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;  Range : &quot;</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">,</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">123</span><span class="Punctuation">,</span><span class="DecNumber">456</span><span class="Punctuation">,</span><span class="DecNumber">789</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;18&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;15&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;8.2&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="StringLit">&quot;nice something&quot;</span><span class="Punctuation">,</span><span class="Identifier">steelblue</span><span class="Punctuation">,</span><span class="DecNumber">123</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="FloatNumber">456.12345676</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
@@ -4861,7 +4861,7 @@ forward declaration
 <dd>
 <p>cecho</p>
 <p>color echo w/o new line this also automically resets the color attribute</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">strfmt</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">strfmt</span>
 <span class="Identifier">cechoLn</span><span class="Punctuation">(</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="StringLit">&quot;{:&lt;10} : {} ==&gt; {} --&gt; {}&quot;</span><span class="Operator">.</span><span class="Identifier">fmt</span><span class="Punctuation">(</span><span class="StringLit">&quot;this &quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;zzz &quot;</span><span class="Punctuation">,</span><span class="DecNumber">123</span> <span class="Punctuation">,</span><span class="StringLit">&quot; color is something else&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="StringLit">&quot;ok&quot;</span><span class="Punctuation">)</span>  <span class="Comment"># color resetted</span>
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="StringLit">&quot;{:&lt;10} : {} ==&gt; {} --&gt; {}&quot;</span><span class="Operator">.</span><span class="Identifier">fmt</span><span class="Punctuation">(</span><span class="StringLit">&quot;this &quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;zzz &quot;</span><span class="Punctuation">,</span><span class="DecNumber">123</span> <span class="Punctuation">,</span><span class="StringLit">&quot; color is something else&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
@@ -4876,7 +4876,7 @@ forward declaration
 <p>so it is easy to color your output by just replacing</p>
 <p>echo something  with   cechoLn yellowgreen,something</p>
 <p>in your exisiting projects.</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">strutils</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Identifier">cechoLn</span><span class="Punctuation">(</span><span class="Identifier">steelblue</span><span class="Punctuation">,</span><span class="StringLit">&quot;We made it in $1 hours !&quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">5</span><span class="Punctuation">)</span></pre>
 
 </dd>
@@ -4896,7 +4896,7 @@ forward declaration
 <p>prints number d of widedot ⏺  style dots in given fore/background color</p>
 <p>each dot is of char length 4 added a space in the back to avoid half drawn dots</p>
 <p>if it is available on your system otherwise a rectangle may be shown</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Test for  :  doty</span><span class="EscapeSequence">\n</span><span class="StringLit">&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="Identifier">truetomato</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">)</span>
 <span class="Identifier">dotyLn</span><span class="Punctuation">(</span><span class="DecNumber">22</span> <span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">)</span>
 <span class="Identifier">dotyLn</span><span class="Punctuation">(</span><span class="DecNumber">18</span> <span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">blue</span><span class="Punctuation">)</span>
@@ -4929,7 +4929,7 @@ forward declaration
 <p>drawRect</p>
 <p>a simple proc to draw a rectangle with corners marked with widedots. widedots are of len 4.</p>
 <p>h  height w  width frhLine framechar horizontal frVLine framechar vertical frCol   color of line dotCol  color of corner dotCol xpos    topleft start position blink   true or false to blink the dots</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Identifier">clearUp</span><span class="Punctuation">(</span><span class="DecNumber">18</span><span class="Punctuation">)</span>
 <span class="Identifier">curSet</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">15</span><span class="Punctuation">,</span><span class="DecNumber">24</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;+&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="Identifier">wideDot</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">8</span><span class="Punctuation">)</span>
@@ -5081,7 +5081,7 @@ interval procs returns time elapsed between two dates in secs,hours etc.
     <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
     <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="Identifier">getDateStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="Identifier">getDateStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Comment"># get next 10 mondays</span>
 <span class="Keyword">var</span> <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="StringLit">&quot;2015-08-10&quot;</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
@@ -5146,7 +5146,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 
 <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 
-<span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="DecNumber">23456345</span><span class="Punctuation">,</span><span class="Identifier">steelblue</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="DecNumber">23456345</span><span class="Punctuation">,</span><span class="Identifier">steelblue</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="Identifier">countdown</span><span class="Punctuation">(</span><span class="DecNumber">9</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
      <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
      <span class="Keyword">if</span> <span class="Identifier">x</span> <span class="Operator">==</span> <span class="DecNumber">5</span><span class="Punctuation">:</span>
@@ -5258,7 +5258,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <p>the color of the string can be selected, available colors</p>
 <p>green,red,cyan,white,yellow and for going completely bonkers the frame</p>
 <p>can be set to clrainbow too .</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
 <span class="Identifier">superheader</span><span class="Punctuation">(</span><span class="StringLit">&quot;Ok That's it for Now !&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">white</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
@@ -5316,7 +5316,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <p>getHosts</p>
 <p>returns IP addresses inside a seq[string] for a domain name and</p>
 <p>may resolve multiple IP pointing to same domain</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Keyword">var</span> <span class="Identifier">z</span> <span class="Operator">=</span> <span class="Identifier">getHosts</span><span class="Punctuation">(</span><span class="StringLit">&quot;bbc.co.uk&quot;</span><span class="Punctuation">)</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="Identifier">z</span><span class="Punctuation">:</span>
   <span class="Identifier">echo</span> <span class="Identifier">x</span>
@@ -5329,7 +5329,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <p>showHosts</p>
 <p>displays IP addresses for a domain name and</p>
 <p>may resolve multiple IP pointing to same domain</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Identifier">showHosts</span><span class="Punctuation">(</span><span class="StringLit">&quot;bbc.co.uk&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
@@ -5409,7 +5409,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <p>ff2</p>
 <p>formats a float into form 12,345,678.234 that is thousands separators are shown</p>
 <p>precision is after comma given by n with default set to 3</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
 <span class="Comment"># floats example</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">2000</span><span class="Punctuation">:</span>
@@ -5424,7 +5424,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <p>formats a integer into form 12,345,678 that is thousands separators are shown</p>
 <p>precision is after comma given by n with default set to 0 in context of integer this means display format could even show a 0 after comma part if needed</p>
 <p>ff2(12345,0)  ==&gt; 12,345     # display an integer with thousands seperator as we know it ff2(12345,1)  ==&gt; 12,345.0   # display an integer but like a float with 1 after comma pos ff2(12345,2)  ==&gt; 12,345.00  # display an integer but like a float with 2 after comma pos</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
 <span class="Comment"># int example</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">20</span><span class="Punctuation">:</span>
@@ -5575,7 +5575,8 @@ forward declaration
 <dd>
 <p>spellFloat</p>
 <p>writes out a float number in english sep and sepname can be adjusted as needed default sep = &quot;.&quot; default sepname = &quot; dot &quot;</p>
-<pre class="listing"><span class="Identifier">printLn</span> <span class="Identifier">spellFloat</span><span class="Punctuation">(</span><span class="FloatNumber">0.00</span><span class="Punctuation">)</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+<span class="Identifier">printLn</span> <span class="Identifier">spellFloat</span><span class="Punctuation">(</span><span class="FloatNumber">0.00</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span> <span class="Identifier">spellFloat</span><span class="Punctuation">(</span><span class="DecNumber">234</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span> <span class="Identifier">spellFloat</span><span class="Punctuation">(</span><span class="Operator">-</span><span class="FloatNumber">2311.345</span><span class="Punctuation">)</span></pre>
 
@@ -5586,7 +5587,9 @@ forward declaration
 <p>showStats</p>
 <p>quickly display runningStat data</p>
 <p>adjust decimals</p>
-<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">rsa</span><span class="Punctuation">:</span><span class="Identifier">Runningstat</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+
+<span class="Keyword">var</span> <span class="Identifier">rsa</span><span class="Punctuation">:</span><span class="Identifier">Runningstat</span>
 <span class="Keyword">var</span> <span class="Identifier">rsb</span><span class="Punctuation">:</span><span class="Identifier">Runningstat</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">100</span><span class="Punctuation">:</span>
    <span class="Identifier">cleanscreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
@@ -5613,7 +5616,7 @@ forward declaration
 <dd>
 <p>showRegression</p>
 <p>quickly display RunningRegress data based on input of two openarray data series</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Keyword">var</span> <span class="Identifier">a</span> <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="DecNumber">3</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">5</span><span class="Punctuation">]</span>
 <span class="Keyword">var</span> <span class="Identifier">b</span> <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="DecNumber">3</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">7</span><span class="Punctuation">]</span>
 <span class="Identifier">showRegression</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">)</span></pre>
@@ -5777,7 +5780,7 @@ full cjk unicode range returned in a seq
 <p>getColName</p>
 <p>this functions returns the colorname based on an color escape sequence</p>
 <p>usually used with randcol() to see what color was actually returned</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
    <span class="Keyword">let</span> <span class="Identifier">acol</span> <span class="Operator">=</span> <span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
    <span class="Keyword">let</span> <span class="Identifier">acolname</span> <span class="Operator">=</span> <span class="Identifier">getColName</span><span class="Punctuation">(</span><span class="Identifier">acol</span><span class="Punctuation">)</span>
@@ -5796,7 +5799,7 @@ full cjk unicode range returned in a seq
 <p>optimalbox</p>
 <p>WORK IN PROGRESS</p>
 <p>attempts to calculates best overall box width to accomodate single cells with total desired width and a minimum of s desired columns this function can be used in drawbox to calculate the width parameter</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">cxutils</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
 <span class="Keyword">var</span> <span class="Identifier">postop</span> <span class="Operator">=</span> <span class="DecNumber">5</span>
 <span class="Keyword">var</span> <span class="Identifier">hy</span> <span class="Operator">=</span> <span class="DecNumber">27</span>
@@ -5822,7 +5825,7 @@ full cjk unicode range returned in a seq
 <p>WORK IN PROGRESS FOR A BOX DRAWING PROC USING UNICODE BOX CHARS</p>
 <p>Note you must make sure that the terminal is large enough to display the</p>
 <blockquote><p>box or it will look messed up</p></blockquote>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">unicode</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">unicode</span>
 <span class="Identifier">cleanscreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
 <span class="Identifier">drawBox</span><span class="Punctuation">(</span><span class="Identifier">hy</span><span class="Operator">=</span><span class="DecNumber">10</span><span class="Punctuation">,</span> <span class="Identifier">wx</span><span class="Operator">=</span> <span class="DecNumber">60</span> <span class="Punctuation">,</span> <span class="Identifier">hsec</span> <span class="Operator">=</span> <span class="DecNumber">5</span> <span class="Punctuation">,</span><span class="Identifier">vsec</span> <span class="Operator">=</span> <span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">brCol</span><span class="Operator">=</span> <span class="Identifier">black</span> <span class="Punctuation">,</span><span class="Identifier">cornerCol</span> <span class="Operator">=</span> <span class="Identifier">truetomato</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">1</span><span class="Punctuation">,</span><span class="Identifier">blink</span> <span class="Operator">=</span> <span class="Identifier">false</span><span class="Punctuation">)</span>
@@ -5926,10 +5929,10 @@ forward declaration
 
 
 </dd>
-<dt id="cxmain"><a name="cxmain,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxmain</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
-                      <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
-                                        <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">ReadDirEffect</span><span class="Other">,</span>
-                                        <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="cxm"><a name="cxm,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxm</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
+                   <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
+                                     <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">ReadDirEffect</span><span class="Other">,</span>
+                                     <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
@@ -5993,7 +5996,7 @@ if n &gt; larger than palette length the first palette entry will be used</pre>
 <pre>colPalette
 
 returns a colorpalette which can be used to iterate over</pre>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Keyword">let</span> <span class="Identifier">z</span> <span class="Operator">=</span> <span class="StringLit">&quot;The big money waits in the bank&quot;</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">,</span><span class="Identifier">colPalette</span><span class="Punctuation">(</span><span class="StringLit">&quot;pastel&quot;</span><span class="Punctuation">,</span><span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">colPaletteLen</span><span class="Punctuation">(</span><span class="StringLit">&quot;pastel&quot;</span><span class="Punctuation">)</span> <span class="Operator">-</span> <span class="DecNumber">1</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">black</span><span class="Punctuation">)</span>
 <span class="Identifier">rainbow2</span><span class="Punctuation">(</span><span class="Identifier">z</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;</span><span class="EscapeSequence">\n</span><span class="StringLit">&quot;</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">false</span><span class="Punctuation">,</span><span class="Identifier">colorset</span> <span class="Operator">=</span> <span class="Identifier">colorsPalette</span><span class="Punctuation">(</span><span class="StringLit">&quot;medium&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
@@ -6146,7 +6149,7 @@ latest terminalheight always available in th
 <p>a simple template which allows listing of 2 columns in format</p>
 <p>count data</p>
 <p>cw and dw are column width adjuster</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Keyword">var</span> <span class="Identifier">z</span> <span class="Operator">=</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">1000000</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="Operator">&lt;</span><span class="Identifier">z</span><span class="Operator">.</span><span class="Identifier">len</span><span class="Punctuation">:</span>
     <span class="Identifier">quicklist</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">[</span><span class="Identifier">x</span><span class="Punctuation">]</span> <span class="Operator">*</span> <span class="DecNumber">100000</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">dw</span> <span class="Operator">=</span> <span class="DecNumber">22</span><span class="Punctuation">)</span></pre>
@@ -6197,7 +6200,7 @@ latest terminalheight always available in th
     <span class="Keyword">var</span> <span class="Identifier">line</span> <span class="Operator">=</span> <span class="StringLit">&quot;&quot;</span>
     <span class="Keyword">while</span> <span class="Identifier">fs</span><span class="Operator">.</span><span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">line</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
         <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">line</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span></pre><blockquote><p>Example 2</p></blockquote>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
 <span class="Keyword">let</span> <span class="Identifier">curFile</span><span class="Operator">=</span><span class="StringLit">&quot;/data5/notes.txt&quot;</span>    <span class="Comment"># some file</span>
 
@@ -6279,7 +6282,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-08-09 20:00:06 UTC</small>
+        <small>Made with Nim. Generated: 2017-08-10 13:48:45 UTC</small>
       </div>
     </div>
   </div>
