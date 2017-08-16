@@ -2292,6 +2292,8 @@ function main() {
     title="`$`[T](some: typedesc[T]): string"><wbr />`$`<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#typeTest,T"
     title="typeTest[T](x: T): T"><wbr />type<wbr />Test<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#pswwaux,"
+    title="pswwaux()"><wbr />pswwaux<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#fromCString,pointer,int"
     title="fromCString(p: pointer; len: int): string"><wbr />from<wbr />CString<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showPalette,string"
@@ -2406,7 +2408,11 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#17" id="67">Templates</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#colPaletteIndexer.t,seq[string]"
+      <li><a class="reference" href="#now.t,"
+    title="now(): string"><wbr />now<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#*.t,string,int"
+    title="`*`(s: string; n: int): string"><wbr />`*`<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#colPaletteIndexer.t,seq[string]"
     title="colPaletteIndexer(colx: seq[string]): auto"><wbr />col<wbr />Palette<wbr />Indexer<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#colPaletteLen.t,string"
     title="colPaletteLen(coltype: string): auto"><wbr />col<wbr />Palette<wbr />Len<span class="attachedType" style="visibility:hidden"></span></a></li>
@@ -2498,7 +2504,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-08-10
+Latest      : 2017-08-16
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -5525,6 +5531,12 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 
 
 </dd>
+<dt id="pswwaux"><a name="pswwaux,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">pswwaux</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+               <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="fromCString"><a name="fromCString,pointer,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">fromCString</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">len</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>fromCString</p>
@@ -5928,7 +5940,7 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>handler</p>
-<p>this runs if ctrl-c is pressed</p>
+<p>exit handler this runs if ctrl-c is pressed</p>
 <p>and provides some feedback upon exit</p>
 <p>just by using this module your project will have an automatic</p>
 <p>exit handler via ctrl-c</p>
@@ -5977,6 +5989,16 @@ partially lifted from an earler macro in terminal.nim and removed new line curre
 <div class="section" id="17">
 <h1><a class="toc-backref" href="#17">Templates</a></h1>
 <dl class="item">
+<dt id="now"><a name="now.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">now</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="*"><a name="*.t,string,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">`*`</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="colPaletteIndexer"><a name="colPaletteIndexer.t,seq[string]"></a><pre><span class="Keyword">template</span> <span class="Identifier">colPaletteIndexer</span><span class="Other">(</span><span class="Identifier">colx</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
 <dd>
 
@@ -6294,7 +6316,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-08-12 17:15:26 UTC</small>
+        <small>Made with Nim. Generated: 2017-08-16 21:59:13 UTC</small>
       </div>
     </div>
   </div>
