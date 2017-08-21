@@ -2123,6 +2123,9 @@ function main() {
     title="print[T](astring: T; fgr: string = termwhite; bgr: BackgroundColor; xpos: int = 0;
          fitLine: bool = false; centered: bool = false; styled: set[Style] = {};
          substr: string = &quot;&quot;)"><wbr />print<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#print,varargs[T,],string,string,int,string"
+    title="print[T](ss: varargs[T, `$`]; fgr: string = termwhite; bgr: string = bblack; xpos: int = 0;
+         sep: string = spaces(1))"><wbr />print<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printLn,T,string,string,int,bool,bool,set[Style],string"
     title="printLn[T](astring: T; fgr: string = termwhite; bgr: string = bblack; xpos: int = 0;
            fitLine: bool = false; centered: bool = false; styled: set[Style] = {};
@@ -2414,6 +2417,8 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#now.t,"
     title="now(): string"><wbr />now<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#today.t,"
+    title="today(): string"><wbr />today<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#*.t,string,int"
     title="`*`(s: string; n: int): string"><wbr />`*`<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#colPaletteIndexer.t,seq[string]"
@@ -2508,7 +2513,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-08-20
+Latest      : 2017-08-21
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -4696,6 +4701,19 @@ or use 2 or more print statements for the desired effect</pre>
 <span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">pastelBlue</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
 
 </dd>
+<dt id="print"><a name="print,varargs[T,],string,string,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">bblack</span><span class="Other">;</span>
+             <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>print</p>
+<p>a print routine which allows printing of varargs in desired color , position and separator</p>
+<p>no newline is added</p>
+<p>sep must not be wider than 1 , if it is wider the comma will be used as default otherwise default will be 1 space</p>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+
+<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;TEST VARARGS : &quot;</span><span class="Punctuation">,</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">8</span><span class="Punctuation">,</span><span class="DecNumber">13</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="DecNumber">12000</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">newword</span><span class="Punctuation">(</span><span class="DecNumber">6</span><span class="Punctuation">,</span><span class="DecNumber">10</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">getRndfloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Punctuation">(</span><span class="Identifier">hiragana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">8</span><span class="Punctuation">,</span><span class="DecNumber">13</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">bblack</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
+
+</dd>
 <dt id="printLn"><a name="printLn,T,string,string,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">bblack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
                <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span>
                <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
@@ -5075,7 +5093,7 @@ interval procs returns time elapsed between two dates in secs,hours etc.
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>plusDays</p>
-<p>adds days to date string of format yyyy-MM-dd  or result of getDateStr()</p>
+<p>adds days to date string of format yyyy-MM-dd  or result of getDateStr()  or today()</p>
 <p>and returns a string of format yyyy-MM-dd</p>
 <p>the passed in date string must be a valid date or an error message will be returned </p>
 
@@ -5086,7 +5104,7 @@ interval procs returns time elapsed between two dates in secs,hours etc.
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>minusDays</p>
-<p>subtracts days from a date string of format yyyy-MM-dd  or result of getDateStr()</p>
+<p>subtracts days from a date string of format yyyy-MM-dd  or result of getDateStr() or today()</p>
 <p>and returns a string of format yyyy-MM-dd</p>
 <p>the passed in date string must be a valid date or an error message will be returned </p>
 
@@ -6015,6 +6033,11 @@ partially lifted from an earler macro in terminal.nim and removed new line curre
 
 
 </dd>
+<dt id="today"><a name="today.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">today</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="*"><a name="*.t,string,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">`*`</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
@@ -6337,7 +6360,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-08-20 09:37:08 UTC</small>
+        <small>Made with Nim. Generated: 2017-08-21 22:26:08 UTC</small>
       </div>
     </div>
   </div>
