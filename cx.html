@@ -2600,7 +2600,7 @@ Note        : may be improved at any time
 
 Required    :
 
-Installation: nimble install https://github.com/qqtop/NimCx.git
+Installation: nimble install nimcx
 
 
 Optional    : xclip  (linux clipboard utility)
@@ -4903,7 +4903,6 @@ forward declaration
 <dd>
 <p>printLnBiCol</p>
 <p>a newer version of printLnBiCol  currently under development changes: sep moved to behind colors in parameter ordering and input can be varargs which gives much better flexibility</p>
-<p>for this to work the complete parameter requirement must be given in the proc call</p>
 <p>default seperator = &quot;:&quot;  if not found we execute printLn with available params</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
@@ -4917,7 +4916,7 @@ forward declaration
 
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Good Idea : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; Number&quot;</span><span class="Punctuation">,</span><span class="DecNumber">50</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Good Idea : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; Number&quot;</span><span class="Punctuation">,</span><span class="DecNumber">50</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">colLeft</span> <span class="Operator">=</span> <span class="Identifier">cyan</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Good Idea : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; Number&quot;</span><span class="Punctuation">,</span><span class="DecNumber">50</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">colleft</span><span class="Operator">=</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="Identifier">colRight</span><span class="Operator">=</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Good Idea : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; Number&quot;</span><span class="Punctuation">,</span><span class="DecNumber">50</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">colLeft</span><span class="Operator">=</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="Identifier">colRight</span><span class="Operator">=</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="printHL"><a name="printHL,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printHL</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -6357,12 +6356,24 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
 <dt id="infoProc"><a name="infoProc.t,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">infoProc</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>infoProc</p>
-<p>shows from where a specific function has been called .. code-block:: nim</p>
-<blockquote><p><dl class="docutils"><dt>proc test[T](ff:T) =</dt>
-<dd>let yuuu = @[&quot;test&quot;] var x = &quot;sdfsdf&quot; var z = 689999999999999999i64 checklocals()</dd>
-</dl>
-</p></blockquote>
+<p>shows from where a specific function has been called and combined with checkLocals gives a nice formatted output for debugging</p>
+<pre class="listing"><span class="Keyword">proc</span> <span class="Identifier">test1</span><span class="Punctuation">[</span><span class="Identifier">T</span><span class="Punctuation">]</span><span class="Punctuation">(</span><span class="Identifier">ff</span><span class="Punctuation">:</span><span class="Identifier">varargs</span><span class="Punctuation">[</span><span class="Identifier">T</span><span class="Punctuation">,</span><span class="Punctuation">`</span><span class="Operator">$</span><span class="Punctuation">`</span><span class="Punctuation">]</span><span class="Punctuation">)</span> <span class="Operator">=</span>
+  <span class="Keyword">let</span> <span class="Identifier">yu1</span> <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="StringLit">&quot;test&quot;</span><span class="Punctuation">]</span>
+  <span class="Keyword">var</span> <span class="Identifier">yu2</span> <span class="Operator">=</span> <span class="StringLit">&quot;sdfsdf&quot;</span>
+  <span class="Keyword">var</span> <span class="Identifier">yu3</span> <span class="Operator">=</span> <span class="Identifier">parseInt</span><span class="Punctuation">(</span><span class="Identifier">ff</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="DecNumber">3</span>  <span class="Comment"># ff[1] has been converted to string we change it back to int and multiply</span>
+  <span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;test output    : &quot;</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">)</span>
+  <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="Identifier">ff</span><span class="Punctuation">:</span> <span class="Identifier">print</span><span class="Punctuation">(</span><span class="Identifier">x</span> <span class="Operator">&amp;</span> <span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">)</span><span class="Punctuation">)</span> <span class="Comment"># print the passed in varargs</span>
+  <span class="Identifier">checklocals</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 
+<span class="Keyword">proc</span> <span class="Identifier">test2</span><span class="Punctuation">(</span><span class="Identifier">s</span><span class="Punctuation">:</span><span class="Identifier">string</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">:</span><span class="Identifier">int</span><span class="Punctuation">)</span> <span class="Punctuation">:</span> <span class="Identifier">string</span> <span class="Operator">=</span>
+   <span class="Keyword">var</span> <span class="Identifier">bb</span> <span class="Operator">=</span> <span class="Identifier">b</span> <span class="Operator">*</span> <span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="DecNumber">200</span><span class="Punctuation">)</span>
+   <span class="Identifier">result</span> <span class="Operator">=</span> <span class="Identifier">s</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">bb</span>
+   <span class="Identifier">checklocals</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+
+<span class="Identifier">infoproc</span><span class="Punctuation">(</span><span class="Identifier">test1</span><span class="Punctuation">(</span><span class="StringLit">&quot;zz&quot;</span><span class="Punctuation">,</span><span class="DecNumber">1234</span><span class="Punctuation">,</span><span class="FloatNumber">789.88</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+<span class="Identifier">infoproc</span><span class="Punctuation">:</span>
+    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Test2 output  : &quot;</span><span class="Punctuation">,</span><span class="Identifier">rightarrow</span> <span class="Operator">&amp;</span> <span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">test2</span><span class="Punctuation">(</span><span class="StringLit">&quot;nice&quot;</span><span class="Punctuation">,</span><span class="DecNumber">2000</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">colLeft</span> <span class="Operator">=</span> <span class="Identifier">cyan</span><span class="Punctuation">,</span><span class="Identifier">colRight</span><span class="Operator">=</span><span class="Identifier">gold</span><span class="Punctuation">)</span>
+<span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="checkLocals"><a name="checkLocals.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">checkLocals</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
@@ -6392,7 +6403,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-08-27 15:21:58 UTC</small>
+        <small>Made with Nim. Generated: 2017-08-27 17:10:03 UTC</small>
       </div>
     </div>
   </div>
