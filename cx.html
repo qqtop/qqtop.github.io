@@ -2260,7 +2260,7 @@ function main() {
   <li><a class="reference" href="#showHosts,string"
     title="showHosts(dm: string)"><wbr />show<wbr />Hosts<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#pingy,string,int,string"
-    title="pingy(dest: string; pingcc: int; col: string = termwhite)"><wbr />pingy<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="pingy(dest: string; pingcc: int = 3; col: string = termwhite)"><wbr />pingy<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#reverseMe,openArray[T]"
     title="reverseMe[T](xs: openArray[T]): seq[T]"><wbr />reverse<wbr />Me<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#reverseText,string"
@@ -2337,8 +2337,8 @@ function main() {
     title="checkClip(sel: string = &quot;primary&quot;): string"><wbr />check<wbr />Clip<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#toClip,T"
     title="toClip[T](s: T)"><wbr />to<wbr />Clip<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#tableRune,T,string,int,float"
-    title="tableRune[T](z: T; fgr: string = white; cols = 18; pause: float = 0.05)"><wbr />table<wbr />Rune<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#tableRune,T,string,int,int"
+    title="tableRune[T](z: T; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5)"><wbr />table<wbr />Rune<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#uniall,bool"
     title="uniall(showOrd: bool = true): seq[string]"><wbr />uniall<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#geoshapes,"
@@ -2513,7 +2513,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-08-26
+Latest      : 2017-08-28
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -4879,21 +4879,7 @@ forward declaration
                   <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printBiCol</p>
-<p>a newer version of printLnBiCol  currently under development changes: sep moved to behind colors in parameter ordering and input can be varargs which gives much better flexibility</p>
-<p>for this to work the complete parameter requirement must be given in the proc call up see examples below</p>
-<p>echos a string in 2 colors based on a seperators first occurance</p>
-<p>default seperator = &quot;:&quot;</p>
-<p>Note : clrainbow not useable for right side color</p>
-<blockquote><p><dl class="docutils"><dt>for x  in 0.. &lt;3:</dt>
-<dd><dl class="docutils"><dt># here use default colors for left and right side of the seperator</dt>
-<dd>printBiCol(&quot;Test $1  : Ok &quot; % $x,&quot;this was $1 : what&quot; % $x,23456.789,randcol(),randcol(),&quot;:&quot;,0,false,{}) echo()</dd>
-</dl>
-</dd>
-<dt>for x  in 4.. &lt;6:</dt>
-<dd># here we change the default colors printBiCol(&quot;Test $1  : Ok this was $1 : what&quot; % $x,cyan,red) echo()</dd>
-</dl>
-<p>printBiCol(fmtx([&quot;&quot;,&quot;&quot;,&quot;&gt;4&quot;],&quot;Good Idea : &quot;,&quot; Number&quot;,50),yellow,randcol(),&quot;:&quot;,0,false,{}) echo() printBiCol(fmtx([&quot;&quot;,&quot;&quot;,&quot;&gt;4&quot;],&quot;Good Idea : &quot;,&quot; Number&quot;,50),colLeft = cyan) # others unchanged default will be used echo() printBiCol(fmtx([&quot;&quot;,&quot;&quot;,&quot;&gt;4&quot;],&quot;Good Idea : &quot;,&quot; Number&quot;,50),colleft=yellow,colRight=randcol()) echo()</p>
-</p></blockquote>
+<p>Notes see printLnBiCol </p>
 
 
 </dd>
@@ -4902,21 +4888,13 @@ forward declaration
                     <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printLnBiCol</p>
-<p>a newer version of printLnBiCol  currently under development changes: sep moved to behind colors in parameter ordering and input can be varargs which gives much better flexibility</p>
+<p>a newer version of printLnBiCol  currently under development changes: sep moved to behind colors in parameter ordering and input can be varargs which gives much better flexibility if varargs are to be printed all parameters need to be specified.</p>
 <p>default seperator = &quot;:&quot;  if not found we execute printLn with available params</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
 <span class="Keyword">for</span> <span class="Identifier">x</span>  <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="Operator">&lt;</span><span class="DecNumber">3</span><span class="Punctuation">:</span>
-   <span class="Comment"># here use default colors for left and right side of the seperator</span>
-    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Test $1  : Ok &quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="StringLit">&quot;this was $1 : what&quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="FloatNumber">23456.789</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
-
-<span class="Keyword">for</span> <span class="Identifier">x</span>  <span class="Keyword">in</span> <span class="FloatNumber">4.</span><span class="Operator">.</span> <span class="Operator">&lt;</span><span class="DecNumber">6</span><span class="Punctuation">:</span>
-    <span class="Comment"># here we change the default colors</span>
-    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Test $1  : Ok this was $1 : what&quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">cyan</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">)</span>
-
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Good Idea : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; Number&quot;</span><span class="Punctuation">,</span><span class="DecNumber">50</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Good Idea : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; Number&quot;</span><span class="Punctuation">,</span><span class="DecNumber">50</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">colLeft</span> <span class="Operator">=</span> <span class="Identifier">cyan</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Good Idea : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; Number&quot;</span><span class="Punctuation">,</span><span class="DecNumber">50</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">colLeft</span><span class="Operator">=</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="Identifier">colRight</span><span class="Operator">=</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+   <span class="Comment"># here our input is varargs so weneed to specify all params</span>
+    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Test $1  : Ok &quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="StringLit">&quot;this was $1 : what&quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="FloatNumber">23456.789</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="printHL"><a name="printHL,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printHL</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -5417,7 +5395,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="pingy"><a name="pingy,string,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">pingy</span><span class="Other">(</span><span class="Identifier">dest</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">pingcc</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span>
+<dt id="pingy"><a name="pingy,string,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">pingy</span><span class="Other">(</span><span class="Identifier">dest</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">pingcc</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span>
     <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -5552,7 +5530,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>nimcat</p>
-<p>a simple file lister which allows to show all rows or consecutive lines from  startline to endline  with line number a file name without extension will be assuemed to be .nim  ... it is the nimcat afterall</p>
+<p>a simple file lister which allows to show all rows or consecutive lines from  startline to endline  with line number a file name without extension will be assuemed to be .nim  ... it is the nimcat afterall # linewrap not yet implemented .. code-block: nim</p>
 <blockquote><p>nimcat(&quot;notes.txt&quot;)                   # show all lines nimcat(&quot;bigdatafile.csv&quot;,2000,3000)   # show lines 2000 to 3000</p></blockquote>
 
 
@@ -5792,14 +5770,15 @@ forward declaration
 
 
 </dd>
-<dt id="tableRune"><a name="tableRune,T,string,int,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">tableRune</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">18</span><span class="Other">;</span> <span class="Identifier">pause</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">0.05</span><span class="Other">)</span></pre></dt>
+<dt id="tableRune"><a name="tableRune,T,string,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">tableRune</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>tableRune</p>
-<p>simple table routine with 15 cols for displaying various unicode sets fgr allows color display and fgr = &quot;rand&quot; displays in random color</p>
+<p>simple table routine with default 6 cols for displaying various unicode sets fgr allows color display and fgr = &quot;rand&quot; displays in random color and maxwidth for displayable items this can also be used to show items of a sequence</p>
 <pre class="listing"><span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">cjk</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;rand&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">katakana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span>
-<span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">hiragana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">truetomato</span><span class="Punctuation">)</span>
-<span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">geoshapes</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+<span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">hiragana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+<span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">geoshapes</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+<span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">1000</span><span class="Punctuation">,</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="DecNumber">100000</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="uniall"><a name="uniall,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">uniall</span><span class="Other">(</span><span class="Identifier">showOrd</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -5809,6 +5788,8 @@ forward declaration
 </dd>
 <dt id="geoshapes"><a name="geoshapes,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">geoshapes</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
+<p>geoshapes</p>
+<p>returns a seq containing geoshapes unicode chars </p>
 
 
 </dd>
@@ -6403,7 +6384,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-08-27 17:10:03 UTC</small>
+        <small>Made with Nim. Generated: 2017-08-28 19:03:47 UTC</small>
       </div>
     </div>
   </div>
