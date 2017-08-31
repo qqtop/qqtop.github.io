@@ -1335,21 +1335,21 @@ function main() {
        &quot;\xF0\x9F\x82\xBF&quot;, &quot;\xF0\x9F\x83\x8F&quot;, &quot;\xF0\x9F\x83\x9F&quot;]"><wbr />cards<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rxCards"
     title="rxCards =
-  var i457202 = 0
-  var result457437 = newSeq(chckRange(len(0 .. high(cards)), 0, 9223372036854775807))
-  block :tmp457459:
+  var i456202 = 0
+  var result456437 = newSeq(chckRange(len(0 .. high(cards)), 0, 9223372036854775807))
+  block :tmp456459:
       var
-        x457448
+        x456448
         :tmp
       :tmp = high(cards)
       var res = 0
-      block :tmp457461:
+      block :tmp456461:
           while res &lt;= int(:tmp):
-            x457448 = T(res)
-            result457437[i457202] = x457448
-            inc i457202, 1
+            x456448 = T(res)
+            result456437[i456202] = x456448
+            inc i456202, 1
             inc(res, 1)
-  result457437"><wbr />rx<wbr />Cards<span class="attachedType" style="visibility:hidden"></span></a></li>
+  result456437"><wbr />rx<wbr />Cards<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -2285,8 +2285,8 @@ function main() {
     title="getRndFloat(mi: float = - 1.0; ma: float = 1.0): float"><wbr />get<wbr />Rnd<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#createSeqFloat,int,int"
     title="createSeqFloat(n: int = 10; prec: int = 3): seq[float]"><wbr />create<wbr />Seq<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#nimcat,string,int"
-    title="nimcat(curFile: string; startline: int = - 1; endline = - 1)"><wbr />nimcat<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#nimcat,string,varargs[string,]"
+    title="nimcat(curFile: string; countphrase: varargs[string, `$`] = &quot;&quot;)"><wbr />nimcat<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#checkHash,string,T"
     title="checkHash[T](kata: string; hsx: T)"><wbr />check<wbr />Hash<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#verifyHash,string,T"
@@ -2299,6 +2299,8 @@ function main() {
     title="`$`[T](some: typedesc[T]): string"><wbr />`$`<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#typeTest,T"
     title="typeTest[T](x: T): T"><wbr />type<wbr />Test<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#typeTest2,T"
+    title="typeTest2[T](x: T): T"><wbr />type<wbr />Test2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#pswwaux,"
     title="pswwaux()"><wbr />pswwaux<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#fromCString,pointer,int"
@@ -2337,8 +2339,10 @@ function main() {
     title="checkClip(sel: string = &quot;primary&quot;): string"><wbr />check<wbr />Clip<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#toClip,T"
     title="toClip[T](s: T)"><wbr />to<wbr />Clip<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#tableRune,T,string,int,int"
-    title="tableRune[T](z: T; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5)"><wbr />table<wbr />Rune<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#tableRune,seq[T],string,int,int"
+    title="tableRune[T](z: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5)"><wbr />table<wbr />Rune<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#showSeq,seq[T],string,int,int"
+    title="showSeq[T](aseq: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5)"><wbr />show<wbr />Seq<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#uniall,bool"
     title="uniall(showOrd: bool = true): seq[string]"><wbr />uniall<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#geoshapes,"
@@ -2451,8 +2455,6 @@ function main() {
     title="randPastelCol(): string"><wbr />rand<wbr />Pastel<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#hdx.t,typed,string,int,int"
     title="hdx(code: typed; frm: string = &quot;+&quot;; width: int = tw; nxpos: int = 0): typed"><wbr />hdx<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printyLn.t,varargs[untyped]"
-    title="printyLn(astring: varargs[untyped])"><wbr />printy<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#curUp.t,int"
     title="curUp(x: int = 1)"><wbr />cur<wbr />Up<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#curDn.t,int"
@@ -2513,7 +2515,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-08-28
+Latest      : 2017-08-31
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -2859,21 +2861,21 @@ simple execution timing with one line see doFinish()
 
 </dd>
 <dt id="rxCards"><a name="rxCards"></a><pre><span class="Identifier">rxCards</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">i</span><span class="DecNumber">457202</span> <span class="Other">=</span> <span class="DecNumber">0</span>
-  <span class="Keyword">var</span> <span class="Identifier">result</span><span class="DecNumber">457437</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">chckRange</span><span class="Other">(</span><span class="Identifier">len</span><span class="Other">(</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="Identifier">high</span><span class="Other">(</span><span class="Identifier">cards</span><span class="Other">)</span><span class="Other">)</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">9223372036854775807</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Keyword">block</span> <span class="Operator">:tmp457459</span><span class="Other">:</span>
+  <span class="Keyword">var</span> <span class="Identifier">i</span><span class="DecNumber">456202</span> <span class="Other">=</span> <span class="DecNumber">0</span>
+  <span class="Keyword">var</span> <span class="Identifier">result</span><span class="DecNumber">456437</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">chckRange</span><span class="Other">(</span><span class="Identifier">len</span><span class="Other">(</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="Identifier">high</span><span class="Other">(</span><span class="Identifier">cards</span><span class="Other">)</span><span class="Other">)</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">9223372036854775807</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">block</span> <span class="Operator">:tmp456459</span><span class="Other">:</span>
       <span class="Keyword">var</span>
-        <span class="Identifier">x</span><span class="DecNumber">457448</span>
+        <span class="Identifier">x</span><span class="DecNumber">456448</span>
         <span class="Operator">:tmp</span>
       <span class="Operator">:tmp</span> <span class="Other">=</span> <span class="Identifier">high</span><span class="Other">(</span><span class="Identifier">cards</span><span class="Other">)</span>
       <span class="Keyword">var</span> <span class="Identifier">res</span> <span class="Other">=</span> <span class="DecNumber">0</span>
-      <span class="Keyword">block</span> <span class="Operator">:tmp457461</span><span class="Other">:</span>
+      <span class="Keyword">block</span> <span class="Operator">:tmp456461</span><span class="Other">:</span>
           <span class="Keyword">while</span> <span class="Identifier">res</span> <span class="Operator">&lt;=</span> <span class="Identifier">int</span><span class="Other">(</span><span class="Operator">:tmp</span><span class="Other">)</span><span class="Other">:</span>
-            <span class="Identifier">x</span><span class="DecNumber">457448</span> <span class="Other">=</span> <span class="Identifier">T</span><span class="Other">(</span><span class="Identifier">res</span><span class="Other">)</span>
-            <span class="Identifier">result</span><span class="DecNumber">457437</span><span class="Other">[</span><span class="Identifier">i</span><span class="DecNumber">457202</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">x</span><span class="DecNumber">457448</span>
-            <span class="Identifier">inc</span> <span class="Identifier">i</span><span class="DecNumber">457202</span><span class="Other">,</span> <span class="DecNumber">1</span>
+            <span class="Identifier">x</span><span class="DecNumber">456448</span> <span class="Other">=</span> <span class="Identifier">T</span><span class="Other">(</span><span class="Identifier">res</span><span class="Other">)</span>
+            <span class="Identifier">result</span><span class="DecNumber">456437</span><span class="Other">[</span><span class="Identifier">i</span><span class="DecNumber">456202</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">x</span><span class="DecNumber">456448</span>
+            <span class="Identifier">inc</span> <span class="Identifier">i</span><span class="DecNumber">456202</span><span class="Other">,</span> <span class="DecNumber">1</span>
             <span class="Identifier">inc</span><span class="Other">(</span><span class="Identifier">res</span><span class="Other">,</span> <span class="DecNumber">1</span><span class="Other">)</span>
-  <span class="Identifier">result</span><span class="DecNumber">457437</span></pre></dt>
+  <span class="Identifier">result</span><span class="DecNumber">456437</span></pre></dt>
 <dd>
 
 
@@ -5525,13 +5527,13 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <span class="Identifier">echo</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">,</span><span class="DecNumber">3</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="nimcat"><a name="nimcat,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">nimcat</span><span class="Other">(</span><span class="Identifier">curFile</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">startline</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">endline</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="nimcat"><a name="nimcat,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">nimcat</span><span class="Other">(</span><span class="Identifier">curFile</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">countphrase</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>nimcat</p>
-<p>a simple file lister which allows to show all rows or consecutive lines from  startline to endline  with line number a file name without extension will be assuemed to be .nim  ... it is the nimcat afterall # linewrap not yet implemented .. code-block: nim</p>
-<blockquote><p>nimcat(&quot;notes.txt&quot;)                   # show all lines nimcat(&quot;bigdatafile.csv&quot;,2000,3000)   # show lines 2000 to 3000</p></blockquote>
+<p>a simple file lister which shows all rows and some stats as well as allows counting of tokens a file name without extension will be assuemed to be .nim  ... it is the nimcat afterall countphrase is case sensitive # # # .. code-block: nim</p>
+<blockquote><p>nimcat(&quot;notes.txt&quot;)                   # show all lines nimcat(&quot;bigdatafile.csv&quot;) nimcat(&quot;/data5/notes.txt&quot;,countphrase = &quot;nice&quot; , &quot;hanya&quot;, 88) # also count how often a token appears in the file</p></blockquote>
 
 
 </dd>
@@ -5575,6 +5577,11 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 
 </dd>
 <dt id="typeTest"><a name="typeTest,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">typeTest</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="typeTest2"><a name="typeTest2,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">typeTest2</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
 <dd>
 
 
@@ -5770,7 +5777,7 @@ forward declaration
 
 
 </dd>
-<dt id="tableRune"><a name="tableRune,T,string,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">tableRune</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span></pre></dt>
+<dt id="tableRune"><a name="tableRune,seq[T],string,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">tableRune</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>tableRune</p>
 <p>simple table routine with default 6 cols for displaying various unicode sets fgr allows color display and fgr = &quot;rand&quot; displays in random color and maxwidth for displayable items this can also be used to show items of a sequence</p>
@@ -5779,6 +5786,13 @@ forward declaration
 <span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">hiragana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
 <span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">geoshapes</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
 <span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">1000</span><span class="Punctuation">,</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="DecNumber">100000</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="showSeq"><a name="showSeq,seq[T],string,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showSeq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">aseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>showSeq</p>
+<p>display contents of a seq, in case of seq of seq the first item of the sub seqs will be shown </p>
+
 
 </dd>
 <dt id="uniall"><a name="uniall,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">uniall</span><span class="Other">(</span><span class="Identifier">showOrd</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6172,14 +6186,6 @@ latest terminalheight always available in th
 <pre class="listing"><span class="Identifier">hdx</span><span class="Punctuation">(</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nice things happen randomly&quot;</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">9</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">width</span> <span class="Operator">=</span> <span class="DecNumber">35</span><span class="Punctuation">,</span><span class="Identifier">nxpos</span> <span class="Operator">=</span> <span class="DecNumber">5</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="printyLn"><a name="printyLn.t,varargs[untyped]"></a><pre><span class="Keyword">template</span> <span class="Identifier">printyLn</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">untyped</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>printy2</p>
-<p>similar to echo , backgroundcolor will be set to black when finished</p>
-<blockquote><p>printy2(peru,&quot;this is : &quot; ,yellowgreen,1,rightarrow,bbrightmagenta,black,5,bblue,seagreen,&quot; ʈəɽɭάɧɨɽ ʂəɱρʊɽɲά(άɲάʂʈάʂɣά)&quot;)</p></blockquote>
-
-
-</dd>
 <dt id="curUp"><a name="curUp.t,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">curUp</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>curUp</p>
@@ -6384,7 +6390,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-08-28 19:03:47 UTC</small>
+        <small>Made with Nim. Generated: 2017-08-31 22:45:37 UTC</small>
       </div>
     </div>
   </div>
