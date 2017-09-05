@@ -1374,8 +1374,8 @@ function main() {
     title="ymonth(aDate: string): string"><wbr />ymonth<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getSymbol2,string,string,string,bool"
     title="getSymbol2(symb, startDate, endDate: string; processFlag: bool = false): Stocks"><wbr />get<wbr />Symbol2<span class="attachedType" style="visibility:hidden">Stocks</span></a></li>
-  <li><a class="reference" href="#getSymbol3,string,string,string,bool"
-    title="getSymbol3(symb: string; startDate, endDate: string; processFlag: bool = false): Stockdata"><wbr />get<wbr />Symbol3<span class="attachedType" style="visibility:hidden">Stockdata</span></a></li>
+  <li><a class="reference" href="#getSymbol3,string"
+    title="getSymbol3(symb: string): Stockdata"><wbr />get<wbr />Symbol3<span class="attachedType" style="visibility:hidden">Stockdata</span></a></li>
   <li><a class="reference" href="#showHistData,Stocks,int"
     title="showHistData(adf: Stocks; n: int)"><wbr />show<wbr />Hist<wbr />Data<span class="attachedType" style="visibility:hidden">Stocks</span></a></li>
   <li><a class="reference" href="#showHistData,Stocks,string,string"
@@ -1483,7 +1483,7 @@ Tested on   :  Linux
 
 ProjectStart: 2015-06-05
 
-Latest      : 2017-08-27
+Latest      : 2017-09-05
 
 ToDo        : NOTE : Due to changes in Yahoo endpoints data quality may be severely impacted
                      Some data has holes and adj.close seems not to be correct for splits or dividends
@@ -1752,7 +1752,7 @@ YHobject type a simple object to hold certain yahoo stock data
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 showTimeseries takes a Ts object as input as well as a header string for the data column , a string which can be one of head,tail,all and N for number of rows to display usage :<pre class="listing"><span class="Identifier">showTimeseries</span><span class="Punctuation">(</span><span class="Identifier">myTimeseries</span><span class="Punctuation">,</span><span class="Identifier">myHeader</span><span class="Punctuation">,</span><span class="StringLit">&quot;head|tail|all&quot;</span><span class="Punctuation">,</span><span class="Identifier">rows</span><span class="Punctuation">)</span></pre><p>Example</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">nimFinLib</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">nimFinLib</span>
 <span class="Comment"># show adj. close price , 5 rows head and tail 374 days apart</span>
 <span class="Keyword">var</span> <span class="Identifier">myD</span> <span class="Operator">=</span> <span class="Identifier">initStocks</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Identifier">myD</span> <span class="Operator">=</span> <span class="Identifier">getSymbol2</span><span class="Punctuation">(</span><span class="StringLit">&quot;0386.HK&quot;</span><span class="Punctuation">,</span><span class="Identifier">minusdays</span><span class="Punctuation">(</span><span class="Identifier">getDateStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">374</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">getDateStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
@@ -1996,10 +1996,9 @@ showTimeseries takes a Ts object as input as well as a header string for the dat
 
 
 </dd>
-<dt id="getSymbol3"><a name="getSymbol3,string,string,string,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getSymbol3</span><span class="Other">(</span><span class="Identifier">symb</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">processFlag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Stockdata</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span>
-    <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="getSymbol3"><a name="getSymbol3,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getSymbol3</span><span class="Other">(</span><span class="Identifier">symb</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Stockdata</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span>
+    <span class="Identifier">SslError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
+    <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getSymbol3</p>
 <p>data returned is inside an Stockdata object with following fields and types</p>
@@ -2195,7 +2194,7 @@ head means oldest rows
 <p>a convenience proc to display exchange rates with positioning</p>
 <p>see note of yahoo outages in getcurrentForex</p>
 <pre class="listing"><span class="Identifier">showCurrentForex</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;EURUSD&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;GBPHKD&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;CADEUR&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;AUDNZD&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">10</span><span class="Punctuation">)</span>
-<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">nimFinLib</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">nimFinLib</span>
 <span class="Keyword">var</span> <span class="Identifier">curs</span> <span class="Operator">=</span> <span class="Punctuation">[</span><span class="StringLit">&quot;EURUSD&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;GBPHKD&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;CADEUR&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;AUDNZD&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;USDCNY&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;GBPCNY&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;JPYHKD&quot;</span><span class="Punctuation">]</span>
 <span class="Keyword">var</span> <span class="Identifier">cursl</span> <span class="Operator">=</span> <span class="Identifier">curs</span><span class="Operator">.</span><span class="Identifier">len</span>
 <span class="Identifier">showCurrentForex</span><span class="Punctuation">(</span><span class="Identifier">curs</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">5</span><span class="Punctuation">)</span>
@@ -2215,8 +2214,8 @@ head means oldest rows
 
 
 </dd>
-<dt id="showStockdataTable"><a name="showStockdataTable,Stockdata"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStockdataTable</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">Stockdata</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
-    <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="showStockdataTable"><a name="showStockdataTable,Stockdata"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStockdataTable</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">Stockdata</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span>
+    <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showStockdatatable</p>
 <p>shows all items of a Stockdata object </p>
@@ -2307,7 +2306,7 @@ head means oldest rows
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-08-27 15:29:44 UTC</small>
+        <small>Made with Nim. Generated: 2017-09-05 20:38:07 UTC</small>
       </div>
     </div>
   </div>
