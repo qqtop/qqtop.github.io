@@ -2028,7 +2028,7 @@ showTimeseries takes a Ts object as input as well as a header string for the dat
 <p>shortratio*       : float</p>
 <p>Example :</p>
 </p></blockquote>
-<pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">getSymbol3</span><span class="Punctuation">(</span><span class="StringLit">&quot;0005.HK&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;2000-01-01&quot;</span><span class="Punctuation">,</span><span class="Identifier">getDateStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+<pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">getSymbol3</span><span class="Punctuation">(</span><span class="StringLit">&quot;AAPL&quot;</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="showHistData"><a name="showHistData,Stocks,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showHistData</span><span class="Other">(</span><span class="Identifier">adf</span><span class="Other">:</span> <span class="Identifier">Stocks</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
@@ -2210,7 +2210,6 @@ head means oldest rows
 <dd>
 <p>showStocksTable</p>
 <p>a convenience prog to display the data part of a Portfolio object</p>
-<p>for usage example see nimFinT3 </p>
 
 
 </dd>
@@ -2218,8 +2217,8 @@ head means oldest rows
     <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showStockdatatable</p>
-<p>shows all items of a Stockdata object </p>
-
+<p>shows all items of a Stockdata object</p>
+<pre class="listing"><span class="Identifier">showStockdataTable</span><span class="Punctuation">(</span><span class="Identifier">getSymbol3</span><span class="Punctuation">(</span><span class="StringLit">&quot;AAPL&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="showKitcoMetal"><a name="showKitcoMetal,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showKitcoMetal</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
@@ -2306,7 +2305,7 @@ head means oldest rows
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-09-05 20:40:02 UTC</small>
+        <small>Made with Nim. Generated: 2017-09-05 20:48:24 UTC</small>
       </div>
     </div>
   </div>
