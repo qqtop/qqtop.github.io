@@ -2528,7 +2528,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-09-03
+Latest      : 2017-09-09
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -5576,7 +5576,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>nimcat</p>
-<p>a simple file lister which shows all rows and some stats as well as allows counting of tokens a file name without extension will be assuemed to be .nim  ... it is the nimcat afterall countphrase is case sensitive # # # .. code-block: nim</p>
+<p>a simple file lister which shows all rows and some stats as well as allows counting of tokens a file name without extension will be assuemed to be .nim  ... it is the nimcat afterall countphrase is case sensitive</p>
 <blockquote><p>nimcat(&quot;notes.txt&quot;)                   # show all lines nimcat(&quot;bigdatafile.csv&quot;) nimcat(&quot;/data5/notes.txt&quot;,countphrase = &quot;nice&quot; , &quot;hanya&quot;, 88) # also count how often a token appears in the file</p></blockquote>
 
 
@@ -6017,7 +6017,7 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 </dd>
 <dt id="infoLine"><a name="infoLine,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">infoLine</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
-                        <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+                        <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span>
                 <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>infoLine</p>
@@ -6034,8 +6034,8 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 </dd>
 <dt id="doFinish"><a name="doFinish,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doFinish</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
-                        <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
-    <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+                        <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
+    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>doFinish</p>
 <p>a end of program routine which displays some information</p>
@@ -6282,8 +6282,7 @@ latest terminalheight always available in th
 <dt id="quickList"><a name="quickList.t,int,T,int,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">quickList</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">c</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">cw</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">7</span><span class="Other">;</span> <span class="Identifier">dw</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">15</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>quickList</p>
-<p>a simple template which allows listing of 2 columns in format</p>
-<p>count data</p>
+<p>a simple template which allows listing of 2 columns in format count data</p>
 <p>cw and dw are column width adjuster</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Keyword">var</span> <span class="Identifier">z</span> <span class="Operator">=</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">1000000</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span>
@@ -6463,7 +6462,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-09-03 21:24:16 UTC</small>
+        <small>Made with Nim. Generated: 2017-09-07 12:39:58 UTC</small>
       </div>
     </div>
   </div>
