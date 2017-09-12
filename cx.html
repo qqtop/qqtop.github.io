@@ -2397,6 +2397,8 @@ function main() {
     title="showTerminalSize()"><wbr />show<wbr />Terminal<wbr />Size<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#qqTop,"
     title="qqTop()"><wbr />qq<wbr />Top<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printNimcx,int"
+    title="printNimcx(npos: int = getTerminalWidth() div 2 - 24)"><wbr />print<wbr />Nimcx<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#doInfo,"
     title="doInfo()"><wbr />do<wbr />Info<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#infoLine,"
@@ -2407,8 +2409,8 @@ function main() {
     title="doFinish()"><wbr />do<wbr />Finish<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#handler,"
     title="handler()"><wbr />handler<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxm,"
-    title="cxm()"><wbr />cxm<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#docxm,"
+    title="docxm()"><wbr />docxm<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -2495,8 +2497,10 @@ function main() {
     title="benchmark(benchmarkName: string; code: typed)"><wbr />benchmark<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#withFile.t,untyped,untyped,untyped,untyped"
     title="withFile(f, fn, mode, actions: untyped): untyped"><wbr />with<wbr />File<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#loopy.t,T,typed"
-    title="loopy[T](ite: T; st: typed)"><wbr />loopy<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#loopy.t,T,untyped"
+    title="loopy[T](ite: T; st: untyped)"><wbr />loopy<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#loopy2.t,int,int,untyped"
+    title="loopy2(mi: int = 0; ma: int = 5; st: untyped)"><wbr />loopy2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#zipWith.t,untyped,openArray[T1],openArray[T2]"
     title="zipWith[T1; T2](f: untyped; xs: openArray[T1]; ys: openArray[T2]): untyped"><wbr />zip<wbr />With<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#currentFile.t,"
@@ -2505,6 +2509,16 @@ function main() {
     title="infoProc(code: untyped)"><wbr />info<wbr />Proc<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#checkLocals.t,"
     title="checkLocals()"><wbr />check<wbr />Locals<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxn.t,int,string,string"
+    title="cxn(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxn<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxi.t,int,string,string"
+    title="cxi(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxi<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxm.t,int,string,string"
+    title="cxm(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxm<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxc.t,int,string,string"
+    title="cxc(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxc<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxx.t,int,string,string"
+    title="cxx(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxx<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#uname.t,"
     title="uname(): untyped"><wbr />uname<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#release.t,"
@@ -2531,7 +2545,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-09-09
+Latest      : 2017-09-12
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -4519,7 +4533,7 @@ rndSample returns one random sample from a sequence
 <dt id="getRndInt"><a name="getRndInt,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRndInt</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">int</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getRndInt</p>
-<p>returns a random int between mi and &lt; ma </p>
+<p>returns a random int between mi and &lt; ma so for 0 or 1 we need random(0..2)</p>
 
 
 </dd>
@@ -6024,6 +6038,13 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
+<dt id="printNimcx"><a name="printNimcx,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printNimcx</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getTerminalWidth</span><span class="Other">(</span><span class="Other">)</span> <span class="Identifier">div</span> <span class="DecNumber">2</span> <span class="Operator">-</span> <span class="DecNumber">24</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+printNimcx<blockquote><p>experiments in block font building , default is center in terminal</p></blockquote>
+
+
+</dd>
 <dt id="doInfo"><a name="doInfo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doInfo</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">ReadDirEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -6074,10 +6095,10 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
-<dt id="cxm"><a name="cxm,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxm</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
-                   <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
-                                     <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">ReadDirEffect</span><span class="Other">,</span>
-                                     <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="docxm"><a name="docxm,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">docxm</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
+                     <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
+                                       <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">ReadDirEffect</span><span class="Other">,</span>
+                                       <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
@@ -6405,11 +6426,20 @@ latest terminalheight always available in th
                 <span class="Keyword">break</span> </pre>
 
 </dd>
-<dt id="loopy"><a name="loopy.t,T,typed"></a><pre><span class="Keyword">template</span> <span class="Identifier">loopy</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ite</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">st</span><span class="Other">:</span> <span class="Identifier">typed</span><span class="Other">)</span></pre></dt>
+<dt id="loopy"><a name="loopy.t,T,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">loopy</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ite</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">st</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>loopy</p>
 <p>the lazy programmer's quick simple for-loop template</p>
 <pre class="listing"><span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;The house is in the back.&quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="loopy2"><a name="loopy2.t,int,int,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">loopy2</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">st</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
+<dd>
+loopy2<blockquote><p>the advanced version of loopy the simple for-loop template which also injects the loop counter xloopy and loops over a block of code<dl class="docutils"><dt>loopy2(1,10):</dt>
+<dd>printLnBiCol(xloopy , &quot;  The house is in the back.&quot;,randcol(),randcol(),&quot;:&quot;,0,false,{}) printLn(&quot;Some integer : &quot; , getRndInt())</dd>
+</dl>
+</p></blockquote>
+
 
 </dd>
 <dt id="zipWith"><a name="zipWith.t,untyped,openArray[T1],openArray[T2]"></a><pre><span class="Keyword">template</span> <span class="Identifier">zipWith</span><span class="Other">[</span><span class="Identifier">T1</span><span class="Other">;</span> <span class="Identifier">T2</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">;</span> <span class="Identifier">xs</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T1</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">ys</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T2</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
@@ -6458,6 +6488,31 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
 
 
 </dd>
+<dt id="cxn"><a name="cxn.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxn</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxi"><a name="cxi.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxi</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxm"><a name="cxm.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxm</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxc"><a name="cxc.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxc</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxx"><a name="cxx.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxx</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="uname"><a name="uname.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">uname</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 
@@ -6478,7 +6533,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-09-09 22:26:02 UTC</small>
+        <small>Made with Nim. Generated: 2017-09-12 14:19:07 UTC</small>
       </div>
     </div>
   </div>
