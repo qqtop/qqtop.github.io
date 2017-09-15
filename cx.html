@@ -2296,6 +2296,12 @@ function main() {
     title="getRndFloat(mi: float = - 1.0; ma: float = 1.0): float"><wbr />get<wbr />Rnd<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#createSeqFloat,int,int"
     title="createSeqFloat(n: int = 10; prec: int = 3): seq[float]"><wbr />create<wbr />Seq<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#seqLeft,seq[T],int"
+    title="seqLeft[T](it: seq[T]; n: int): seq[T]"><wbr />seq<wbr />Left<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#seqRight,seq[T],int"
+    title="seqRight[T](it: seq[T]; n: int): seq[T]"><wbr />seq<wbr />Right<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#seqHighLite,seq[T],seq[T],string"
+    title="seqHighLite[T](b: seq[T]; b1: seq[T]; col: string = gold)"><wbr />seq<wbr />High<wbr />Lite<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#nimcat,string,varargs[string,]"
     title="nimcat(curFile: string; countphrase: varargs[string, `$`] = &quot;&quot;)"><wbr />nimcat<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#checkHash,string,T"
@@ -2595,7 +2601,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-09-13
+Latest      : 2017-09-15
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -2607,7 +2613,7 @@ Description :
               
               for easy colored display in a linux terminal and also contains
               
-              a wide selection of utility functions .
+              a wide selection of utility functions and useable snippets.
               
               Currently the library consists of cx.nim and cxutils.nim , both files are automatically
               
@@ -2630,7 +2636,7 @@ Tested      : OpenSuse Tumbleweed , Ubuntu 16.04 LTS
               
               with var. terminal font : monospace size 9.0 - 15  tested
               
-              xterm,bash,st terminals support truecolor ok
+              xterm,bash,st ,zsh  terminals support truecolor ok
               
               some ubuntu based gnome-terminals may not be able to display all colors
               
@@ -2693,7 +2699,7 @@ Plans       : move some of the non core procs to module cxutils.nim
               
               to avoid library bload.
 
-Funding     : If you are happy send any amount of bitcoins you like to a nice wallet :
+Funding     : If you are happy send any amount of bitcoins you like to this wallet :
               
               194KWgEcRXHGW5YzH1nGqN75WbfzTs92Xk</pre>
 </p>
@@ -2749,7 +2755,7 @@ Funding     : If you are happy send any amount of bitcoins you like to a nice wa
 <dl class="item">
 <dt id="start"><a name="start"></a><pre><span class="Identifier">start</span> <span class="Other">=</span> <span class="Identifier">epochTime</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
 <dd>
-simple execution timing with one line see doFinish()
+
 
 </dd>
 <dt id="abx"><a name="abx"></a><pre><span class="Identifier">abx</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="Identifier">a1</span><span class="Other">,</span> <span class="Identifier">a2</span><span class="Other">,</span> <span class="Identifier">a3</span><span class="Other">,</span> <span class="Identifier">a4</span><span class="Other">,</span> <span class="Identifier">a5</span><span class="Other">]</span></pre></dt>
@@ -5639,6 +5645,29 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <span class="Identifier">echo</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">,</span><span class="DecNumber">3</span><span class="Punctuation">)</span></pre>
 
 </dd>
+<dt id="seqLeft"><a name="seqLeft,seq[T],int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">seqLeft</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">it</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
+<dd>
+<p>seqLeft</p>
+<p>returns a new seq with n left end elements of the original seq </p>
+
+
+</dd>
+<dt id="seqRight"><a name="seqRight,seq[T],int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">seqRight</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">it</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
+<dd>
+<p>seqRight</p>
+<p>returns a new seq with n right end elements of the original seq </p>
+
+
+</dd>
+<dt id="seqHighLite"><a name="seqHighLite,seq[T],seq[T],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">seqHighLite</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">b1</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">gold</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>seqHighLite</p>
+<p>displays the passed in seq with highlighting of subsequence</p>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+<span class="Keyword">var</span> <span class="Identifier">b</span> <span class="Operator">=</span> <span class="Identifier">createSeqInt</span><span class="Punctuation">(</span><span class="DecNumber">30</span><span class="Punctuation">,</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">10</span><span class="Punctuation">)</span>
+<span class="Identifier">seqHighLite</span><span class="Punctuation">(</span><span class="Identifier">b</span><span class="Punctuation">,</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="DecNumber">6</span><span class="Punctuation">]</span><span class="Punctuation">)</span>   <span class="Comment"># subseq will be highlighted if found</span></pre>
+
+</dd>
 <dt id="nimcat"><a name="nimcat,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">nimcat</span><span class="Other">(</span><span class="Identifier">curFile</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">countphrase</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -6710,7 +6739,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-09-13 22:38:27 UTC</small>
+        <small>Made with Nim. Generated: 2017-09-15 12:42:52 UTC</small>
       </div>
     </div>
   </div>
