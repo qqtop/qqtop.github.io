@@ -1246,6 +1246,20 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#start"
     title="start = epochTime()"><wbr />start<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#efb1"
+    title="efb1 = &quot;\xE2\x96\x80&quot;"><wbr />efb1<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#efb2"
+    title="efb2 = &quot;\xE2\x96\x92&quot;"><wbr />efb2<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#efb3"
+    title="efb3 = &quot;\xE2\x96\x83&quot;"><wbr />efb3<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#efl1"
+    title="efl1 = &quot;\xE2\x96\x8D&quot;"><wbr />efl1<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#efr1"
+    title="efr1 = &quot;\xE2\x96\x87&quot;"><wbr />efr1<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#efr2"
+    title="efr2 = &quot;\xE2\x9B\x86&quot;"><wbr />efr2<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#efs2"
+    title="efs2 = &quot;\xE2\x96\xA8&quot;"><wbr />efs2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#abx"
     title="abx = @ [a1, a2, a3, a4, a5]"><wbr />abx<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#bbx"
@@ -2403,6 +2417,8 @@ function main() {
     title="showTerminalSize()"><wbr />show<wbr />Terminal<wbr />Size<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#qqTop,"
     title="qqTop()"><wbr />qq<wbr />Top<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cx10,int,string,string"
+    title="cx10(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx10<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printNimcx,int"
     title="printNimcx(npos: int = getTerminalWidth() div 2 - 30)"><wbr />print<wbr />Nimcx<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printMadeWithNim,int"
@@ -2459,8 +2475,8 @@ function main() {
     title="colorsPalette(coltype: string): auto"><wbr />colors<wbr />Palette<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#colPaletteName.t,string,int"
     title="colPaletteName(coltype: string; n: int): auto"><wbr />col<wbr />Palette<wbr />Name<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#randCol.t,string"
-    title="randCol(coltype: string): auto"><wbr />rand<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#randCol2.t,string"
+    title="randCol2(coltype: string): auto"><wbr />rand<wbr />Col2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#randCol.t,"
     title="randCol(): string"><wbr />rand<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#<>.t,untyped,untyped"
@@ -2517,34 +2533,34 @@ function main() {
     title="infoProc(code: untyped)"><wbr />info<wbr />Proc<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#checkLocals.t,"
     title="checkLocals()"><wbr />check<wbr />Locals<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxi.t,int,string,string"
-    title="cxi(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxi<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxc.t,int,string,string"
-    title="cxc(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxc<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxx.t,int,string,string"
-    title="cxx(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxx<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxy.t,int,string,string"
-    title="cxy(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxy<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxZero.t,int,string,string"
+    title="cxZero(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx<wbr />Zero<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cx1.t,int,string,string"
+    title="cx1(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx1<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cx2.t,int,string,string"
+    title="cx2(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx2<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cx3.t,int,string,string"
+    title="cx3(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx3<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cx4.t,int,string,string"
+    title="cx4(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx4<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cx5.t,int,string,string"
+    title="cx5(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx5<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cx6.t,int,string,string"
+    title="cx6(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx6<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cx7.t,int,string,string"
+    title="cx7(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx7<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cx8.t,int,string,string"
+    title="cx8(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx8<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cx9.t,int,string,string"
+    title="cx9(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx9<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxa.t,int,string,string"
     title="cxa(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxa<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxb.t,int,string,string"
     title="cxb(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxb<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxc.t,int,string,string"
+    title="cxc(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxc<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxd.t,int,string,string"
     title="cxd(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxd<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxl.t,int,string,string"
-    title="cxl(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxl<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxm.t,int,string,string"
-    title="cxm(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxm<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxn.t,int,string,string"
-    title="cxn(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxn<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxp.t,int,string,string"
-    title="cxp(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxp<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxr.t,int,string,string"
-    title="cxr(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxr<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxo.t,int,string,string"
-    title="cxo(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxo<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxq.t,int,string,string"
-    title="cxq(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxq<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxe.t,int,string,string"
     title="cxe(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxe<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxf.t,int,string,string"
@@ -2553,28 +2569,48 @@ function main() {
     title="cxg(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxg<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxh.t,int,string,string"
     title="cxh(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxh<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxi.t,int,string,string"
+    title="cxi(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxi<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxj.t,int,string,string"
     title="cxj(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxj<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxk.t,int,string,string"
+    title="cxk(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxk<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxl.t,int,string,string"
+    title="cxl(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxl<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxm.t,int,string,string"
+    title="cxm(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxm<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxn.t,int,string,string"
+    title="cxn(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxn<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxo.t,int,string,string"
+    title="cxo(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxo<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxp.t,int,string,string"
+    title="cxp(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxp<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxq.t,int,string,string"
+    title="cxq(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxq<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxr.t,int,string,string"
+    title="cxr(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxr<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxs.t,int,string,string"
+    title="cxs(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxs<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxt.t,int,string,string"
     title="cxt(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxt<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxz.t,int,string,string"
-    title="cxz(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxz<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxu.t,int,string,string"
     title="cxu(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxu<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxv.t,int,string,string"
     title="cxv(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxv<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxw.t,int,string,string"
     title="cxw(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxw<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxk.t,int,string,string"
-    title="cxk(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxk<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxs.t,int,string,string"
-    title="cxs(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxs<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxexc.t,int,string,string"
-    title="cxexc(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxexc<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxx.t,int,string,string"
+    title="cxx(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxx<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxy.t,int,string,string"
+    title="cxy(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxy<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxz.t,int,string,string"
+    title="cxz(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxz<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxpoint.t,int,string,string"
     title="cxpoint(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxpoint<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxhyphen.t,int,string,string"
     title="cxhyphen(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxhyphen<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxgrid.t,int,string,string"
+    title="cxgrid(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxgrid<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#uname.t,"
     title="uname(): untyped"><wbr />uname<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#release.t,"
@@ -2754,6 +2790,41 @@ Funding     : If you are happy send any amount of bitcoins you like to this wall
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
 <dt id="start"><a name="start"></a><pre><span class="Identifier">start</span> <span class="Other">=</span> <span class="Identifier">epochTime</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="efb1"><a name="efb1"></a><pre><span class="Identifier">efb1</span> <span class="Other">=</span> <span class="StringLit">&quot;\xE2\x96\x80&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="efb2"><a name="efb2"></a><pre><span class="Identifier">efb2</span> <span class="Other">=</span> <span class="StringLit">&quot;\xE2\x96\x92&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="efb3"><a name="efb3"></a><pre><span class="Identifier">efb3</span> <span class="Other">=</span> <span class="StringLit">&quot;\xE2\x96\x83&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="efl1"><a name="efl1"></a><pre><span class="Identifier">efl1</span> <span class="Other">=</span> <span class="StringLit">&quot;\xE2\x96\x8D&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="efr1"><a name="efr1"></a><pre><span class="Identifier">efr1</span> <span class="Other">=</span> <span class="StringLit">&quot;\xE2\x96\x87&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="efr2"><a name="efr2"></a><pre><span class="Identifier">efr2</span> <span class="Other">=</span> <span class="StringLit">&quot;\xE2\x9B\x86&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="efs2"><a name="efs2"></a><pre><span class="Identifier">efs2</span> <span class="Other">=</span> <span class="StringLit">&quot;\xE2\x96\xA8&quot;</span></pre></dt>
 <dd>
 
 
@@ -6117,6 +6188,12 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
+<dt id="cx10"><a name="cx10,int,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cx10</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="printNimcx"><a name="printNimcx,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printNimcx</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getTerminalWidth</span><span class="Other">(</span><span class="Other">)</span> <span class="Identifier">div</span> <span class="DecNumber">2</span> <span class="Operator">-</span> <span class="DecNumber">30</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -6281,7 +6358,7 @@ eg. &quot;mediumslateblue&quot;
 
 
 </dd>
-<dt id="randCol"><a name="randCol.t,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">randCol</span><span class="Other">(</span><span class="Identifier">coltype</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
+<dt id="randCol2"><a name="randCol2.t,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">randCol2</span><span class="Other">(</span><span class="Identifier">coltype</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
 <dd>
 <pre>randCol
 
@@ -6574,22 +6651,52 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
 
 
 </dd>
-<dt id="cxi"><a name="cxi.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxi</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dt id="cxZero"><a name="cxZero.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxZero</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxc"><a name="cxc.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxc</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dt id="cx1"><a name="cx1.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx1</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxx"><a name="cxx.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxx</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dt id="cx2"><a name="cx2.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx2</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxy"><a name="cxy.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxy</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dt id="cx3"><a name="cx3.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx3</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cx4"><a name="cx4.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx4</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cx5"><a name="cx5.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx5</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cx6"><a name="cx6.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx6</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cx7"><a name="cx7.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx7</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cx8"><a name="cx8.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx8</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cx9"><a name="cx9.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx9</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -6604,42 +6711,12 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
 
 
 </dd>
+<dt id="cxc"><a name="cxc.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxc</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="cxd"><a name="cxd.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxd</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="cxl"><a name="cxl.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxl</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="cxm"><a name="cxm.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxm</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="cxn"><a name="cxn.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxn</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="cxp"><a name="cxp.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxp</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="cxr"><a name="cxr.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxr</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="cxo"><a name="cxo.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxo</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="cxq"><a name="cxq.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxq</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -6664,17 +6741,62 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
 
 
 </dd>
+<dt id="cxi"><a name="cxi.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxi</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="cxj"><a name="cxj.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxj</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxt"><a name="cxt.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxt</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dt id="cxk"><a name="cxk.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxk</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxz"><a name="cxz.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxz</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dt id="cxl"><a name="cxl.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxl</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxm"><a name="cxm.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxm</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxn"><a name="cxn.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxn</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxo"><a name="cxo.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxo</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxp"><a name="cxp.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxp</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxq"><a name="cxq.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxq</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxr"><a name="cxr.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxr</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxs"><a name="cxs.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxs</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxt"><a name="cxt.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxt</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -6694,17 +6816,17 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
 
 
 </dd>
-<dt id="cxk"><a name="cxk.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxk</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dt id="cxx"><a name="cxx.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxx</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxs"><a name="cxs.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxs</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dt id="cxy"><a name="cxy.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxy</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxexc"><a name="cxexc.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxexc</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dt id="cxz"><a name="cxz.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxz</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -6715,6 +6837,11 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
 
 </dd>
 <dt id="cxhyphen"><a name="cxhyphen.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxhyphen</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="cxgrid"><a name="cxgrid.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxgrid</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -6739,7 +6866,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-09-15 12:42:52 UTC</small>
+        <small>Made with Nim. Generated: 2017-09-17 21:09:52 UTC</small>
       </div>
     </div>
   </div>
