@@ -2551,7 +2551,7 @@ function main() {
   </div>
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
-  <p class="module-desc">{.noforward: on.}   # future feature hopefully<pre>
+  <p class="module-desc"><pre>
 Library     : nimcx.nim
 
 Module      : cx.nim
@@ -2564,7 +2564,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-09-15
+Latest      : 2017-09-19
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -2578,9 +2578,9 @@ Description :
               
               a wide selection of utility functions and useable snippets.
               
-              Currently the library consists of cx.nim and cxutils.nim , both files are automatically
+              Currently the library consists of cx.nim and cxutils.nim ,
               
-              imported with : import nimcx
+              both files are automatically imported with : import nimcx
               
               Some procs may mirror functionality of stdlib moduls others may be deprecated if
               
@@ -2648,9 +2648,6 @@ Note        : may be improved at any time
               proc fmtx a formatting utility has been added
 
 
-
-Required    :
-
 Installation: nimble install nimcx
 
 
@@ -2658,9 +2655,9 @@ Optional    : xclip  (linux clipboard utility)
               
               unicode font libraries as needed
 
-In progress : moving some of the non core procs to module cxutils.nim to avoid bloat.
-
-
+In progress : moving some of the non core procs to module cxutils.nim to avoid bloat
+              
+              and deprecating unused functions.
 
 Funding     : If you are happy or unhappy send any amount of bitcoins to this wallet :
               
@@ -4686,16 +4683,17 @@ Colornames supported for background color:
   - brightwhite,brightred,brightgreen,brightblue,brightyellow,
   - brightcyan,brightmagenta,brightblack</pre>
 <p>Examples</p>
-<pre class="listing"><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span> <span class="Comment"># background has no effect with font in  clrainbow</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span> <span class="Comment"># background has no effect with font in  clrainbow</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span>
 <span class="Comment"># or use it as a replacement of echo</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">red</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;What's up ? &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">green</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;Grub's up ! &quot;</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;No need to reset the original color&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nim does it again&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span> <span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleDim</span><span class="Punctuation">,</span><span class="Identifier">styleUnderscore</span><span class="Punctuation">}</span><span class="Punctuation">,</span><span class="Identifier">substr</span> <span class="Operator">=</span> <span class="StringLit">&quot;i&quot;</span><span class="Punctuation">)</span>
-
 <span class="Comment"># To achieve colored text with styleReverse try:</span>
-<span class="Identifier">setBackgroundColor</span><span class="Punctuation">(</span><span class="Identifier">bgRed</span><span class="Punctuation">)</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;The End never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
+<span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">30</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+    <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">bRed</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
+    <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.5</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="printLn"><a name="printLn,T,string,BackgroundColor,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
@@ -5473,11 +5471,11 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <span class="Identifier">checkHash</span><span class="Punctuation">(</span><span class="Identifier">zz</span><span class="Punctuation">,</span> <span class="Identifier">ahash</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="showBench"><a name="showBench,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showBench</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span>
-                         <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="showBench"><a name="showBench,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showBench</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
+                         <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showBench</p>
-<p>Displays results of all benchmarks </p>
+<p>Displays results of all benchmarks</p>
 
 
 </dd>
@@ -6224,27 +6222,27 @@ latest terminalheight always available in th
 <p>a quick benchmark template showing cpu and epoch times with repeat looping param</p>
 <pre class="listing"><span class="Identifier">benchmark</span><span class="Punctuation">(</span><span class="StringLit">&quot;whatever&quot;</span><span class="Punctuation">,</span><span class="DecNumber">1000</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
     <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Kami makan tiga kali setiap hari.&quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">algorithm</span>
-  
-  <span class="Keyword">proc</span> <span class="Identifier">doit</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">=</span>
-      <span class="Keyword">var</span> <span class="Identifier">s</span> <span class="Operator">=</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="DecNumber">9</span><span class="Punctuation">)</span>
-      <span class="Keyword">var</span> <span class="Identifier">c</span> <span class="Operator">=</span> <span class="DecNumber">0</span>
-      <span class="Identifier">s</span><span class="Operator">.</span><span class="Identifier">sort</span><span class="Punctuation">(</span><span class="Identifier">system</span><span class="Operator">.</span><span class="Identifier">cmp</span><span class="Punctuation">,</span><span class="Identifier">order</span> <span class="Operator">=</span> <span class="Identifier">Descending</span><span class="Punctuation">)</span>
-      <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="Identifier">s</span><span class="Punctuation">:</span>
-          <span class="Identifier">inc</span> <span class="Identifier">c</span>
-          <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;f15.7&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">c</span><span class="Punctuation">,</span><span class="StringLit">&quot; :&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
-  
-  <span class="Keyword">template</span> <span class="Identifier">cxcounter</span><span class="Punctuation">(</span><span class="Identifier">bx</span><span class="Punctuation">:</span><span class="Identifier">int</span><span class="Punctuation">)</span><span class="Punctuation">:</span><span class="Identifier">int</span> <span class="Operator">=</span>
-          <span class="Identifier">inc</span> <span class="Identifier">bx</span>
-          <span class="Identifier">bx</span>
-  
-  <span class="Keyword">var</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="DecNumber">0</span>
-  <span class="Identifier">benchmark</span><span class="Punctuation">(</span><span class="StringLit">&quot;doit&quot;</span><span class="Punctuation">,</span><span class="DecNumber">10000</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-          <span class="Identifier">doit</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-          <span class="Identifier">hline</span><span class="Punctuation">(</span><span class="DecNumber">30</span><span class="Punctuation">)</span>
-          <span class="Identifier">printLn</span><span class="Punctuation">(</span> <span class="StringLit">&quot; &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">uparrow</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot; Run &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">cxcounter</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">greenyellow</span><span class="Punctuation">)</span>
-          <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-  
-  <span class="Identifier">showBench</span><span class="Punctuation">(</span><span class="Punctuation">)</span> </pre>
+
+<span class="Keyword">proc</span> <span class="Identifier">doit</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">=</span>
+    <span class="Keyword">var</span> <span class="Identifier">s</span> <span class="Operator">=</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="DecNumber">9</span><span class="Punctuation">)</span>
+    <span class="Keyword">var</span> <span class="Identifier">c</span> <span class="Operator">=</span> <span class="DecNumber">0</span>
+    <span class="Identifier">s</span><span class="Operator">.</span><span class="Identifier">sort</span><span class="Punctuation">(</span><span class="Identifier">system</span><span class="Operator">.</span><span class="Identifier">cmp</span><span class="Punctuation">,</span><span class="Identifier">order</span> <span class="Operator">=</span> <span class="Identifier">Descending</span><span class="Punctuation">)</span>
+    <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="Identifier">s</span><span class="Punctuation">:</span>
+        <span class="Identifier">inc</span> <span class="Identifier">c</span>
+        <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;f15.7&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">c</span><span class="Punctuation">,</span><span class="StringLit">&quot; :&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+
+<span class="Keyword">template</span> <span class="Identifier">cxcounter</span><span class="Punctuation">(</span><span class="Identifier">bx</span><span class="Punctuation">:</span><span class="Identifier">int</span><span class="Punctuation">)</span><span class="Punctuation">:</span><span class="Identifier">int</span> <span class="Operator">=</span>
+        <span class="Identifier">inc</span> <span class="Identifier">bx</span>
+        <span class="Identifier">bx</span>
+
+<span class="Keyword">var</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="DecNumber">0</span>
+<span class="Identifier">benchmark</span><span class="Punctuation">(</span><span class="StringLit">&quot;doit&quot;</span><span class="Punctuation">,</span><span class="DecNumber">10000</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+        <span class="Identifier">doit</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+        <span class="Identifier">hline</span><span class="Punctuation">(</span><span class="DecNumber">30</span><span class="Punctuation">)</span>
+        <span class="Identifier">printLn</span><span class="Punctuation">(</span> <span class="StringLit">&quot; &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">uparrow</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot; Run &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">cxcounter</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">greenyellow</span><span class="Punctuation">)</span>
+        <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+
+<span class="Identifier">showBench</span><span class="Punctuation">(</span><span class="Punctuation">)</span> </pre>
 
 </dd>
 <dt id="benchmark"><a name="benchmark.t,string,typed"></a><pre><span class="Keyword">template</span> <span class="Identifier">benchmark</span><span class="Other">(</span><span class="Identifier">benchmarkName</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">typed</span><span class="Other">)</span></pre></dt>
@@ -6580,7 +6578,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-09-18 20:49:01 UTC</small>
+        <small>Made with Nim. Generated: 2017-09-19 19:36:48 UTC</small>
       </div>
     </div>
   </div>
