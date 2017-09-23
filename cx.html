@@ -1283,21 +1283,21 @@ function main() {
        &quot;\xF0\x9F\x82\xBF&quot;, &quot;\xF0\x9F\x83\x8F&quot;, &quot;\xF0\x9F\x83\x9F&quot;]"><wbr />cards<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rxCards"
     title="rxCards =
-  var i455802 = 0
-  var result456067 = newSeq(chckRange(len(0 .. high(cards)), 0, 9223372036854775807))
-  block :tmp456104:
+  var i454802 = 0
+  var result455067 = newSeq(chckRange(len(0 .. high(cards)), 0, 9223372036854775807))
+  block :tmp455104:
       var
-        x456093
+        x455093
         :tmp
       :tmp = high(cards)
       var res = 0
-      block :tmp456106:
+      block :tmp455106:
           while res &lt;= int(:tmp):
-            x456093 = T(res)
-            result456067[i455802] = x456093
-            inc i455802, 1
+            x455093 = T(res)
+            result455067[i454802] = x455093
+            inc i454802, 1
             inc(res, 1)
-  result456067"><wbr />rx<wbr />Cards<span class="attachedType" style="visibility:hidden"></span></a></li>
+  result455067"><wbr />rx<wbr />Cards<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1867,6 +1867,31 @@ function main() {
             (&quot;truetomato&quot;, &quot;\x1B[38;2;255;100;0m&quot;),
             (&quot;zcolor&quot;, &quot;\x1B[38;2;255;111;210m&quot;),
             (&quot;zippi&quot;, &quot;\x1B[38;2;79;196;132m&quot;)]"><wbr />color<wbr />Names<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#hexColorNames"
+    title="hexColorNames = [&quot;#F0F8FF&quot;, &quot;#FAEBD7&quot;, &quot;#00FFFF&quot;, &quot;#7FFFD4&quot;, &quot;#F0FFFF&quot;, &quot;#F5F5DC&quot;,
+               &quot;#FFE4C4&quot;, &quot;#000000&quot;, &quot;#FFEBCD&quot;, &quot;#0000FF&quot;, &quot;#8A2BE2&quot;, &quot;#A52A2A&quot;,
+               &quot;#DEB887&quot;, &quot;#5F9EA0&quot;, &quot;#7FFF00&quot;, &quot;#D2691E&quot;, &quot;#FF7F50&quot;, &quot;#6495ED&quot;,
+               &quot;#FFF8DC&quot;, &quot;#DC143C&quot;, &quot;#00FFFF&quot;, &quot;#00008B&quot;, &quot;#008B8B&quot;, &quot;#B8860B&quot;,
+               &quot;#A9A9A9&quot;, &quot;#006400&quot;, &quot;#BDB76B&quot;, &quot;#8B008B&quot;, &quot;#556B2F&quot;, &quot;#FF8C00&quot;,
+               &quot;#9932CC&quot;, &quot;#8B0000&quot;, &quot;#E9967A&quot;, &quot;#8FBC8F&quot;, &quot;#483D8B&quot;, &quot;#2F4F4F&quot;,
+               &quot;#00CED1&quot;, &quot;#9400D3&quot;, &quot;#FF1493&quot;, &quot;#00BFFF&quot;, &quot;#696969&quot;, &quot;#1E90FF&quot;,
+               &quot;#B22222&quot;, &quot;#FFFAF0&quot;, &quot;#228B22&quot;, &quot;#FF00FF&quot;, &quot;#DCDCDC&quot;, &quot;#F8F8FF&quot;,
+               &quot;#FFD700&quot;, &quot;#DAA520&quot;, &quot;#808080&quot;, &quot;#008000&quot;, &quot;#ADFF2F&quot;, &quot;#F0FFF0&quot;,
+               &quot;#FF69B4&quot;, &quot;#CD5C5C&quot;, &quot;#4B0082&quot;, &quot;#FFFFF0&quot;, &quot;#F0E68C&quot;, &quot;#E6E6FA&quot;,
+               &quot;#FFF0F5&quot;, &quot;#7CFC00&quot;, &quot;#FFFACD&quot;, &quot;#ADD8E6&quot;, &quot;#F08080&quot;, &quot;#E0FFFF&quot;,
+               &quot;#FAFAD2&quot;, &quot;#D3D3D3&quot;, &quot;#90EE90&quot;, &quot;#FFB6C1&quot;, &quot;#FFA07A&quot;, &quot;#20B2AA&quot;,
+               &quot;#87CEFA&quot;, &quot;#778899&quot;, &quot;#B0C4DE&quot;, &quot;#FFFFE0&quot;, &quot;#00FF00&quot;, &quot;#32CD32&quot;,
+               &quot;#FAF0E6&quot;, &quot;#FF00FF&quot;, &quot;#800000&quot;, &quot;#66CDAA&quot;, &quot;#0000CD&quot;, &quot;#BA55D3&quot;,
+               &quot;#9370D8&quot;, &quot;#3CB371&quot;, &quot;#7B68EE&quot;, &quot;#00FA9A&quot;, &quot;#48D1CC&quot;, &quot;#C71585&quot;,
+               &quot;#191970&quot;, &quot;#F5FFFA&quot;, &quot;#FFE4E1&quot;, &quot;#FFE4B5&quot;, &quot;#FFDEAD&quot;, &quot;#000080&quot;,
+               &quot;#FDF5E6&quot;, &quot;#808000&quot;, &quot;#6B8E23&quot;, &quot;#FFA500&quot;, &quot;#FF4500&quot;, &quot;#DA70D6&quot;,
+               &quot;#EEE8AA&quot;, &quot;#98FB98&quot;, &quot;#AFEEEE&quot;, &quot;#D87093&quot;, &quot;#FFEFD5&quot;, &quot;#FFDAB9&quot;,
+               &quot;#CD853F&quot;, &quot;#FFC0CB&quot;, &quot;#DDA0DD&quot;, &quot;#B0E0E6&quot;, &quot;#800080&quot;, &quot;#FF0000&quot;,
+               &quot;#BC8F8F&quot;, &quot;#4169E1&quot;, &quot;#8B4513&quot;, &quot;#FA8072&quot;, &quot;#F4A460&quot;, &quot;#2E8B57&quot;,
+               &quot;#FFF5EE&quot;, &quot;#A0522D&quot;, &quot;#C0C0C0&quot;, &quot;#87CEEB&quot;, &quot;#6A5ACD&quot;, &quot;#708090&quot;,
+               &quot;#FFFAFA&quot;, &quot;#00FF7F&quot;, &quot;#4682B4&quot;, &quot;#D2B48C&quot;, &quot;#008080&quot;, &quot;#D8BFD8&quot;,
+               &quot;#FF6347&quot;, &quot;#40E0D0&quot;, &quot;#EE82EE&quot;, &quot;#F5DEB3&quot;, &quot;#FFFFFF&quot;, &quot;#F5F5F5&quot;,
+               &quot;#FFFF00&quot;, &quot;#9ACD32&quot;]"><wbr />hex<wbr />Color<wbr />Names<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#pastelSet"
     title="pastelSet = [&quot;\x1B[38;2;179;226;205m&quot;, &quot;\x1B[38;2;241;226;204m&quot;,
            &quot;\x1B[38;2;244;202;228m&quot;, &quot;\x1B[38;2;203;213;232m&quot;,
@@ -2564,7 +2589,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-09-19
+Latest      : 2017-09-23
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -2778,21 +2803,21 @@ Funding     : If you are happy or unhappy send any amount of bitcoins to this wa
 
 </dd>
 <dt id="rxCards"><a name="rxCards"></a><pre><span class="Identifier">rxCards</span> <span class="Other">=</span>
-  <span class="Keyword">var</span> <span class="Identifier">i</span><span class="DecNumber">455802</span> <span class="Other">=</span> <span class="DecNumber">0</span>
-  <span class="Keyword">var</span> <span class="Identifier">result</span><span class="DecNumber">456067</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">chckRange</span><span class="Other">(</span><span class="Identifier">len</span><span class="Other">(</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="Identifier">high</span><span class="Other">(</span><span class="Identifier">cards</span><span class="Other">)</span><span class="Other">)</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">9223372036854775807</span><span class="Other">)</span><span class="Other">)</span>
-  <span class="Keyword">block</span> <span class="Operator">:tmp456104</span><span class="Other">:</span>
+  <span class="Keyword">var</span> <span class="Identifier">i</span><span class="DecNumber">454802</span> <span class="Other">=</span> <span class="DecNumber">0</span>
+  <span class="Keyword">var</span> <span class="Identifier">result</span><span class="DecNumber">455067</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">chckRange</span><span class="Other">(</span><span class="Identifier">len</span><span class="Other">(</span><span class="DecNumber">0</span> <span class="Operator">..</span> <span class="Identifier">high</span><span class="Other">(</span><span class="Identifier">cards</span><span class="Other">)</span><span class="Other">)</span><span class="Other">,</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">9223372036854775807</span><span class="Other">)</span><span class="Other">)</span>
+  <span class="Keyword">block</span> <span class="Operator">:tmp455104</span><span class="Other">:</span>
       <span class="Keyword">var</span>
-        <span class="Identifier">x</span><span class="DecNumber">456093</span>
+        <span class="Identifier">x</span><span class="DecNumber">455093</span>
         <span class="Operator">:tmp</span>
       <span class="Operator">:tmp</span> <span class="Other">=</span> <span class="Identifier">high</span><span class="Other">(</span><span class="Identifier">cards</span><span class="Other">)</span>
       <span class="Keyword">var</span> <span class="Identifier">res</span> <span class="Other">=</span> <span class="DecNumber">0</span>
-      <span class="Keyword">block</span> <span class="Operator">:tmp456106</span><span class="Other">:</span>
+      <span class="Keyword">block</span> <span class="Operator">:tmp455106</span><span class="Other">:</span>
           <span class="Keyword">while</span> <span class="Identifier">res</span> <span class="Operator">&lt;=</span> <span class="Identifier">int</span><span class="Other">(</span><span class="Operator">:tmp</span><span class="Other">)</span><span class="Other">:</span>
-            <span class="Identifier">x</span><span class="DecNumber">456093</span> <span class="Other">=</span> <span class="Identifier">T</span><span class="Other">(</span><span class="Identifier">res</span><span class="Other">)</span>
-            <span class="Identifier">result</span><span class="DecNumber">456067</span><span class="Other">[</span><span class="Identifier">i</span><span class="DecNumber">455802</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">x</span><span class="DecNumber">456093</span>
-            <span class="Identifier">inc</span> <span class="Identifier">i</span><span class="DecNumber">455802</span><span class="Other">,</span> <span class="DecNumber">1</span>
+            <span class="Identifier">x</span><span class="DecNumber">455093</span> <span class="Other">=</span> <span class="Identifier">T</span><span class="Other">(</span><span class="Identifier">res</span><span class="Other">)</span>
+            <span class="Identifier">result</span><span class="DecNumber">455067</span><span class="Other">[</span><span class="Identifier">i</span><span class="DecNumber">454802</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">x</span><span class="DecNumber">455093</span>
+            <span class="Identifier">inc</span> <span class="Identifier">i</span><span class="DecNumber">454802</span><span class="Other">,</span> <span class="DecNumber">1</span>
             <span class="Identifier">inc</span><span class="Other">(</span><span class="Identifier">res</span><span class="Other">,</span> <span class="DecNumber">1</span><span class="Other">)</span>
-  <span class="Identifier">result</span><span class="DecNumber">456067</span></pre></dt>
+  <span class="Identifier">result</span><span class="DecNumber">455067</span></pre></dt>
 <dd>
 
 
@@ -3991,6 +4016,34 @@ reset colors
             <span class="Other">(</span><span class="StringLit">&quot;truetomato&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\x1B[38;2;255;100;0m&quot;</span><span class="Other">)</span><span class="Other">,</span>
             <span class="Other">(</span><span class="StringLit">&quot;zcolor&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\x1B[38;2;255;111;210m&quot;</span><span class="Other">)</span><span class="Other">,</span>
             <span class="Other">(</span><span class="StringLit">&quot;zippi&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;\x1B[38;2;79;196;132m&quot;</span><span class="Other">)</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="hexColorNames"><a name="hexColorNames"></a><pre><span class="Identifier">hexColorNames</span> <span class="Other">=</span> <span class="Other">[</span><span class="StringLit">&quot;#F0F8FF&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FAEBD7&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#00FFFF&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#7FFFD4&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#F0FFFF&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#F5F5DC&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FFE4C4&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#000000&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFEBCD&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#0000FF&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#8A2BE2&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#A52A2A&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#DEB887&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#5F9EA0&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#7FFF00&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#D2691E&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FF7F50&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#6495ED&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FFF8DC&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#DC143C&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#00FFFF&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#00008B&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#008B8B&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#B8860B&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#A9A9A9&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#006400&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#BDB76B&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#8B008B&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#556B2F&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FF8C00&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#9932CC&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#8B0000&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#E9967A&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#8FBC8F&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#483D8B&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#2F4F4F&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#00CED1&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#9400D3&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FF1493&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#00BFFF&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#696969&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#1E90FF&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#B22222&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFFAF0&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#228B22&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FF00FF&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#DCDCDC&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#F8F8FF&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FFD700&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#DAA520&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#808080&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#008000&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#ADFF2F&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#F0FFF0&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FF69B4&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#CD5C5C&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#4B0082&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFFFF0&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#F0E68C&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#E6E6FA&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FFF0F5&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#7CFC00&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFFACD&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#ADD8E6&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#F08080&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#E0FFFF&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FAFAD2&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#D3D3D3&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#90EE90&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFB6C1&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFA07A&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#20B2AA&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#87CEFA&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#778899&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#B0C4DE&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFFFE0&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#00FF00&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#32CD32&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FAF0E6&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FF00FF&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#800000&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#66CDAA&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#0000CD&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#BA55D3&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#9370D8&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#3CB371&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#7B68EE&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#00FA9A&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#48D1CC&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#C71585&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#191970&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#F5FFFA&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFE4E1&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFE4B5&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFDEAD&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#000080&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FDF5E6&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#808000&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#6B8E23&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFA500&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FF4500&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#DA70D6&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#EEE8AA&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#98FB98&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#AFEEEE&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#D87093&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFEFD5&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFDAB9&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#CD853F&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFC0CB&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#DDA0DD&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#B0E0E6&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#800080&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FF0000&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#BC8F8F&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#4169E1&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#8B4513&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FA8072&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#F4A460&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#2E8B57&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FFF5EE&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#A0522D&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#C0C0C0&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#87CEEB&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#6A5ACD&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#708090&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FFFAFA&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#00FF7F&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#4682B4&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#D2B48C&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#008080&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#D8BFD8&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FF6347&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#40E0D0&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#EE82EE&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#F5DEB3&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#FFFFFF&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#F5F5F5&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;#FFFF00&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#9ACD32&quot;</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
@@ -6578,7 +6631,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-09-19 19:36:48 UTC</small>
+        <small>Made with Nim. Generated: 2017-09-23 22:40:41 UTC</small>
       </div>
     </div>
   </div>
