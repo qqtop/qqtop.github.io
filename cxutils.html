@@ -1372,7 +1372,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-09-28
+Latest      : 2017-09-29
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -1382,7 +1382,7 @@ Description :
               
               cxutils.nim is a collection of lesser used simple utility procs and templates
               
-              moved here to avoid code bloat in cx.nim  it is automaticall imported with nimcx
+              moved here to avoid code bloat in cx.nim  it is imported with nimcx
 
 
 Usage       : import nimcx
@@ -1597,7 +1597,7 @@ showCpuCores
 <p>getRandomPointInCircle</p>
 <p>based on answers found in</p>
 <p><a class="reference external" href="http://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly">http://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly</a></p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">math</span><span class="Punctuation">,</span><span class="Identifier">strfmt</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">math</span><span class="Punctuation">,</span><span class="Identifier">strfmt</span>
 <span class="Comment"># get randompoints in a circle</span>
 <span class="Keyword">var</span> <span class="Identifier">crad</span><span class="Punctuation">:</span><span class="Identifier">float</span> <span class="Operator">=</span> <span class="DecNumber">1</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">100</span><span class="Punctuation">:</span>
@@ -1675,7 +1675,7 @@ showCpuCores
 <p>parameters for animated superheaderA :</p>
 <p>headerstring, txt color, frame color, left/right animation : true/false ,animcount</p>
 <p>Example :</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Keyword">let</span> <span class="Identifier">bb</span> <span class="Operator">=</span> <span class="StringLit">&quot;NIM the system language for the future, which extends to as far as you need !!&quot;</span>
 <span class="Identifier">superHeaderA</span><span class="Punctuation">(</span><span class="Identifier">bb</span><span class="Punctuation">,</span><span class="Identifier">white</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">true</span><span class="Punctuation">,</span><span class="DecNumber">1</span><span class="Punctuation">)</span>
@@ -1855,7 +1855,7 @@ showCpuCores
 <dd>
 <p>getCard</p>
 <p>gets a random card from the Cards seq</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">cx</span><span class="Punctuation">,</span><span class="Identifier">cxutils</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Identifier">print</span><span class="Punctuation">(</span><span class="Identifier">getCard</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="Identifier">centerX</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>  <span class="Comment"># get card and print in random color at xpos</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
@@ -1870,7 +1870,7 @@ showCpuCores
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-09-29 12:49:00 UTC</small>
+        <small>Made with Nim. Generated: 2017-09-29 16:10:36 UTC</small>
       </div>
     </div>
   </div>
