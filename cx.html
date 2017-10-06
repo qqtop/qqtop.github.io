@@ -1254,8 +1254,8 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#start"
-    title="start = epochTime()"><wbr />start<span class="attachedType" style="visibility:hidden"></span></a></li>
+      <li><a class="reference" href="#cxstart"
+    title="cxstart = epochTime()"><wbr />cxstart<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1292,8 +1292,6 @@ function main() {
     title="uniform(a, b: float): float"><wbr />uniform<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getRndInt,int,int"
     title="getRndInt(mi: int = 0; ma: int = int.high): int"><wbr />get<wbr />Rnd<wbr />Int<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#fibonacci,int"
-    title="fibonacci(n: int): float"><wbr />fibonacci<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getTerminalWidth,"
     title="getTerminalWidth(): int"><wbr />get<wbr />Terminal<wbr />Width<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getTerminalHeight,"
@@ -1374,9 +1372,9 @@ function main() {
   <li><a class="reference" href="#printLnHL,string,string,string"
     title="printLnHL(s: string; substr: string; col: string = termwhite)"><wbr />print<wbr />Ln<wbr />HL<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cecho,string,varargs[string,]"
-    title="cecho(col: string; ggg: varargs[string, `$`] = @ [&quot;&quot;])"><wbr />cecho<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cecho(col: string; ggg: varargs[string, `$`] = @[&quot;&quot;])"><wbr />cecho<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cechoLn,string,varargs[string,]"
-    title="cechoLn(col: string; astring: varargs[string, `$`] = @ [&quot;&quot;])"><wbr />cecho<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cechoLn(col: string; astring: varargs[string, `$`] = @[&quot;&quot;])"><wbr />cecho<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showColors,"
     title="showColors()"><wbr />show<wbr />Colors<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#doty,int,string,string,int"
@@ -1478,9 +1476,9 @@ function main() {
   <li><a class="reference" href="#ff2,int64,int"
     title="ff2(zz: int64; n: int = 0): string"><wbr />ff2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getRandomFloat,float,float"
-    title="getRandomFloat(mi: float = - 1.0; ma: float = 1.0): float"><wbr />get<wbr />Random<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="getRandomFloat(mi: float = -1.0; ma: float = 1.0): float"><wbr />get<wbr />Random<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getRndFloat,float,float"
-    title="getRndFloat(mi: float = - 1.0; ma: float = 1.0): float"><wbr />get<wbr />Rnd<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="getRndFloat(mi: float = -1.0; ma: float = 1.0): float"><wbr />get<wbr />Rnd<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#createSeqFloat,int,int"
     title="createSeqFloat(n: int = 10; prec: int = 3): seq[float]"><wbr />create<wbr />Seq<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#seqLeft,seq[T],int"
@@ -1615,11 +1613,11 @@ function main() {
   <li><a class="reference" href="#cx10,int,string,string"
     title="cx10(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx10<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printFont,string,string,int"
-    title="printFont(s: string; col: string = randcol(); xpos: int = - 10)"><wbr />print<wbr />Font<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="printFont(s: string; col: string = randcol(); xpos: int = -10)"><wbr />print<wbr />Font<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printFontFancy,string,string,int"
-    title="printFontFancy(s: string; col: string = randcol(); xpos: int = - 10)"><wbr />print<wbr />Font<wbr />Fancy<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printNimcx,int"
-    title="printNimcx(npos: int = getTerminalWidth() div 2 - 30)"><wbr />print<wbr />Nimcx<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="printFontFancy(s: string; col: string = randcol(); xpos: int = -10)"><wbr />print<wbr />Font<wbr />Fancy<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printNimCx,int"
+    title="printNimCx(npos: int = getTerminalWidth() div 2 - 30)"><wbr />print<wbr />Nim<wbr />Cx<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printMadeWithNim,int"
     title="printMadeWithNim(npos: int = getTerminalWidth() div 2 - 60)"><wbr />print<wbr />Made<wbr />With<wbr />Nim<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#doInfo,"
@@ -1840,7 +1838,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-10-04
+Latest      : 2017-10-06
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -2012,7 +2010,7 @@ Funding     : If you are happy or unhappy send any amount of bitcoins to this wa
 <div class="section" id="9">
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
-<dt id="start"><a name="start"></a><pre><span class="Identifier">start</span> <span class="Other">=</span> <span class="Identifier">epochTime</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
+<dt id="cxstart"><a name="cxstart"></a><pre><span class="Identifier">cxstart</span> <span class="Other">=</span> <span class="Identifier">epochTime</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -2077,7 +2075,7 @@ rndSample returns one random sample from a sequence
 <p>based on an idea in nim playground</p>
 <p>returns a continuous subseq a..b from an array or seq if a &gt;= b</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
-<span class="Keyword">let</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">)</span>
+<span class="Keyword">let</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="Identifier">createSeqInt</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">)</span>
 <span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">sampleseq</span><span class="Punctuation">(</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">8</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">x</span>
 <span class="Identifier">echo</span> <span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">8</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">rndSample</span><span class="Punctuation">(</span><span class="Punctuation">)</span>    <span class="Comment"># get one randomly selected value from the subsequence</span></pre>
@@ -2125,13 +2123,6 @@ rndSample returns one random sample from a sequence
 <p>getRndInt</p>
 <p>returns a random int between mi and &lt; ma so for 0 or 1 we need random(0..2)</p>
 
-
-</dd>
-<dt id="fibonacci"><a name="fibonacci,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">fibonacci</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>fibonacci</p>
-<p>calculate fibonacci values</p>
-<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">20</span><span class="Punctuation">:</span> <span class="Identifier">quickList</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">fibonacci</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="getTerminalWidth"><a name="getTerminalWidth,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalWidth</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -2571,7 +2562,7 @@ forward declaration
 
 
 </dd>
-<dt id="cecho"><a name="cecho,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cecho</span><span class="Other">(</span><span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">ggg</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="StringLit">&quot;&quot;</span><span class="Other">]</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="cecho"><a name="cecho,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cecho</span><span class="Other">(</span><span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">ggg</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;&quot;</span><span class="Other">]</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>cecho</p>
@@ -2583,7 +2574,7 @@ forward declaration
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="StringLit">&quot;ok&quot;</span><span class="Punctuation">)</span>  <span class="Comment"># still salmon</span></pre>
 
 </dd>
-<dt id="cechoLn"><a name="cechoLn,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cechoLn</span><span class="Other">(</span><span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span> <span class="Other">[</span><span class="StringLit">&quot;&quot;</span><span class="Other">]</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="cechoLn"><a name="cechoLn,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cechoLn</span><span class="Other">(</span><span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;&quot;</span><span class="Other">]</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>cechoLn</p>
@@ -3089,7 +3080,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;20.0&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;NIM &quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="StringLit">&quot; : &quot;</span><span class="Punctuation">,</span><span class="Identifier">z</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="getRandomFloat"><a name="getRandomFloat,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomFloat</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="FloatNumber">1.0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">1.0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="getRandomFloat"><a name="getRandomFloat,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomFloat</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">1.0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">1.0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getRandomFloat</p>
 <p>convenience proc so we do not need to import random in calling prog</p>
@@ -3098,7 +3089,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getRandomFloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="FloatNumber">10000.00</span> <span class="Operator">*</span> <span class="Identifier">getRandomSignF</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="getRndFloat"><a name="getRndFloat,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRndFloat</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="FloatNumber">1.0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">1.0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="getRndFloat"><a name="getRndFloat,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRndFloat</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">1.0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">1.0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getRndFloat</p>
 <p>same as getrandomFloat() </p>
@@ -3679,7 +3670,7 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
-<dt id="printFont"><a name="printFont,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFont</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="DecNumber">10</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="printFont"><a name="printFont,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFont</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>printFont</p>
@@ -3688,7 +3679,7 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
-<dt id="printFontFancy"><a name="printFontFancy,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFontFancy</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span> <span class="DecNumber">10</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="printFontFancy"><a name="printFontFancy,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFontFancy</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>printFontFancy</p>
@@ -3696,7 +3687,7 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
-<dt id="printNimcx"><a name="printNimcx,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printNimcx</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getTerminalWidth</span><span class="Other">(</span><span class="Other">)</span> <span class="Identifier">div</span> <span class="DecNumber">2</span> <span class="Operator">-</span> <span class="DecNumber">30</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="printNimCx"><a name="printNimCx,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printNimCx</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getTerminalWidth</span><span class="Other">(</span><span class="Other">)</span> <span class="Identifier">div</span> <span class="DecNumber">2</span> <span class="Operator">-</span> <span class="DecNumber">30</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -4401,7 +4392,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-10-04 16:39:26 UTC</small>
+        <small>Made with Nim. Generated: 2017-10-06 22:23:45 UTC</small>
       </div>
     </div>
   </div>
