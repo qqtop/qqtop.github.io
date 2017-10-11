@@ -1225,6 +1225,8 @@ function main() {
     title="nimis = seq[int]"><wbr />nimis<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#nimdf"
     title="nimdf = seq[nimss]"><wbr />nimdf<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#nimfs"
+    title="nimfs = seq[float]"><wbr />nimfs<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1245,6 +1247,8 @@ function main() {
     title="newNimSs(): nimss"><wbr />new<wbr />Nim<wbr />Ss<span class="attachedType" style="visibility:hidden">nimss</span></a></li>
   <li><a class="reference" href="#newNimIs,"
     title="newNimIs(): nimis"><wbr />new<wbr />Nim<wbr />Is<span class="attachedType" style="visibility:hidden">nimis</span></a></li>
+  <li><a class="reference" href="#newNimFs,"
+    title="newNimFs(): nimfs"><wbr />new<wbr />Nim<wbr />Fs<span class="attachedType" style="visibility:hidden">nimfs</span></a></li>
   <li><a class="reference" href="#getData1,string"
     title="getData1(url: string): auto"><wbr />get<wbr />Data1<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getData2,string,int,int,char"
@@ -1258,7 +1262,7 @@ function main() {
   <li><a class="reference" href="#getRowCount,nimdf"
     title="getRowCount(df: nimdf): int"><wbr />get<wbr />Row<wbr />Count<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#getcolheaders,nimdf"
-    title="getcolheaders(df: nimdf): nimss"><wbr />getcolheaders<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+    title="getcolheaders(df: nimdf): seq[nimss]"><wbr />getcolheaders<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#getTotalHeaderColsWitdh,nimdf"
     title="getTotalHeaderColsWitdh(df: nimdf): int"><wbr />get<wbr />Total<wbr />Header<wbr />Cols<wbr />Witdh<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#showHeader,nimdf"
@@ -1292,16 +1296,8 @@ function main() {
     title="createRandomTestData(filename: string = &quot;nimDfTestData.csv&quot;; datarows: int = 2000)"><wbr />create<wbr />Random<wbr />Test<wbr />Data<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#dfColumnStats,nimdf,seq[int]"
     title="dfColumnStats(df: nimdf; colseq: seq[int]): seq[RunningStat]"><wbr />df<wbr />Column<wbr />Stats<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
-
-  </ul>
-</li>
-<li>
-  <a class="reference reference-toplevel" href="#16" id="66">Converters</a>
-  <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#toNimIs.c,seq[int]"
-    title="toNimIs(sq: seq[int]): nimis"><wbr />to<wbr />Nim<wbr />Is<span class="attachedType" style="visibility:hidden">nimis</span></a></li>
-  <li><a class="reference" href="#toNimSs.c,seq[string]"
-    title="toNimSs(sq: seq[string]): nimss"><wbr />to<wbr />Nim<wbr />Ss<span class="attachedType" style="visibility:hidden">nimss</span></a></li>
+  <li><a class="reference" href="#dfSave,nimdf,string"
+    title="dfSave(df: nimdf; filename: string)"><wbr />df<wbr />Save<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
 
   </ul>
 </li>
@@ -1316,7 +1312,7 @@ function main() {
 <p>License     : MIT opensource</p>
 <p>Version     : 0.0.1.6</p>
 <p>ProjectStart: 2016-09-16</p>
-<p>Latest      : 2017-10-08</p>
+<p>Latest      : 2017-10-11</p>
 <p>Compiler    : Nim &gt;= 0.17.0</p>
 <p>OS          : Linux</p>
 <p>Description :</p>
@@ -1329,7 +1325,10 @@ function main() {
 <p>Project     : <a class="reference external" href="https://github.com/qqtop/NimDataFrame">https://github.com/qqtop/NimDataFrame</a></p>
 <p>Docs        : <a class="reference external" href="http://qqtop.github.io/nimdataframe.html">http://qqtop.github.io/nimdataframe.html</a></p>
 <p>Tested      : OpenSuse Tumbleweed</p>
-<p>Todo        : var calc on dataframes</p>
+<p>Todo        : additional  calculations on dataframes</p>
+<dl class="docutils"><dt>Bugs        : in a df with showHeader === true and headertext.len &gt; 0 the first data line is not shown in showDf()</dt>
+<dd>redisplaying such a df will have the data in the second column shifted one space to the right ... the showDf() proc will be refactored soon ...</dd>
+</dl>
 </p></blockquote>
 </p>
   <div class="section" id="6">
@@ -1351,6 +1350,11 @@ function main() {
 
 </dd>
 <dt id="nimdf"><a name="nimdf"></a><pre><span class="Identifier">nimdf</span> <span class="Other">=</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">nimss</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="nimfs"><a name="nimfs"></a><pre><span class="Identifier">nimfs</span> <span class="Other">=</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
@@ -1381,6 +1385,11 @@ function main() {
 
 </dd>
 <dt id="newNimIs"><a name="newNimIs,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newNimIs</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimis</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="newNimFs"><a name="newNimFs,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newNimFs</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimfs</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
@@ -1417,7 +1426,7 @@ function main() {
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>makeDf2</p>
-<p>used to create a dataframe with nimdf object received from getData2 </p>
+<p>used to create a dataframe with nimdf object received from getData2 note that overall it is better to preprocess data to check for row quality consistency which is not done here yet , so errors may show</p>
 
 
 </dd>
@@ -1431,10 +1440,10 @@ function main() {
 
 
 </dd>
-<dt id="getcolheaders"><a name="getcolheaders,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getcolheaders</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="getcolheaders"><a name="getcolheaders,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getcolheaders</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">nimss</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getcolheaders</p>
-<p>get the first line of the dataframe df</p>
+<p>get the first 2 lines  of the dataframe df</p>
 <p>we assume line 0 contains headers </p>
 
 
@@ -1450,7 +1459,7 @@ function main() {
                           <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showHeader</p>
-<p>shows headers or first row of dataframe </p>
+<p>shows first 2 lines of df incl. headers if any of dataframe </p>
 
 
 </dd>
@@ -1594,22 +1603,11 @@ function main() {
 
 
 </dd>
-
-</dl></div>
-<div class="section" id="16">
-<h1><a class="toc-backref" href="#16">Converters</a></h1>
-<dl class="item">
-<dt id="toNimIs"><a name="toNimIs.c,seq[int]"></a><pre><span class="Keyword">converter</span> <span class="Identifier">toNimIs</span><span class="Other">(</span><span class="Identifier">sq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimis</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="dfSave"><a name="dfSave,nimdf,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dfSave</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span>
+                                      <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-<p>toNimIs</p>
-<p>converter from seq[int] to nimis </p>
-
-
-</dd>
-<dt id="toNimSs"><a name="toNimSs.c,seq[string]"></a><pre><span class="Keyword">converter</span> <span class="Identifier">toNimSs</span><span class="Other">(</span><span class="Identifier">sq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>toNimSs</p>
-<p>converter from seq[string] to nimss </p>
+<p>dfSave</p>
+<p>save adataframe to a csv file </p>
 
 
 </dd>
@@ -1623,7 +1621,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-10-08 21:34:10 UTC</small>
+        <small>Made with Nim. Generated: 2017-10-11 15:58:44 UTC</small>
       </div>
     </div>
   </div>
