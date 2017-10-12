@@ -1234,7 +1234,7 @@ function main() {
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#NIMDATAFRAMEVERSION"
-    title="NIMDATAFRAMEVERSION = &quot;0.0.1.6&quot;"><wbr />NIMDATAFRAMEVERSION<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="NIMDATAFRAMEVERSION = &quot;0.0.1.7&quot;"><wbr />NIMDATAFRAMEVERSION<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1251,10 +1251,10 @@ function main() {
     title="newNimFs(): nimfs"><wbr />new<wbr />Nim<wbr />Fs<span class="attachedType" style="visibility:hidden">nimfs</span></a></li>
   <li><a class="reference" href="#getData1,string"
     title="getData1(url: string): auto"><wbr />get<wbr />Data1<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#getData2,string,int,int,char"
-    title="getData2(filename: string; cols: int = 2; rows: int = -1; sep: char = &#x27;,&#x27;): auto"><wbr />get<wbr />Data2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#makeDf1,string"
     title="makeDf1(ufo1: string): nimdf"><wbr />make<wbr />Df1<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#getData2,string,int,int,char"
+    title="getData2(filename: string; cols: int = 2; rows: int = -1; sep: char = &#x27;,&#x27;): auto"><wbr />get<wbr />Data2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#makeDf2,nimdf,int"
     title="makeDf2(ufo1: nimdf; cols: int = 0): nimdf"><wbr />make<wbr />Df2<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#getColCount,nimdf"
@@ -1287,13 +1287,14 @@ function main() {
   <li><a class="reference" href="#sortcoldata,nimss,bool,bool"
     title="sortcoldata(coldata: nimss; header: bool = false; order = Ascending; sort: bool = true): nimss"><wbr />sortcoldata<span class="attachedType" style="visibility:hidden">nimss</span></a></li>
   <li><a class="reference" href="#sortdf,nimdf,int,string"
-    title="sortdf(df: nimdf; sortcol: int = 1; sortorder = &quot;&quot;): nimdf"><wbr />sortdf<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+    title="sortdf(df: nimdf; sortcol: int = 1; sortorder = &quot;asc&quot;): nimdf"><wbr />sortdf<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#makeNimDf,varargs[nimss]"
     title="makeNimDf(dfcols: varargs[nimss]): nimdf"><wbr />make<wbr />Nim<wbr />Df<span class="attachedType" style="visibility:hidden">nimss</span></a></li>
   <li><a class="reference" href="#createDataFrame,string,int,int,char"
     title="createDataFrame(filename: string; cols: int = 2; rows: int = -1; sep: char = &#x27;,&#x27;): nimdf"><wbr />create<wbr />Data<wbr />Frame<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
-  <li><a class="reference" href="#createRandomTestData,string,int"
-    title="createRandomTestData(filename: string = &quot;nimDfTestData.csv&quot;; datarows: int = 2000)"><wbr />create<wbr />Random<wbr />Test<wbr />Data<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#createRandomTestData,string,int,bool"
+    title="createRandomTestData(filename: string = &quot;nimDfTestData.csv&quot;; datarows: int = 2000;
+                     withHeaders: bool = false)"><wbr />create<wbr />Random<wbr />Test<wbr />Data<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#dfColumnStats,nimdf,seq[int]"
     title="dfColumnStats(df: nimdf; colseq: seq[int]): seq[RunningStat]"><wbr />df<wbr />Column<wbr />Stats<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#dfSave,nimdf,string"
@@ -1310,10 +1311,10 @@ function main() {
   <p class="module-desc"><blockquote><p><p>Library     : nimdataframe.nim</p>
 <p>Status      : development</p>
 <p>License     : MIT opensource</p>
-<p>Version     : 0.0.1.6</p>
+<p>Version     : 0.0.1.7</p>
 <p>ProjectStart: 2016-09-16</p>
-<p>Latest      : 2017-10-11</p>
-<p>Compiler    : Nim &gt;= 0.17.0</p>
+<p>Latest      : 2017-10-12</p>
+<p>Compiler    : Nim &gt;= 0.17.2</p>
 <p>OS          : Linux</p>
 <p>Description :</p>
 <blockquote><p><p>simple dataframe</p>
@@ -1326,9 +1327,7 @@ function main() {
 <p>Docs        : <a class="reference external" href="http://qqtop.github.io/nimdataframe.html">http://qqtop.github.io/nimdataframe.html</a></p>
 <p>Tested      : OpenSuse Tumbleweed</p>
 <p>Todo        : additional  calculations on dataframes</p>
-<dl class="docutils"><dt>Bugs        : in a df with showHeader === true and headertext.len &gt; 0 the first data line is not shown in showDf()</dt>
-<dd>redisplaying such a df will have the data in the second column shifted one space to the right ... the showDf() proc will be refactored soon ...</dd>
-</dl>
+<p>Notes       : WORK IN PROGRESS</p>
 </p></blockquote>
 </p>
   <div class="section" id="6">
@@ -1364,7 +1363,7 @@ function main() {
 <div class="section" id="9">
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
-<dt id="NIMDATAFRAMEVERSION"><a name="NIMDATAFRAMEVERSION"></a><pre><span class="Identifier">NIMDATAFRAMEVERSION</span> <span class="Other">=</span> <span class="StringLit">&quot;0.0.1.6&quot;</span></pre></dt>
+<dt id="NIMDATAFRAMEVERSION"><a name="NIMDATAFRAMEVERSION"></a><pre><span class="Identifier">NIMDATAFRAMEVERSION</span> <span class="Other">=</span> <span class="StringLit">&quot;0.0.1.7&quot;</span></pre></dt>
 <dd>
 
 
@@ -1403,6 +1402,13 @@ function main() {
 
 
 </dd>
+<dt id="makeDf1"><a name="makeDf1,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">makeDf1</span><span class="Other">(</span><span class="Identifier">ufo1</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>makeDf</p>
+<p>used to create a dataframe with data string received from getData </p>
+
+
+</dd>
 <dt id="getData2"><a name="getData2,string,int,int,char"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getData2</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">;</span> <span class="Identifier">rows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">char</span> <span class="Other">=</span> <span class="CharLit">','</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">CsvError</span><span class="Other">,</span>
     <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
@@ -1413,20 +1419,13 @@ function main() {
 
 
 </dd>
-<dt id="makeDf1"><a name="makeDf1,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">makeDf1</span><span class="Other">(</span><span class="Identifier">ufo1</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>makeDf</p>
-<p>used to create a dataframe with data string received from getData </p>
-
-
-</dd>
 <dt id="makeDf2"><a name="makeDf2,nimdf,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">makeDf2</span><span class="Other">(</span><span class="Identifier">ufo1</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span>
     <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
     <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>makeDf2</p>
-<p>used to create a dataframe with nimdf object received from getData2 note that overall it is better to preprocess data to check for row quality consistency which is not done here yet , so errors may show</p>
+<p>used to create a dataframe with nimdf object received from getData2  that is local csv note that overall it is better to preprocess data to check for row quality consistency which is not done here yet , so errors may show</p>
 
 
 </dd>
@@ -1501,7 +1500,7 @@ function main() {
 <p>Convention :  the first column = 1</p>
 <p>number of rows default =  10</p>
 <p>with cols from left to right according to cols default = 2</p>
-<p>column width default = 18</p>
+<p>column width default = 15</p>
 <p>an equal columnwidth can be achieved with colwd = colfitmax(df,0) the second param is to nudge the width a bit if required</p>
 <p>showFrame  default = off</p>
 <p>showHeader indicates if an actual header is available</p>
@@ -1548,7 +1547,7 @@ function main() {
 
 
 </dd>
-<dt id="sortdf"><a name="sortdf,nimdf,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sortdf</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">sortcol</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">sortorder</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">DbError</span><span class="Other">,</span>
+<dt id="sortdf"><a name="sortdf,nimdf,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sortdf</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">sortcol</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">sortorder</span> <span class="Other">=</span> <span class="StringLit">&quot;asc&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">DbError</span><span class="Other">,</span>
     <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">DbEffect</span><span class="Other">,</span> <span class="Identifier">ReadDbEffect</span><span class="Other">,</span> <span class="Identifier">WriteDbEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -1558,6 +1557,9 @@ function main() {
 <p>other types maybe added later</p>
 <p>the idea implemented here is to read the df into a temp sqllite table sort it and return the sorted output as nimdf</p>
 <blockquote><p><pre class="listing"><span class="Keyword">var</span> <span class="Identifier">ndf2</span> <span class="Operator">=</span> <span class="Identifier">sortdf</span><span class="Punctuation">(</span><span class="Identifier">ndf</span><span class="Punctuation">,</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="StringLit">&quot;asc&quot;</span><span class="Punctuation">)</span>  <span class="Operator">$</span> <span class="Identifier">sort</span> <span class="Identifier">a</span> <span class="Identifier">dataframe</span> <span class="Identifier">on</span> <span class="Identifier">the</span> <span class="Identifier">fifth</span> <span class="Identifier">col</span> <span class="Identifier">ascending</span></pre></p></blockquote>
+<dl class="docutils"><dt>Note : data columns passed in must be correct for all rows , that is rows with different column count will result in errors</dt>
+<dd>this will be addressed in future versions</dd>
+</dl>
 
 
 </dd>
@@ -1581,10 +1583,10 @@ function main() {
 
 
 </dd>
-<dt id="createRandomTestData"><a name="createRandomTestData,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createRandomTestData</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;nimDfTestData.csv&quot;</span><span class="Other">;</span>
-                         <span class="Identifier">datarows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2000</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="createRandomTestData"><a name="createRandomTestData,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createRandomTestData</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;nimDfTestData.csv&quot;</span><span class="Other">;</span>
+                         <span class="Identifier">datarows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2000</span><span class="Other">;</span> <span class="Identifier">withHeaders</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>createRandomTestData</p>
 <p>a file will be created in current working directory</p>
@@ -1621,7 +1623,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-10-11 15:58:44 UTC</small>
+        <small>Made with Nim. Generated: 2017-10-12 12:32:19 UTC</small>
       </div>
     </div>
   </div>
