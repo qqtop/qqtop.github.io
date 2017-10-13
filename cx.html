@@ -1226,7 +1226,7 @@ function main() {
   <li><a class="reference" href="#RpointFloat"
     title="RpointFloat = tuple[x, y: float]"><wbr />Rpoint<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#Benchmarkres"
-    title="Benchmarkres = tuple[bname, cpu, epoch, repeats: string]"><wbr />Benchmarkres<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="Benchmarkres = tuple[bname, cpu, epoch, repeats: string, fastest: float]"><wbr />Benchmarkres<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#CxTimer"
     title="CxTimer = object
   name*: string
@@ -1292,6 +1292,8 @@ function main() {
     title="uniform(a, b: float): float"><wbr />uniform<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getRndInt,int,int"
     title="getRndInt(mi: int = 0; ma: int = int.high): int"><wbr />get<wbr />Rnd<wbr />Int<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getRndBool,"
+    title="getRndBool(): bool"><wbr />get<wbr />Rnd<wbr />Bool<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getTerminalWidth,"
     title="getTerminalWidth(): int"><wbr />get<wbr />Terminal<wbr />Width<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getTerminalHeight,"
@@ -1463,6 +1465,8 @@ function main() {
     title="reverseText(text: string): string"><wbr />reverse<wbr />Text<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#reverseString,string"
     title="reverseString(text: string): string"><wbr />reverse<wbr />String<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#createSeqBool,int"
+    title="createSeqBool(n: int = 10): seq[bool]"><wbr />create<wbr />Seq<wbr />Bool<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#createSeqInt,int,int,int"
     title="createSeqInt(n: int = 10; mi: int = 0; ma: int = 1000): seq[int]"><wbr />create<wbr />Seq<wbr />Int<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#sum,seq[T]"
@@ -1838,7 +1842,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-10-08
+Latest      : 2017-10-13
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -1963,7 +1967,7 @@ Funding     : If you are happy or unhappy feel free to send any amount of bitcoi
 
 
 </dd>
-<dt id="Benchmarkres"><a name="Benchmarkres"></a><pre><span class="Identifier">Benchmarkres</span> <span class="Other">=</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">bname</span><span class="Other">,</span> <span class="Identifier">cpu</span><span class="Other">,</span> <span class="Identifier">epoch</span><span class="Other">,</span> <span class="Identifier">repeats</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">]</span></pre></dt>
+<dt id="Benchmarkres"><a name="Benchmarkres"></a><pre><span class="Identifier">Benchmarkres</span> <span class="Other">=</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">bname</span><span class="Other">,</span> <span class="Identifier">cpu</span><span class="Other">,</span> <span class="Identifier">epoch</span><span class="Other">,</span> <span class="Identifier">repeats</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">fastest</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
@@ -2122,6 +2126,11 @@ rndSample returns one random sample from a sequence
 <dd>
 <p>getRndInt</p>
 <p>returns a random int between mi and &lt; ma so for 0 or 1 we need random(0..2)</p>
+
+
+</dd>
+<dt id="getRndBool"><a name="getRndBool,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRndBool</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
 
 
 </dd>
@@ -3012,6 +3021,11 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <p>reverseString</p>
 <p>reverses chars in a word</p>
 <blockquote><p>var s = &quot;A text to reverse could be this example 12345.0&quot; echo &quot;Original      : &quot; &amp; s echo &quot;reverseText   : &quot; &amp; reverseText(s) echo &quot;reverseString : &quot; &amp; reverseString(s) # check if back to original is correct assert s == reverseString(reverseString(s))</p></blockquote>
+
+
+</dd>
+<dt id="createSeqBool"><a name="createSeqBool,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSeqBool</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">bool</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
 
 
 </dd>
@@ -4049,7 +4063,7 @@ latest terminalheight always available in th
 <dt id="benchmark"><a name="benchmark.t,string,int,typed"></a><pre><span class="Keyword">template</span> <span class="Identifier">benchmark</span><span class="Other">(</span><span class="Identifier">benchmarkName</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">repeatcount</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">typed</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>benchmark</p>
-<p>a quick benchmark template showing cpu and epoch times with repeat looping param</p>
+<p>a quick benchmark template showing cpu and epoch times with repeat looping param suitable for in program testing of procs for in depth benchmarking use the nimbench module available via nimble</p>
 <pre class="listing"><span class="Identifier">benchmark</span><span class="Punctuation">(</span><span class="StringLit">&quot;whatever&quot;</span><span class="Punctuation">,</span><span class="DecNumber">1000</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
     <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Kami makan tiga kali setiap hari.&quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">algorithm</span>
 
@@ -4072,7 +4086,7 @@ latest terminalheight always available in th
         <span class="Identifier">printLn</span><span class="Punctuation">(</span> <span class="StringLit">&quot; &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">uparrow</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot; Run &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">cxcounter</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">greenyellow</span><span class="Punctuation">)</span>
         <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 
-<span class="Identifier">showBench</span><span class="Punctuation">(</span><span class="Punctuation">)</span> </pre>
+<span class="Identifier">showBench</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="benchmark"><a name="benchmark.t,string,typed"></a><pre><span class="Keyword">template</span> <span class="Identifier">benchmark</span><span class="Other">(</span><span class="Identifier">benchmarkName</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">typed</span><span class="Other">)</span></pre></dt>
@@ -4392,7 +4406,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-10-08 21:36:23 UTC</small>
+        <small>Made with Nim. Generated: 2017-10-13 21:03:08 UTC</small>
       </div>
     </div>
   </div>
