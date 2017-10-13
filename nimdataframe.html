@@ -1261,8 +1261,8 @@ function main() {
     title="getColCount(df: nimdf): int"><wbr />get<wbr />Col<wbr />Count<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#getRowCount,nimdf"
     title="getRowCount(df: nimdf): int"><wbr />get<wbr />Row<wbr />Count<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
-  <li><a class="reference" href="#getcolheaders,nimdf"
-    title="getcolheaders(df: nimdf): seq[nimss]"><wbr />getcolheaders<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#getColHeaders,nimdf"
+    title="getColHeaders(df: nimdf): seq[nimss]"><wbr />get<wbr />Col<wbr />Headers<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#getTotalHeaderColsWitdh,nimdf"
     title="getTotalHeaderColsWitdh(df: nimdf): int"><wbr />get<wbr />Total<wbr />Header<wbr />Cols<wbr />Witdh<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#showHeader,nimdf"
@@ -1276,7 +1276,7 @@ function main() {
   <li><a class="reference" href="#showDf,nimdf,int,nimis,nimis,nimss,bool,string,bool,nimss,bool,int"
     title="showDf(df: nimdf; rows: int = 10; cols: nimis = @[]; colwd: nimis = @[];
        colcolors: nimss = @[]; showframe: bool = false; framecolor: string = white;
-       showHeader: bool = false; headertext: nimss = @[]; leftalignflag: bool = true;
+       showHeader: bool = false; headertext: nimss = @[]; leftalignflag: bool = false;
        xpos: int = 1)"><wbr />show<wbr />Df<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#showDataframeInfo,nimdf"
     title="showDataframeInfo(df: nimdf)"><wbr />show<wbr />Dataframe<wbr />Info<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
@@ -1297,6 +1297,8 @@ function main() {
                      withHeaders: bool = false)"><wbr />create<wbr />Random<wbr />Test<wbr />Data<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#dfColumnStats,nimdf,seq[int]"
     title="dfColumnStats(df: nimdf; colseq: seq[int]): seq[RunningStat]"><wbr />df<wbr />Column<wbr />Stats<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#dfShowColumnStats,nimdf,seq[int],int,int"
+    title="dfShowColumnStats(df: nimdf; desiredcols: seq[int]; colspace: int = 25; xpos: int = 1)"><wbr />df<wbr />Show<wbr />Column<wbr />Stats<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#dfSave,nimdf,string"
     title="dfSave(df: nimdf; filename: string)"><wbr />df<wbr />Save<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
 
@@ -1313,7 +1315,7 @@ function main() {
 <p>License     : MIT opensource</p>
 <p>Version     : 0.0.1.7</p>
 <p>ProjectStart: 2016-09-16</p>
-<p>Latest      : 2017-10-12</p>
+<p>Latest      : 2017-10-13</p>
 <p>Compiler    : Nim &gt;= 0.17.2</p>
 <p>OS          : Linux</p>
 <p>Description :</p>
@@ -1326,7 +1328,9 @@ function main() {
 <p>Project     : <a class="reference external" href="https://github.com/qqtop/NimDataFrame">https://github.com/qqtop/NimDataFrame</a></p>
 <p>Docs        : <a class="reference external" href="http://qqtop.github.io/nimdataframe.html">http://qqtop.github.io/nimdataframe.html</a></p>
 <p>Tested      : OpenSuse Tumbleweed</p>
-<p>Todo        : additional  calculations on dataframes</p>
+<dl class="docutils"><dt>Todo        : additional and easier calculations on dataframes</dt>
+<dd>allow right or left align for each column better tests and example dataframe names boolean test data</dd>
+</dl>
 <p>Notes       : WORK IN PROGRESS</p>
 </p></blockquote>
 </p>
@@ -1405,7 +1409,7 @@ function main() {
 <dt id="makeDf1"><a name="makeDf1,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">makeDf1</span><span class="Other">(</span><span class="Identifier">ufo1</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>makeDf</p>
-<p>used to create a dataframe with data string received from getData </p>
+<p>used to create a dataframe with data string received from getData1 </p>
 
 
 </dd>
@@ -1431,17 +1435,21 @@ function main() {
 </dd>
 <dt id="getColCount"><a name="getColCount,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getColCount</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
+<p>getColCount</p>
+<p>return the column count of a df </p>
 
 
 </dd>
 <dt id="getRowCount"><a name="getRowCount,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRowCount</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
+<p>getRowCount</p>
+<p>return the row count of a df </p>
 
 
 </dd>
-<dt id="getcolheaders"><a name="getcolheaders,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getcolheaders</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">nimss</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="getColHeaders"><a name="getColHeaders,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getColHeaders</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">nimss</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-<p>getcolheaders</p>
+<p>getColHeaders</p>
 <p>get the first 2 lines  of the dataframe df</p>
 <p>we assume line 0 contains headers </p>
 
@@ -1462,8 +1470,8 @@ function main() {
 
 
 </dd>
-<dt id="showCounts"><a name="showCounts,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCounts</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="showCounts"><a name="showCounts,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCounts</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span>
+                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
@@ -1490,7 +1498,7 @@ function main() {
 <dt id="showDf"><a name="showDf,nimdf,int,nimis,nimis,nimss,bool,string,bool,nimss,bool,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showDf</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">rows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <span class="Identifier">nimis</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">colwd</span><span class="Other">:</span> <span class="Identifier">nimis</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span>
            <span class="Identifier">colcolors</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">showframe</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">framecolor</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span>
            <span class="Identifier">showHeader</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">headertext</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span>
-           <span class="Identifier">leftalignflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
+           <span class="Identifier">leftalignflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
     <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -1590,7 +1598,8 @@ function main() {
 <dd>
 <p>createRandomTestData</p>
 <p>a file will be created in current working directory</p>
-<p>default name nimDfTestData.csv or as given </p>
+<p>default name nimDfTestData.csv or as given</p>
+<p>default columns 8 default rows 2000 default headers none</p>
 
 
 </dd>
@@ -1602,6 +1611,16 @@ function main() {
 <p>returns a seq[Runningstat] for all columns specified in colseq for dataframe df</p>
 <p>so if colSeq = @[1,3,6] , we would get stats for cols 1,3,6</p>
 <p>see nimdfT9.nim for an example </p>
+
+
+</dd>
+<dt id="dfShowColumnStats"><a name="dfShowColumnStats,nimdf,seq[int],int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dfShowColumnStats</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">desiredcols</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">colspace</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">25</span><span class="Other">;</span>
+                      <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
+    <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>dfShowColumnStats</p>
+<p>shows output from dfColumnStats</p>
+<p>xpos the starting display position colspace allows to nudge the distance between the displayed column statistics </p>
 
 
 </dd>
@@ -1623,7 +1642,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-10-12 12:48:19 UTC</small>
+        <small>Made with Nim. Generated: 2017-10-13 10:03:11 UTC</small>
       </div>
     </div>
   </div>
