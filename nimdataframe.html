@@ -1302,6 +1302,8 @@ function main() {
     title="sortdf(df: nimdf; sortcol: int = 1; sortorder = asc): nimdf"><wbr />sortdf<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#makeNimDf,varargs[nimss],bool"
     title="makeNimDf(dfcols: varargs[nimss]; hasHeader: bool = false): nimdf"><wbr />make<wbr />Nim<wbr />Df<span class="attachedType" style="visibility:hidden">nimss</span></a></li>
+  <li><a class="reference" href="#dfDefaultSetup,nimdf,nimss"
+    title="dfDefaultSetup(df: nimdf; headertext: nimss = @[]): nimdf"><wbr />df<wbr />Default<wbr />Setup<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#createDataFrame,string,int,int,char,bool"
     title="createDataFrame(filename: string; cols: int = 2; rows: int = -1; sep: char = &#x27;,&#x27;;
                 hasHeader: bool = false): nimdf"><wbr />create<wbr />Data<wbr />Frame<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
@@ -1345,7 +1347,7 @@ function main() {
 <p>License     : MIT opensource</p>
 <p>Version     : 0.0.2</p>
 <p>ProjectStart: 2016-09-16</p>
-<p>Latest      : 2017-10-20</p>
+<p>Latest      : 2017-10-22</p>
 <p>Compiler    : Nim &gt;= 0.17.2</p>
 <p>OS          : Linux</p>
 <p>Description :</p>
@@ -1505,8 +1507,8 @@ function main() {
 
 
 </dd>
-<dt id="showHeader"><a name="showHeader,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showHeader</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span>
-                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="showHeader"><a name="showHeader,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showHeader</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showHeader</p>
 <p>shows first 2 lines of df incl. headers if any of dataframe </p>
@@ -1522,6 +1524,7 @@ function main() {
 <dt id="colFitMax"><a name="colFitMax,nimdf,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">colFitMax</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">adjustwd</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimis</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>colFitMax</p>
+<p># TODO : provide better fit tw as basis is to wide for df with few cols</p>
 <p>calculates best column width to fit into terminal width</p>
 <p>all column widths will be same size</p>
 <p>cols parameter must state number of cols to be shown default = all cols</p>
@@ -1605,6 +1608,14 @@ function main() {
 <dd>
 <p>makeNimDf</p>
 <p>creates a nimdf with passed in col data which is of type nimss </p>
+
+
+</dd>
+<dt id="dfDefaultSetup"><a name="dfDefaultSetup,nimdf,nimss"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dfDefaultSetup</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">headertext</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>dfDefaultSetup</p>
+<p>quick default setup , which can be adjusted later during showDf if needed</p>
+<p>column colors : white column widths : 10 header text   : pass in or auto column name will be generated </p>
 
 
 </dd>
@@ -1712,7 +1723,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-10-22 14:34:48 UTC</small>
+        <small>Made with Nim. Generated: 2017-10-22 17:37:19 UTC</small>
       </div>
     </div>
   </div>
