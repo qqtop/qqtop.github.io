@@ -1219,8 +1219,8 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#NimCxCustomError"
-    title="NimCxCustomError = object of Exception"><wbr />Nim<wbr />Cx<wbr />Custom<wbr />Error<span class="attachedType" style="visibility:hidden"></span></a></li>
+      <li><a class="reference" href="#NimCxError"
+    title="NimCxError = object of Exception"><wbr />Nim<wbr />Cx<wbr />Error<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#RpointInt"
     title="RpointInt = tuple[x, y: int]"><wbr />Rpoint<wbr />Int<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#RpointFloat"
@@ -1654,6 +1654,8 @@ function main() {
     title="styledEchoPrint(m: varargs[untyped]): typed"><wbr />styled<wbr />Echo<wbr />Print<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#dotColors.m,"
     title="dotColors(): untyped"><wbr />dot<wbr />Colors<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#echoType.m,typed"
+    title="echoType(x: typed): untyped"><wbr />echo<wbr />Type<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1952,7 +1954,7 @@ Funding     : If you are happy or unhappy feel free to send any amount of bitcoi
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
-<dt id="NimCxCustomError"><a name="NimCxCustomError"></a><pre><span class="Identifier">NimCxCustomError</span> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">Exception</span></pre></dt>
+<dt id="NimCxError"><a name="NimCxError"></a><pre><span class="Identifier">NimCxError</span> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">Exception</span></pre></dt>
 <dd>
 
 
@@ -3202,7 +3204,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <dl class="docutils"><dt>loopy2(0,2):</dt>
 <dd>sleepy(1) ct2.laptimer                      # take a laptime for a timer</dd>
 </dl>
-<p>ct.stopTimer                         # stop a timer ct2.stopTimer saveTimerResults(ct)                 # save current state of a timer saveTimerResults(ct2) echo() showTimerResults()                   # display status of all timers ct2.resetTimer                       # reset a particular timer clearTimerResults()                  # clear timer result of default timer clearTimerResults(&quot;TestTimer1&quot;)      # clear timer results of a particular timer clearAllTimerResults()               # clear all timer results showTimerResults() dprint cxtimerresults                # dprint is a simple repr utility </p>
+<p>ct.stopTimer                         # stop a timer ct2.stopTimer saveTimerResults(ct)                 # save current state of a timer saveTimerResults(ct2) echo() showTimerResults()                   # display status of all timers ct2.resetTimer                       # reset a particular timer clearTimerResults()                  # clear timer result of default timer clearTimerResults(&quot;TestTimer1&quot;)      # clear timer results of a particular timer clearAllTimerResults()               # clear all timer results showTimerResults() dprint cxtimerresults                # dprint is a simple repr utility</p>
 
 
 </dd>
@@ -3357,7 +3359,7 @@ forward declaration
 <dd>
 <p>showStats</p>
 <p>quickly display runningStat data</p>
-<p>adjust decimals</p>
+<p>adjust decimals default n = 3 as needed</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
 <span class="Keyword">var</span> <span class="Identifier">rsa</span><span class="Punctuation">:</span><span class="Identifier">Runningstat</span>
@@ -3799,6 +3801,11 @@ partially lifted from an earler macro in terminal.nim and removed new line curre
 <p>dotColors</p>
 <p>another way to show all colors </p>
 
+
+</dd>
+<dt id="echoType"><a name="echoType.m,typed"></a><pre><span class="Keyword">macro</span> <span class="Identifier">echoType</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">typed</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
+<dd>
+echoType by @yardanico 
 
 </dd>
 
@@ -4407,7 +4414,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-10-20 20:30:52 UTC</small>
+        <small>Made with Nim. Generated: 2017-10-23 23:32:04 UTC</small>
       </div>
     </div>
   </div>
