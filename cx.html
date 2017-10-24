@@ -1690,6 +1690,8 @@ function main() {
     title="randCol(): string"><wbr />rand<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rndCol.t,int,int,int"
     title="rndCol(r: int = getRndInt(0, 254); g: int = getRndInt(0, 254); b: int = getRndInt(0, 254)): string"><wbr />rnd<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#randPastelCol.t,"
+    title="randPastelCol(): string"><wbr />rand<wbr />Pastel<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#<>.t,untyped,untyped"
     title="`&lt;&gt;`(a, b: untyped): untyped"><wbr />`&lt;&gt;`<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#tw.t,"
@@ -1702,8 +1704,6 @@ function main() {
     title="lowerCase(s: string): string"><wbr />lower<wbr />Case<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#currentLine.t,"
     title="currentLine()"><wbr />current<wbr />Line<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#randPastelCol.t,"
-    title="randPastelCol(): string"><wbr />rand<wbr />Pastel<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#hdx.t,typed,string,int,int"
     title="hdx(code: typed; frm: string = &quot;+&quot;; width: int = tw; nxpos: int = 0): typed"><wbr />hdx<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#curUp.t,int"
@@ -1844,7 +1844,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-10-20
+Latest      : 2017-10-24
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -2238,7 +2238,7 @@ note that not all unicode chars may be available on all systems</pre>
 <dt id="cleanScreen"><a name="cleanScreen,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cleanScreen</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>cleanScreen</p>
-<p>clear screen with escape seqs</p>
+<p>vaery fast clear screen proc with escape seqs</p>
 <p>similar to terminal.eraseScreen() but cleans the terminal window more completely at times </p>
 
 
@@ -3942,6 +3942,14 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 <span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello Random Color&quot;</span><span class="Punctuation">,</span><span class="Identifier">rndCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
+<dt id="randPastelCol"><a name="randPastelCol.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">randPastelCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+<p>randPastelCol</p>
+<p>get a randomcolor from pastelSet</p>
+<pre class="listing"><span class="Comment"># print a string 6 times in a random color selected from pastelSet</span>
+<span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello Random Color&quot;</span><span class="Punctuation">,</span><span class="Identifier">randPastelCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+
+</dd>
 <dt id="<>"><a name="<>.t,untyped,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">`&lt;&gt;`</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 unequal operator
@@ -3976,14 +3984,6 @@ latest terminalheight always available in th
 <p>currentLine</p>
 <p>simple template to return line number , maybe usefull for debugging </p>
 
-
-</dd>
-<dt id="randPastelCol"><a name="randPastelCol.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">randPastelCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-<p>randPastelCol</p>
-<p>get a randomcolor from pastelSet</p>
-<pre class="listing"><span class="Comment"># print a string 6 times in a random color selected from pastelSet</span>
-<span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello Random Color&quot;</span><span class="Punctuation">,</span><span class="Identifier">randPastelCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="hdx"><a name="hdx.t,typed,string,int,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">hdx</span><span class="Other">(</span><span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">typed</span><span class="Other">;</span> <span class="Identifier">frm</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;+&quot;</span><span class="Other">;</span> <span class="Identifier">width</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">nxpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">typed</span></pre></dt>
@@ -4414,7 +4414,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-10-23 23:32:04 UTC</small>
+        <small>Made with Nim. Generated: 2017-10-24 13:26:12 UTC</small>
       </div>
     </div>
   </div>
