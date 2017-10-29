@@ -1282,8 +1282,8 @@ function main() {
     title="rndSample[T](asq: seq[T]): T"><wbr />rnd<wbr />Sample<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rndRGB,"
     title="rndRGB(): auto"><wbr />rnd<wbr />RGB<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#[],openArray[T],Slice[Idx]"
-    title="`[]`[Idx, T](a: openArray[T]; x: Slice[Idx]): seq[T]"><wbr />`[]`<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#[],openArray[T],Slice[Idx,U]"
+    title="`[]`[Idx, T, U](a: openArray[T]; x: Slice[Idx, U]): seq[T]"><wbr />`[]`<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#sampleSeq,openArray[T],int,int"
     title="sampleSeq[T](x: openArray[T]; a, b: int): seq[T]"><wbr />sample<wbr />Seq<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#streamFile,string,FileMode"
@@ -1527,6 +1527,8 @@ function main() {
     title="typeTest[T](x: T): T"><wbr />type<wbr />Test<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#typeTest2,T"
     title="typeTest2[T](x: T): T"><wbr />type<wbr />Test2<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#typeTest3,T"
+    title="typeTest3[T](x: T): string"><wbr />type<wbr />Test3<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#pswwaux,"
     title="pswwaux()"><wbr />pswwaux<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#fromCString,pointer,int"
@@ -1616,10 +1618,11 @@ function main() {
     title="qqTop()"><wbr />qq<wbr />Top<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cx10,int,string,string"
     title="cx10(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cx10<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printFont,string,string,int"
-    title="printFont(s: string; col: string = randcol(); xpos: int = -10)"><wbr />print<wbr />Font<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printFontFancy,string,string,int"
-    title="printFontFancy(s: string; col: string = randcol(); xpos: int = -10)"><wbr />print<wbr />Font<wbr />Fancy<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printFont,string,string,string,int"
+    title="printFont(s: string; col: string = randcol(); coltop: string = lime; xpos: int = -10)"><wbr />print<wbr />Font<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printFontFancy,string,string,string,int"
+    title="printFontFancy(s: string; col: string = randcol(); coltop: string = rndcol();
+               xpos: int = -10)"><wbr />print<wbr />Font<wbr />Fancy<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printNimCx,int"
     title="printNimCx(npos: int = getTerminalWidth() div 2 - 30)"><wbr />print<wbr />Nim<wbr />Cx<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printMadeWithNim,int"
@@ -1722,8 +1725,8 @@ function main() {
     title="clearup(x: int = 80)"><wbr />clearup<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#quickList.t,int,T,int,int"
     title="quickList[T](c: int; d: T; cw: int = 7; dw: int = 15)"><wbr />quick<wbr />List<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#doSomething.t,untyped,int"
-    title="doSomething(body: untyped; secs: int)"><wbr />do<wbr />Something<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#doSomething.t,int,untyped"
+    title="doSomething(secs: int; body: untyped)"><wbr />do<wbr />Something<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#bitCheck.t,untyped,untyped"
     title="bitCheck(a, b: untyped): bool"><wbr />bit<wbr />Check<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#benchmark.t,string,int,typed"
@@ -1844,7 +1847,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-10-24
+Latest      : 2017-10-30
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -1858,13 +1861,17 @@ Description :
               
               a wide selection of utility functions and useable snippets.
               
-              Currently the library consists of cx.nim and cxutils.nim ,
+              Currently the library consists of cx.nim , cxconsts.nim and cxutils.nim ,
               
-              both files are automatically imported with : import nimcx
+              all files are automatically imported with : import nimcx
               
-              Some procs may mirror functionality of stdlib moduls others may be deprecated if
+              Some procs may mirror functionality available in stdlib moduls and will be deprecated if
               
-              similar or better appear in the stdlib.
+              similar or better appear in the stdlib. Overtime more procs will be pushed into
+              
+              cxutils.nim and the upcoming cxsnippets.nim and not longer imported via cxnim to
+              
+              keep everything small and usefull.
 
 
 Usage       : import nimcx
@@ -1888,8 +1895,8 @@ Tested      : OpenSuse Tumbleweed , Ubuntu 16.04 LTS
               run this awk script to see if your terminal supports truecolor
               
               script from : https://gist.github.com/XVilka/8346728
-              
-              ..   code-block:: nim
+             
+             ..   code-block:: nim
                
                awk 'BEGIN{
                    s=&quot;/\\/\\/\\/\\/\\&quot;; s=s s s s s s s s;
@@ -1910,7 +1917,7 @@ Related     :
              
              * see examples
              
-             * demo library: cxDemo.nim
+             * demo library: cxDemo.nim   (rough demos lib)
              
              * tests       : cxTest.nim   (run some rough demos from cxDemo)
 
@@ -1925,7 +1932,7 @@ Note        : may be improved at any time
               
               terminal x-axis position start with 1
               
-              proc fmtx a formatting utility has been added
+              proc fmtx a simple formatting utility has been added
 
 
 Installation: nimble install nimcx
@@ -1935,11 +1942,11 @@ Optional    : xclip  (linux clipboard utility)
               
               unicode font libraries as needed
 
-In progress : moving some of the non core procs to module cxutils.nim to avoid bloat
-              
-              and deprecating unused functions.
+In progress : moving some of the non core procs to module cxutils.nim
               
               moving constants to cxconsts.nim
+
+
 
 
 Funding     : If you are happy or unhappy feel free to send any amount of bitcoins to this wallet :
@@ -2070,7 +2077,7 @@ rndSample returns one random sample from a sequence
 
 
 </dd>
-<dt id="[]"><a name="[],openArray[T],Slice[Idx]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]`</span><span class="Other">[</span><span class="Identifier">Idx</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">Slice</span><span class="Other">[</span><span class="Identifier">Idx</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
+<dt id="[]"><a name="[],openArray[T],Slice[Idx,U]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]`</span><span class="Other">[</span><span class="Identifier">Idx</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">,</span> <span class="Identifier">U</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">Slice</span><span class="Other">[</span><span class="Identifier">Idx</span><span class="Other">,</span> <span class="Identifier">U</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
@@ -2105,17 +2112,17 @@ rndSample returns one random sample from a sequence
      <span class="Keyword">var</span>  <span class="Identifier">n</span> <span class="Operator">=</span> <span class="DecNumber">100_000_000</span>
      <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Each test loops : &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">n</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot; times</span><span class="EscapeSequence">\n</span><span class="EscapeSequence">\n</span><span class="StringLit">&quot;</span><span class="Punctuation">)</span>
      
-     <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="Operator">&lt;</span><span class="Identifier">n</span><span class="Punctuation">:</span> <span class="Identifier">ps</span><span class="Operator">.</span><span class="Identifier">push</span><span class="Punctuation">(</span><span class="Identifier">uniform</span><span class="Punctuation">(</span><span class="FloatNumber">0.00</span><span class="Punctuation">,</span><span class="FloatNumber">100.00</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+     <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="Identifier">n</span><span class="Punctuation">:</span> <span class="Identifier">ps</span><span class="Operator">.</span><span class="Identifier">push</span><span class="Punctuation">(</span><span class="Identifier">uniform</span><span class="Punctuation">(</span><span class="FloatNumber">0.00</span><span class="Punctuation">,</span><span class="FloatNumber">100.00</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
      <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;uniform&quot;</span><span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">)</span>
      <span class="Identifier">showStats</span><span class="Punctuation">(</span><span class="Identifier">ps</span><span class="Punctuation">)</span>
      <span class="Identifier">ps</span><span class="Operator">.</span><span class="Identifier">clear</span>
-     <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="Operator">&lt;</span><span class="Identifier">n</span><span class="Punctuation">:</span> <span class="Identifier">ps</span><span class="Operator">.</span><span class="Identifier">push</span><span class="Punctuation">(</span><span class="Identifier">getRandomFloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="DecNumber">100</span><span class="Punctuation">)</span>
+     <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="Identifier">n</span><span class="Punctuation">:</span> <span class="Identifier">ps</span><span class="Operator">.</span><span class="Identifier">push</span><span class="Punctuation">(</span><span class="Identifier">getRandomFloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="DecNumber">100</span><span class="Punctuation">)</span>
      <span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">15</span><span class="Punctuation">)</span>
      <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;getRandomFloat * 100&quot;</span><span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">30</span><span class="Punctuation">)</span>
      <span class="Identifier">showStats</span><span class="Punctuation">(</span><span class="Identifier">ps</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">30</span><span class="Punctuation">)</span>
      
      <span class="Identifier">ps</span><span class="Operator">.</span><span class="Identifier">clear</span>
-     <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="Operator">&lt;</span><span class="Identifier">n</span><span class="Punctuation">:</span> <span class="Identifier">ps</span><span class="Operator">.</span><span class="Identifier">push</span><span class="Punctuation">(</span><span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+     <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="Identifier">n</span><span class="Punctuation">:</span> <span class="Identifier">ps</span><span class="Operator">.</span><span class="Identifier">push</span><span class="Punctuation">(</span><span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
      <span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">15</span><span class="Punctuation">)</span>
      <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;getRndInt&quot;</span><span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">60</span><span class="Punctuation">)</span>
      <span class="Identifier">showStats</span><span class="Punctuation">(</span><span class="Identifier">ps</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">60</span><span class="Punctuation">)</span>
@@ -2548,7 +2555,7 @@ forward declaration
 <p>default seperator = &quot;:&quot;  if not found we execute printLn with available params</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
-<span class="Keyword">for</span> <span class="Identifier">x</span>  <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="Operator">&lt;</span><span class="DecNumber">3</span><span class="Punctuation">:</span>
+<span class="Keyword">for</span> <span class="Identifier">x</span>  <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="DecNumber">3</span><span class="Punctuation">:</span>
    <span class="Comment"># here our input is varargs so weneed to specify all params</span>
     <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Test $1  : Ok &quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="StringLit">&quot;this was $1 : what&quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="FloatNumber">23456.789</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
 
@@ -2634,7 +2641,7 @@ forward declaration
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>printDotPos</p>
-<p>prints a widedot at xpos in col dotCol and may blink ... </p>
+<p>prints a widedot at xpos in col dotCol and may blink... </p>
 
 
 </dd>
@@ -3038,7 +3045,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <p>convenience proc to create a seq of random int with</p>
 <p>default length 10</p>
 <p>gives @[4556,455,888,234,...] or similar</p>
-<pre class="listing"><span class="Comment"># create a seq with 50 random integers ,of set 100 .. 2000</span>
+<pre class="listing"><span class="Comment"># create a seq with 50 random integers ,of set 100.. 2000</span>
 <span class="Comment"># including the limits 100 and 2000</span>
 <span class="Identifier">echo</span> <span class="Identifier">createSeqInt</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">,</span><span class="DecNumber">2000</span><span class="Punctuation">)</span></pre>
 
@@ -3156,7 +3163,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>nimcat</p>
-<p>a simple file lister which shows all rows and some stats as well as allows counting of tokens a file name without extension will be assuemed to be .nim  ... it is the nimcat afterall countphrase is case sensitive this proc uses memslices and memfiles for speed</p>
+<p>a simple file lister which shows all rows and some stats as well as allows counting of tokens a file name without extension will be assuemed to be .nim ... it is the nimcat afterall countphrase is case sensitive this proc uses memslices and memfiles for speed</p>
 <blockquote><p>nimcat(&quot;notes.txt&quot;)                   # show all lines nimcat(&quot;bigdatafile.csv&quot;) nimcat(&quot;/data5/notes.txt&quot;,countphrase = &quot;nice&quot; , &quot;hanya&quot;, 88) # also count how often a token appears in the file</p></blockquote>
 
 
@@ -3279,6 +3286,11 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 
 </dd>
 <dt id="typeTest2"><a name="typeTest2,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">typeTest2</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="typeTest3"><a name="typeTest3,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">typeTest3</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
 
@@ -3569,10 +3581,10 @@ full cjk unicode range returned in a seq
 <dt id="getColName"><a name="getColName,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getColName</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">sc</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>getColName</p>
-<p>this functions returns the colorname based on an color escape sequence</p>
+<p>this functions returns the colorname based of a color escape sequence</p>
 <p>usually used with randcol() to see what color was actually returned</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
-<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="DecNumber">0</span> <span class="Operator">..</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
+<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
    <span class="Keyword">let</span> <span class="Identifier">acol</span> <span class="Operator">=</span> <span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
    <span class="Keyword">let</span> <span class="Identifier">acolname</span> <span class="Operator">=</span> <span class="Identifier">getColName</span><span class="Punctuation">(</span><span class="Identifier">acol</span><span class="Punctuation">)</span>
    <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">acolname</span><span class="Punctuation">,</span><span class="Identifier">acol</span><span class="Punctuation">)</span></pre>
@@ -3687,7 +3699,7 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
-<dt id="printFont"><a name="printFont,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFont</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="printFont"><a name="printFont,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFont</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>printFont</p>
@@ -3696,8 +3708,9 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
-<dt id="printFontFancy"><a name="printFontFancy,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFontFancy</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="printFontFancy"><a name="printFontFancy,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFontFancy</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span>
+                   <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                                  <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>printFontFancy</p>
 <p>display experimental cxfont with every element in random color</p>
@@ -4050,15 +4063,15 @@ latest terminalheight always available in th
 <p>cw and dw are column width adjuster</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Keyword">var</span> <span class="Identifier">z</span> <span class="Operator">=</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">1000000</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span>
-<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="Operator">&lt;</span><span class="Identifier">z</span><span class="Operator">.</span><span class="Identifier">len</span><span class="Punctuation">:</span>
+<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="Identifier">z</span><span class="Operator">.</span><span class="Identifier">len</span><span class="Punctuation">:</span>
     <span class="Identifier">quicklist</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">[</span><span class="Identifier">x</span><span class="Punctuation">]</span> <span class="Operator">*</span> <span class="DecNumber">100000</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">dw</span> <span class="Operator">=</span> <span class="DecNumber">22</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="doSomething"><a name="doSomething.t,untyped,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">doSomething</span><span class="Other">(</span><span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">;</span> <span class="Identifier">secs</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span></pre></dt>
+<dt id="doSomething"><a name="doSomething.t,int,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">doSomething</span><span class="Other">(</span><span class="Identifier">secs</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>doSomething</p>
 <p>execute some code for a certain amount of seconds</p>
-<pre class="listing"><span class="Identifier">doSomething</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">myproc</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>  <span class="Comment"># executes my proc for ten secs</span></pre>
+<pre class="listing"><span class="Identifier">doSomething</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">myproc</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>  <span class="Comment"># executes my proc for ten secs   , obviously this will fail if your proc uses sleep...</span></pre>
 
 </dd>
 <dt id="bitCheck"><a name="bitCheck.t,untyped,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">bitCheck</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
@@ -4157,7 +4170,7 @@ latest terminalheight always available in th
 <dd>
 zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">s1</span> <span class="Operator">=</span> <span class="Identifier">createSeqInt</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
 <span class="Keyword">var</span> <span class="Identifier">s2</span> <span class="Operator">=</span> <span class="Identifier">createSeqInt</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
-<span class="Keyword">var</span> <span class="Identifier">zs</span> <span class="Operator">=</span> <span class="Identifier">zipWith</span><span class="Punctuation">(</span><span class="Punctuation">`</span><span class="Operator">/</span><span class="Punctuation">`</span><span class="Punctuation">,</span><span class="Identifier">s1</span><span class="Punctuation">,</span><span class="Identifier">s2</span><span class="Punctuation">)</span>   <span class="Comment"># try with +,-,*,/,div ...</span>
+<span class="Keyword">var</span> <span class="Identifier">zs</span> <span class="Operator">=</span> <span class="Identifier">zipWith</span><span class="Punctuation">(</span><span class="Punctuation">`</span><span class="Operator">/</span><span class="Punctuation">`</span><span class="Punctuation">,</span><span class="Identifier">s1</span><span class="Punctuation">,</span><span class="Identifier">s2</span><span class="Punctuation">)</span>   <span class="Comment"># try with +,-,*,/,div...</span>
 <span class="Identifier">echo</span> <span class="Identifier">zs</span></pre><p>original code ex Nim Forum </p>
 
 
@@ -4414,7 +4427,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-10-24 13:26:12 UTC</small>
+        <small>Made with Nim. Generated: 2017-10-30 07:00:41 UTC</small>
       </div>
     </div>
   </div>
