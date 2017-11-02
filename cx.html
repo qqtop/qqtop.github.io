@@ -1282,10 +1282,10 @@ function main() {
     title="rndSample[T](asq: seq[T]): T"><wbr />rnd<wbr />Sample<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rndRGB,"
     title="rndRGB(): auto"><wbr />rnd<wbr />RGB<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#[],openArray[T],Slice[Idx,U]"
-    title="`[]`[Idx, T, U](a: openArray[T]; x: Slice[Idx, U]): seq[T]"><wbr />`[]`<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#sampleSeq,openArray[T],int,int"
-    title="sampleSeq[T](x: openArray[T]; a, b: int): seq[T]"><wbr />sample<wbr />Seq<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#[],seq[T],Slice[U]"
+    title="`[]`[T; U](a: seq[T]; x: Slice[U]): seq[T]"><wbr />`[]`<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#sampleSeq,seq[T],int,int"
+    title="sampleSeq[T](x: seq[T]; a: int; b: int): seq[T]"><wbr />sample<wbr />Seq<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#streamFile,string,FileMode"
     title="streamFile(filename: string; mode: FileMode): FileStream"><wbr />stream<wbr />File<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#uniform,float,float"
@@ -1847,7 +1847,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-10-30
+Latest      : 2017-11-02
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -2077,12 +2077,12 @@ rndSample returns one random sample from a sequence
 
 
 </dd>
-<dt id="[]"><a name="[],openArray[T],Slice[Idx,U]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]`</span><span class="Other">[</span><span class="Identifier">Idx</span><span class="Other">,</span> <span class="Identifier">T</span><span class="Other">,</span> <span class="Identifier">U</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">Slice</span><span class="Other">[</span><span class="Identifier">Idx</span><span class="Other">,</span> <span class="Identifier">U</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
+<dt id="[]"><a name="[],seq[T],Slice[U]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]`</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">U</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">Slice</span><span class="Other">[</span><span class="Identifier">U</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="sampleSeq"><a name="sampleSeq,openArray[T],int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sampleSeq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
+<dt id="sampleSeq"><a name="sampleSeq,seq[T],int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sampleSeq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
 <dd>
 <p>sampleSeq</p>
 <p>based on an idea in nim playground</p>
@@ -4427,7 +4427,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-10-30 07:00:41 UTC</small>
+        <small>Made with Nim. Generated: 2017-11-02 20:54:09 UTC</small>
       </div>
     </div>
   </div>
