@@ -1485,25 +1485,16 @@ ProjectStart: 2015-06-05
 
 Latest      : 2017-11-03
 
-ToDo        : NOTE : Due to changes in Yahoo endpoints data quality may be severely impacted
-                     Some data has holes and adj.close seems not to be correct for splits or dividends
-                     in some cases so all data has to be taken with a grain of salt .. or whatever.
-                     Yahoo being sold to Verizon so expect hick-ups ...
-                     
-                     getsymbol2 fetching historical data has been fixed as of 2017-06-03
-                     and is currently working. See: proc download_quote.
-                     
-                     You may however need several attempts to get the data from yahoo cleanly
-                     depending on your connection and the gremlins at yahoo ..
-                     
-                     It may happen that 'out of memory' error or crashes
-                     occure if the yahoo data does not come in or is interspersed
-                     with unclean row data. So overall use historical data best
-                     after it is cleaned , an attempt of cleaning out null rows is being
-                     made , but there maybe other issues with the data.
+NOTE        : Unfortunately starting on Nov. 1st 2017 Yahoo denies access to their API endpoints
               
+              unless they reconsider the functionality here is limited to data you download manually
               
-              Ratios , Covariance , Correlation , Plotting advanced functions etc.
+              Other data sources like quandl, alpha vantage may be considered but they are all US market
+              
+              centric and not global data sets.
+
+
+Todo        : Ratios , Covariance , Correlation , Plotting advanced functions etc.
 
 
 Programming : qqTop
@@ -2305,7 +2296,7 @@ head means oldest rows
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-11-04 11:07:04 UTC</small>
+        <small>Made with Nim. Generated: 2017-11-04 13:55:05 UTC</small>
       </div>
     </div>
   </div>
