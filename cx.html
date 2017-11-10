@@ -1286,6 +1286,10 @@ function main() {
     title="`[]`[T; U](a: seq[T]; x: Slice[U]): seq[T]"><wbr />`[]`<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#sampleSeq,seq[T],int,int"
     title="sampleSeq[T](x: seq[T]; a: int; b: int): seq[T]"><wbr />sample<wbr />Seq<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxtoLower,char"
+    title="cxtoLower(c: char): char"><wbr />cxto<wbr />Lower<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#stripper,string"
+    title="stripper(str: string): string"><wbr />stripper<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#streamFile,string,FileMode"
     title="streamFile(filename: string; mode: FileMode): FileStream"><wbr />stream<wbr />File<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#uniform,float,float"
@@ -1847,7 +1851,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-11-02
+Latest      : 2017-11-10
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -1890,7 +1894,7 @@ Tested      : OpenSuse Tumbleweed , Ubuntu 16.04 LTS
               
               some ubuntu based gnome-terminals may not be able to display all colors
               
-              as they are not correctly linked , see ubuntuu forum questions.
+              as they are not correctly linked , see ubuntu forum questions.
               
               run this awk script to see if your terminal supports truecolor
               
@@ -1947,9 +1951,11 @@ In progress : moving some of the non core procs to module cxutils.nim
               moving constants to cxconsts.nim
 
 
-
-
-Funding     : If you are happy or unhappy feel free to send any amount of bitcoins to this wallet :
+Funding     : How to make someone happy ? Here are the options :
+              
+              If you are happy , unhappy or anything in between feel free to send
+              
+              any amount of bitcoins to this wallet :
               
               194KWgEcRXHGW5YzH1nGqN75WbfzTs92Xk</pre>
 </p>
@@ -2092,6 +2098,16 @@ rndSample returns one random sample from a sequence
 <span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">sampleseq</span><span class="Punctuation">(</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">8</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">x</span>
 <span class="Identifier">echo</span> <span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">8</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">rndSample</span><span class="Punctuation">(</span><span class="Punctuation">)</span>    <span class="Comment"># get one randomly selected value from the subsequence</span></pre>
+
+</dd>
+<dt id="cxtoLower"><a name="cxtoLower,char"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxtoLower</span><span class="Other">(</span><span class="Identifier">c</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">char</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="stripper"><a name="stripper,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">stripper</span><span class="Other">(</span><span class="Identifier">str</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
 
 </dd>
 <dt id="streamFile"><a name="streamFile,string,FileMode"></a><pre><span class="Keyword">proc</span> <span class="Identifier">streamFile</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">FileMode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">FileStream</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -4427,7 +4443,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-11-02 20:54:09 UTC</small>
+        <small>Made with Nim. Generated: 2017-11-10 11:25:32 UTC</small>
       </div>
     </div>
   </div>
