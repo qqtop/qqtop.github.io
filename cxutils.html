@@ -1300,6 +1300,8 @@ function main() {
     title="memCheck(stats: bool = false)"><wbr />mem<wbr />Check<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showCpuCores,"
     title="showCpuCores()"><wbr />show<wbr />Cpu<wbr />Cores<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getAmzDateString,"
+    title="getAmzDateString(): string"><wbr />get<wbr />Amz<wbr />Date<wbr />String<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getRandomPointInCircle,float"
     title="getRandomPointInCircle(radius: float): seq[float]"><wbr />get<wbr />Random<wbr />Point<wbr />In<wbr />Circle<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getRandomPoint,float,float,float,float"
@@ -1585,7 +1587,7 @@ Tested      : OpenSuse Tumbleweed</pre>
 <dd>
 <p>fibonacci</p>
 <p>calculate fibonacci values</p>
-<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">20</span><span class="Punctuation">:</span> <span class="Identifier">quickList</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">fibonacci</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">20</span><span class="Punctuation">:</span> <span class="Identifier">quickList</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">fibonacci</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="memCheck"><a name="memCheck,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">memCheck</span><span class="Other">(</span><span class="Identifier">stats</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
@@ -1603,6 +1605,13 @@ Tested      : OpenSuse Tumbleweed</pre>
 showCpuCores 
 
 </dd>
+<dt id="getAmzDateString"><a name="getAmzDateString,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getAmzDateString</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>getAmzDateString</p>
+<p>get current GMT date time in amazon format </p>
+
+
+</dd>
 <dt id="getRandomPointInCircle"><a name="getRandomPointInCircle,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomPointInCircle</span><span class="Other">(</span><span class="Identifier">radius</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getRandomPointInCircle</p>
@@ -1611,7 +1620,7 @@ showCpuCores
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">math</span><span class="Punctuation">,</span><span class="Identifier">strfmt</span>
 <span class="Comment"># get randompoints in a circle</span>
 <span class="Keyword">var</span> <span class="Identifier">crad</span><span class="Punctuation">:</span><span class="Identifier">float</span> <span class="Operator">=</span> <span class="DecNumber">1</span>
-<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">100</span><span class="Punctuation">:</span>
+<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">100</span><span class="Punctuation">:</span>
    <span class="Keyword">var</span> <span class="Identifier">k</span> <span class="Operator">=</span> <span class="Identifier">getRandomPointInCircle</span><span class="Punctuation">(</span><span class="Identifier">crad</span><span class="Punctuation">)</span>
    <span class="Identifier">assert</span> <span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span> <span class="Operator">&lt;=</span> <span class="Identifier">crad</span> <span class="Keyword">and</span> <span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span> <span class="Operator">&lt;=</span> <span class="Identifier">crad</span>
    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;25&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;25&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot; :&quot;</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
@@ -1624,7 +1633,7 @@ showCpuCores
 <p>getRandomPoint</p>
 <p>generate a random x,y float point pair and return it as RpointFloat</p>
 <p>minx  min x  value maxx  max x  value miny  min y  value maxy  max y  value</p>
-<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
+<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">:</span>
 <span class="Keyword">var</span> <span class="Identifier">n</span> <span class="Operator">=</span> <span class="Identifier">getRandomPoint</span><span class="Punctuation">(</span><span class="Operator">-</span><span class="FloatNumber">500.00</span><span class="Punctuation">,</span><span class="FloatNumber">200.0</span><span class="Punctuation">,</span><span class="Operator">-</span><span class="FloatNumber">100.0</span><span class="Punctuation">,</span><span class="FloatNumber">300.00</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;5&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;5&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;x:&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">n</span><span class="Operator">.</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">7</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;y:&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">n</span><span class="Operator">.</span><span class="Identifier">y</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">7</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
@@ -1635,7 +1644,7 @@ showCpuCores
 <p>getRandomPoint</p>
 <p>generate a random x,y int point pair and return it as RpointInt</p>
 <p>min    x or y value max    x or y value</p>
-<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
+<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">:</span>
 <span class="Keyword">var</span> <span class="Identifier">n</span> <span class="Operator">=</span> <span class="Identifier">getRandomPoint</span><span class="Punctuation">(</span><span class="Operator">-</span><span class="DecNumber">500</span><span class="Punctuation">,</span><span class="DecNumber">500</span><span class="Punctuation">,</span><span class="Operator">-</span><span class="DecNumber">500</span><span class="Punctuation">,</span><span class="DecNumber">200</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;5&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;5&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;x:&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">n</span><span class="Operator">.</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">7</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;y:&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">n</span><span class="Operator">.</span><span class="Identifier">y</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">7</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
@@ -1791,7 +1800,7 @@ showCpuCores
 <p>element colored individually</p>
 <p>xnumber can be given as int or string</p>
 <p>usufull for big counter etc , a clock can also be build easily but running in a tight while loop just uses up cpu cycles needlessly.</p>
-<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">990.</span><span class="Operator">.</span> <span class="DecNumber">1105</span><span class="Punctuation">:</span>
+<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">990.</span><span class="Operator">.</span><span class="DecNumber">1105</span><span class="Punctuation">:</span>
      <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
      <span class="Identifier">printBigNumber</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span>
      <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span>
@@ -1888,7 +1897,7 @@ showCpuCores
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-11-13 08:37:55 UTC</small>
+        <small>Made with Nim. Generated: 2017-11-22 21:45:47 UTC</small>
       </div>
     </div>
   </div>
