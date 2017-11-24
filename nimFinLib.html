@@ -1290,6 +1290,16 @@ function main() {
              apikey: string = &quot;demo&quot;): nimdf"><wbr />show<wbr />Stocks<wbr />Df<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showLocalStocksDf,nimdf,int"
     title="showLocalStocksDf(ndf9: nimdf; xpos: int = 3): nimdf"><wbr />show<wbr />Local<wbr />Stocks<wbr />Df<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#showKitcoMetal,int"
+    title="showKitcoMetal(xpos: int = 1)"><wbr />show<wbr />Kitco<wbr />Metal<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#presentValue,T,T,int,int"
+    title="presentValue[T](FV: T; r: T; m: int; t: int): float"><wbr />present<wbr />Value<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#presentValue,float,float,float,float"
+    title="presentValue(FV: float; r: float; m: float; t: float): float"><wbr />present<wbr />Value<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#presentValueFV,float,float,int"
+    title="presentValueFV(FV: float; i: float; n: int): float"><wbr />present<wbr />Value<wbr />FV<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#presentValueFV,float,float,float"
+    title="presentValueFV(FV: float; i: float; n: float): float"><wbr />present<wbr />Value<wbr />FV<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1516,6 +1526,66 @@ avDatafectcher fetches data from alphavantage default = compact   abt 100 record
 
 
 </dd>
+<dt id="showKitcoMetal"><a name="showKitcoMetal,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showKitcoMetal</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>showKitcoMetal</p>
+<p>get and display kitco metal prices</p>
+
+
+</dd>
+<dt id="presentValue"><a name="presentValue,T,T,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">presentValue</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
+<dd>
+<p>presentValue</p>
+<p>Present Value Calculation for a Lump Sum Investment</p>
+<dl class="docutils"><dt>Future Value (FV)</dt>
+<dd>is the future value sum of an investment that you want to find a present value for</dd>
+<dt>Number of Periods (t)</dt>
+<dd>commonly this will be number of years but periods can be any time unit. Use int or floats for partial periods such as months for example, 7.5 years is 7 yr 6 mo.</dd>
+<dt>Interest Rate (R)</dt>
+<dd>is the annual nominal interest rate or &quot;stated rate&quot; in percent. r = R/100, the interest rate in integer or floats</dd>
+<dt>Compounding (m)</dt>
+<dd>is the number of times compounding occurs per period. If a period is a year then annually=1, quarterly=4, monthly=12, daily = 365, etc.</dd>
+<dt>Rate (i)</dt>
+<dd>i = (r/m); interest rate per compounding period.</dd>
+<dt>Total Number of Periods (n)</dt>
+<dd>n = mt; is the total number of compounding periods for the life of the investment.</dd>
+<dt>Present Value (PV)</dt>
+<dd>the calculated present value of your future value amount</dd>
+</dl>
+<p>From <a class="reference external" href="http://www.CalculatorSoup.com">http://www.CalculatorSoup.com</a> - Online Calculator Resource.</p>
+<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">FV</span> <span class="Punctuation">:</span> <span class="Identifier">float</span> <span class="Operator">=</span> <span class="DecNumber">10000</span>
+<span class="Keyword">var</span> <span class="Identifier">PV</span> <span class="Punctuation">:</span> <span class="Identifier">float</span> <span class="Operator">=</span> <span class="FloatNumber">0.0</span>
+<span class="Keyword">var</span> <span class="Identifier">r</span>  <span class="Punctuation">:</span> <span class="Identifier">float</span> <span class="Operator">=</span> <span class="FloatNumber">0.0625</span>
+<span class="Keyword">var</span> <span class="Identifier">m</span>  <span class="Punctuation">:</span> <span class="Identifier">int</span>   <span class="Operator">=</span> <span class="DecNumber">2</span>
+<span class="Keyword">var</span> <span class="Identifier">t</span>  <span class="Punctuation">:</span> <span class="Identifier">int</span>   <span class="Operator">=</span> <span class="DecNumber">12</span>
+
+<span class="Identifier">PV</span> <span class="Operator">=</span> <span class="Identifier">presentValue</span><span class="Punctuation">(</span><span class="Identifier">FV</span><span class="Punctuation">,</span><span class="Identifier">r</span><span class="Punctuation">,</span><span class="Identifier">m</span><span class="Punctuation">,</span><span class="Identifier">t</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">PV</span></pre>
+
+</dd>
+<dt id="presentValue"><a name="presentValue,float,float,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">presentValue</span><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>presentValue</p>
+<p>Present Value Calculation for a Lump Sum Investment</p>
+<pre class="listing"><span class="Identifier">PV</span> <span class="Operator">=</span> <span class="Identifier">presentValue</span><span class="Punctuation">(</span><span class="Identifier">FV</span><span class="Punctuation">,</span><span class="FloatNumber">0.0925</span><span class="Punctuation">,</span><span class="FloatNumber">2.0</span><span class="Punctuation">,</span><span class="FloatNumber">12.0</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">PV</span></pre>
+
+</dd>
+<dt id="presentValueFV"><a name="presentValueFV,float,float,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">presentValueFV</span><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>presentValueFV</p>
+<p>the present value of a future sum at a periodic interest rate i where n is the number of periods in the future.</p>
+<pre class="listing"><span class="Identifier">PV</span> <span class="Operator">=</span> <span class="Identifier">presentValueFV</span><span class="Punctuation">(</span><span class="Identifier">FV</span><span class="Punctuation">,</span><span class="FloatNumber">0.0625</span><span class="Punctuation">,</span><span class="DecNumber">10</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">PV</span></pre>
+
+</dd>
+<dt id="presentValueFV"><a name="presentValueFV,float,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">presentValueFV</span><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<pre class="listing"><span class="Identifier">PV</span> <span class="Operator">=</span> <span class="Identifier">presentValueFV</span><span class="Punctuation">(</span><span class="Identifier">FV</span><span class="Punctuation">,</span><span class="FloatNumber">0.0625</span><span class="Punctuation">,</span><span class="FloatNumber">20.5</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">PV</span></pre>
+
+</dd>
 
 </dl></div>
 
@@ -1526,7 +1596,7 @@ avDatafectcher fetches data from alphavantage default = compact   abt 100 record
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-11-24 19:50:38 UTC</small>
+        <small>Made with Nim. Generated: 2017-11-24 22:24:23 UTC</small>
       </div>
     </div>
   </div>
