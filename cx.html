@@ -1597,8 +1597,10 @@ function main() {
   <li><a class="reference" href="#rainbow2,T,int,bool,bool,seq[]"
     title="rainbow2[T](s: T; xpos: int = 1; fitLine: bool = false; centered: bool = false;
             colorset: seq[(string, string)] = colorNames)"><wbr />rainbow2<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#getColName,T"
-    title="getColName[T](sc: T): string"><wbr />get<wbr />Col<wbr />Name<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getColorName,T"
+    title="getColorName[T](sc: T): string"><wbr />get<wbr />Color<wbr />Name<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getColorConst,T"
+    title="getColorConst[T](sc: T): string"><wbr />get<wbr />Color<wbr />Const<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#boxChars,"
     title="boxChars(): seq[string]"><wbr />box<wbr />Chars<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#optimalbox,int,int,int"
@@ -1664,6 +1666,8 @@ function main() {
     title="dotColors(): untyped"><wbr />dot<wbr />Colors<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#echoType.m,typed"
     title="echoType(x: typed): untyped"><wbr />echo<wbr />Type<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#debug.m,varargs[typed]"
+    title="debug(n: varargs[typed]): untyped"><wbr />debug<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -3595,16 +3599,26 @@ full cjk unicode range returned in a seq
 <pre class="listing"><span class="Identifier">rainbow2</span><span class="Punctuation">(</span><span class="StringLit">&quot;what's up ?</span><span class="EscapeSequence">\n</span><span class="StringLit">&quot;</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">,</span><span class="Identifier">colorset</span> <span class="Operator">=</span> <span class="Identifier">colorsPalette</span><span class="Punctuation">(</span><span class="StringLit">&quot;green&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="getColName"><a name="getColName,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getColName</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">sc</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dt id="getColorName"><a name="getColorName,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getColorName</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">sc</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
-<p>getColName</p>
-<p>this functions returns the colorname based of a color escape sequence</p>
+<p>getColorName</p>
+<p>this functions returns the colorname based on a color escape sequence</p>
 <p>usually used with randcol() to see what color was actually returned</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
    <span class="Keyword">let</span> <span class="Identifier">acol</span> <span class="Operator">=</span> <span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-   <span class="Keyword">let</span> <span class="Identifier">acolname</span> <span class="Operator">=</span> <span class="Identifier">getColName</span><span class="Punctuation">(</span><span class="Identifier">acol</span><span class="Punctuation">)</span>
+   <span class="Keyword">let</span> <span class="Identifier">acolname</span> <span class="Operator">=</span> <span class="Identifier">getColorName</span><span class="Punctuation">(</span><span class="Identifier">acol</span><span class="Punctuation">)</span>
    <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">acolname</span><span class="Punctuation">,</span><span class="Identifier">acol</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="getColorConst"><a name="getColorConst,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getColorConst</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">sc</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+<p>getColorConst</p>
+<p>this functions returns the colorname constant color escape sequence based on a colorname ready to be used in print routines , it is the reverse of the getColorName function. usefull if we have colorname strings read in from a file or a sequence</p>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+<span class="Keyword">var</span> <span class="Identifier">astringseq</span> <span class="Operator">=</span> <span class="Identifier">split</span><span class="Punctuation">(</span><span class="StringLit">&quot;lightgrey,pastelgreen,pastelpink,lightblue,goldenrod,truetomato,truetomato,white&quot;</span><span class="Punctuation">,</span><span class="Identifier">sep</span><span class="Operator">=</span><span class="CharLit">','</span><span class="Punctuation">)</span>
+<span class="Keyword">for</span> <span class="Identifier">acolor</span> <span class="Keyword">in</span> <span class="Identifier">astringseq</span><span class="Punctuation">:</span>
+    <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;good color &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">acolor</span> <span class="Punctuation">,</span> <span class="Identifier">getColorConst</span><span class="Punctuation">(</span><span class="Identifier">acolor</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="boxChars"><a name="boxChars,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">boxChars</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -3842,6 +3856,13 @@ partially lifted from an earler macro in terminal.nim and removed new line curre
 <dt id="echoType"><a name="echoType.m,typed"></a><pre><span class="Keyword">macro</span> <span class="Identifier">echoType</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">typed</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 echoType by @yardanico 
+
+</dd>
+<dt id="debug"><a name="debug.m,varargs[typed]"></a><pre><span class="Keyword">macro</span> <span class="Identifier">debug</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">typed</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
+<dd>
+<p>debug</p>
+<p>ex <a class="reference external" href="https://stackoverflow.com/questions/47443206/how-to-debug-print-a-variable-name-and-its-value-in-nim">https://stackoverflow.com/questions/47443206/how-to-debug-print-a-variable-name-and-its-value-in-nim</a> </p>
+
 
 </dd>
 
@@ -4450,7 +4471,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-11-22 21:45:45 UTC</small>
+        <small>Made with Nim. Generated: 2017-11-24 19:51:42 UTC</small>
       </div>
     </div>
   </div>
