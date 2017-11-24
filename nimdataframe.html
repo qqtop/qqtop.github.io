@@ -1244,7 +1244,7 @@ function main() {
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#NIMDATAFRAMEVERSION"
-    title="NIMDATAFRAMEVERSION = &quot;0.0.2&quot;"><wbr />NIMDATAFRAMEVERSION<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="NIMDATAFRAMEVERSION = &quot;0.0.3&quot;"><wbr />NIMDATAFRAMEVERSION<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1329,8 +1329,10 @@ function main() {
     title="sumStats(df: nimdf; numericCols: nimis): RunningStat"><wbr />sum<wbr />Stats<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#dfShowSumStats,nimdf,nimis,int"
     title="dfShowSumStats(df: nimdf; numericCols: nimis; xpos = 2)"><wbr />df<wbr />Show<wbr />Sum<wbr />Stats<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
-  <li><a class="reference" href="#dfSave,nimdf,string"
-    title="dfSave(df: nimdf; filename: string)"><wbr />df<wbr />Save<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#dfLoad,string"
+    title="dfLoad(filename: string): nimdf"><wbr />df<wbr />Load<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#dfSave,nimdf,string,bool"
+    title="dfSave(df: nimdf; filename: string; quiet: bool = false)"><wbr />df<wbr />Save<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
 
   </ul>
 </li>
@@ -1357,9 +1359,9 @@ function main() {
   <p class="module-desc"><blockquote><p><p>Library     : nimdataframe.nim</p>
 <p>Status      : development</p>
 <p>License     : MIT opensource</p>
-<p>Version     : 0.0.2</p>
+<p>Version     : 0.0.3</p>
 <p>ProjectStart: 2016-09-16</p>
-<p>Latest      : 2017-10-23</p>
+<p>Latest      : 2017-10-24</p>
 <p>Compiler    : Nim &gt;= 0.17.2</p>
 <p>OS          : Linux</p>
 <p>Description :</p>
@@ -1373,7 +1375,7 @@ function main() {
 <p>Docs        : <a class="reference external" href="http://qqtop.github.io/nimdataframe.html">http://qqtop.github.io/nimdataframe.html</a></p>
 <p>Tested      : OpenSuse Tumbleweed</p>
 <dl class="docutils"><dt>Todo        : additional calculations on dataframes</dt>
-<dd>allow right or left align for each column improve tests and example dataframe names trying to handle json data</dd>
+<dd>allow right or left align for each column fullRotate df improve tests and example dataframe names trying to handle json data</dd>
 </dl>
 <p>Install     : nimble install <a class="reference external" href="https://github.com/qqtop/nimdataframe.git">https://github.com/qqtop/nimdataframe.git</a></p>
 </p></blockquote>
@@ -1425,7 +1427,7 @@ function main() {
 <div class="section" id="9">
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
-<dt id="NIMDATAFRAMEVERSION"><a name="NIMDATAFRAMEVERSION"></a><pre><span class="Identifier">NIMDATAFRAMEVERSION</span> <span class="Other">=</span> <span class="StringLit">&quot;0.0.2&quot;</span></pre></dt>
+<dt id="NIMDATAFRAMEVERSION"><a name="NIMDATAFRAMEVERSION"></a><pre><span class="Identifier">NIMDATAFRAMEVERSION</span> <span class="Other">=</span> <span class="StringLit">&quot;0.0.3&quot;</span></pre></dt>
 <dd>
 
 
@@ -1731,11 +1733,21 @@ function main() {
 
 
 </dd>
-<dt id="dfSave"><a name="dfSave,nimdf,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dfSave</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span>
-                                      <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="dfLoad"><a name="dfLoad,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dfLoad</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
+    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>dfLoad</p>
+<p>dfLoad creates a new df from a file created with dfSave </p>
+
+
+</dd>
+<dt id="dfSave"><a name="dfSave,nimdf,string,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dfSave</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">quiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>dfSave</p>
-<p>save a dataframe to a csv file</p>
+<p>save a dataframe data to a csv file</p>
+<p>quiet = true will show no feedback</p>
 <p>Note if data is not clean crashes may occure if compiled with  -d:release </p>
 
 
@@ -1775,7 +1787,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-11-23 15:42:27 UTC</small>
+        <small>Made with Nim. Generated: 2017-11-24 19:49:43 UTC</small>
       </div>
     </div>
   </div>
