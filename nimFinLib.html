@@ -1302,6 +1302,18 @@ function main() {
     title="getavEMA(stckcode: string; interval: string = &quot;15min&quot;; timeperiod: string = &quot;10&quot;;
          seriestype: string = &quot;close&quot;; apikey: string; xpos: int = 3;
          savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />EMA<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getavRSI,string,string,string,string,string,int,bool,bool"
+    title="getavRSI(stckcode: string; interval: string = &quot;15min&quot;; timeperiod: string = &quot;10&quot;;
+         seriestype: string = &quot;close&quot;; apikey: string; xpos: int = 3;
+         savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />RSI<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getavWILLR,string,string,string,string,string,int,bool,bool"
+    title="getavWILLR(stckcode: string; interval: string = &quot;15min&quot;; timeperiod: string = &quot;10&quot;;
+           seriestype: string = &quot;close&quot;; apikey: string; xpos: int = 3;
+           savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />WILLR<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getavBBANDS,string,string,string,string,string,int,bool,bool"
+    title="getavBBANDS(stckcode: string; interval: string = &quot;15min&quot;; timeperiod: string = &quot;10&quot;;
+            seriestype: string = &quot;close&quot;; apikey: string; xpos: int = 3;
+            savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />BBANDS<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showKitcoMetal,int"
     title="showKitcoMetal(xpos: int = 1)"><wbr />show<wbr />Kitco<wbr />Metal<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#presentValue,T,T,int,int"
@@ -1324,30 +1336,39 @@ function main() {
   <p class="module-desc"><pre>
 Program     : nimFinLib
 
-Status      : Alpha   - Development Rewrite for Alpha Vantage API
+Status      : Development
 
 License     : MIT opensource
 
 Version     : 0.3.0.0
 
-Compiler    : nim 0.17+  dev branch
+Compiler    : nim 0.17.x  dev branch
 
 
 Description : A basic library for financial calculations with Nim
               
-              Currency , Stock and Index Data from Alpha Vantage
+              using data from Alpha Vantage API
+              
+              Currency , Stock and Index
               
               Kitco Metal Prices
               
-              Dataframe like objects for easy working with historical data and dataseries
+              Dataframe like objects for easy working with current and historical data
+              
+              EMA,SMA,WMA,RSI,WILLR,BBANDS Indicator   # Note may not be available for all stocks/markets
               
               Returns calculations
               
-              Ema calculation
-              
-              Date manipulations
-              
               Data display procs
+              
+              Simple plotting (planned )
+              
+              Dataframe save/reload complete with display parameters
+              
+              Dataframe rotation
+              
+              Portfolio management ( Random portfolio , User portfolio )
+
 
 
 Project     :  https://github.com/qqtop/NimFinLib
@@ -1356,7 +1377,7 @@ Tested on   :  Linux
 
 ProjectStart: 2015-06-05
 
-Latest      : 2017-11-25
+Latest      : 2017-11-27
 
 NOTE        :
 
@@ -1511,7 +1532,7 @@ avDatafectcher fetches data from alphavantage default = compact   abt 100 record
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showOriginalStockData</p>
-<p>first line maybe realtime if markets online here we always fetch fresh data </p>
+<p>first data row maybe realtime if markets online here we always fetch fresh data </p>
 
 
 </dd>
@@ -1565,6 +1586,39 @@ getavWMA fetches data from alphavantage Note : first row is real time if markets
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 getavEMA fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low
+
+</dd>
+<dt id="getavRSI"><a name="getavRSI,string,string,string,string,string,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getavRSI</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span> <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span>
+             <span class="Identifier">seriestype</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;close&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span>
+             <span class="Identifier">savequiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">dfinfo</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
+    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span>
+    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
+    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+getavRSI fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low
+
+</dd>
+<dt id="getavWILLR"><a name="getavWILLR,string,string,string,string,string,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getavWILLR</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span>
+               <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span> <span class="Identifier">seriestype</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;close&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
+               <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">savequiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">dfinfo</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
+    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span>
+    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+getavWILLR fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low
+
+</dd>
+<dt id="getavBBANDS"><a name="getavBBANDS,string,string,string,string,string,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getavBBANDS</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span>
+                <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span> <span class="Identifier">seriestype</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;close&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
+                <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">savequiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">dfinfo</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
+    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span>
+    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+getavBBANDS fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low default params implemented here see  ---&gt;  <a class="reference external" href="https://www.alphavantage.co/documentation">https://www.alphavantage.co/documentation</a>/
 
 </dd>
 <dt id="showKitcoMetal"><a name="showKitcoMetal,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showKitcoMetal</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
@@ -1637,7 +1691,7 @@ getavEMA fetches data from alphavantage Note : first row is real time if markets
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-11-26 16:09:12 UTC</small>
+        <small>Made with Nim. Generated: 2017-11-27 22:08:08 UTC</small>
       </div>
     </div>
   </div>
