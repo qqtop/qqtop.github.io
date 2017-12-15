@@ -1300,6 +1300,8 @@ function main() {
     title="dec(co: ref Cxcounter)"><wbr />dec<span class="attachedType" style="visibility:hidden">Cxcounter</span></a></li>
   <li><a class="reference" href="#reset,ref.Cxcounter"
     title="reset(co: ref Cxcounter)"><wbr />reset<span class="attachedType" style="visibility:hidden">Cxcounter</span></a></li>
+  <li><a class="reference" href="#waitOn,int"
+    title="waitOn(alen: int = 1)"><wbr />wait<wbr />On<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rndSample,seq[T]"
     title="rndSample[T](asq: seq[T]): T"><wbr />rnd<wbr />Sample<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rndRGB,"
@@ -1882,7 +1884,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-12-10
+Latest      : 2017-12-15
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -1991,7 +1993,7 @@ Funding     : Here are the options :
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
-<a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="os.html">os</a>, <a class="reference external" href="times.html">times</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="parseutils.html">parseutils</a>, <a class="reference external" href="parseopt.html">parseopt</a>, <a class="reference external" href="hashes.html">hashes</a>, <a class="reference external" href="tables.html">tables</a>, <a class="reference external" href="sets.html">sets</a>, <a class="reference external" href="strmisc.html">strmisc</a>, <a class="reference external" href="osproc.html">osproc</a>, <a class="reference external" href="macros.html">macros</a>, <a class="reference external" href="posix.html">posix</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="math.html">math</a>, <a class="reference external" href="stats.html">stats</a>, <a class="reference external" href="json.html">json</a>, <a class="reference external" href="random.html">random</a>, <a class="reference external" href="streams.html">streams</a>, <a class="reference external" href="options.html">options</a>, <a class="reference external" href="memfiles.html">memfiles</a>, <a class="reference external" href="sequtils.html">sequtils</a>, <a class="reference external" href="httpclient.html">httpclient</a>, <a class="reference external" href="rawsockets.html">rawsockets</a>, <a class="reference external" href="browsers.html">browsers</a>, <a class="reference external" href="intsets.html">intsets</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="unicode.html">unicode</a>, <a class="reference external" href="typeinfo.html">typeinfo</a>, <a class="reference external" href="typetraits.html">typetraits</a>, <a class="reference external" href="cpuinfo.html">cpuinfo</a>, <a class="reference external" href="colors.html">colors</a>, <a class="reference external" href="encodings.html">encodings</a>, <a class="reference external" href="distros.html">distros</a>
+<a class="reference external" href="random.html">random</a>, <a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="os.html">os</a>, <a class="reference external" href="times.html">times</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="parseutils.html">parseutils</a>, <a class="reference external" href="parseopt.html">parseopt</a>, <a class="reference external" href="hashes.html">hashes</a>, <a class="reference external" href="tables.html">tables</a>, <a class="reference external" href="sets.html">sets</a>, <a class="reference external" href="strmisc.html">strmisc</a>, <a class="reference external" href="osproc.html">osproc</a>, <a class="reference external" href="macros.html">macros</a>, <a class="reference external" href="posix.html">posix</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="math.html">math</a>, <a class="reference external" href="stats.html">stats</a>, <a class="reference external" href="json.html">json</a>, <a class="reference external" href="streams.html">streams</a>, <a class="reference external" href="options.html">options</a>, <a class="reference external" href="memfiles.html">memfiles</a>, <a class="reference external" href="sequtils.html">sequtils</a>, <a class="reference external" href="httpclient.html">httpclient</a>, <a class="reference external" href="rawsockets.html">rawsockets</a>, <a class="reference external" href="browsers.html">browsers</a>, <a class="reference external" href="intsets.html">intsets</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="unicode.html">unicode</a>, <a class="reference external" href="typeinfo.html">typeinfo</a>, <a class="reference external" href="typetraits.html">typetraits</a>, <a class="reference external" href="cpuinfo.html">cpuinfo</a>, <a class="reference external" href="colors.html">colors</a>, <a class="reference external" href="encodings.html">encodings</a>, <a class="reference external" href="distros.html">distros</a>
 </dl></div>
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
@@ -2102,12 +2104,19 @@ Funding     : Here are the options :
 
 
 </dd>
-<dt id="rndSample"><a name="rndSample,seq[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rndSample</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">asq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
+<dt id="waitOn"><a name="waitOn,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">waitOn</span><span class="Other">(</span><span class="Identifier">alen</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-rndSample returns one random sample from a sequence
+<p>waiton</p>
+<p>stops program to wait for one or more keypresses. default = 1 </p>
+
 
 </dd>
-<dt id="rndRGB"><a name="rndRGB,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rndRGB</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="rndSample"><a name="rndSample,seq[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rndSample</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">asq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
+<dd>
+rndSample returns one rand sample from a sequence
+
+</dd>
+<dt id="rndRGB"><a name="rndRGB,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rndRGB</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
@@ -2126,7 +2135,7 @@ rndSample returns one random sample from a sequence
 <span class="Keyword">let</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="Identifier">createSeqInt</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">x</span>
 <span class="Identifier">echo</span> <span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">sampleseq</span><span class="Punctuation">(</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">8</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span> <span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">8</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">rndSample</span><span class="Punctuation">(</span><span class="Punctuation">)</span>    <span class="Comment"># get one randomly selected value from the subsequence</span></pre>
+<span class="Identifier">echo</span> <span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">8</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">rndSample</span><span class="Punctuation">(</span><span class="Punctuation">)</span>    <span class="Comment"># get one randly selected value from the subsequence</span></pre>
 
 </dd>
 <dt id="cxtoLower"><a name="cxtoLower,char"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxtoLower</span><span class="Other">(</span><span class="Identifier">c</span><span class="Other">:</span> <span class="Identifier">char</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">char</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -2149,9 +2158,9 @@ rndSample returns one random sample from a sequence
 <dt id="uniform"><a name="uniform,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">uniform</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>uniform</p>
-<p>returns a random float uniformly distributed between a and  b</p>
+<p>returns a rand float uniformly distributed between a and  b</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">stats</span>
-<span class="Keyword">import</span> <span class="StringLit">&quot;random-0.5.3/random&quot;</span>
+<span class="Keyword">import</span> <span class="StringLit">&quot;rand-0.5.3/rand&quot;</span>
 <span class="Keyword">proc</span> <span class="Identifier">quickTest</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">=</span>
      <span class="Keyword">var</span> <span class="Identifier">ps</span> <span class="Punctuation">:</span> <span class="Identifier">Runningstat</span>
      <span class="Keyword">var</span>  <span class="Identifier">n</span> <span class="Operator">=</span> <span class="DecNumber">100_000_000</span>
@@ -2179,7 +2188,7 @@ rndSample returns one random sample from a sequence
 <dt id="getRndInt"><a name="getRndInt,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRndInt</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">int</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">noInit</span><span class="Other">,</span> <span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getRndInt</p>
-<p>returns a random int between mi and &lt; ma so for 0 or 1 we need random(0..2)</p>
+<p>returns a rand int between mi and &lt; ma so for 0 or 1 we need rand(0..2)</p>
 
 
 </dd>
@@ -2219,14 +2228,14 @@ rndSample returns one random sample from a sequence
 <dt id="getRandomSignI"><a name="getRandomSignI,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomSignI</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getRandomSignI</p>
-<p>returns -1 or 1 integer  to have a random positive or negative multiplier </p>
+<p>returns -1 or 1 integer  to have a rand positive or negative multiplier </p>
 
 
 </dd>
 <dt id="getRandomSignF"><a name="getRandomSignF,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomSignF</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getRandomSignF</p>
-<p>returns -1.0 or 1.0 float  to have a random positive or negative multiplier </p>
+<p>returns -1.0 or 1.0 float  to have a rand positive or negative multiplier </p>
 
 
 </dd>
@@ -2290,7 +2299,7 @@ note that not all unicode chars may be available on all systems</pre>
 <dt id="cleanScreen"><a name="cleanScreen,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cleanScreen</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>cleanScreen</p>
-<p>vaery fast clear screen proc with escape seqs</p>
+<p>very fast clear screen proc with escape seqs</p>
 <p>similar to terminal.eraseScreen() but cleans the terminal window more completely at times </p>
 
 
@@ -2893,7 +2902,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getRndDate</p>
-<p>returns a valid random date between 1900 and 3001 in format 2017-12-31</p>
+<p>returns a valid rand date between 1900 and 3001 in format 2017-12-31</p>
 <p>default currently set to  between  +/- 50 years of today</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="Identifier">getRndDate</span><span class="Punctuation">(</span><span class="DecNumber">2016</span><span class="Punctuation">,</span><span class="DecNumber">2025</span><span class="Punctuation">)</span></pre>
@@ -3096,10 +3105,10 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>createSeqInt</p>
-<p>convenience proc to create a seq of random int with</p>
+<p>convenience proc to create a seq of rand int with</p>
 <p>default length 10</p>
 <p>gives @[4556,455,888,234,...] or similar</p>
-<pre class="listing"><span class="Comment"># create a seq with 50 random integers ,of set 100.. 2000</span>
+<pre class="listing"><span class="Comment"># create a seq with 50 rand integers ,of set 100.. 2000</span>
 <span class="Comment"># including the limits 100 and 2000</span>
 <span class="Identifier">echo</span> <span class="Identifier">createSeqInt</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">,</span><span class="DecNumber">2000</span><span class="Punctuation">)</span></pre>
 
@@ -3137,8 +3146,8 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 
 <span class="Comment"># floats example</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">2000</span><span class="Punctuation">:</span>
-   <span class="Comment"># generate some positve and negative random float</span>
-   <span class="Keyword">var</span> <span class="Identifier">z</span> <span class="Operator">=</span> <span class="Identifier">getrandomfloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="FloatNumber">2345243.132310</span> <span class="Operator">*</span> <span class="Identifier">getRandomSignF</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+   <span class="Comment"># generate some positve and negative rand float</span>
+   <span class="Keyword">var</span> <span class="Identifier">z</span> <span class="Operator">=</span> <span class="Identifier">getrandfloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="FloatNumber">2345243.132310</span> <span class="Operator">*</span> <span class="Identifier">getRandomSignF</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;20&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;NZ &quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="StringLit">&quot; : &quot;</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
@@ -3152,7 +3161,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 
 <span class="Comment"># int example</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">20</span><span class="Punctuation">:</span>
-   <span class="Comment"># generate some positve and negative random integer</span>
+   <span class="Comment"># generate some positve and negative rand integer</span>
    <span class="Keyword">var</span> <span class="Identifier">z</span> <span class="Operator">=</span> <span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">50000</span><span class="Punctuation">,</span><span class="DecNumber">100000000</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="Identifier">getRandomSignI</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;20.0&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;NIM &quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="StringLit">&quot; : &quot;</span><span class="Punctuation">,</span><span class="Identifier">z</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
@@ -3160,8 +3169,8 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <dt id="getRandomFloat"><a name="getRandomFloat,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomFloat</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">1.0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">1.0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getRandomFloat</p>
-<p>convenience proc so we do not need to import random in calling prog</p>
-<p>to get positive or negative random floats multiply with getRandomSignF</p>
+<p>convenience proc so we do not need to import rand in calling prog</p>
+<p>to get positive or negative rand floats multiply with getRandomSignF</p>
 <p>Note: changed so to get positive and or negative floats</p>
 <pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getRandomFloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="FloatNumber">10000.00</span> <span class="Operator">*</span> <span class="Identifier">getRandomSignF</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
@@ -3170,7 +3179,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getRndFloat</p>
-<p>same as getrandomFloat() </p>
+<p>same as getrandFloat() </p>
 
 
 </dd>
@@ -3178,14 +3187,14 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>createSeqFloat</p>
-<p>convenience proc to create an unsorted seq of random floats with</p>
+<p>convenience proc to create an unsorted seq of rand floats with</p>
 <p>default length ma = 10 ( always consider how much memory is in the system )</p>
 <p>prec enables after comma precision up to 16 positions after comma</p>
 <p>this is on a best attempt basis and may not work all the time</p>
 <p>default after comma positions is prec = 3 max</p>
 <p>form @[0.34,0.056,...] or similar</p>
-<pre class="listing"><span class="Comment"># create a seq with 50 random floats</span>
-<span class="Identifier">echo</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Comment"># create a seq with 50 random floats formated</span>
+<pre class="listing"><span class="Comment"># create a seq with 50 rand floats</span>
+<span class="Identifier">echo</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Comment"># create a seq with 50 rand floats formated</span>
 <span class="Identifier">echo</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">,</span><span class="DecNumber">3</span><span class="Punctuation">)</span></pre>
 
 </dd>
@@ -3568,7 +3577,7 @@ forward declaration
 <dt id="tableRune"><a name="tableRune,seq[T],string,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">tableRune</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>tableRune</p>
-<p>simple table routine with default 6 cols for displaying various unicode sets fgr allows color display and fgr = &quot;rand&quot; displays in random color and maxwidth for displayable items this can also be used to show items of a sequence</p>
+<p>simple table routine with default 6 cols for displaying various unicode sets fgr allows color display and fgr = &quot;rand&quot; displays in rand color and maxwidth for displayable items this can also be used to show items of a sequence</p>
 <pre class="listing"><span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">cjk</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;rand&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">katakana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span>
 <span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">hiragana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
@@ -3711,7 +3720,7 @@ full cjk unicode range returned in a seq
 <dt id="randpos"><a name="randpos,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randpos</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>randpos</p>
-<p>sets cursor to a random position in the visible terminal window</p>
+<p>sets cursor to a rand position in the visible terminal window</p>
 <p>returns x position</p>
 <pre class="listing"><span class="Keyword">while</span> <span class="DecNumber">1</span> <span class="Operator">==</span> <span class="DecNumber">1</span><span class="Punctuation">:</span>
    <span class="Keyword">for</span> <span class="Identifier">z</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">50</span><span class="Punctuation">:</span>
@@ -3782,13 +3791,12 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>printFontFancy</p>
-<p>display experimental cxfont with every element in random color changeing of coltop color possible</p>
+<p>display experimental cxfont with every element in rand color changeing of coltop color possible</p>
 
 
 </dd>
 <dt id="printNimCx"><a name="printNimCx,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printNimCx</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getTerminalWidth</span><span class="Other">(</span><span class="Other">)</span> <span class="Identifier">div</span> <span class="DecNumber">2</span> <span class="Operator">-</span> <span class="DecNumber">30</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 printNimcx<blockquote><p>experiments in block font building , default is center in terminal</p></blockquote>
 
@@ -4004,7 +4012,7 @@ see example at colPalette
 </dd>
 <dt id="aPaletteSample"><a name="aPaletteSample.t,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">aPaletteSample</span><span class="Other">(</span><span class="Identifier">coltype</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-aPaletteSample<blockquote><p>returns an random entry (int) from a palette see example at colPalette</p></blockquote>
+aPaletteSample<blockquote><p>returns an rand entry (int) from a palette see example at colPalette</p></blockquote>
 
 
 </dd>
@@ -4012,7 +4020,7 @@ aPaletteSample<blockquote><p>returns an random entry (int) from a palette see ex
 <dd>
 <pre>randCol2    -- experimental
 
-returns a random color based on a palette
+returns a rand color based on a palette
 
 palettes are filters into colorNames
 
@@ -4023,8 +4031,8 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 <dt id="randCol"><a name="randCol.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">randCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>randCol</p>
-<p>get a randomcolor from colorNames , no filter is applied</p>
-<pre class="listing"><span class="Comment"># print a string 6 times in a random color selected from colorNames</span>
+<p>get a randcolor from colorNames , no filter is applied</p>
+<pre class="listing"><span class="Comment"># print a string 6 times in a rand color selected from colorNames</span>
 <span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello Random Color&quot;</span><span class="Punctuation">,</span><span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
@@ -4032,16 +4040,16 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
                <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getRndInt</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">254</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>rndCol</p>
-<p>return a randomcolor from the whole rgb spectrum in the ranges of RGB [0..254] expect this colors maybe a bit more drab than the colors returned from randCol()</p>
-<pre class="listing"><span class="Comment"># print a string 6 times in a random color selected from rgb spectrum</span>
+<p>return a randcolor from the whole rgb spectrum in the ranges of RGB [0..254] expect this colors maybe a bit more drab than the colors returned from randCol()</p>
+<pre class="listing"><span class="Comment"># print a string 6 times in a rand color selected from rgb spectrum</span>
 <span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello Random Color&quot;</span><span class="Punctuation">,</span><span class="Identifier">rndCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="randPastelCol"><a name="randPastelCol.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">randPastelCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>randPastelCol</p>
-<p>get a randomcolor from pastelSet</p>
-<pre class="listing"><span class="Comment"># print a string 6 times in a random color selected from pastelSet</span>
+<p>get a randcolor from pastelSet</p>
+<pre class="listing"><span class="Comment"># print a string 6 times in a rand color selected from pastelSet</span>
 <span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello Random Color&quot;</span><span class="Punctuation">,</span><span class="Identifier">randPastelCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
@@ -4086,7 +4094,7 @@ latest terminalheight always available in th
 <p>hdx</p>
 <p>a simple sandwich frame made with + default or any string passed in</p>
 <p>width and xpos can be adjusted</p>
-<pre class="listing"><span class="Identifier">hdx</span><span class="Punctuation">(</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nice things happen randomly&quot;</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">9</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">width</span> <span class="Operator">=</span> <span class="DecNumber">35</span><span class="Punctuation">,</span><span class="Identifier">nxpos</span> <span class="Operator">=</span> <span class="DecNumber">5</span><span class="Punctuation">)</span></pre>
+<pre class="listing"><span class="Identifier">hdx</span><span class="Punctuation">(</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nice things happen randly&quot;</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">9</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">width</span> <span class="Operator">=</span> <span class="DecNumber">35</span><span class="Punctuation">,</span><span class="Identifier">nxpos</span> <span class="Operator">=</span> <span class="DecNumber">5</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="curUp"><a name="curUp.t,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">curUp</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
@@ -4509,7 +4517,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-10 10:58:01 UTC</small>
+        <small>Made with Nim. Generated: 2017-12-15 22:29:56 UTC</small>
       </div>
     </div>
   </div>
