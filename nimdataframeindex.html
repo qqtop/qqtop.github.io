@@ -1279,7 +1279,7 @@ function main() {
 <li><a class="reference external" href="nimdataframe.html#makeDf1,string,bool">nimdataframe : makeDf1(ufo1: string; hasHeader: bool = false): nimdf</a></li>
           </ul></dd>
 <dt><a name="makeDf2" href="#makeDf2"><span>makeDf2:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="nimdataframe.html#makeDf2,nimdf,int,bool">nimdataframe : makeDf2(ufo1: nimdf; cols: int = 0; hasHeader: bool = false): nimdf</a></li>
+<li><a class="reference external" href="nimdataframe.html#makeDf2,nimdf,int,int,bool">nimdataframe : makeDf2(ufo1: nimdf; cols: int = 0; rows: int = -1; hasHeader: bool = false): nimdf</a></li>
           </ul></dd>
 <dt><a name="makeNimDf" href="#makeNimDf"><span>makeNimDf:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="nimdataframe.html#makeNimDf,varargs%5Bnimss%5D,bool,bool">nimdataframe : makeNimDf(dfcols: varargs[nimss]; status: bool = true; hasHeader: bool = false): nimdf</a></li>
@@ -1342,8 +1342,14 @@ function main() {
 <dt><a name="showDfInfo" href="#showDfInfo"><span>showDfInfo:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="nimdataframe.html#showDfInfo,nimdf">nimdataframe : showDfInfo(df: nimdf)</a></li>
           </ul></dd>
-<dt><a name="showHeader" href="#showHeader"><span>showHeader:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="nimdataframe.html#showHeader,nimdf">nimdataframe : showHeader(df: nimdf)</a></li>
+<dt><a name="showFirstLast" href="#showFirstLast"><span>showFirstLast:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="nimdataframe.html#showFirstLast,nimdf,int">nimdataframe : showFirstLast(df: nimdf; nrows: int = 5)</a></li>
+          </ul></dd>
+<dt><a name="showHeaderStatus" href="#showHeaderStatus"><span>showHeaderStatus:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="nimdataframe.html#showHeaderStatus,nimdf">nimdataframe : showHeaderStatus(df: nimdf)</a></li>
+          </ul></dd>
+<dt><a name="showRaw" href="#showRaw"><span>showRaw:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="nimdataframe.html#showRaw,nimdf,openArray%5BT%5D">nimdataframe : showRaw[T](df: nimdf; rrows: openArray[T])</a></li>
           </ul></dd>
 <dt><a name="sortdf" href="#sortdf"><span>sortdf:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="nimdataframe.html#sortdf,nimdf,int">nimdataframe : sortdf(df: nimdf; sortcol: int = 1; sortorder = asc): nimdf</a></li>
@@ -1368,7 +1374,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-10 10:23:24 UTC</small>
+        <small>Made with Nim. Generated: 2017-12-17 15:43:18 UTC</small>
       </div>
     </div>
   </div>

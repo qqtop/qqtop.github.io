@@ -1310,14 +1310,18 @@ function main() {
     title="makeDf1(ufo1: string; hasHeader: bool = false): nimdf"><wbr />make<wbr />Df1<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#getData2,string,int,int,char"
     title="getData2(filename: string; cols: int = 2; rows: int = -1; sep: char = &#x27;,&#x27;): auto"><wbr />get<wbr />Data2<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#makeDf2,nimdf,int,bool"
-    title="makeDf2(ufo1: nimdf; cols: int = 0; hasHeader: bool = false): nimdf"><wbr />make<wbr />Df2<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#makeDf2,nimdf,int,int,bool"
+    title="makeDf2(ufo1: nimdf; cols: int = 0; rows: int = -1; hasHeader: bool = false): nimdf"><wbr />make<wbr />Df2<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#rotateDf,nimdf,int,bool"
     title="rotateDf(ufo1: nimdf; cols: int = 0; hasHeader: bool = false): nimdf"><wbr />rotate<wbr />Df<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#getTotalHeaderColsWitdh,nimdf"
     title="getTotalHeaderColsWitdh(df: nimdf): int"><wbr />get<wbr />Total<wbr />Header<wbr />Cols<wbr />Witdh<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
-  <li><a class="reference" href="#showHeader,nimdf"
-    title="showHeader(df: nimdf)"><wbr />show<wbr />Header<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#showRaw,nimdf,openArray[T]"
+    title="showRaw[T](df: nimdf; rrows: openArray[T])"><wbr />show<wbr />Raw<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#showFirstLast,nimdf,int"
+    title="showFirstLast(df: nimdf; nrows: int = 5)"><wbr />show<wbr />First<wbr />Last<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#showHeaderStatus,nimdf"
+    title="showHeaderStatus(df: nimdf)"><wbr />show<wbr />Header<wbr />Status<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#showCounts,nimdf"
     title="showCounts(df: nimdf)"><wbr />show<wbr />Counts<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#colFitMax,nimdf,int,int"
@@ -1393,8 +1397,8 @@ function main() {
 <p>License     : MIT opensource</p>
 <p>Version     : 0.0.4</p>
 <p>ProjectStart: 2016-09-16</p>
-<p>Latest      : 2017-12-03</p>
-<p>Compiler    : Nim &gt;= 0.17.2</p>
+<p>Latest      : 2017-12-17</p>
+<p>Compiler    : Nim &gt;= 0.17.3</p>
 <p>OS          : Linux</p>
 <p>Description :</p>
 <blockquote><p><p>simple dataframe</p>
@@ -1558,8 +1562,8 @@ function main() {
 
 
 </dd>
-<dt id="makeDf2"><a name="makeDf2,nimdf,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">makeDf2</span><span class="Other">(</span><span class="Identifier">ufo1</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">hasHeader</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span>
-    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
+<dt id="makeDf2"><a name="makeDf2,nimdf,int,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">makeDf2</span><span class="Other">(</span><span class="Identifier">ufo1</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">rows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">hasHeader</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
     <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -1582,12 +1586,23 @@ function main() {
 
 
 </dd>
-<dt id="showHeader"><a name="showHeader,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showHeader</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="showRaw"><a name="showRaw,nimdf,openArray[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRaw</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">rrows</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
-<p>showHeader</p>
-<p>shows first 2 lines of df incl. headers if any of dataframe </p>
+<p>showRaw</p>
+<p>needs a df object and a seq with two values the first being the startrow the second the end row to show if you need to return rows see getRowDataRange()</p>
 
+
+</dd>
+<dt id="showFirstLast"><a name="showFirstLast,nimdf,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showFirstLast</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">nrows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+shows first and last n lines of df incl. headers if any of dataframe
+
+</dd>
+<dt id="showHeaderStatus"><a name="showHeaderStatus,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showHeaderStatus</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span>
+                                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+showHeaderStatus 
 
 </dd>
 <dt id="showCounts"><a name="showCounts,nimdf"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCounts</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span>
@@ -1834,7 +1849,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-10 10:23:24 UTC</small>
+        <small>Made with Nim. Generated: 2017-12-17 15:43:18 UTC</small>
       </div>
     </div>
   </div>
