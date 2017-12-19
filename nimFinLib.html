@@ -1300,17 +1300,17 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#getData22,string"
     title="getData22(url: string): auto"><wbr />get<wbr />Data22<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#avDatafectcher,string,string,string"
-    title="avDatafectcher(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Datafectcher<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#avDatafectcherIntraday,string,string,string"
-    title="avDatafectcherIntraday(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Datafectcher<wbr />Intraday<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#avDatafetcher,string,string,string"
+    title="avDatafetcher(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Datafetcher<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#avDatafetcherIntraday,string,string,string"
+    title="avDatafetcherIntraday(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Datafetcher<wbr />Intraday<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showRawData,"
     title="showRawData()"><wbr />show<wbr />Raw<wbr />Data<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showOriginalStockDf,string,int,int,bool,string"
     title="showOriginalStockDf(stckcode: string; xpos: int = 3; rows: int = 3; header: bool = false;
                     apikey: string = &quot;demo&quot;): nimdf"><wbr />show<wbr />Original<wbr />Stock<wbr />Df<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#showStocksDf,string,int,bool,string,string"
-    title="showStocksDf(stckcode: string; xpos: int = 3; header: bool = false;
+  <li><a class="reference" href="#showStocksDf,string,int,int,bool,string,string"
+    title="showStocksDf(stckcode: string; rows: int = 3; xpos: int = 3; header: bool = false;
              mode: string = &quot;compact&quot;; apikey: string = &quot;demo&quot;): nimdf"><wbr />show<wbr />Stocks<wbr />Df<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showLocalStocksDf,nimdf,int"
     title="showLocalStocksDf(ndf9: nimdf; xpos: int = 3): nimdf"><wbr />show<wbr />Local<wbr />Stocks<wbr />Df<span class="attachedType" style="visibility:hidden"></span></a></li>
@@ -1435,16 +1435,20 @@ Notes       :
               nimFinlib is being developed utilizing nimcx.nim module and nimdataframe.nim
               
               to improve coloring of data and positioning of output.
-
-
-Funding     : If you are happy or unhappy send any amount of bitcoins you like to a nice wallet :
-              
-              194KWgEcRXHGW5YzH1nGqN75WbfzTs92Xk</pre>
+    
+    
+    Funding     : Here are the options :
+                  
+                  You are happy             ==&gt; send BTC to : 194KWgEcRXHGW5YzH1nGqN75WbfzTs92Xk
+                  
+                  You are not happy         ==&gt; send BTC to : 194KWgEcRXHGW5YzH1nGqN75WbfzTs92Xk
+                  
+                  You are in any other mood ==&gt; send BTC to : 194KWgEcRXHGW5YzH1nGqN75WbfzTs92Xk</pre>
 # Indicators# end indicators        </p>
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
-<a class="reference external" href="os.html">os</a>, <a class="reference external" href="nimcx.html">nimcx</a>, <a class="reference external" href="nimdataframe.html">nimdataframe</a>, <a class="reference external" href="parseutils.html">parseutils</a>, <a class="reference external" href="net.html">net</a>, <a class="reference external" href="tables.html">tables</a>, <a class="reference external" href="parsecsv.html">parsecsv</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="math.html">math</a>, <a class="reference external" href="unicode.html">unicode</a>, <a class="reference external" href="stats.html">stats</a>, <a class="reference external" href="nre.html">nre</a>
+<a class="reference external" href="os.html">os</a>, <a class="reference external" href="nimcx.html">nimcx</a>, <a class="reference external" href="nimdataframe.html">nimdataframe</a>, <a class="reference external" href="parseutils.html">parseutils</a>, <a class="reference external" href="net.html">net</a>, <a class="reference external" href="tables.html">tables</a>, <a class="reference external" href="parsecsv.html">parsecsv</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="math.html">math</a>, <a class="reference external" href="unicode.html">unicode</a>, <a class="reference external" href="stats.html">stats</a>, <a class="reference external" href="nre.html">nre</a>, <a class="reference external" href="av_utils.html">av_utils</a>
 </dl></div>
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
@@ -1536,23 +1540,23 @@ Stocks type holds individual stocks history data and RunningStat for ohlcva colu
 getData 
 
 </dd>
-<dt id="avDatafectcher"><a name="avDatafectcher,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">avDatafectcher</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
+<dt id="avDatafetcher"><a name="avDatafetcher,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">avDatafetcher</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
     <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-avDatafectcher fetches data from alphavantage default = compact   abt 100 records if available option  = full      all available records Note : first row is real time if markets are open data will be written into /dev/shm/avdata.csv  ..<table frame="void"><tr><th align="left">/dev/shm temporary filesystem location may not be available on every distribution</th><td align="left"></td>
+avDatafetcher fetches data from alphavantage default = compact   abt 100 records if available option  = full      all available records Note : first row is real time if markets are open data will be written into /dev/shm/avdata.csv  ..<table frame="void"><tr><th align="left">/dev/shm temporary filesystem location may not be available on every distribution</th><td align="left"></td>
 </tr>
 </table><p>change accordingly or write to a disc location </p>
 
 
 </dd>
-<dt id="avDatafectcherIntraday"><a name="avDatafectcherIntraday,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">avDatafectcherIntraday</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
+<dt id="avDatafetcherIntraday"><a name="avDatafetcherIntraday,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">avDatafetcherIntraday</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
     <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-avDatafectcher fetches data from alphavantage default = compact   abt 100 records if available option  = full      all available records Note : first row is real time if markets are open data will be written into /dev/shm/avdata.csv  ..<table frame="void"><tr><th align="left">/dev/shm temporary filesystem location may not be available on every distribution</th><td align="left"></td>
+avDatafetcher fetches data from alphavantage default = compact   abt 100 records if available option  = full      all available records Note : first row is real time if markets are open data will be written into /dev/shm/avdata.csv  ..<table frame="void"><tr><th align="left">/dev/shm temporary filesystem location may not be available on every distribution</th><td align="left"></td>
 </tr>
 </table><p>change accordingly or write to a disc location </p>
 
@@ -1580,7 +1584,7 @@ avDatafectcher fetches data from alphavantage default = compact   abt 100 record
 
 
 </dd>
-<dt id="showStocksDf"><a name="showStocksDf,string,int,bool,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStocksDf</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+<dt id="showStocksDf"><a name="showStocksDf,string,int,int,bool,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStocksDf</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">rows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
                  <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;demo&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
     <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">CsvError</span><span class="Other">]</span><span class="Other">,</span>
@@ -1736,7 +1740,7 @@ getavBBANDS fetches data from alphavantage Note : first row is real time if mark
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-03 22:45:19 UTC</small>
+        <small>Made with Nim. Generated: 2017-12-19 22:47:43 UTC</small>
       </div>
     </div>
   </div>
