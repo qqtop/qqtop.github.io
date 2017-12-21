@@ -1511,13 +1511,13 @@ function main() {
 <li><a class="reference external" href="cx.html#colconv.c,string">cx : colconv(cx: string): string</a></li>
           </ul></dd>
 <dt><a name="color38" href="#color38"><span>color38:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cx.html#color38,">cx : color38(): int</a></li>
+<li><a class="reference external" href="cx.html#color38,seq%5Bstring%5D">cx : color38(cxTrueCol: seq[string]): int</a></li>
           </ul></dd>
 <dt><a name="color3848" href="#color3848"><span>color3848:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cx.html#color3848,">cx : color3848(): int</a></li>
+<li><a class="reference external" href="cx.html#color3848,seq%5Bstring%5D">cx : color3848(cxTrueCol: seq[string]): int</a></li>
           </ul></dd>
 <dt><a name="color48" href="#color48"><span>color48:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cx.html#color48,">cx : color48(): int</a></li>
+<li><a class="reference external" href="cx.html#color48,seq%5Bstring%5D">cx : color48(cxTrueCol: seq[string]): int</a></li>
           </ul></dd>
 <dt><a name="colorio" href="#colorio"><span>colorio:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#colorio,">cx : colorio()</a></li>
@@ -1756,9 +1756,6 @@ function main() {
           </ul></dd>
 <dt><a name="cxtoLower" href="#cxtoLower"><span>cxtoLower:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#cxtoLower,char">cx : cxtoLower(c: char): char</a></li>
-          </ul></dd>
-<dt><a name="cxTrueColorSet" href="#cxTrueColorSet"><span>cxTrueColorSet:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cx.html#cxTrueColorSet,int,int">cx : cxTrueColorSet(max: int = 888; step: int = 12): seq[string]</a></li>
           </ul></dd>
 <dt><a name="cxu" href="#cxu"><span>cxu:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#cxu.t,int,string,string">cx : cxu(npos: int = 0; col: string = randcol(); coltop: string = randcol())</a></li>
@@ -2040,6 +2037,9 @@ function main() {
           </ul></dd>
 <dt><a name="getColorName" href="#getColorName"><span>getColorName:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#getColorName,T">cx : getColorName[T](sc: T): string</a></li>
+          </ul></dd>
+<dt><a name="getCxTrueColorSet" href="#getCxTrueColorSet"><span>getCxTrueColorSet:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cx.html#getCxTrueColorSet,int,int">cx : getCxTrueColorSet(max: int = 888; step: int = 12): auto</a></li>
           </ul></dd>
 <dt><a name="getFirstMondayYear" href="#getFirstMondayYear"><span>getFirstMondayYear:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxutils.html#getFirstMondayYear,string">cxutils : getFirstMondayYear(ayear: string): string</a></li>
@@ -2383,8 +2383,8 @@ function main() {
 <dt><a name="nbx" href="#nbx"><span>nbx:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxutils.html#nbx">cxutils : nbx</a></li>
           </ul></dd>
-<dt><a name="newCxcounter" href="#newCxcounter"><span>newCxcounter:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cx.html#newCxcounter,">cx : newCxcounter(): ref (Cxcounter)</a></li>
+<dt><a name="newCxCounter" href="#newCxCounter"><span>newCxCounter:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cx.html#newCxCounter,">cx : newCxCounter(): ref (Cxcounter)</a></li>
           </ul></dd>
 <dt><a name="newCxtimer" href="#newCxtimer"><span>newCxtimer:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#newCxtimer,string">cx : newCxtimer(aname: string = &quot;cxtimer&quot;): ref (CxTimer)</a></li>
@@ -3174,7 +3174,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-19 22:40:54 UTC</small>
+        <small>Made with Nim. Generated: 2017-12-21 21:52:14 UTC</small>
       </div>
     </div>
   </div>
