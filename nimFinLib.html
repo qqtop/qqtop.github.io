@@ -1243,11 +1243,11 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#Portfolio"
     title="Portfolio = object
-  nx*: string                  ## nx  holds portfolio name  e.g. MyGetRichPortfolio
-  dx*: seq[Stocks]             ## dx  holds all stocks with historical data"><wbr />Portfolio<span class="attachedType" style="visibility:hidden"></span></a></li>
+  pfname*: string              ## nx  holds portfolio name  e.g. MyGetRichPortfolio
+  pfdata*: seq[Stocks]         ## dx  holds all stocks with historical data"><wbr />Portfolio<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#Account"
     title="Account = object
-  pf*: seq[Portfolio]          ## pf holds all Portfolio type portfolios for an account"><wbr />Account<span class="attachedType" style="visibility:hidden"></span></a></li>
+  apf*: seq[Portfolio]         ## pf holds all Portfolio type portfolios for an account"><wbr />Account<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#Stocks"
     title="Stocks = object of Portfolio
   stock*: string               ## yahoo style stock code ok with alpha vantage api
@@ -1369,7 +1369,7 @@ Version     : 0.3.0.0
 Compiler    : nim 0.17.x  dev branch
 
 
-Description : A basic library for financial calculations with Nim
+Description : A basic library for financial data display and calculations
               
               using data from Alpha Vantage API
               
@@ -1379,13 +1379,13 @@ Description : A basic library for financial calculations with Nim
               
               Dataframe like objects for easy working with current and historical data
               
-              EMA,SMA,WMA,RSI,WILLR,BBANDS Indicator   # Note may not be available for all stocks/markets
+              EMA,SMA,WMA,RSI,WILLR,BBANDS Indicator   #  may not yet be available for all stocks/markets
               
               Returns calculations
               
               Data display procs
               
-              Simple plotting (planned )
+              Simple plotting available via gnuplot
               
               Dataframe save/reload complete with display parameters
               
@@ -1394,24 +1394,14 @@ Description : A basic library for financial calculations with Nim
               Portfolio management ( Random portfolio , User portfolio )
 
 
-
 Project     :  https://github.com/qqtop/NimFinLib
 
 Tested on   :  Linux
 
 ProjectStart: 2015-06-05
 
-Latest      : 2017-12-03
+Latest      : 2017-12-21
 
-NOTE        : In the future coding will be : I am thinking of it , now do it.
-              After which your computer is supposed to produce bugfree code, successfully compiles , runs tests and
-              generates documentation all by itself , while you enjoy the day.
-              In the meantime we use NIM according to the motto:
-              faster , better , more efficient
-              schneller , besser,  rationeller
-              更快，更好，更高效
-              より速く、より良く、より効率的に
-              lebih cepat, lebih baik, lebih efisien
 
 Todo        : anything not yet done
 
@@ -1429,21 +1419,20 @@ Installation:
               nimble install nimFinLib
 
 
-
 Notes       :
               
               nimFinlib is being developed utilizing nimcx.nim module and nimdataframe.nim
               
               to improve coloring of data and positioning of output.
-    
-    
-    Funding     : Here are the options :
+
+
+Funding     :     Here are the options :
                   
                   You are happy             ==&gt; send BTC to : 194KWgEcRXHGW5YzH1nGqN75WbfzTs92Xk
                   
                   You are not happy         ==&gt; send BTC to : 194KWgEcRXHGW5YzH1nGqN75WbfzTs92Xk
                   
-                  You are in any other mood ==&gt; send BTC to : 194KWgEcRXHGW5YzH1nGqN75WbfzTs92Xk</pre>
+                  You wish to donate        ==&gt; send BTC to : 194KWgEcRXHGW5YzH1nGqN75WbfzTs92Xk</pre>
 # Indicators# end indicators        </p>
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
@@ -1454,18 +1443,23 @@ Notes       :
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
 <dt id="Portfolio"><a name="Portfolio"></a><pre><span class="Identifier">Portfolio</span> <span class="Other">=</span> <span class="Keyword">object</span>
-  <span class="Identifier">nx</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>                  <span class="Comment">## nx  holds portfolio name  e.g. MyGetRichPortfolio</span>
-  <span class="Identifier">dx</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Stocks</span><span class="Other">]</span>             <span class="Comment">## dx  holds all stocks with historical data</span>
+  <span class="Identifier">pfname</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>              <span class="Comment">## nx  holds portfolio name  e.g. MyGetRichPortfolio</span>
+  <span class="Identifier">pfdata</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Stocks</span><span class="Other">]</span>         <span class="Comment">## dx  holds all stocks with historical data</span>
   </pre></dt>
 <dd>
-Portfolio type holds one portfolio with all relevant historic stocks data
+<p>Portfolio type</p>
+<p>holds one portfolio with all relevant historic stocks data </p>
+
 
 </dd>
 <dt id="Account"><a name="Account"></a><pre><span class="Identifier">Account</span> <span class="Other">=</span> <span class="Keyword">object</span>
-  <span class="Identifier">pf</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Portfolio</span><span class="Other">]</span>          <span class="Comment">## pf holds all Portfolio type portfolios for an account</span>
+  <span class="Identifier">apf</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">Portfolio</span><span class="Other">]</span>         <span class="Comment">## pf holds all Portfolio type portfolios for an account</span>
   </pre></dt>
 <dd>
-Account type holds all portfolios similar to a master account portfolios are Portfolio objects
+<p>Account type</p>
+<p>holds all portfolios similar to a master account</p>
+<p>portfolios are Portfolio objects </p>
+
 
 </dd>
 <dt id="Stocks"><a name="Stocks"></a><pre><span class="Identifier">Stocks</span> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Keyword">of</span> <span class="Identifier">Portfolio</span>
@@ -1485,7 +1479,11 @@ Account type holds all portfolios similar to a master account portfolios are Por
   <span class="Identifier">rca</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">RunningStat</span><span class="Other">]</span>       <span class="Comment">## RunningStat for adjusted close price</span>
   </pre></dt>
 <dd>
-Stocks type holds individual stocks history data and RunningStat for ohlcva columns even more items may be added like full company name etc in the future items are stock code, ohlcva, rc and rca .
+<p>Stocks type</p>
+<p>holds individual stocks history data and RunningStat for ohlcva columns</p>
+<p>even more items may be added like full company name etc in the future</p>
+<p>items are stock code, ohlcva, rc and rca . </p>
+
 
 </dd>
 
@@ -1545,7 +1543,13 @@ getData
     <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-avDatafetcher fetches data from alphavantage default = compact   abt 100 records if available option  = full      all available records Note : first row is real time if markets are open data will be written into /dev/shm/avdata.csv  ..<table frame="void"><tr><th align="left">/dev/shm temporary filesystem location may not be available on every distribution</th><td align="left"></td>
+<p>avDatafetcher</p>
+<p>fetches data from alphavantage</p>
+<p>default = compact   will fetch abt 100 records if available</p>
+<p>option  = full      all available records</p>
+<p>Note : first row is real time if markets are open</p>
+<p>data will be written into /dev/shm/avdata.csv  ..</p>
+<table frame="void"><tr><th align="left">/dev/shm temporary filesystem location may not be available on every distribution</th><td align="left"></td>
 </tr>
 </table><p>change accordingly or write to a disc location </p>
 
@@ -1556,7 +1560,13 @@ avDatafetcher fetches data from alphavantage default = compact   abt 100 records
     <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-avDatafetcher fetches data from alphavantage default = compact   abt 100 records if available option  = full      all available records Note : first row is real time if markets are open data will be written into /dev/shm/avdata.csv  ..<table frame="void"><tr><th align="left">/dev/shm temporary filesystem location may not be available on every distribution</th><td align="left"></td>
+<p>avDatafetcher</p>
+<p>fetches data from alphavantage</p>
+<p>default = compact   abt 100 records if available</p>
+<p>option  = full      all available records</p>
+<p>Note : first row is real time if markets are open</p>
+<p>data will be written into /dev/shm/avdata.csv  ..</p>
+<table frame="void"><tr><th align="left">/dev/shm temporary filesystem location may not be available on every distribution</th><td align="left"></td>
 </tr>
 </table><p>change accordingly or write to a disc location </p>
 
@@ -1580,7 +1590,7 @@ avDatafetcher fetches data from alphavantage default = compact   abt 100 records
 <dd>
 <p>showOriginalStockData</p>
 <p>using TIME_SERIES_INTRADAY 1 min  DATA   # this will be selectable in the future in respect of time_series and interval</p>
-<p>first data row maybe realtime if markets online here we always fetch fresh data </p>
+<p>first data row maybe realtime if markets online , we always fetch fresh data </p>
 
 
 </dd>
@@ -1591,7 +1601,8 @@ avDatafetcher fetches data from alphavantage default = compact   abt 100 records
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showStocksDf</p>
-<p>a display routine with some more information data is freshly downloaded </p>
+<p>a display routine with some more information</p>
+<p>data is freshly downloaded </p>
 
 
 </dd>
@@ -1600,7 +1611,8 @@ avDatafetcher fetches data from alphavantage default = compact   abt 100 records
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showLocalStocksDf</p>
-<p>used to display a df which already exists or has been loaded via dfLoad with all parameters pre specified</p>
+<p>used to display a df which already exists or has been loaded via dfLoad</p>
+<p>with all parameters pre specified</p>
 
 
 </dd>
@@ -1612,7 +1624,13 @@ avDatafetcher fetches data from alphavantage default = compact   abt 100 records
     <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-getavSMA fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low
+<p>getavSMA</p>
+<p>fetches data from alphavantage</p>
+<p>Note : first row is real time if markets are open</p>
+<p>interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly</p>
+<p>timeperiod : time_period=60, time_period=200  etc.</p>
+<p>seriestype : close, open, high, low </p>
+
 
 </dd>
 <dt id="getavWMA"><a name="getavWMA,string,string,string,string,string,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getavWMA</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span> <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span>
@@ -1623,7 +1641,13 @@ getavSMA fetches data from alphavantage Note : first row is real time if markets
     <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-getavWMA fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low
+<p>getavWMA</p>
+<p>fetches data from alphavantage</p>
+<p>Note : first row is real time if markets are open</p>
+<p>interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly</p>
+<p>timeperiod : time_period=60, time_period=200  etc.</p>
+<p>seriestype : close, open, high, low </p>
+
 
 </dd>
 <dt id="getavEMA"><a name="getavEMA,string,string,string,string,string,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getavEMA</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span> <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span>
@@ -1634,7 +1658,13 @@ getavWMA fetches data from alphavantage Note : first row is real time if markets
     <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-getavEMA fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low
+<p>getavEMA</p>
+<p>fetches data from alphavantage</p>
+<p>Note : first row is real time if markets are open</p>
+<p>interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly</p>
+<p>timeperiod : time_period=60, time_period=200  etc.</p>
+<p>seriestype : close, open, high, low </p>
+
 
 </dd>
 <dt id="getavRSI"><a name="getavRSI,string,string,string,string,string,int,bool,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getavRSI</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span> <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span>
@@ -1740,7 +1770,7 @@ getavBBANDS fetches data from alphavantage Note : first row is real time if mark
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-19 22:51:36 UTC</small>
+        <small>Made with Nim. Generated: 2017-12-21 21:50:30 UTC</small>
       </div>
     </div>
   </div>
