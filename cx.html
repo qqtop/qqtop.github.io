@@ -1260,6 +1260,22 @@ function main() {
   <li><a class="reference" href="#Cxcounter"
     title="Cxcounter = object
   value*: int"><wbr />Cxcounter<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#Cxline"
+    title="Cxline = object
+  startpos*: int
+  endpos*: int
+  text*: string
+  textcolor*: string
+  textstyle*: set[Style]
+  textpos*: int
+  textbracketopen*: string
+  textbracketclose*: string
+  textbracketcolor*: string
+  linecolor*: string
+  linechar*: string
+  dotleftcolor*: string
+  dotrightcolor*: string
+  newline*: string"><wbr />Cxline<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1300,6 +1316,8 @@ function main() {
     title="dec(co: ref Cxcounter)"><wbr />dec<span class="attachedType" style="visibility:hidden">Cxcounter</span></a></li>
   <li><a class="reference" href="#reset,ref.Cxcounter"
     title="reset(co: ref Cxcounter)"><wbr />reset<span class="attachedType" style="visibility:hidden">Cxcounter</span></a></li>
+  <li><a class="reference" href="#newcxline,"
+    title="newcxline(): Cxline"><wbr />newcxline<span class="attachedType" style="visibility:hidden">Cxline</span></a></li>
   <li><a class="reference" href="#waitOn,int"
     title="waitOn(alen: int = 1)"><wbr />wait<wbr />On<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rndSample,seq[T]"
@@ -1415,6 +1433,8 @@ function main() {
     title="cecho(col: string; ggg: varargs[string, `$`] = @[&quot;&quot;])"><wbr />cecho<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cechoLn,string,varargs[string,]"
     title="cechoLn(col: string; astring: varargs[string, `$`] = @[&quot;&quot;])"><wbr />cecho<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printCxLine,Cxline"
+    title="printCxLine(aline: var Cxline)"><wbr />print<wbr />Cx<wbr />Line<span class="attachedType" style="visibility:hidden">Cxline</span></a></li>
   <li><a class="reference" href="#showColors,"
     title="showColors()"><wbr />show<wbr />Colors<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#doty,int,string,string,int"
@@ -1866,7 +1886,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-12-21
+Latest      : 2017-12-22
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -2000,6 +2020,26 @@ Funding     : Here are the options :
 
 
 </dd>
+<dt id="Cxline"><a name="Cxline"></a><pre><span class="Identifier">Cxline</span> <span class="Other">=</span> <span class="Keyword">object</span>
+  <span class="Identifier">startpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+  <span class="Identifier">endpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+  <span class="Identifier">text</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">textcolor</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">textstyle</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span>
+  <span class="Identifier">textpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+  <span class="Identifier">textbracketopen</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">textbracketclose</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">textbracketcolor</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">linecolor</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">linechar</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">dotleftcolor</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">dotrightcolor</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">newline</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+</pre></dt>
+<dd>
+
+
+</dd>
 
 </dl></div>
 <div class="section" id="8">
@@ -2060,6 +2100,11 @@ Funding     : Here are the options :
 
 </dd>
 <dt id="reset"><a name="reset,ref.Cxcounter"></a><pre><span class="Keyword">proc</span> <span class="Identifier">reset</span><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Identifier">Cxcounter</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="newcxline"><a name="newcxline,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newcxline</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Cxline</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
@@ -2642,6 +2687,14 @@ forward declaration
 <p>in your exisiting projects.</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Identifier">cechoLn</span><span class="Punctuation">(</span><span class="Identifier">steelblue</span><span class="Punctuation">,</span><span class="StringLit">&quot;We made it in $1 hours !&quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">5</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="printCxLine"><a name="printCxLine,Cxline"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printCxLine</span><span class="Other">(</span><span class="Identifier">aline</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">Cxline</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                                  <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>printCxLine</p>
+<p>prints a horizontal line for frames with text as specified in an Cxline object see cxlineobjectE1.nim for an example </p>
+
 
 </dd>
 <dt id="showColors"><a name="showColors,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showColors</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
@@ -4378,7 +4431,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-21 21:52:12 UTC</small>
+        <small>Made with Nim. Generated: 2017-12-23 21:43:13 UTC</small>
       </div>
     </div>
   </div>
