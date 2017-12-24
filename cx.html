@@ -1286,6 +1286,8 @@ function main() {
     title="benchmarkresults = newSeq(0)"><wbr />benchmarkresults<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxtimerresults"
     title="cxtimerresults = newSeq(0)"><wbr />cxtimerresults<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxTrueCol"
+    title="cxTrueCol = newSeq(0)"><wbr />cx<wbr />True<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1318,6 +1320,10 @@ function main() {
     title="reset(co: ref Cxcounter)"><wbr />reset<span class="attachedType" style="visibility:hidden">Cxcounter</span></a></li>
   <li><a class="reference" href="#newcxline,"
     title="newcxline(): Cxline"><wbr />newcxline<span class="attachedType" style="visibility:hidden">Cxline</span></a></li>
+  <li><a class="reference" href="#getTerminalWidth,"
+    title="getTerminalWidth(): int"><wbr />get<wbr />Terminal<wbr />Width<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getTerminalHeight,"
+    title="getTerminalHeight(): int"><wbr />get<wbr />Terminal<wbr />Height<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#waitOn,int"
     title="waitOn(alen: int = 1)"><wbr />wait<wbr />On<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rndSample,seq[T]"
@@ -1329,7 +1335,7 @@ function main() {
   <li><a class="reference" href="#sampleSeq,seq[T],int,int"
     title="sampleSeq[T](x: seq[T]; a: int; b: int): seq[T]"><wbr />sample<wbr />Seq<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#checkTrueColorSupport,"
-    title="checkTrueColorSupport(): string"><wbr />check<wbr />True<wbr />Color<wbr />Support<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="checkTrueColorSupport(): bool"><wbr />check<wbr />True<wbr />Color<wbr />Support<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxtoLower,char"
     title="cxtoLower(c: char): char"><wbr />cxto<wbr />Lower<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getCxTrueColorSet,int,int"
@@ -1350,10 +1356,6 @@ function main() {
     title="getRndInt(mi: int = 0; ma: int = int.high): int"><wbr />get<wbr />Rnd<wbr />Int<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getRndBool,"
     title="getRndBool(): bool"><wbr />get<wbr />Rnd<wbr />Bool<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#getTerminalWidth,"
-    title="getTerminalWidth(): int"><wbr />get<wbr />Terminal<wbr />Width<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#getTerminalHeight,"
-    title="getTerminalHeight(): int"><wbr />get<wbr />Terminal<wbr />Height<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#isBlank,string"
     title="isBlank(val: string): bool"><wbr />is<wbr />Blank<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#isEmpty,string"
@@ -1670,6 +1672,8 @@ function main() {
     title="infoLine()"><wbr />info<wbr />Line<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#doByeBye,"
     title="doByeBye()"><wbr />do<wbr />Bye<wbr />Bye<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#showCxTrueColorPalette,int,int"
+    title="showCxTrueColorPalette(max: int = 888; step: int = 12)"><wbr />show<wbr />Cx<wbr />True<wbr />Color<wbr />Palette<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#theEnd,"
     title="theEnd()"><wbr />the<wbr />End<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#doFinish,"
@@ -1706,7 +1710,11 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#<>.t,untyped,untyped"
+      <li><a class="reference" href="#tw.t,"
+    title="tw(): int"><wbr />tw<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#th.t,"
+    title="th(): int"><wbr />th<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#<>.t,untyped,untyped"
     title="`&lt;&gt;`(a, b: untyped): untyped"><wbr />`&lt;&gt;`<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#loopy.t,T,untyped"
     title="loopy[T](ite: T; st: untyped)"><wbr />loopy<span class="attachedType" style="visibility:hidden"></span></a></li>
@@ -1736,10 +1744,6 @@ function main() {
     title="rndCol(r: int = getRndInt(0, 254); g: int = getRndInt(0, 254); b: int = getRndInt(0, 254)): string"><wbr />rnd<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#randPastelCol.t,"
     title="randPastelCol(): string"><wbr />rand<wbr />Pastel<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#tw.t,"
-    title="tw(): int"><wbr />tw<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#th.t,"
-    title="th(): int"><wbr />th<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#upperCase.t,string"
     title="upperCase(s: string): string"><wbr />upper<wbr />Case<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#lowerCase.t,string"
@@ -1886,7 +1890,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-12-22
+Latest      : 2017-12-24
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -1973,7 +1977,7 @@ Funding     : Here are the options :
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
-<a class="reference external" href="times.html">times</a>, <a class="reference external" href="random.html">random</a>, <a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="os.html">os</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="strformat.html">strformat</a>, <a class="reference external" href="parseutils.html">parseutils</a>, <a class="reference external" href="parseopt.html">parseopt</a>, <a class="reference external" href="hashes.html">hashes</a>, <a class="reference external" href="tables.html">tables</a>, <a class="reference external" href="sets.html">sets</a>, <a class="reference external" href="strmisc.html">strmisc</a>, <a class="reference external" href="osproc.html">osproc</a>, <a class="reference external" href="macros.html">macros</a>, <a class="reference external" href="posix.html">posix</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="math.html">math</a>, <a class="reference external" href="stats.html">stats</a>, <a class="reference external" href="json.html">json</a>, <a class="reference external" href="streams.html">streams</a>, <a class="reference external" href="options.html">options</a>, <a class="reference external" href="memfiles.html">memfiles</a>, <a class="reference external" href="sequtils.html">sequtils</a>, <a class="reference external" href="httpclient.html">httpclient</a>, <a class="reference external" href="rawsockets.html">rawsockets</a>, <a class="reference external" href="browsers.html">browsers</a>, <a class="reference external" href="intsets.html">intsets</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="unicode.html">unicode</a>, <a class="reference external" href="typeinfo.html">typeinfo</a>, <a class="reference external" href="typetraits.html">typetraits</a>, <a class="reference external" href="cpuinfo.html">cpuinfo</a>, <a class="reference external" href="colors.html">colors</a>, <a class="reference external" href="encodings.html">encodings</a>, <a class="reference external" href="distros.html">distros</a>
+<a class="reference external" href="times.html">times</a>, <a class="reference external" href="random.html">random</a>, <a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="os.html">os</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="strformat.html">strformat</a>, <a class="reference external" href="parseutils.html">parseutils</a>, <a class="reference external" href="parseopt.html">parseopt</a>, <a class="reference external" href="hashes.html">hashes</a>, <a class="reference external" href="tables.html">tables</a>, <a class="reference external" href="sets.html">sets</a>, <a class="reference external" href="strmisc.html">strmisc</a>, <a class="reference external" href="osproc.html">osproc</a>, <a class="reference external" href="macros.html">macros</a>, <a class="reference external" href="posix.html">posix</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="math.html">math</a>, <a class="reference external" href="stats.html">stats</a>, <a class="reference external" href="json.html">json</a>, <a class="reference external" href="streams.html">streams</a>, <a class="reference external" href="options.html">options</a>, <a class="reference external" href="memfiles.html">memfiles</a>, <a class="reference external" href="sequtils.html">sequtils</a>, <a class="reference external" href="httpclient.html">httpclient</a>, <a class="reference external" href="rawsockets.html">rawsockets</a>, <a class="reference external" href="browsers.html">browsers</a>, <a class="reference external" href="intsets.html">intsets</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="stats.html">stats</a>, <a class="reference external" href="unicode.html">unicode</a>, <a class="reference external" href="typeinfo.html">typeinfo</a>, <a class="reference external" href="typetraits.html">typetraits</a>, <a class="reference external" href="cpuinfo.html">cpuinfo</a>, <a class="reference external" href="colors.html">colors</a>, <a class="reference external" href="encodings.html">encodings</a>, <a class="reference external" href="distros.html">distros</a>
 </dl></div>
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
@@ -2055,6 +2059,11 @@ Funding     : Here are the options :
 
 
 </dd>
+<dt id="cxTrueCol"><a name="cxTrueCol"></a><pre><span class="Identifier">cxTrueCol</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
 
 </dl></div>
 <div class="section" id="9">
@@ -2109,6 +2118,20 @@ Funding     : Here are the options :
 
 
 </dd>
+<dt id="getTerminalWidth"><a name="getTerminalWidth,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalWidth</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>getTerminalWidth</p>
+<p>get linux terminal width in columns a terminalwidth function is now incorporated in Nim dev after 2016-09-02 which maybe is slightly slower than the one presented here </p>
+
+
+</dd>
+<dt id="getTerminalHeight"><a name="getTerminalHeight,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalHeight</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>getTerminalHeight</p>
+<p>get linux terminal height in rows </p>
+
+
+</dd>
 <dt id="waitOn"><a name="waitOn,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">waitOn</span><span class="Other">(</span><span class="Identifier">alen</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>waiton</p>
@@ -2143,7 +2166,7 @@ rndSample returns one rand sample from a sequence
 <span class="Identifier">echo</span> <span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">8</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">rndSample</span><span class="Punctuation">(</span><span class="Punctuation">)</span>    <span class="Comment"># get one randly selected value from the subsequence</span></pre>
 
 </dd>
-<dt id="checkTrueColorSupport"><a name="checkTrueColorSupport,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkTrueColorSupport</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="checkTrueColorSupport"><a name="checkTrueColorSupport,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkTrueColorSupport</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
@@ -2225,20 +2248,6 @@ rndSample returns one rand sample from a sequence
 </dd>
 <dt id="getRndBool"><a name="getRndBool,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRndBool</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-
-
-</dd>
-<dt id="getTerminalWidth"><a name="getTerminalWidth,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalWidth</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>getTerminalWidth</p>
-<p>get linux terminal width in columns a terminalwidth function is now incorporated in Nim dev after 2016-09-02 which maybe is slightly slower than the one presented here </p>
-
-
-</dd>
-<dt id="getTerminalHeight"><a name="getTerminalHeight,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalHeight</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>getTerminalHeight</p>
-<p>get linux terminal height in rows </p>
 
 
 </dd>
@@ -3755,6 +3764,18 @@ printNimcx<blockquote><p>experiments in block font building , default is center 
 
 
 </dd>
+<dt id="showCxTrueColorPalette"><a name="showCxTrueColorPalette,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCxTrueColorPalette</span><span class="Other">(</span><span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>showTrueColorPalette</p>
+<p>play with truecolors</p>
+<p>shows truecolors ,in order not run out of memory adjust max and sep carefully e.g max 888 step 4 needs abt 4.3 GB free and has  22,179,134 color shades to select from default has 843,750 palette entries in cxTruecCol</p>
+<p>cxTrueCol is a initial empty global defined in cx.nim which will only be filled with a call to getCxTrueColorSet() ,also see there how the Palette is build up</p>
+<p>press ctrl-c if showTrueColorPalette runs too long .... </p>
+
+
+</dd>
 <dt id="theEnd"><a name="theEnd,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">theEnd</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
               <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -3837,6 +3858,16 @@ echoType by @yardanico
 <div class="section" id="18">
 <h1><a class="toc-backref" href="#18">Templates</a></h1>
 <dl class="item">
+<dt id="tw"><a name="tw.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">tw</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dd>
+latest terminal width always available in tw
+
+</dd>
+<dt id="th"><a name="th.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">th</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
+<dd>
+latest terminalheight always available in th
+
+</dd>
 <dt id="<>"><a name="<>.t,untyped,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">`&lt;&gt;`</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 unequal operator
@@ -3970,16 +4001,6 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 <p>get a randcolor from pastelSet</p>
 <pre class="listing"><span class="Comment"># print a string 6 times in a rand color selected from pastelSet</span>
 <span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello Random Color&quot;</span><span class="Punctuation">,</span><span class="Identifier">randPastelCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<dt id="tw"><a name="tw.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">tw</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
-<dd>
-latest terminal width always available in tw
-
-</dd>
-<dt id="th"><a name="th.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">th</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
-<dd>
-latest terminalheight always available in th
 
 </dd>
 <dt id="upperCase"><a name="upperCase.t,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">upperCase</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
@@ -4431,7 +4452,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-23 21:43:13 UTC</small>
+        <small>Made with Nim. Generated: 2017-12-24 17:52:44 UTC</small>
       </div>
     </div>
   </div>
