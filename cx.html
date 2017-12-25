@@ -1288,6 +1288,10 @@ function main() {
     title="cxtimerresults = newSeq(0)"><wbr />cxtimerresults<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxTrueCol"
     title="cxTrueCol = newSeq(0)"><wbr />cx<wbr />True<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#colorNumber38"
+    title="colorNumber38 = 0"><wbr />color<wbr />Number38<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#colorNumber48"
+    title="colorNumber48 = 1"><wbr />color<wbr />Number48<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1339,13 +1343,17 @@ function main() {
   <li><a class="reference" href="#cxtoLower,char"
     title="cxtoLower(c: char): char"><wbr />cxto<wbr />Lower<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getCxTrueColorSet,int,int"
-    title="getCxTrueColorSet(max: int = 888; step: int = 12): auto"><wbr />get<wbr />Cx<wbr />True<wbr />Color<wbr />Set<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="getCxTrueColorSet(max: int = 888; step: int = 12): bool"><wbr />get<wbr />Cx<wbr />True<wbr />Color<wbr />Set<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#color38,seq[string]"
     title="color38(cxTrueCol: seq[string]): int"><wbr />color38<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#color48,seq[string]"
     title="color48(cxTrueCol: seq[string]): int"><wbr />color48<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#color3848,seq[string]"
     title="color3848(cxTrueCol: seq[string]): int"><wbr />color3848<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#rndTrueCol,"
+    title="rndTrueCol(): auto"><wbr />rnd<wbr />True<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#rndTrueCol2,"
+    title="rndTrueCol2(): auto"><wbr />rnd<wbr />True<wbr />Col2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#stripper,string"
     title="stripper(str: string): string"><wbr />stripper<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#streamFile,string,FileMode"
@@ -1378,25 +1386,23 @@ function main() {
     title="centerPos(astring: string)"><wbr />center<wbr />Pos<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#checkColor,string"
     title="checkColor(colname: string): bool"><wbr />check<wbr />Color<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#print,T,string,string,int,bool,bool,set[Style],string"
-    title="print[T](astring: T; fgr: string = termwhite; bgr: string = bblack; xpos: int = 0;
-         fitLine: bool = false; centered: bool = false; styled: set[Style] = {};
-         substr: string = &quot;&quot;)"><wbr />print<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#print,T,string,BackgroundColor,int,bool,bool,set[Style],string"
-    title="print[T](astring: T; fgr: string = termwhite; bgr: BackgroundColor; xpos: int = 0;
-         fitLine: bool = false; centered: bool = false; styled: set[Style] = {};
-         substr: string = &quot;&quot;)"><wbr />print<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#print,varargs[T,],string,string,int,string"
-    title="print[T](ss: varargs[T, `$`]; fgr: string = termwhite; bgr: string = bblack; xpos: int = 0;
-         sep: string = spaces(1))"><wbr />print<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printLn,T,string,string,int,bool,bool,set[Style],string"
-    title="printLn[T](astring: T; fgr: string = termwhite; bgr: string = bblack; xpos: int = 0;
-           fitLine: bool = false; centered: bool = false; styled: set[Style] = {};
-           substr: string = &quot;&quot;)"><wbr />print<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="print[T](astring: T; fgr: string = termwhite; bgr: BackgroundColor = bgBlack;
+         xpos: int = 0; fitLine: bool = false; centered: bool = false;
+         styled: set[Style] = {}; substr: string = &quot;&quot;)"><wbr />print<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#print2,T,string,int,bool,bool,set[Style],string"
+    title="print2[T](astring: T; fgr: string = termwhite; xpos: int = 0; fitLine: bool = false;
+          centered: bool = false; styled: set[Style] = {}; substr: string = &quot;&quot;)"><wbr />print2<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#print,varargs[T,],string,BackgroundColor,int,string"
+    title="print[T](ss: varargs[T, `$`]; fgr: string = termwhite; bgr: BackgroundColor = bgBlack;
+         xpos: int = 0; sep: string = spaces(1))"><wbr />print<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printLn2,T,string,int,bool,bool,set[Style],string"
+    title="printLn2[T](astring: T; fgr: string = termwhite; xpos: int = 0; fitLine: bool = false;
+            centered: bool = false; styled: set[Style] = {}; substr: string = &quot;&quot;)"><wbr />print<wbr />Ln2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printLn,T,string,BackgroundColor,int,bool,bool,set[Style],string"
-    title="printLn[T](astring: T; fgr: string = termwhite; bgr: BackgroundColor; xpos: int = 0;
-           fitLine: bool = false; centered: bool = false; styled: set[Style] = {};
-           substr: string = &quot;&quot;)"><wbr />print<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="printLn[T](astring: T; fgr: string = termwhite; bgr: BackgroundColor = bgBlack;
+           xpos: int = 0; fitLine: bool = false; centered: bool = false;
+           styled: set[Style] = {}; substr: string = &quot;&quot;)"><wbr />print<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printy,varargs[T,]"
     title="printy[T](astring: varargs[T, `$`])"><wbr />printy<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rainbow,T,int,bool,bool"
@@ -1439,10 +1445,10 @@ function main() {
     title="printCxLine(aline: var Cxline)"><wbr />print<wbr />Cx<wbr />Line<span class="attachedType" style="visibility:hidden">Cxline</span></a></li>
   <li><a class="reference" href="#showColors,"
     title="showColors()"><wbr />show<wbr />Colors<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#doty,int,string,string,int"
-    title="doty(d: int; fgr: string = white; bgr: string = black; xpos: int = 1)"><wbr />doty<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#dotyLn,int,string,string,int"
-    title="dotyLn(d: int; fgr: string = white; bgr: string = black; xpos: int = 1)"><wbr />doty<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#doty,int,string,BackgroundColor,int"
+    title="doty(d: int; fgr: string = white; bgr: BackgroundColor = bgBlack; xpos: int = 1)"><wbr />doty<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#dotyLn,int,string,BackgroundColor,int"
+    title="dotyLn(d: int; fgr: string = white; bgr: BackgroundColor = bgBlack; xpos: int = 1)"><wbr />doty<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printDotPos,int,string,bool"
     title="printDotPos(xpos: int; dotCol: string; blink: bool)"><wbr />print<wbr />Dot<wbr />Pos<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#drawRect,int,int,string,string,string,int,bool"
@@ -1471,12 +1477,12 @@ function main() {
   <li><a class="reference" href="#getRndDate,int,int"
     title="getRndDate(minyear: int = parseInt(year(getDateStr())) - 50;
            maxyear: int = parseInt(year(getDateStr())) + 50): string"><wbr />get<wbr />Rnd<wbr />Date<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printSlimNumber,string,string,string,int"
-    title="printSlimNumber(anumber: string; fgr: string = yellowgreen; bgr: string = black;
-                xpos: int = 1)"><wbr />print<wbr />Slim<wbr />Number<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printSlim,string,string,string,int,string"
-    title="printSlim(ss: string = &quot;&quot;; frg: string = termwhite; bgr: string = termblack; xpos: int = 0;
-          align: string = &quot;left&quot;)"><wbr />print<wbr />Slim<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printSlimNumber,string,string,BackgroundColor,int"
+    title="printSlimNumber(anumber: string; fgr: string = yellowgreen;
+                bgr: BackgroundColor = bgBlack; xpos: int = 1)"><wbr />print<wbr />Slim<wbr />Number<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printSlim,string,string,BackgroundColor,int,string"
+    title="printSlim(ss: string = &quot;&quot;; frg: string = termwhite; bgr: BackgroundColor = bgBlack;
+          xpos: int = 0; align: string = &quot;left&quot;)"><wbr />print<wbr />Slim<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#superHeader,string"
     title="superHeader(bstring: string)"><wbr />super<wbr />Header<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#superHeader,string,string,string"
@@ -1628,9 +1634,6 @@ function main() {
     title="iching(): seq[string]"><wbr />iching<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#apl,"
     title="apl(): seq[string]"><wbr />apl<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#rainbow2,T,int,bool,bool,seq[]"
-    title="rainbow2[T](s: T; xpos: int = 1; fitLine: bool = false; centered: bool = false;
-            colorset: seq[(string, string)] = colorNames)"><wbr />rainbow2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getColorName,T"
     title="getColorName[T](sc: T): string"><wbr />get<wbr />Color<wbr />Name<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getColorConst,T"
@@ -1657,11 +1660,12 @@ function main() {
   <li><a class="reference" href="#qqTop,"
     title="qqTop()"><wbr />qq<wbr />Top<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cx10,int,string,string"
-    title="cx10(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cx10<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cx10(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cx10<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printFont,string,string,string,int"
-    title="printFont(s: string; col: string = randcol(); coltop: string = randcol(); xpos: int = -10)"><wbr />print<wbr />Font<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="printFont(s: string; col: string = rndTrueCol(); coltop: string = rndTrueCol();
+          xpos: int = -10)"><wbr />print<wbr />Font<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printFontFancy,string,int"
-    title="printFontFancy(s: string; coltop = rndcol(); xpos: int = -10)"><wbr />print<wbr />Font<wbr />Fancy<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="printFontFancy(s: string; coltop1 = rndcol(); xpos: int = -10)"><wbr />print<wbr />Font<wbr />Fancy<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printNimCx,int"
     title="printNimCx(npos: int = getTerminalWidth() div 2 - 30)"><wbr />print<wbr />Nim<wbr />Cx<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printMadeWithNim,int"
@@ -1682,14 +1686,6 @@ function main() {
     title="handler()"><wbr />handler<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#doCxEnd,"
     title="doCxEnd()"><wbr />do<wbr />Cx<wbr />End<span class="attachedType" style="visibility:hidden"></span></a></li>
-
-  </ul>
-</li>
-<li>
-  <a class="reference reference-toplevel" href="#16" id="66">Converters</a>
-  <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#colconv.c,string"
-    title="colconv(cx: string): string"><wbr />colconv<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1787,83 +1783,83 @@ function main() {
   <li><a class="reference" href="#checkLocals.t,"
     title="checkLocals()"><wbr />check<wbr />Locals<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxZero.t,int,string,string"
-    title="cxZero(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cx<wbr />Zero<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxZero(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cx<wbr />Zero<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cx1.t,int,string,string"
-    title="cx1(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cx1<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cx1(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cx1<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cx2.t,int,string,string"
-    title="cx2(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cx2<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cx2(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cx2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cx3.t,int,string,string"
-    title="cx3(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cx3<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cx3(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cx3<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cx4.t,int,string,string"
-    title="cx4(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cx4<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cx4(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cx4<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cx5.t,int,string,string"
-    title="cx5(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cx5<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cx5(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cx5<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cx6.t,int,string,string"
-    title="cx6(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cx6<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cx6(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cx6<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cx7.t,int,string,string"
-    title="cx7(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cx7<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cx7(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cx7<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cx8.t,int,string,string"
-    title="cx8(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cx8<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cx8(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cx8<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cx9.t,int,string,string"
-    title="cx9(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cx9<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cx9(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cx9<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxa.t,int,string,string"
-    title="cxa(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxa<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxa(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxa<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxb.t,int,string,string"
-    title="cxb(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxb<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxb(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxb<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxc.t,int,string,string"
-    title="cxc(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxc<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxc(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxc<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxd.t,int,string,string"
-    title="cxd(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxd<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxd(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxd<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxe.t,int,string,string"
-    title="cxe(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxe<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxe(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxe<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxf.t,int,string,string"
-    title="cxf(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxf<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxf(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxf<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxg.t,int,string,string"
-    title="cxg(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxg<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxg(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxg<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxh.t,int,string,string"
-    title="cxh(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxh<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxh(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxh<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxi.t,int,string,string"
-    title="cxi(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxi<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxi(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxi<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxj.t,int,string,string"
-    title="cxj(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxj<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxj(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxj<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxk.t,int,string,string"
-    title="cxk(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxk<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxk(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxk<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxl.t,int,string,string"
-    title="cxl(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxl<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxl(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxl<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxm.t,int,string,string"
-    title="cxm(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxm<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxm(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxm<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxn.t,int,string,string"
-    title="cxn(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxn<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxn(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxn<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxo.t,int,string,string"
-    title="cxo(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxo<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxo(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxo<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxp.t,int,string,string"
-    title="cxp(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxp<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxp(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxp<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxq.t,int,string,string"
-    title="cxq(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxq<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxq(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxq<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxr.t,int,string,string"
-    title="cxr(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxr<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxr(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxr<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxs.t,int,string,string"
-    title="cxs(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxs<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxs(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxs<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxt.t,int,string,string"
-    title="cxt(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxt<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxt(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxt<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxu.t,int,string,string"
-    title="cxu(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxu<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxu(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxu<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxv.t,int,string,string"
-    title="cxv(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxv<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxv(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxv<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxw.t,int,string,string"
-    title="cxw(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxw<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxw(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxw<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxx.t,int,string,string"
-    title="cxx(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxx<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxx(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxx<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxy.t,int,string,string"
-    title="cxy(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxy<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxy(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxy<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxz.t,int,string,string"
-    title="cxz(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxz<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxz(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxz<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxpoint.t,int,string,string"
-    title="cxpoint(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxpoint<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxpoint(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxpoint<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxhyphen.t,int,string,string"
-    title="cxhyphen(npos: int = 0; col: string = randcol(); coltop: string = randcol())"><wbr />cxhyphen<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxhyphen(npos: int = 0; col: string = rndTrueCol(); coltop: string = rndTrueCol())"><wbr />cxhyphen<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxgrid.t,int,string,string"
-    title="cxgrid(npos: int = 0; col: string = randcol(); coltop: string = lime)"><wbr />cxgrid<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxgrid(npos: int = 0; col: string = rndTrueCol(); coltop: string = lime)"><wbr />cxgrid<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#uname.t,"
     title="uname(): untyped"><wbr />uname<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#release.t,"
@@ -1890,7 +1886,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-12-24
+Latest      : 2017-12-25
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -1964,6 +1960,8 @@ In progress : moving some of the non core procs to module cxutils.nim
               moving constants to cxconsts.nim
 
 Latest      : changed time date related code to work with newest times.nim
+              
+              added more procs for truecolor support
 
 
 Funding     : Here are the options :
@@ -2060,6 +2058,16 @@ Funding     : Here are the options :
 
 </dd>
 <dt id="cxTrueCol"><a name="cxTrueCol"></a><pre><span class="Identifier">cxTrueCol</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="colorNumber38"><a name="colorNumber38"></a><pre><span class="Identifier">colorNumber38</span> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="colorNumber48"><a name="colorNumber48"></a><pre><span class="Identifier">colorNumber48</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
 <dd>
 
 
@@ -2176,9 +2184,11 @@ rndSample returns one rand sample from a sequence
 
 
 </dd>
-<dt id="getCxTrueColorSet"><a name="getCxTrueColorSet,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getCxTrueColorSet</span><span class="Other">(</span><span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="getCxTrueColorSet"><a name="getCxTrueColorSet,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getCxTrueColorSet</span><span class="Other">(</span><span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
+<p>getcxTrueColorSet</p>
+<p>this function fill the global cxTruCol seq with  truecolor values and needs to be run once if true color functionality to be used</p>
 
 
 </dd>
@@ -2194,6 +2204,20 @@ rndSample returns one rand sample from a sequence
 </dd>
 <dt id="color3848"><a name="color3848,seq[string]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">color3848</span><span class="Other">(</span><span class="Identifier">cxTrueCol</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
+
+
+</dd>
+<dt id="rndTrueCol"><a name="rndTrueCol,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>rndTrueCol</p>
+<p>returns a random color from the truecolorset for use as foregroundcolor in var. print functions </p>
+
+
+</dd>
+<dt id="rndTrueCol2"><a name="rndTrueCol2,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rndTrueCol2</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>rndTrueCol</p>
+<p>returns a random color from the truecolorset for use as foregroundcolor in var. print functions </p>
 
 
 </dd>
@@ -2367,57 +2391,13 @@ note that not all unicode chars may be available on all systems</pre>
 
 
 </dd>
-<dt id="print"><a name="print,T,string,string,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">bblack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-             <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span>
-             <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
+<dt id="print"><a name="print,T,string,BackgroundColor,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span>
+             <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+             <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
 <dd>
 <pre>print
 
-original print with bgr = string which is mostly ignored
-
-if bgr = any of the Backgroundcolor terminal types then the print proc below will be called
-
-fgr / bgr  fore and background colors can be set
-
-xpos allows positioning on x-axis
-
-fitLine = true will try to write the text into the current line irrespective of xpos
-
-centered = true will try to center and disregard xpos
-
-styled allows style parameters to be set
-
-available styles :
-
-styleBright = 1,            # bright text
-
-styleDim,                   # dim text
-
-styleUnknown,               # unknown
-
-styleUnderscore = 4,        # underscored text
-
-styleBlink,                 # blinking/bold text
-
-styleReverse = 7,           # reverses currentforground and backgroundcolor
-
-styleHidden                 # hidden text
-
-
-for extended colorset background colors use styleReverse
-
-or use 2 or more print statements for the desired effect
-</pre>
-
-
-</dd>
-<dt id="print"><a name="print,T,string,BackgroundColor,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-             <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span>
-             <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
-<dd>
-<pre>print
-
-this is the newer print which uses terminal Backgroundcolor to cover all situations
+uses standard terminal Backgroundcolor to cover all situations
 
 basically similar to terminal.nim styledWriteLine with more functionality
 
@@ -2457,8 +2437,53 @@ or use 2 or more print statements for the desired effect</pre>
 <span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">pastelBlue</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="print"><a name="print,varargs[T,],string,string,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">bblack</span><span class="Other">;</span>
-             <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="print2"><a name="print2,T,string,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print2</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+              <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
+<dd>
+<pre>print2
+
+the old print routine with backgroundcolor set to black only
+
+basically similar to terminal.nim styledWriteLine with more functionality
+
+fgr / bgr  fore and background colors can be set
+
+xpos allows positioning on x-axis
+
+fitLine = true will try to write the text into the current line irrespective of xpos
+
+centered = true will try to center and disregard xpos
+
+styled allows style parameters to be set
+
+available styles :
+
+styleBright = 1,            # bright text
+
+styleDim,                   # dim text
+
+styleUnknown,               # unknown
+
+styleUnderscore = 4,        # underscored text
+
+styleBlink,                 # blinking/bold text
+
+styleReverse = 7,           # reverses currentforground and backgroundcolor
+
+styleHidden                 # hidden text
+
+
+for extended colorset background colors use styleReverse
+
+or use 2 or more print statements for the desired effect</pre>
+<p>Example</p>
+<pre class="listing"><span class="Comment"># To achieve colored text with styleReverse try:</span>
+<span class="Identifier">setBackgroundColor</span><span class="Punctuation">(</span><span class="Identifier">bgRed</span><span class="Punctuation">)</span>
+<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">pastelBlue</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="print"><a name="print,varargs[T,],string,BackgroundColor,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span>
+             <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>print</p>
 <p>a print routine which allows printing of varargs in desired color , position and separator</p>
@@ -2470,11 +2495,10 @@ or use 2 or more print statements for the desired effect</pre>
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="printLn"><a name="printLn,T,string,string,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">bblack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-               <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span>
-               <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
+<dt id="printLn2"><a name="printLn2,T,string,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn2</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+                <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
 <dd>
-<pre>printLn
+<pre>printLn2
 
 original with bgr:string
 
@@ -2509,9 +2533,9 @@ Colornames supported for background color:
     <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.5</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="printLn"><a name="printLn,T,string,BackgroundColor,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-               <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span>
-               <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
+<dt id="printLn"><a name="printLn,T,string,BackgroundColor,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span>
+               <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+               <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
 <dd>
 <pre>printLn
 
@@ -2715,7 +2739,7 @@ forward declaration
 
 
 </dd>
-<dt id="doty"><a name="doty,int,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doty</span><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="doty"><a name="doty,int,string,BackgroundColor,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doty</span><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>doty</p>
@@ -2730,7 +2754,7 @@ forward declaration
 
 
 </dd>
-<dt id="dotyLn"><a name="dotyLn,int,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dotyLn</span><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="dotyLn"><a name="dotyLn,int,string,BackgroundColor,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dotyLn</span><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>dotyLn</p>
@@ -2865,9 +2889,9 @@ Format yyyy
 <span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="Identifier">getRndDate</span><span class="Punctuation">(</span><span class="DecNumber">2016</span><span class="Punctuation">,</span><span class="DecNumber">2025</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="printSlimNumber"><a name="printSlimNumber,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printSlimNumber</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
-                    <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-                                 <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="printSlimNumber"><a name="printSlimNumber,string,string,BackgroundColor,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printSlimNumber</span><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
+                    <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>printSlimNumber</p>
 <p># will shortly be deprecated use:  printSlim</p>
@@ -2897,7 +2921,7 @@ Format yyyy
 <span class="Identifier">curdn</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="printSlim"><a name="printSlim,string,string,string,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printSlim</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">frg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termblack</span><span class="Other">;</span>
+<dt id="printSlim"><a name="printSlim,string,string,BackgroundColor,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printSlim</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">frg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span>
               <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">align</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;left&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -2968,8 +2992,8 @@ Format yyyy
 <span class="Identifier">echo</span> <span class="Identifier">jj</span><span class="Punctuation">[</span><span class="StringLit">&quot;city&quot;</span><span class="Punctuation">]</span><span class="Operator">.</span><span class="Identifier">getstr</span></pre>
 
 </dd>
-<dt id="showIpInfo"><a name="showIpInfo,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showIpInfo</span><span class="Other">(</span><span class="Identifier">ip</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="showIpInfo"><a name="showIpInfo,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showIpInfo</span><span class="Other">(</span><span class="Identifier">ip</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showIpInfo</p>
 <p>Displays details for a given IP</p>
@@ -2990,8 +3014,8 @@ Format yyyy
 
 
 </dd>
-<dt id="showLocalIpInfo"><a name="showLocalIpInfo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showLocalIpInfo</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="showLocalIpInfo"><a name="showLocalIpInfo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showLocalIpInfo</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                       <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
@@ -3178,9 +3202,9 @@ Format yyyy
 <span class="Identifier">seqHighLite</span><span class="Punctuation">(</span><span class="Identifier">b</span><span class="Punctuation">,</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="DecNumber">6</span><span class="Punctuation">]</span><span class="Punctuation">)</span>   <span class="Comment"># subseq will be highlighted if found</span></pre>
 
 </dd>
-<dt id="nimcat"><a name="nimcat,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">nimcat</span><span class="Other">(</span><span class="Identifier">curFile</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">countphrase</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="nimcat"><a name="nimcat,string,varargs[string,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">nimcat</span><span class="Other">(</span><span class="Identifier">curFile</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">countphrase</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span>
+    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>nimcat</p>
 <p>a simple file lister which shows all rows and some stats as well as allows counting of tokens a file name without extension will be assuemed to be .nim ... it is the nimcat afterall countphrase is case sensitive this proc uses memslices and memfiles for speed</p>
@@ -3267,16 +3291,17 @@ Format yyyy
 
 
 </dd>
-<dt id="showTimerResults"><a name="showTimerResults,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showTimerResults</span><span class="Other">(</span><span class="Identifier">aname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span>
-    <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="showTimerResults"><a name="showTimerResults,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showTimerResults</span><span class="Other">(</span><span class="Identifier">aname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
+    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showTimerResults</p>
 <p>shows results for a particular timer name </p>
 
 
 </dd>
-<dt id="showTimerResults"><a name="showTimerResults,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showTimerResults</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
-                                <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="showTimerResults"><a name="showTimerResults,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showTimerResults</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
+                                <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+                        <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showTimerResults</p>
 <p>shows results for all timers </p>
@@ -3391,7 +3416,7 @@ forward declaration
 
 </dd>
 <dt id="showStats"><a name="showStats,RunningStat,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showStats</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">RunningStat</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showStats</p>
 <p>quickly display runningStat data</p>
@@ -3431,8 +3456,7 @@ forward declaration
 <span class="Identifier">showRegression</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="showRegression"><a name="showRegression,RunningRegress,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRegression</span><span class="Other">(</span><span class="Identifier">rr</span><span class="Other">:</span> <span class="Identifier">RunningRegress</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="showRegression"><a name="showRegression,RunningRegress,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRegression</span><span class="Other">(</span><span class="Identifier">rr</span><span class="Other">:</span> <span class="Identifier">RunningRegress</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showRegression</p>
 <p>Displays RunningRegress data from an already formed RunningRegress </p>
@@ -3473,8 +3497,7 @@ forward declaration
 
 </dd>
 <dt id="toTimeInfo"><a name="toTimeInfo,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">toTimeInfo</span><span class="Other">(</span><span class="Identifier">date</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;2000-01-01&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">DateTime</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>toTimeInfo</p>
 <p>converts a date of format yyyy-mm-dd to timeInfo </p>
@@ -3482,8 +3505,7 @@ forward declaration
 
 </dd>
 <dt id="epochSecs"><a name="epochSecs,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">epochSecs</span><span class="Other">(</span><span class="Identifier">date</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;2000-01-01&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>epochSecs</p>
 <p>converts a date into secs since unix time 0 </p>
@@ -3565,15 +3587,6 @@ full cjk unicode range returned in a seq
 <p>apl</p>
 <p>returns a seq containing apl language symbols </p>
 
-
-</dd>
-<dt id="rainbow2"><a name="rainbow2,T,int,bool,bool,seq[]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rainbow2</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
-                <span class="Identifier">colorset</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Other">(</span><span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">]</span> <span class="Other">=</span> <span class="Identifier">colorNames</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>rainbow2</p>
-<p>multicolored string  based on colorsets  see pastelSet</p>
-<p>may not work with certain Rune</p>
-<pre class="listing"><span class="Identifier">rainbow2</span><span class="Punctuation">(</span><span class="StringLit">&quot;what's up ?</span><span class="EscapeSequence">\n</span><span class="StringLit">&quot;</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">,</span><span class="Identifier">colorset</span> <span class="Operator">=</span> <span class="Identifier">colorsPalette</span><span class="Punctuation">(</span><span class="StringLit">&quot;green&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="getColorName"><a name="getColorName,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getColorName</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">sc</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
@@ -3701,13 +3714,13 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
-<dt id="cx10"><a name="cx10,int,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cx10</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="cx10"><a name="cx10,int,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cx10</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="printFont"><a name="printFont,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFont</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span>
+<dt id="printFont"><a name="printFont,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFont</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span>
               <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
                              <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -3717,7 +3730,7 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
-<dt id="printFontFancy"><a name="printFontFancy,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFontFancy</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">coltop</span> <span class="Other">=</span> <span class="Identifier">rndcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="printFontFancy"><a name="printFontFancy,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printFontFancy</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">coltop1</span> <span class="Other">=</span> <span class="Identifier">rndcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>printFontFancy</p>
@@ -3765,10 +3778,10 @@ printNimcx<blockquote><p>experiments in block font building , default is center 
 
 </dd>
 <dt id="showCxTrueColorPalette"><a name="showCxTrueColorPalette,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCxTrueColorPalette</span><span class="Other">(</span><span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-<p>showTrueColorPalette</p>
+<p>showCxTrueColorPalette</p>
 <p>play with truecolors</p>
 <p>shows truecolors ,in order not run out of memory adjust max and sep carefully e.g max 888 step 4 needs abt 4.3 GB free and has  22,179,134 color shades to select from default has 843,750 palette entries in cxTruecCol</p>
 <p>cxTrueCol is a initial empty global defined in cx.nim which will only be filled with a call to getCxTrueColorSet() ,also see there how the Palette is build up</p>
@@ -3810,16 +3823,6 @@ printNimcx<blockquote><p>experiments in block font building , default is center 
 <dt id="doCxEnd"><a name="doCxEnd,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">doCxEnd</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span>
                        <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
     <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-
-
-</dd>
-
-</dl></div>
-<div class="section" id="16">
-<h1><a class="toc-backref" href="#16">Converters</a></h1>
-<dl class="item">
-<dt id="colconv"><a name="colconv.c,string"></a><pre><span class="Keyword">converter</span> <span class="Identifier">colconv</span><span class="Other">(</span><span class="Identifier">cx</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
@@ -4237,197 +4240,198 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
 
 
 </dd>
-<dt id="cxZero"><a name="cxZero.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxZero</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxZero"><a name="cxZero.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxZero</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cx1"><a name="cx1.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx1</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cx1"><a name="cx1.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx1</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cx2"><a name="cx2.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx2</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cx2"><a name="cx2.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx2</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cx3"><a name="cx3.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx3</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cx3"><a name="cx3.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx3</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cx4"><a name="cx4.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx4</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cx4"><a name="cx4.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx4</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cx5"><a name="cx5.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx5</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cx5"><a name="cx5.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx5</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cx6"><a name="cx6.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx6</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cx6"><a name="cx6.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx6</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cx7"><a name="cx7.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx7</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cx7"><a name="cx7.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx7</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cx8"><a name="cx8.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx8</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cx8"><a name="cx8.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx8</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cx9"><a name="cx9.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx9</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cx9"><a name="cx9.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cx9</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxa"><a name="cxa.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxa</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxa"><a name="cxa.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxa</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxb"><a name="cxb.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxb</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxb"><a name="cxb.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxb</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxc"><a name="cxc.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxc</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxc"><a name="cxc.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxc</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxd"><a name="cxd.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxd</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxd"><a name="cxd.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxd</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxe"><a name="cxe.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxe</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxe"><a name="cxe.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxe</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxf"><a name="cxf.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxf</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxf"><a name="cxf.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxf</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxg"><a name="cxg.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxg</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxg"><a name="cxg.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxg</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxh"><a name="cxh.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxh</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxh"><a name="cxh.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxh</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxi"><a name="cxi.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxi</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxi"><a name="cxi.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxi</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxj"><a name="cxj.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxj</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxj"><a name="cxj.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxj</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxk"><a name="cxk.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxk</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxk"><a name="cxk.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxk</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxl"><a name="cxl.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxl</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxl"><a name="cxl.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxl</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxm"><a name="cxm.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxm</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxm"><a name="cxm.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxm</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxn"><a name="cxn.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxn</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxn"><a name="cxn.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxn</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxo"><a name="cxo.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxo</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxo"><a name="cxo.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxo</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxp"><a name="cxp.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxp</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxp"><a name="cxp.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxp</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxq"><a name="cxq.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxq</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxq"><a name="cxq.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxq</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxr"><a name="cxr.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxr</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxr"><a name="cxr.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxr</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxs"><a name="cxs.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxs</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxs"><a name="cxs.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxs</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxt"><a name="cxt.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxt</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxt"><a name="cxt.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxt</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxu"><a name="cxu.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxu</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxu"><a name="cxu.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxu</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxv"><a name="cxv.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxv</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxv"><a name="cxv.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxv</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxw"><a name="cxw.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxw</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxw"><a name="cxw.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxw</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxx"><a name="cxx.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxx</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxx"><a name="cxx.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxx</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxy"><a name="cxy.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxy</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxy"><a name="cxy.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxy</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxz"><a name="cxz.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxz</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxz"><a name="cxz.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxz</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxpoint"><a name="cxpoint.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxpoint</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxpoint"><a name="cxpoint.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxpoint</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxhyphen"><a name="cxhyphen.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxhyphen</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt id="cxhyphen"><a name="cxhyphen.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxhyphen</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span>
+                 <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="cxgrid"><a name="cxgrid.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxgrid</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
+<dt id="cxgrid"><a name="cxgrid.t,int,string,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">cxgrid</span><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lime</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -4452,7 +4456,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-24 22:04:43 UTC</small>
+        <small>Made with Nim. Generated: 2017-12-25 21:39:59 UTC</small>
       </div>
     </div>
   </div>

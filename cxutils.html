@@ -1341,9 +1341,9 @@ function main() {
     title="getRandomPoint(minx: int = -500; maxx: int = 500; miny: int = -500; maxy: int = 500): RpointInt"><wbr />get<wbr />Random<wbr />Point<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showRandomCard,int"
     title="showRandomCard(xpos: int = centerX())"><wbr />show<wbr />Random<wbr />Card<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#showRuler,int,int,int,string,string,bool"
+  <li><a class="reference" href="#showRuler,int,int,int,string,BackgroundColor,bool"
     title="showRuler(xpos: int = 0; xposE: int = 0; ypos: int = 0; fgr: string = termwhite;
-          bgr: string = termblack; vert: bool = false)"><wbr />show<wbr />Ruler<span class="attachedType" style="visibility:hidden"></span></a></li>
+          bgr: BackgroundColor = bgBlack; vert: bool = false)"><wbr />show<wbr />Ruler<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#centerMark,bool"
     title="centerMark(showpos: bool = false)"><wbr />center<wbr />Mark<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#superHeaderA,string,string,string,bool,int"
@@ -1365,12 +1365,12 @@ function main() {
     title="getWanIp(): string"><wbr />get<wbr />Wan<wbr />Ip<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showWanIp,"
     title="showWanIp()"><wbr />show<wbr />Wan<wbr />Ip<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printBigNumber,,string,string,int,bool"
+  <li><a class="reference" href="#printBigNumber,,string,BackgroundColor,int,bool"
     title="printBigNumber(xnumber: string | int | int64; fgr: string = yellowgreen;
-               bgr: string = black; xpos: int = 1; fun: bool = false)"><wbr />print<wbr />Big<wbr />Number<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printBigLetters,string,string,string,int,int,bool"
-    title="printBigLetters(aword: string; fgr: string = yellowgreen; bgr: string = black;
-                xpos: int = 1; k: int = 7; fun: bool = false)"><wbr />print<wbr />Big<wbr />Letters<span class="attachedType" style="visibility:hidden"></span></a></li>
+               bgr: BackgroundColor = bgBlack; xpos: int = 1; fun: bool = false)"><wbr />print<wbr />Big<wbr />Number<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printBigLetters,string,string,BackgroundColor,int,int,bool"
+    title="printBigLetters(aword: string; fgr: string = yellowgreen;
+                bgr: BackgroundColor = bgBlack; xpos: int = 1; k: int = 7; fun: bool = false)"><wbr />print<wbr />Big<wbr />Letters<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printNimSxR,seq[string],string,int"
     title="printNimSxR(nimsx: seq[string]; col: string = yellowgreen; xpos: int = 1)"><wbr />print<wbr />Nim<wbr />Sx<wbr />R<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#doNimUp,int,bool"
@@ -1406,7 +1406,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-09-30
+Latest      : 2017-12-25
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -1627,8 +1627,7 @@ Tested      : OpenSuse Tumbleweed</pre>
 
 
 </dd>
-<dt id="showCpuCores"><a name="showCpuCores,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCpuCores</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span>
-                    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="showCpuCores"><a name="showCpuCores,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCpuCores</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 showCpuCores 
 
@@ -1727,8 +1726,8 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 
 
 </dd>
-<dt id="showRuler"><a name="showRuler,int,int,int,string,string,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRuler</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">xposE</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ypos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span>
-              <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termblack</span><span class="Other">;</span> <span class="Identifier">vert</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="showRuler"><a name="showRuler,int,int,int,string,BackgroundColor,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRuler</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">xposE</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ypos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span>
+              <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span> <span class="Identifier">vert</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>ruler</p>
@@ -1852,8 +1851,8 @@ getWanIp<pre class="listing"><span class="Identifier">printLnBiCol</span><span c
 
 
 </dd>
-<dt id="printBigNumber"><a name="printBigNumber,,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigNumber</span><span class="Other">(</span><span class="Identifier">xnumber</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Operator">|</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">int64</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
-                   <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">fun</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
+<dt id="printBigNumber"><a name="printBigNumber,,string,BackgroundColor,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigNumber</span><span class="Other">(</span><span class="Identifier">xnumber</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Operator">|</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">int64</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
+                   <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">fun</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printBigNumber</p>
 <p>prints a string in big block font</p>
@@ -1883,9 +1882,10 @@ getWanIp<pre class="listing"><span class="Identifier">printLnBiCol</span><span c
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="printBigLetters"><a name="printBigLetters,string,string,string,int,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigLetters</span><span class="Other">(</span><span class="Identifier">aword</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
-                    <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">k</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">7</span><span class="Other">;</span> <span class="Identifier">fun</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="printBigLetters"><a name="printBigLetters,string,string,BackgroundColor,int,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBigLetters</span><span class="Other">(</span><span class="Identifier">aword</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
+                    <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">k</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">7</span><span class="Other">;</span>
+                    <span class="Identifier">fun</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                                     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>printBigLetters</p>
 <p>prints big block letters in desired color at desired position</p>
@@ -1949,7 +1949,7 @@ getWanIp<pre class="listing"><span class="Identifier">printLnBiCol</span><span c
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-24 22:04:45 UTC</small>
+        <small>Made with Nim. Generated: 2017-12-25 21:40:01 UTC</small>
       </div>
     </div>
   </div>
