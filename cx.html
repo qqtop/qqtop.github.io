@@ -2397,6 +2397,8 @@ note that not all unicode chars may be available on all systems</pre>
 <dd>
 <pre>print
 
+use colornames like darkseagreen , salmon etc as foregroundcolors or use truecolor codes
+
 uses standard terminal Backgroundcolor to cover all situations
 
 basically similar to terminal.nim styledWriteLine with more functionality
@@ -2434,7 +2436,9 @@ or use 2 or more print statements for the desired effect</pre>
 <p>Example</p>
 <pre class="listing"><span class="Comment"># To achieve colored text with styleReverse try:</span>
 <span class="Identifier">setBackgroundColor</span><span class="Punctuation">(</span><span class="Identifier">bgRed</span><span class="Punctuation">)</span>
-<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">pastelBlue</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
+<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">pastelBlue</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
+<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;whats up with truecolors now ? &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTrueCol</span><span class="Punctuation">[</span><span class="DecNumber">34567</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">bgRed</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">10</span><span class="Identifier">styled</span><span class="Operator">=</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="print2"><a name="print2,T,string,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print2</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
@@ -2442,7 +2446,7 @@ or use 2 or more print statements for the desired effect</pre>
 <dd>
 <pre>print2
 
-the old print routine with backgroundcolor set to black only
+the old print routine with backgroundcolor set to black only  , required by printfont proc
 
 basically similar to terminal.nim styledWriteLine with more functionality
 
@@ -2553,11 +2557,11 @@ Colornames supported for font colors     :
  
  -  all
 
-Colornames supported for background color:
-  
-  - white,red,green,blue,yellow,cyan,magenta,black
-  - brightwhite,brightred,brightgreen,brightblue,brightyellow,
-  - brightcyan,brightmagenta,brightblack</pre>
+Colornames supported for background color: BackGroundColors
+
+- use stleBrigh and styleReverse for variouse effects
+
+- if using truecolors from the cxTrueCol pool note the difference between odd and even numbers</pre>
 <p>Examples</p>
 <pre class="listing"><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span> <span class="Comment"># background has no effect with font in  clrainbow</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span>
@@ -4456,7 +4460,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-25 21:39:59 UTC</small>
+        <small>Made with Nim. Generated: 2017-12-27 22:20:03 UTC</small>
       </div>
     </div>
   </div>
