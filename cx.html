@@ -1260,10 +1260,15 @@ function main() {
   <li><a class="reference" href="#Cxcounter"
     title="Cxcounter = object
   value*: int"><wbr />Cxcounter<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#CxLineType"
+    title="CxLineType = enum
+  cxHorizontal = &quot;horizontal&quot;, cxVertical = &quot;vertical&quot;"><wbr />Cx<wbr />Line<wbr />Type<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#Cxline"
     title="Cxline = object
   startpos*: int
   endpos*: int
+  toppos*: int
+  botpos*: int
   text*: string
   textcolor*: string
   textstyle*: set[Style]
@@ -1275,6 +1280,7 @@ function main() {
   linechar*: string
   dotleftcolor*: string
   dotrightcolor*: string
+  linetype*: CxLineType
   newline*: string"><wbr />Cxline<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
@@ -1342,8 +1348,8 @@ function main() {
     title="checkTrueColorSupport(): bool"><wbr />check<wbr />True<wbr />Color<wbr />Support<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxtoLower,char"
     title="cxtoLower(c: char): char"><wbr />cxto<wbr />Lower<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#getCxTrueColorSet,int,int"
-    title="getCxTrueColorSet(max: int = 888; step: int = 12): bool"><wbr />get<wbr />Cx<wbr />True<wbr />Color<wbr />Set<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getCxTrueColorSet,int,int,int,bool"
+    title="getCxTrueColorSet(min: int = 0; max: int = 888; step: int = 12; flag48: bool = false): bool"><wbr />get<wbr />Cx<wbr />True<wbr />Color<wbr />Set<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#color38,seq[string]"
     title="color38(cxTrueCol: seq[string]): int"><wbr />color38<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#color48,seq[string]"
@@ -1408,7 +1414,7 @@ function main() {
   <li><a class="reference" href="#rainbow,T,int,bool,bool"
     title="rainbow[T](s: T; xpos: int = 1; fitLine: bool = false; centered: bool = false)"><wbr />rainbow<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#hline,int,string,int,string"
-    title="hline(n: int = tw; col: string = white; xpos: int = 1; lt: string = &quot;-&quot;)"><wbr />hline<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="hline(n: int = tw; col: string = white; xpos: int = 1; lt: string = &quot;-&quot;): string"><wbr />hline<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#hlineLn,int,string,int,string"
     title="hlineLn(n: int = tw; col: string = white; xpos: int = 1; lt: string = &quot;-&quot;)"><wbr />hline<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#dline,int,string,string"
@@ -1886,7 +1892,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2017-12-25
+Latest      : 2018-01-13
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -1958,6 +1964,8 @@ Optional    : xclip  (linux clipboard utility)
 In progress : moving some of the non core procs to module cxutils.nim
               
               moving constants to cxconsts.nim
+              
+              improving cxtruecolor related procs .
 
 Latest      : changed time date related code to work with newest times.nim
               
@@ -2022,9 +2030,17 @@ Funding     : Here are the options :
 
 
 </dd>
+<dt id="CxLineType"><a name="CxLineType"></a><pre><span class="Identifier">CxLineType</span> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">cxHorizontal</span> <span class="Other">=</span> <span class="StringLit">&quot;horizontal&quot;</span><span class="Other">,</span> <span class="Identifier">cxVertical</span> <span class="Other">=</span> <span class="StringLit">&quot;vertical&quot;</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="Cxline"><a name="Cxline"></a><pre><span class="Identifier">Cxline</span> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">startpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
   <span class="Identifier">endpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+  <span class="Identifier">toppos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+  <span class="Identifier">botpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
   <span class="Identifier">text</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">textcolor</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">textstyle</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span>
@@ -2036,6 +2052,7 @@ Funding     : Here are the options :
   <span class="Identifier">linechar</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">dotleftcolor</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">dotrightcolor</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+  <span class="Identifier">linetype</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxLineType</span>
   <span class="Identifier">newline</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
 </pre></dt>
 <dd>
@@ -2184,8 +2201,8 @@ rndSample returns one rand sample from a sequence
 
 
 </dd>
-<dt id="getCxTrueColorSet"><a name="getCxTrueColorSet,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getCxTrueColorSet</span><span class="Other">(</span><span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="getCxTrueColorSet"><a name="getCxTrueColorSet,int,int,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getCxTrueColorSet</span><span class="Other">(</span><span class="Identifier">min</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">;</span> <span class="Identifier">flag48</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getcxTrueColorSet</p>
 <p>this function fill the global cxTruCol seq with  truecolor values and needs to be run once if true color functionality to be used</p>
@@ -2584,7 +2601,7 @@ Colornames supported for background color: BackGroundColors
 forward declaration
 
 </dd>
-<dt id="hline"><a name="hline,int,string,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">hline</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">lt</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;-&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="hline"><a name="hline,int,string,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">hline</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">lt</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;-&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 forward declaration
@@ -2730,7 +2747,7 @@ forward declaration
                                   <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>printCxLine</p>
-<p>prints a horizontal line for frames with text as specified in an Cxline object see cxlineobjectE1.nim for an example </p>
+<p>prints a horizontal or vertical line for frames with text as specified in an Cxline object see cxlineobjectE1.nim for an example </p>
 
 
 </dd>
@@ -4460,7 +4477,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2017-12-27 22:20:03 UTC</small>
+        <small>Made with Nim. Generated: 2018-01-13 14:47:05 UTC</small>
       </div>
     </div>
   </div>
