@@ -1511,6 +1511,8 @@ function main() {
     title="showHosts(dm: string)"><wbr />show<wbr />Hosts<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#pingy,string,int,string"
     title="pingy(dest: string; pingcc: int = 3; col: string = termwhite)"><wbr />pingy<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxPortCheck,string"
+    title="cxPortCheck(cmd: string = &quot;lsof -i&quot;)"><wbr />cx<wbr />Port<wbr />Check<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#reverseMe,openArray[T]"
     title="reverseMe[T](xs: openArray[T]): seq[T]"><wbr />reverse<wbr />Me<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#reverseText,string"
@@ -1892,7 +1894,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2018-01-13
+Latest      : 2018-01-14
 
 Compiler    : Nim &gt;= 0.17.x dev branch
 
@@ -3072,6 +3074,15 @@ Format yyyy
 <p>small utility to ping some server</p>
 <pre class="listing"><span class="Identifier">pingy</span><span class="Punctuation">(</span><span class="StringLit">&quot;yahoo.com&quot;</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="Identifier">dodgerblue</span><span class="Punctuation">)</span>   <span class="Comment"># 4 pings and display progress in some color</span>
 <span class="Identifier">pingy</span><span class="Punctuation">(</span><span class="StringLit">&quot;google.com&quot;</span><span class="Punctuation">,</span><span class="DecNumber">8</span><span class="Punctuation">,</span><span class="Identifier">aqua</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="cxPortCheck"><a name="cxPortCheck,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxPortCheck</span><span class="Other">(</span><span class="Identifier">cmd</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;lsof -i&quot;</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
+    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
+                                  <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>cxPortCheck</p>
+<p>runs a linux system command to see what the ports are listening to </p>
+
 
 </dd>
 <dt id="reverseMe"><a name="reverseMe,openArray[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">reverseMe</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">xs</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
@@ -4477,7 +4488,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-01-13 14:47:05 UTC</small>
+        <small>Made with Nim. Generated: 2018-01-14 12:55:01 UTC</small>
       </div>
     </div>
   </div>
