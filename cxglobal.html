@@ -1355,10 +1355,16 @@ function main() {
     title="stripper(str: string): string"><wbr />stripper<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#[],seq[T],Slice[U]"
     title="`[]`[T; U](a: seq[T]; x: Slice[U]): seq[T]"><wbr />`[]`<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#fromCString,pointer,int"
+    title="fromCString(p: pointer; len: int): string"><wbr />from<wbr />CString<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#streamFile,string,FileMode"
     title="streamFile(filename: string; mode: FileMode): FileStream"><wbr />stream<wbr />File<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#uniform,float,float"
     title="uniform(a, b: float): float"><wbr />uniform<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#sampleSeq,seq[T],int,int"
+    title="sampleSeq[T](x: seq[T]; a: int; b: int): seq[T]"><wbr />sample<wbr />Seq<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#tupleToStr,"
+    title="tupleToStr(xs: tuple): string"><wbr />tuple<wbr />To<wbr />Str<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1879,6 +1885,13 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
+<dt id="fromCString"><a name="fromCString,pointer,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">fromCString</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">len</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>fromCString</p>
+<p>convert C pointer to Nim string (code ex nim forum <a class="reference external" href="https://forum.nim-lang.org/t/3045">https://forum.nim-lang.org/t/3045</a> by jangko) </p>
+
+
+</dd>
 <dt id="streamFile"><a name="streamFile,string,FileMode"></a><pre><span class="Keyword">proc</span> <span class="Identifier">streamFile</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">FileMode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">FileStream</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>streamFile</p>
@@ -1914,6 +1927,27 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 <span class="Identifier">quickTest</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="sampleSeq"><a name="sampleSeq,seq[T],int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sampleSeq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span></pre></dt>
+<dd>
+<p>sampleSeq</p>
+<p>returns a continuous subseq a..b from an array or seq if a &gt;= b</p>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+<span class="Keyword">let</span> <span class="Identifier">x</span> <span class="Operator">=</span> <span class="Identifier">createSeqInt</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">x</span>
+<span class="Identifier">echo</span> <span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">sampleseq</span><span class="Punctuation">(</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">8</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">x</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">4</span><span class="Punctuation">,</span><span class="DecNumber">8</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">rndSample</span><span class="Punctuation">(</span><span class="Punctuation">)</span>    <span class="Comment"># get one randly selected value from the subsequence</span></pre>
+
+</dd>
+<dt id="tupleToStr"><a name="tupleToStr,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">tupleToStr</span><span class="Other">(</span><span class="Identifier">xs</span><span class="Other">:</span> <span class="Keyword">tuple</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+<p>tupleToStr</p>
+<p>tuple to string unpacker , returns a string</p>
+<p>code ex nim forum</p>
+<pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">tupleToStr</span><span class="Punctuation">(</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">2</span><span class="Punctuation">)</span><span class="Punctuation">)</span>         <span class="Comment"># prints (1, 2)</span>
+<span class="Identifier">echo</span> <span class="Identifier">tupleToStr</span><span class="Punctuation">(</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">)</span>         <span class="Comment"># prints (3, 4)</span>
+<span class="Identifier">echo</span> <span class="Identifier">tupleToStr</span><span class="Punctuation">(</span><span class="Punctuation">(</span><span class="StringLit">&quot;A&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;B&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;C&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span> <span class="Comment"># prints (A, B, C)</span></pre>
 
 </dd>
 
@@ -2181,7 +2215,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-03-05 17:41:22 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-05 21:09:22 UTC</small>
       </div>
     </div>
   </div>
