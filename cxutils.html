@@ -1259,12 +1259,12 @@ function main() {
     title="showCpuCores()"><wbr />show<wbr />Cpu<wbr />Cores<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getAmzDateString,"
     title="getAmzDateString(): string"><wbr />get<wbr />Amz<wbr />Date<wbr />String<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#dayofweek,string"
-    title="dayofweek(datestr: string): string"><wbr />dayofweek<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#getFirstMondayYear,string"
-    title="getFirstMondayYear(ayear: string): string"><wbr />get<wbr />First<wbr />Monday<wbr />Year<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#getFirstMondayYearMonth,string"
-    title="getFirstMondayYearMonth(aym: string): string"><wbr />get<wbr />First<wbr />Monday<wbr />Year<wbr />Month<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxdayofweek,string"
+    title="cxdayofweek(datestr: string): string"><wbr />cxdayofweek<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getFirstMondayYear,T"
+    title="getFirstMondayYear[T](ayear: T): string"><wbr />get<wbr />First<wbr />Monday<wbr />Year<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getFirstMondayYearMonth,T"
+    title="getFirstMondayYearMonth[T](aym: T): string"><wbr />get<wbr />First<wbr />Monday<wbr />Year<wbr />Month<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getNextMonday,string"
     title="getNextMonday(adate: string): string"><wbr />get<wbr />Next<wbr />Monday<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getRandomPointInCircle,float"
@@ -1274,6 +1274,8 @@ function main() {
                maxy: float = 500.0): RpointFloat"><wbr />get<wbr />Random<wbr />Point<span class="attachedType" style="visibility:hidden">RpointFloat</span></a></li>
   <li><a class="reference" href="#getRandomPoint,int,int,int,int"
     title="getRandomPoint(minx: int = -500; maxx: int = 500; miny: int = -500; maxy: int = 500): RpointInt"><wbr />get<wbr />Random<wbr />Point<span class="attachedType" style="visibility:hidden">RpointInt</span></a></li>
+  <li><a class="reference" href="#randpos,"
+    title="randpos(): int"><wbr />randpos<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showRandomCard,int"
     title="showRandomCard(xpos: int = centerX())"><wbr />show<wbr />Random<wbr />Card<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showRuler,int,int,int,string,BackgroundColor,bool"
@@ -1300,10 +1302,12 @@ function main() {
     title="newHiragana(minwl: int = 3; maxwl: int = 10): string"><wbr />new<wbr />Hiragana<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#newKatakana,int,int"
     title="newKatakana(minwl: int = 3; maxwl: int = 10): string"><wbr />new<wbr />Katakana<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#getWanIp2,"
-    title="getWanIp2(): string"><wbr />get<wbr />Wan<wbr />Ip2<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#showWanIp,"
-    title="showWanIp()"><wbr />show<wbr />Wan<wbr />Ip<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#drawRect,int,int,string,string,string,string,int,bool"
+    title="drawRect(h: int = 0; w: int = 3; frhLine: string = &quot;_&quot;; frVLine: string = &quot;|&quot;;
+         frCol: string = darkgreen; dotCol: string = truetomato; xpos: int = 1;
+         blink: bool = false)"><wbr />draw<wbr />Rect<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxBinomialCoeff,int,int"
+    title="cxBinomialCoeff(n, k: int): int"><wbr />cx<wbr />Binomial<wbr />Coeff<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#clearScreen,"
     title="clearScreen(): int"><wbr />clear<wbr />Screen<span class="attachedType" style="visibility:hidden"></span></a></li>
 
@@ -1314,6 +1318,8 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#getCard.t,"
     title="getCard(): auto"><wbr />get<wbr />Card<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#bitCheck.t,untyped,untyped"
+    title="bitCheck(a, b: untyped): bool"><wbr />bit<wbr />Check<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1335,16 +1341,15 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2018-02-27
+Latest      : 2018-03-05
 
-Compiler    : Nim &gt;= 0.17.x dev branch
+Compiler    : Nim &gt;= 0.18.x dev branch
 
 OS          : Linux
 
 Description :
               
-              cxutils.nim is a collection of lesser used simple utility procs and templates
-
+              cxutils.nim is a collection utility procs and templates
 
 
 Usage       : import nimcx
@@ -1386,7 +1391,7 @@ Tested      : OpenSuse Tumbleweed ,Debian Testing</pre>
 
 </dd>
 <dt id="memCheck"><a name="memCheck,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">memCheck</span><span class="Other">(</span><span class="Identifier">stats</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
-                                        <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                                        <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
                                 <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>memCheck</p>
@@ -1408,7 +1413,7 @@ showCpuCores
 
 
 </dd>
-<dt id="dayofweek"><a name="dayofweek,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dayofweek</span><span class="Other">(</span><span class="Identifier">datestr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
+<dt id="cxdayofweek"><a name="cxdayofweek,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxdayofweek</span><span class="Other">(</span><span class="Identifier">datestr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
     <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>dayofweek</p>
@@ -1418,16 +1423,14 @@ showCpuCores
 <span class="Identifier">echo</span> <span class="Identifier">getFirstMondayYearMonth</span><span class="Punctuation">(</span><span class="StringLit">&quot;2018-2&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;  &quot;</span><span class="Punctuation">,</span><span class="Identifier">dayofweek</span><span class="Punctuation">(</span><span class="Identifier">getFirstMondayYearMonth</span><span class="Punctuation">(</span><span class="StringLit">&quot;2018-2&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="getFirstMondayYear"><a name="getFirstMondayYear,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getFirstMondayYear</span><span class="Other">(</span><span class="Identifier">ayear</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="getFirstMondayYear"><a name="getFirstMondayYear,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getFirstMondayYear</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ayear</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>getFirstMondayYear</p>
 <p>returns date of first monday of any given year</p>
 <pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getFirstMondayYear</span><span class="Punctuation">(</span><span class="StringLit">&quot;2015&quot;</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="getFirstMondayYearMonth"><a name="getFirstMondayYearMonth,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getFirstMondayYearMonth</span><span class="Other">(</span><span class="Identifier">aym</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="getFirstMondayYearMonth"><a name="getFirstMondayYearMonth,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getFirstMondayYearMonth</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">aym</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>getFirstMondayYearMonth</p>
 <p>returns date of first monday in given year and month</p>
@@ -1485,6 +1488,17 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">:</span>
 <span class="Keyword">var</span> <span class="Identifier">n</span> <span class="Operator">=</span> <span class="Identifier">getRandomPoint</span><span class="Punctuation">(</span><span class="Operator">-</span><span class="DecNumber">500</span><span class="Punctuation">,</span><span class="DecNumber">500</span><span class="Punctuation">,</span><span class="Operator">-</span><span class="DecNumber">500</span><span class="Punctuation">,</span><span class="DecNumber">200</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;5&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;5&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;x:&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">n</span><span class="Operator">.</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">7</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;y:&quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">n</span><span class="Operator">.</span><span class="Identifier">y</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">7</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="randpos"><a name="randpos,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">randpos</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>randpos</p>
+<p>sets cursor to a rand position in the visible terminal window</p>
+<p>returns x position</p>
+<pre class="listing"><span class="Keyword">while</span> <span class="DecNumber">1</span> <span class="Operator">==</span> <span class="DecNumber">1</span><span class="Punctuation">:</span>
+   <span class="Keyword">for</span> <span class="Identifier">z</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">50</span><span class="Punctuation">:</span>
+      <span class="Identifier">print</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">z</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="Identifier">randpos</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+   <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.0015</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="showRandomCard"><a name="showRandomCard,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showRandomCard</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">centerX</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
@@ -1639,18 +1653,31 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 
 
 </dd>
-<dt id="getWanIp2"><a name="getWanIp2,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getWanIp2</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-                        <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="drawRect"><a name="drawRect,int,int,string,string,string,string,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">drawRect</span><span class="Other">(</span><span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">frhLine</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;_&quot;</span><span class="Other">;</span> <span class="Identifier">frVLine</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;|&quot;</span><span class="Other">;</span>
+             <span class="Identifier">frCol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">darkgreen</span><span class="Other">;</span> <span class="Identifier">dotCol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span>
+             <span class="Identifier">blink</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
+                                        <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-getWanIp<pre class="listing"><span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">getwanip2</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre><p>Note : very slow  needs curl and awk</p>
-
+<p>drawRect</p>
+<p>a simple proc to draw a rectangle with corners marked with widedots. widedots are of len 4.</p>
+<p>h  height w  width frhLine framechar horizontal frVLine framechar vertical frCol   color of line dotCol  color of corner dotCol xpos    topleft start position blink   true or false to blink the dots</p>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+<span class="Identifier">clearUp</span><span class="Punctuation">(</span><span class="DecNumber">18</span><span class="Punctuation">)</span>
+<span class="Identifier">curSet</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">15</span><span class="Punctuation">,</span><span class="DecNumber">24</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;+&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="Identifier">wideDot</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">8</span><span class="Punctuation">)</span>
+<span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">12</span><span class="Punctuation">)</span>
+<span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">9</span><span class="Punctuation">,</span><span class="DecNumber">20</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;=&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="Identifier">wideDot</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">blink</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
+<span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">12</span><span class="Punctuation">)</span>
+<span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">9</span><span class="Punctuation">,</span><span class="DecNumber">20</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;=&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="Identifier">wideDot</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">35</span><span class="Punctuation">,</span><span class="Identifier">blink</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
+<span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">)</span>
+<span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">6</span><span class="Punctuation">,</span><span class="DecNumber">14</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;~&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;$&quot;</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">70</span><span class="Punctuation">,</span><span class="Identifier">blink</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
+<span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="showWanIp"><a name="showWanIp,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showWanIp</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span>
-                 <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="cxBinomialCoeff"><a name="cxBinomialCoeff,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxBinomialCoeff</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-<p>showWanIp</p>
-<p>show your current wan ip  , this service currently slow </p>
 
 
 </dd>
@@ -1675,6 +1702,13 @@ getWanIp<pre class="listing"><span class="Identifier">printLnBiCol</span><span c
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
+<dt id="bitCheck"><a name="bitCheck.t,untyped,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">bitCheck</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span></pre></dt>
+<dd>
+<p>bitCheck</p>
+<p>check bitsets </p>
+
+
+</dd>
 
 </dl></div>
 
@@ -1685,7 +1719,7 @@ getWanIp<pre class="listing"><span class="Identifier">printLnBiCol</span><span c
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-02-28 15:52:26 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-05 17:19:17 UTC</small>
       </div>
     </div>
   </div>

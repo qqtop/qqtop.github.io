@@ -1370,6 +1370,16 @@ function main() {
   <li><a class="reference" href="#printLnInfoMsg,string,string,string,string,int"
     title="printLnInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
                colRight: string = pastelWhite; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Info<wbr />Msg<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#dprint,T"
+    title="dprint[T](s: T)"><wbr />dprint<span class="attachedType" style="visibility:hidden"></span></a></li>
+
+  </ul>
+</li>
+<li>
+  <a class="reference reference-toplevel" href="#17" id="67">Macros</a>
+  <ul class="simple simple-toc-section">
+      <li><a class="reference" href="#pdebug.m,varargs[typed]"
+    title="pdebug(n: varargs[typed]): untyped"><wbr />pdebug<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1393,7 +1403,7 @@ function main() {
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
-<a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="cxglobal.html">cxglobal</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="sequtils.html">sequtils</a>, <a class="reference external" href="colors.html">colors</a>
+<a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="cxglobal.html">cxglobal</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="sequtils.html">sequtils</a>, <a class="reference external" href="colors.html">colors</a>, <a class="reference external" href="macros.html">macros</a>
 </dl></div>
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
@@ -1725,7 +1735,7 @@ forward declaration
                     <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printLnBiCol</p>
-<p>changes to prev. versions: sep moved to behind colors in parameter ordering and input can be varargs which gives much better flexibility if varargs are to be printed all parameters need to be specified.</p>
+<p>and input can be varargs which gives much better flexibility however all parameters need to be specified also see printLnBiCol3</p>
 <p>default seperator = &quot;:&quot;  if not found we execute printLn with available params</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
@@ -1748,8 +1758,7 @@ forward declaration
                      <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printLnBiCol2</p>
-<p>this version call print2 and  printLn2  which is suitable when used in multiple columns printing</p>
-<p>changes to prev. versions : sep moved to behind colors in parameter ordering and input can be varargs which gives much better flexibility if varargs are to be printed all parameters need to be specified.</p>
+<p>this version call print2 and  printLn2 which is suitable when printing multiple columns side by side printing</p>
 <p>default seperator = &quot;:&quot;  if not found we execute printLn with available params</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
@@ -1781,13 +1790,16 @@ forward declaration
                      <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printLnBiCol3</p>
-<p>changes to prev. versions: using an openarray to pass in the data rather than a varargs has the effect of not needing to write all the other params if not needed , the cost is writing 2 more brackets for the array ... sep moved to behind colors in parameter ordering and input can be varargs which gives much better flexibility if varargs are to be printed all parameters need to be specified.</p>
+<p>WIP still in testing</p>
+<p>changes to prev. versions: using an openarray to pass in the data rather than a varargs in first position has the effect of not needing to write all the other params if not needed , the cost is writing 2 more brackets for the array ... so most likely the sane version sep moved to behind colors in parameter ordering and input can be varargs which gives much better flexibility if varargs are to be printed all parameters need to be specified.</p>
 <p>default seperator = &quot;:&quot;  if not found we execute printLn with available params</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
-<span class="Keyword">for</span> <span class="Identifier">x</span>  <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="DecNumber">3</span><span class="Punctuation">:</span>
-   <span class="Comment"># here our input is varargs so weneed to specify all params</span>
-    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Test $1  : Ok &quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="StringLit">&quot;this was $1 : what&quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="FloatNumber">23456.789</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
+<span class="Keyword">for</span> <span class="Identifier">x</span>  <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span><span class="DecNumber">30</span><span class="Punctuation">:</span>
+   <span class="Comment"># here our input is an array so we do not need to specify all params unless required</span>
+   <span class="Comment"># and we can make nice tables quickly</span>
+    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;TestA  &quot;</span><span class="Punctuation">,</span> <span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;3&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">)</span> <span class="Punctuation">,</span> <span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span> <span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;10&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="FloatNumber">1000.001</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;  &quot;</span><span class="Punctuation">,</span>
+                  <span class="StringLit">&quot;TestB  &quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span> <span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;13&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="FloatNumber">1000.001</span> <span class="Operator">*</span> <span class="Identifier">float</span><span class="Punctuation">(</span><span class="Identifier">x</span> <span class="Operator">*</span> <span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="printHL"><a name="printHL,string,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printHL</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
@@ -1842,7 +1854,7 @@ forward declaration
     <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>printCxLine</p>
-<p>prints a horizontal  (or vertical line - not yet implemeted) for frames with text as specified in an Cxline object see cxlineobjectE1.nim for an example </p>
+<p>prints a horizontal for frames or other use with or without text , with or without brackets around the text as specified in an Cxline object the underlaying CxLine object is still further developed. see cxlineobjectE1.nim for an example </p>
 
 
 </dd>
@@ -2023,6 +2035,27 @@ forward declaration
 
 
 </dd>
+<dt id="dprint"><a name="dprint,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dprint</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>dprint</p>
+<p>debug print shows contents of s in repr mode</p>
+<p>usefull for debugging  (for some reason the  line number maybe off sometimes) </p>
+
+
+</dd>
+
+</dl></div>
+<div class="section" id="17">
+<h1><a class="toc-backref" href="#17">Macros</a></h1>
+<dl class="item">
+<dt id="pdebug"><a name="pdebug.m,varargs[typed]"></a><pre><span class="Keyword">macro</span> <span class="Identifier">pdebug</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">typed</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
+<dd>
+<p>pdebug</p>
+<p>prints variable name and value in debug view mode</p>
+<p>ex <a class="reference external" href="https://stackoverflow.com/questions/47443206/how-to-debug-print-a-variable-name-and-its-value-in-nim">https://stackoverflow.com/questions/47443206/how-to-debug-print-a-variable-name-and-its-value-in-nim</a> </p>
+
+
+</dd>
 
 </dl></div>
 <div class="section" id="18">
@@ -2052,7 +2085,7 @@ forward declaration
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-02-28 15:52:36 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-05 17:19:27 UTC</small>
       </div>
     </div>
   </div>
