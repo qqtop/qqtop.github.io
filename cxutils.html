@@ -192,10 +192,10 @@ dd > pre {
   table-layout: fixed; }
 
 /* Nim search input */
-div#searchInput {
+div#searchInputDiv {
   margin-bottom: 8px;
 }
-div#searchInput input#searchInput {
+div#searchInputDiv input#searchInput {
   width: 10em;
 }
 div.search-groupby {
@@ -1143,7 +1143,7 @@ dt pre > span.Identifier ~ span.Identifier, dt pre > span.Operator ~ span.Identi
   color: inherit;
   font-weight: inherit; }
 
-dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator {
+dt pre > span.Operator ~ span.Identifier {
   color: inherit;
   font-weight: inherit; }
 
@@ -1220,7 +1220,7 @@ function main() {
     <ul class="simple">
     </ul>
   </div>
-  <div id="searchInput">
+  <div id="searchInputDiv">
     Search: <input type="text" id="searchInput"
       onkeyup="search()" />
   </div>
@@ -1377,24 +1377,11 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2018-03-05
-
-Compiler    : Nim &gt;= 0.18.x dev branch
+Latest      : 2018-03-06
 
 OS          : Linux
 
-Description :
-              
-              cxutils.nim is a collection utility procs and templates
-
-
-Usage       : import nimcx
-
-Project     : https://github.com/qqtop/NimCx
-
-Docs        : https://qqtop.github.io/cxutils.html
-
-Tested      : OpenSuse Tumbleweed ,Debian Testing</pre>
+Description : cxutils.nim is a collection of utility procs and templates</pre>
 </p>
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
@@ -1578,9 +1565,8 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <dd>
 <p>ruler</p>
 <p>simple terminal ruler indicating dot x positions to give a feedback</p>
-<dl class="docutils"><dt>available for horizontal --&gt; vert = false</dt>
-<dd>for vertical   --&gt; vert = true</dd>
-</dl>
+<p>horizontal --&gt; vert = false</p>
+<p>for vertical   --&gt; vert = true</p>
 <p>see cxDemo and cxTest for more usage examples</p>
 <pre class="listing"><span class="Comment"># this will show a full terminal width ruler</span>
 <span class="Identifier">ruler</span><span class="Punctuation">(</span><span class="Identifier">fgr</span><span class="Operator">=</span><span class="Identifier">pastelblue</span><span class="Punctuation">)</span>
@@ -1901,7 +1887,7 @@ full cjk unicode range returned in a seq
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-03-05 21:09:20 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-06 21:49:41 UTC</small>
       </div>
     </div>
   </div>

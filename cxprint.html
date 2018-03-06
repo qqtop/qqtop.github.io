@@ -192,10 +192,10 @@ dd > pre {
   table-layout: fixed; }
 
 /* Nim search input */
-div#searchInput {
+div#searchInputDiv {
   margin-bottom: 8px;
 }
-div#searchInput input#searchInput {
+div#searchInputDiv input#searchInput {
   width: 10em;
 }
 div.search-groupby {
@@ -1143,7 +1143,7 @@ dt pre > span.Identifier ~ span.Identifier, dt pre > span.Operator ~ span.Identi
   color: inherit;
   font-weight: inherit; }
 
-dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator {
+dt pre > span.Operator ~ span.Identifier {
   color: inherit;
   font-weight: inherit; }
 
@@ -1220,7 +1220,7 @@ function main() {
     <ul class="simple">
     </ul>
   </div>
-  <div id="searchInput">
+  <div id="searchInputDiv">
     Search: <input type="text" id="searchInput"
       onkeyup="search()" />
   </div>
@@ -1257,19 +1257,19 @@ function main() {
   <li><a class="reference" href="#cxPrintLn,T,auto,string,int,set[Style]"
     title="cxPrintLn[T](ss: T; fontcolor: auto = colWhite; bgr: string = &quot;colBlack&quot;; xpos: int = 1;
              styled: set[Style] = {styleReverse})"><wbr />cx<wbr />Print<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#print2,T,string,int,bool,bool,set[Style],string"
-    title="print2[T](astring: T; fgr: string = termwhite; xpos: int = 0; fitLine: bool = false;
-          centered: bool = false; styled: set[Style] = {}; substr: string = &quot;&quot;)"><wbr />print2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#print,varargs[T,],string,BackgroundColor,int,string"
     title="print[T](ss: varargs[T, `$`]; fgr: string = termwhite; bgr: BackgroundColor = bgBlack;
          xpos: int = 0; sep: string = spaces(1))"><wbr />print<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printLn2,T,string,int,bool,bool,set[Style],string"
-    title="printLn2[T](astring: T; fgr: string = termwhite; xpos: int = 0; fitLine: bool = false;
-            centered: bool = false; styled: set[Style] = {}; substr: string = &quot;&quot;)"><wbr />print<wbr />Ln2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printLn,T,string,BackgroundColor,int,bool,bool,set[Style],string"
     title="printLn[T](astring: T; fgr: string = termwhite; bgr: BackgroundColor = bgBlack;
            xpos: int = 0; fitLine: bool = false; centered: bool = false;
            styled: set[Style] = {}; substr: string = &quot;&quot;)"><wbr />print<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#print2,T,string,int,bool,bool,set[Style],string"
+    title="print2[T](astring: T; fgr: string = termwhite; xpos: int = 0; fitLine: bool = false;
+          centered: bool = false; styled: set[Style] = {}; substr: string = &quot;&quot;)"><wbr />print2<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printLn2,T,string,int,bool,bool,set[Style],string"
+    title="printLn2[T](astring: T; fgr: string = termwhite; xpos: int = 0; fitLine: bool = false;
+            centered: bool = false; styled: set[Style] = {}; substr: string = &quot;&quot;)"><wbr />print<wbr />Ln2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printy,varargs[T,]"
     title="printy[T](astring: varargs[T, `$`])"><wbr />printy<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rainbow,T,int,bool,bool"
@@ -1340,6 +1340,14 @@ function main() {
     title="printFailMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Fail<wbr />Msg<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printLnFailMsg,string,int"
     title="printLnFailMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Fail<wbr />Msg<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printAlertMsg,string,int"
+    title="printAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Alert<wbr />Msg<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printLnAlertMsg,string,int"
+    title="printLnAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Alert<wbr />Msg<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printBAlertMsg,string,int"
+    title="printBAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />BAlert<wbr />Msg<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printLnBAlertMsg,string,int"
+    title="printLnBAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />BAlert<wbr />Msg<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printOKMsg,string,int"
     title="printOKMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />OKMsg<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printLnOkMsg,string,int"
@@ -1399,7 +1407,23 @@ function main() {
   </div>
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
-  <p class="module-desc"></p>
+  <p class="module-desc"><pre>
+Library     : nimcx.nim
+
+Module      : cxprint.nim
+
+Status      : stable
+
+License     : MIT opensource
+
+Latest      : 2018-03-06
+
+Compiler    : Nim &gt;= 0.18.x dev branch
+
+OS          : Linux
+
+Description : provides most printing functions for the library</pre>
+</p>
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
@@ -1466,7 +1490,7 @@ or use 2 or more print statements for the desired effect</pre>
 <p>cxPrint</p>
 <p>Experimental</p>
 <p>truecolor print function</p>
-<p>see cxtruecolE1.nim  for example usage</p>
+<p>see cxtruecolorE1.nim  for example usage</p>
 <p>Fontcolors can be drawn from cxColorNames , a seq specified in cxconsts.nim Example to specify a fontcolor:</p>
 <blockquote><p><ol class="simple"><li>a random color as string   :  fontcolor = cxcolornames[rndSample(txcol)][0]</li>
 <li>a random color as constant :  fontcolor = cxcolornames[rndSample(txcol)][1]</li>
@@ -1489,7 +1513,7 @@ or use 2 or more print statements for the desired effect</pre>
 <dd>
 <p>cxPrintLn</p>
 <p>truecolor printLn function</p>
-<p>see cxtruecolE1.nim  for example usage </p>
+<p>see cxtruecolorE1.nim  for example usage </p>
 
 
 </dd>
@@ -1499,7 +1523,7 @@ or use 2 or more print statements for the desired effect</pre>
 <p>cxPrint</p>
 <p>Experimental</p>
 <p>truecolor print function</p>
-<p>see cxtruecolE1.nim  for example usage </p>
+<p>see cxtruecolorE1.nim  for example usage </p>
 
 
 </dd>
@@ -1509,8 +1533,55 @@ or use 2 or more print statements for the desired effect</pre>
 <p>cxPrintLn</p>
 <p>Experimental</p>
 <p>truecolor printLn function</p>
-<p>see cxtruecolE1.nim  for example usage </p>
+<p>see cxtruecolorE1.nim  for example usage </p>
 
+
+</dd>
+<dt id="print"><a name="print,varargs[T,],string,BackgroundColor,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span>
+             <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dd>
+<p>print</p>
+<p>a print routine which allows printing of varargs in desired color , position and separator</p>
+<p>no newline is added</p>
+<p>sep must not be wider than 1 , if it is wider the comma will be used as default otherwise default will be 1 space</p>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+
+<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;TEST VARARGS : &quot;</span><span class="Punctuation">,</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">8</span><span class="Punctuation">,</span><span class="DecNumber">13</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="DecNumber">12000</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">newword</span><span class="Punctuation">(</span><span class="DecNumber">6</span><span class="Punctuation">,</span><span class="DecNumber">10</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">getRndfloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Punctuation">(</span><span class="Identifier">hiragana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">8</span><span class="Punctuation">,</span><span class="DecNumber">13</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">bblack</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="printLn"><a name="printLn,T,string,BackgroundColor,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span>
+               <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+               <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
+<dd>
+<pre>printLn
+
+with bgr:setBackGroundColor
+
+
+foregroundcolor
+backgroundcolor
+position
+fitLine
+centered
+styled
+
+Colornames supported for font colors     :
+ 
+ -  all
+
+Colornames supported for background color: BackGroundColors
+
+- use styleBright and styleReverse for variouse effects
+
+- if using truecolors from the cxTrueCol pool note the difference between odd and even numbers</pre>
+<p>Examples</p>
+<pre class="listing"><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span> <span class="Comment"># background has no effect with font in  clrainbow</span>
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span>
+<span class="Comment"># or use it as a replacement of echo</span>
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">red</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;What's up ? &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">green</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;Grub's up ! &quot;</span>
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;No need to reset the original color&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nim does it again&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span> <span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleDim</span><span class="Punctuation">,</span><span class="Identifier">styleUnderscore</span><span class="Punctuation">}</span><span class="Punctuation">,</span><span class="Identifier">substr</span> <span class="Operator">=</span> <span class="StringLit">&quot;i&quot;</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="print2"><a name="print2,T,string,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print2</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
@@ -1560,89 +1631,30 @@ or use 2 or more print statements for the desired effect</pre>
 <span class="Identifier">print2</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">pastelBlue</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="print"><a name="print,varargs[T,],string,BackgroundColor,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span>
-             <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>print</p>
-<p>a print routine which allows printing of varargs in desired color , position and separator</p>
-<p>no newline is added</p>
-<p>sep must not be wider than 1 , if it is wider the comma will be used as default otherwise default will be 1 space</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
-
-<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;TEST VARARGS : &quot;</span><span class="Punctuation">,</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">8</span><span class="Punctuation">,</span><span class="DecNumber">13</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="DecNumber">12000</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">newword</span><span class="Punctuation">(</span><span class="DecNumber">6</span><span class="Punctuation">,</span><span class="DecNumber">10</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">getRndfloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Punctuation">(</span><span class="Identifier">hiragana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">8</span><span class="Punctuation">,</span><span class="DecNumber">13</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">bblack</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
-
-</dd>
 <dt id="printLn2"><a name="printLn2,T,string,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn2</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
                 <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
 <dd>
 <pre>printLn2
 
-original with bgr:string
-
 
 foregroundcolor
-backgroundcolor
+best on black backgroundcolor
 position
 fitLine
 centered
-styled
-
-Colornames supported for font colors     :
- 
- -  all
-
-Colornames supported for background color:
-  
-  - white,red,green,blue,yellow,cyan,magenta,black
-  - brightwhite,brightred,brightgreen,brightblue,brightyellow,
-  - brightcyan,brightmagenta,brightblack</pre>
+styled</pre>
 <p>Examples</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span> <span class="Comment"># background has no effect with font in  clrainbow</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span>
+<pre class="listing"><span class="Identifier">printLn2</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">)</span>
+<span class="Identifier">printLn2</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">)</span>
 <span class="Comment"># or use it as a replacement of echo</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">red</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;What's up ? &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">green</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;Grub's up ! &quot;</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;No need to reset the original color&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nim does it again&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span> <span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleDim</span><span class="Punctuation">,</span><span class="Identifier">styleUnderscore</span><span class="Punctuation">}</span><span class="Punctuation">,</span><span class="Identifier">substr</span> <span class="Operator">=</span> <span class="StringLit">&quot;i&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">printLn2</span><span class="Punctuation">(</span><span class="Identifier">red</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;What's up ? &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">green</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;Grub's up ! &quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">printLn2</span><span class="Punctuation">(</span><span class="StringLit">&quot;No need to reset the original color&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">printLn2</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nim does it again&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span> <span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleDim</span><span class="Punctuation">,</span><span class="Identifier">styleUnderscore</span><span class="Punctuation">}</span><span class="Punctuation">,</span><span class="Identifier">substr</span> <span class="Operator">=</span> <span class="StringLit">&quot;i&quot;</span><span class="Punctuation">)</span>
 <span class="Comment"># To achieve colored text with styleReverse try:</span>
 <span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">30</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-    <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">bRed</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
-    <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.5</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<dt id="printLn"><a name="printLn,T,string,BackgroundColor,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span>
-               <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
-               <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
-<dd>
-<pre>printLn
-
-with bgr:setBackGroundColor
-
-
-foregroundcolor
-backgroundcolor
-position
-fitLine
-centered
-styled
-
-Colornames supported for font colors     :
- 
- -  all
-
-Colornames supported for background color: BackGroundColors
-
-- use styleBright and styleReverse for variouse effects
-
-- if using truecolors from the cxTrueCol pool note the difference between odd and even numbers</pre>
-<p>Examples</p>
-<pre class="listing"><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span> <span class="Comment"># background has no effect with font in  clrainbow</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span>
-<span class="Comment"># or use it as a replacement of echo</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">red</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;What's up ? &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">green</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;Grub's up ! &quot;</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;No need to reset the original color&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nim does it again&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span> <span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleDim</span><span class="Punctuation">,</span><span class="Identifier">styleUnderscore</span><span class="Punctuation">}</span><span class="Punctuation">,</span><span class="Identifier">substr</span> <span class="Operator">=</span> <span class="StringLit">&quot;i&quot;</span><span class="Punctuation">)</span></pre>
+    <span class="Identifier">printLn2</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
+    <span class="Identifier">print</span> <span class="Identifier">cleareol</span>
+    <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.1</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="printy"><a name="printy,varargs[T,]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printy</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
@@ -1935,6 +1947,34 @@ forward declaration
 
 
 </dd>
+<dt id="printAlertMsg"><a name="printAlertMsg,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printAlertMsg</span><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="printLnAlertMsg"><a name="printLnAlertMsg,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnAlertMsg</span><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="printBAlertMsg"><a name="printBAlertMsg,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printBAlertMsg</span><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+
+</dd>
+<dt id="printLnBAlertMsg"><a name="printLnBAlertMsg,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnBAlertMsg</span><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="printOKMsg"><a name="printOKMsg,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printOKMsg</span><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -2085,7 +2125,7 @@ forward declaration
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-03-05 21:09:29 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-06 21:49:51 UTC</small>
       </div>
     </div>
   </div>
