@@ -1349,6 +1349,8 @@ function main() {
   <li><a class="reference" href="#doFlag,string,int,T,string"
     title="doFlag[T](flagcol: string = yellowgreen; flags: int = 1; text: T = &quot;&quot;;
           textcol: string = termwhite): string"><wbr />do<wbr />Flag<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getAscii,string"
+    title="getAscii(s: string): seq[int]"><wbr />get<wbr />Ascii<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#curMove,int,int,int,int"
     title="curMove(up: int = 0; dn: int = 0; fw: int = 0; bk: int = 0)"><wbr />cur<wbr />Move<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#stripper,string"
@@ -1863,6 +1865,14 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 <span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello :  &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">doflag</span><span class="Punctuation">(</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="DecNumber">6</span><span class="Punctuation">,</span><span class="StringLit">&quot;alert&quot;</span><span class="Punctuation">,</span><span class="Identifier">truetomato</span><span class="Punctuation">)</span> <span class="Operator">&amp;</span> <span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">)</span> <span class="Operator">&amp;</span> <span class="Identifier">doflag</span><span class="Punctuation">(</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="DecNumber">6</span><span class="Punctuation">)</span><span class="Punctuation">,</span> <span class="Identifier">dodgerblue</span><span class="Punctuation">)</span></pre>
 
 </dd>
+<dt id="getAscii"><a name="getAscii,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getAscii</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>getAsciicode</p>
+<p>returns ascii integer codes of every character in a string</p>
+<p>in an seq[int] </p>
+
+
+</dd>
 <dt id="curMove"><a name="curMove,int,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">curMove</span><span class="Other">(</span><span class="Identifier">up</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">dn</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fw</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">bk</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -2206,7 +2216,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-03-06 21:49:43 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-08 10:05:25 UTC</small>
       </div>
     </div>
   </div>
