@@ -1246,17 +1246,6 @@ function main() {
   cxerrormsg: string"><wbr />Nim<wbr />Cx<wbr />Error<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#Benchmarkres"
     title="Benchmarkres = tuple[bname, cpu, epoch, repeats: string, fastest: float]"><wbr />Benchmarkres<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#CxTimer"
-    title="CxTimer = object
-  name*: string
-  start*: float
-  stop: float
-  lap*: seq[float]"><wbr />Cx<wbr />Timer<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#Cxtimerres"
-    title="Cxtimerres = tuple[tname: string, start: float, stop: float, lap: seq[float]]"><wbr />Cxtimerres<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#Cxcounter"
-    title="Cxcounter = object
-  value*: int"><wbr />Cxcounter<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1265,8 +1254,6 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#benchmarkresults"
     title="benchmarkresults = newSeq(0)"><wbr />benchmarkresults<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxtimerresults"
-    title="cxtimerresults = newSeq(0)"><wbr />cxtimerresults<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxtmpfilenames"
     title="cxtmpfilenames = newSeq(0)"><wbr />cxtmpfilenames<span class="attachedType" style="visibility:hidden"></span></a></li>
 
@@ -1292,13 +1279,13 @@ function main() {
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#newCxCounter,"
-    title="newCxCounter(): ref (Cxcounter)"><wbr />new<wbr />Cx<wbr />Counter<span class="attachedType" style="visibility:hidden">Cxcounter</span></a></li>
+    title="newCxCounter(): ref (Cxcounter)"><wbr />new<wbr />Cx<wbr />Counter<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#add,ref.Cxcounter"
-    title="add(co: ref Cxcounter)"><wbr />add<span class="attachedType" style="visibility:hidden">Cxcounter</span></a></li>
+    title="add(co: ref Cxcounter)"><wbr />add<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#dec,ref.Cxcounter"
-    title="dec(co: ref Cxcounter)"><wbr />dec<span class="attachedType" style="visibility:hidden">Cxcounter</span></a></li>
+    title="dec(co: ref Cxcounter)"><wbr />dec<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#reset,ref.Cxcounter"
-    title="reset(co: ref Cxcounter)"><wbr />reset<span class="attachedType" style="visibility:hidden">Cxcounter</span></a></li>
+    title="reset(co: ref Cxcounter)"><wbr />reset<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#newColor,int,int,int"
     title="newColor(r, g, b: int): string"><wbr />new<wbr />Color<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#newColor2,int,int,int"
@@ -1311,28 +1298,6 @@ function main() {
     title="nimcat(curFile: string; countphrase: varargs[string, `$`] = &quot;&quot;)"><wbr />nimcat<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showBench,"
     title="showBench()"><wbr />show<wbr />Bench<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#newCxtimer,string"
-    title="newCxtimer(aname: string = &quot;cxtimer&quot;): ref (CxTimer)"><wbr />new<wbr />Cxtimer<span class="attachedType" style="visibility:hidden">CxTimer</span></a></li>
-  <li><a class="reference" href="#startTimer,ref."
-    title="startTimer(co: ref (CxTimer))"><wbr />start<wbr />Timer<span class="attachedType" style="visibility:hidden">CxTimer</span></a></li>
-  <li><a class="reference" href="#lapTimer,ref."
-    title="lapTimer(co: ref (CxTimer)): auto"><wbr />lap<wbr />Timer<span class="attachedType" style="visibility:hidden">CxTimer</span></a></li>
-  <li><a class="reference" href="#stopTimer,ref."
-    title="stopTimer(co: ref (CxTimer))"><wbr />stop<wbr />Timer<span class="attachedType" style="visibility:hidden">CxTimer</span></a></li>
-  <li><a class="reference" href="#resetTimer,ref."
-    title="resetTimer(co: ref (CxTimer))"><wbr />reset<wbr />Timer<span class="attachedType" style="visibility:hidden">CxTimer</span></a></li>
-  <li><a class="reference" href="#duration,ref."
-    title="duration(co: ref (CxTimer)): float"><wbr />duration<span class="attachedType" style="visibility:hidden">CxTimer</span></a></li>
-  <li><a class="reference" href="#saveTimerResults,ref."
-    title="saveTimerResults(b: ref (CxTimer))"><wbr />save<wbr />Timer<wbr />Results<span class="attachedType" style="visibility:hidden">CxTimer</span></a></li>
-  <li><a class="reference" href="#showTimerResults,string"
-    title="showTimerResults(aname: string)"><wbr />show<wbr />Timer<wbr />Results<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#showTimerResults,"
-    title="showTimerResults()"><wbr />show<wbr />Timer<wbr />Results<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#clearTimerResults,string,bool,int"
-    title="clearTimerResults(aname: string = &quot;&quot;; quiet: bool = true; xpos: int = 3)"><wbr />clear<wbr />Timer<wbr />Results<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#clearAllTimerResults,bool,int"
-    title="clearAllTimerResults(quiet: bool = true; xpos: int = 3)"><wbr />clear<wbr />All<wbr />Timer<wbr />Results<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showPalette,string"
     title="showPalette(coltype: string = &quot;white&quot;)"><wbr />show<wbr />Palette<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#colorio,"
@@ -1553,39 +1518,12 @@ Funding     : Here are three excellent reasons :
 
 
 </dd>
-<dt id="CxTimer"><a name="CxTimer"></a><pre><span class="Identifier">CxTimer</span> <span class="Other">=</span> <span class="Keyword">object</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">packed</span></div><span class="Other pragmaend">.}</span>
-  <span class="Identifier">name</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
-  <span class="Identifier">start</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span>
-  <span class="Identifier">stop</span><span class="Other">:</span> <span class="Identifier">float</span>
-  <span class="Identifier">lap</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span>
-</pre></dt>
-<dd>
-
-
-</dd>
-<dt id="Cxtimerres"><a name="Cxtimerres"></a><pre><span class="Identifier">Cxtimerres</span> <span class="Other">=</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">tname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">start</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">,</span> <span class="Identifier">stop</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">,</span> <span class="Identifier">lap</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">]</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="Cxcounter"><a name="Cxcounter"></a><pre><span class="Identifier">Cxcounter</span> <span class="Other">=</span> <span class="Keyword">object</span>
-  <span class="Identifier">value</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
-</pre></dt>
-<dd>
-
-
-</dd>
 
 </dl></div>
 <div class="section" id="8">
 <h1><a class="toc-backref" href="#8">Vars</a></h1>
 <dl class="item">
 <dt id="benchmarkresults"><a name="benchmarkresults"></a><pre><span class="Identifier">benchmarkresults</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="cxtimerresults"><a name="cxtimerresults"></a><pre><span class="Identifier">cxtimerresults</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -1685,86 +1623,6 @@ Funding     : Here are three excellent reasons :
 <dd>
 <p>showBench</p>
 <p>Displays results of all benchmarks</p>
-
-
-</dd>
-<dt id="newCxtimer"><a name="newCxtimer,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newCxtimer</span><span class="Other">(</span><span class="Identifier">aname</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;cxtimer&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><span class="Identifier">CxTimer</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>newCxtimer</p>
-<p>set up a new cxtimer</p>
-<p>simple timer with starttimer,stoptimer,laptimer,resettimer functionality</p>
-<p># Example for newcxtimer usage var ct  = newCxtimer(&quot;TestTimer1&quot;)   # create a cxtimer with name TestTimer1 var ct2 = newCxtimer()               # create a cxtimer which will have default name cxtimer ct.startTimer                        # start a timer ct2.startTimer</p>
-<dl class="docutils"><dt>loopy2(0,2):</dt>
-<dd>sleepy(1) ct2.laptimer                      # take a laptime for a timer</dd>
-</dl>
-<p>ct.stopTimer                         # stop a timer ct2.stopTimer saveTimerResults(ct)                 # save current state of a timer saveTimerResults(ct2) echo() showTimerResults()                   # display status of all timers ct2.resetTimer                       # reset a particular timer clearTimerResults()                  # clear timer result of default timer clearTimerResults(&quot;TestTimer1&quot;)      # clear timer results of a particular timer clearAllTimerResults()               # clear all timer results showTimerResults() dprint cxtimerresults                # dprint is a simple repr utility</p>
-
-
-</dd>
-<dt id="startTimer"><a name="startTimer,ref."></a><pre><span class="Keyword">proc</span> <span class="Identifier">startTimer</span><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><span class="Identifier">CxTimer</span><span class="Other">)</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="lapTimer"><a name="lapTimer,ref."></a><pre><span class="Keyword">proc</span> <span class="Identifier">lapTimer</span><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><span class="Identifier">CxTimer</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="stopTimer"><a name="stopTimer,ref."></a><pre><span class="Keyword">proc</span> <span class="Identifier">stopTimer</span><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><span class="Identifier">CxTimer</span><span class="Other">)</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="resetTimer"><a name="resetTimer,ref."></a><pre><span class="Keyword">proc</span> <span class="Identifier">resetTimer</span><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><span class="Identifier">CxTimer</span><span class="Other">)</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="duration"><a name="duration,ref."></a><pre><span class="Keyword">proc</span> <span class="Identifier">duration</span><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><span class="Identifier">CxTimer</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-
-
-</dd>
-<dt id="saveTimerResults"><a name="saveTimerResults,ref."></a><pre><span class="Keyword">proc</span> <span class="Identifier">saveTimerResults</span><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><span class="Identifier">CxTimer</span><span class="Other">)</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>saveTimerResults</p>
-<p>saves the current state of a cxtimer </p>
-
-
-</dd>
-<dt id="showTimerResults"><a name="showTimerResults,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showTimerResults</span><span class="Other">(</span><span class="Identifier">aname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
-    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>showTimerResults</p>
-<p>shows results for a particular timer name </p>
-
-
-</dd>
-<dt id="showTimerResults"><a name="showTimerResults,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showTimerResults</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
-                                <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                        <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>showTimerResults</p>
-<p>shows results for all timers </p>
-
-
-</dd>
-<dt id="clearTimerResults"><a name="clearTimerResults,string,bool,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">clearTimerResults</span><span class="Other">(</span><span class="Identifier">aname</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">quiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>clearTimerResults</p>
-<p>clears cxtimerresults of one named timer or if aname == &quot;&quot; of timer cxtimer</p>
-
-
-</dd>
-<dt id="clearAllTimerResults"><a name="clearAllTimerResults,bool,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">clearAllTimerResults</span><span class="Other">(</span><span class="Identifier">quiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>clearAllTimerResults</p>
-<p>clears cxtimerresults for all timers , set quiet to false to show feedback</p>
 
 
 </dd>
@@ -2035,7 +1893,7 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 <dt id="benchmark"><a name="benchmark.t,string,int,typed"></a><pre><span class="Keyword">template</span> <span class="Identifier">benchmark</span><span class="Other">(</span><span class="Identifier">benchmarkName</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">repeatcount</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">code</span><span class="Other">:</span> <span class="Identifier">typed</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>benchmark</p>
-<p>a quick benchmark template showing cpu and epoch times with repeat looping param suitable for in program ttiming of procs for in depth benchmarking use the nimbench module available via nimble</p>
+<p>a quick benchmark template showing cpu and epoch times with repeat looping param suitable for quick in-program timing of procs for in depth benchmarking use the nimbench module available via nimble</p>
 <pre class="listing"><span class="Identifier">benchmark</span><span class="Punctuation">(</span><span class="StringLit">&quot;whatever&quot;</span><span class="Punctuation">,</span><span class="DecNumber">1000</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
     <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Kami makan tiga kali setiap hari.&quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">algorithm</span>
 
@@ -2158,7 +2016,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-03-08 10:31:28 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-15 23:08:51 UTC</small>
       </div>
     </div>
   </div>
