@@ -1214,8 +1214,11 @@ function main() {
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">Index</h1>
-    Modules: <a href="cx.html">cx</a>, <a href="cxconsts.html">cxconsts</a>, <a href="cxfont.html">cxfont</a>, <a href="cxglobal.html">cxglobal</a>, <a href="cxhash.html">cxhash</a>, <a href="cxnetwork.html">cxnetwork</a>, <a href="cxprint.html">cxprint</a>, <a href="cxstats.html">cxstats</a>, <a href="cxtime.html">cxtime</a>, <a href="cxtruecolor.html">cxtruecolor</a>.<br/><p /><h2>API symbols</h2>
-<dl><dt><a name="%60%26lt%3B%26gt%3B%60" href="#%60%26lt%3B%26gt%3B%60"><span>`&lt;&gt;`:</span></a></dt><dd><ul class="simple">
+    Modules: <a href="cx.html">cx</a>, <a href="cxconsts.html">cxconsts</a>, <a href="cxfont.html">cxfont</a>, <a href="cxglobal.html">cxglobal</a>, <a href="cxhash.html">cxhash</a>, <a href="cxnetwork.html">cxnetwork</a>, <a href="cxprint.html">cxprint</a>, <a href="cxstats.html">cxstats</a>, <a href="cxtime.html">cxtime</a>, <a href="cxtruecolor.html">cxtruecolor</a>, <a href="cxutils.html">cxutils</a>.<br/><p /><h2>API symbols</h2>
+<dl><dt><a name="%60%24%60" href="#%60%24%60"><span>`$`:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#%24,typedesc%5BT%5D">cxutils : `$`[T](some: typedesc[T]): string</a></li>
+          </ul></dd>
+<dt><a name="%60%26lt%3B%26gt%3B%60" href="#%60%26lt%3B%26gt%3B%60"><span>`&lt;&gt;`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#%3C%3E.t,untyped,untyped">cxglobal : `&lt;&gt;`(a, b: untyped): untyped</a></li>
           </ul></dd>
 <dt><a name="%60%2A%60" href="#%60%2A%60"><span>`*`:</span></a></dt><dd><ul class="simple">
@@ -1299,6 +1302,9 @@ function main() {
           </ul></dd>
 <dt><a name="bisque" href="#bisque"><span>bisque:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#bisque">cxconsts : bisque</a></li>
+          </ul></dd>
+<dt><a name="bitCheck" href="#bitCheck"><span>bitCheck:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#bitCheck.t,untyped,untyped">cxutils : bitCheck(a, b: untyped): bool</a></li>
           </ul></dd>
 <dt><a name="black" href="#black"><span>black:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#black">cxconsts : black</a></li>
@@ -1387,6 +1393,9 @@ function main() {
 <dt><a name="cend" href="#cend"><span>cend:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#cend">cxconsts : cend</a></li>
           </ul></dd>
+<dt><a name="centerMark" href="#centerMark"><span>centerMark:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#centerMark,bool">cxutils : centerMark(showpos: bool = false)</a></li>
+          </ul></dd>
 <dt><a name="centerPos" href="#centerPos"><span>centerPos:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#centerPos,string">cxglobal : centerPos(astring: string)</a></li>
           </ul></dd>
@@ -1455,6 +1464,9 @@ function main() {
           </ul></dd>
 <dt><a name="clearscreen" href="#clearscreen"><span>clearscreen:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#clearscreen">cxconsts : clearscreen</a></li>
+          </ul></dd>
+<dt><a name="clearScreen" href="#clearScreen"><span>clearScreen:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#clearScreen,">cxutils : clearScreen(): int</a></li>
           </ul></dd>
 <dt><a name="clearTimerResults" href="#clearTimerResults"><span>clearTimerResults:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxtime.html#clearTimerResults,string,bool,int">cxtime : clearTimerResults(aname: string = &quot;&quot;; quiet: bool = true; xpos: int = 3)</a></li>
@@ -1534,8 +1546,20 @@ function main() {
 <dt><a name="createHash" href="#createHash"><span>createHash:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxhash.html#createHash,string">cxhash : createHash(kata: string): auto</a></li>
           </ul></dd>
+<dt><a name="createSeqAll" href="#createSeqAll"><span>createSeqAll:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#createSeqAll,int,int">cxutils : createSeqAll(min: int = 0; max: int = 40878): seq[string]</a></li>
+          </ul></dd>
+<dt><a name="createSeqApl" href="#createSeqApl"><span>createSeqApl:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#createSeqApl,">cxutils : createSeqApl(): seq[string]</a></li>
+          </ul></dd>
 <dt><a name="createSeqBool" href="#createSeqBool"><span>createSeqBool:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#createSeqBool,int">cxglobal : createSeqBool(n: int = 10): seq[bool]</a></li>
+          </ul></dd>
+<dt><a name="createSeqBoxChars" href="#createSeqBoxChars"><span>createSeqBoxChars:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#createSeqBoxChars,">cxutils : createSeqBoxChars(): seq[string]</a></li>
+          </ul></dd>
+<dt><a name="createSeqCJK" href="#createSeqCJK"><span>createSeqCJK:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#createSeqCJK,">cxutils : createSeqCJK(): seq[string]</a></li>
           </ul></dd>
 <dt><a name="createSeqDate" href="#createSeqDate"><span>createSeqDate:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxtime.html#createSeqDate,string,int">cxtime : createSeqDate(fromDate: string; days: int = 1): seq[string]</a></li>
@@ -1544,8 +1568,20 @@ function main() {
 <dt><a name="createSeqFloat" href="#createSeqFloat"><span>createSeqFloat:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#createSeqFloat,int,int">cxglobal : createSeqFloat(n: int = 10; prec: int = 3): seq[float]</a></li>
           </ul></dd>
+<dt><a name="createSeqGeoshapes" href="#createSeqGeoshapes"><span>createSeqGeoshapes:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#createSeqGeoshapes,">cxutils : createSeqGeoshapes(): seq[string]</a></li>
+          </ul></dd>
+<dt><a name="createSeqHiragana" href="#createSeqHiragana"><span>createSeqHiragana:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#createSeqHiragana,">cxutils : createSeqHiragana(): seq[string]</a></li>
+          </ul></dd>
+<dt><a name="createSeqIching" href="#createSeqIching"><span>createSeqIching:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#createSeqIching,">cxutils : createSeqIching(): seq[string]</a></li>
+          </ul></dd>
 <dt><a name="createSeqInt" href="#createSeqInt"><span>createSeqInt:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#createSeqInt,int,int,int">cxglobal : createSeqInt(n: int = 10; mi: int = 0; ma: int = 1000): seq[int]</a></li>
+          </ul></dd>
+<dt><a name="createSeqKatakana" href="#createSeqKatakana"><span>createSeqKatakana:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#createSeqKatakana,">cxutils : createSeqKatakana(): seq[string]</a></li>
           </ul></dd>
 <dt><a name="crestore" href="#crestore"><span>crestore:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#crestore">cxconsts : crestore</a></li>
@@ -1637,6 +1673,9 @@ function main() {
 <dt><a name="cxb" href="#cxb"><span>cxb:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxfont.html#cxb.t,int,string,string">cxfont : cxb(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
           </ul></dd>
+<dt><a name="cxBinomialCoeff" href="#cxBinomialCoeff"><span>cxBinomialCoeff:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#cxBinomialCoeff,int,int">cxutils : cxBinomialCoeff(n, k: int): int</a></li>
+          </ul></dd>
 <dt><a name="cxc" href="#cxc"><span>cxc:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxfont.html#cxc.t,int,string,string">cxfont : cxc(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
           </ul></dd>
@@ -1654,6 +1693,9 @@ function main() {
           </ul></dd>
 <dt><a name="cxd" href="#cxd"><span>cxd:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxfont.html#cxd.t,int,string,string">cxfont : cxd(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
+          </ul></dd>
+<dt><a name="cxdayofweek" href="#cxdayofweek"><span>cxdayofweek:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#cxdayofweek,string">cxutils : cxdayofweek(datestr: string): string</a></li>
           </ul></dd>
 <dt><a name="cxe" href="#cxe"><span>cxe:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxfont.html#cxe.t,int,string,string">cxfont : cxe(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
@@ -1911,6 +1953,11 @@ function main() {
 <dt><a name="dprint" href="#dprint"><span>dprint:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxprint.html#dprint,T">cxprint : dprint[T](s: T)</a></li>
           </ul></dd>
+<dt><a name="drawRect" href="#drawRect"><span>drawRect:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#drawRect,int,int,string,string,string,string,int,bool,string">cxutils : drawRect(h: int = 0; w: int = 3; frhLine: string = &quot;_&quot;; frVLine: string = &quot;|&quot;;
+         frCol: string = darkgreen; dotCol: string = truetomato; xpos: int = 1;
+         blink: bool = false; dottype: string = &quot;.&quot;)</a></li>
+          </ul></dd>
 <dt><a name="duration" href="#duration"><span>duration:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxtime.html#duration,ref.">cxtime : duration(co: ref (CxTimer)): float</a></li>
           </ul></dd>
@@ -1968,6 +2015,9 @@ function main() {
 <dt><a name="ff22" href="#ff22"><span>ff22:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#ff22,int,int">cxglobal : ff22(zz: int; n: int = 0): string</a></li>
           </ul></dd>
+<dt><a name="fibonacci" href="#fibonacci"><span>fibonacci:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#fibonacci,int">cxutils : fibonacci(n: int): float</a></li>
+          </ul></dd>
 <dt><a name="firebrick" href="#firebrick"><span>firebrick:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#firebrick">cxconsts : firebrick</a></li>
           </ul></dd>
@@ -1995,11 +2045,17 @@ function main() {
 <dt><a name="gainsboro" href="#gainsboro"><span>gainsboro:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#gainsboro">cxconsts : gainsboro</a></li>
           </ul></dd>
+<dt><a name="getAmzDateString" href="#getAmzDateString"><span>getAmzDateString:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#getAmzDateString,">cxutils : getAmzDateString(): string</a></li>
+          </ul></dd>
 <dt><a name="getAscii" href="#getAscii"><span>getAscii:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#getAscii,string">cxglobal : getAscii(s: string): seq[int]</a></li>
           </ul></dd>
 <dt><a name="getbg" href="#getbg"><span>getbg:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#getbg,BackgroundColor">cxconsts : getbg(bg: BackgroundColor): string</a></li>
+          </ul></dd>
+<dt><a name="getCard" href="#getCard"><span>getCard:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#getCard.t,">cxutils : getCard(): auto</a></li>
           </ul></dd>
 <dt><a name="getColorConst" href="#getColorConst"><span>getColorConst:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#getColorConst,T">cx : getColorConst[T](sc: T): string</a></li>
@@ -2010,14 +2066,31 @@ function main() {
 <dt><a name="getCxTrueColorSet" href="#getCxTrueColorSet"><span>getCxTrueColorSet:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxtruecolor.html#getCxTrueColorSet,int,int,int,bool">cxtruecolor : getCxTrueColorSet(min: int = 0; max: int = 888; step: int = 12; flag48: bool = false): bool</a></li>
           </ul></dd>
+<dt><a name="getFirstMondayYear" href="#getFirstMondayYear"><span>getFirstMondayYear:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#getFirstMondayYear,T">cxutils : getFirstMondayYear[T](ayear: T): string</a></li>
+          </ul></dd>
+<dt><a name="getFirstMondayYearMonth" href="#getFirstMondayYearMonth"><span>getFirstMondayYearMonth:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#getFirstMondayYearMonth,T">cxutils : getFirstMondayYearMonth[T](aym: T): string</a></li>
+          </ul></dd>
 <dt><a name="getHosts" href="#getHosts"><span>getHosts:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxnetwork.html#getHosts,string">cxnetwork : getHosts(dm: string): seq[string]</a></li>
           </ul></dd>
 <dt><a name="getIpInfo" href="#getIpInfo"><span>getIpInfo:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxnetwork.html#getIpInfo,string">cxnetwork : getIpInfo(ip: string): JsonNode</a></li>
           </ul></dd>
+<dt><a name="getNextMonday" href="#getNextMonday"><span>getNextMonday:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#getNextMonday,string">cxutils : getNextMonday(adate: string): string</a></li>
+          </ul></dd>
 <dt><a name="getRandomFloat" href="#getRandomFloat"><span>getRandomFloat:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#getRandomFloat,float,float">cxglobal : getRandomFloat(mi: float = -1.0; ma: float = 1.0): float</a></li>
+          </ul></dd>
+<dt><a name="getRandomPoint" href="#getRandomPoint"><span>getRandomPoint:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#getRandomPoint,float,float,float,float">cxutils : getRandomPoint(minx: float = -500.0; maxx: float = 500.0; miny: float = -500.0;
+               maxy: float = 500.0): RpointFloat</a></li>
+          <li><a class="reference external" href="cxutils.html#getRandomPoint,int,int,int,int">cxutils : getRandomPoint(minx: int = -500; maxx: int = 500; miny: int = -500; maxy: int = 500): RpointInt</a></li>
+          </ul></dd>
+<dt><a name="getRandomPointInCircle" href="#getRandomPointInCircle"><span>getRandomPointInCircle:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#getRandomPointInCircle,float">cxutils : getRandomPointInCircle(radius: float): seq[float]</a></li>
           </ul></dd>
 <dt><a name="getRandomSignF" href="#getRandomSignF"><span>getRandomSignF:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#getRandomSignF,">cxglobal : getRandomSignF(): float</a></li>
@@ -2272,6 +2345,9 @@ function main() {
 <dt><a name="mediumvioletred" href="#mediumvioletred"><span>mediumvioletred:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#mediumvioletred">cxconsts : mediumvioletred</a></li>
           </ul></dd>
+<dt><a name="memCheck" href="#memCheck"><span>memCheck:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#memCheck,bool">cxutils : memCheck(stats: bool = false)</a></li>
+          </ul></dd>
 <dt><a name="midnightblue" href="#midnightblue"><span>midnightblue:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#midnightblue">cxconsts : midnightblue</a></li>
           </ul></dd>
@@ -2322,6 +2398,24 @@ function main() {
           </ul></dd>
 <dt><a name="newDir" href="#newDir"><span>newDir:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#newDir,string">cx : newDir(dirname: string)</a></li>
+          </ul></dd>
+<dt><a name="newHiragana" href="#newHiragana"><span>newHiragana:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#newHiragana,int,int">cxutils : newHiragana(minwl: int = 3; maxwl: int = 10): string</a></li>
+          </ul></dd>
+<dt><a name="newKatakana" href="#newKatakana"><span>newKatakana:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#newKatakana,int,int">cxutils : newKatakana(minwl: int = 3; maxwl: int = 10): string</a></li>
+          </ul></dd>
+<dt><a name="newWord" href="#newWord"><span>newWord:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#newWord,int,int">cxutils : newWord(minwl: int = 3; maxwl: int = 10): string</a></li>
+          </ul></dd>
+<dt><a name="newWord2" href="#newWord2"><span>newWord2:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#newWord2,int,int">cxutils : newWord2(minwl: int = 3; maxwl: int = 10): string</a></li>
+          </ul></dd>
+<dt><a name="newWord3" href="#newWord3"><span>newWord3:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#newWord3,int,int,bool">cxutils : newWord3(minwl: int = 3; maxwl: int = 10; nflag: bool = true): string</a></li>
+          </ul></dd>
+<dt><a name="newWordCJK" href="#newWordCJK"><span>newWordCJK:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#newWordCJK,int,int">cxutils : newWordCJK(minwl: int = 3; maxwl: int = 10): string</a></li>
           </ul></dd>
 <dt><a name="nimcat" href="#nimcat"><span>nimcat:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#nimcat,string,varargs%5Bstring,%5D">cx : nimcat(curFile: string; countphrase: varargs[string, `$`] = &quot;&quot;)</a></li>
@@ -2649,6 +2743,9 @@ function main() {
 <dt><a name="product" href="#product"><span>product:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#product,seq%5BT%5D">cxglobal : product[T](aseq: seq[T]): T</a></li>
           </ul></dd>
+<dt><a name="pswwaux" href="#pswwaux"><span>pswwaux:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#pswwaux,">cxutils : pswwaux()</a></li>
+          </ul></dd>
 <dt><a name="purple" href="#purple"><span>purple:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#purple">cxconsts : purple</a></li>
           </ul></dd>
@@ -2669,6 +2766,9 @@ function main() {
           </ul></dd>
 <dt><a name="randPastelCol" href="#randPastelCol"><span>randPastelCol:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#randPastelCol.t,">cxglobal : randPastelCol(): string</a></li>
+          </ul></dd>
+<dt><a name="randpos" href="#randpos"><span>randpos:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#randpos,">cxutils : randpos(): int</a></li>
           </ul></dd>
 <dt><a name="red" href="#red"><span>red:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#red">cxconsts : red</a></li>
@@ -2736,6 +2836,12 @@ function main() {
 <dt><a name="royalblue" href="#royalblue"><span>royalblue:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#royalblue">cxconsts : royalblue</a></li>
           </ul></dd>
+<dt><a name="RpointFloat" href="#RpointFloat"><span>RpointFloat:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#RpointFloat">cxutils : RpointFloat</a></li>
+          </ul></dd>
+<dt><a name="RpointInt" href="#RpointInt"><span>RpointInt:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#RpointInt">cxutils : RpointInt</a></li>
+          </ul></dd>
 <dt><a name="RuneEmpty" href="#RuneEmpty"><span>RuneEmpty:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#RuneEmpty">cxconsts : RuneEmpty</a></li>
           </ul></dd>
@@ -2790,17 +2896,26 @@ function main() {
 <dt><a name="seashell" href="#seashell"><span>seashell:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#seashell">cxconsts : seashell</a></li>
           </ul></dd>
+<dt><a name="seqHighLite" href="#seqHighLite"><span>seqHighLite:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#seqHighLite,seq%5BT%5D,seq%5BT%5D,string">cxutils : seqHighLite[T](b: seq[T]; b1: seq[T]; col: string = gold)</a></li>
+          </ul></dd>
 <dt><a name="seqLeft" href="#seqLeft"><span>seqLeft:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#seqLeft,seq%5BT%5D,int">cxglobal : seqLeft[T](it: seq[T]; n: int): seq[T]</a></li>
           </ul></dd>
 <dt><a name="seqRight" href="#seqRight"><span>seqRight:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#seqRight,seq%5BT%5D,int">cxglobal : seqRight[T](it: seq[T]; n: int): seq[T]</a></li>
           </ul></dd>
+<dt><a name="shift" href="#shift"><span>shift:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#shift,seq%5BT%5D,Natural">cxutils : shift[T](x: var seq[T]; zz: Natural = 0): T</a></li>
+          </ul></dd>
 <dt><a name="showBench" href="#showBench"><span>showBench:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#showBench,">cx : showBench()</a></li>
           </ul></dd>
 <dt><a name="showColors" href="#showColors"><span>showColors:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#showColors,">cx : showColors()</a></li>
+          </ul></dd>
+<dt><a name="showCpuCores" href="#showCpuCores"><span>showCpuCores:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#showCpuCores,">cxutils : showCpuCores()</a></li>
           </ul></dd>
 <dt><a name="showCxTrueColorPalette" href="#showCxTrueColorPalette"><span>showCxTrueColorPalette:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#showCxTrueColorPalette,int,int,int,bool">cx : showCxTrueColorPalette(min: int = 0; max: int = 888; step: int = 12; flag48: bool = false)</a></li>
@@ -2817,12 +2932,22 @@ function main() {
 <dt><a name="showPalette" href="#showPalette"><span>showPalette:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#showPalette,string">cx : showPalette(coltype: string = &quot;white&quot;)</a></li>
           </ul></dd>
+<dt><a name="showRandomCard" href="#showRandomCard"><span>showRandomCard:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#showRandomCard,int">cxutils : showRandomCard(xpos: int = centerX())</a></li>
+          </ul></dd>
 <dt><a name="showRegression" href="#showRegression"><span>showRegression:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxstats.html#showRegression,RunningRegress,int,int">cxstats : showRegression(rr: RunningRegress; n: int = 5; xpos: int = 1)</a></li>
           <li><a class="reference external" href="cxstats.html#showRegression,seq%5B%5D,seq%5B%5D,int,int">cxstats : showRegression(x, y: seq[float | int]; n: int = 5; xpos: int = 1)</a></li>
           </ul></dd>
+<dt><a name="showRuler" href="#showRuler"><span>showRuler:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#showRuler,int,int,int,string,BackgroundColor,bool">cxutils : showRuler(xpos: int = 0; xposE: int = 0; ypos: int = 0; fgr: string = white;
+          bgr: BackgroundColor = bgBlack; vert: bool = false)</a></li>
+          </ul></dd>
 <dt><a name="showRune" href="#showRune"><span>showRune:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#showRune,string">cxglobal : showRune(s: string): string</a></li>
+          </ul></dd>
+<dt><a name="showSeq" href="#showSeq"><span>showSeq:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#showSeq,seq%5BT%5D,string,int,int">cxutils : showSeq[T](aseq: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5)</a></li>
           </ul></dd>
 <dt><a name="showStats" href="#showStats"><span>showStats:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxstats.html#showStats,RunningStat,int,int">cxstats : showStats(x: RunningStat; n: int = 3; xpos: int = 1)</a></li>
@@ -2958,8 +3083,19 @@ function main() {
 <dt><a name="sun" href="#sun"><span>sun:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#sun">cxconsts : sun</a></li>
           </ul></dd>
+<dt><a name="superHeader" href="#superHeader"><span>superHeader:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#superHeader,string">cxutils : superHeader(bstring: string)</a></li>
+          <li><a class="reference external" href="cxutils.html#superHeader,string,string,string">cxutils : superHeader(bstring: string; strcol: string; frmcol: string)</a></li>
+          </ul></dd>
+<dt><a name="superHeaderA" href="#superHeaderA"><span>superHeaderA:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#superHeaderA,string,string,string,bool,int">cxutils : superHeaderA(bb: string = &quot;&quot;; strcol: string = white; frmcol: string = green;
+             anim: bool = true; animcount: int = 1)</a></li>
+          </ul></dd>
 <dt><a name="swarrow" href="#swarrow"><span>swarrow:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#swarrow">cxconsts : swarrow</a></li>
+          </ul></dd>
+<dt><a name="tableRune" href="#tableRune"><span>tableRune:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#tableRune,seq%5BT%5D,string,int,int">cxutils : tableRune[T](z: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5)</a></li>
           </ul></dd>
 <dt><a name="tan" href="#tan"><span>tan:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#tan">cxconsts : tan</a></li>
@@ -3063,8 +3199,15 @@ function main() {
 <dt><a name="txCol" href="#txCol"><span>txCol:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#txCol">cxconsts : txCol</a></li>
           </ul></dd>
+<dt><a name="typeTest" href="#typeTest"><span>typeTest:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#typeTest,T">cxutils : typeTest[T](x: T): T</a></li>
+          </ul></dd>
+<dt><a name="typeTest2" href="#typeTest2"><span>typeTest2:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#typeTest2,T">cxutils : typeTest2[T](x: T): T</a></li>
+          </ul></dd>
 <dt><a name="typeTest3" href="#typeTest3"><span>typeTest3:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#typeTest3,T">cxglobal : typeTest3[T](x: T): string</a></li>
+          <li><a class="reference external" href="cxutils.html#typeTest3,T">cxutils : typeTest3[T](x: T): string</a></li>
           </ul></dd>
 <dt><a name="uarrow" href="#uarrow"><span>uarrow:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#uarrow">cxconsts : uarrow</a></li>
@@ -3117,6 +3260,9 @@ function main() {
 <dt><a name="wideDot" href="#wideDot"><span>wideDot:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#wideDot">cxconsts : wideDot</a></li>
           </ul></dd>
+<dt><a name="withFile" href="#withFile"><span>withFile:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#withFile.t,untyped,untyped,untyped,untyped">cxutils : withFile(f, fn, mode, actions: untyped): untyped</a></li>
+          </ul></dd>
 <dt><a name="xmark" href="#xmark"><span>xmark:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#xmark">cxconsts : xmark</a></li>
           </ul></dd>
@@ -3143,7 +3289,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-03-17 11:40:52 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-17 11:53:12 UTC</small>
       </div>
     </div>
   </div>
