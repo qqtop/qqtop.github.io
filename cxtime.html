@@ -1578,12 +1578,26 @@ Format yyyy
 <p>newCxtimer</p>
 <p>set up a new cxtimer</p>
 <p>simple timer with starttimer,stoptimer,laptimer,resettimer functionality</p>
-<p># Example for newcxtimer usage var ct  = newCxtimer(&quot;TestTimer1&quot;)   # create a cxtimer with name TestTimer1 var ct2 = newCxtimer()               # create a cxtimer which will have default name cxtimer ct.startTimer                        # start a timer ct2.startTimer</p>
-<dl class="docutils"><dt>loopy2(0,2):</dt>
-<dd>sleepy(1) ct2.laptimer                      # take a laptime for a timer</dd>
-</dl>
-<p>ct.stopTimer                         # stop a timer ct2.stopTimer saveTimerResults(ct)                 # save current state of a timer saveTimerResults(ct2) echo() showTimerResults()                   # display status of all timers ct2.resetTimer                       # reset a particular timer clearTimerResults()                  # clear timer result of default timer clearTimerResults(&quot;TestTimer1&quot;)      # clear timer results of a particular timer clearAllTimerResults()               # clear all timer results showTimerResults() dprint cxtimerresults                # dprint is a simple repr utility</p>
-
+<p>Example</p>
+<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">ct</span>  <span class="Operator">=</span> <span class="Identifier">newCxtimer</span><span class="Punctuation">(</span><span class="StringLit">&quot;TestTimer1&quot;</span><span class="Punctuation">)</span>   <span class="Comment"># create a cxtimer with name TestTimer1</span>
+<span class="Keyword">var</span> <span class="Identifier">ct2</span> <span class="Operator">=</span> <span class="Identifier">newCxtimer</span><span class="Punctuation">(</span><span class="Punctuation">)</span>               <span class="Comment"># create a cxtimer which will have default name cxtimer</span>
+<span class="Identifier">ct</span><span class="Operator">.</span><span class="Identifier">startTimer</span>                        <span class="Comment"># start a timer</span>
+<span class="Identifier">ct2</span><span class="Operator">.</span><span class="Identifier">startTimer</span>
+<span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">2</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+   <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">)</span>
+   <span class="Identifier">ct2</span><span class="Operator">.</span><span class="Identifier">laptimer</span>                      <span class="Comment"># take a laptime for a timer</span>
+<span class="Identifier">ct</span><span class="Operator">.</span><span class="Identifier">stopTimer</span>                         <span class="Comment"># stop a timer</span>
+<span class="Identifier">ct2</span><span class="Operator">.</span><span class="Identifier">stopTimer</span>
+<span class="Identifier">saveTimerResults</span><span class="Punctuation">(</span><span class="Identifier">ct</span><span class="Punctuation">)</span>                 <span class="Comment"># save current state of a timer</span>
+<span class="Identifier">saveTimerResults</span><span class="Punctuation">(</span><span class="Identifier">ct2</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">showTimerResults</span><span class="Punctuation">(</span><span class="Punctuation">)</span>                   <span class="Comment"># display status of all timers</span>
+<span class="Identifier">ct2</span><span class="Operator">.</span><span class="Identifier">resetTimer</span>                       <span class="Comment"># reset a particular timer</span>
+<span class="Identifier">clearTimerResults</span><span class="Punctuation">(</span><span class="Punctuation">)</span>                  <span class="Comment"># clear timer result of default timer</span>
+<span class="Identifier">clearTimerResults</span><span class="Punctuation">(</span><span class="StringLit">&quot;TestTimer1&quot;</span><span class="Punctuation">)</span>      <span class="Comment"># clear timer results of a particular timer</span>
+<span class="Identifier">clearAllTimerResults</span><span class="Punctuation">(</span><span class="Punctuation">)</span>               <span class="Comment"># clear all timer results</span>
+<span class="Identifier">showTimerResults</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">dprint</span> <span class="Identifier">cxtimerresults</span>                <span class="Comment"># dprint is a simple repr utility</span></pre>
 
 </dd>
 <dt id="resetTimer"><a name="resetTimer,ref."></a><pre><span class="Keyword">proc</span> <span class="Identifier">resetTimer</span><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><span class="Identifier">CxTimer</span><span class="Other">)</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -1676,7 +1690,7 @@ Format yyyy
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-03-15 23:12:07 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-17 11:40:44 UTC</small>
       </div>
     </div>
   </div>

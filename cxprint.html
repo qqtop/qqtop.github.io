@@ -1326,8 +1326,8 @@ function main() {
     title="doty(d: int; fgr: string = white; bgr: BackgroundColor = bgBlack; xpos: int = 1)"><wbr />doty<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#dotyLn,int,string,BackgroundColor,int"
     title="dotyLn(d: int; fgr: string = white; bgr: BackgroundColor = bgBlack; xpos: int = 1)"><wbr />doty<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printDotPos,int,string,bool"
-    title="printDotPos(xpos: int; dotCol: string; blink: bool)"><wbr />print<wbr />Dot<wbr />Pos<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printDotPos,int,string,bool,string"
+    title="printDotPos(xpos: int; dotCol: string; blink: bool; dottype: string = widedot)"><wbr />print<wbr />Dot<wbr />Pos<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printErrorMsg,string,int"
     title="printErrorMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Error<wbr />Msg<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printBErrorMsg,string,int"
@@ -1416,7 +1416,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-03-15
+Latest      : 2018-03-16
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1563,6 +1563,7 @@ or use 2 or more print statements for the desired effect</pre>
 
 with bgr:setBackGroundColor
 
+bgr has no effect if styleReverse is used
 
 foregroundcolor
 backgroundcolor
@@ -1581,12 +1582,30 @@ Colornames supported for background color: BackGroundColors
 
 - if using truecolors from the cxTrueCol pool note the difference between odd and even numbers</pre>
 <p>Examples</p>
-<pre class="listing"><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span> <span class="Comment"># background has no effect with font in  clrainbow</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span> <span class="Comment"># background has no effect with font in  clrainbow</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">brightyellow</span><span class="Punctuation">)</span>
 <span class="Comment"># or use it as a replacement of echo</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">red</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;What's up ? &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">green</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;Grub's up ! &quot;</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;No need to reset the original color&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nim does it again&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span> <span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleDim</span><span class="Punctuation">,</span><span class="Identifier">styleUnderscore</span><span class="Punctuation">}</span><span class="Punctuation">,</span><span class="Identifier">substr</span> <span class="Operator">=</span> <span class="StringLit">&quot;i&quot;</span><span class="Punctuation">)</span></pre>
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nim does it again&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span> <span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleDim</span><span class="Punctuation">,</span><span class="Identifier">styleUnderscore</span><span class="Punctuation">}</span><span class="Punctuation">,</span><span class="Identifier">substr</span> <span class="Operator">=</span> <span class="StringLit">&quot;i&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
+
+<span class="Identifier">rainbow</span><span class="Punctuation">(</span><span class="StringLit">&quot;what's up ?&quot;</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">newword</span><span class="Punctuation">(</span><span class="DecNumber">80</span><span class="Punctuation">,</span><span class="DecNumber">80</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">,</span><span class="Identifier">styled</span><span class="Operator">=</span><span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+<span class="Identifier">rainbow</span><span class="Punctuation">(</span><span class="StringLit">&quot;Just asked!&quot;</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
+
+<span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">,</span>
+  <span class="Keyword">block</span><span class="Punctuation">:</span>
+    <span class="Keyword">var</span> <span class="Identifier">r</span> <span class="Operator">=</span> <span class="Identifier">getRndint</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">cxtruecol</span><span class="Operator">.</span><span class="Identifier">len</span> <span class="Operator">-</span> <span class="DecNumber">1</span><span class="Punctuation">)</span>
+    <span class="Keyword">var</span> <span class="Identifier">g</span> <span class="Operator">=</span> <span class="Identifier">getRndint</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">cxtruecol</span><span class="Operator">.</span><span class="Identifier">len</span> <span class="Operator">-</span> <span class="DecNumber">1</span><span class="Punctuation">)</span>
+    <span class="Keyword">var</span> <span class="Identifier">b</span> <span class="Operator">=</span> <span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">cxtruecol</span><span class="Operator">.</span><span class="Identifier">len</span> <span class="Operator">-</span> <span class="DecNumber">1</span><span class="Punctuation">)</span>
+    <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Color Test rgb &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">r</span><span class="Punctuation">,</span><span class="StringLit">&quot;,&quot;</span><span class="Punctuation">,</span><span class="Identifier">g</span><span class="Punctuation">,</span><span class="StringLit">&quot;,&quot;</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">)</span> <span class="Operator">&amp;</span> <span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span> <span class="Operator">&amp;</span> <span class="Identifier">efb2</span> <span class="Operator">*</span> <span class="DecNumber">30</span> <span class="Operator">&amp;</span> <span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span> <span class="Operator">&amp;</span> <span class="Identifier">cxpad</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">xloopy</span><span class="Punctuation">,</span><span class="DecNumber">6</span><span class="Punctuation">)</span> <span class="Punctuation">,</span>
+            <span class="Identifier">newColor</span><span class="Punctuation">(</span><span class="Identifier">r</span><span class="Punctuation">,</span><span class="Identifier">g</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">bgblue</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="print2"><a name="print2,T,string,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print2</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
@@ -1917,7 +1936,7 @@ forward declaration
 
 
 </dd>
-<dt id="printDotPos"><a name="printDotPos,int,string,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printDotPos</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">dotCol</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">blink</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="printDotPos"><a name="printDotPos,int,string,bool,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printDotPos</span><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">dotCol</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">blink</span><span class="Other">:</span> <span class="Identifier">bool</span><span class="Other">;</span> <span class="Identifier">dottype</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">widedot</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -2132,7 +2151,7 @@ forward declaration
 <dt id="rndCxBgrCol"><a name="rndCxBgrCol.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">rndCxBgrCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 <p>rndCxBgrCol</p>
-<p>returns a random background color for cxPrint or cxPrintLn procs from the cxTrueColor seq . defaults to a pool of 843750 colors which can be changed , See  getcxTrueColorSet() </p>
+<p>returns a random background color for cxPrint or cxPrintLn procs from the cxTrueCol seq . defaults to a pool of 421875 colors which can be changed , See  getcxTrueColorSet() </p>
 
 
 </dd>
@@ -2146,7 +2165,7 @@ forward declaration
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-03-15 23:12:13 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-17 11:40:51 UTC</small>
       </div>
     </div>
   </div>
