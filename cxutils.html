@@ -1336,10 +1336,9 @@ function main() {
     title="createSeqApl(): seq[string]"><wbr />create<wbr />Seq<wbr />Apl<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#createSeqBoxChars,"
     title="createSeqBoxChars(): seq[string]"><wbr />create<wbr />Seq<wbr />Box<wbr />Chars<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#tableRune,seq[T],string,int,int"
-    title="tableRune[T](z: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5)"><wbr />table<wbr />Rune<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#showSeq,seq[T],string,int,int"
-    title="showSeq[T](aseq: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5)"><wbr />show<wbr />Seq<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#showSeq,seq[T],string,int,int,bool"
+    title="showSeq[T](z: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5;
+           displayflag: bool = true): string"><wbr />show<wbr />Seq<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#seqHighLite,seq[T],seq[T],string"
     title="seqHighLite[T](b: seq[T]; b1: seq[T]; col: string = gold)"><wbr />seq<wbr />High<wbr />Lite<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#shift,seq[T],Natural"
@@ -1796,22 +1795,16 @@ full cjk unicode range returned in a seq<pre class="listing"><span class="Keywor
 
 
 </dd>
-<dt id="tableRune"><a name="tableRune,seq[T],string,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">tableRune</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>tableRune</p>
-<p>simple table routine with default 6 cols for displaying various unicode sets fgr allows color display and fgr = &quot;rand&quot; displays in rand color and maxwidth for displayable items this can also be used to show items of a sequence</p>
-<pre class="listing"><span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">cjk</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;rand&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">katakana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span>
-<span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">hiragana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
-<span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">geoshapes</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
-<span class="Identifier">tableRune</span><span class="Punctuation">(</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">1000</span><span class="Punctuation">,</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="DecNumber">100000</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<dt id="showSeq"><a name="showSeq,seq[T],string,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showSeq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">aseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span></pre></dt>
+<dt id="showSeq"><a name="showSeq,seq[T],string,int,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showSeq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span>
+               <span class="Identifier">displayflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showSeq</p>
-<p>display contents of a seq, in case of seq of seq the first item of the sub seqs will be shown </p>
-
+<p>simple table routine with default 6 cols for displaying various unicode sets fgr allows color display and fgr = &quot;rand&quot; displays in rand color and maxwidth for displayable items this can also be used to show items of a sequence displayflag == true means to show the output displayflag == false means do not show output , but return it as a string</p>
+<pre class="listing"><span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqCJK</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;rand&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqKatakana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span>
+<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqCJK</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;rand&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqGeoshapes</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">1000</span><span class="Punctuation">,</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="DecNumber">100000</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="seqHighLite"><a name="seqHighLite,seq[T],seq[T],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">seqHighLite</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">b1</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">gold</span><span class="Other">)</span></pre></dt>
@@ -1895,7 +1888,7 @@ full cjk unicode range returned in a seq<pre class="listing"><span class="Keywor
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-03-17 12:08:24 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-17 18:26:35 UTC</small>
       </div>
     </div>
   </div>

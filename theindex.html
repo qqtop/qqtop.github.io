@@ -2405,6 +2405,9 @@ function main() {
 <dt><a name="newKatakana" href="#newKatakana"><span>newKatakana:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxutils.html#newKatakana,int,int">cxutils : newKatakana(minwl: int = 3; maxwl: int = 10): string</a></li>
           </ul></dd>
+<dt><a name="newLine" href="#newLine"><span>newLine:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxglobal.html#newLine,int">cxglobal : newLine(n: int = 1): string</a></li>
+          </ul></dd>
 <dt><a name="newWord" href="#newWord"><span>newWord:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxutils.html#newWord,int,int">cxutils : newWord(minwl: int = 3; maxwl: int = 10): string</a></li>
           </ul></dd>
@@ -2947,7 +2950,8 @@ function main() {
 <li><a class="reference external" href="cxglobal.html#showRune,string">cxglobal : showRune(s: string): string</a></li>
           </ul></dd>
 <dt><a name="showSeq" href="#showSeq"><span>showSeq:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cxutils.html#showSeq,seq%5BT%5D,string,int,int">cxutils : showSeq[T](aseq: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5)</a></li>
+<li><a class="reference external" href="cxutils.html#showSeq,seq%5BT%5D,string,int,int,bool">cxutils : showSeq[T](z: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5;
+           displayflag: bool = true): string</a></li>
           </ul></dd>
 <dt><a name="showStats" href="#showStats"><span>showStats:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxstats.html#showStats,RunningStat,int,int">cxstats : showStats(x: RunningStat; n: int = 3; xpos: int = 1)</a></li>
@@ -3093,9 +3097,6 @@ function main() {
           </ul></dd>
 <dt><a name="swarrow" href="#swarrow"><span>swarrow:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#swarrow">cxconsts : swarrow</a></li>
-          </ul></dd>
-<dt><a name="tableRune" href="#tableRune"><span>tableRune:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cxutils.html#tableRune,seq%5BT%5D,string,int,int">cxutils : tableRune[T](z: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5)</a></li>
           </ul></dd>
 <dt><a name="tan" href="#tan"><span>tan:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#tan">cxconsts : tan</a></li>
@@ -3289,7 +3290,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-03-17 12:08:35 UTC</small>
+        <small>Made with Nim. Generated: 2018-03-17 18:26:46 UTC</small>
       </div>
     </div>
   </div>
