@@ -57,7 +57,7 @@ body {
   line-height: 20px;
   color: #444;
   letter-spacing: 0.15px;
-  background-color: rgba(252, 248, 244, 0.45); }
+  background-color: #FDFBFA; }
 
 /* Skeleton grid */
 .container {
@@ -1263,6 +1263,10 @@ function main() {
     title="fibonacci(n: int): float"><wbr />fibonacci<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#pswwaux,"
     title="pswwaux()"><wbr />pswwaux<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxCpuInfo,"
+    title="cxCpuInfo(): string"><wbr />cx<wbr />Cpu<wbr />Info<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxVideoInfo,"
+    title="cxVideoInfo(): string"><wbr />cx<wbr />Video<wbr />Info<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#memCheck,bool"
     title="memCheck(stats: bool = false)"><wbr />mem<wbr />Check<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showCpuCores,"
@@ -1435,6 +1439,22 @@ Description : cxutils.nim is a collection of utility procs and templates</pre>
 <dt id="pswwaux"><a name="pswwaux,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">pswwaux</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span>
                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
+
+
+</dd>
+<dt id="cxCpuInfo"><a name="cxCpuInfo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxCpuInfo</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                        <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>cxCpuInfo</p>
+<p>executes a system command to get cpu information </p>
+
+
+</dd>
+<dt id="cxVideoInfo"><a name="cxVideoInfo,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxVideoInfo</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>cxVideoInfo</p>
+<p>executes a system command to get video setup information may show warning on certain systems to run as super user </p>
 
 
 </dd>
@@ -1888,7 +1908,7 @@ full cjk unicode range returned in a seq<pre class="listing"><span class="Keywor
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-03-17 18:26:35 UTC</small>
+        <small>Made with Nim. Generated: 2018-04-01 14:40:07 UTC</small>
       </div>
     </div>
   </div>
