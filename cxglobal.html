@@ -1244,19 +1244,33 @@ function main() {
       <li><a class="reference" href="#CxLineType"
     title="CxLineType = enum
   cxHorizontal = &quot;horizontal&quot;, cxVertical = &quot;vertical&quot;"><wbr />Cx<wbr />Line<wbr />Type<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#Cxline"
-    title="Cxline = object
-  startpos*: int
-  endpos*: int
-  toppos*: int
-  botpos*: int
+  <li><a class="reference" href="#CxlineText"
+    title="CxlineText = object
   text*: string
   textcolor*: string
   textstyle*: set[Style]
   textpos*: int
   textbracketopen*: string
   textbracketclose*: string
-  textbracketcolor*: string
+  textbracketcolor*: string"><wbr />Cxline<wbr />Text<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#Cxline"
+    title="Cxline = object
+  startpos*: int
+  endpos*: int
+  toppos*: int
+  botpos*: int
+  cxlinetext*: CxlineText
+  cxlinetext2*: CxlineText
+  cxLinetext3*: CxlineText
+  cxlinetext4*: CxlineText
+  cxlinetext5*: CxlineText
+  cxlinetext6*: CxlineText
+  cxLinetext7*: CxlineText
+  cxlinetext8*: CxlineText
+  cxlinetext9*: CxlineText
+  cxlinetext10*: CxlineText
+  cxLinetext11*: CxlineText
+  cxlinetext12*: CxlineText
   showbrackets*: bool
   linecolor*: string
   linechar*: string
@@ -1346,6 +1360,8 @@ function main() {
     title="centerX(): int"><wbr />center<wbr />X<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#centerPos,string"
     title="centerPos(astring: string)"><wbr />center<wbr />Pos<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#newCxlineText,"
+    title="newCxlineText(): CxlineText"><wbr />new<wbr />Cxline<wbr />Text<span class="attachedType" style="visibility:hidden">CxlineText</span></a></li>
   <li><a class="reference" href="#newCxLine,"
     title="newCxLine(): Cxline"><wbr />new<wbr />Cx<wbr />Line<span class="attachedType" style="visibility:hidden">Cxline</span></a></li>
   <li><a class="reference" href="#fastsplit,string,char"
@@ -1469,7 +1485,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-03-06
+Latest      : 2018-04-05
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1491,11 +1507,7 @@ Description : provides many basic utility functions required by other modules</p
 
 
 </dd>
-<dt id="Cxline"><a name="Cxline"></a><pre><span class="Identifier">Cxline</span> <span class="Other">=</span> <span class="Keyword">object</span>
-  <span class="Identifier">startpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
-  <span class="Identifier">endpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
-  <span class="Identifier">toppos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
-  <span class="Identifier">botpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+<dt id="CxlineText"><a name="CxlineText"></a><pre><span class="Identifier">CxlineText</span> <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">text</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">textcolor</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">textstyle</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span>
@@ -1503,6 +1515,28 @@ Description : provides many basic utility functions required by other modules</p
   <span class="Identifier">textbracketopen</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">textbracketclose</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">textbracketcolor</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
+</pre></dt>
+<dd>
+
+
+</dd>
+<dt id="Cxline"><a name="Cxline"></a><pre><span class="Identifier">Cxline</span> <span class="Other">=</span> <span class="Keyword">object</span>
+  <span class="Identifier">startpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+  <span class="Identifier">endpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+  <span class="Identifier">toppos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+  <span class="Identifier">botpos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+  <span class="Identifier">cxlinetext</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
+  <span class="Identifier">cxlinetext2</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
+  <span class="Identifier">cxLinetext3</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
+  <span class="Identifier">cxlinetext4</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
+  <span class="Identifier">cxlinetext5</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
+  <span class="Identifier">cxlinetext6</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
+  <span class="Identifier">cxLinetext7</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
+  <span class="Identifier">cxlinetext8</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
+  <span class="Identifier">cxlinetext9</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
+  <span class="Identifier">cxlinetext10</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
+  <span class="Identifier">cxLinetext11</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
+  <span class="Identifier">cxlinetext12</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxlineText</span>
   <span class="Identifier">showbrackets</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">bool</span>
   <span class="Identifier">linecolor</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">linechar</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
@@ -1847,6 +1881,11 @@ note that not all unicode chars may be available on all systems</pre>
 <pre class="listing"><span class="Keyword">var</span> <span class="Identifier">s</span> <span class="Operator">=</span> <span class="StringLit">&quot;Hello I am centered&quot;</span>
 <span class="Identifier">centerPos</span><span class="Punctuation">(</span><span class="Identifier">s</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">s</span><span class="Punctuation">,</span><span class="Identifier">gray</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="newCxlineText"><a name="newCxlineText,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newCxlineText</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">CxlineText</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
 
 </dd>
 <dt id="newCxLine"><a name="newCxLine,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newCxLine</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Cxline</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -2241,7 +2280,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-04-01 14:40:09 UTC</small>
+        <small>Made with Nim. Generated: 2018-04-05 15:16:34 UTC</small>
       </div>
     </div>
   </div>
