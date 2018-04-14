@@ -1378,7 +1378,13 @@ function main() {
   <li><a class="reference" href="#printLnInfoMsg,string,string,string,string,int"
     title="printLnInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
                colRight: string = pastelWhite; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Info<wbr />Msg<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#dprint,T"
+
+  </ul>
+</li>
+<li>
+  <a class="reference reference-toplevel" href="#13" id="63">Funcs</a>
+  <ul class="simple simple-toc-section">
+      <li><a class="reference" href="#dprint,T"
     title="dprint[T](s: T)"><wbr />dprint<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
@@ -1494,22 +1500,6 @@ or use 2 or more print statements for the desired effect</pre>
 <p>cxPrint</p>
 <p>Experimental</p>
 <p>note the module base name and function name is the same</p>
-<p>truecolor print function</p>
-<p>see cxtruecolorE1.nim  for example usage</p>
-<p>Fontcolors can be drawn from cxColorNames , a seq specified in cxconsts.nim Example to specify a fontcolor:</p>
-<blockquote><p><ol class="simple"><li>a random color as string   :  fontcolor = cxcolornames[rndSample(txcol)][0]</li>
-<li>a random color as constant :  fontcolor = cxcolornames[rndSample(txcol)][1]</li>
-<li>directly named as string   :  fontcolor = &quot;coldarkslategray&quot;    # a color in cxColorNames string field</li>
-<li>directly named as const    :  fontcolor = coldarkslategray      # a color in cxColorNames constant field</li>
-</ol>
-</p></blockquote>
-<p>Backgroundcolors can be drawn from cxTrueColor palette which can be enabled with a call to getcxTrueColorSet() which generates 421,875 colors larger color palettes can also be generated with getcxTrueColorSet() all palette colors in cxTrueColorSet can be shown with showCxTrueColorPalette() Backgroundcolors can also be drawn from the colorNames seq  specified in cxconsts.nim</p>
-<p>Example to specify a Backgroundcolor :</p>
-<blockquote><p><ol class="simple"><li>a random background color from cxTrueColor palette :  bgr = rndCxBgrCol()</li>
-<li>a color from the cxTrueColor palette               :  bgr = cxTrueCol[65451])</li>
-<li>a specified color from colorNames seq              :  bgr = darkgreen</li>
-</ol>
-</p></blockquote>
 
 
 </dd>
@@ -2125,7 +2115,12 @@ forward declaration
 
 
 </dd>
-<dt id="dprint"><a name="dprint,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dprint</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
+
+</dl></div>
+<div class="section" id="13">
+<h1><a class="toc-backref" href="#13">Funcs</a></h1>
+<dl class="item">
+<dt id="dprint"><a name="dprint,T"></a><pre><span class="Keyword">func</span> <span class="Identifier">dprint</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>dprint</p>
 <p>debug print shows contents of s in repr mode</p>
@@ -2175,7 +2170,7 @@ forward declaration
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-04-05 15:16:42 UTC</small>
+        <small>Made with Nim. Generated: 2018-04-14 14:32:19 UTC</small>
       </div>
     </div>
   </div>

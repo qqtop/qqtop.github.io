@@ -1749,7 +1749,7 @@ function main() {
 <li><a class="reference external" href="cxglobal.html#CxLineType">cxglobal : CxLineType</a></li>
           </ul></dd>
 <dt><a name="cxlpad" href="#cxlpad"><span>cxlpad:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cxglobal.html#cxlpad,string,int">cxglobal : cxlpad(s: string; padlen: int): string</a></li>
+<li><a class="reference external" href="cxglobal.html#cxlpad,string,int,string">cxglobal : cxlpad(s: string; padlen: int; paddy: string = spaces(1)): string</a></li>
           </ul></dd>
 <dt><a name="cxm" href="#cxm"><span>cxm:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxfont.html#cxm.t,int,string,string">cxfont : cxm(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
@@ -1764,7 +1764,7 @@ function main() {
 <li><a class="reference external" href="cxfont.html#cxp.t,int,string,string">cxfont : cxp(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
           </ul></dd>
 <dt><a name="cxpad" href="#cxpad"><span>cxpad:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cxglobal.html#cxpad,string,int">cxglobal : cxpad(s: string; padlen: int): string</a></li>
+<li><a class="reference external" href="cxglobal.html#cxpad,string,int,string">cxglobal : cxpad(s: string; padlen: int; paddy: string = spaces(1)): string</a></li>
           </ul></dd>
 <dt><a name="cxpoint" href="#cxpoint"><span>cxpoint:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxfont.html#cxpoint.t,int,string,string">cxfont : cxpoint(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
@@ -1789,6 +1789,9 @@ function main() {
           </ul></dd>
 <dt><a name="cxr" href="#cxr"><span>cxr:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxfont.html#cxr.t,int,string,string">cxfont : cxr(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
+          </ul></dd>
+<dt><a name="cxRGB" href="#cxRGB"><span>cxRGB:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxtruecolor.html#cxRGB">cxtruecolor : cxRGB</a></li>
           </ul></dd>
 <dt><a name="cxs" href="#cxs"><span>cxs:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxfont.html#cxs.t,int,string,string">cxfont : cxs(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
@@ -2206,6 +2209,9 @@ function main() {
           </ul></dd>
 <dt><a name="isEmpty" href="#isEmpty"><span>isEmpty:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#isEmpty,string">cxglobal : isEmpty(val: string): bool</a></li>
+          </ul></dd>
+<dt><a name="isNumeric" href="#isNumeric"><span>isNumeric:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxglobal.html#isNumeric,string">cxglobal : isNumeric(s: string): bool</a></li>
           </ul></dd>
 <dt><a name="iso_8601_aws" href="#iso_8601_aws"><span>iso_8601_aws:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#iso_8601_aws">cxconsts : iso_8601_aws</a></li>
@@ -2936,7 +2942,10 @@ function main() {
 <li><a class="reference external" href="cxutils.html#showCpuCores,">cxutils : showCpuCores()</a></li>
           </ul></dd>
 <dt><a name="showCxTrueColorPalette" href="#showCxTrueColorPalette"><span>showCxTrueColorPalette:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cx.html#showCxTrueColorPalette,int,int,int,bool">cx : showCxTrueColorPalette(min: int = 0; max: int = 888; step: int = 12; flag48: bool = false)</a></li>
+<li><a class="reference external" href="cxtruecolor.html#showCxTrueColorPalette,int,int,int,bool">cxtruecolor : showCxTrueColorPalette(min: int = 0; max: int = 888; step: int = 12; flag48: bool = false)</a></li>
+          </ul></dd>
+<dt><a name="showCxTrueColorPalette2" href="#showCxTrueColorPalette2"><span>showCxTrueColorPalette2:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxtruecolor.html#showCxTrueColorPalette2,">cxtruecolor : showCxTrueColorPalette2()</a></li>
           </ul></dd>
 <dt><a name="showHosts" href="#showHosts"><span>showHosts:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxnetwork.html#showHosts,string">cxnetwork : showHosts(dm: string)</a></li>
@@ -3305,7 +3314,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-04-05 15:16:43 UTC</small>
+        <small>Made with Nim. Generated: 2018-04-14 14:32:21 UTC</small>
       </div>
     </div>
   </div>

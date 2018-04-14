@@ -1339,8 +1339,6 @@ function main() {
     title="doInfo()"><wbr />do<wbr />Info<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#infoLine,"
     title="infoLine()"><wbr />info<wbr />Line<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#showCxTrueColorPalette,int,int,int,bool"
-    title="showCxTrueColorPalette(min: int = 0; max: int = 888; step: int = 12; flag48: bool = false)"><wbr />show<wbr />Cx<wbr />True<wbr />Color<wbr />Palette<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#theEnd,"
     title="theEnd()"><wbr />the<wbr />End<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#doFinish,"
@@ -1395,7 +1393,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2018-03-06
+Latest      : 2018-04-14
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1829,20 +1827,6 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 
 
 </dd>
-<dt id="showCxTrueColorPalette"><a name="showCxTrueColorPalette,int,int,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCxTrueColorPalette</span><span class="Other">(</span><span class="Identifier">min</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">;</span>
-                           <span class="Identifier">flag48</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span>
-    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>showCxTrueColorPalette</p>
-<p>Experimental</p>
-<p>play with truecolors</p>
-<p>shows truecolors , in order not run out of memory adjust max and step carefully note - less steps more colors e.g max 888 step 4 needs abt 4.3 GB free and has  22,179,134 color shades to select from default has 421,750 palette entries in cxTruecCol</p>
-<p>cxTrueCol is a initial empty global defined in cx.nim which will only be filled with a call to getCxTrueColorSet() ,also see there how the Palette is build up</p>
-<p>press ctrl-c if showTrueColorPalette runs too long .... </p>
-
-
-</dd>
 <dt id="theEnd"><a name="theEnd,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">theEnd</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
               <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -2015,7 +1999,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-04-05 15:16:31 UTC</small>
+        <small>Made with Nim. Generated: 2018-04-14 14:32:08 UTC</small>
       </div>
     </div>
   </div>
