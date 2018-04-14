@@ -1290,8 +1290,14 @@ function main() {
     title="cxtoLower(c: char): char"><wbr />cxto<wbr />Lower<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#isNumeric,string"
     title="isNumeric(s: string): bool"><wbr />is<wbr />Numeric<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getTerminalWidth,"
+    title="getTerminalWidth(): int"><wbr />get<wbr />Terminal<wbr />Width<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getTerminalHeight,"
+    title="getTerminalHeight(): int"><wbr />get<wbr />Terminal<wbr />Height<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#waitOn,int"
     title="waitOn(alen: int = 1)"><wbr />wait<wbr />On<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#rndSample,seq[T]"
+    title="rndSample[T](asq: seq[T]): T"><wbr />rnd<wbr />Sample<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rndRGB,"
     title="rndRGB(): auto"><wbr />rnd<wbr />RGB<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#sum,seq[T]"
@@ -1387,16 +1393,10 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#13" id="63">Funcs</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#getTerminalWidth,"
-    title="getTerminalWidth(): int"><wbr />get<wbr />Terminal<wbr />Width<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#getTerminalHeight,"
-    title="getTerminalHeight(): int"><wbr />get<wbr />Terminal<wbr />Height<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxpad,string,int,string"
+      <li><a class="reference" href="#cxpad,string,int,string"
     title="cxpad(s: string; padlen: int; paddy: string = spaces(1)): string"><wbr />cxpad<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxlpad,string,int,string"
     title="cxlpad(s: string; padlen: int; paddy: string = spaces(1)): string"><wbr />cxlpad<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#rndSample,seq[T]"
-    title="rndSample[T](asq: seq[T]): T"><wbr />rnd<wbr />Sample<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1579,11 +1579,30 @@ issues n newLines , default = 1
 
 
 </dd>
+<dt id="getTerminalWidth"><a name="getTerminalWidth,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalWidth</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>getTerminalWidth</p>
+<p>get linux terminal width in columns a terminalwidth function is now incorporated in Nim dev after 2016-09-02 which maybe is slightly slower than the one presented here </p>
+
+
+</dd>
+<dt id="getTerminalHeight"><a name="getTerminalHeight,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTerminalHeight</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>getTerminalHeight</p>
+<p>get linux terminal height in rows </p>
+
+
+</dd>
 <dt id="waitOn"><a name="waitOn,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">waitOn</span><span class="Other">(</span><span class="Identifier">alen</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>waiton</p>
 <p>stops program to wait for one or more keypresses. default = 1 </p>
 
+
+</dd>
+<dt id="rndSample"><a name="rndSample,seq[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rndSample</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">asq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
+<dd>
+rndSample returns one rand sample from a sequence
 
 </dd>
 <dt id="rndRGB"><a name="rndRGB,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rndRGB</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
@@ -2007,20 +2026,6 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 <div class="section" id="13">
 <h1><a class="toc-backref" href="#13">Funcs</a></h1>
 <dl class="item">
-<dt id="getTerminalWidth"><a name="getTerminalWidth,"></a><pre><span class="Keyword">func</span> <span class="Identifier">getTerminalWidth</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>getTerminalWidth</p>
-<p>get linux terminal width in columns a terminalwidth function is now incorporated in Nim dev after 2016-09-02 which maybe is slightly slower than the one presented here </p>
-
-
-</dd>
-<dt id="getTerminalHeight"><a name="getTerminalHeight,"></a><pre><span class="Keyword">func</span> <span class="Identifier">getTerminalHeight</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>getTerminalHeight</p>
-<p>get linux terminal height in rows </p>
-
-
-</dd>
 <dt id="cxpad"><a name="cxpad,string,int,string"></a><pre><span class="Keyword">func</span> <span class="Identifier">cxpad</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">padlen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>cxpad</p>
@@ -2034,11 +2039,6 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 <p>cxlpad</p>
 <p>pads a string on the left side with spaces to specified width </p>
 
-
-</dd>
-<dt id="rndSample"><a name="rndSample,seq[T]"></a><pre><span class="Keyword">func</span> <span class="Identifier">rndSample</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">asq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
-<dd>
-rndSample returns one rand sample from a sequence
 
 </dd>
 
@@ -2299,7 +2299,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-04-14 14:32:12 UTC</small>
+        <small>Made with Nim. Generated: 2018-04-14 15:33:22 UTC</small>
       </div>
     </div>
   </div>
