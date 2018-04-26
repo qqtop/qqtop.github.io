@@ -1624,6 +1624,7 @@ function main() {
           </ul></dd>
 <dt><a name="currentLine" href="#currentLine"><span>currentLine:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#currentLine.t,">cxglobal : currentLine()</a></li>
+          <li><a class="reference external" href="cxglobal.html#currentLine.t,int">cxglobal : currentLine(xpos: int)</a></li>
           </ul></dd>
 <dt><a name="curSet" href="#curSet"><span>curSet:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#curSet.t,int,int">cxglobal : curSet(x: int = 0; y: int = 0)</a></li>
@@ -1751,6 +1752,9 @@ function main() {
 <dt><a name="cxlpad" href="#cxlpad"><span>cxlpad:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#cxlpad,string,int,string">cxglobal : cxlpad(s: string; padlen: int; paddy: string = spaces(1)): string</a></li>
           </ul></dd>
+<dt><a name="cxlpdx" href="#cxlpdx"><span>cxlpdx:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxglobal.html#cxlpdx,int,string,string">cxglobal : cxlpdx(padLen: int; s: string; paddy: string = spaces(1)): string</a></li>
+          </ul></dd>
 <dt><a name="cxm" href="#cxm"><span>cxm:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxfont.html#cxm.t,int,string,string">cxfont : cxm(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
           </ul></dd>
@@ -1765,6 +1769,9 @@ function main() {
           </ul></dd>
 <dt><a name="cxpad" href="#cxpad"><span>cxpad:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#cxpad,string,int,string">cxglobal : cxpad(s: string; padlen: int; paddy: string = spaces(1)): string</a></li>
+          </ul></dd>
+<dt><a name="cxpdx" href="#cxpdx"><span>cxpdx:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxglobal.html#cxpdx,int,string,string">cxglobal : cxpdx(padLen: int; s: string; paddy: string = spaces(1)): string</a></li>
           </ul></dd>
 <dt><a name="cxpoint" href="#cxpoint"><span>cxpoint:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxfont.html#cxpoint.t,int,string,string">cxfont : cxpoint(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
@@ -2715,6 +2722,10 @@ function main() {
 <li><a class="reference external" href="cxprint.html#printLnInfoMsg,string,string,string,string,int">cxprint : printLnInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
                colRight: string = pastelWhite; xpos: int = 1): string</a></li>
           </ul></dd>
+<dt><a name="printLnInfoMsg2" href="#printLnInfoMsg2"><span>printLnInfoMsg2:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxprint.html#printLnInfoMsg2,string,string,string,string,int">cxprint : printLnInfoMsg2(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
+                colRight: string = pastelWhite; xpos: int = 1): string</a></li>
+          </ul></dd>
 <dt><a name="printLnOkMsg" href="#printLnOkMsg"><span>printLnOkMsg:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxprint.html#printLnOkMsg,string,int">cxprint : printLnOkMsg(atext: string = &quot;&quot;; xpos: int = 1): string</a></li>
           </ul></dd>
@@ -3188,11 +3199,17 @@ function main() {
 <dt><a name="tmpFilename" href="#tmpFilename"><span>tmpFilename:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#tmpFilename,">cx : tmpFilename(): string</a></li>
           </ul></dd>
+<dt><a name="toChar" href="#toChar"><span>toChar:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cx.html#toChar.c,int">cx : toChar(x: int): char</a></li>
+          </ul></dd>
 <dt><a name="toClip" href="#toClip"><span>toClip:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#toClip,T">cx : toClip[T](s: T)</a></li>
           </ul></dd>
 <dt><a name="toDateTime" href="#toDateTime"><span>toDateTime:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxtime.html#toDateTime,string">cxtime : toDateTime(date: string = &quot;2000-01-01&quot;): DateTime</a></li>
+          </ul></dd>
+<dt><a name="toInt" href="#toInt"><span>toInt:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cx.html#toInt.c,char">cx : toInt(x: char): int</a></li>
           </ul></dd>
 <dt><a name="tomato" href="#tomato"><span>tomato:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#tomato">cxconsts : tomato</a></li>
@@ -3214,6 +3231,9 @@ function main() {
           </ul></dd>
 <dt><a name="tupleToStr" href="#tupleToStr"><span>tupleToStr:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#tupleToStr,">cxglobal : tupleToStr(xs: tuple): string</a></li>
+          </ul></dd>
+<dt><a name="tupleTypes" href="#tupleTypes"><span>tupleTypes:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxglobal.html#tupleTypes,">cxglobal : tupleTypes(atuple: tuple): seq[string]</a></li>
           </ul></dd>
 <dt><a name="turquoise" href="#turquoise"><span>turquoise:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#turquoise">cxconsts : turquoise</a></li>
@@ -3314,7 +3334,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-04-14 15:33:30 UTC</small>
+        <small>Made with Nim. Generated: 2018-04-26 19:38:03 UTC</small>
       </div>
     </div>
   </div>

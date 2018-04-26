@@ -1378,6 +1378,9 @@ function main() {
   <li><a class="reference" href="#printLnInfoMsg,string,string,string,string,int"
     title="printLnInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
                colRight: string = pastelWhite; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Info<wbr />Msg<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printLnInfoMsg2,string,string,string,string,int"
+    title="printLnInfoMsg2(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
+                colRight: string = pastelWhite; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Info<wbr />Msg2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#dprint,T"
     title="dprint[T](s: T)"><wbr />dprint<span class="attachedType" style="visibility:hidden"></span></a></li>
 
@@ -1416,7 +1419,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-04-05
+Latest      : 2018-04-26
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1759,7 +1762,7 @@ forward declaration
                     <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>printLnBiCol</p>
-<p>and input can be varargs which gives much better flexibility however all parameters need to be specified also see printLnBiCol3</p>
+<p>input can be varargs which gives much better flexibility however all parameters need to be specified also see printLnBiCol3</p>
 <p>default seperator = &quot;:&quot;  if not found we execute printLn with available params</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
@@ -1809,7 +1812,7 @@ forward declaration
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
 <span class="Keyword">for</span> <span class="Identifier">x</span>  <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="DecNumber">3</span><span class="Punctuation">:</span>
-   <span class="Comment"># here our input is varargs so weneed to specify all params</span>
+   <span class="Comment"># here our input is varargs so we need to specify all params</span>
     <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Test $1  : Ok &quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="StringLit">&quot;this was $1 : what&quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="FloatNumber">23456.789</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span>  <span class="Keyword">in</span> <span class="FloatNumber">4.</span><span class="Operator">.&lt;</span><span class="DecNumber">6</span><span class="Punctuation">:</span>
     <span class="Comment"># here we change the default colors</span>
@@ -2109,6 +2112,14 @@ forward declaration
 
 
 </dd>
+<dt id="printLnInfoMsg2"><a name="printLnInfoMsg2,string,string,string,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLnInfoMsg2</span><span class="Other">(</span><span class="Identifier">info</span><span class="Other">,</span> <span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lightslategray</span><span class="Other">;</span>
+                    <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">pastelWhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+
+
+</dd>
 <dt id="dprint"><a name="dprint,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dprint</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>dprint</p>
@@ -2159,7 +2170,7 @@ forward declaration
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-04-14 15:33:29 UTC</small>
+        <small>Made with Nim. Generated: 2018-04-26 19:38:02 UTC</small>
       </div>
     </div>
   </div>
