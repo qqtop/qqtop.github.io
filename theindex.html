@@ -1543,6 +1543,9 @@ function main() {
 <dt><a name="cpos1" href="#cpos1"><span>cpos1:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#cpos1">cxconsts : cpos1</a></li>
           </ul></dd>
+<dt><a name="createCxFont" href="#createCxFont"><span>createCxFont:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxfont.html#createCxFont,string">cxfont : createCxFont(name: string): seq[seq[string]]</a></li>
+          </ul></dd>
 <dt><a name="createHash" href="#createHash"><span>createHash:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxhash.html#createHash,string">cxhash : createHash(kata: string): auto</a></li>
           </ul></dd>
@@ -1962,6 +1965,12 @@ function main() {
           </ul></dd>
 <dt><a name="doSomething" href="#doSomething"><span>doSomething:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxglobal.html#doSomething.t,int,untyped">cxglobal : doSomething(secs: int; body: untyped)</a></li>
+          </ul></dd>
+<dt><a name="dotMatrixFontTest" href="#dotMatrixFontTest"><span>dotMatrixFontTest:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxfont.html#dotMatrixFontTest,">cxfont : dotMatrixFontTest()</a></li>
+          </ul></dd>
+<dt><a name="dotmatrixraw" href="#dotmatrixraw"><span>dotmatrixraw:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxconsts.html#dotmatrixraw">cxconsts : dotmatrixraw</a></li>
           </ul></dd>
 <dt><a name="doty" href="#doty"><span>doty:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxprint.html#doty,int,string,BackgroundColor,int">cxprint : doty(d: int; fgr: string = white; bgr: BackgroundColor = bgBlack; xpos: int = 1)</a></li>
@@ -2627,6 +2636,13 @@ function main() {
 <dt><a name="printCodeMsg" href="#printCodeMsg"><span>printCodeMsg:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxprint.html#printCodeMsg,string,int">cxprint : printCodeMsg(atext: string = &quot;&quot;; xpos: int = 1): string</a></li>
           </ul></dd>
+<dt><a name="printCxFontLetter" href="#printCxFontLetter"><span>printCxFontLetter:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxfont.html#printCxFontLetter,int,int,seq%5Bseq%5Bstring%5D%5D,string">cxfont : printCxFontLetter(n: int; xpos: int; cxfont: seq[seq[string]]; color: string)</a></li>
+          </ul></dd>
+<dt><a name="printCxFontText" href="#printCxFontText"><span>printCxFontText:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxfont.html#printCxFontText,seq%5Bint%5D,int,seq%5Bseq%5Bstring%5D%5D,string">cxfont : printCxFontText(textseq: seq[int]; xpos: int = 2; cxfont: seq[seq[string]];
+                color: string = randcol())</a></li>
+          </ul></dd>
 <dt><a name="printCxLine" href="#printCxLine"><span>printCxLine:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxprint.html#printCxLine,Cxline">cxprint : printCxLine(aline: var Cxline)</a></li>
           </ul></dd>
@@ -2952,6 +2968,9 @@ function main() {
 <dt><a name="showCpuCores" href="#showCpuCores"><span>showCpuCores:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxutils.html#showCpuCores,">cxutils : showCpuCores()</a></li>
           </ul></dd>
+<dt><a name="showCxFont" href="#showCxFont"><span>showCxFont:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxfont.html#showCxFont,string">cxfont : showCxFont(name: string)</a></li>
+          </ul></dd>
 <dt><a name="showCxTrueColorPalette" href="#showCxTrueColorPalette"><span>showCxTrueColorPalette:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxtruecolor.html#showCxTrueColorPalette,int,int,int,bool">cxtruecolor : showCxTrueColorPalette(min: int = 0; max: int = 888; step: int = 12; flag48: bool = false)</a></li>
           </ul></dd>
@@ -2997,6 +3016,9 @@ function main() {
 <dt><a name="showTimerResults" href="#showTimerResults"><span>showTimerResults:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxtime.html#showTimerResults,">cxtime : showTimerResults()</a></li>
           <li><a class="reference external" href="cxtime.html#showTimerResults,string">cxtime : showTimerResults(aname: string)</a></li>
+          </ul></dd>
+<dt><a name="sidewaysraw" href="#sidewaysraw"><span>sidewaysraw:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxconsts.html#sidewaysraw">cxconsts : sidewaysraw</a></li>
           </ul></dd>
 <dt><a name="sienna" href="#sienna"><span>sienna:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#sienna">cxconsts : sienna</a></li>
@@ -3334,7 +3356,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-04-26 19:38:03 UTC</small>
+        <small>Made with Nim. Generated: 2018-05-01 19:53:10 UTC</small>
       </div>
     </div>
   </div>
