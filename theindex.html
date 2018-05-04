@@ -1429,6 +1429,12 @@ function main() {
 <dt><a name="checkLocals" href="#checkLocals"><span>checkLocals:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cx.html#checkLocals.t,">cx : checkLocals()</a></li>
           </ul></dd>
+<dt><a name="checkMem" href="#checkMem"><span>checkMem:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#checkMem,int">cxutils : checkMem(xpos: int = 2)</a></li>
+          </ul></dd>
+<dt><a name="checkMemFull" href="#checkMemFull"><span>checkMemFull:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#checkMemFull,int">cxutils : checkMemFull(xpos: int = 2)</a></li>
+          </ul></dd>
 <dt><a name="checkTrueColorSupport" href="#checkTrueColorSupport"><span>checkTrueColorSupport:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxtruecolor.html#checkTrueColorSupport,">cxtruecolor : checkTrueColorSupport(): bool</a></li>
           </ul></dd>
@@ -2073,6 +2079,9 @@ function main() {
 <dt><a name="fullflag" href="#fullflag"><span>fullflag:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#fullflag">cxconsts : fullflag</a></li>
           </ul></dd>
+<dt><a name="fullgcstats" href="#fullgcstats"><span>fullgcstats:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxutils.html#fullgcstats,int">cxutils : fullgcstats(xpos: int = 2): int</a></li>
+          </ul></dd>
 <dt><a name="gainsboro" href="#gainsboro"><span>gainsboro:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#gainsboro">cxconsts : gainsboro</a></li>
           </ul></dd>
@@ -2637,11 +2646,12 @@ function main() {
 <li><a class="reference external" href="cxprint.html#printCodeMsg,string,int">cxprint : printCodeMsg(atext: string = &quot;&quot;; xpos: int = 1): string</a></li>
           </ul></dd>
 <dt><a name="printCxFontLetter" href="#printCxFontLetter"><span>printCxFontLetter:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cxfont.html#printCxFontLetter,int,int,seq%5Bseq%5Bstring%5D%5D,string">cxfont : printCxFontLetter(n: int; xpos: int; cxfont: seq[seq[string]]; color: string)</a></li>
+<li><a class="reference external" href="cxfont.html#printCxFontLetter,int,int,seq%5Bseq%5Bstring%5D%5D,string,int">cxfont : printCxFontLetter(n: int; xpos: int; cxfont: seq[seq[string]]; color: string;
+                  vertstepping: int)</a></li>
           </ul></dd>
 <dt><a name="printCxFontText" href="#printCxFontText"><span>printCxFontText:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external" href="cxfont.html#printCxFontText,seq%5Bint%5D,int,seq%5Bseq%5Bstring%5D%5D,string">cxfont : printCxFontText(textseq: seq[int]; xpos: int = 2; cxfont: seq[seq[string]];
-                color: string = randcol())</a></li>
+<li><a class="reference external" href="cxfont.html#printCxFontText,seq%5Bint%5D,int,seq%5Bseq%5Bstring%5D%5D,string,int,int">cxfont : printCxFontText(textseq: seq[int]; xpos: int = 2; cxfont: seq[seq[string]];
+                color: string = randcol(); vertstepping: int = 9; kerning: int = 19)</a></li>
           </ul></dd>
 <dt><a name="printCxLine" href="#printCxLine"><span>printCxLine:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxprint.html#printCxLine,Cxline">cxprint : printCxLine(aline: var Cxline)</a></li>
@@ -3152,6 +3162,9 @@ function main() {
 <li><a class="reference external" href="cxutils.html#superHeaderA,string,string,string,bool,int">cxutils : superHeaderA(bb: string = &quot;&quot;; strcol: string = white; frmcol: string = green;
              anim: bool = true; animcount: int = 1)</a></li>
           </ul></dd>
+<dt><a name="swampraw" href="#swampraw"><span>swampraw:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" href="cxconsts.html#swampraw">cxconsts : swampraw</a></li>
+          </ul></dd>
 <dt><a name="swarrow" href="#swarrow"><span>swarrow:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" href="cxconsts.html#swarrow">cxconsts : swarrow</a></li>
           </ul></dd>
@@ -3356,7 +3369,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-05-01 19:53:10 UTC</small>
+        <small>Made with Nim. Generated: 2018-05-04 15:47:47 UTC</small>
       </div>
     </div>
   </div>

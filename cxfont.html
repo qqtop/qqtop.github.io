@@ -1258,11 +1258,12 @@ function main() {
                 bgr: BackgroundColor = bgBlack; xpos: int = 1)"><wbr />print<wbr />Slim<wbr />Number<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printSlim,string,string,int,string"
     title="printSlim(ss: string = &quot;&quot;; frg: string = termwhite; xpos: int = 0; align: string = &quot;left&quot;)"><wbr />print<wbr />Slim<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printCxFontLetter,int,int,seq[seq[string]],string"
-    title="printCxFontLetter(n: int; xpos: int; cxfont: seq[seq[string]]; color: string)"><wbr />print<wbr />Cx<wbr />Font<wbr />Letter<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printCxFontText,seq[int],int,seq[seq[string]],string"
+  <li><a class="reference" href="#printCxFontLetter,int,int,seq[seq[string]],string,int"
+    title="printCxFontLetter(n: int; xpos: int; cxfont: seq[seq[string]]; color: string;
+                  vertstepping: int)"><wbr />print<wbr />Cx<wbr />Font<wbr />Letter<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#printCxFontText,seq[int],int,seq[seq[string]],string,int,int"
     title="printCxFontText(textseq: seq[int]; xpos: int = 2; cxfont: seq[seq[string]];
-                color: string = randcol())"><wbr />print<wbr />Cx<wbr />Font<wbr />Text<span class="attachedType" style="visibility:hidden"></span></a></li>
+                color: string = randcol(); vertstepping: int = 9; kerning: int = 19)"><wbr />print<wbr />Cx<wbr />Font<wbr />Text<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#createCxFont,string"
     title="createCxFont(name: string): seq[seq[string]]"><wbr />create<wbr />Cx<wbr />Font<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showCxFont,string"
@@ -1471,18 +1472,22 @@ printNimcx<blockquote><p>experiments in block font building , default is center 
 <span class="Identifier">printSlim</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="StringLit">&quot;33.87&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">25</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="printCxFontLetter"><a name="printCxFontLetter,int,int,seq[seq[string]],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printCxFontLetter</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="printCxFontLetter"><a name="printCxFontLetter,int,int,seq[seq[string]],string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printCxFontLetter</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
+                      <span class="Identifier">vertstepping</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="printCxFontText"><a name="printCxFontText,seq[int],int,seq[seq[string]],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printCxFontText</span><span class="Other">(</span><span class="Identifier">textseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span>
-                    <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+<dt id="printCxFontText"><a name="printCxFontText,seq[int],int,seq[seq[string]],string,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printCxFontText</span><span class="Other">(</span><span class="Identifier">textseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span>
+                    <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">vertstepping</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">9</span><span class="Other">;</span> <span class="Identifier">kerning</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">19</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
+<p>printCxFontText</p>
+<p>printtext in fonts dotmatrix,bracketmatrix,sideways,swamp</p>
+<p>swamp needs vertstepping = 7 and kerning &gt;= 15 </p>
 
 
 </dd>
@@ -1508,7 +1513,7 @@ printNimcx<blockquote><p>experiments in block font building , default is center 
 <p>and then</p>
 <pre class="listing"><span class="Keyword">let</span> <span class="Identifier">myfont</span> <span class="Operator">=</span> <span class="Identifier">createCxFont</span><span class="Punctuation">(</span><span class="StringLit">&quot;dotmatrix&quot;</span><span class="Punctuation">)</span>
 <span class="Comment"># lets print &lt;NIM&gt;123</span>
-<span class="Identifier">printCxFontText</span><span class="Punctuation">(</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">12</span><span class="Punctuation">,</span><span class="DecNumber">30</span><span class="Punctuation">,</span><span class="DecNumber">25</span><span class="Punctuation">,</span><span class="DecNumber">29</span><span class="Punctuation">,</span><span class="DecNumber">14</span><span class="Punctuation">,</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="DecNumber">3</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">2</span><span class="Punctuation">,</span><span class="Identifier">myfont</span><span class="Punctuation">)</span></pre><p>Alternatively compile cxmatrixfontE1.nim which calls this function </p>
+<span class="Identifier">printCxFontText</span><span class="Punctuation">(</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">12</span><span class="Punctuation">,</span><span class="DecNumber">30</span><span class="Punctuation">,</span><span class="DecNumber">25</span><span class="Punctuation">,</span><span class="DecNumber">29</span><span class="Punctuation">,</span><span class="DecNumber">14</span><span class="Punctuation">,</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="DecNumber">3</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">2</span><span class="Punctuation">,</span><span class="Identifier">myfont</span><span class="Punctuation">)</span></pre><p>import &quot;/data5/NimStuff/NimCxDevel/cx.nim&quot;</p>
 
 
 </dd>
@@ -1722,7 +1727,7 @@ printNimcx<blockquote><p>experiments in block font building , default is center 
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-05-01 19:53:06 UTC</small>
+        <small>Made with Nim. Generated: 2018-05-04 15:47:43 UTC</small>
       </div>
     </div>
   </div>
