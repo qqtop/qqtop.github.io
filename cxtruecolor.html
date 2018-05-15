@@ -1239,11 +1239,19 @@ function main() {
   </ul>
 </li>
 <li>
+  <a class="reference reference-toplevel" href="#7" id="57">Types</a>
+  <ul class="simple simple-toc-section">
+      <li><a class="reference" href="#CXRGB"
+    title="CXRGB = tuple[R: int, G: int, B: int, cxCol: string]"><wbr />CXRGB<span class="attachedType" style="visibility:hidden"></span></a></li>
+
+  </ul>
+</li>
+<li>
   <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#cxTrueCol"
     title="cxTrueCol = newSeq(0)"><wbr />cx<wbr />True<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxRGB"
+  <li><a class="reference" href="#cxRGB_2"
     title="cxRGB = newSeq(0)"><wbr />cx<wbr />RGB<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#colorNumber38"
     title="colorNumber38 = 0"><wbr />color<wbr />Number38<span class="attachedType" style="visibility:hidden"></span></a></li>
@@ -1255,7 +1263,11 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#checkTrueColorSupport,"
+      <li><a class="reference" href="#cxRGBCol,CXRGB"
+    title="cxRGBCol(acol: CXRGB): string"><wbr />cx<wbr />RGBCol<span class="attachedType" style="visibility:hidden">CXRGB</span></a></li>
+  <li><a class="reference" href="#cxRndRGB,"
+    title="cxRndRGB(): string"><wbr />cx<wbr />Rnd<wbr />RGB<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#checkTrueColorSupport,"
     title="checkTrueColorSupport(): bool"><wbr />check<wbr />True<wbr />Color<wbr />Support<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getCxTrueColorSet,int,int,int,bool"
     title="getCxTrueColorSet(min: int = 0; max: int = 888; step: int = 12; flag48: bool = false): bool"><wbr />get<wbr />Cx<wbr />True<wbr />Color<wbr />Set<span class="attachedType" style="visibility:hidden"></span></a></li>
@@ -1290,6 +1302,16 @@ function main() {
 <dl class="item">
 <a class="reference external" href="cxglobal.html">cxglobal</a>, <a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="cxprint.html">cxprint</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="random.html">random</a>
 </dl></div>
+<div class="section" id="7">
+<h1><a class="toc-backref" href="#7">Types</a></h1>
+<dl class="item">
+<dt id="CXRGB"><a name="CXRGB"></a><pre><span class="Identifier">CXRGB</span> <span class="Other">=</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">R</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">,</span> <span class="Identifier">G</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">,</span> <span class="Identifier">B</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">,</span> <span class="Identifier">cxCol</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+</dd>
+
+</dl></div>
 <div class="section" id="8">
 <h1><a class="toc-backref" href="#8">Vars</a></h1>
 <dl class="item">
@@ -1298,7 +1320,7 @@ function main() {
 
 
 </dd>
-<dt id="cxRGB"><a name="cxRGB"></a><pre><span class="Identifier">cxRGB</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
+<dt id="cxRGB"><a name="cxRGB_2"></a><pre><span class="Identifier">cxRGB</span> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -1318,6 +1340,24 @@ function main() {
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
+<dt id="cxRGBCol"><a name="cxRGBCol,CXRGB"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxRGBCol</span><span class="Other">(</span><span class="Identifier">acol</span><span class="Other">:</span> <span class="Identifier">CXRGB</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>cxRGBcol</p>
+<p>returns a color build from rgb values passed in via CXRGB type tuple</p>
+<p>Note the colCol string value of the cxRGB type is not used here </p>
+
+
+</dd>
+<dt id="cxRndRGB"><a name="cxRndRGB,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxRndRGB</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>cxRndRGB</p>
+<p>returns a random color string useable by var. print procs</p>
+<p>suitable only for terminals supporting truecolor like konsole</p>
+<p>other terminals will display some bland color most of the time</p>
+<p>use rndCol() or randCol() instead.</p>
+
+
+</dd>
 <dt id="checkTrueColorSupport"><a name="checkTrueColorSupport,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkTrueColorSupport</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
@@ -1400,7 +1440,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-05-07 07:36:06 UTC</small>
+        <small>Made with Nim. Generated: 2018-05-15 17:03:38 UTC</small>
       </div>
     </div>
   </div>
