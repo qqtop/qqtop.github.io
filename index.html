@@ -49,43 +49,8 @@ enjoy higher productivity and fun.</p>
 
 <p><a href="https://github.com/qqtop/NimFinLib">nimFinLib</a></p>
 
-<p>A library in Nim to fetch yahoo stock and currency data
-manage accounts ,portfolios,stocks and perform basic calculations.</p>
-
-<p>example1.nim </p>
-
-<div class="highlight highlight-source-nim"><pre><span class="pl-k">import</span> cx,nimFinLib,times,strfmt,strutils
-
-<span class="pl-c"># show latest stock quotes</span>
-<span class="pl-c1">showCurrentStocks</span>(<span class="pl-s">"IBM+BP.L+0001.HK"</span>)
-<span class="pl-c1">decho</span>(<span class="pl-c1">2</span>)
-
-<span class="pl-c"># get latest historic data for a stock</span>
-<span class="pl-k">var</span> ibm = <span class="pl-c1">initDf</span>()
-ibm = <span class="pl-c1">getsymbol2</span>(<span class="pl-s">"IBM"</span>,<span class="pl-s">"2000-01-01"</span>,<span class="pl-c1">getDateStr</span>())
-
-<span class="pl-c"># show recent 5 historical data rows</span>
-<span class="pl-c1">showhistdata</span>(ibm,<span class="pl-c1">5</span>)
-
-<span class="pl-c"># show data between 2 dates incl.</span>
-<span class="pl-c1">showhistdata</span>(ibm,<span class="pl-s">"2015-01-12"</span>,<span class="pl-s">"2015-01-19"</span>)
-
-<span class="pl-c"># show recent 5 returns based on closing price</span>
-<span class="pl-c1">showdailyReturnsCl</span>(ibm,<span class="pl-c1">5</span>)     
-<span class="pl-c1">decho</span>(<span class="pl-c1">3</span>)
-
-
-<span class="pl-c"># show stock name and latest adjusted close</span>
-<span class="pl-c1">msgg</span>() <span class="pl-k">do</span>: <span class="pl-c1">echo</span> <span class="pl-s">"{:&lt;8} {:&lt;11} {:&gt;15}"</span><span class="pl-k">.</span><span class="pl-c1">fmt</span>(<span class="pl-s">"Code"</span>,<span class="pl-s">"Date"</span>,<span class="pl-s">"Adj.Close"</span>) 
-<span class="pl-c1">echo</span>  <span class="pl-s">"{:&lt;8} {:&lt;11} {:&gt;15}"</span><span class="pl-k">.</span><span class="pl-c1">fmt</span>(ibm.stock,ibm.date.last,ibm.adjc.last)
-<span class="pl-c1">decho</span>(<span class="pl-c1">1</span>)
-
-
-<span class="pl-c"># show some forex data</span>
-
-<span class="pl-c1">showCurrentForex</span>([<span class="pl-s">"EURUSD"</span>,<span class="pl-s">"GBPHKD"</span>,<span class="pl-s">"CADEUR"</span>,<span class="pl-s">"AUDNZD"</span>])
-<span class="pl-c1">decho</span>(<span class="pl-c1">3</span>)
-</pre></div>
+<p>A library in Nim to fetch Alpha Vantage stock and currency data
+ as well as Kitco metal data and perform basic calculations.</p>
 
 <h3>
 <a id="snippet-and-small-projects-collections" class="anchor" href="#snippet-and-small-projects-collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Snippet and small projects collections</h3>
