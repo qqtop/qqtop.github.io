@@ -1353,6 +1353,8 @@ function main() {
     title="fullgcstats(xpos: int = 2): int"><wbr />fullgcstats<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#memCheck,bool"
     title="memCheck(stats: bool = false)"><wbr />mem<wbr />Check<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#distanceTo,,"
+    title="distanceTo(origin: (float, float); dest: (float, float)): float"><wbr />distance<wbr />To<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1876,6 +1878,21 @@ full cjk unicode range returned in a seq<pre class="listing"><span class="Keywor
 
 
 </dd>
+<dt id="distanceTo"><a name="distanceTo,,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">distanceTo</span><span class="Other">(</span><span class="Identifier">origin</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">float</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">dest</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">float</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>distanceTo</p>
+<p>calculates distance on the great circle using haversine formular</p>
+<p>input is 2 tuples of (longitude,latitude)</p>
+<p>Example</p>
+<p>also see <a class="reference external" href="https://github.com/qqtop/Nim-Snippets/blob/master/geodistance.nim">https://github.com/qqtop/Nim-Snippets/blob/master/geodistance.nim</a></p>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+<span class="Identifier">echo</span> <span class="StringLit">&quot;Hongkong - London&quot;</span>
+<span class="Identifier">echo</span> <span class="Identifier">distanceto</span><span class="Punctuation">(</span><span class="Punctuation">(</span><span class="FloatNumber">114.109497</span><span class="Punctuation">,</span><span class="FloatNumber">22.396427</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Punctuation">(</span><span class="Operator">-</span><span class="FloatNumber">0.126236</span><span class="Punctuation">,</span><span class="FloatNumber">51.500153</span><span class="Punctuation">)</span><span class="Punctuation">)</span> <span class="Punctuation">,</span> <span class="StringLit">&quot; km&quot;</span>
+<span class="Identifier">echo</span> <span class="Identifier">distanceto</span><span class="Punctuation">(</span><span class="Punctuation">(</span><span class="FloatNumber">114.109497</span><span class="Punctuation">,</span><span class="FloatNumber">22.396427</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Punctuation">(</span><span class="Operator">-</span><span class="FloatNumber">0.126236</span><span class="Punctuation">,</span><span class="FloatNumber">51.500153</span><span class="Punctuation">)</span><span class="Punctuation">)</span> <span class="Operator">/</span> <span class="FloatNumber">1.609345</span> <span class="Punctuation">,</span><span class="StringLit">&quot; miles&quot;</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span></pre>
+
+</dd>
 
 </dl></div>
 <div class="section" id="18">
@@ -1939,7 +1956,7 @@ full cjk unicode range returned in a seq<pre class="listing"><span class="Keywor
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-05-15 20:41:02 UTC</small>
+        <small>Made with Nim. Generated: 2018-05-20 18:00:28 UTC</small>
       </div>
     </div>
   </div>
