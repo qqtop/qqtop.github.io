@@ -1290,10 +1290,10 @@ function main() {
     title="plusDays(aDate: string; days: int): string"><wbr />plus<wbr />Days<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#minusDays,string,int"
     title="minusDays(aDate: string; days: int): string"><wbr />minus<wbr />Days<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#createSeqDate,string,string"
-    title="createSeqDate(fromDate: string; toDate: string): seq[string]"><wbr />create<wbr />Seq<wbr />Date<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#cxTimeZone,string"
     title="cxTimeZone(amode: string = &quot;long&quot;): string"><wbr />cx<wbr />Time<wbr />Zone<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#createSeqDate,string,string"
+    title="createSeqDate(fromDate: string; toDate: string): seq[string]"><wbr />create<wbr />Seq<wbr />Date<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#createSeqDate,string,int"
     title="createSeqDate(fromDate: string; days: int = 1): seq[string]"><wbr />create<wbr />Seq<wbr />Date<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getRndDate,int,int"
@@ -1491,16 +1491,6 @@ Format yyyy
 
 
 </dd>
-<dt id="createSeqDate"><a name="createSeqDate,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSeqDate</span><span class="Other">(</span><span class="Identifier">fromDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">toDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
-<dd>
-<p>createSeqDate</p>
-<p>creates a seq of dates in format yyyy-MM-dd</p>
-<p>from fromDate to toDate </p>
-
-
-</dd>
 <dt id="cxTimeZone"><a name="cxTimeZone,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxTimeZone</span><span class="Other">(</span><span class="Identifier">amode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;long&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>cxTimeZone</p>
@@ -1509,14 +1499,24 @@ Format yyyy
 
 
 </dd>
+<dt id="createSeqDate"><a name="createSeqDate,string,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSeqDate</span><span class="Other">(</span><span class="Identifier">fromDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">toDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>createSeqDate</p>
+<p>creates a seq of dates in format yyyy-MM-dd</p>
+<p>fromDate and toDate must be a date in form yyyy-MM-dd eg. 2018-06-18</p>
+<pre class="listing"><span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createseqdate</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">,</span> <span class="StringLit">&quot;2022-05-25&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">12</span><span class="Punctuation">)</span></pre>
+
+</dd>
 <dt id="createSeqDate"><a name="createSeqDate,string,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSeqDate</span><span class="Other">(</span><span class="Identifier">fromDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>createSeqDate</p>
 <p>creates a seq of dates in format yyyy-MM-dd</p>
-<p>from fromDate to fromDate + days </p>
-
+<p>from fromDate to fromDate + days</p>
+<pre class="listing"><span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createseqdate</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">,</span> <span class="DecNumber">60</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">12</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="getRndDate"><a name="getRndDate,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRndDate</span><span class="Other">(</span><span class="Identifier">minyear</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">parseInt</span><span class="Other">(</span><span class="Identifier">year</span><span class="Other">(</span><span class="Identifier">getDateStr</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">)</span> <span class="Operator">-</span> <span class="DecNumber">50</span><span class="Other">;</span>
@@ -1689,7 +1689,7 @@ Format yyyy
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-05-21 10:20:18 UTC</small>
+        <small>Made with Nim. Generated: 2018-05-21 13:14:10 UTC</small>
       </div>
     </div>
   </div>
