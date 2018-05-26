@@ -1425,8 +1425,10 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#*.t,string,int"
-    title="`*`(s: string; n: int): string"><wbr />`*`<span class="attachedType" style="visibility:hidden"></span></a></li>
+      <li><a class="reference" href="#unidecodeU.t,untyped"
+    title="unidecodeU(ustring: untyped): untyped"><wbr />unidecode<wbr />U<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#*.t,string,int"
+    title="`*`(s: string; n: int): untyped"><wbr />`*`<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#tw.t,"
     title="tw(): int"><wbr />tw<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#th.t,"
@@ -1501,7 +1503,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-05-04
+Latest      : 2018-05-26
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1512,7 +1514,7 @@ Description : provides many basic utility functions required by other modules</p
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
-<a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="parseutils.html">parseutils</a>, <a class="reference external" href="sequtils.html">sequtils</a>, <a class="reference external" href="strmisc.html">strmisc</a>, <a class="reference external" href="random.html">random</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="unicode.html">unicode</a>, <a class="reference external" href="macros.html">macros</a>, <a class="reference external" href="colors.html">colors</a>, <a class="reference external" href="streams.html">streams</a>, <a class="reference external" href="typeinfo.html">typeinfo</a>, <a class="reference external" href="typetraits.html">typetraits</a>
+<a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="parseutils.html">parseutils</a>, <a class="reference external" href="sequtils.html">sequtils</a>, <a class="reference external" href="strmisc.html">strmisc</a>, <a class="reference external" href="random.html">random</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="unicode.html">unicode</a>, <a class="reference external" href="macros.html">macros</a>, <a class="reference external" href="colors.html">colors</a>, <a class="reference external" href="json.html">json</a>, <a class="reference external" href="streams.html">streams</a>, <a class="reference external" href="typeinfo.html">typeinfo</a>, <a class="reference external" href="typetraits.html">typetraits</a>
 </dl></div>
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
@@ -2095,7 +2097,14 @@ partially lifted from an earler macro in terminal.nim and removed new line
 <div class="section" id="18">
 <h1><a class="toc-backref" href="#18">Templates</a></h1>
 <dl class="item">
-<dt id="*"><a name="*.t,string,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">`*`</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dt id="unidecodeU"><a name="unidecodeU.t,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">unidecodeU</span><span class="Other">(</span><span class="Identifier">ustring</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
+<dd>
+<p>unidecodeU</p>
+<p>decode u escaped strings like &quot;u96e8u3002&quot; based on code by yglukhov ex Nim Forum</p>
+<pre class="listing"><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">unidecodeU</span><span class="Punctuation">(</span><span class="StringLit">&quot;</span><span class="EscapeSequence">\u</span><span class="EscapeSequence">5f9e\u</span><span class="EscapeSequence">6e05\u</span><span class="EscapeSequence">6668\u</span><span class="EscapeSequence">958b\u</span><span class="EscapeSequence">59cb\u</span><span class="EscapeSequence">4e00\u</span><span class="EscapeSequence">76f4\u</span><span class="EscapeSequence">4e0b\u</span><span class="EscapeSequence">96e8\u</span><span class="StringLit">3002&quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;</span><span class="EscapeSequence">\u</span><span class="EscapeSequence">96e8\u</span><span class="StringLit">3002&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<dt id="*"><a name="*.t,string,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">`*`</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 returns input string  n times mimicking python
 
@@ -2335,7 +2344,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-05-21 13:14:09 UTC</small>
+        <small>Made with Nim. Generated: 2018-05-26 10:09:05 UTC</small>
       </div>
     </div>
   </div>
