@@ -1283,6 +1283,8 @@ function main() {
     title="rndTrueCol2(): auto"><wbr />rnd<wbr />True<wbr />Col2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rndTrueColFull,"
     title="rndTrueColFull(): auto"><wbr />rnd<wbr />True<wbr />Col<wbr />Full<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#checkCxTrueColor,int"
+    title="checkCxTrueColor(n: int): int"><wbr />check<wbr />Cx<wbr />True<wbr />Color<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showCxTrueColorPalette,int,int,int,bool"
     title="showCxTrueColorPalette(min: int = 0; max: int = 888; step: int = 12; flag48: bool = false)"><wbr />show<wbr />Cx<wbr />True<wbr />Color<wbr />Palette<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showCxTrueColorPalette2,"
@@ -1409,6 +1411,13 @@ function main() {
 
 
 </dd>
+<dt id="checkCxTrueColor"><a name="checkCxTrueColor,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkCxTrueColor</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>checkCxTrueColor</p>
+<p>returns n if available in cxtruecol else returns cxtruecol.max </p>
+
+
+</dd>
 <dt id="showCxTrueColorPalette"><a name="showCxTrueColorPalette,int,int,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showCxTrueColorPalette</span><span class="Other">(</span><span class="Identifier">min</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">;</span>
                            <span class="Identifier">flag48</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span>
     <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">]</span><span class="Other">,</span>
@@ -1440,7 +1449,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-06-06 21:44:21 UTC</small>
+        <small>Made with Nim. Generated: 2018-06-28 18:05:54 UTC</small>
       </div>
     </div>
   </div>

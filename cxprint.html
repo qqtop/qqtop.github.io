@@ -1257,9 +1257,6 @@ function main() {
   <li><a class="reference" href="#cxPrintLn,T,auto,string,int,set[Style]"
     title="cxPrintLn[T](ss: T; fontcolor: auto = colWhite; bgr: string = &quot;colBlack&quot;; xpos: int = 1;
              styled: set[Style] = {styleReverse})"><wbr />cx<wbr />Print<wbr />Ln<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#print,varargs[T,],string,BackgroundColor,int,string"
-    title="print[T](ss: varargs[T, `$`]; fgr: string = termwhite; bgr: BackgroundColor = bgBlack;
-         xpos: int = 0; sep: string = spaces(1))"><wbr />print<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#printLn,T,string,BackgroundColor,int,bool,bool,set[Style],string"
     title="printLn[T](astring: T; fgr: string = termwhite; bgr: BackgroundColor = bgBlack;
            xpos: int = 0; fitLine: bool = false; centered: bool = false;
@@ -1419,7 +1416,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-05-30
+Latest      : 2018-06-20
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1463,7 +1460,7 @@ styled allows style parameters to be set
 
 available styles :
 
-styleBright = 1,            # bright text
+styleBright = 1,            # bright/bold text
 
 styleDim,                   # dim text
 
@@ -1477,6 +1474,9 @@ styleReverse = 7,           # reverses currentforground and backgroundcolor
 
 styleHidden                 # hidden text
 
+styleItalic                 # italic
+
+styleStrikethrough          # strikethrough
 
 for extended colorset background colors use styleReverse
 
@@ -1484,7 +1484,7 @@ or use 2 or more print statements for the desired effect</pre>
 <p>Example</p>
 <pre class="listing"><span class="Comment"># To achieve colored text with styleReverse try:</span>
 <span class="Identifier">setBackgroundColor</span><span class="Punctuation">(</span><span class="Identifier">bgRed</span><span class="Punctuation">)</span>
-<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">pastelBlue</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
+<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">pastelBlue</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">,</span><span class="Identifier">styleItalic</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
 <span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;whats up with truecolors now ? &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTrueCol</span><span class="Punctuation">[</span><span class="DecNumber">34567</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">bgRed</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">styled</span><span class="Operator">=</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre><p>There are many more possibilities using the print and PrintLn statements</p>
 <pre class="listing"><span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;this is a &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">rightarrow</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;  &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">termStrikethrough</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;print&quot;</span> <span class="Operator">&amp;</span>  <span class="Identifier">termclear</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot; aaah,sorry &quot;</span><span class="Punctuation">,</span><span class="Identifier">colLeft</span> <span class="Operator">=</span> <span class="Identifier">goldenrod</span><span class="Punctuation">,</span><span class="Identifier">colRight</span> <span class="Operator">=</span> <span class="Identifier">cyan</span><span class="Punctuation">,</span><span class="Identifier">sep</span> <span class="Operator">=</span> <span class="Identifier">termclear</span><span class="Punctuation">)</span>
@@ -1497,6 +1497,22 @@ or use 2 or more print statements for the desired effect</pre>
 <p>cxPrint</p>
 <p>Experimental</p>
 <p>note the module base name and function name is the same</p>
+<p>truecolor print function</p>
+<p>see cxtruecolorE1.nim  for example usage</p>
+<p>Fontcolors can be drawn from cxColorNames , a seq specified in cxconsts.nim Example to specify a fontcolor:</p>
+<blockquote><p><ol class="simple"><li>a random color as string   :  fontcolor = cxcolornames[rndSample(txcol)][0]</li>
+<li>a random color as constant :  fontcolor = cxcolornames[rndSample(txcol)][1]</li>
+<li>directly named as string   :  fontcolor = &quot;coldarkslategray&quot;    # a color in cxColorNames string field</li>
+<li>directly named as const    :  fontcolor = coldarkslategray      # a color in cxColorNames constant field</li>
+</ol>
+</p></blockquote>
+<p>Backgroundcolors can be drawn from cxTrueColor palette which can be enabled with a call to getcxTrueColorSet() which generates 421,875 colors larger color palettes can also be generated with getcxTrueColorSet() all palette colors in cxTrueColorSet can be shown with showCxTrueColorPalette() Backgroundcolors can also be drawn from the colorNames seq  specified in cxconsts.nim</p>
+<p>Example to specify a Backgroundcolor :</p>
+<blockquote><p><ol class="simple"><li>a random background color from cxTrueColor palette :  bgr = rndCxBgrCol()</li>
+<li>a color from the cxTrueColor palette               :  bgr = cxTrueCol[65451])</li>
+<li>a specified color from colorNames seq              :  bgr = darkgreen</li>
+</ol>
+</p></blockquote>
 
 
 </dd>
@@ -1527,19 +1543,6 @@ or use 2 or more print statements for the desired effect</pre>
 <p>truecolor printLn function</p>
 <p>see cxtruecolorE1.nim  for example usage </p>
 
-
-</dd>
-<dt id="print"><a name="print,varargs[T,],string,BackgroundColor,int,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">print</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span>
-             <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>print</p>
-<p>a print routine which allows printing of varargs in desired color , position and separator</p>
-<p>no newline is added</p>
-<p>sep must not be wider than 1 , if it is wider the comma will be used as default otherwise default will be 1 space</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
-
-<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;TEST VARARGS : &quot;</span><span class="Punctuation">,</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">8</span><span class="Punctuation">,</span><span class="DecNumber">13</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="DecNumber">12000</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">newword</span><span class="Punctuation">(</span><span class="DecNumber">6</span><span class="Punctuation">,</span><span class="DecNumber">10</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">getRndfloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Punctuation">(</span><span class="Identifier">hiragana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">8</span><span class="Punctuation">,</span><span class="DecNumber">13</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">bblack</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="printLn"><a name="printLn,T,string,BackgroundColor,int,bool,bool,set[Style],string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">printLn</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">BackgroundColor</span> <span class="Other">=</span> <span class="Identifier">bgBlack</span><span class="Other">;</span>
@@ -1632,6 +1635,9 @@ styleReverse = 7,           # reverses currentforground and backgroundcolor
 
 styleHidden                 # hidden text
 
+styleItalic                 # italic
+
+styleStrikethrough          # strikethrough
 
 for extended colorset background colors use styleReverse
 
@@ -2171,7 +2177,7 @@ forward declaration
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-06-06 21:44:23 UTC</small>
+        <small>Made with Nim. Generated: 2018-06-28 18:05:57 UTC</small>
       </div>
     </div>
   </div>

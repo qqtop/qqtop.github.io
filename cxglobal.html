@@ -1282,6 +1282,14 @@ function main() {
   </ul>
 </li>
 <li>
+  <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
+  <ul class="simple simple-toc-section">
+      <li><a class="reference" href="#getcxTrueColorSetFlag"
+    title="getcxTrueColorSetFlag: bool = false"><wbr />getcx<wbr />True<wbr />Color<wbr />Set<wbr />Flag<span class="attachedType" style="visibility:hidden"></span></a></li>
+
+  </ul>
+</li>
+<li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#tupleTypes,"
@@ -1373,6 +1381,8 @@ function main() {
           textcol: string = termwhite): string"><wbr />do<wbr />Flag<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getAscii,string"
     title="getAscii(s: string): seq[int]"><wbr />get<wbr />Ascii<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#curFw,int"
+    title="curFw(x: int = 1): auto"><wbr />cur<wbr />Fw<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#curMove,int,int,int,int"
     title="curMove(up: int = 0; dn: int = 0; fw: int = 0; bk: int = 0)"><wbr />cur<wbr />Move<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#stripper,string"
@@ -1441,6 +1451,8 @@ function main() {
     title="colPaletteName(coltype: string; n: int): auto"><wbr />col<wbr />Palette<wbr />Name<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#aPaletteSample.t,string"
     title="aPaletteSample(coltype: string): int"><wbr />a<wbr />Palette<wbr />Sample<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#paletix.t,string"
+    title="paletix(pl: string): untyped"><wbr />paletix<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#randCol2.t,string"
     title="randCol2(coltype: string): auto"><wbr />rand<wbr />Col2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#randCol.t,"
@@ -1453,8 +1465,6 @@ function main() {
     title="curDn(x: int = 1)"><wbr />cur<wbr />Dn<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#curBk.t,int"
     title="curBk(x: int = 1)"><wbr />cur<wbr />Bk<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#curFw.t,int"
-    title="curFw(x: int = 1)"><wbr />cur<wbr />Fw<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#curSetx.t,int"
     title="curSetx(x: int)"><wbr />cur<wbr />Setx<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#curSet.t,int,int"
@@ -1565,6 +1575,16 @@ Description : provides many basic utility functions required by other modules</p
   <span class="Identifier">linetype</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CxLineType</span>
   <span class="Identifier">newline</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
 </pre></dt>
+<dd>
+
+
+</dd>
+
+</dl></div>
+<div class="section" id="8">
+<h1><a class="toc-backref" href="#8">Vars</a></h1>
+<dl class="item">
+<dt id="getcxTrueColorSetFlag"><a name="getcxTrueColorSetFlag"></a><pre><span class="Identifier">getcxTrueColorSetFlag</span><span class="Other">:</span> bool <span class="Other">=</span> <span class="DecNumber">false</span></pre></dt>
 <dd>
 
 
@@ -1954,6 +1974,13 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 
 </dd>
+<dt id="curFw"><a name="curFw,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">curFw</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>curFw</p>
+<p>mirrors terminal cursorForward</p>
+
+
+</dd>
 <dt id="curMove"><a name="curMove,int,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">curMove</span><span class="Other">(</span><span class="Identifier">up</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">dn</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fw</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">bk</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -2149,8 +2176,18 @@ see example at colPalette
 </dd>
 <dt id="aPaletteSample"><a name="aPaletteSample.t,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">aPaletteSample</span><span class="Other">(</span><span class="Identifier">coltype</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
-aPaletteSample<blockquote><p>returns an rand entry (int) from a palette see example at colPalette</p></blockquote>
+aPaletteSample<blockquote><p>returns a rand entry (int) from a palette see example at colPalette</p></blockquote>
 
+
+</dd>
+<dt id="paletix"><a name="paletix.t,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">paletix</span><span class="Other">(</span><span class="Identifier">pl</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
+<dd>
+<p>paletix</p>
+<p>returns a random color from colorNames containing the string pl</p>
+<p>so paletix(&quot;pastel&quot;) filters on all colorNames having the string &quot;pastel&quot;</p>
+<p>if filter not available then the first available color will be used</p>
+<pre class="listing"><span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">10</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+   <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">cxpad</span><span class="Punctuation">(</span><span class="StringLit">&quot; Hello from NimCx !  &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">xloopy</span><span class="Punctuation">,</span><span class="DecNumber">25</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">paletix</span><span class="Punctuation">(</span><span class="StringLit">&quot;pastel&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">styled</span><span class="Operator">=</span><span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">,</span><span class="Identifier">styleItalic</span><span class="Punctuation">,</span><span class="Identifier">styleBright</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="randCol2"><a name="randCol2.t,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">randCol2</span><span class="Other">(</span><span class="Identifier">coltype</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
@@ -2200,13 +2237,6 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 <dd>
 <p>curBkn</p>
 <p>mirrors terminal cursorBackward</p>
-
-
-</dd>
-<dt id="curFw"><a name="curFw.t,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">curFw</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
-<dd>
-<p>curFw</p>
-<p>mirrors terminal cursorForward</p>
 
 
 </dd>
@@ -2290,7 +2320,7 @@ if n &gt; larger than palette length the first palette entry will be used</pre>
 </dd>
 <dt id="colorsPalette"><a name="colorsPalette.t,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">colorsPalette</span><span class="Other">(</span><span class="Identifier">coltype</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
 <dd>
-<pre>colPalette
+<pre>colorsPalette
 
 returns a colorpalette which can be used to iterate over</pre>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
@@ -2355,7 +2385,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-06-06 21:44:15 UTC</small>
+        <small>Made with Nim. Generated: 2018-06-28 18:05:48 UTC</small>
       </div>
     </div>
   </div>
