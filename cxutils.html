@@ -1271,12 +1271,8 @@ function main() {
     title="showCpuCores()"><wbr />show<wbr />Cpu<wbr />Cores<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getAmzDateString,"
     title="getAmzDateString(): string"><wbr />get<wbr />Amz<wbr />Date<wbr />String<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#cxdayofweek,string"
-    title="cxdayofweek(datestr: string): string"><wbr />cxdayofweek<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#getFirstMondayYear,T"
-    title="getFirstMondayYear[T](ayear: T): string"><wbr />get<wbr />First<wbr />Monday<wbr />Year<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#getFirstMondayYearMonth,T"
-    title="getFirstMondayYearMonth[T](aym: T): string"><wbr />get<wbr />First<wbr />Monday<wbr />Year<wbr />Month<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#cxDayOfWeek,string"
+    title="cxDayOfWeek(datestr: string): string"><wbr />cx<wbr />Day<wbr />Of<wbr />Week<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getNextMonday,string"
     title="getNextMonday(adate: string): string"><wbr />get<wbr />Next<wbr />Monday<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getRandomPointInCircle,float"
@@ -1396,7 +1392,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2018-05-26
+Latest      : 2018-06-29
 
 OS          : Linux
 
@@ -1487,34 +1483,16 @@ showCpuCores
 
 
 </dd>
-<dt id="cxdayofweek"><a name="cxdayofweek,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxdayofweek</span><span class="Other">(</span><span class="Identifier">datestr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
-    <span class="Identifier">AssertionError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="cxDayOfWeek"><a name="cxDayOfWeek,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxDayOfWeek</span><span class="Other">(</span><span class="Identifier">datestr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
+    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
-<p>dayofweek</p>
+<p>cxDayOfWeek</p>
 <p>returns day of week from a date in format yyyy-MM-dd</p>
-<pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="StringLit">&quot;2017-07-15&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;  &quot;</span><span class="Punctuation">,</span><span class="Identifier">dayofweek</span><span class="Punctuation">(</span><span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="StringLit">&quot;2017-07-15&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span> <span class="Identifier">getFirstMondayYear</span><span class="Punctuation">(</span><span class="StringLit">&quot;2018&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;  &quot;</span><span class="Punctuation">,</span><span class="Identifier">dayofweek</span><span class="Punctuation">(</span><span class="Identifier">getFirstMondayYear</span><span class="Punctuation">(</span><span class="StringLit">&quot;2018&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span> <span class="Identifier">getFirstMondayYearMonth</span><span class="Punctuation">(</span><span class="StringLit">&quot;2018-2&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;  &quot;</span><span class="Punctuation">,</span><span class="Identifier">dayofweek</span><span class="Punctuation">(</span><span class="Identifier">getFirstMondayYearMonth</span><span class="Punctuation">(</span><span class="StringLit">&quot;2018-2&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+<pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">cxDayOfWeek</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="StringLit">&quot;2017-07-15&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;  &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxDayOfWeek</span><span class="Punctuation">(</span><span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="StringLit">&quot;2017-07-15&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="getFirstMondayYear"><a name="getFirstMondayYear,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getFirstMondayYear</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ayear</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-<p>getFirstMondayYear</p>
-<p>returns date of first monday of any given year</p>
-<pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getFirstMondayYear</span><span class="Punctuation">(</span><span class="StringLit">&quot;2015&quot;</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<dt id="getFirstMondayYearMonth"><a name="getFirstMondayYearMonth,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getFirstMondayYearMonth</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">aym</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-<p>getFirstMondayYearMonth</p>
-<p>returns date of first monday in given year and month</p>
-<pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getFirstMondayYearMonth</span><span class="Punctuation">(</span><span class="StringLit">&quot;2015-12&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span>  <span class="Identifier">getFirstMondayYearMonth</span><span class="Punctuation">(</span><span class="StringLit">&quot;2015-06&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span>  <span class="Identifier">getFirstMondayYearMonth</span><span class="Punctuation">(</span><span class="StringLit">&quot;2015-2&quot;</span><span class="Punctuation">)</span></pre><p>in case of invalid dates nil will be returned</p>
-
-
-</dd>
-<dt id="getNextMonday"><a name="getNextMonday,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getNextMonday</span><span class="Other">(</span><span class="Identifier">adate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
+<dt id="getNextMonday"><a name="getNextMonday,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getNextMonday</span><span class="Other">(</span><span class="Identifier">adate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
     <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
     <span class="Identifier">TimeEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -1523,7 +1501,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <span class="Keyword">var</span> <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="StringLit">&quot;2015-08-10&quot;</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
     <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="Identifier">dw</span><span class="Punctuation">)</span>
-    <span class="Identifier">echo</span> <span class="Identifier">dwdecho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span></pre><p>in case of invalid dates nil will be returned </p>
+    <span class="Identifier">echo</span> <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span></pre><p>in case of invalid dates nil will be returned </p>
 
 
 </dd>
@@ -1532,7 +1510,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <p>getRandomPointInCircle</p>
 <p>based on answers found in</p>
 <p><a class="reference external" href="http://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly">http://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly</a></p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span><span class="Punctuation">,</span><span class="Identifier">math</span><span class="Punctuation">,</span><span class="Identifier">strfmt</span>
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Comment"># get randompoints in a circle</span>
 <span class="Keyword">var</span> <span class="Identifier">crad</span><span class="Punctuation">:</span><span class="Identifier">float</span> <span class="Operator">=</span> <span class="DecNumber">1</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">100</span><span class="Punctuation">:</span>
@@ -1975,7 +1953,7 @@ doFinish()</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-06-28 18:05:45 UTC</small>
+        <small>Made with Nim. Generated: 2018-06-29 12:07:19 UTC</small>
       </div>
     </div>
   </div>
