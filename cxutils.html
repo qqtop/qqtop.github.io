@@ -1334,6 +1334,14 @@ function main() {
     title="createSeqApl(): seq[string]"><wbr />create<wbr />Seq<wbr />Apl<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#createSeqBoxChars,"
     title="createSeqBoxChars(): seq[string]"><wbr />create<wbr />Seq<wbr />Box<wbr />Chars<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#boxy,int,int,int"
+    title="boxy(w: int = 20; h: int = 5; fgr = randcol(); xpos: int = 1)"><wbr />boxy<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#boxy2,int,int,int"
+    title="boxy2(w: int = 20; h: int = 5; fgr = randcol(); xpos: int = 1)"><wbr />boxy2<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#spiralBoxy,int,int,int"
+    title="spiralBoxy(w: int = 20; h: int = 20; xpos: int = 1)"><wbr />spiral<wbr />Boxy<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#spiralBoxy2,int,int,int"
+    title="spiralBoxy2(w: int = 20; h: int = 20; xpos: int = 1)"><wbr />spiral<wbr />Boxy2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showSeq,seq[T],string,int,int,bool"
     title="showSeq[T](z: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5;
            displayflag: bool = true): string"><wbr />show<wbr />Seq<span class="attachedType" style="visibility:hidden"></span></a></li>
@@ -1392,7 +1400,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2018-06-29
+Latest      : 2018-06-30
 
 OS          : Linux
 
@@ -1512,12 +1520,14 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <p><a class="reference external" href="http://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly">http://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly</a></p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Comment"># get randompoints in a circle</span>
-<span class="Keyword">var</span> <span class="Identifier">crad</span><span class="Punctuation">:</span><span class="Identifier">float</span> <span class="Operator">=</span> <span class="DecNumber">1</span>
+<span class="Keyword">var</span> <span class="Identifier">crad</span><span class="Punctuation">:</span><span class="Identifier">float</span> <span class="Operator">=</span> <span class="FloatNumber">2.1</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">100</span><span class="Punctuation">:</span>
-   <span class="Keyword">var</span> <span class="Identifier">k</span> <span class="Operator">=</span> <span class="Identifier">getRandomPointInCircle</span><span class="Punctuation">(</span><span class="Identifier">crad</span><span class="Punctuation">)</span>
-   <span class="Identifier">assert</span> <span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span> <span class="Operator">&lt;=</span> <span class="Identifier">crad</span> <span class="Keyword">and</span> <span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span> <span class="Operator">&lt;=</span> <span class="Identifier">crad</span>
-   <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;25&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;25&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot; :&quot;</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
-<span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
+    <span class="Keyword">var</span> <span class="Identifier">k</span> <span class="Operator">=</span> <span class="Identifier">getRandomPointInCircle</span><span class="Punctuation">(</span><span class="Identifier">crad</span><span class="Punctuation">)</span>
+    <span class="Identifier">assert</span> <span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span> <span class="Operator">&lt;=</span> <span class="Identifier">crad</span> <span class="Keyword">and</span> <span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span> <span class="Operator">&lt;=</span> <span class="Identifier">crad</span>
+    <span class="Keyword">if</span> <span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span> <span class="Operator">&lt;=</span> <span class="Identifier">crad</span> <span class="Keyword">and</span> <span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span> <span class="Operator">&lt;=</span> <span class="Identifier">crad</span><span class="Punctuation">:</span>
+        <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;25&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;10&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot; :&quot;</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+    <span class="Keyword">else</span><span class="Punctuation">:</span>
+        <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;25&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&lt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;10&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot; :&quot;</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">k</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">colLeft</span><span class="Operator">=</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">colRight</span><span class="Operator">=</span><span class="Identifier">red</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="getRandomPoint"><a name="getRandomPoint,float,float,float,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getRandomPoint</span><span class="Other">(</span><span class="Identifier">minx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">500.0</span><span class="Other">;</span> <span class="Identifier">maxx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">500.0</span><span class="Other">;</span> <span class="Identifier">miny</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">500.0</span><span class="Other">;</span>
@@ -1596,7 +1606,6 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <p>a framed header display routine</p>
 <p>suitable for one line headers , overlong lines will</p>
 <p>be cut to terminal window width without ceremony</p>
-<p>for box with or without intersections see drawBox </p>
 
 
 </dd>
@@ -1799,6 +1808,39 @@ full cjk unicode range returned in a seq<pre class="listing"><span class="Keywor
 
 
 </dd>
+<dt id="boxy"><a name="boxy,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">boxy</span><span class="Other">(</span><span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">fgr</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>boxy</p>
+<p>draws a box with width w , height h , color color at position xpos </p>
+
+
+</dd>
+<dt id="boxy2"><a name="boxy2,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">boxy2</span><span class="Other">(</span><span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">fgr</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>boxy2</p>
+<p>draws a box with width w , height h , color color at position xpos</p>
+<p>similar to boxy but with random color for each element rather than each box </p>
+
+
+</dd>
+<dt id="spiralBoxy"><a name="spiralBoxy,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">spiralBoxy</span><span class="Other">(</span><span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+spiralBoxy
+
+</dd>
+<dt id="spiralBoxy2"><a name="spiralBoxy2,int,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">spiralBoxy2</span><span class="Other">(</span><span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+spiralBoxy2   uses boxy2
+
+</dd>
 <dt id="showSeq"><a name="showSeq,seq[T],string,int,int,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showSeq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span>
                <span class="Identifier">displayflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">discardable</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
@@ -1953,7 +1995,7 @@ doFinish()</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-06-29 22:06:55 UTC</small>
+        <small>Made with Nim. Generated: 2018-06-30 18:59:48 UTC</small>
       </div>
     </div>
   </div>
