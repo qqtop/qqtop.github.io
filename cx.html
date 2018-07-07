@@ -1403,7 +1403,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2018-05-21
+Latest      : 2018-07-07
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1619,9 +1619,10 @@ Funding     : Here are three excellent reasons :
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>nimcat</p>
-<p>a simple file lister which shows all rows and some stats as well as allows counting of tokens a file name without extension will be assuemed to be .nim ... it is the nimcat afterall countphrase is case sensitive this proc uses memslices and memfiles for speed</p>
-<blockquote><p>nimcat(&quot;notes.txt&quot;)                   # show all lines nimcat(&quot;bigdatafile.csv&quot;) nimcat(&quot;/data5/notes.txt&quot;,countphrase = &quot;nice&quot; , &quot;hanya&quot;, 88) # also count how often a token appears in the file</p></blockquote>
-
+<p>A simple file lister which shows all rows and some stats. It also allows counting of tokens. A file name without extension will be assuemed to be .nim Countphrase is case sensitive This proc uses memslices and memfiles for speed</p>
+<pre class="listing"><span class="Identifier">nimcat</span><span class="Punctuation">(</span><span class="StringLit">&quot;notes.txt&quot;</span><span class="Punctuation">)</span>                   <span class="Comment"># show all lines</span>
+<span class="Identifier">nimcat</span><span class="Punctuation">(</span><span class="StringLit">&quot;bigdatafile.csv&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">nimcat</span><span class="Punctuation">(</span><span class="StringLit">&quot;/data5/notes.txt&quot;</span><span class="Punctuation">,</span><span class="Identifier">countphrase</span> <span class="Operator">=</span> <span class="StringLit">&quot;nice&quot;</span> <span class="Punctuation">,</span> <span class="StringLit">&quot;hanya&quot;</span><span class="Punctuation">,</span> <span class="DecNumber">88</span><span class="Punctuation">)</span> <span class="Comment"># also count how often a token appears in the file</span></pre>
 
 </dd>
 <dt id="showBench"><a name="showBench,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showBench</span><span class="Other">(</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
@@ -2024,7 +2025,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-06-30 18:59:46 UTC</small>
+        <small>Made with Nim. Generated: 2018-07-07 14:36:54 UTC</small>
       </div>
     </div>
   </div>
