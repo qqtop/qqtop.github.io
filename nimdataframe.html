@@ -1345,6 +1345,8 @@ function main() {
     title="getRowDataRange(df: nimdf; rows: nimis = @[]; cols: nimis = @[]): nimdf"><wbr />get<wbr />Row<wbr />Data<wbr />Range<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#sortdf,nimdf,int"
     title="sortdf(df: nimdf; sortcol: int = 1; sortorder = asc): nimdf"><wbr />sortdf<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#filterDf,nimdf,nimis,nimss,nimss"
+    title="filterDf(df: nimdf; cols: nimis; operator: nimss; vals: nimss)"><wbr />filter<wbr />Df<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#makeNimDf,varargs[nimss],bool,bool"
     title="makeNimDf(dfcols: varargs[nimss]; status: bool = true; hasHeader: bool = false): nimdf"><wbr />make<wbr />Nim<wbr />Df<span class="attachedType" style="visibility:hidden">nimss</span></a></li>
   <li><a class="reference" href="#dfDefaultSetup,nimdf,nimss"
@@ -1402,9 +1404,9 @@ function main() {
   <p class="module-desc"><blockquote><p><p>Library     : nimdataframe.nim</p>
 <p>Status      : development</p>
 <p>License     : MIT opensource</p>
-<p>Version     : 0.0.4</p>
+<p>Version     : 0.0.5</p>
 <p>ProjectStart: 2016-09-16</p>
-<p>Latest      : 2018-04-04</p>
+<p>Latest      : 2018-07-17</p>
 <p>Compiler    : Nim &gt;= 0.18.0</p>
 <p>OS          : Linux</p>
 <p>Description :</p>
@@ -1417,9 +1419,9 @@ function main() {
 <p>Project     : <a class="reference external" href="https://github.com/qqtop/NimDataFrame">https://github.com/qqtop/NimDataFrame</a></p>
 <p>Docs        : <a class="reference external" href="http://qqtop.github.io/nimdataframeindex.html">http://qqtop.github.io/nimdataframeindex.html</a></p>
 <blockquote><p><a class="reference external" href="http://qqtop.github.io/nimdataframe.html">http://qqtop.github.io/nimdataframe.html</a></p></blockquote>
-<p>Tested      : OpenSuse Tumbleweed</p>
+<p>Tested      : OpenSuse Tumbleweed , Debian</p>
 <dl class="docutils"><dt>Todo        : additional calculations on dataframes</dt>
-<dd>allow right or left align for each column fullRotate df improve tests and example dataframe names trying to handle json data future filterDf(df:nimdf,cols:nimis,operator:nimss,vals:nimss) var ndf11 = filterDf(ndf9,@[3,5],@[&quot;&gt;&quot;,&quot;==&quot;],@[&quot;Borussia Dortmund&quot;,&quot;4&quot;]</dd>
+<dd>allow right or left align for each column fullRotate df improve tests and example dataframe names instead of col number use col names .. trying to better handle json data  see new json lib by araq future filterDf(df:nimdf,cols:nimis,operator:nimss,vals:nimss) var ndf11 = filterDf(ndf9,@[3,5],@[&quot;&gt;&quot;,&quot;==&quot;],@[&quot;Borussia Dortmund&quot;,&quot;4&quot;]</dd>
 </dl>
 <p>Install     : nimble install <a class="reference external" href="https://github.com/qqtop/nimdataframe.git">https://github.com/qqtop/nimdataframe.git</a></p>
 </p></blockquote>
@@ -1645,8 +1647,8 @@ showHeaderStatus
            <span class="Identifier">cellcolors</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">cellrows</span><span class="Other">:</span> <span class="Identifier">nimis</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">cellcols</span><span class="Other">:</span> <span class="Identifier">nimis</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span>
            <span class="Identifier">cellcalc</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">frtexttop</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">frtextbot</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span>
            <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
-                                <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
-                                <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
+                                <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
+                                <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showDf</p>
@@ -1679,7 +1681,7 @@ showHeaderStatus
 
 </dd>
 <dt id="getColData"><a name="getColData,nimdf,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getColData</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
-    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
+    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
     <span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>getColData</p>
@@ -1713,6 +1715,14 @@ showHeaderStatus
 <dl class="docutils"><dt>Note : data columns passed in must be correct for all rows , that is rows with different column count will result in errors</dt>
 <dd>this will be addressed in future versions</dd>
 </dl>
+
+
+</dd>
+<dt id="filterDf"><a name="filterDf,nimdf,nimis,nimss,nimss"></a><pre><span class="Keyword">proc</span> <span class="Identifier">filterDf</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <span class="Identifier">nimis</span><span class="Other">;</span> <span class="Identifier">operator</span><span class="Other">:</span> <span class="Identifier">nimss</span><span class="Other">;</span> <span class="Identifier">vals</span><span class="Other">:</span> <span class="Identifier">nimss</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dd>
+<p>filterDf</p>
+<p>TODO</p>
+<p>show rows passing a condition </p>
 
 
 </dd>
@@ -1774,7 +1784,7 @@ showHeaderStatus
 
 </dd>
 <dt id="dfColumnStats"><a name="dfColumnStats,nimdf,seq[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dfColumnStats</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">colseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">RunningStat</span><span class="Other">]</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span>
-    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>dfColumnStats</p>
@@ -1786,7 +1796,7 @@ showHeaderStatus
 </dd>
 <dt id="dfShowColumnStats"><a name="dfShowColumnStats,nimdf,seq[int],int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dfShowColumnStats</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">desiredcols</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">colspace</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">25</span><span class="Other">;</span>
                       <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
-    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
+    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
     <span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>dfShowColumnStats</p>
@@ -1799,15 +1809,15 @@ showHeaderStatus
 
 </dd>
 <dt id="sumStats"><a name="sumStats,nimdf,nimis"></a><pre><span class="Keyword">proc</span> <span class="Identifier">sumStats</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">numericCols</span><span class="Other">:</span> <span class="Identifier">nimis</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">RunningStat</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span>
-    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="dfShowSumStats"><a name="dfShowSumStats,nimdf,nimis,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dfShowSumStats</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">numericCols</span><span class="Other">:</span> <span class="Identifier">nimis</span><span class="Other">;</span> <span class="Identifier">xpos</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span>
-    <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
+<dt id="dfShowSumStats"><a name="dfShowSumStats,nimdf,nimis,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dfShowSumStats</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">numericCols</span><span class="Other">:</span> <span class="Identifier">nimis</span><span class="Other">;</span> <span class="Identifier">xpos</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span> <span class="Other pragmabegin">{.</span><div class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></div><span class="Other pragmaend">.}</span></pre></dt>
 <dd>
 <p>showSumStats</p>
 <p>shows a statistic for all column sums</p>
@@ -1880,7 +1890,7 @@ showHeaderStatus
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-04-04 14:18:27 UTC</small>
+        <small>Made with Nim. Generated: 2018-07-12 19:12:59 UTC</small>
       </div>
     </div>
   </div>
