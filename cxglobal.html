@@ -1521,7 +1521,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-06-30
+Latest      : 2018-08-02
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -2287,9 +2287,10 @@ unequal operator
 <dd>
 <p>loopy2</p>
 <p>the advanced version of loopy the simple for-loop template which also injects the loop counter xloopy if loopy2() was called with parameters if called without parameters xloopy will not be injected .</p>
-<pre class="listing"><span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">10</span><span class="Punctuation">)</span><span class="Punctuation">:</span><span class="DecNumber">2</span>
-   <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">xloopy</span> <span class="Punctuation">,</span> <span class="StringLit">&quot;  The house is in the back.&quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
-   <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Some integer : &quot;</span> <span class="Punctuation">,</span> <span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+<pre class="listing"><span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">10</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+  <span class="Keyword">block</span><span class="Punctuation">:</span>
+     <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">xloopy</span> <span class="Punctuation">,</span> <span class="StringLit">&quot;  The house is in the back.&quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
+     <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Some integer : &quot;</span> <span class="Operator">&amp;</span> <span class="Operator">$</span><span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="colPaletteIndexer"><a name="colPaletteIndexer.t,seq[string]"></a><pre><span class="Keyword">template</span> <span class="Identifier">colPaletteIndexer</span><span class="Other">(</span><span class="Identifier">colx</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
@@ -2395,7 +2396,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-08-05 14:11:26 UTC</small>
+        <small>Made with Nim. Generated: 2018-08-05 16:09:25 UTC</small>
       </div>
     </div>
   </div>
