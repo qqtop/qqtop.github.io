@@ -1220,7 +1220,7 @@ function main() {
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">Index</h1>
-    Modules: <a href="cx.html">cx</a>, <a href="cxconsts.html">cxconsts</a>, <a href="cxfont.html">cxfont</a>, <a href="cxglobal.html">cxglobal</a>, <a href="cxhash.html">cxhash</a>, <a href="cxprint.html">cxprint</a>, <a href="cxstats.html">cxstats</a>, <a href="cxtime.html">cxtime</a>, <a href="cxtruecolor.html">cxtruecolor</a>, <a href="cxutils.html">cxutils</a>.<br/><p /><h2>API symbols</h2>
+    Modules: <a href="cx.html">cx</a>, <a href="cxconsts.html">cxconsts</a>, <a href="cxfont.html">cxfont</a>, <a href="cxglobal.html">cxglobal</a>, <a href="cxhash.html">cxhash</a>, <a href="cxnetwork.html">cxnetwork</a>, <a href="cxprint.html">cxprint</a>, <a href="cxstats.html">cxstats</a>, <a href="cxtime.html">cxtime</a>, <a href="cxtruecolor.html">cxtruecolor</a>, <a href="cxutils.html">cxutils</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="%60%24%60" href="#%60%24%60"><span>`$`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
           data-doc-search-tag="cxutils : `$`[T](some: typedesc[T]): string" href="cxutils.html#%24,typedesc%5BT%5D">cxutils : `$`[T](some: typedesc[T]): string</a></li>
@@ -1915,6 +1915,14 @@ function main() {
 <li><a class="reference external" 
           data-doc-search-tag="cxutils : cxDayOfWeek(datestr: string): string" href="cxutils.html#cxDayOfWeek,string">cxutils : cxDayOfWeek(datestr: string): string</a></li>
           </ul></dd>
+<dt><a name="cxDig" href="#cxDig"><span>cxDig:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : cxDig(ipadd: string): tuple" href="cxnetwork.html#cxDig,string">cxnetwork : cxDig(ipadd: string): tuple</a></li>
+          </ul></dd>
+<dt><a name="cxDns" href="#cxDns"><span>cxDns:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : cxDns(dns: string): tuple" href="cxnetwork.html#cxDns,string">cxnetwork : cxDns(dns: string): tuple</a></li>
+          </ul></dd>
 <dt><a name="cxe" href="#cxe"><span>cxe:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
           data-doc-search-tag="cxfont : cxe(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())" href="cxfont.html#cxe.t,int,string,string">cxfont : cxe(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
@@ -2014,6 +2022,10 @@ function main() {
 <dt><a name="cxpoint" href="#cxpoint"><span>cxpoint:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
           data-doc-search-tag="cxfont : cxpoint(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())" href="cxfont.html#cxpoint.t,int,string,string">cxfont : cxpoint(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
+          </ul></dd>
+<dt><a name="cxPortCheck" href="#cxPortCheck"><span>cxPortCheck:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : cxPortCheck(cmd: string = &quot;lsof -i&quot;)" href="cxnetwork.html#cxPortCheck,string">cxnetwork : cxPortCheck(cmd: string = &quot;lsof -i&quot;)</a></li>
           </ul></dd>
 <dt><a name="cxPrint" href="#cxPrint"><span>cxPrint:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
@@ -2485,6 +2497,14 @@ function main() {
 <li><a class="reference external" 
           data-doc-search-tag="cxglobal : getcxTrueColorSetFlag" href="cxglobal.html#getcxTrueColorSetFlag">cxglobal : getcxTrueColorSetFlag</a></li>
           </ul></dd>
+<dt><a name="getHosts" href="#getHosts"><span>getHosts:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : getHosts(dm: string): seq[string]" href="cxnetwork.html#getHosts,string">cxnetwork : getHosts(dm: string): seq[string]</a></li>
+          </ul></dd>
+<dt><a name="getIpInfo" href="#getIpInfo"><span>getIpInfo:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : getIpInfo(ip: string): JsonNode" href="cxnetwork.html#getIpInfo,string">cxnetwork : getIpInfo(ip: string): JsonNode</a></li>
+          </ul></dd>
 <dt><a name="getNextMonday" href="#getNextMonday"><span>getNextMonday:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
           data-doc-search-tag="cxutils : getNextMonday(adate: string): string" href="cxutils.html#getNextMonday,string">cxutils : getNextMonday(adate: string): string</a></li>
@@ -2546,6 +2566,10 @@ function main() {
 <dt><a name="getTimeStr" href="#getTimeStr"><span>getTimeStr:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
           data-doc-search-tag="cxtime : getTimeStr(): string" href="cxtime.html#getTimeStr,">cxtime : getTimeStr(): string</a></li>
+          </ul></dd>
+<dt><a name="getWanIp" href="#getWanIp"><span>getWanIp:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : getWanIp(): string" href="cxnetwork.html#getWanIp,">cxnetwork : getWanIp(): string</a></li>
           </ul></dd>
 <dt><a name="ghostwhite" href="#ghostwhite"><span>ghostwhite:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
@@ -2782,6 +2806,14 @@ function main() {
 <dt><a name="linen" href="#linen"><span>linen:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
           data-doc-search-tag="cxconsts : linen" href="cxconsts.html#linen">cxconsts : linen</a></li>
+          </ul></dd>
+<dt><a name="localIp" href="#localIp"><span>localIp:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : localIp(): string" href="cxnetwork.html#localIp,">cxnetwork : localIp(): string</a></li>
+          </ul></dd>
+<dt><a name="localRouterIp" href="#localRouterIp"><span>localRouterIp:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : localRouterIp(): string" href="cxnetwork.html#localRouterIp,">cxnetwork : localRouterIp(): string</a></li>
           </ul></dd>
 <dt><a name="localTime" href="#localTime"><span>localTime:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
@@ -3126,6 +3158,10 @@ function main() {
 <dt><a name="phone" href="#phone"><span>phone:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
           data-doc-search-tag="cxconsts : phone" href="cxconsts.html#phone">cxconsts : phone</a></li>
+          </ul></dd>
+<dt><a name="pingy" href="#pingy"><span>pingy:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : pingy(dest: string; pingcc: int = 3; col: string = termwhite)" href="cxnetwork.html#pingy,string,int,string">cxnetwork : pingy(dest: string; pingcc: int = 3; col: string = termwhite)</a></li>
           </ul></dd>
 <dt><a name="pink" href="#pink"><span>pink:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
@@ -3683,6 +3719,26 @@ function main() {
 <li><a class="reference external" 
           data-doc-search-tag="cxtruecolor : showCxTrueColorPalette2()" href="cxtruecolor.html#showCxTrueColorPalette2,">cxtruecolor : showCxTrueColorPalette2()</a></li>
           </ul></dd>
+<dt><a name="showDig" href="#showDig"><span>showDig:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : showDig(hostip: string = $&quot;172.217.5.14&quot;)" href="cxnetwork.html#showDig,string">cxnetwork : showDig(hostip: string = $&quot;172.217.5.14&quot;)</a></li>
+          </ul></dd>
+<dt><a name="showDns" href="#showDns"><span>showDns:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : showDns(hostdns: string = &quot;google.com&quot;)" href="cxnetwork.html#showDns,string">cxnetwork : showDns(hostdns: string = &quot;google.com&quot;)</a></li>
+          </ul></dd>
+<dt><a name="showHosts" href="#showHosts"><span>showHosts:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : showHosts(dm: string)" href="cxnetwork.html#showHosts,string">cxnetwork : showHosts(dm: string)</a></li>
+          </ul></dd>
+<dt><a name="showIpInfo" href="#showIpInfo"><span>showIpInfo:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : showIpInfo(ip: string)" href="cxnetwork.html#showIpInfo,string">cxnetwork : showIpInfo(ip: string)</a></li>
+          </ul></dd>
+<dt><a name="showLocalIpInfo" href="#showLocalIpInfo"><span>showLocalIpInfo:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external" 
+          data-doc-search-tag="cxnetwork : showLocalIpInfo()" href="cxnetwork.html#showLocalIpInfo,">cxnetwork : showLocalIpInfo()</a></li>
+          </ul></dd>
 <dt><a name="showPalette" href="#showPalette"><span>showPalette:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external" 
           data-doc-search-tag="cx : showPalette(coltype: string = &quot;white&quot;)" href="cx.html#showPalette,string">cx : showPalette(coltype: string = &quot;white&quot;)</a></li>
@@ -4212,7 +4268,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-08-05 13:54:01 UTC</small>
+        <small>Made with Nim. Generated: 2018-08-05 14:11:35 UTC</small>
       </div>
     </div>
   </div>
