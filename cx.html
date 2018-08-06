@@ -1622,7 +1622,7 @@ Funding     : Here are three excellent reasons :
 <dt id="checkColor"><a name="checkColor,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">checkColor</span><span class="Other">(</span><span class="Identifier">colname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>checkColor</p>
-<p>returns true if colname is a known color name in colorNames constants.nim string and </p>
+<p>returns true if colname is a known color name in colorNames constants.nim</p>
 
 
 </dd>
@@ -1803,22 +1803,27 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>cxHelp</p>
-<p>a help generator which can easily be called from within or on app start maybe via myapp -h</p>
-<pre class="listing"><span class="Identifier">cxHelp</span><span class="Punctuation">(</span><span class="StringLit">&quot;Help system for my application&quot;</span><span class="Punctuation">,</span>
-    <span class="StringLit">&quot;Read the book&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;use more data&quot;</span><span class="Punctuation">,</span>
+<p>a help generator which can easily be called from within or on app start with ability to include code blocks</p>
+<pre class="listing"><span class="Identifier">cxHelp</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;Help system for my application&quot;</span><span class="Punctuation">,</span>
+     <span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span>
+    <span class="StringLit">&quot;1) Read the book&quot;</span><span class="Punctuation">,</span>
+    <span class="StringLit">&quot;2) use more data&quot;</span><span class="Punctuation">,</span>
+    <span class="StringLit">&quot;3) have a beer&quot;</span><span class="Punctuation">,</span>
     <span class="Identifier">cxcodestart</span><span class="Punctuation">,</span>
     <span class="StringLit">&quot;Example 1&quot;</span><span class="Punctuation">,</span>
-    <span class="StringLit">&quot;abc = @[1,2,3]&quot;</span><span class="Punctuation">,</span>
+    <span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span>
+    <span class="StringLit">&quot;let abc = @[1,2,3]&quot;</span><span class="Punctuation">,</span>
     <span class="StringLit">&quot;    &quot;</span><span class="Punctuation">,</span>
-    <span class="StringLit">&quot;xfg = mysupergenerator(abc,3)&quot;</span><span class="Punctuation">,</span>
+    <span class="StringLit">&quot;var xfg = mysupergenerator(abc,3)&quot;</span><span class="Punctuation">,</span>
     <span class="Identifier">cxcodeend</span><span class="Punctuation">,</span>
     <span class="StringLit">&quot;this should be help style again&quot;</span><span class="Punctuation">,</span>
     <span class="Identifier">cxcodestart</span><span class="Punctuation">,</span>
     <span class="StringLit">&quot;Example 2  &quot;</span><span class="Punctuation">,</span>
+    <span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span>
     <span class="StringLit">&quot;for x in 0..&lt;n:&quot;</span><span class="Punctuation">,</span>
-    <span class="LongStringLit">&quot;&quot;&quot;   printLn(&quot;Something Nice&quot;,blue)&quot;&quot;&quot;&quot;</span><span class="Punctuation">,</span>
+    <span class="LongStringLit">&quot;&quot;&quot;   printLn(&quot;Something Nice  &quot;,blue)&quot;&quot;&quot;&quot;</span><span class="Punctuation">,</span>
     <span class="Identifier">cxcodeend</span><span class="Punctuation">,</span>
-    <span class="StringLit">&quot;Have a nice day&quot;</span><span class="Punctuation">)</span></pre>
+    <span class="StringLit">&quot;Have a nice day&quot;</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="qqTop"><a name="qqTop,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">qqTop</span><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">AssertionError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
@@ -2044,7 +2049,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-08-05 21:23:02 UTC</small>
+        <small>Made with Nim. Generated: 2018-08-06 13:45:11 UTC</small>
       </div>
     </div>
   </div>
