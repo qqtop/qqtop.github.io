@@ -1435,6 +1435,8 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#styledEchoPrint.m,varargs[untyped]"
     title="styledEchoPrint(m: varargs[untyped]): typed"><wbr />styled<wbr />Echo<wbr />Print<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#procName.m,untyped"
+    title="procName(x: untyped): untyped"><wbr />proc<wbr />Name<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1521,7 +1523,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-08-02
+Latest      : 2018-08-09
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1918,7 +1920,7 @@ note that not all unicode chars may be available on all systems</pre>
 <dt id="centerX"><a name="centerX,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">centerX</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>centerX</p>
-<p>returns an int with best terminal center position</p>
+<p>returns an int with best terminal center position </p>
 
 
 </dd>
@@ -2129,6 +2131,18 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 <dt id="styledEchoPrint"><a name="styledEchoPrint.m,varargs[untyped]"></a><pre><span class="Keyword">macro</span> <span class="Identifier">styledEchoPrint</span><span class="Other">(</span><span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">untyped</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">typed</span></pre></dt>
 <dd>
 partially lifted from an earler macro in terminal.nim and removed new line #  improvements by araq to avoid the now deprecated callsite()
+
+</dd>
+<dt id="procName"><a name="procName.m,untyped"></a><pre><span class="Keyword">macro</span> <span class="Identifier">procName</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
+<dd>
+<p>procName prints the name of the proc if annoited with pragma {.procName.}</p>
+<p>Example .. code-block:: nim</p>
+<blockquote><p><dl class="docutils"><dt>proc yippi(s:string) : string  {.procName.}  =</dt>
+<dd>result = s &amp; &quot;007&quot;</dd>
+</dl>
+<p>printLn(yippi(&quot;Mouse&quot;))</p>
+</p></blockquote>
+
 
 </dd>
 
@@ -2396,7 +2410,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-08-09 19:36:26 UTC</small>
+        <small>Made with Nim. Generated: 2018-08-17 10:11:18 UTC</small>
       </div>
     </div>
   </div>
