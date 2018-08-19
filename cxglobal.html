@@ -1348,8 +1348,8 @@ function main() {
     title="ff(zz: float; n: int = 5): string"><wbr />ff<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ff22,int,int"
     title="ff22(zz: int; n: int = 0): string"><wbr />ff22<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#typeTest3,T"
-    title="typeTest3[T](x: T): string"><wbr />type<wbr />Test3<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#typeTest33,T"
+    title="typeTest33[T](x: T): string"><wbr />type<wbr />Test33<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#ff2,SomeNumber,int"
     title="ff2(zz: SomeNumber; n: int = 3): string"><wbr />ff2<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getRandomFloat,float,float"
@@ -1523,7 +1523,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-08-09
+Latest      : 2018-08-19
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1649,11 +1649,13 @@ issues n newLines , default = 1
 </dd>
 <dt id="rndSample"><a name="rndSample,seq[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rndSample</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">asq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
 <dd>
-rndSample returns one rand sample from a sequence
+rndSample returns one rand sample from a sequence 
 
 </dd>
 <dt id="rndRGB"><a name="rndRGB,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">rndRGB</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+<p>rndRGB</p>
+<p>returns a random RGB value from colors available in colorNames see cxconsts.nim for available values </p>
 
 
 </dd>
@@ -1749,7 +1751,7 @@ rndSample returns one rand sample from a sequence
 <dt id="createSeqBinary"><a name="createSeqBinary,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSeqBinary</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>createSeqBinary</p>
-<p>returns a seq of integers between 0 and 1</p>
+<p>returns a seq of integers between 0 and 1 </p>
 
 
 </dd>
@@ -1787,7 +1789,7 @@ rndSample returns one rand sample from a sequence
    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;20.0&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;NIM &quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="StringLit">&quot; : &quot;</span><span class="Punctuation">,</span><span class="Identifier">z</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<dt id="typeTest3"><a name="typeTest3,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">typeTest3</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dt id="typeTest33"><a name="typeTest33,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">typeTest33</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
 
@@ -2130,7 +2132,7 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 <dl class="item">
 <dt id="styledEchoPrint"><a name="styledEchoPrint.m,varargs[untyped]"></a><pre><span class="Keyword">macro</span> <span class="Identifier">styledEchoPrint</span><span class="Other">(</span><span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">untyped</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">typed</span></pre></dt>
 <dd>
-partially lifted from an earler macro in terminal.nim and removed new line #  improvements by araq to avoid the now deprecated callsite()
+partially lifted from an earler macro in terminal.nim and removed new line improvements suggested by araq to avoid the now deprecated callsite()
 
 </dd>
 <dt id="procName"><a name="procName.m,untyped"></a><pre><span class="Keyword">macro</span> <span class="Identifier">procName</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
@@ -2190,11 +2192,8 @@ th , a global where latest terminal height is always available
 </dd>
 <dt id="colPaletteName"><a name="colPaletteName.t,string,int"></a><pre><span class="Keyword">template</span> <span class="Identifier">colPaletteName</span><span class="Other">(</span><span class="Identifier">coltype</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
 <dd>
-<pre>
-returns the actual name of the palette entry n
-eg. &quot;mediumslateblue&quot;
-see example at colPalette
-</pre>
+<p>colPaletteName</p>
+<p>returns the actual name of the palette entry n eg. &quot;mediumslateblue&quot; see example at colPalette </p>
 
 
 </dd>
@@ -2287,7 +2286,7 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 </dd>
 <dt id="<>"><a name="<>.t,untyped,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">`&lt;&gt;`</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
-unequal operator
+unequal operator 
 
 </dd>
 <dt id="loopy"><a name="loopy.t,T,untyped"></a><pre><span class="Keyword">template</span> <span class="Identifier">loopy</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">ite</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">st</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span></pre></dt>
@@ -2381,7 +2380,7 @@ returns a colorpalette which can be used to iterate over</pre>
 <dt id="currentLine"><a name="currentLine.t,"></a><pre><span class="Keyword">template</span> <span class="Identifier">currentLine</span><span class="Other">(</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>currentLine</p>
-<p>simple template to return line number , maybe usefull for debugging</p>
+<p>simple template to return line number , maybe usefull for debugging </p>
 
 
 </dd>
@@ -2410,7 +2409,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-08-17 16:26:05 UTC</small>
+        <small>Made with Nim. Generated: 2018-08-19 22:25:25 UTC</small>
       </div>
     </div>
   </div>

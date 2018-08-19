@@ -1253,6 +1253,8 @@ function main() {
     title="showRegression(x, y: seq[float | int]; n: int = 5; xpos: int = 1)"><wbr />show<wbr />Regression<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showRegression,RunningRegress,int,int"
     title="showRegression(rr: RunningRegress; n: int = 5; xpos: int = 1)"><wbr />show<wbr />Regression<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#zscore,seq[SomeNumber]"
+    title="zscore(data: seq[SomeNumber]): seq[float]"><wbr />zscore<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1271,7 +1273,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-03-05
+Latest      : 2018-08-19
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1337,6 +1339,15 @@ Description : provides functions pertaining to statistcs and calculations</pre>
 
 
 </dd>
+<dt id="zscore"><a name="zscore,seq[SomeNumber]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">zscore</span><span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">SomeNumber</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>zscore</p>
+<p>returns the z-score in a seq[float] for each data point</p>
+<p>##.. code-block:: nim</p>
+<blockquote><p>import nimcx printLn(&quot;DATA SERIES FLOAT&quot;,yellowgreen,xpos=2) let data = createSeqFloat(12) showSeq(data,maxitemwidth=8) printLn(&quot;ZSCORE&quot;,salmon,xpos=2) showSeq(zscore(data),maxitemwidth=8) decho(3) printLn(&quot;DATA SERIES INTEGER&quot;,yellowgreen,xpos=2) let data2 = createSeqint(12,1,1000) showSeq(data2,maxitemwidth=8) printLn(&quot;ZSCORE&quot;,salmon,xpos=2) showSeq(zscore(data2),maxitemwidth=8) doFinish() </p></blockquote>
+
+
+</dd>
 
 </dl></div>
 
@@ -1347,7 +1358,7 @@ Description : provides functions pertaining to statistcs and calculations</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-08-17 16:26:16 UTC</small>
+        <small>Made with Nim. Generated: 2018-08-19 22:25:35 UTC</small>
       </div>
     </div>
   </div>
