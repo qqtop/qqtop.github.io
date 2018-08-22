@@ -1310,6 +1310,14 @@ function main() {
     title="getTerminalWidth(): int"><wbr />get<wbr />Terminal<wbr />Width<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getTerminalHeight,"
     title="getTerminalHeight(): int"><wbr />get<wbr />Terminal<wbr />Height<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#remapIntToFloat,seq[int]"
+    title="remapIntToFloat(s: seq[int]): seq[float]"><wbr />remap<wbr />Int<wbr />To<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#remapFloatToInt,seq[float]"
+    title="remapFloatToInt(s: seq[float]): seq[int]"><wbr />remap<wbr />Float<wbr />To<wbr />Int<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#remapToString,seq[T]"
+    title="remapToString[T](s: seq[T]): seq[string]"><wbr />remap<wbr />To<wbr />String<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#fastWrite,File,string"
+    title="fastWrite(f: File; s: string)"><wbr />fast<wbr />Write<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#waitOn,int"
     title="waitOn(alen: int = 1)"><wbr />wait<wbr />On<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#rndSample,seq[T]"
@@ -1523,7 +1531,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-08-19
+Latest      : 2018-08-22
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1534,7 +1542,7 @@ Description : provides many basic utility functions required by other modules</p
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
-<a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="parseutils.html">parseutils</a>, <a class="reference external" href="sequtils.html">sequtils</a>, <a class="reference external" href="strmisc.html">strmisc</a>, <a class="reference external" href="random.html">random</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="unicode.html">unicode</a>, <a class="reference external" href="macros.html">macros</a>, <a class="reference external" href="colors.html">colors</a>, <a class="reference external" href="json.html">json</a>, <a class="reference external" href="streams.html">streams</a>, <a class="reference external" href="typeinfo.html">typeinfo</a>, <a class="reference external" href="typetraits.html">typetraits</a>
+<a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="terminal.html">terminal</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="parseutils.html">parseutils</a>, <a class="reference external" href="sequtils.html">sequtils</a>, <a class="reference external" href="strmisc.html">strmisc</a>, <a class="reference external" href="math.html">math</a>, <a class="reference external" href="random.html">random</a>, <a class="reference external" href="algorithm.html">algorithm</a>, <a class="reference external" href="unicode.html">unicode</a>, <a class="reference external" href="macros.html">macros</a>, <a class="reference external" href="colors.html">colors</a>, <a class="reference external" href="json.html">json</a>, <a class="reference external" href="streams.html">streams</a>, <a class="reference external" href="typeinfo.html">typeinfo</a>, <a class="reference external" href="typetraits.html">typetraits</a>
 </dl></div>
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
@@ -1637,6 +1645,29 @@ issues n newLines , default = 1
 <dd>
 <p>getTerminalHeight</p>
 <p>get linux terminal height in rows </p>
+
+
+</dd>
+<dt id="remapIntToFloat"><a name="remapIntToFloat,seq[int]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">remapIntToFloat</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+remapIntToFloat 
+
+</dd>
+<dt id="remapFloatToInt"><a name="remapFloatToInt,seq[float]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">remapFloatToInt</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+remapFloatToInt 
+
+</dd>
+<dt id="remapToString"><a name="remapToString,seq[T]"></a><pre><span class="Keyword">proc</span> <span class="Identifier">remapToString</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span></pre></dt>
+<dd>
+remapToString 
+
+</dd>
+<dt id="fastWrite"><a name="fastWrite,File,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">fastWrite</span><span class="Other">(</span><span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">File</span><span class="Other">;</span> <span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>fastWrite</p>
+<p>good for logging or vast file writes</p>
+<p>based on code ex <a class="reference external" href="https://hookrace.net/blog/writing-an-async-logger-in-nim">https://hookrace.net/blog/writing-an-async-logger-in-nim</a>/ </p>
 
 
 </dd>
@@ -2409,7 +2440,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-08-21 20:58:12 UTC</small>
+        <small>Made with Nim. Generated: 2018-08-22 20:21:24 UTC</small>
       </div>
     </div>
   </div>
