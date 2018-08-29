@@ -1363,6 +1363,10 @@ function main() {
     title="memCheck(stats: bool = false)"><wbr />mem<wbr />Check<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#distanceTo,,"
     title="distanceTo(origin: (float, float); dest: (float, float)): float"><wbr />distance<wbr />To<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getEmojisSmall,"
+    title="getEmojisSmall(): seq[string]"><wbr />get<wbr />Emojis<wbr />Small<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#showEmojisSmall,"
+    title="showEmojisSmall()"><wbr />show<wbr />Emojis<wbr />Small<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1913,6 +1917,22 @@ spiralBoxy2   uses boxy2
 <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span></pre>
 
 </dd>
+<dt id="getEmojisSmall"><a name="getEmojisSmall,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getEmojisSmall</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>getEmojisSmall</p>
+<p>a seq with 246 emojis will be returned</p>
+<p>for easy use in your text strings </p>
+
+
+</dd>
+<dt id="showEmojisSmall"><a name="showEmojisSmall,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">showEmojisSmall</span><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+                       <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>showEmojisSmall</p>
+<p>show a table of small emojis </p>
+
+
+</dd>
 
 </dl></div>
 <div class="section" id="15">
@@ -1987,7 +2007,7 @@ reverse iterator<pre class="listing"><span class="Keyword">let</span> <span clas
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-08-26 21:31:43 UTC</small>
+        <small>Made with Nim. Generated: 2018-08-29 13:33:30 UTC</small>
       </div>
     </div>
   </div>
