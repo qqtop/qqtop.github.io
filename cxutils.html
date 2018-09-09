@@ -1408,7 +1408,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2018-08-19
+Latest      : 2018-08-29
 
 OS          : Linux
 
@@ -1441,12 +1441,14 @@ Description : cxutils.nim is a collection of utility procs and templates</pre>
 <dd>
 <p>fibonacci</p>
 <p>calculate fibonacci values</p>
-<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">20</span><span class="Punctuation">:</span> <span class="Identifier">quickList</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">fibonacci</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+<pre class="listing"><span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="DecNumber">25</span><span class="Punctuation">:</span> <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;3&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;15&quot;</span><span class="Punctuation">,</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">4</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">cxlpad</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">fibonacci</span><span class="Punctuation">(</span><span class="Identifier">x</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">12</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <dt id="pswwaux"><a name="pswwaux,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">pswwaux</span><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+<p>pswwaux</p>
+<p>utility bash command :  ps -ww aux | sort -nk3 | tail displays output in console </p>
 
 
 </dd>
@@ -1486,8 +1488,8 @@ showCpuCores
 <dt id="getPassword"><a name="getPassword,int64"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getPassword</span><span class="Other">(</span><span class="Identifier">ahash</span><span class="Other">:</span> <span class="Identifier">int64</span> <span class="Other">=</span> <span class="DecNumber">0'i64</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
-<p>getFbPassword</p>
-<p>convenience function prompts user a password to be checked against a passwordhash which could come from a security database or other source </p>
+<p>getPassword</p>
+<p>convenience function, prompts user for a password to be checked against a passwordhash which could come from a security database or other source </p>
 
 
 </dd>
@@ -1738,7 +1740,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 </dd>
 <dt id="cxBinomialCoeff"><a name="cxBinomialCoeff,int,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">cxBinomialCoeff</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">,</span> <span class="Identifier">k</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
-
+&quot;is greater&quot; operator. This is the same as <tt class="docutils literal"><span class="pre">y &lt; x</span></tt>.
 
 </dd>
 <dt id="clearScreen"><a name="clearScreen,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">clearScreen</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
@@ -1889,7 +1891,7 @@ spiralBoxy2   uses boxy2
                                  <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
                                  <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
-
+iterates over each item of <cite>a</cite>.
 
 </dd>
 <dt id="memCheck"><a name="memCheck,bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">memCheck</span><span class="Other">(</span><span class="Identifier">stats</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
@@ -1929,8 +1931,11 @@ spiralBoxy2   uses boxy2
                        <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>showEmojisSmall</p>
-<p>show a table of small emojis </p>
-
+<p>show a table of small emojis</p>
+<p>Example</p>
+<pre class="listing"><span class="Identifier">showEmojisSmall</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Keyword">let</span> <span class="Identifier">es</span> <span class="Operator">=</span> <span class="Identifier">getemojisSmall</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Punctuation">(</span><span class="Identifier">es</span><span class="Punctuation">[</span><span class="DecNumber">197</span><span class="Punctuation">]</span> <span class="Operator">&amp;</span> <span class="Identifier">es</span><span class="Punctuation">[</span><span class="DecNumber">244</span><span class="Punctuation">]</span> <span class="Operator">&amp;</span> <span class="Identifier">es</span><span class="Punctuation">[</span><span class="DecNumber">231</span><span class="Punctuation">]</span> <span class="Punctuation">)</span> <span class="Operator">*</span> <span class="DecNumber">20</span><span class="Punctuation">,</span><span class="Identifier">rndcol</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 
@@ -2007,7 +2012,7 @@ reverse iterator<pre class="listing"><span class="Keyword">let</span> <span clas
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-08-29 13:33:30 UTC</small>
+        <small>Made with Nim. Generated: 2018-09-09 08:02:51 UTC</small>
       </div>
     </div>
   </div>
