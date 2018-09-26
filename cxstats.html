@@ -1273,7 +1273,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-08-19
+Latest      : 2018-09-26
 
 Compiler    : Nim &gt;= 0.18.x dev branch
 
@@ -1343,9 +1343,19 @@ Description : provides functions pertaining to statistcs and calculations</pre>
 <dd>
 <p>zscore</p>
 <p>returns the z-score in a seq[float] for each data point</p>
-<p>##.. code-block:: nim</p>
-<blockquote><p>import nimcx printLn(&quot;DATA SERIES FLOAT&quot;,yellowgreen,xpos=2) let data = createSeqFloat(12) showSeq(data,maxitemwidth=8) printLn(&quot;ZSCORE&quot;,salmon,xpos=2) showSeq(zscore(data),maxitemwidth=8) decho(3) printLn(&quot;DATA SERIES INTEGER&quot;,yellowgreen,xpos=2) let data2 = createSeqint(12,1,1000) showSeq(data2,maxitemwidth=8) printLn(&quot;ZSCORE&quot;,salmon,xpos=2) showSeq(zscore(data2),maxitemwidth=8) doFinish() </p></blockquote>
-
+<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;DATA SERIES FLOAT&quot;</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
+<span class="Keyword">let</span> <span class="Identifier">data</span> <span class="Operator">=</span> <span class="Identifier">createSeqFloat</span><span class="Punctuation">(</span><span class="DecNumber">12</span><span class="Punctuation">)</span>
+<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">data</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">8</span><span class="Punctuation">)</span>
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;ZSCORE&quot;</span><span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
+<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">zscore</span><span class="Punctuation">(</span><span class="Identifier">data</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">8</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span>
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;DATA SERIES INTEGER&quot;</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
+<span class="Keyword">let</span> <span class="Identifier">data2</span> <span class="Operator">=</span> <span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">12</span><span class="Punctuation">,</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">1000</span><span class="Punctuation">)</span>
+<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">data2</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">8</span><span class="Punctuation">)</span>
+<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;ZSCORE&quot;</span><span class="Punctuation">,</span><span class="Identifier">salmon</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
+<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">zscore</span><span class="Punctuation">(</span><span class="Identifier">data2</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">8</span><span class="Punctuation">)</span>
+<span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span> </pre>
 
 </dd>
 
@@ -1358,7 +1368,7 @@ Description : provides functions pertaining to statistcs and calculations</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-09-23 05:13:57 UTC</small>
+        <small>Made with Nim. Generated: 2018-09-26 05:47:27 UTC</small>
       </div>
     </div>
   </div>
