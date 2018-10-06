@@ -1316,6 +1316,10 @@ function main() {
     title="avDatafetcher(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Datafetcher<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#avDataFetcherIntraday%2Cstring%2Cstring%2Cstring"
     title="avDataFetcherIntraday(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Data<wbr />Fetcher<wbr />Intraday<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#avDataFetcherGlobal%2Cstring%2Cstring%2Cstring"
+    title="avDataFetcherGlobal(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Data<wbr />Fetcher<wbr />Global<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#avDataFetcherGlobal%2Cseq%5Bstring%5D%2Cstring%2Cstring"
+    title="avDataFetcherGlobal(stckcodes: seq[string]; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Data<wbr />Fetcher<wbr />Global<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showRawData%2C"
     title="showRawData()"><wbr />show<wbr />Raw<wbr />Data<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showOriginalStockDf%2Cstring%2Cint%2Cint%2Cbool%2Cstring"
@@ -1416,7 +1420,7 @@ Tested on   :  Linux
 
 ProjectStart: 2015-06-05
 
-Latest      : 2018-10-05
+Latest      : 2018-10-06
 
 Todo        : anything not yet done
 
@@ -1604,6 +1608,37 @@ getData
 <table frame="void"><tr><th align="left">/dev/shm temporary filesystem location may not be available on every distribution</th><td align="left"></td>
 </tr>
 </table><p>change accordingly or write to a disc location</p>
+<p>works occassionally with non US stocks but mostly not ... </p>
+
+
+</dd>
+<a id="avDataFetcherGlobal%2Cstring%2Cstring%2Cstring"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">avDataFetcherGlobal</span><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
+    <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">,</span>
+                                 <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>avDataFetcherGlobal</p>
+<p>fetches data from alphavantage</p>
+<p>default = compact</p>
+<p>data will be written into /dev/shm/avdata.csv  ..</p>
+<p>change accordingly or write to a disc location</p>
+<p>works occassionally with non US stocks but mostly not ... </p>
+
+
+</dd>
+<a id="avDataFetcherGlobal%2Cseq%5Bstring%5D%2Cstring%2Cstring"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">avDataFetcherGlobal</span><span class="Other">(</span><span class="Identifier">stckcodes</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span>
+                        <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
+    <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>avDataFetcherGlobal</p>
+<p>fetches data from alphavantage</p>
+<p>default = compact</p>
+<p>here we provide a seq of stockcodes to fetch</p>
+<p>data will be written into /dev/shm/avdata.csv  ..</p>
+<p>change accordingly or write to a disc location</p>
 <p>works occassionally with non US stocks but mostly not ... </p>
 
 
@@ -1830,7 +1865,7 @@ iterates over each item of <cite>a</cite>.
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-10-05 11:04:41 UTC</small>
+        <small>Made with Nim. Generated: 2018-10-06 11:33:05 UTC</small>
       </div>
     </div>
   </div>
