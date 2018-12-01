@@ -1270,6 +1270,8 @@ function main() {
   status*: bool
   frtexttop*: nimss
   frtextbot*: nimss"><wbr />nimdf<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#Rowrange"
+    title="Rowrange = nimis"><wbr />Rowrange<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -1296,6 +1298,8 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#newdfcellobject%2C"
     title="newdfcellobject(): dfcellobject"><wbr />newdfcellobject<span class="attachedType" style="visibility:hidden">dfcellobject</span></a></li>
+  <li><a class="reference" href="#getRowrange%2Cint%2Cint"
+    title="getRowrange(nrows: int; nrowe: int): Rowrange"><wbr />get<wbr />Rowrange<span class="attachedType" style="visibility:hidden">Rowrange</span></a></li>
   <li><a class="reference" href="#newNimDf%2C"
     title="newNimDf(): nimdf"><wbr />new<wbr />Nim<wbr />Df<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#newNimSs%2C"
@@ -1322,27 +1326,30 @@ function main() {
     title="showRaw[T](df: nimdf; rrows: openArray[T])"><wbr />show<wbr />Raw<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#showFirstLast%2Cnimdf%2Cint"
     title="showFirstLast(df: nimdf; nrows: int = 5)"><wbr />show<wbr />First<wbr />Last<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#showAnyRowRange%2Cnimdf%2Cseq%5Bint%5D"
+    title="showAnyRowRange(df: nimdf; rrows: seq[int])"><wbr />show<wbr />Any<wbr />Row<wbr />Range<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#showHeaderStatus%2Cnimdf%2Cint"
     title="showHeaderStatus(df: nimdf; xpos: int = 2)"><wbr />show<wbr />Header<wbr />Status<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#showCounts%2Cnimdf%2Cint"
     title="showCounts(df: nimdf; xpos: int = 2)"><wbr />show<wbr />Counts<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#colFitMax%2Cnimdf%2Cint%2Cint"
     title="colFitMax(df: nimdf; cols: int = 0; adjustwd: int = 0): nimis"><wbr />col<wbr />Fit<wbr />Max<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
-  <li><a class="reference" href="#showDf%2Cnimdf%2Cint%2Cnimis%2Cnimis%2Cnimss%2Cbool%2Cstring%2Cbool%2Cnimss%2Cbool%2Cnimss%2Cnimis%2Cnimis%2Cnimss%2Cnimss%2Cnimss%2Cint"
+  <li><a class="reference" href="#showDf%2Cnimdf%2Cint%2Cnimis%2Cnimis%2Cnimss%2Cbool%2Cstring%2Cbool%2Cbool%2Cnimss%2Cnimss%2Cbool%2Cnimss%2Cnimis%2Cnimis%2Cnimss%2Cnimss%2Cnimss%2Cint"
     title="showDf(df: nimdf; rows: int = 10; cols: nimis = @[]; colwd: nimis = @[];
        colcolors: nimss = @[white, white]; showframe: bool = false;
        framecolor: string = palegreen; showHeader: bool = false;
+       showRowHeader: bool = false; rowHeadertext: nimss = @[];
        headertext: nimss = @[]; leftalignflag: bool = false; cellcolors: nimss = @[];
        cellrows: nimis = @[]; cellcols: nimis = @[]; cellcalc: nimss = @[];
-       frtexttop: nimss = @[]; frtextbot: nimss = @[]; xpos: int = 2)"><wbr />show<wbr />Df<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+       frtexttop: nimss = @[]; frtextbot: nimss = @[]; xpos: int = 1)"><wbr />show<wbr />Df<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#showDataframeInfo%2Cnimdf"
     title="showDataframeInfo(df: nimdf)"><wbr />show<wbr />Dataframe<wbr />Info<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#showDfInfo%2Cnimdf"
     title="showDfInfo(df: nimdf)"><wbr />show<wbr />Df<wbr />Info<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#getColData%2Cnimdf%2Cint"
     title="getColData(df: nimdf; col: int): nimss"><wbr />get<wbr />Col<wbr />Data<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
-  <li><a class="reference" href="#getRowDataRange%2Cnimdf%2Cnimis%2Cnimis"
-    title="getRowDataRange(df: nimdf; rows: nimis = @[]; cols: nimis = @[]): nimdf"><wbr />get<wbr />Row<wbr />Data<wbr />Range<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
+  <li><a class="reference" href="#getRowDataRange%2Cnimdf%2Cnimis%2Cnimis%2Cnimss"
+    title="getRowDataRange(df: nimdf; rows: nimis = @[]; cols: nimis = @[]; rowheaders: nimss = @[]): nimdf"><wbr />get<wbr />Row<wbr />Data<wbr />Range<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#sortdf%2Cnimdf%2Cint"
     title="sortdf(df: nimdf; sortcol: int = 1; sortorder = asc): nimdf"><wbr />sortdf<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#filterDf%2Cnimdf%2Cnimis%2Cnimss%2Cnimss"
@@ -1360,6 +1367,12 @@ function main() {
   <li><a class="reference" href="#createRandomTestData%2Cstring%2Cint%2Cbool"
     title="createRandomTestData(filename: string = &quot;nimDfTestData.csv&quot;; datarows: int = 2000;
                      withHeaders: bool = false)"><wbr />create<wbr />Random<wbr />Test<wbr />Data<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#createRandomTestDataInt%2Cstring%2Cint%2Cbool"
+    title="createRandomTestDataInt(filename: string = &quot;nimDfTestData.csv&quot;;
+                        datarows: int = 2000; withHeaders: bool = false)"><wbr />create<wbr />Random<wbr />Test<wbr />Data<wbr />Int<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#createRandomTestDataFloat%2Cstring%2Cint%2Cbool"
+    title="createRandomTestDataFloat(filename: string = &quot;nimDfTestData.csv&quot;;
+                          datarows: int = 2000; withHeaders: bool = false)"><wbr />create<wbr />Random<wbr />Test<wbr />Data<wbr />Float<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#dfRowStats%2Cnimdf%2Cint%2Cseq%5Bint%5D"
     title="dfRowStats(df: nimdf; row: int; exceptCols: seq[int] = @[]): RunningStat"><wbr />df<wbr />Row<wbr />Stats<span class="attachedType" style="visibility:hidden">nimdf</span></a></li>
   <li><a class="reference" href="#dfColumnStats%2Cnimdf%2Cseq%5Bint%5D"
@@ -1406,7 +1419,7 @@ function main() {
 <p>License     : MIT opensource</p>
 <p>Version     : 0.0.5</p>
 <p>ProjectStart: 2016-09-16</p>
-<p>Latest      : 2018-10-18</p>
+<p>Latest      : 2018-12-01</p>
 <p>Compiler    : Nim &gt;= 0.19.x  devel branch</p>
 <p>OS          : Linux</p>
 <p>Description :</p>
@@ -1421,9 +1434,10 @@ function main() {
 <blockquote><p><a class="reference external" href="http://qqtop.github.io/nimdataframe.html">http://qqtop.github.io/nimdataframe.html</a></p></blockquote>
 <p>Tested      : OpenSuse Tumbleweed , Debian</p>
 <dl class="docutils"><dt>Todo        : additional calculations on dataframes</dt>
-<dd>allow right or left align for each column fullRotate df improve tests and example dataframe names instead of col number use col names .. trying to better handle json data  see new json lib by araq future filterDf(df:nimdf,cols:nimis,operator:nimss,vals:nimss) var ndf11 = filterDf(ndf9,@[3,5],@[&quot;&gt;&quot;,&quot;==&quot;],@[&quot;Borussia Dortmund&quot;,&quot;4&quot;] strings with accents may mess up the frame alignment --&gt; needs to be taken care off in showdf directly use more datasources other than csv , eg: select query outputs etc.</dd>
+<dd>allow right or left align for each column fullRotate df improve tests and example dataframe names instead of col number use col names .. trying to better handle json data  see new json lib by araq future filterDf(df:nimdf,cols:nimis,operator:nimss,vals:nimss) var ndf11 = filterDf(ndf9,@[3,5],@[&quot;&gt;&quot;,&quot;==&quot;],@[&quot;Borussia Dortmund&quot;,&quot;4&quot;] strings with accents may mess up the frame alignment --&gt; needs to be taken care off in showdf maybe toRunes directly use more datasources other than csv , eg: select query outputs etc.</dd>
 </dl>
-<p>Install     : nimble install <a class="reference external" href="https://github.com/qqtop/nimdataframe.git">https://github.com/qqtop/nimdataframe.git</a></p>
+</p></blockquote>
+<blockquote><p>Notes        :<blockquote><p>Install     : nimble install <a class="reference external" href="https://github.com/qqtop/nimdataframe.git">https://github.com/qqtop/nimdataframe.git</a></p></blockquote>
 </p></blockquote>
 # end of nimdataframe.nim ###############################################################################################        </p>
   <div class="section" id="7">
@@ -1488,6 +1502,12 @@ function main() {
 
 
 </dd>
+<a id="Rowrange"></a>
+<dt><pre><a href="nimdataframe.html#Rowrange"><span class="Identifier">Rowrange</span></a> <span class="Other">=</span> <a href="nimdataframe.html#nimis"><span class="Identifier">nimis</span></a></pre></dt>
+<dd>
+
+
+</dd>
 
 </dl></div>
 <div class="section" id="9">
@@ -1523,6 +1543,12 @@ function main() {
 <dl class="item">
 <a id="newdfcellobject,"></a>
 <dt><pre><span class="Keyword">proc</span> <span class="Identifier">newdfcellobject</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <a href="nimdataframe.html#dfcellobject"><span class="Identifier">dfcellobject</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="getRowrange,int,int"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">getRowrange</span><span class="Other">(</span><span class="Identifier">nrows</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">nrowe</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <a href="nimdataframe.html#Rowrange"><span class="Identifier">Rowrange</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -1629,6 +1655,16 @@ function main() {
 shows first and last n lines of df incl. headers if any of dataframe
 
 </dd>
+<a id="showAnyRowRange,nimdf,seq[int]"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">showAnyRowRange</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a><span class="Other">;</span> <span class="Identifier">rrows</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>showAnyRowRange</p>
+<p>shows first and last n lines of df incl. headers if any of dataframe</p>
+
+
+</dd>
 <a id="showHeaderStatus,nimdf,int"></a>
 <dt><pre><span class="Keyword">proc</span> <span class="Identifier">showHeaderStatus</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">]</span><span class="Other">,</span>
@@ -1659,14 +1695,15 @@ showHeaderStatus
 
 
 </dd>
-<a id="showDf,nimdf,int,nimis,nimis,nimss,bool,string,bool,nimss,bool,nimss,nimis,nimis,nimss,nimss,nimss,int"></a>
+<a id="showDf,nimdf,int,nimis,nimis,nimss,bool,string,bool,bool,nimss,nimss,bool,nimss,nimis,nimis,nimss,nimss,nimss,int"></a>
 <dt><pre><span class="Keyword">proc</span> <span class="Identifier">showDf</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a><span class="Other">;</span> <span class="Identifier">rows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <a href="nimdataframe.html#nimis"><span class="Identifier">nimis</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">colwd</span><span class="Other">:</span> <a href="nimdataframe.html#nimis"><span class="Identifier">nimis</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span>
            <span class="Identifier">colcolors</span><span class="Other">:</span> <a href="nimdataframe.html#nimss"><span class="Identifier">nimss</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Identifier">white</span><span class="Other">,</span> <span class="Identifier">white</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">showframe</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
            <span class="Identifier">framecolor</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">palegreen</span><span class="Other">;</span> <span class="Identifier">showHeader</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+           <span class="Identifier">showRowHeader</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">rowHeadertext</span><span class="Other">:</span> <a href="nimdataframe.html#nimss"><span class="Identifier">nimss</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span>
            <span class="Identifier">headertext</span><span class="Other">:</span> <a href="nimdataframe.html#nimss"><span class="Identifier">nimss</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">leftalignflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
            <span class="Identifier">cellcolors</span><span class="Other">:</span> <a href="nimdataframe.html#nimss"><span class="Identifier">nimss</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">cellrows</span><span class="Other">:</span> <a href="nimdataframe.html#nimis"><span class="Identifier">nimis</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">cellcols</span><span class="Other">:</span> <a href="nimdataframe.html#nimis"><span class="Identifier">nimis</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span>
            <span class="Identifier">cellcalc</span><span class="Other">:</span> <a href="nimdataframe.html#nimss"><span class="Identifier">nimss</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">frtexttop</span><span class="Other">:</span> <a href="nimdataframe.html#nimss"><span class="Identifier">nimss</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">frtextbot</span><span class="Other">:</span> <a href="nimdataframe.html#nimss"><span class="Identifier">nimss</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span>
-           <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
+           <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
                                 <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
     <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
@@ -1680,7 +1717,7 @@ showHeaderStatus
 <p>frame character can be shown in selectable color</p>
 <p>headerless data can be show with headertext supplied</p>
 <p>cols,colwd,colcolors parameters seqs must be of equal length and corresponding to each other</p>
-<p>Note : best to fill in desired values , a quick showDf(mydf) will not always be satisfactory </p>
+<p>Note : best to fill in desired values for all parameters , a quick showDf(mydf) will not always be satisfactory , colwd must be supplied </p>
 
 
 </dd>
@@ -1712,9 +1749,9 @@ showHeaderStatus
 
 
 </dd>
-<a id="getRowDataRange,nimdf,nimis,nimis"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">getRowDataRange</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a><span class="Other">;</span> <span class="Identifier">rows</span><span class="Other">:</span> <a href="nimdataframe.html#nimis"><span class="Identifier">nimis</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <a href="nimdataframe.html#nimis"><span class="Identifier">nimis</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="getRowDataRange,nimdf,nimis,nimis,nimss"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">getRowDataRange</span><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a><span class="Other">;</span> <span class="Identifier">rows</span><span class="Other">:</span> <a href="nimdataframe.html#nimis"><span class="Identifier">nimis</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">cols</span><span class="Other">:</span> <a href="nimdataframe.html#nimis"><span class="Identifier">nimis</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">;</span>
+                    <span class="Identifier">rowheaders</span><span class="Other">:</span> <a href="nimdataframe.html#nimss"><span class="Identifier">nimss</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>getRowDataRange</p>
 <p>creates a new df with rows and cols as stipulated extracted from an exisiting df</p>
@@ -1799,7 +1836,31 @@ showHeaderStatus
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>createRandomTestData</p>
-<p>a file will be created in current working directory</p>
+<p>a file will be created in current working directory  with mixed type cols</p>
+<p>default name nimDfTestData.csv or as given</p>
+<p>default columns 8 default rows 2000 default headers none</p>
+
+
+</dd>
+<a id="createRandomTestDataInt,string,int,bool"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">createRandomTestDataInt</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;nimDfTestData.csv&quot;</span><span class="Other">;</span>
+                            <span class="Identifier">datarows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2000</span><span class="Other">;</span> <span class="Identifier">withHeaders</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>createRandomTestDataInt</p>
+<p>a file will be created in current working directory  with 8 int cols</p>
+<p>default name nimDfTestData.csv or as given</p>
+<p>default columns 8 default rows 2000 default headers none</p>
+
+
+</dd>
+<a id="createRandomTestDataFloat,string,int,bool"></a>
+<dt><pre><span class="Keyword">proc</span> <span class="Identifier">createRandomTestDataFloat</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;nimDfTestData.csv&quot;</span><span class="Other">;</span>
+                              <span class="Identifier">datarows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2000</span><span class="Other">;</span> <span class="Identifier">withHeaders</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>createRandomTestDataFloat</p>
+<p>a file will be created in current working directory  with 8 float cols</p>
 <p>default name nimDfTestData.csv or as given</p>
 <p>default columns 8 default rows 2000 default headers none</p>
 
@@ -1929,7 +1990,7 @@ showHeaderStatus
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-11-20 01:37:35 UTC</small>
+        <small>Made with Nim. Generated: 2018-12-01 09:05:36 UTC</small>
       </div>
     </div>
   </div>
