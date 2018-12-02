@@ -1537,7 +1537,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2018-10-18
+Latest      : 2018-12-02
 
 Compiler    : Nim &gt;= 0.19.x dev branch
 
@@ -1750,9 +1750,7 @@ rndSample returns one rand sample from a sequence
 <a id="getRndInt,int,int"></a>
 <dt><pre><span class="Keyword">proc</span> <span class="Identifier">getRndInt</span><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">int</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">noInit</span><span class="Other">,</span> <span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
-<p>getRndInt</p>
-<p>returns a random int between mi and &lt; ma so for 0 or 1 we need rand(0..2)</p>
-
+getRndInt 
 
 </dd>
 <a id="getRndBool,"></a>
@@ -2493,7 +2491,7 @@ returns a specific color from the palette which can be used in print statements
 if n &gt; larger than palette length the first palette entry will be used</pre>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Identifier">cleanScreen</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span>
+<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Keyword">var</span> <span class="Identifier">mycol</span> <span class="Operator">=</span> <span class="StringLit">&quot;light&quot;</span>
 <span class="Identifier">mycol</span> <span class="Operator">=</span> <span class="Identifier">mycol</span><span class="Operator">.</span><span class="Identifier">lowerCase</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Keyword">let</span> <span class="Identifier">somesample</span> <span class="Operator">=</span> <span class="Identifier">aPaletteSample</span><span class="Punctuation">(</span><span class="Identifier">mycol</span><span class="Punctuation">)</span>
@@ -2574,7 +2572,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-11-17 06:47:52 UTC</small>
+        <small>Made with Nim. Generated: 2018-12-02 07:57:23 UTC</small>
       </div>
     </div>
   </div>
