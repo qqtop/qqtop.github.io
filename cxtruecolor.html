@@ -1271,9 +1271,9 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#cxRGBCol%2CCXRGB"
     title="cxRGBCol(acol: CXRGB): string"><wbr />cx<wbr />RGBCol<span class="attachedType" style="visibility:hidden">CXRGB</span></a></li>
-  <li><a class="reference" href="#cxRndRGB%2C"
+  <li><a class="reference" href="#cxRndRGB"
     title="cxRndRGB(): string"><wbr />cx<wbr />Rnd<wbr />RGB<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#checkTrueColorSupport%2C"
+  <li><a class="reference" href="#checkTrueColorSupport"
     title="checkTrueColorSupport(): bool"><wbr />check<wbr />True<wbr />Color<wbr />Support<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#getCxTrueColorSet%2Cint%2Cint%2Cint%2Cbool"
     title="getCxTrueColorSet(min: int = 0; max: int = 888; step: int = 12; flag48: bool = false): bool"><wbr />get<wbr />Cx<wbr />True<wbr />Color<wbr />Set<span class="attachedType" style="visibility:hidden"></span></a></li>
@@ -1283,17 +1283,17 @@ function main() {
     title="color48(cxTrueCol: seq[string]): int"><wbr />color48<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#color3848%2Cseq%5Bstring%5D"
     title="color3848(cxTrueCol: seq[string]): int"><wbr />color3848<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#rndTrueCol%2C"
+  <li><a class="reference" href="#rndTrueCol"
     title="rndTrueCol(): auto"><wbr />rnd<wbr />True<wbr />Col<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#rndTrueCol2%2C"
+  <li><a class="reference" href="#rndTrueCol2"
     title="rndTrueCol2(): auto"><wbr />rnd<wbr />True<wbr />Col2<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#rndTrueColFull%2C"
+  <li><a class="reference" href="#rndTrueColFull"
     title="rndTrueColFull(): auto"><wbr />rnd<wbr />True<wbr />Col<wbr />Full<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#checkCxTrueColor%2Cint"
     title="checkCxTrueColor(n: int): int"><wbr />check<wbr />Cx<wbr />True<wbr />Color<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showCxTrueColorPalette%2Cint%2Cint%2Cint%2Cbool"
     title="showCxTrueColorPalette(min: int = 0; max: int = 888; step: int = 12; flag48: bool = false)"><wbr />show<wbr />Cx<wbr />True<wbr />Color<wbr />Palette<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#showCxTrueColorPalette2%2C"
+  <li><a class="reference" href="#showCxTrueColorPalette2"
     title="showCxTrueColorPalette2()"><wbr />show<wbr />Cx<wbr />True<wbr />Color<wbr />Palette2<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
@@ -1354,7 +1354,7 @@ function main() {
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
 <a id="cxRGBCol,CXRGB"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">cxRGBCol</span><span class="Other">(</span><span class="Identifier">acol</span><span class="Other">:</span> <a href="cxtruecolor.html#CXRGB"><span class="Identifier">CXRGB</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#cxRGBCol%2CCXRGB"><span class="Identifier">cxRGBCol</span></a><span class="Other">(</span><span class="Identifier">acol</span><span class="Other">:</span> <a href="cxtruecolor.html#CXRGB"><span class="Identifier">CXRGB</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>cxRGBcol</p>
 <p>returns a color build from rgb values passed in via CXRGB type tuple</p>
@@ -1362,8 +1362,8 @@ function main() {
 
 
 </dd>
-<a id="cxRndRGB,"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">cxRndRGB</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="cxRndRGB"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#cxRndRGB"><span class="Identifier">cxRndRGB</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>cxRndRGB</p>
 <p>returns a random color string useable by var. print procs</p>
@@ -1373,15 +1373,15 @@ function main() {
 
 
 </dd>
-<a id="checkTrueColorSupport,"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">checkTrueColorSupport</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+<a id="checkTrueColorSupport"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#checkTrueColorSupport"><span class="Identifier">checkTrueColorSupport</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
                                   <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="getCxTrueColorSet,int,int,int,bool"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">getCxTrueColorSet</span><span class="Other">(</span><span class="Identifier">min</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">;</span> <span class="Identifier">flag48</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+<dt><pre><span class="Keyword">proc</span> <a href="#getCxTrueColorSet%2Cint%2Cint%2Cint%2Cbool"><span class="Identifier">getCxTrueColorSet</span></a><span class="Other">(</span><span class="Identifier">min</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">;</span> <span class="Identifier">flag48</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
@@ -1391,41 +1391,41 @@ function main() {
 
 </dd>
 <a id="color38,seq[string]"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">color38</span><span class="Other">(</span><span class="Identifier">cxTrueCol</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#color38%2Cseq%5Bstring%5D"><span class="Identifier">color38</span></a><span class="Other">(</span><span class="Identifier">cxTrueCol</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="color48,seq[string]"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">color48</span><span class="Other">(</span><span class="Identifier">cxTrueCol</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#color48%2Cseq%5Bstring%5D"><span class="Identifier">color48</span></a><span class="Other">(</span><span class="Identifier">cxTrueCol</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="color3848,seq[string]"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">color3848</span><span class="Other">(</span><span class="Identifier">cxTrueCol</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#color3848%2Cseq%5Bstring%5D"><span class="Identifier">color3848</span></a><span class="Other">(</span><span class="Identifier">cxTrueCol</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 </dd>
-<a id="rndTrueCol,"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">rndTrueCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="rndTrueCol"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#rndTrueCol"><span class="Identifier">rndTrueCol</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>rndTrueCol</p>
 <p>returns a random color from the cxtruecolorset for use as foreground color in var. print functions </p>
 
 
 </dd>
-<a id="rndTrueCol2,"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">rndTrueCol2</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="rndTrueCol2"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#rndTrueCol2"><span class="Identifier">rndTrueCol2</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>rndTrueCol2</p>
 <p>returns a  color from the cxtruecolorset for use as background color in var. print functions </p>
 
 
 </dd>
-<a id="rndTrueColFull,"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">rndTrueColFull</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="rndTrueColFull"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#rndTrueColFull"><span class="Identifier">rndTrueColFull</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>rndTrueCol</p>
 <p>returns a random color from the cxtruecolorset for use as foreground color in var. print functions </p>
@@ -1433,7 +1433,7 @@ function main() {
 
 </dd>
 <a id="checkCxTrueColor,int"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">checkCxTrueColor</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#checkCxTrueColor%2Cint"><span class="Identifier">checkCxTrueColor</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>checkCxTrueColor</p>
 <p>returns n if available in cxtruecol else returns cxtruecol.max </p>
@@ -1441,9 +1441,9 @@ function main() {
 
 </dd>
 <a id="showCxTrueColorPalette,int,int,int,bool"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">showCxTrueColorPalette</span><span class="Other">(</span><span class="Identifier">min</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">;</span>
+<dt><pre><span class="Keyword">proc</span> <a href="#showCxTrueColorPalette%2Cint%2Cint%2Cint%2Cbool"><span class="Identifier">showCxTrueColorPalette</span></a><span class="Other">(</span><span class="Identifier">min</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">;</span>
                            <span class="Identifier">flag48</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span>
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>showCxTrueColorPalette</p>
@@ -1456,8 +1456,8 @@ function main() {
 
 
 </dd>
-<a id="showCxTrueColorPalette2,"></a>
-<dt><pre><span class="Keyword">proc</span> <span class="Identifier">showCxTrueColorPalette2</span><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+<a id="showCxTrueColorPalette2"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#showCxTrueColorPalette2"><span class="Identifier">showCxTrueColorPalette2</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
                                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -1473,7 +1473,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-01-09 03:05:09 UTC</small>
+        <small>Made with Nim. Generated: 2019-01-27 07:21:16 UTC</small>
       </div>
     </div>
   </div>
