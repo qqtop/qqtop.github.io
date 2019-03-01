@@ -831,10 +831,10 @@ function main() {
     title="printSlim(ss: string = &quot;&quot;; frg: string = termwhite; xpos: int = 0; align: string = &quot;left&quot;)"><wbr />print<wbr />Slim<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#slimL%2Cstring%2Cstring%2Cint%2Cint"
     title="slimL(astring: string; col: string = truetomato; xpos: int = 5; adjuster: int = 0)"><wbr />slim<wbr />L<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printCxFontLetter%2Cint%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint"
+  <li><a class="reference" href="#printCxFontLetter%2Cint%2Cint%2Cseq%5BT%5D%5Bseq%5BT%5D%5Bstring%5D%5D%2Cstring%2Cint"
     title="printCxFontLetter(n: int; xpos: int; cxfont: seq[seq[string]]; color: string;
                   vertstepping: int)"><wbr />print<wbr />Cx<wbr />Font<wbr />Letter<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#printCxFontText%2Cseq%5Bint%5D%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint%2Cint"
+  <li><a class="reference" href="#printCxFontText%2Cseq%5BT%5D%5Bint%5D%2Cint%2Cseq%5BT%5D%5Bseq%5BT%5D%5Bstring%5D%5D%2Cstring%2Cint%2Cint"
     title="printCxFontText(textseq: seq[int]; xpos: int = 2; cxfont: seq[seq[string]];
                 color: string = randcol(); vertstepping: int = 9; kerning: int = 19)"><wbr />print<wbr />Cx<wbr />Font<wbr />Text<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#createCxFont%2Cstring"
@@ -1059,16 +1059,16 @@ printSlimNumber
 
 
 </dd>
-<a id="printCxFontLetter,int,int,seq[seq[string]],string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printCxFontLetter%2Cint%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint"><span class="Identifier">printCxFontLetter</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
+<a id="printCxFontLetter,int,int,seq[T][seq[T][string]],string,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#printCxFontLetter%2Cint%2Cint%2Cseq%5BT%5D%5Bseq%5BT%5D%5Bstring%5D%5D%2Cstring%2Cint"><span class="Identifier">printCxFontLetter</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
                       <span class="Identifier">vertstepping</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 </dd>
-<a id="printCxFontText,seq[int],int,seq[seq[string]],string,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printCxFontText%2Cseq%5Bint%5D%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint%2Cint"><span class="Identifier">printCxFontText</span></a><span class="Other">(</span><span class="Identifier">textseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span>
+<a id="printCxFontText,seq[T][int],int,seq[T][seq[T][string]],string,int,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#printCxFontText%2Cseq%5BT%5D%5Bint%5D%2Cint%2Cseq%5BT%5D%5Bseq%5BT%5D%5Bstring%5D%5D%2Cstring%2Cint%2Cint"><span class="Identifier">printCxFontText</span></a><span class="Other">(</span><span class="Identifier">textseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span>
                     <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">vertstepping</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">9</span><span class="Other">;</span> <span class="Identifier">kerning</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">19</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
@@ -1384,7 +1384,7 @@ printSlimNumber
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-02-14 03:32:38 UTC</small>
+        <small>Made with Nim. Generated: 2019-03-01 08:55:00 UTC</small>
       </div>
     </div>
   </div>

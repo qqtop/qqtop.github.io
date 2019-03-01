@@ -813,11 +813,11 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#showStats%2CRunningStat%2Cint%2Cint"
     title="showStats(x: RunningStat; n: int = 3; xpos: int = 1)"><wbr />show<wbr />Stats<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#showRegression%2Cseq%5B%5D%2Cseq%5B%5D%2Cint%2Cint"
+  <li><a class="reference" href="#showRegression%2Cseq%5BT%5D%5B%5D%2Cseq%5BT%5D%5B%5D%2Cint%2Cint"
     title="showRegression(x, y: seq[float | int]; n: int = 5; xpos: int = 1)"><wbr />show<wbr />Regression<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showRegression%2CRunningRegress%2Cint%2Cint"
     title="showRegression(rr: RunningRegress; n: int = 5; xpos: int = 1)"><wbr />show<wbr />Regression<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#zscore%2Cseq%5BSomeNumber%5D"
+  <li><a class="reference" href="#zscore%2Cseq%5BT%5D%5BSomeNumber%5D"
     title="zscore(data: seq[SomeNumber]): seq[float]"><wbr />zscore<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
@@ -886,8 +886,8 @@ Description : provides functions pertaining to statistcs and calculations</pre>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<a id="showRegression,seq[],seq[],int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showRegression%2Cseq%5B%5D%2Cseq%5B%5D%2Cint%2Cint"><span class="Identifier">showRegression</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
+<a id="showRegression,seq[T][],seq[T][],int,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#showRegression%2Cseq%5BT%5D%5B%5D%2Cseq%5BT%5D%5B%5D%2Cint%2Cint"><span class="Identifier">showRegression</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>showRegression</p>
 <p>quickly display RunningRegress data based on input of two openarray data series</p>
@@ -906,8 +906,8 @@ Description : provides functions pertaining to statistcs and calculations</pre>
 
 
 </dd>
-<a id="zscore,seq[SomeNumber]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#zscore%2Cseq%5BSomeNumber%5D"><span class="Identifier">zscore</span></a><span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">SomeNumber</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="zscore,seq[T][SomeNumber]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#zscore%2Cseq%5BT%5D%5BSomeNumber%5D"><span class="Identifier">zscore</span></a><span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">SomeNumber</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>zscore</p>
 <p>returns the z-score in a seq[float] for each data point</p>
@@ -936,7 +936,7 @@ Description : provides functions pertaining to statistcs and calculations</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-02-14 03:32:42 UTC</small>
+        <small>Made with Nim. Generated: 2019-03-01 08:55:05 UTC</small>
       </div>
     </div>
   </div>

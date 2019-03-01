@@ -913,12 +913,12 @@ function main() {
     title="spiralBoxy(w: int = 20; h: int = 20; xpos: int = 1)"><wbr />spiral<wbr />Boxy<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#spiralBoxy2%2Cint%2Cint%2Cint"
     title="spiralBoxy2(w: int = 20; h: int = 20; xpos: int = 1)"><wbr />spiral<wbr />Boxy2<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#showSeq%2Cseq%5BT%5D%2Cstring%2Cint%2Cint%2Cbool"
+  <li><a class="reference" href="#showSeq%2Cseq%5BT%5D%5BT%5D%2Cstring%2Cint%2Cint%2Cbool"
     title="showSeq[T](z: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5;
            displayflag: bool = true): string"><wbr />show<wbr />Seq<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#seqHighLite%2Cseq%5BT%5D%2Cseq%5BT%5D%2Cstring"
+  <li><a class="reference" href="#seqHighLite%2Cseq%5BT%5D%5BT%5D%2Cseq%5BT%5D%5BT%5D%2Cstring"
     title="seqHighLite[T](b: seq[T]; b1: seq[T]; col: string = gold)"><wbr />seq<wbr />High<wbr />Lite<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#shift%2Cseq%5BT%5D%2CNatural"
+  <li><a class="reference" href="#shift%2Cseq%5BT%5D%5BT%5D%2CNatural"
     title="shift[T](x: var seq[T]; zz: Natural = 0): T"><wbr />shift<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#checkMemFull%2Cint"
     title="checkMemFull(xpos: int = 2)"><wbr />check<wbr />Mem<wbr />Full<span class="attachedType" style="visibility:hidden"></span></a></li>
@@ -934,6 +934,16 @@ function main() {
     title="getEmojisSmall(): seq[string]"><wbr />get<wbr />Emojis<wbr />Small<span class="attachedType" style="visibility:hidden"></span></a></li>
   <li><a class="reference" href="#showEmojisSmall"
     title="showEmojisSmall()"><wbr />show<wbr />Emojis<wbr />Small<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#genMacAddress"
+    title="genMacAddress(): string"><wbr />gen<wbr />Mac<wbr />Address<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#quickPw"
+    title="quickPw(): string"><wbr />quick<wbr />Pw<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#quickLargeInt"
+    title="quickLargeInt(): string"><wbr />quick<wbr />Large<wbr />Int<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#quickBinaryString%2Cint"
+    title="quickBinaryString(width: int = 10): string"><wbr />quick<wbr />Binary<wbr />String<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#getGitHash"
+    title="getGitHash(): string"><wbr />get<wbr />Git<wbr />Hash<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -942,6 +952,8 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#reverseIter.i%2CopenArray%5BT%5D"
     title="reverseIter[T](a: openArray[T]): T"><wbr />reverse<wbr />Iter<span class="attachedType" style="visibility:hidden"></span></a></li>
+  <li><a class="reference" href="#span.i%2Cstring%2Cint%2CBackwardsIndex"
+    title="span(s: string; first: int; last: BackwardsIndex): char"><wbr />span<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
 </li>
@@ -975,7 +987,7 @@ Version     : 0.9.9
 
 ProjectStart: 2015-06-20
 
-Latest      : 2019-02-14
+Latest      : 2019-03-01
 
 OS          : Linux
 
@@ -1316,7 +1328,18 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>createRandomDataFile</p>
-<p>this will create a file with given filename and size 1 MB filled with strong random data </p>
+<p>this will create a file with given filename and size 1 MB filled with strong random data</p>
+<blockquote><p>createRandomDataFile(&quot;niip2.wsx&quot;) var bc = 0 var b = @[100,200,300,700,800,3000]<dl class="docutils"><dt>withFile(fs,&quot;niip2.wsx&quot;,fmRead):</dt>
+<dd>var line =&quot;&quot;<dl class="docutils"><dt>while fs.readLine(line):</dt>
+<dd>inc bc<dl class="docutils"><dt>if bc in b:</dt>
+<dd>printLn($bc &amp; rightarrow &amp; spaces(3) &amp; wrapwords(line.replace(&quot; &quot;,&quot;&quot;),(tw - 5)),yellowgreen)</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>echo bc</p>
+</p></blockquote>
 
 
 </dd>
@@ -1457,8 +1480,8 @@ spiralBoxy
 spiralBoxy2   uses boxy2
 
 </dd>
-<a id="showSeq,seq[T],string,int,int,bool"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showSeq%2Cseq%5BT%5D%2Cstring%2Cint%2Cint%2Cbool"><span class="Identifier">showSeq</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span>
+<a id="showSeq,seq[T][T],string,int,int,bool"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#showSeq%2Cseq%5BT%5D%5BT%5D%2Cstring%2Cint%2Cint%2Cbool"><span class="Identifier">showSeq</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span>
                <span class="Identifier">displayflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>showSeq</p>
@@ -1470,8 +1493,8 @@ spiralBoxy2   uses boxy2
 <span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">1000</span><span class="Punctuation">,</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="DecNumber">100000</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<a id="seqHighLite,seq[T],seq[T],string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#seqHighLite%2Cseq%5BT%5D%2Cseq%5BT%5D%2Cstring"><span class="Identifier">seqHighLite</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">b1</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">gold</span><span class="Other">)</span></pre></dt>
+<a id="seqHighLite,seq[T][T],seq[T][T],string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#seqHighLite%2Cseq%5BT%5D%5BT%5D%2Cseq%5BT%5D%5BT%5D%2Cstring"><span class="Identifier">seqHighLite</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">b1</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">gold</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>seqHighLite</p>
 <p>displays the passed in seq with highlighting of subsequence</p>
@@ -1480,8 +1503,8 @@ spiralBoxy2   uses boxy2
 <span class="Identifier">seqHighLite</span><span class="Punctuation">(</span><span class="Identifier">b</span><span class="Punctuation">,</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">5</span><span class="Punctuation">]</span><span class="Punctuation">)</span>   <span class="Comment"># subseq will be highlighted if found</span></pre>
 
 </dd>
-<a id="shift,seq[T],Natural"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#shift%2Cseq%5BT%5D%2CNatural"><span class="Identifier">shift</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">zz</span><span class="Other">:</span> <span class="Identifier">Natural</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
+<a id="shift,seq[T][T],Natural"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#shift%2Cseq%5BT%5D%5BT%5D%2CNatural"><span class="Identifier">shift</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">zz</span><span class="Other">:</span> <span class="Identifier">Natural</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
 <dd>
 <p>shift takes a seq and returns the first item, and deletes it from the seq</p>
 <p>build in pop does the same from the other side</p>
@@ -1559,6 +1582,43 @@ spiralBoxy2   uses boxy2
 
 
 </dd>
+<a id="genMacAddress"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#genMacAddress"><span class="Identifier">genMacAddress</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+generates a random MacAddress<blockquote><p>loopy(1..10,echo genMacAddress())</p></blockquote>
+
+
+</dd>
+<a id="quickPw"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#quickPw"><span class="Identifier">quickPw</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>quickPw</p>
+<p>quick strong password generator </p>
+
+
+</dd>
+<a id="quickLargeInt"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#quickLargeInt"><span class="Identifier">quickLargeInt</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>quickLargeInt</p>
+<p>returns a random large int string </p>
+
+
+</dd>
+<a id="quickBinaryString,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#quickBinaryString%2Cint"><span class="Identifier">quickBinaryString</span></a><span class="Other">(</span><span class="Identifier">width</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>quickBinaryString</p>
+<p>returns a random binary string with desired width </p>
+
+
+</dd>
+<a id="getGitHash"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getGitHash"><span class="Identifier">getGitHash</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+getGitHash to get the git hash during compile
+
+</dd>
 
 </dl></div>
 <div class="section" id="15">
@@ -1569,6 +1629,19 @@ spiralBoxy2   uses boxy2
 <dd>
 reverse iterator<pre class="listing"><span class="Keyword">let</span> <span class="Identifier">a</span> <span class="Operator">=</span> <span class="Identifier">createseqfloat</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">)</span>
 <span class="Keyword">for</span> <span class="Identifier">b</span> <span class="Keyword">in</span> <span class="Identifier">reverse</span><span class="Punctuation">(</span><span class="Identifier">a</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="Identifier">b</span></pre>
+
+</dd>
+<a id="span.i,string,int,BackwardsIndex"></a>
+<dt><pre><span class="Keyword">iterator</span> <a href="#span.i%2Cstring%2Cint%2CBackwardsIndex"><span class="Identifier">span</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">first</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">last</span><span class="Other">:</span> <span class="Identifier">BackwardsIndex</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">char</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>span</p>
+<p>iterator for strings</p>
+<blockquote><p>let s = &quot;.something&quot;<dl class="docutils"><dt>for c in s.span(1, ^1):</dt>
+<dd>print c</dd>
+</dl>
+<p>echo()</p>
+</p></blockquote>
+
 
 </dd>
 
@@ -1618,7 +1691,7 @@ reverse iterator<pre class="listing"><span class="Keyword">let</span> <span clas
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-02-14 03:32:32 UTC</small>
+        <small>Made with Nim. Generated: 2019-03-01 08:54:54 UTC</small>
       </div>
     </div>
   </div>
