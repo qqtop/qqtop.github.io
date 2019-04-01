@@ -761,6 +761,10 @@ span.pragmawrap {
   display: none;
 }
 
+span.attachedType {
+  display: none;
+  visibility: hidden;
+}
 </style>
 
 <script type="text/javascript" src="dochack.js"></script>
@@ -812,33 +816,35 @@ function main() {
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#getIpInfo%2Cstring"
-    title="getIpInfo(ip: string): JsonNode"><wbr />get<wbr />Ip<wbr />Info<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="getIpInfo(ip: string): JsonNode"><wbr />get<wbr />Ip<wbr />Info<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getWanIp"
-    title="getWanIp(): string"><wbr />get<wbr />Wan<wbr />Ip<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="getWanIp(): string"><wbr />get<wbr />Wan<wbr />Ip<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showIpInfo%2Cstring"
-    title="showIpInfo(ip: string)"><wbr />show<wbr />Ip<wbr />Info<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="showIpInfo(ip: string)"><wbr />show<wbr />Ip<wbr />Info<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#localIp"
-    title="localIp(): string"><wbr />local<wbr />Ip<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="localIp(): string"><wbr />local<wbr />Ip<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#localRouterIp"
-    title="localRouterIp(): string"><wbr />local<wbr />Router<wbr />Ip<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="localRouterIp(): string"><wbr />local<wbr />Router<wbr />Ip<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showLocalIpInfo"
-    title="showLocalIpInfo()"><wbr />show<wbr />Local<wbr />Ip<wbr />Info<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="showLocalIpInfo()"><wbr />show<wbr />Local<wbr />Ip<wbr />Info<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#pingy%2Cstring%2Cint%2Cstring"
-    title="pingy(dest: string; pingcc: int = 3; col: string = termwhite)"><wbr />pingy<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="pingy(dest: string; pingcc: int = 3; col: string = termwhite)"><wbr />pingy<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxPortCheck%2Cstring"
-    title="cxPortCheck(cmd: string = &quot;lsof -i&quot;)"><wbr />cx<wbr />Port<wbr />Check<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxPortCheck(cmd: string = &quot;lsof -i&quot;)"><wbr />cx<wbr />Port<wbr />Check<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxDig%2Cstring"
-    title="cxDig(ipadd: string): tuple"><wbr />cx<wbr />Dig<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxDig(ipadd: string): tuple"><wbr />cx<wbr />Dig<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxDns%2Cstring"
-    title="cxDns(dns: string): tuple"><wbr />cx<wbr />Dns<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="cxDns(dns: string): tuple"><wbr />cx<wbr />Dns<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showDig%2Cstring"
-    title="showDig(hostip: string = $&quot;172.217.5.14&quot;)"><wbr />show<wbr />Dig<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="showDig(hostip: string = $&quot;172.217.5.14&quot;)"><wbr />show<wbr />Dig<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showDns%2Cstring"
-    title="showDns(hostdns: string = &quot;google.com&quot;)"><wbr />show<wbr />Dns<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="showDns(hostdns: string = &quot;google.com&quot;)"><wbr />show<wbr />Dns<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getHosts%2Cstring"
-    title="getHosts(dm: string): seq[string]"><wbr />get<wbr />Hosts<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="getHosts(dm: string): seq[string]"><wbr />get<wbr />Hosts<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showHosts%2Cstring"
-    title="showHosts(dm: string)"><wbr />show<wbr />Hosts<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="showHosts(dm: string)"><wbr />show<wbr />Hosts<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#ssService"
+    title="ssService(): seq[string]"><wbr />ss<wbr />Service<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -846,7 +852,7 @@ function main() {
   <a class="reference reference-toplevel" href="#15" id="65">Iterators</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#parseIps.i%2Cstring"
-    title="parseIps(soup: string): string"><wbr />parse<wbr />Ips<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="parseIps(soup: string): string"><wbr />parse<wbr />Ips<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -1007,6 +1013,15 @@ function main() {
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
+<a id="ssService"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#ssService"><span class="Identifier">ssService</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span>
+                             <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+<p>ssService</p>
+<p>WIP to provide color formated output to ss commands like : ss --query=tcp -r</p>
+
+
+</dd>
 
 </dl></div>
 <div class="section" id="15">
@@ -1030,7 +1045,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-03-15 13:43:05 UTC</small>
+        <small>Made with Nim. Generated: 2019-04-01 02:24:03 UTC</small>
       </div>
     </div>
   </div>

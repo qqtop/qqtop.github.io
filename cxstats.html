@@ -761,6 +761,10 @@ span.pragmawrap {
   display: none;
 }
 
+span.attachedType {
+  display: none;
+  visibility: hidden;
+}
 </style>
 
 <script type="text/javascript" src="dochack.js"></script>
@@ -812,15 +816,17 @@ function main() {
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#showStats%2CRunningStat%2Cint%2Cint"
-    title="showStats(x: RunningStat; n: int = 3; xpos: int = 1)"><wbr />show<wbr />Stats<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="showStats(x: RunningStat; n: int = 3; xpos: int = 1)"><wbr />show<wbr />Stats<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showRegression%2Cseq%5BT%5D%5B%5D%2Cseq%5BT%5D%5B%5D%2Cint%2Cint"
-    title="showRegression(x, y: seq[float | int]; n: int = 5; xpos: int = 1)"><wbr />show<wbr />Regression<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="showRegression(x, y: seq[float | int]; n: int = 5; xpos: int = 1)"><wbr />show<wbr />Regression<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showRegression%2CRunningRegress%2Cint%2Cint"
-    title="showRegression(rr: RunningRegress; n: int = 5; xpos: int = 1)"><wbr />show<wbr />Regression<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="showRegression(rr: RunningRegress; n: int = 5; xpos: int = 1)"><wbr />show<wbr />Regression<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#zscore%2Cseq%5BT%5D%5BSomeNumber%5D"
-    title="zscore(data: seq[SomeNumber]): seq[float]"><wbr />zscore<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="zscore(data: seq[SomeNumber]): seq[float]"><wbr />zscore<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#rolling_zscore%2Cseq%5BT%5D%5Bfloat%5D%2Cseq%5BT%5D%5Bfloat%5D%2Cfloat"
-    title="rolling_zscore(data: seq[float]; observed_window: seq[float]; decay: float = 0.9): float"><wbr />rolling_<wbr />zscore<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="rolling_zscore(data: seq[float]; observed_window: seq[float]; decay: float = 0.9): float"><wbr />rolling_<wbr />zscore<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#median%2Cseq%5BT%5D%5Bfloat%5D"
+    title="median(xs: seq[float]): float"><wbr />median<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -935,6 +941,12 @@ Description : provides some functions pertaining to statistcs and calculations</
 
 
 </dd>
+<a id="median,seq[T][float]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#median%2Cseq%5BT%5D%5Bfloat%5D"><span class="Identifier">median</span></a><span class="Other">(</span><span class="Identifier">xs</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+</dd>
 
 </dl></div>
 
@@ -945,7 +957,7 @@ Description : provides some functions pertaining to statistcs and calculations</
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-03-15 13:43:12 UTC</small>
+        <small>Made with Nim. Generated: 2019-04-01 02:24:09 UTC</small>
       </div>
     </div>
   </div>
