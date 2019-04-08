@@ -916,10 +916,8 @@ function main() {
     title="ff(zz: float; n: int = 5): string"><wbr />ff<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#ff22%2Cint%2Cint"
     title="ff22(zz: int; n: int = 0): string"><wbr />ff22<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#typeTest33%2CT"
-    title="typeTest33[T](x: T): string"><wbr />type<wbr />Test33<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#ff2%2CSomeNumber%2Cint"
-    title="ff2(zz: SomeNumber; n: int = 3): string"><wbr />ff2<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#ff2%2C%2Cint"
+    title="ff2(zz: float | int; n: int = 3): string"><wbr />ff2<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getRandomFloat%2Cfloat%2Cfloat"
     title="getRandomFloat(mi: float = -1.0; ma: float = 1.0): float"><wbr />get<wbr />Random<wbr />Float<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getRndFloat%2Cfloat%2Cfloat"
@@ -1029,6 +1027,8 @@ function main() {
     title="th(): int"><wbr />th<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#doSomething.t%2Cint%2Cuntyped"
     title="doSomething(secs: int; body: untyped)"><wbr />do<wbr />Something<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#typeTest33.t%2CT"
+    title="typeTest33[T](x: T): untyped"><wbr />type<wbr />Test33<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#colPaletteName.t%2Cstring%2Cint"
     title="colPaletteName(coltype: string; n: int): auto"><wbr />col<wbr />Palette<wbr />Name<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#aPaletteSample.t%2Cstring"
@@ -1099,7 +1099,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2019-01-16
+Latest      : 2019-04-08
 
 Compiler    : Nim &gt;= 0.19.x dev branch
 
@@ -1408,17 +1408,11 @@ getRndInt
    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;20.0&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;NIM &quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="StringLit">&quot; : &quot;</span><span class="Punctuation">,</span><span class="Identifier">z</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<a id="typeTest33,T"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#typeTest33%2CT"><span class="Identifier">typeTest33</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-
-</dd>
-<a id="ff2,SomeNumber,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#ff2%2CSomeNumber%2Cint"><span class="Identifier">ff2</span></a><span class="Other">(</span><span class="Identifier">zz</span><span class="Other">:</span> <span class="Identifier">SomeNumber</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<a id="ff2,,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#ff2%2C%2Cint"><span class="Identifier">ff2</span></a><span class="Other">(</span><span class="Identifier">zz</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>ff2</p>
-<p>formats a float into form 12,345,678.234 that is thousands separators are shown</p>
+<p>formats a float to string 12,345,678.234 that is thousands separators are shown formats a int   to string 12,345,678.000 that is thousands separators are shown and desired decimals n as 0 for integers the minimum decimals will be xxx.0 if not required just split it off or use ff22</p>
 <p>precision is after comma given by n with default set to 3</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
@@ -1879,6 +1873,12 @@ th , a global where latest terminal height is always available
 <pre class="listing"><span class="Identifier">doSomething</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">myproc</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>  <span class="Comment"># executes my proc for ten secs   , obviously this will fail if your proc uses sleep...</span></pre>
 
 </dd>
+<a id="typeTest33.t,T"></a>
+<dt><pre><span class="Keyword">template</span> <a href="#typeTest33.t%2CT"><span class="Identifier">typeTest33</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
+<dd>
+
+
+</dd>
 <a id="colPaletteName.t,string,int"></a>
 <dt><pre><span class="Keyword">template</span> <a href="#colPaletteName.t%2Cstring%2Cint"><span class="Identifier">colPaletteName</span></a><span class="Other">(</span><span class="Identifier">coltype</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
 <dd>
@@ -2129,7 +2129,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-04-06 05:48:12 UTC</small>
+        <small>Made with Nim. Generated: 2019-04-08 13:18:04 UTC</small>
       </div>
     </div>
   </div>
