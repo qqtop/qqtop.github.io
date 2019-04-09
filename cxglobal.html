@@ -914,10 +914,8 @@ function main() {
     title="createSeqInt(n: int = 10; mi: int = 0; ma: int = 1000): seq[int]"><wbr />create<wbr />Seq<wbr />Int<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#ff%2Cfloat%2Cint"
     title="ff(zz: float; n: int = 5): string"><wbr />ff<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#ff22%2Cint"
-    title="ff22(zz: int): string"><wbr />ff22<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#ff2%2Cfloat%2Cint"
-    title="ff2(zz: float; n: int = 3): string"><wbr />ff2<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#ff2%2CSomeNumber%2Cint"
+    title="ff2(zz: SomeNumber; n: int = 3): string"><wbr />ff2<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getRandomFloat%2Cfloat%2Cfloat"
     title="getRandomFloat(mi: float = -1.0; ma: float = 1.0): float"><wbr />get<wbr />Random<wbr />Float<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getRndFloat%2Cfloat%2Cfloat"
@@ -1027,8 +1025,6 @@ function main() {
     title="th(): int"><wbr />th<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#doSomething.t%2Cint%2Cuntyped"
     title="doSomething(secs: int; body: untyped)"><wbr />do<wbr />Something<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#typeTest33.t%2CT"
-    title="typeTest33[T](x: T): untyped"><wbr />type<wbr />Test33<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#colPaletteName.t%2Cstring%2Cint"
     title="colPaletteName(coltype: string; n: int): auto"><wbr />col<wbr />Palette<wbr />Name<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#aPaletteSample.t%2Cstring"
@@ -1099,7 +1095,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2019-04-08
+Latest      : 2019-04-09
 
 Compiler    : Nim &gt;= 0.19.x dev branch
 
@@ -1301,7 +1297,9 @@ rndSample returns one rand sample from a sequence
 <a id="getRndInt,int,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#getRndInt%2Cint%2Cint"><span class="Identifier">getRndInt</span></a><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">int</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">noInit</span><span class="Other">,</span> <span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
-getRndInt 
+<p>getRndInt</p>
+<p>so for 0 or 1 we need rand(0..2)</p>
+
 
 </dd>
 <a id="getRndBool"></a>
@@ -1392,27 +1390,12 @@ getRndInt
 
 
 </dd>
-<a id="ff22,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#ff22%2Cint"><span class="Identifier">ff22</span></a><span class="Other">(</span><span class="Identifier">zz</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-<p>ff22</p>
-<p>formats a integer into form 12,345,678 with thousands separators shown</p>
-<p>to format an integer with decimals use ff2(float(myint))</p>
-<p>ff2(12345,0)  ==&gt; 12,345     # display an integer with thousands seperator as we know it ff2(12345,1)  ==&gt; 12,345.0   # display an integer but like a float with 1 after comma pos ff2(12345,2)  ==&gt; 12,345.00  # display an integer but like a float with 2 after comma pos</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
-
-<span class="Comment"># int example</span>
-<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">20</span><span class="Punctuation">:</span>
-   <span class="Comment"># generate some positve and negative rand integer</span>
-   <span class="Keyword">var</span> <span class="Identifier">z</span> <span class="Operator">=</span> <span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">50000</span><span class="Punctuation">,</span><span class="DecNumber">100000000</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="Identifier">getRandomSignI</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-   <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;20.0&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;NIM &quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="StringLit">&quot; : &quot;</span><span class="Punctuation">,</span><span class="Identifier">z</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<a id="ff2,float,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#ff2%2Cfloat%2Cint"><span class="Identifier">ff2</span></a><span class="Other">(</span><span class="Identifier">zz</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="ff2,SomeNumber,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#ff2%2CSomeNumber%2Cint"><span class="Identifier">ff2</span></a><span class="Other">(</span><span class="Identifier">zz</span><span class="Other">:</span> <span class="Identifier">SomeNumber</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 <p>ff2</p>
-<p>formats a float to string 12,345,678.234 that is thousands separators are shown formats a int   to string 12,345,678.000 that is thousands separators are shown and desired decimals n as 0</p>
+<p>format int or float to string showing thousand separator and desired decimal places</p>
+<p>ff2(12345,0)   ==&gt; 12,345     # display an integer with thousands seperator as we know it ff2(12345,1)   ==&gt; 12,345.0   # display an integer but like a float with 1 decimal place ff2(12345,2)   ==&gt; 12,345.00  # display an integer but like a float with 2 decimal places ff2(12.6789,2) ==&gt; 12.67      # displays the float with decimal places ff2(12.3,4)    ==&gt; 12.3000    # displkays the float with 4 decimal places</p>
 <p>precision is after comma given by n with default set to 3</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
@@ -1438,7 +1421,7 @@ getRndInt
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>getRndFloat</p>
-<p>same as getrandFloat() </p>
+<p>same as getrandFloat()</p>
 
 
 </dd>
@@ -1873,12 +1856,6 @@ th , a global where latest terminal height is always available
 <pre class="listing"><span class="Identifier">doSomething</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">myproc</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>  <span class="Comment"># executes my proc for ten secs   , obviously this will fail if your proc uses sleep...</span></pre>
 
 </dd>
-<a id="typeTest33.t,T"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#typeTest33.t%2CT"><span class="Identifier">typeTest33</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
-<dd>
-
-
-</dd>
 <a id="colPaletteName.t,string,int"></a>
 <dt><pre><span class="Keyword">template</span> <a href="#colPaletteName.t%2Cstring%2Cint"><span class="Identifier">colPaletteName</span></a><span class="Other">(</span><span class="Identifier">coltype</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
 <dd>
@@ -2129,7 +2106,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-04-08 14:14:32 UTC</small>
+        <small>Made with Nim. Generated: 2019-04-09 13:29:25 UTC</small>
       </div>
     </div>
   </div>
