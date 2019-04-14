@@ -916,10 +916,10 @@ function main() {
     title="ff(zz: float; n: int = 5): string"><wbr />ff<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#ff2%2CSomeNumber%2Cint"
     title="ff2(zz: SomeNumber; n: int = 3): string"><wbr />ff2<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getRandomFloat%2Cfloat%2Cfloat"
-    title="getRandomFloat(mi: float = -1.0; ma: float = 1.0): float"><wbr />get<wbr />Random<wbr />Float<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getRndFloat%2Cfloat%2Cfloat"
-    title="getRndFloat(mi: float = -1.0; ma: float = 1.0): float"><wbr />get<wbr />Rnd<wbr />Float<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#getRandomFloat"
+    title="getRandomFloat(): float"><wbr />get<wbr />Random<wbr />Float<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#getRndFloat"
+    title="getRndFloat(): float"><wbr />get<wbr />Rnd<wbr />Float<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#createSeqFloat%2Cint%2Cint"
     title="createSeqFloat(n: int = 10; prec: int = 3): seq[float]"><wbr />create<wbr />Seq<wbr />Float<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#seqLeft%2Cseq%5BT%5D%5BT%5D%2Cint"
@@ -1095,7 +1095,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2019-04-09
+Latest      : 2019-04-14
 
 Compiler    : Nim &gt;= 0.19.x dev branch
 
@@ -1234,8 +1234,11 @@ remapToString
 <dd>
 <p>fastWrite</p>
 <p>good for logging or vast file writes</p>
-<p>based on code ex <a class="reference external" href="https://hookrace.net/blog/writing-an-async-logger-in-nim">https://hookrace.net/blog/writing-an-async-logger-in-nim</a>/ </p>
-
+<p>based on code ex <a class="reference external" href="https://hookrace.net/blog/writing-an-async-logger-in-nim">https://hookrace.net/blog/writing-an-async-logger-in-nim</a>/</p>
+<pre class="listing"><span class="Keyword">var</span> <span class="Identifier">fft</span><span class="Punctuation">:</span><span class="Identifier">File</span>
+<span class="Keyword">discard</span> <span class="Identifier">open</span><span class="Punctuation">(</span><span class="Identifier">fft</span><span class="Punctuation">,</span><span class="StringLit">&quot;fast.txt&quot;</span><span class="Punctuation">,</span><span class="Identifier">fmReadWrite</span><span class="Punctuation">)</span>
+<span class="Identifier">fastWrite</span><span class="Punctuation">(</span><span class="Identifier">fft</span><span class="Punctuation">,</span><span class="StringLit">&quot;test &quot;</span> <span class="Operator">*</span> <span class="DecNumber">100</span><span class="Punctuation">)</span>
+<span class="Identifier">fft</span><span class="Operator">.</span><span class="Identifier">close</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <a id="waitOn,int"></a>
@@ -1386,7 +1389,7 @@ rndSample returns one rand sample from a sequence
 <dt><pre><span class="Keyword">proc</span> <a href="#ff%2Cfloat%2Cint"><span class="Identifier">ff</span></a><span class="Other">(</span><span class="Identifier">zz</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>ff</p>
-<p>formats a float to string with n decimals </p>
+<p>formats a float to string with n decimals if thousands seperators are requirewd use f2 </p>
 
 
 </dd>
@@ -1406,19 +1409,17 @@ rndSample returns one rand sample from a sequence
    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;20&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;NZ &quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="StringLit">&quot; : &quot;</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<a id="getRandomFloat,float,float"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getRandomFloat%2Cfloat%2Cfloat"><span class="Identifier">getRandomFloat</span></a><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">1.0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">1.0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="getRandomFloat"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getRandomFloat"><span class="Identifier">getRandomFloat</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>getRandomFloat</p>
 <p>convenience proc so we do not need to import rand in calling prog</p>
-<p>to get positive or negative rand floats multiply with getRandomSignF</p>
-<p>Note: changed so to get positive and or negative floats</p>
-<pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getRandomFloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="FloatNumber">10000.00</span> <span class="Operator">*</span> <span class="Identifier">getRandomSignF</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
+<p>to get positive or negative rand floats multiply with getRandomSignF </p>
+
 
 </dd>
-<a id="getRndFloat,float,float"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getRndFloat%2Cfloat%2Cfloat"><span class="Identifier">getRndFloat</span></a><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">1.0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">1.0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">noInit</span><span class="Other">,</span> <span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="getRndFloat"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getRndFloat"><span class="Identifier">getRndFloat</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>getRndFloat</p>
 <p>same as getrandFloat()</p>
@@ -2106,7 +2107,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-04-09 13:29:25 UTC</small>
+        <small>Made with Nim. Generated: 2019-04-14 05:43:29 UTC</small>
       </div>
     </div>
   </div>

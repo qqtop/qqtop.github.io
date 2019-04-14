@@ -846,7 +846,7 @@ function main() {
   <li><a class="reference" href="#getNextMonday%2Cstring"
     title="getNextMonday(adate: string): string"><wbr />get<wbr />Next<wbr />Monday<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getRandomPointInCircle%2Cfloat"
-    title="getRandomPointInCircle(radius: float): seq[float]"><wbr />get<wbr />Random<wbr />Point<wbr />In<wbr />Circle<span class="attachedType"></span></a></li>
+    title="getRandomPointInCircle(radius: float = 1.0): seq[float]"><wbr />get<wbr />Random<wbr />Point<wbr />In<wbr />Circle<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getRandomPoint%2Cfloat%2Cfloat%2Cfloat%2Cfloat"
     title="getRandomPoint(minx: float = -500.0; maxx: float = 500.0; miny: float = -500.0;
                maxy: float = 500.0): RpointFloat"><wbr />get<wbr />Random<wbr />Point<span class="attachedType">RpointFloat</span></a></li>
@@ -928,8 +928,8 @@ function main() {
     title="checkMemFull(xpos: int = 2)"><wbr />check<wbr />Mem<wbr />Full<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#checkMem%2Cint"
     title="checkMem(xpos: int = 2)"><wbr />check<wbr />Mem<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#fullgcstats%2Cint"
-    title="fullgcstats(xpos: int = 2): int"><wbr />fullgcstats<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#fullGcStats%2Cint"
+    title="fullGcStats(xpos: int = 2): int"><wbr />full<wbr />Gc<wbr />Stats<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#memCheck%2Cbool"
     title="memCheck(stats: bool = false)"><wbr />mem<wbr />Check<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#distanceTo%2C%2C"
@@ -1113,7 +1113,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 
 </dd>
 <a id="getRandomPointInCircle,float"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPointInCircle%2Cfloat"><span class="Identifier">getRandomPointInCircle</span></a><span class="Other">(</span><span class="Identifier">radius</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPointInCircle%2Cfloat"><span class="Identifier">getRandomPointInCircle</span></a><span class="Other">(</span><span class="Identifier">radius</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">1.0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>getRandomPointInCircle</p>
 <p>based on answers found in</p>
@@ -1542,8 +1542,8 @@ spiralBoxy2   uses boxy2
 
 
 </dd>
-<a id="fullgcstats,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#fullgcstats%2Cint"><span class="Identifier">fullgcstats</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
+<a id="fullGcStats,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#fullGcStats%2Cint"><span class="Identifier">fullGcStats</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
                                  <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
                                  <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
@@ -1722,7 +1722,7 @@ reverse iterator<pre class="listing"><span class="Keyword">let</span> <span clas
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-04-09 13:29:23 UTC</small>
+        <small>Made with Nim. Generated: 2019-04-14 05:43:27 UTC</small>
       </div>
     </div>
   </div>
