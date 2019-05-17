@@ -1321,8 +1321,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <p>var. newWord procs</p>
 <p>textgen can be one of :</p>
 <blockquote><p>newWord newWord2 newWord3 newHiragana newKatakana newWordCJK</p></blockquote>
-<blockquote><p>printLn(newText(10000,&quot;newHiragana&quot;),rndcol)</p></blockquote>
-
+<pre class="listing"><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">newText</span><span class="Punctuation">(</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="StringLit">&quot;newHiragana&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">rndcol</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <a id="rndStr,int"></a>
@@ -1339,18 +1338,16 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <dd>
 <p>createRandomDataFile</p>
 <p>this will create a file with given filename and size 1 MB filled with strong random data</p>
-<blockquote><p>createRandomDataFile(&quot;niip2.wsx&quot;) var bc = 0 var b = @[100,200,300,700,800,3000]<dl class="docutils"><dt>withFile(fs,&quot;niip2.wsx&quot;,fmRead):</dt>
-<dd>var line =&quot;&quot;<dl class="docutils"><dt>while fs.readLine(line):</dt>
-<dd>inc bc<dl class="docutils"><dt>if bc in b:</dt>
-<dd>printLn($bc &amp; rightarrow &amp; spaces(3) &amp; wrapwords(line.replace(&quot; &quot;,&quot;&quot;),(tw - 5)),yellowgreen)</dd>
-</dl>
-</dd>
-</dl>
-</dd>
-</dl>
-<p>echo bc</p>
-</p></blockquote>
-
+<pre class="listing"><span class="Identifier">createRandomDataFile</span><span class="Punctuation">(</span><span class="StringLit">&quot;niip2.wsx&quot;</span><span class="Punctuation">)</span>
+<span class="Keyword">var</span> <span class="Identifier">bc</span> <span class="Operator">=</span> <span class="DecNumber">0</span>
+<span class="Keyword">var</span> <span class="Identifier">b</span> <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">100</span><span class="Punctuation">,</span><span class="DecNumber">200</span><span class="Punctuation">,</span><span class="DecNumber">300</span><span class="Punctuation">,</span><span class="DecNumber">700</span><span class="Punctuation">,</span><span class="DecNumber">800</span><span class="Punctuation">,</span><span class="DecNumber">3000</span><span class="Punctuation">]</span>
+<span class="Identifier">withFile</span><span class="Punctuation">(</span><span class="Identifier">fs</span><span class="Punctuation">,</span><span class="StringLit">&quot;niip2.wsx&quot;</span><span class="Punctuation">,</span><span class="Identifier">fmRead</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+  <span class="Keyword">var</span> <span class="Identifier">line</span> <span class="Operator">=</span><span class="StringLit">&quot;&quot;</span>
+  <span class="Keyword">while</span> <span class="Identifier">fs</span><span class="Operator">.</span><span class="Identifier">readLine</span><span class="Punctuation">(</span><span class="Identifier">line</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+     <span class="Identifier">inc</span> <span class="Identifier">bc</span>
+     <span class="Keyword">if</span> <span class="Identifier">bc</span> <span class="Keyword">in</span> <span class="Identifier">b</span><span class="Punctuation">:</span>
+       <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">bc</span> <span class="Operator">&amp;</span> <span class="Identifier">rightarrow</span> <span class="Operator">&amp;</span> <span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span> <span class="Operator">&amp;</span> <span class="Identifier">wrapwords</span><span class="Punctuation">(</span><span class="Identifier">line</span><span class="Operator">.</span><span class="Identifier">replace</span><span class="Punctuation">(</span><span class="StringLit">&quot; &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Punctuation">(</span><span class="Identifier">tw</span> <span class="Operator">-</span> <span class="DecNumber">5</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">bc</span></pre>
 
 </dd>
 <a id="drawRect,int,int,string,string,string,string,int,bool,string"></a>
@@ -1371,7 +1368,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">12</span><span class="Punctuation">)</span>
 <span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">9</span><span class="Punctuation">,</span><span class="DecNumber">20</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;=&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="Identifier">wideDot</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">35</span><span class="Punctuation">,</span><span class="Identifier">blink</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
 <span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">10</span><span class="Punctuation">)</span>
-<span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">6</span><span class="Punctuation">,</span><span class="DecNumber">14</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;~&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;$&quot;</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">70</span><span class="Punctuation">,</span><span class="Identifier">blink</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
+<span class="Identifier">drawRect</span><span class="Punctuation">(</span><span class="DecNumber">6</span><span class="Punctuation">,</span><span class="DecNumber">14</span><span class="Punctuation">,</span><span class="Identifier">frhLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;~&quot;</span><span class="Punctuation">,</span><span class="Identifier">frvLine</span> <span class="Operator">=</span> <span class="StringLit">&quot;$&quot;</span> <span class="Punctuation">,</span> <span class="Identifier">frCol</span> <span class="Operator">=</span> <span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">60</span><span class="Punctuation">,</span><span class="Identifier">blink</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">)</span>
 <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
@@ -1727,7 +1724,7 @@ reverse iterator<pre class="listing"><span class="Keyword">let</span> <span clas
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-05-17 03:56:33 UTC</small>
+        <small>Made with Nim. Generated: 2019-05-17 14:05:31 UTC</small>
       </div>
     </div>
   </div>
