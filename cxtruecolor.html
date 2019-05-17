@@ -859,6 +859,8 @@ function main() {
     title="rndTrueColFull(): auto"><wbr />rnd<wbr />True<wbr />Col<wbr />Full<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#checkCxTrueColor%2Cint"
     title="checkCxTrueColor(n: int): int"><wbr />check<wbr />Cx<wbr />True<wbr />Color<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#showCxTrueColorPalette"
+    title="showCxTrueColorPalette()"><wbr />show<wbr />Cx<wbr />True<wbr />Color<wbr />Palette<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -872,7 +874,7 @@ function main() {
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
-<a class="reference external" href="cxglobal.html">cxglobal</a>, <a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="cxutils.html">cxutils</a>
+<a class="reference external" href="cxglobal.html">cxglobal</a>, <a class="reference external" href="cxconsts.html">cxconsts</a>, <a class="reference external" href="cxprint2.html">cxprint2</a>, <a class="reference external" href="cxutils.html">cxutils</a>
 </dl></div>
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
@@ -946,7 +948,8 @@ function main() {
 </dd>
 <a id="getCxTrueColorSet,int,int,int,bool"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#getCxTrueColorSet%2Cint%2Cint%2Cint%2Cbool"><span class="Identifier">getCxTrueColorSet</span></a><span class="Other">(</span><span class="Identifier">min</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">888</span><span class="Other">;</span> <span class="Identifier">step</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">12</span><span class="Other">;</span> <span class="Identifier">flag48</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>getcxTrueColorSet</p>
 <p>this function fills the global cxTrueCol seq with truecolor values now all cxtruecolor stuff needs a call to getCxTrueColorSet() and compilation with -d:cxTrueCol then it will work like expected </p>
@@ -1003,6 +1006,13 @@ function main() {
 
 
 </dd>
+<a id="showCxTrueColorPalette"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#showCxTrueColorPalette"><span class="Identifier">showCxTrueColorPalette</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+                              <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+showCxTrueColorPalette
+
+</dd>
 
 </dl></div>
 
@@ -1013,7 +1023,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-05-17 03:54:54 UTC</small>
+        <small>Made with Nim. Generated: 2019-05-17 03:56:42 UTC</small>
       </div>
     </div>
   </div>
