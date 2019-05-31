@@ -345,11 +345,11 @@ dl {
 
 dt {
   margin-bottom: -0.5em;
-  margin-left: 0.5em; }
+  margin-left: 0.0em; }
 
 dd {
-  margin-left: 0.5em;
-  margin-bottom: 2.5em;
+  margin-left: 2.0em;
+  margin-bottom: 3.0em;
   margin-top: 0.5em; }
 
 
@@ -761,6 +761,10 @@ span.pragmawrap {
   display: none;
 }
 
+span.attachedType {
+  display: none;
+  visibility: hidden;
+}
 </style>
 
 <script type="text/javascript" src="dochack.js"></script>
@@ -805,12 +809,6 @@ function main() {
 <li><a class="reference" id="indicators_toc" href="#indicators">Indicators</a></li>
 <li><a class="reference" id="end-indicators_toc" href="#end-indicators">end indicators        </a></li>
 <li>
-  <a class="reference reference-toplevel" href="#5" id="55">Exports</a>
-  <ul class="simple simple-toc-section">
-    
-  </ul>
-</li>
-<li>
   <a class="reference reference-toplevel" href="#6" id="56">Imports</a>
   <ul class="simple simple-toc-section">
     
@@ -822,10 +820,10 @@ function main() {
       <li><a class="reference" href="#Portfolio"
     title="Portfolio {.inheritable.} = object
   pfname*: string              ## nx  holds portfolio name  e.g. MyGetRichPortfolio
-  pfdata*: seq[Stocks]         ## dx  holds all stocks with historical data"><wbr />Portfolio<span class="attachedType" style="visibility:hidden"></span></a></li>
+  pfdata*: seq[Stocks]         ## dx  holds all stocks with historical data"><wbr />Portfolio<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#Account"
     title="Account = object
-  apf*: seq[Portfolio]         ## pf holds all Portfolio type portfolios for an account"><wbr />Account<span class="attachedType" style="visibility:hidden"></span></a></li>
+  apf*: seq[Portfolio]         ## pf holds all Portfolio type portfolios for an account"><wbr />Account<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#Stocks"
     title="Stocks {.inheritable.} = object of Portfolio
   stock*: string               ## yahoo style stock code ok with alpha vantage api
@@ -841,7 +839,7 @@ function main() {
   rl*: seq[RunningStat]        ## RunningStat for low price
   rc*: seq[RunningStat]        ## RunningStat for close price
   rv*: seq[RunningStat]        ## RunningStat for volume price
-  rca*: seq[RunningStat]       ## RunningStat for adjusted close price"><wbr />Stocks<span class="attachedType" style="visibility:hidden"></span></a></li>
+  rca*: seq[RunningStat]       ## RunningStat for adjusted close price"><wbr />Stocks<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -849,7 +847,7 @@ function main() {
   <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#avtempdata"
-    title="avtempdata = &quot;&#x2F;dev&#x2F;shm&#x2F;avdata.csv&quot;"><wbr />avtempdata<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="avtempdata = &quot;/dev/shm/avdata.csv&quot;"><wbr />avtempdata<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -857,7 +855,7 @@ function main() {
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#NIMFINLIBVERSION"
-    title="NIMFINLIBVERSION = &quot;0.3.0.3&quot;"><wbr />NIMFINLIBVERSION<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="NIMFINLIBVERSION = &quot;0.3.0.3&quot;"><wbr />NIMFINLIBVERSION<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -865,11 +863,11 @@ function main() {
   <a class="reference reference-toplevel" href="#10" id="60">Consts</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#tail"
-    title="tail = &quot;tail&quot;"><wbr />tail<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="tail = &quot;tail&quot;"><wbr />tail<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#head"
-    title="head = &quot;head&quot;"><wbr />head<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="head = &quot;head&quot;"><wbr />head<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#all"
-    title="all = &quot;all&quot;"><wbr />all<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="all = &quot;all&quot;"><wbr />all<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -877,64 +875,70 @@ function main() {
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#getData22%2Cstring%2Cint"
-    title="getData22(url: string; timeout: int = 20000): auto"><wbr />get<wbr />Data22<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="getData22(url: string; timeout: int = 20000): auto"><wbr />get<wbr />Data22<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#avDatafetcher%2Cstring%2Cstring%2Cstring"
-    title="avDatafetcher(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Datafetcher<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="avDatafetcher(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Datafetcher<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#avDataFetcherIntraday%2Cstring%2Cstring%2Cstring"
-    title="avDataFetcherIntraday(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Data<wbr />Fetcher<wbr />Intraday<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="avDataFetcherIntraday(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Data<wbr />Fetcher<wbr />Intraday<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#avDataFetcherGlobal%2Cstring%2Cstring%2Cstring"
-    title="avDataFetcherGlobal(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Data<wbr />Fetcher<wbr />Global<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#avDataFetcherGlobal%2Cseq%5Bstring%5D%2Cstring%2Cstring"
-    title="avDataFetcherGlobal(stckcodes: seq[string]; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Data<wbr />Fetcher<wbr />Global<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="avDataFetcherGlobal(stckcode: string; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Data<wbr />Fetcher<wbr />Global<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#avDataFetcherGlobal%2Cseq%5BT%5D%5Bstring%5D%2Cstring%2Cstring"
+    title="avDataFetcherGlobal(stckcodes: seq[string]; mode: string = &quot;compact&quot;; apikey: string): bool"><wbr />av<wbr />Data<wbr />Fetcher<wbr />Global<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showRawData"
-    title="showRawData()"><wbr />show<wbr />Raw<wbr />Data<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="showRawData()"><wbr />show<wbr />Raw<wbr />Data<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showOriginalStockDf%2Cstring%2Cint%2Cint%2Cbool%2Cstring"
     title="showOriginalStockDf(stckcode: string; xpos: int = 3; rows: int = 3; header: bool = false;
-                    apikey: string = &quot;demo&quot;): nimdf"><wbr />show<wbr />Original<wbr />Stock<wbr />Df<span class="attachedType" style="visibility:hidden"></span></a></li>
+                    apikey: string = &quot;demo&quot;): nimdf"><wbr />show<wbr />Original<wbr />Stock<wbr />Df<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showStocksDf%2Cstring%2Cint%2Cint%2Cbool%2Cstring%2Cbool%2Cstring"
     title="showStocksDf(stckcode: string; rows: int = 3; xpos: int = 3; header: bool = false;
-             mode: string = &quot;compact&quot;; infodf: bool = true; apikey: string = &quot;demo&quot;): nimdf"><wbr />show<wbr />Stocks<wbr />Df<span class="attachedType" style="visibility:hidden"></span></a></li>
+             mode: string = &quot;compact&quot;; infodf: bool = true; apikey: string = &quot;demo&quot;): nimdf"><wbr />show<wbr />Stocks<wbr />Df<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showLocalStocksDf%2Cnimdf%2Cint"
-    title="showLocalStocksDf(ndf9: nimdf; xpos: int = 3): nimdf"><wbr />show<wbr />Local<wbr />Stocks<wbr />Df<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="showLocalStocksDf(ndf9: nimdf; xpos: int = 3): nimdf"><wbr />show<wbr />Local<wbr />Stocks<wbr />Df<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getavSMA%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"
     title="getavSMA(stckcode: string; interval: string = &quot;15min&quot;; timeperiod: string = &quot;10&quot;;
          seriestype: string = &quot;close&quot;; apikey: string; xpos: int = 3;
-         savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />SMA<span class="attachedType" style="visibility:hidden"></span></a></li>
+         savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />SMA<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getavWMA%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"
     title="getavWMA(stckcode: string; interval: string = &quot;15min&quot;; timeperiod: string = &quot;10&quot;;
          seriestype: string = &quot;close&quot;; apikey: string; xpos: int = 3;
-         savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />WMA<span class="attachedType" style="visibility:hidden"></span></a></li>
+         savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />WMA<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getavEMA%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"
     title="getavEMA(stckcode: string; interval: string = &quot;15min&quot;; timeperiod: string = &quot;10&quot;;
          seriestype: string = &quot;close&quot;; apikey: string; xpos: int = 3;
-         savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />EMA<span class="attachedType" style="visibility:hidden"></span></a></li>
+         savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />EMA<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getavRSI%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"
     title="getavRSI(stckcode: string; interval: string = &quot;15min&quot;; timeperiod: string = &quot;10&quot;;
          seriestype: string = &quot;close&quot;; apikey: string; xpos: int = 3;
-         savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />RSI<span class="attachedType" style="visibility:hidden"></span></a></li>
+         savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />RSI<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getavWILLR%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"
     title="getavWILLR(stckcode: string; interval: string = &quot;15min&quot;; timeperiod: string = &quot;10&quot;;
            seriestype: string = &quot;close&quot;; apikey: string; xpos: int = 3;
-           savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />WILLR<span class="attachedType" style="visibility:hidden"></span></a></li>
+           savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />WILLR<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getavBBANDS%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"
     title="getavBBANDS(stckcode: string; interval: string = &quot;15min&quot;; timeperiod: string = &quot;10&quot;;
             seriestype: string = &quot;close&quot;; apikey: string; xpos: int = 3;
-            savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />BBANDS<span class="attachedType" style="visibility:hidden"></span></a></li>
+            savequiet: bool = true; dfinfo: bool = false)"><wbr />getav<wbr />BBANDS<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showKitcoMetal%2Cint"
-    title="showKitcoMetal(xpos: int = 1)"><wbr />show<wbr />Kitco<wbr />Metal<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#williams_percent_r%2Cseq%5Bfloat%5D"
-    title="williams_percent_r(close_data: seq[float]): seq[float]"><wbr />williams_<wbr />percent_<wbr />r<span class="attachedType" style="visibility:hidden"></span></a></li>
-  <li><a class="reference" href="#dailyReturns%2Cseq%5Bstring%5D"
-    title="dailyReturns(self: seq[string]): nimss"><wbr />daily<wbr />Returns<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="showKitcoMetal(xpos: int = 1)"><wbr />show<wbr />Kitco<wbr />Metal<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#williams_percent_r%2Cseq%5BT%5D%5Bfloat%5D"
+    title="williams_percent_r(close_data: seq[float]): seq[float]"><wbr />williams_<wbr />percent_<wbr />r<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#dailyReturns%2Cseq%5BT%5D%5Bstring%5D"
+    title="dailyReturns(self: seq[string]): nimss"><wbr />daily<wbr />Returns<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#presentValue%2CT%2CT%2Cint%2Cint"
-    title="presentValue[T](FV: T; r: T; m: int; t: int): float"><wbr />present<wbr />Value<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="presentValue[T](FV: T; r: T; m: int; t: int): float"><wbr />present<wbr />Value<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#presentValue%2Cfloat%2Cfloat%2Cfloat%2Cfloat"
-    title="presentValue(FV: float; r: float; m: float; t: float): float"><wbr />present<wbr />Value<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="presentValue(FV: float; r: float; m: float; t: float): float"><wbr />present<wbr />Value<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#presentValueFV%2Cfloat%2Cfloat%2Cint"
-    title="presentValueFV(FV: float; i: float; n: int): float"><wbr />present<wbr />Value<wbr />FV<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="presentValueFV(FV: float; i: float; n: int): float"><wbr />present<wbr />Value<wbr />FV<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#presentValueFV%2Cfloat%2Cfloat%2Cfloat"
-    title="presentValueFV(FV: float; i: float; n: float): float"><wbr />present<wbr />Value<wbr />FV<span class="attachedType" style="visibility:hidden"></span></a></li>
+    title="presentValueFV(FV: float; i: float; n: float): float"><wbr />present<wbr />Value<wbr />FV<span class="attachedType"></span></a></li>
 
+  </ul>
+</li>
+<li>
+  <a class="reference reference-toplevel" href="#19" id="69">Exports</a>
+  <ul class="simple simple-toc-section">
+    
   </ul>
 </li>
 
@@ -990,7 +994,7 @@ Tested on   :  Linux
 
 ProjectStart: 2015-06-05
 
-Latest      : 2019-02-07
+Latest      : 2019-05-31
 
 Todo        : anything not yet done
 
@@ -1027,12 +1031,7 @@ Funding     :     Here are the options :
 
 <h1><a class="toc-backref" id="indicators" href="#indicators">Indicators</a></h1>
 <h1><a class="toc-backref" id="end-indicators" href="#end-indicators">end indicators        </a></h1></p>
-  <div class="section" id="5">
-<h1><a class="toc-backref" href="#5">Exports</a></h1>
-<dl class="item">
-<a href="av_utils.html#av_digital_monthly_csv"><span class="Identifier">av_digital_monthly_csv</span></a>, <a href="av_utils.html#av_daily_adjusted_full"><span class="Identifier">av_daily_adjusted_full</span></a>, <a href="av_utils.html#getdigitalexchangerate"><span class="Identifier">getdigitalexchangerate</span></a>, <a href="av_utils.html#av_daily_csv"><span class="Identifier">av_daily_csv</span></a>, <a href="av_utils.html#av_monthly_adjusted_csv"><span class="Identifier">av_monthly_adjusted_csv</span></a>, <a href="av_utils.html#forex_btc_cny"><span class="Identifier">forex_btc_cny</span></a>, <a href="av_utils.html#av_digital_daily"><span class="Identifier">av_digital_daily</span></a>, <a href="av_utils.html#av_weekly_adjusted_csv"><span class="Identifier">av_weekly_adjusted_csv</span></a>, <a href="av_utils.html#av_sma_csv"><span class="Identifier">av_sma_csv</span></a>, <a href="av_utils.html#av_ema_csv"><span class="Identifier">av_ema_csv</span></a>, <a href="av_utils.html#av_digital_intraday"><span class="Identifier">av_digital_intraday</span></a>, <a href="av_utils.html#av_sma"><span class="Identifier">av_sma</span></a>, <a href="av_utils.html#getcallavbatch"><span class="Identifier">getcallavbatch</span></a>, <a href="av_utils.html#getcallavdafull"><span class="Identifier">getcallavdafull</span></a>, <a href="av_utils.html#av_weekly_adjusted"><span class="Identifier">av_weekly_adjusted</span></a>, <a href="av_utils.html#av_intraday_1m_csv"><span class="Identifier">av_intraday_1m_csv</span></a>, <a href="av_utils.html#av_daily"><span class="Identifier">av_daily</span></a>, <a href="av_utils.html#getcallavda"><span class="Identifier">getcallavda</span></a>, <a href="av_utils.html#getexchangerate"><span class="Identifier">getexchangerate</span></a>, <a href="av_utils.html#av_daily_adjusted"><span class="Identifier">av_daily_adjusted</span></a>, <a href="av_utils.html#av_intraday_15m"><span class="Identifier">av_intraday_15m</span></a>, <a href="av_utils.html#av_digital_weekly"><span class="Identifier">av_digital_weekly</span></a>, <a href="av_utils.html#av_monthly_csv"><span class="Identifier">av_monthly_csv</span></a>, <a href="av_utils.html#forex_usd_jpy"><span class="Identifier">forex_usd_jpy</span></a>, <a href="av_utils.html#av_ema"><span class="Identifier">av_ema</span></a>, <a href="av_utils.html#av_digital_intraday_csv"><span class="Identifier">av_digital_intraday_csv</span></a>, <a href="av_utils.html#av_monthly"><span class="Identifier">av_monthly</span></a>, <a href="av_utils.html#av_daily_full"><span class="Identifier">av_daily_full</span></a>, <a href="av_utils.html#av_weekly"><span class="Identifier">av_weekly</span></a>, <a href="av_utils.html#av_monthly_adjusted"><span class="Identifier">av_monthly_adjusted</span></a>, <a class="reference external" href="av_utils.html">av_utils</a>, <a href="av_utils.html#av_daily_adjusted_csv"><span class="Identifier">av_daily_adjusted_csv</span></a>, <a href="av_utils.html#av_digital_daily_csv"><span class="Identifier">av_digital_daily_csv</span></a>, <a href="av_utils.html#av_weekly_csv"><span class="Identifier">av_weekly_csv</span></a>, <a href="av_utils.html#av_global_omx"><span class="Identifier">av_global_omx</span></a>, <a href="av_utils.html#av_intraday_1m"><span class="Identifier">av_intraday_1m</span></a>, <a href="av_utils.html#av_digital_monthly"><span class="Identifier">av_digital_monthly</span></a>, <a href="av_utils.html#av_digital_weekly_csv"><span class="Identifier">av_digital_weekly_csv</span></a>, <a href="av_utils.html#av_trima"><span class="Identifier">av_trima</span></a>, <a href="av_utils.html#av_wma"><span class="Identifier">av_wma</span></a>
-</dl></div>
-<div class="section" id="6">
+  <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
 <a class="reference external" href="av_utils.html">av_utils</a>
@@ -1093,7 +1092,7 @@ Funding     :     Here are the options :
 <h1><a class="toc-backref" href="#8">Vars</a></h1>
 <dl class="item">
 <a id="avtempdata"></a>
-<dt><pre><span class="Identifier">avtempdata</span> <span class="Other">=</span> <span class="StringLit">&quot;/dev/shm/avdata.csv&quot;</span></pre></dt>
+<dt><pre><a href="nimFinLib.html#avtempdata"><span class="Identifier">avtempdata</span></a> <span class="Other">=</span> <span class="StringLit">&quot;/dev/shm/avdata.csv&quot;</span></pre></dt>
 <dd>
 
 
@@ -1104,7 +1103,7 @@ Funding     :     Here are the options :
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
 <a id="NIMFINLIBVERSION"></a>
-<dt><pre><span class="Identifier">NIMFINLIBVERSION</span> <span class="Other">=</span> <span class="StringLit">&quot;0.3.0.3&quot;</span></pre></dt>
+<dt><pre><a href="nimFinLib.html#NIMFINLIBVERSION"><span class="Identifier">NIMFINLIBVERSION</span></a> <span class="Other">=</span> <span class="StringLit">&quot;0.3.0.3&quot;</span></pre></dt>
 <dd>
 
 
@@ -1115,19 +1114,19 @@ Funding     :     Here are the options :
 <h1><a class="toc-backref" href="#10">Consts</a></h1>
 <dl class="item">
 <a id="tail"></a>
-<dt><pre><span class="Identifier">tail</span> <span class="Other">=</span> <span class="StringLit">&quot;tail&quot;</span></pre></dt>
+<dt><pre><a href="nimFinLib.html#tail"><span class="Identifier">tail</span></a> <span class="Other">=</span> <span class="StringLit">&quot;tail&quot;</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="head"></a>
-<dt><pre><span class="Identifier">head</span> <span class="Other">=</span> <span class="StringLit">&quot;head&quot;</span></pre></dt>
+<dt><pre><a href="nimFinLib.html#head"><span class="Identifier">head</span></a> <span class="Other">=</span> <span class="StringLit">&quot;head&quot;</span></pre></dt>
 <dd>
 
 
 </dd>
 <a id="all"></a>
-<dt><pre><span class="Identifier">all</span> <span class="Other">=</span> <span class="StringLit">&quot;all&quot;</span></pre></dt>
+<dt><pre><a href="nimFinLib.html#all"><span class="Identifier">all</span></a> <span class="Other">=</span> <span class="StringLit">&quot;all&quot;</span></pre></dt>
 <dd>
 
 
@@ -1138,17 +1137,16 @@ Funding     :     Here are the options :
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
 <a id="getData22,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getData22%2Cstring%2Cint"><span class="Identifier">getData22</span></a><span class="Other">(</span><span class="Identifier">url</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20000</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getData22%2Cstring%2Cint"><span class="Identifier">getData22</span></a><span class="Other">(</span><span class="Identifier">url</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20000</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 getData
 
 </dd>
 <a id="avDatafetcher,string,string,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#avDatafetcher%2Cstring%2Cstring%2Cstring"><span class="Identifier">avDatafetcher</span></a><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>avDatafetcher</p>
 <p>fetches data from alphavantage</p>
@@ -1166,8 +1164,8 @@ getData
 </dd>
 <a id="avDataFetcherIntraday,string,string,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#avDataFetcherIntraday%2Cstring%2Cstring%2Cstring"><span class="Identifier">avDataFetcherIntraday</span></a><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>avDataFetcherIntraday</p>
 <p>fetches data from alphavantage</p>
@@ -1184,8 +1182,8 @@ getData
 </dd>
 <a id="avDataFetcherGlobal,string,string,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#avDataFetcherGlobal%2Cstring%2Cstring%2Cstring"><span class="Identifier">avDataFetcherGlobal</span></a><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>avDataFetcherGlobal</p>
 <p>fetches data from alphavantage</p>
@@ -1196,11 +1194,11 @@ getData
 
 
 </dd>
-<a id="avDataFetcherGlobal,seq[string],string,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#avDataFetcherGlobal%2Cseq%5Bstring%5D%2Cstring%2Cstring"><span class="Identifier">avDataFetcherGlobal</span></a><span class="Other">(</span><span class="Identifier">stckcodes</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span>
-                        <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
-    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="avDataFetcherGlobal,seq[T][string],string,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#avDataFetcherGlobal%2Cseq%5BT%5D%5Bstring%5D%2Cstring%2Cstring"><span class="Identifier">avDataFetcherGlobal</span></a><span class="Other">(</span><span class="Identifier">stckcodes</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span>
+                        <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>avDataFetcherGlobal</p>
 <p>fetches data from alphavantage</p>
@@ -1213,9 +1211,11 @@ getData
 
 </dd>
 <a id="showRawData"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showRawData"><span class="Identifier">showRawData</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                   <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#showRawData"><span class="Identifier">showRawData</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                   <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+<p>showRawData</p>
+<p>displays raw data currently in avtempdata </p>
 
 
 </dd>
@@ -1223,10 +1223,10 @@ getData
 <dt><pre><span class="Keyword">proc</span> <a href="#showOriginalStockDf%2Cstring%2Cint%2Cint%2Cbool%2Cstring"><span class="Identifier">showOriginalStockDf</span></a><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">rows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span>
                         <span class="Identifier">header</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;demo&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
-                        <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span>
+                        <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span>
                         <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
-                        <span class="Identifier">CsvError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
-    <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                        <span class="Identifier">CsvError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>showOriginalStockData WIP</p>
 <p>using TIME_SERIES_INTRADAY 1 min  DATA   # this will be selectable in the future in respect of time_series and interval</p>
@@ -1238,10 +1238,10 @@ getData
 <dt><pre><span class="Keyword">proc</span> <a href="#showStocksDf%2Cstring%2Cint%2Cint%2Cbool%2Cstring%2Cbool%2Cstring"><span class="Identifier">showStocksDf</span></a><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">rows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
                  <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;compact&quot;</span><span class="Other">;</span> <span class="Identifier">infodf</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;demo&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
-                        <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span>
+                        <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">HttpRequestError</span><span class="Other">,</span> <span class="Identifier">SslError</span><span class="Other">,</span>
                         <span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">TimeoutError</span><span class="Other">,</span> <span class="Identifier">ProtocolError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span>
-                        <span class="Identifier">CsvError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
-                                        <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                        <span class="Identifier">CsvError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
+                                        <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>showStocksDf</p>
 <p>a display routine with some more information</p>
@@ -1252,7 +1252,7 @@ getData
 <a id="showLocalStocksDf,nimdf,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#showLocalStocksDf%2Cnimdf%2Cint"><span class="Identifier">showLocalStocksDf</span></a><span class="Other">(</span><span class="Identifier">ndf9</span><span class="Other">:</span> <span class="Identifier">nimdf</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimdf</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
-    <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>showLocalStocksDf</p>
 <p>used to display a df which already exists or has been loaded via dfLoad</p>
@@ -1264,9 +1264,9 @@ getData
 <dt><pre><span class="Keyword">proc</span> <a href="#getavSMA%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"><span class="Identifier">getavSMA</span></a><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span> <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span>
              <span class="Identifier">seriestype</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;close&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span>
              <span class="Identifier">savequiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">dfinfo</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
-    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span>
-    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
-                                      <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
+    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
+                               <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>getavSMA</p>
 <p>fetches data from alphavantage</p>
@@ -1281,9 +1281,9 @@ getData
 <dt><pre><span class="Keyword">proc</span> <a href="#getavWMA%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"><span class="Identifier">getavWMA</span></a><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span> <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span>
              <span class="Identifier">seriestype</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;close&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span>
              <span class="Identifier">savequiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">dfinfo</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
-    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span>
-    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
-                                      <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
+    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
+                               <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>getavWMA</p>
 <p>fetches data from alphavantage</p>
@@ -1298,9 +1298,9 @@ getData
 <dt><pre><span class="Keyword">proc</span> <a href="#getavEMA%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"><span class="Identifier">getavEMA</span></a><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span> <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span>
              <span class="Identifier">seriestype</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;close&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span>
              <span class="Identifier">savequiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">dfinfo</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
-    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span>
-    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
-    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
+    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
+                               <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>getavEMA</p>
 <p>fetches data from alphavantage</p>
@@ -1315,9 +1315,9 @@ getData
 <dt><pre><span class="Keyword">proc</span> <a href="#getavRSI%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"><span class="Identifier">getavRSI</span></a><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span> <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span>
              <span class="Identifier">seriestype</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;close&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span>
              <span class="Identifier">savequiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">dfinfo</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
-    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span>
-    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
-                                      <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span>
+    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
+                               <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 getavRSI fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low
 
@@ -1326,9 +1326,9 @@ getavRSI fetches data from alphavantage Note : first row is real time if markets
 <dt><pre><span class="Keyword">proc</span> <a href="#getavWILLR%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"><span class="Identifier">getavWILLR</span></a><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span>
                <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span> <span class="Identifier">seriestype</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;close&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
                <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">savequiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">dfinfo</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span>
-    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
-    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 getavWILLR fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low getavWILLR(&quot;MSFT&quot;,&quot;15min&quot;,&quot;10&quot;,&quot;close&quot;,apikey = apikey, 3, true, false) 
 
@@ -1337,30 +1337,30 @@ getavWILLR fetches data from alphavantage Note : first row is real time if marke
 <dt><pre><span class="Keyword">proc</span> <a href="#getavBBANDS%2Cstring%2Cstring%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cbool"><span class="Identifier">getavBBANDS</span></a><span class="Other">(</span><span class="Identifier">stckcode</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">interval</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;15min&quot;</span><span class="Other">;</span>
                 <span class="Identifier">timeperiod</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;10&quot;</span><span class="Other">;</span> <span class="Identifier">seriestype</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;close&quot;</span><span class="Other">;</span> <span class="Identifier">apikey</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
                 <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">savequiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">dfinfo</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span>
-    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
-    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span>
+    <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 getavBBANDS fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low default params implemented here see  ---&gt;  <a class="reference external" href="https://www.alphavantage.co/documentation">https://www.alphavantage.co/documentation</a>/
 
 </dd>
 <a id="showKitcoMetal,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showKitcoMetal%2Cint"><span class="Identifier">showKitcoMetal</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
-    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#showKitcoMetal%2Cint"><span class="Identifier">showKitcoMetal</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+                                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>showKitcoMetal</p>
 <p>get and display kitco metal prices</p>
 
 
 </dd>
-<a id="williams_percent_r,seq[float]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#williams_percent_r%2Cseq%5Bfloat%5D"><span class="Identifier">williams_percent_r</span></a><span class="Other">(</span><span class="Identifier">close_data</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="williams_percent_r,seq[T][float]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#williams_percent_r%2Cseq%5BT%5D%5Bfloat%5D"><span class="Identifier">williams_percent_r</span></a><span class="Other">(</span><span class="Identifier">close_data</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 </dd>
-<a id="dailyReturns,seq[string]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#dailyReturns%2Cseq%5Bstring%5D"><span class="Identifier">dailyReturns</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="dailyReturns,seq[T][string]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#dailyReturns%2Cseq%5BT%5D%5Bstring%5D"><span class="Identifier">dailyReturns</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 <p>dailyReturns</p>
 <p>daily returns calculation gives same results as dailyReturns in R / quantmod </p>
@@ -1425,6 +1425,11 @@ getavBBANDS fetches data from alphavantage Note : first row is real time if mark
 </dd>
 
 </dl></div>
+<div class="section" id="19">
+<h1><a class="toc-backref" href="#19">Exports</a></h1>
+<dl class="item">
+<a href="av_utils.html#av_digital_monthly_csv"><span class="Identifier">av_digital_monthly_csv</span></a>, <a href="av_utils.html#av_daily_adjusted_full"><span class="Identifier">av_daily_adjusted_full</span></a>, <a href="av_utils.html#getdigitalexchangerate"><span class="Identifier">getdigitalexchangerate</span></a>, <a href="av_utils.html#av_daily_csv"><span class="Identifier">av_daily_csv</span></a>, <a href="av_utils.html#av_monthly_adjusted_csv"><span class="Identifier">av_monthly_adjusted_csv</span></a>, <a href="av_utils.html#forex_btc_cny"><span class="Identifier">forex_btc_cny</span></a>, <a href="av_utils.html#av_digital_daily"><span class="Identifier">av_digital_daily</span></a>, <a href="av_utils.html#av_weekly_adjusted_csv"><span class="Identifier">av_weekly_adjusted_csv</span></a>, <a href="av_utils.html#av_sma_csv"><span class="Identifier">av_sma_csv</span></a>, <a href="av_utils.html#av_ema_csv"><span class="Identifier">av_ema_csv</span></a>, <a href="av_utils.html#av_digital_intraday"><span class="Identifier">av_digital_intraday</span></a>, <a href="av_utils.html#av_sma"><span class="Identifier">av_sma</span></a>, <a href="av_utils.html#getcallavbatch"><span class="Identifier">getcallavbatch</span></a>, <a href="av_utils.html#getcallavdafull"><span class="Identifier">getcallavdafull</span></a>, <a href="av_utils.html#av_weekly_adjusted"><span class="Identifier">av_weekly_adjusted</span></a>, <a href="av_utils.html#av_intraday_1m_csv"><span class="Identifier">av_intraday_1m_csv</span></a>, <a href="av_utils.html#av_daily"><span class="Identifier">av_daily</span></a>, <a href="av_utils.html#getcallavda"><span class="Identifier">getcallavda</span></a>, <a href="av_utils.html#getexchangerate"><span class="Identifier">getexchangerate</span></a>, <a href="av_utils.html#av_daily_adjusted"><span class="Identifier">av_daily_adjusted</span></a>, <a href="av_utils.html#av_intraday_15m"><span class="Identifier">av_intraday_15m</span></a>, <a href="av_utils.html#av_digital_weekly"><span class="Identifier">av_digital_weekly</span></a>, <a href="av_utils.html#av_monthly_csv"><span class="Identifier">av_monthly_csv</span></a>, <a href="av_utils.html#forex_usd_jpy"><span class="Identifier">forex_usd_jpy</span></a>, <a href="av_utils.html#av_ema"><span class="Identifier">av_ema</span></a>, <a href="av_utils.html#av_digital_intraday_csv"><span class="Identifier">av_digital_intraday_csv</span></a>, <a href="av_utils.html#av_monthly"><span class="Identifier">av_monthly</span></a>, <a href="av_utils.html#av_daily_full"><span class="Identifier">av_daily_full</span></a>, <a href="av_utils.html#av_weekly"><span class="Identifier">av_weekly</span></a>, <a href="av_utils.html#av_monthly_adjusted"><span class="Identifier">av_monthly_adjusted</span></a>, <a class="reference external" href="av_utils.html">av_utils</a>, <a href="av_utils.html#av_daily_adjusted_csv"><span class="Identifier">av_daily_adjusted_csv</span></a>, <a href="av_utils.html#av_digital_daily_csv"><span class="Identifier">av_digital_daily_csv</span></a>, <a href="av_utils.html#av_weekly_csv"><span class="Identifier">av_weekly_csv</span></a>, <a href="av_utils.html#av_global_omx"><span class="Identifier">av_global_omx</span></a>, <a href="av_utils.html#av_intraday_1m"><span class="Identifier">av_intraday_1m</span></a>, <a href="av_utils.html#av_digital_monthly"><span class="Identifier">av_digital_monthly</span></a>, <a href="av_utils.html#av_digital_weekly_csv"><span class="Identifier">av_digital_weekly_csv</span></a>, <a href="av_utils.html#av_trima"><span class="Identifier">av_trima</span></a>, <a href="av_utils.html#av_wma"><span class="Identifier">av_wma</span></a>
+</dl></div>
 
   </div>
 </div>
@@ -1433,7 +1438,7 @@ getavBBANDS fetches data from alphavantage Note : first row is real time if mark
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-02-07 14:42:16 UTC</small>
+        <small>Made with Nim. Generated: 2019-05-31 11:19:29 UTC</small>
       </div>
     </div>
   </div>
