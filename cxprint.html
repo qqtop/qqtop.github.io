@@ -818,11 +818,11 @@ function main() {
       <li><a class="reference" href="#printf%2Ccstring"
     title="printf(formatStr: cstring)"><wbr />printf<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#print%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"
-    title="print[T](astring: T; fgr: string = termwhite; bgr: string = getbg(bgDefault);
+    title="print[T](astring: T; fgr: string = getFg(fgDefault); bgr: string = getBg(bgDefault);
          xpos: int = 0; fitLine: bool = false; centered: bool = false;
          styled: set[Style] = {})"><wbr />print<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#printLn%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"
-    title="printLn[T](astring: T; fgr: string = termwhite; bgr: string = getbg(bgDefault);
+    title="printLn[T](astring: T; fgr: string = getFg(fgDefault); bgr: string = getBg(bgDefault);
            xpos: int = 0; fitLine: bool = false; centered: bool = false;
            styled: set[Style] = {})"><wbr />print<wbr />Ln<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#hline%2Cint%2Cstring%2Cint%2Cstring"
@@ -951,20 +951,13 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2019-06-01
+Latest      : 2019-06-02
 
 Compiler    : Nim &gt;= 0.19.x dev branch
 
 OS          : Linux
 
-Description : provides most printing functions for the library
-
-Note        : some parts are experimental, the future aim will be
-              
-              one smart print function which handles any kind of demand for colors.
-              
-              
-              cpcx.nim2.nim has backgroundcolor set to bgDefault</pre>
+Description : provides most printing functions for the library</pre>
 </p>
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
@@ -983,9 +976,9 @@ Note        : some parts are experimental, the future aim will be
 
 </dd>
 <a id="print,T,string,string,int,bool,bool,set[Style]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#print%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"><span class="Identifier">print</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getbg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span>
-             <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
-             <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#print%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"><span class="Identifier">print</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getFg</span><span class="Other">(</span><span class="Identifier">fgDefault</span><span class="Other">)</span><span class="Other">;</span>
+             <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+             <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 <pre>print
 
@@ -1038,9 +1031,9 @@ also available   cxBright,cxReverse,cxBlink,cxReverseBright</pre>
 
 </dd>
 <a id="printLn,T,string,string,int,bool,bool,set[Style]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printLn%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"><span class="Identifier">printLn</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getbg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span>
-               <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
-               <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#printLn%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"><span class="Identifier">printLn</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getFg</span><span class="Other">(</span><span class="Identifier">fgDefault</span><span class="Other">)</span><span class="Other">;</span>
+               <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+               <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 <pre>printLn
 
@@ -1504,7 +1497,7 @@ forward declaration
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-06-01 13:23:50 UTC</small>
+        <small>Made with Nim. Generated: 2019-06-02 05:57:12 UTC</small>
       </div>
     </div>
   </div>
