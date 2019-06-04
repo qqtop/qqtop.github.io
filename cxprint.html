@@ -899,6 +899,10 @@ function main() {
     title="printCodeMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Code<wbr />Msg<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#printLnCodeMsg%2Cstring%2Cint"
     title="printLnCodeMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Code<wbr />Msg<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#printEelpMsg%2Cstring%2Cint"
+    title="printEelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Eelp<wbr />Msg<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#printLnEelpMsg%2Cstring%2Cint"
+    title="printLnEelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Eelp<wbr />Msg<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#printPassMsg%2Cstring%2Cint"
     title="printPassMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Pass<wbr />Msg<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#printLnPassMsg%2Cstring%2Cint"
@@ -951,7 +955,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2019-06-02
+Latest      : 2019-06-04
 
 Compiler    : Nim &gt;= 0.19.x dev branch
 
@@ -1391,6 +1395,20 @@ forward declaration
 
 
 </dd>
+<a id="printEelpMsg,string,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#printEelpMsg%2Cstring%2Cint"><span class="Identifier">printEelpMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+</dd>
+<a id="printLnEelpMsg,string,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#printLnEelpMsg%2Cstring%2Cint"><span class="Identifier">printLnEelpMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+</dd>
 <a id="printPassMsg,string,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printPassMsg%2Cstring%2Cint"><span class="Identifier">printPassMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
@@ -1497,7 +1515,7 @@ forward declaration
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-06-03 04:44:53 UTC</small>
+        <small>Made with Nim. Generated: 2019-06-04 14:20:34 UTC</small>
       </div>
     </div>
   </div>
