@@ -836,6 +836,7 @@ function main() {
   </div>
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
+  
   <p class="module-desc"><pre>
 Library     : nimcx.nim
 
@@ -865,6 +866,7 @@ Description : provides some functions pertaining to statistcs and calculations</
 <dt><pre><span class="Keyword">proc</span> <a href="#showStats%2CRunningStat%2Cint%2Cint"><span class="Identifier">showStats</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">RunningStat</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>showStats</p>
 <p>quickly display runningStat data</p>
 <p>adjust decimals default n = 3 as needed</p>
@@ -897,6 +899,7 @@ Description : provides some functions pertaining to statistcs and calculations</
 <a id="showRegression,seq[T][],seq[T][],int,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#showRegression%2Cseq%5BT%5D%5B%5D%2Cseq%5BT%5D%5B%5D%2Cint%2Cint"><span class="Identifier">showRegression</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
+
 <p>showRegression</p>
 <p>quickly display RunningRegress data based on input of two openarray data series</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
@@ -909,6 +912,7 @@ Description : provides some functions pertaining to statistcs and calculations</
 <dt><pre><span class="Keyword">proc</span> <a href="#showRegression%2CRunningRegress%2Cint%2Cint"><span class="Identifier">showRegression</span></a><span class="Other">(</span><span class="Identifier">rr</span><span class="Other">:</span> <span class="Identifier">RunningRegress</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>showRegression</p>
 <p>Displays RunningRegress data from an already formed RunningRegress </p>
 
@@ -917,6 +921,7 @@ Description : provides some functions pertaining to statistcs and calculations</
 <a id="zscore,seq[T][SomeNumber]"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#zscore%2Cseq%5BT%5D%5BSomeNumber%5D"><span class="Identifier">zscore</span></a><span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">SomeNumber</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>zscore</p>
 <p>returns the z-score in a seq[float] for each data point</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
@@ -940,10 +945,12 @@ Description : provides some functions pertaining to statistcs and calculations</
 <dd>
 
 
+
 </dd>
 <a id="median,seq[T][float]"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#median%2Cseq%5BT%5D%5Bfloat%5D"><span class="Identifier">median</span></a><span class="Other">(</span><span class="Identifier">xs</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 
 
 </dd>
@@ -957,7 +964,7 @@ Description : provides some functions pertaining to statistcs and calculations</
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-06-04 14:20:36 UTC</small>
+        <small>Made with Nim. Generated: 2019-06-06 07:00:37 UTC</small>
       </div>
     </div>
   </div>
