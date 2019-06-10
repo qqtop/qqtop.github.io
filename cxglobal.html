@@ -1045,8 +1045,12 @@ function main() {
     title="curBk(x: int = 1)"><wbr />cur<wbr />Bk<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#curSetx.t%2Cint"
     title="curSetx(x: int)"><wbr />cur<wbr />Setx<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#cxPos.t"
+    title="cxPos(x): string"><wbr />cx<wbr />Pos<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#curSet.t%2Cint%2Cint"
     title="curSet(x: int = 0; y: int = 0)"><wbr />cur<wbr />Set<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#cxPosxy.t%2C%2C"
+    title="cxPosxy(x, y): string"><wbr />cx<wbr />Posxy<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#clearup.t%2Cint"
     title="clearup(x: int = 80)"><wbr />clearup<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#curOn.t"
@@ -1096,7 +1100,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2019-06-06
+Latest      : 2019-06-10
 
 Compiler    : Nim &gt;= 0.19.x dev branch
 
@@ -1431,6 +1435,9 @@ rndSample returns one rand sample from a sequence
 
 <p>ff2</p>
 <p>format int or float to string showing thousand separator and desired decimal places</p>
+<dl class="docutils"><dt>TODO: better accomodate ints or floats represented with e notation like 1.23456e-05</dt>
+<dd>currently nothing will be done to automatically converted numbers containg e</dd>
+</dl>
 <p>ff2(12345,0)   ==&gt; 12,345     # display an integer with thousands seperator as we know it</p>
 <p>ff2(12345,1)   ==&gt; 12,345.0   # display an integer but like a float with 1 decimal place</p>
 <p>ff2(12345,2)   ==&gt; 12,345.00  # display an integer but like a float with 2 decimal places</p>
@@ -1440,7 +1447,7 @@ rndSample returns one rand sample from a sequence
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
 <span class="Comment"># floats example</span>
-<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">2000</span><span class="Punctuation">:</span>
+<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="DecNumber">1</span> <span class="Operator">..</span> <span class="DecNumber">2000</span><span class="Punctuation">:</span>
    <span class="Comment"># generate some positve and negative rand float</span>
    <span class="Keyword">var</span> <span class="Identifier">z</span> <span class="Operator">=</span> <span class="Identifier">getrandfloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">*</span> <span class="FloatNumber">2345243.132310</span> <span class="Operator">*</span> <span class="Identifier">getRandomSignF</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;20&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;NZ &quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="StringLit">&quot; : &quot;</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
@@ -2036,12 +2043,29 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 
 
 </dd>
+<a id="cxPos.t"></a>
+<dt><pre><span class="Keyword">template</span> <a href="#cxPos.t"><span class="Identifier">cxPos</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+
+<p>cxPos</p>
+<p>mirrors terminal setCursorXPos </p>
+
+
+</dd>
 <a id="curSet.t,int,int"></a>
 <dt><pre><span class="Keyword">template</span> <a href="#curSet.t%2Cint%2Cint"><span class="Identifier">curSet</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span></pre></dt>
 <dd>
 
 <p>curSet</p>
-<p>mirrors terminal setCursorPos</p>
+<p>mirrors terminal setCursorPos at x,y position</p>
+
+
+</dd>
+<a id="cxPosxy.t,,"></a>
+<dt><pre><span class="Keyword">template</span> <a href="#cxPosxy.t%2C%2C"><span class="Identifier">cxPosxy</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+
+cxPosxy<blockquote><p>mirrors terminal setCursorPos at x,y position</p></blockquote>
 
 
 </dd>
@@ -2212,7 +2236,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-06-06 13:25:33 UTC</small>
+        <small>Made with Nim. Generated: 2019-06-10 03:49:52 UTC</small>
       </div>
     </div>
   </div>
