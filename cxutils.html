@@ -992,7 +992,7 @@ Version     : 1.0.0
 
 ProjectStart: 2015-06-20
 
-Latest      : 2019-06-06
+Latest      : 2019-06-13
 
 OS          : Linux
 
@@ -1169,12 +1169,12 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <dd>
 
 <p>getPointInSphere</p>
-<p>returns x,y,x coordinates for a point in sphere with max size  1,1,1</p>
+<p>returns x,y,z coordinates for a point in sphere with max size  1,1,1</p>
 <p><a class="reference external" href="https://karthikkaranth.me/blog/generating-random-points-in-a-sphere/#better-choice-of-spherical-coordinates">https://karthikkaranth.me/blog/generating-random-points-in-a-sphere/#better-choice-of-spherical-coordinates</a></p>
 <pre class="listing"><span class="Comment"># display 100 coordinates of in sphere points</span>
 <span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="Identifier">countup</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">99</span><span class="Punctuation">,</span><span class="DecNumber">1</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
    <span class="Keyword">let</span> <span class="Identifier">b</span> <span class="Operator">=</span> <span class="Identifier">getPointinSphere</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-   <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;7&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;7&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;7&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;  x: &quot;</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;  y: &quot;</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;  z: &quot;</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+   <span class="Identifier">cxwriteln</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;7&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;7&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;7&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">limegreen</span><span class="Punctuation">,</span> <span class="StringLit">&quot;  x: &quot;</span><span class="Punctuation">,</span><span class="Identifier">white</span><span class="Punctuation">,</span> <span class="Identifier">b</span><span class="Punctuation">[</span><span class="DecNumber">0</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">limegreen</span><span class="Punctuation">,</span><span class="StringLit">&quot;  y: &quot;</span><span class="Punctuation">,</span><span class="Identifier">white</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">[</span><span class="DecNumber">1</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">limegreen</span><span class="Punctuation">,</span><span class="StringLit">&quot;  z: &quot;</span><span class="Punctuation">,</span><span class="Identifier">white</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">[</span><span class="DecNumber">2</span><span class="Punctuation">]</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <a id="randpos"></a>
@@ -1182,7 +1182,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <dd>
 
 <p>randpos</p>
-<p>sets  to a rand position in the visible terminal window</p>
+<p>sets to a random position in the visible terminal window</p>
 <p>returns x position</p>
 <pre class="listing"><span class="Keyword">while</span> <span class="DecNumber">1</span> <span class="Operator">==</span> <span class="DecNumber">1</span><span class="Punctuation">:</span>
    <span class="Keyword">for</span> <span class="Identifier">z</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span> <span class="DecNumber">50</span><span class="Punctuation">:</span>
@@ -1763,7 +1763,7 @@ reverse iterator<pre class="listing"><span class="Keyword">let</span> <span clas
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-06-13 05:42:51 UTC</small>
+        <small>Made with Nim. Generated: 2019-06-13 14:28:12 UTC</small>
       </div>
     </div>
   </div>
