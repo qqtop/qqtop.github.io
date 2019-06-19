@@ -1049,8 +1049,6 @@ function main() {
     title="cxPos(x): string"><wbr />cx<wbr />Pos<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#curSet.t%2Cint%2Cint"
     title="curSet(x: int = 0; y: int = 0)"><wbr />cur<wbr />Set<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxPosxy.t%2C%2C"
-    title="cxPosxy(x, y): string"><wbr />cx<wbr />Posxy<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#clearup.t%2Cint"
     title="clearup(x: int = 80)"><wbr />clearup<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#curOn.t"
@@ -1100,7 +1098,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2019-06-10
+Latest      : 2019-06-19
 
 Compiler    : Nim &gt;= 0.19.x dev branch
 
@@ -1326,16 +1324,14 @@ rndSample returns one rand sample from a sequence
 <dt><pre><span class="Keyword">proc</span> <a href="#getRndInt%2Cint%2Cint"><span class="Identifier">getRndInt</span></a><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">int</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">noInit</span><span class="Other">,</span> <span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>getRndInt</p>
-<p>so for 0 or 1 we need rand(0..2)</p>
-
+getRndInt 
 
 </dd>
 <a id="getRndBool"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#getRndBool"><span class="Identifier">getRndBool</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-
+getRndBool 
 
 </dd>
 <a id="getRandomSignI"></a>
@@ -2061,14 +2057,6 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 
 
 </dd>
-<a id="cxPosxy.t,,"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#cxPosxy.t%2C%2C"><span class="Identifier">cxPosxy</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
-<dd>
-
-cxPosxy<blockquote><p>mirrors terminal setCursorPos at x,y position</p></blockquote>
-
-
-</dd>
 <a id="clearup.t,int"></a>
 <dt><pre><span class="Keyword">template</span> <a href="#clearup.t%2Cint"><span class="Identifier">clearup</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">80</span><span class="Other">)</span></pre></dt>
 <dd>
@@ -2236,7 +2224,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-06-13 14:28:15 UTC</small>
+        <small>Made with Nim. Generated: 2019-06-19 09:38:46 UTC</small>
       </div>
     </div>
   </div>

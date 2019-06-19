@@ -908,6 +908,8 @@ function main() {
     title="clearTimerResults(aname: string = &quot;&quot;; quiet: bool = true; xpos: int = 3)"><wbr />clear<wbr />Timer<wbr />Results<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#clearAllTimerResults%2Cbool%2Cint"
     title="clearAllTimerResults(quiet: bool = true; xpos: int = 3)"><wbr />clear<wbr />All<wbr />Timer<wbr />Results<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#cxHRTimer%2CTime%2CTime"
+    title="cxHRTimer(tstart: Time = getTime(); tend: Time = getTime()): auto"><wbr />cx<wbr />HRTimer<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -1315,6 +1317,19 @@ Format yyyy
 
 
 </dd>
+<a id="cxHRTimer,Time,Time"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#cxHRTimer%2CTime%2CTime"><span class="Identifier">cxHRTimer</span></a><span class="Other">(</span><span class="Identifier">tstart</span><span class="Other">:</span> <span class="Identifier">Time</span> <span class="Other">=</span> <span class="Identifier">getTime</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">tend</span><span class="Other">:</span> <span class="Identifier">Time</span> <span class="Other">=</span> <span class="Identifier">getTime</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>cxHRTimer</p>
+<p>Example</p>
+<pre class="listing"><span class="Keyword">let</span> <span class="Identifier">currenttime</span> <span class="Operator">=</span> <span class="Identifier">getTime</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">sleep</span><span class="Punctuation">(</span><span class="DecNumber">2000</span><span class="Punctuation">)</span>
+<span class="Keyword">let</span> <span class="Identifier">later</span> <span class="Operator">=</span> <span class="Identifier">gettime</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">cxHRTimer</span><span class="Punctuation">(</span><span class="Identifier">currentime</span><span class="Punctuation">,</span><span class="Identifier">later</span><span class="Punctuation">)</span></pre>
+
+</dd>
 
 </dl></div>
 <div class="section" id="18">
@@ -1384,7 +1399,7 @@ Format yyyy
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-06-13 14:28:16 UTC</small>
+        <small>Made with Nim. Generated: 2019-06-19 09:38:47 UTC</small>
       </div>
     </div>
   </div>
