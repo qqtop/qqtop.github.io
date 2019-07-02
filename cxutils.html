@@ -1113,10 +1113,12 @@ showCpuCores
 
 getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="Identifier">getDateStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Comment"># get next 10 mondays</span>
-<span class="Keyword">var</span> <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="StringLit">&quot;2015-08-10&quot;</span>
-<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="DecNumber">1</span> <span class="Operator">..</span> <span class="DecNumber">10</span><span class="Punctuation">:</span>
-    <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="Identifier">dw</span><span class="Punctuation">)</span>
-    <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">)</span></pre>
+<span class="Keyword">var</span> <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">getdatestr</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">dw</span>
+<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">:</span>
+   <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">getnextmonday</span><span class="Punctuation">(</span><span class="Identifier">dw</span><span class="Punctuation">)</span>
+   <span class="Identifier">echo</span> <span class="Identifier">dw</span>
+   <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">plusDays</span><span class="Punctuation">(</span><span class="Identifier">dw</span><span class="Punctuation">,</span><span class="DecNumber">1</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <a id="getRandomPointInCircle,float"></a>
@@ -1769,7 +1771,7 @@ reverse iterator<pre class="listing"><span class="Keyword">let</span> <span clas
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-06-30 10:09:54 UTC</small>
+        <small>Made with Nim. Generated: 2019-07-02 04:41:51 UTC</small>
       </div>
     </div>
   </div>
