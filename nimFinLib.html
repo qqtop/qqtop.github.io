@@ -99,6 +99,23 @@ input#searchInput {
   width: 80%;
 }
 
+/*
+ * Some custom formatting for input forms.
+ * This also fixes input form colors on Firefox with a dark system theme on Linux.
+ */
+input {
+  -moz-appearance: none;
+  color: #333;
+  background-color: #f8f8f8;
+  border: 1px solid #aaa;
+  font-family: "Lato", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+  padding: 6px;
+}
+input:focus {
+  border: 1px solid #1fa0eb;
+  box-shadow: 0 0 2px #1fa0eb;
+}
 
 /* Docgen styles */
 /* Links */
@@ -947,6 +964,7 @@ function main() {
   </div>
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
+  
   <p class="module-desc"><pre>
 Program     : nimFinLib
 
@@ -994,7 +1012,7 @@ Tested on   :  Linux
 
 ProjectStart: 2015-06-05
 
-Latest      : 2019-05-31
+Latest      : 2019-07-11
 
 Todo        : anything not yet done
 
@@ -1045,6 +1063,7 @@ Funding     :     Here are the options :
   <span class="Identifier">pfdata</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="nimFinLib.html#Stocks"><span class="Identifier">Stocks</span></a><span class="Other">]</span>         <span class="Comment">## dx  holds all stocks with historical data</span>
   </pre></dt>
 <dd>
+
 <p>Portfolio type</p>
 <p>holds one portfolio with all relevant historic stocks data </p>
 
@@ -1055,6 +1074,7 @@ Funding     :     Here are the options :
   <span class="Identifier">apf</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><a href="nimFinLib.html#Portfolio"><span class="Identifier">Portfolio</span></a><span class="Other">]</span>         <span class="Comment">## pf holds all Portfolio type portfolios for an account</span>
   </pre></dt>
 <dd>
+
 <p>Account type</p>
 <p>holds all portfolios similar to a master account</p>
 <p>portfolios are Portfolio objects </p>
@@ -1079,6 +1099,7 @@ Funding     :     Here are the options :
   <span class="Identifier">rca</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">RunningStat</span><span class="Other">]</span>       <span class="Comment">## RunningStat for adjusted close price</span>
   </pre></dt>
 <dd>
+
 <p>Stocks type</p>
 <p>holds individual stocks history data and RunningStat for ohlcva columns</p>
 <p>even more items may be added like full company name etc in the future</p>
@@ -1096,6 +1117,7 @@ Funding     :     Here are the options :
 <dd>
 
 
+
 </dd>
 
 </dl></div>
@@ -1105,6 +1127,7 @@ Funding     :     Here are the options :
 <a id="NIMFINLIBVERSION"></a>
 <dt><pre><a href="nimFinLib.html#NIMFINLIBVERSION"><span class="Identifier">NIMFINLIBVERSION</span></a> <span class="Other">=</span> <span class="StringLit">&quot;0.3.0.3&quot;</span></pre></dt>
 <dd>
+
 
 
 </dd>
@@ -1118,16 +1141,19 @@ Funding     :     Here are the options :
 <dd>
 
 
+
 </dd>
 <a id="head"></a>
 <dt><pre><a href="nimFinLib.html#head"><span class="Identifier">head</span></a> <span class="Other">=</span> <span class="StringLit">&quot;head&quot;</span></pre></dt>
 <dd>
 
 
+
 </dd>
 <a id="all"></a>
 <dt><pre><a href="nimFinLib.html#all"><span class="Identifier">all</span></a> <span class="Other">=</span> <span class="StringLit">&quot;all&quot;</span></pre></dt>
 <dd>
+
 
 
 </dd>
@@ -1140,6 +1166,7 @@ Funding     :     Here are the options :
 <dt><pre><span class="Keyword">proc</span> <a href="#getData22%2Cstring%2Cint"><span class="Identifier">getData22</span></a><span class="Other">(</span><span class="Identifier">url</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20000</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 getData
 
 </dd>
@@ -1148,6 +1175,7 @@ getData
     <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>avDatafetcher</p>
 <p>fetches data from alphavantage</p>
 <p>default = compact   will fetch abt 100 records if available</p>
@@ -1167,6 +1195,7 @@ getData
     <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>avDataFetcherIntraday</p>
 <p>fetches data from alphavantage</p>
 <p>default = compact   abt 100 records if available</p>
@@ -1185,6 +1214,7 @@ getData
     <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
     <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>avDataFetcherGlobal</p>
 <p>fetches data from alphavantage</p>
 <p>default = compact</p>
@@ -1200,6 +1230,7 @@ getData
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteDirEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>avDataFetcherGlobal</p>
 <p>fetches data from alphavantage</p>
 <p>default = compact</p>
@@ -1214,6 +1245,7 @@ getData
 <dt><pre><span class="Keyword">proc</span> <a href="#showRawData"><span class="Identifier">showRawData</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
                    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>showRawData</p>
 <p>displays raw data currently in avtempdata </p>
 
@@ -1228,6 +1260,7 @@ getData
                         <span class="Identifier">CsvError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
     <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>showOriginalStockData WIP</p>
 <p>using TIME_SERIES_INTRADAY 1 min  DATA   # this will be selectable in the future in respect of time_series and interval</p>
 <p>first data row maybe realtime if markets online , we always fetch fresh data </p>
@@ -1243,6 +1276,7 @@ getData
                         <span class="Identifier">CsvError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
                                         <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>showStocksDf</p>
 <p>a display routine with some more information</p>
 <p>data is freshly downloaded </p>
@@ -1254,6 +1288,7 @@ getData
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
     <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>showLocalStocksDf</p>
 <p>used to display a df which already exists or has been loaded via dfLoad</p>
 <p>with all parameters pre specified</p>
@@ -1268,6 +1303,7 @@ getData
     <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
                                <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>getavSMA</p>
 <p>fetches data from alphavantage</p>
 <p>Note : first row is real time if markets are open</p>
@@ -1285,6 +1321,7 @@ getData
     <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
                                <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>getavWMA</p>
 <p>fetches data from alphavantage</p>
 <p>Note : first row is real time if markets are open</p>
@@ -1302,6 +1339,7 @@ getData
     <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
                                <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>getavEMA</p>
 <p>fetches data from alphavantage</p>
 <p>Note : first row is real time if markets are open</p>
@@ -1319,6 +1357,7 @@ getData
     <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
                                <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 getavRSI fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low
 
 </dd>
@@ -1330,6 +1369,7 @@ getavRSI fetches data from alphavantage Note : first row is real time if markets
     <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
     <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 getavWILLR fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low getavWILLR(&quot;MSFT&quot;,&quot;15min&quot;,&quot;10&quot;,&quot;close&quot;,apikey = apikey, 3, true, false) 
 
 </dd>
@@ -1341,6 +1381,7 @@ getavWILLR fetches data from alphavantage Note : first row is real time if marke
     <span class="Identifier">JsonParsingError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">KeyError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
     <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 getavBBANDS fetches data from alphavantage Note : first row is real time if markets are open interval   : 1min, 5min, 15min, 30min, 60min, daily, weekly, monthly timeperiod : time_period=60, time_period=200  etc. seriestype : close, open, high, low default params implemented here see  ---&gt;  <a class="reference external" href="https://www.alphavantage.co/documentation">https://www.alphavantage.co/documentation</a>/
 
 </dd>
@@ -1348,6 +1389,7 @@ getavBBANDS fetches data from alphavantage Note : first row is real time if mark
 <dt><pre><span class="Keyword">proc</span> <a href="#showKitcoMetal%2Cint"><span class="Identifier">showKitcoMetal</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
                                 <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>showKitcoMetal</p>
 <p>get and display kitco metal prices</p>
 
@@ -1358,10 +1400,12 @@ getavBBANDS fetches data from alphavantage Note : first row is real time if mark
 <dd>
 
 
+
 </dd>
 <a id="dailyReturns,seq[T][string]"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#dailyReturns%2Cseq%5BT%5D%5Bstring%5D"><span class="Identifier">dailyReturns</span></a><span class="Other">(</span><span class="Identifier">self</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">nimss</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>dailyReturns</p>
 <p>daily returns calculation gives same results as dailyReturns in R / quantmod </p>
 
@@ -1370,6 +1414,7 @@ getavBBANDS fetches data from alphavantage Note : first row is real time if mark
 <a id="presentValue,T,T,int,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#presentValue%2CT%2CT%2Cint%2Cint"><span class="Identifier">presentValue</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span></pre></dt>
 <dd>
+
 <p>presentValue</p>
 <p>Present Value Calculation for a Lump Sum Investment</p>
 <dl class="docutils"><dt>Future Value (FV)</dt>
@@ -1401,6 +1446,7 @@ getavBBANDS fetches data from alphavantage Note : first row is real time if mark
 <a id="presentValue,float,float,float,float"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#presentValue%2Cfloat%2Cfloat%2Cfloat%2Cfloat"><span class="Identifier">presentValue</span></a><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>presentValue</p>
 <p>Present Value Calculation for a Lump Sum Investment</p>
 <pre class="listing"><span class="Identifier">PV</span> <span class="Operator">=</span> <span class="Identifier">presentValue</span><span class="Punctuation">(</span><span class="Identifier">FV</span><span class="Punctuation">,</span><span class="FloatNumber">0.0925</span><span class="Punctuation">,</span><span class="FloatNumber">2.0</span><span class="Punctuation">,</span><span class="FloatNumber">12.0</span><span class="Punctuation">)</span>
@@ -1410,6 +1456,7 @@ getavBBANDS fetches data from alphavantage Note : first row is real time if mark
 <a id="presentValueFV,float,float,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#presentValueFV%2Cfloat%2Cfloat%2Cint"><span class="Identifier">presentValueFV</span></a><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <p>presentValueFV</p>
 <p>the present value of a future sum at a periodic interest rate i where n is the number of periods in the future.</p>
 <pre class="listing"><span class="Identifier">PV</span> <span class="Operator">=</span> <span class="Identifier">presentValueFV</span><span class="Punctuation">(</span><span class="Identifier">FV</span><span class="Punctuation">,</span><span class="FloatNumber">0.0625</span><span class="Punctuation">,</span><span class="DecNumber">10</span><span class="Punctuation">)</span>
@@ -1419,6 +1466,7 @@ getavBBANDS fetches data from alphavantage Note : first row is real time if mark
 <a id="presentValueFV,float,float,float"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#presentValueFV%2Cfloat%2Cfloat%2Cfloat"><span class="Identifier">presentValueFV</span></a><span class="Other">(</span><span class="Identifier">FV</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">i</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
+
 <pre class="listing"><span class="Identifier">PV</span> <span class="Operator">=</span> <span class="Identifier">presentValueFV</span><span class="Punctuation">(</span><span class="Identifier">FV</span><span class="Punctuation">,</span><span class="FloatNumber">0.0625</span><span class="Punctuation">,</span><span class="FloatNumber">20.5</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">PV</span></pre>
 
@@ -1438,7 +1486,7 @@ getavBBANDS fetches data from alphavantage Note : first row is real time if mark
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-05-31 11:19:29 UTC</small>
+        <small>Made with Nim. Generated: 2019-07-11 13:21:46 UTC</small>
       </div>
     </div>
   </div>
