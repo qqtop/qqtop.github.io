@@ -915,7 +915,7 @@ function main() {
   <li><a class="reference" href="#showRaw%2Cnimdf%2CopenArray%5BT%5D"
     title="showRaw[T](df: nimdf; rrows: openArray[T])"><wbr />show<wbr />Raw<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showFirstLast%2Cnimdf%2Cint"
-    title="showFirstLast(df: nimdf; nrows: int = 5)"><wbr />show<wbr />First<wbr />Last<span class="attachedType"></span></a></li>
+    title="showFirstLast(df: nimdf; nrows: int = df.rowcount)"><wbr />show<wbr />First<wbr />Last<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showAnyRowRange%2Cnimdf%2Cseq%5BT%5D%5Bint%5D"
     title="showAnyRowRange(df: nimdf; rrows: seq[int])"><wbr />show<wbr />Any<wbr />Row<wbr />Range<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showHeaderStatus%2Cnimdf%2Cint"
@@ -932,10 +932,10 @@ function main() {
        headertext: nimss = @[]; leftalignflag: bool = false; cellcolors: nimss = @[];
        cellrows: nimis = @[]; cellcols: nimis = @[]; cellcalc: nimss = @[];
        frtexttop: nimss = @[]; frtextbot: nimss = @[]; xpos: int = 1)"><wbr />show<wbr />Df<span class="attachedType">nimis</span></a></li>
-  <li><a class="reference" href="#showDataframeInfo%2Cnimdf"
-    title="showDataframeInfo(df: nimdf)"><wbr />show<wbr />Dataframe<wbr />Info<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showDfInfo%2Cnimdf"
-    title="showDfInfo(df: nimdf)"><wbr />show<wbr />Df<wbr />Info<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#showDataframeInfo%2Cnimdf%2Cint"
+    title="showDataframeInfo(df: nimdf; nrows: int = df.rowcount)"><wbr />show<wbr />Dataframe<wbr />Info<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#showDfInfo%2Cnimdf%2Cint"
+    title="showDfInfo(df: nimdf; nrows: int = df.rowcount)"><wbr />show<wbr />Df<wbr />Info<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getColData%2Cnimdf%2Cint"
     title="getColData(df: nimdf; col: int): nimss"><wbr />get<wbr />Col<wbr />Data<span class="attachedType">nimss</span></a></li>
   <li><a class="reference" href="#getRowDataRange%2Cnimdf%2Cseq%5Bint%5D%2Cseq%5Bint%5D%2Cseq%5Bstring%5D"
@@ -1011,7 +1011,7 @@ function main() {
 <p>License     : MIT opensource</p>
 <p>Version     : 0.0.5</p>
 <p>ProjectStart: 2016-09-16</p>
-<p>Latest      : 2019-07-11</p>
+<p>Latest      : 2019-07-12</p>
 <p>Compiler    : Nim &gt;= 0.19.x  devel branch</p>
 <p>OS          : Linux</p>
 <p>Description :</p>
@@ -1278,7 +1278,7 @@ function main() {
 
 </dd>
 <a id="showFirstLast,nimdf,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showFirstLast%2Cnimdf%2Cint"><span class="Identifier">showFirstLast</span></a><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a><span class="Other">;</span> <span class="Identifier">nrows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+<dt><pre><span class="Keyword">proc</span> <a href="#showFirstLast%2Cnimdf%2Cint"><span class="Identifier">showFirstLast</span></a><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a><span class="Other">;</span> <span class="Identifier">nrows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">df</span><span class="Other">.</span><span class="Identifier">rowcount</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -1353,10 +1353,10 @@ colFitMax
 
 
 </dd>
-<a id="showDataframeInfo,nimdf"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showDataframeInfo%2Cnimdf"><span class="Identifier">showDataframeInfo</span></a><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
-    <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
-                  <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="showDataframeInfo,nimdf,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#showDataframeInfo%2Cnimdf%2Cint"><span class="Identifier">showDataframeInfo</span></a><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a><span class="Other">;</span> <span class="Identifier">nrows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">df</span><span class="Other">.</span><span class="Identifier">rowcount</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>showDataframeInfo</p>
@@ -1364,9 +1364,10 @@ colFitMax
 
 
 </dd>
-<a id="showDfInfo,nimdf"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showDfInfo%2Cnimdf"><span class="Identifier">showDfInfo</span></a><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="showDfInfo,nimdf,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#showDfInfo%2Cnimdf%2Cint"><span class="Identifier">showDfInfo</span></a><span class="Other">(</span><span class="Identifier">df</span><span class="Other">:</span> <a href="nimdataframe.html#nimdf"><span class="Identifier">nimdf</span></a><span class="Other">;</span> <span class="Identifier">nrows</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">df</span><span class="Other">.</span><span class="Identifier">rowcount</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -1650,7 +1651,7 @@ colFitMax
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-07-11 13:13:00 UTC</small>
+        <small>Made with Nim. Generated: 2019-07-12 05:20:34 UTC</small>
       </div>
     </div>
   </div>
