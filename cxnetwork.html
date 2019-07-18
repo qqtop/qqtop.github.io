@@ -918,8 +918,8 @@ function main() {
 
 </dd>
 <a id="showIpInfo,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showIpInfo%2Cstring"><span class="Identifier">showIpInfo</span></a><span class="Other">(</span><span class="Identifier">ip</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                           <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#showIpInfo%2Cstring"><span class="Identifier">showIpInfo</span></a><span class="Other">(</span><span class="Identifier">ip</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>showIpInfo</p>
@@ -968,7 +968,8 @@ function main() {
 </dd>
 <a id="cxPortCheck,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#cxPortCheck%2Cstring"><span class="Identifier">cxPortCheck</span></a><span class="Other">(</span><span class="Identifier">cmd</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;lsof -i&quot;</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
-    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span>
+                            <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>cxPortCheck</p>
@@ -1013,8 +1014,8 @@ function main() {
 </dd>
 <a id="showDns,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#showDns%2Cstring"><span class="Identifier">showDns</span></a><span class="Other">(</span><span class="Identifier">hostdns</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;google.com&quot;</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>showDns</p>
@@ -1039,7 +1040,7 @@ function main() {
 </dd>
 <a id="showHosts,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#showHosts%2Cstring"><span class="Identifier">showHosts</span></a><span class="Other">(</span><span class="Identifier">dm</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>showHosts</p>
@@ -1084,7 +1085,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-07-13 07:20:49 UTC</small>
+        <small>Made with Nim. Generated: 2019-07-18 00:33:02 UTC</small>
       </div>
     </div>
   </div>
