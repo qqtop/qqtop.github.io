@@ -984,11 +984,11 @@ function main() {
               <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
 <dd>
 
-<pre>print2
+<pre>prev. print2
 
-the old print routine with backgroundcolor set to black only  ,
+the old print routine with backgroundcolor set to fgDefault only  ,
 
-required by printfont ,fprintln2 , printBiCol2 and printLnBiCol2
+required by printfont ,fprintln , printBiCol2 and printLnBiCol2
 
 basically similar to terminal.nim styledWriteLine with more functionality
 
@@ -1036,7 +1036,7 @@ or use 2 or more print statements for the desired effect</pre>
                 <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
 <dd>
 
-<pre>fprintln2
+<pre>fprintln
 
 
 foregroundcolor
@@ -1046,15 +1046,14 @@ fitLine
 centered
 styled</pre>
 <p>Examples</p>
-<pre class="listing"><span class="Identifier">fprintln2</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">clrainbow</span><span class="Punctuation">)</span>
-<span class="Identifier">fprintln2</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">)</span>
+<pre class="listing"><span class="Identifier">fprintln</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">)</span>
 <span class="Comment"># or use it as a replacement of echo</span>
-<span class="Identifier">fprintln2</span><span class="Punctuation">(</span><span class="Identifier">red</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;What's up ? &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">green</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;Grub's up ! &quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">fprintln2</span><span class="Punctuation">(</span><span class="StringLit">&quot;No need to reset the original color&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">fprintln2</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nim does it again&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span> <span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleDim</span><span class="Punctuation">,</span><span class="Identifier">styleUnderscore</span><span class="Punctuation">}</span><span class="Punctuation">,</span><span class="Identifier">substr</span> <span class="Operator">=</span> <span class="StringLit">&quot;i&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">fprintln</span><span class="Punctuation">(</span><span class="Identifier">red</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;What's up ? &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">green</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;Grub's up ! &quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">fprintln</span><span class="Punctuation">(</span><span class="StringLit">&quot;No need to reset the original color&quot;</span><span class="Punctuation">)</span>
+<span class="Identifier">fprintln</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nim does it again&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span> <span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleDim</span><span class="Punctuation">,</span><span class="Identifier">styleUnderscore</span><span class="Punctuation">}</span><span class="Punctuation">,</span><span class="Identifier">substr</span> <span class="Operator">=</span> <span class="StringLit">&quot;i&quot;</span><span class="Punctuation">)</span>
 <span class="Comment"># To achieve colored text with styleReverse try:</span>
 <span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">30</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
-    <span class="Identifier">fprintln2</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
+    <span class="Identifier">fprintln</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
     <span class="Identifier">print</span> <span class="Identifier">cleareol</span>
     <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.1</span><span class="Punctuation">)</span></pre>
 
@@ -1548,7 +1547,7 @@ printSlimNumber
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-07-18 00:37:36 UTC</small>
+        <small>Made with Nim. Generated: 2019-07-18 01:26:07 UTC</small>
       </div>
     </div>
   </div>
