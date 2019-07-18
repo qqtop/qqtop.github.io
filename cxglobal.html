@@ -929,6 +929,8 @@ function main() {
     title="ff(zz: float; n: int = 5): string"><wbr />ff<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#ff2%2CSomeNumber%2Cint"
     title="ff2(zz: SomeNumber; n: int = 3): string"><wbr />ff2<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#ff2Eu%2CSomeNumber%2Cint"
+    title="ff2Eu(zzz: SomeNumber; n: int = 3): string"><wbr />ff2Eu<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getRandomFloat"
     title="getRandomFloat(): float"><wbr />get<wbr />Random<wbr />Float<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getRndFloat"
@@ -998,6 +1000,8 @@ function main() {
     title="cxlpad(s: string; padlen: int; paddy: string = spaces(1)): string"><wbr />cxlpad<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxlpdx%2Cint%2Cstring%2Cstring"
     title="cxlpdx(padLen: int; s: string; paddy: string = spaces(1)): string"><wbr />cxlpdx<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#cxlpadN%2Cstring%2Cint%2Cstring"
+    title="cxlpadN(s: string; padlen: int; paddy: string = spaces(1)): string"><wbr />cxlpad<wbr />N<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -1444,6 +1448,15 @@ getRndBool
    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;20&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;NZ &quot;</span><span class="Punctuation">,</span><span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="StringLit">&quot; : &quot;</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
+<a id="ff2Eu,SomeNumber,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#ff2Eu%2CSomeNumber%2Cint"><span class="Identifier">ff2Eu</span></a><span class="Other">(</span><span class="Identifier">zzz</span><span class="Other">:</span> <span class="Identifier">SomeNumber</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+<dd>
+
+<p>ff2Eu</p>
+<p>convert a number into EU locale formatted string 1234567.123   --&gt;  1.234.567,123 set after comma positions with n , default is 3</p>
+<pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">ff2Eu</span><span class="Punctuation">(</span><span class="FloatNumber">1234567.123</span><span class="Punctuation">)</span></pre>
+
+</dd>
 <a id="getRandomFloat"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#getRandomFloat"><span class="Identifier">getRandomFloat</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
@@ -1816,6 +1829,17 @@ doFlag<pre class="listing"><span class="Keyword">import</span> <span class="Iden
 
 <p>cxlpdx</p>
 <p>same as cxpad but with padding char count in front</p>
+
+
+</dd>
+<a id="cxlpadN,string,int,string"></a>
+<dt><pre><span class="Keyword">func</span> <a href="#cxlpadN%2Cstring%2Cint%2Cstring"><span class="Identifier">cxlpadN</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">padlen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>cxlpadN</p>
+<p>for numbers</p>
+<p>pads a string on the left side with spaces to specified width </p>
 
 
 </dd>
@@ -2220,7 +2244,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-07-18 01:26:01 UTC</small>
+        <small>Made with Nim. Generated: 2019-07-18 13:46:01 UTC</small>
       </div>
     </div>
   </div>
