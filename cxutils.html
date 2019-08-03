@@ -848,6 +848,10 @@ function main() {
     title="pswwaux()"><wbr />pswwaux<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxCpuInfo"
     title="cxCpuInfo(): string"><wbr />cx<wbr />Cpu<wbr />Info<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#cpuInfo"
+    title="cpuInfo(): seq[string]"><wbr />cpu<wbr />Info<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#showCpuInfo"
+    title="showCpuInfo()"><wbr />show<wbr />Cpu<wbr />Info<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxVideoInfo"
     title="cxVideoInfo(): string"><wbr />cx<wbr />Video<wbr />Info<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showCpuCores"
@@ -1009,7 +1013,7 @@ Version     : 1.0.0
 
 ProjectStart: 2015-06-20
 
-Latest      : 2019-07-18
+Latest      : 2019-08-03
 
 OS          : Linux
 
@@ -1066,6 +1070,22 @@ Description : cxutils.nim is a collection of utility procs and templates</pre>
 
 <p>cxCpuInfo</p>
 <p>executes a system command to get cpu information </p>
+
+
+</dd>
+<a id="cpuInfo"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#cpuInfo"><span class="Identifier">cpuInfo</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="showCpuInfo"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#showCpuInfo"><span class="Identifier">showCpuInfo</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
 
 
 </dd>
@@ -1662,11 +1682,12 @@ generates a random MacAddress<pre class="listing"><span class="Identifier">loopy
 
 </dd>
 <a id="quickLargeInt"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#quickLargeInt"><span class="Identifier">quickLargeInt</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#quickLargeInt"><span class="Identifier">quickLargeInt</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>quickLargeInt</p>
-<p>returns a random large int string </p>
+<p>returns a random large int string</p>
 
 
 </dd>
@@ -1787,7 +1808,7 @@ reverse iterator<pre class="listing"><span class="Keyword">let</span> <span clas
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-07-18 23:13:06 UTC</small>
+        <small>Made with Nim. Generated: 2019-08-03 04:40:28 UTC</small>
       </div>
     </div>
   </div>
