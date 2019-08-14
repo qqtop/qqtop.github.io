@@ -1081,7 +1081,7 @@ Colornames supported for background color: all colors ending with bg
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">yellowbg</span><span class="Punctuation">)</span>
-<span class="Comment"># or use it as a replacement of echo</span>
+<span class="Comment"># or use it almost as a replacement of echo</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">red</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;What's up ? &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">green</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;Grub's up ! &quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;No need to reset the original color&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nim does it again&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span> <span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleDim</span><span class="Punctuation">,</span><span class="Identifier">styleUnderscore</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
@@ -1535,7 +1535,8 @@ forward declaration
 <dt><pre><span class="Keyword">template</span> <a href="#cxprintxy.t%2Cint%2Cint%2Cvarargs%5Buntyped%5D"><span class="Identifier">cxprintxy</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">ypos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">args</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">untyped</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 
-<p>cxprint xpos : x position ypos : y position starting from 0,0 Calls styledWrite with args given</p>
+<p>cxprint</p>
+<p>print to a certain x , y position in the terminal xpos : x position ypos : y position starting from 0,0 Calls styledWrite with args given</p>
 <p>enough space must be available in terminal window</p>
 <p>Backgroundcolors defined in cxconsts.nim colorNames can be used , that is any color ending with xxxxxxbg  like pastelpinkbg </p>
 
@@ -1546,6 +1547,7 @@ forward declaration
 <dd>
 
 <p>cxprintLn</p>
+<p>print to a certain x position</p>
 <p>xpos : position Calls styledEcho with args given</p>
 <p>Backgroundcolors defined in cxconsts.nim colorNames can be used , that is any color ending with xxxxxxbg  like pastelpinkbg</p>
 <p>remember that first item must be xpos</p>
@@ -1597,7 +1599,7 @@ forward declaration
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-08-03 05:18:27 UTC</small>
+        <small>Made with Nim. Generated: 2019-08-14 12:32:16 UTC</small>
       </div>
     </div>
   </div>
