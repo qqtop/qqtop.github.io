@@ -925,6 +925,10 @@ function main() {
     title="tmpFilename(filename: string): string"><wbr />tmp<wbr />Filename<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#rmTmpFilenames"
     title="rmTmpFilenames()"><wbr />rm<wbr />Tmp<wbr />Filenames<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#cxBell"
+    title="cxBell()"><wbr />cx<wbr />Bell<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#cxSound%2Cstring"
+    title="cxSound(soundfile: string = &quot;/usr/share/sounds/purple/receive.wav&quot;)"><wbr />cx<wbr />Sound<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#doInfo"
     title="doInfo()"><wbr />do<wbr />Info<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#infoLine"
@@ -1026,7 +1030,7 @@ Version     : 1.0.0
 
 ProjectStart: 2015-06-20
 
-Latest      : 2019-08-14
+Latest      : 2019-08-20
 
 Compiler    : Nim &gt;= 0.19.x devel branch
 
@@ -1503,6 +1507,25 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 
 
 </dd>
+<a id="cxBell"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#cxBell"><span class="Identifier">cxBell</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>cxBell</p>
+<p>ring system bell </p>
+
+
+</dd>
+<a id="cxSound,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#cxSound%2Cstring"><span class="Identifier">cxSound</span></a><span class="Other">(</span><span class="Identifier">soundfile</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;/usr/share/sounds/purple/receive.wav&quot;</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadDirEffect</span><span class="Other">,</span> <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>cxSound</p>
+<p>play a sound file with aplay , default is receive.wav , if file and aplay is avaialble </p>
+
+
+</dd>
 <a id="doInfo"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#doInfo"><span class="Identifier">doInfo</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span>
     <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">ReadDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
@@ -1837,7 +1860,7 @@ zipWith<pre class="listing"><span class="Keyword">var</span> <span class="Identi
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-08-14 12:32:00 UTC</small>
+        <small>Made with Nim. Generated: 2019-08-21 07:51:54 UTC</small>
       </div>
     </div>
   </div>

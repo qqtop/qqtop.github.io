@@ -946,10 +946,10 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#cxprint.t%2Cint%2Cvarargs%5Buntyped%5D"
     title="cxprint(xpos: int; args: varargs[untyped])"><wbr />cxprint<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxprintxy.t%2Cint%2Cint%2Cvarargs%5Buntyped%5D"
-    title="cxprintxy(xpos: int; ypos: int; args: varargs[untyped])"><wbr />cxprintxy<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxprintLn.t%2Cint%2Cvarargs%5Buntyped%5D"
     title="cxprintLn(xpos: int; args: varargs[untyped])"><wbr />cxprint<wbr />Ln<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#cxprintxy.t%2Cint%2Cint%2Cvarargs%5Buntyped%5D"
+    title="cxprintxy(xpos: int; ypos: int; args: varargs[untyped])"><wbr />cxprintxy<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxwrite.t%2Cvarargs%5Buntyped%5D"
     title="cxwrite(args: varargs[untyped])"><wbr />cxwrite<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxwriteLn.t%2Cvarargs%5Buntyped%5D"
@@ -975,7 +975,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2019-07-27
+Latest      : 2019-08-15
 
 Compiler    : Nim &gt;= 0.19.x dev branch
 
@@ -1526,18 +1526,9 @@ forward declaration
 <dt><pre><span class="Keyword">template</span> <a href="#cxprint.t%2Cint%2Cvarargs%5Buntyped%5D"><span class="Identifier">cxprint</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">args</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">untyped</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
 <dd>
 
-<p>cxprint xpos : position Calls styledWrite with args given</p>
-<p>Backgroundcolors defined in cxconsts.nim colorNames can be used , that is any color ending with xxxxxxbg  like pastelpinkbg </p>
-
-
-</dd>
-<a id="cxprintxy.t,int,int,varargs[untyped]"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#cxprintxy.t%2Cint%2Cint%2Cvarargs%5Buntyped%5D"><span class="Identifier">cxprintxy</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">ypos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">args</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">untyped</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
-<dd>
-
 <p>cxprint</p>
-<p>print to a certain x , y position in the terminal xpos : x position ypos : y position starting from 0,0 Calls styledWrite with args given</p>
-<p>enough space must be available in terminal window</p>
+<p>xpos : position Calls styledWrite with args given</p>
+<p>remember that first param must be xpos</p>
 <p>Backgroundcolors defined in cxconsts.nim colorNames can be used , that is any color ending with xxxxxxbg  like pastelpinkbg </p>
 
 
@@ -1556,6 +1547,17 @@ forward declaration
           <span class="Identifier">yaleblue</span><span class="Punctuation">,</span><span class="Identifier">truetomatobg</span><span class="Punctuation">,</span><span class="StringLit">&quot; No ! &quot;</span><span class="Punctuation">,</span>
           <span class="Identifier">trueblue</span><span class="Punctuation">,</span><span class="Identifier">bgwhite</span><span class="Punctuation">,</span><span class="Identifier">styleReverse</span><span class="Punctuation">,</span><span class="StringLit">&quot; Yes ! &quot;</span><span class="Punctuation">,</span>
           <span class="Identifier">truetomato</span><span class="Punctuation">,</span><span class="Identifier">darkslatebluebg</span><span class="Punctuation">,</span><span class="Identifier">styleBlink</span><span class="Punctuation">,</span><span class="Identifier">styleBright</span><span class="Punctuation">,</span><span class="StringLit">&quot; Oooh, it blinks too  ! &quot;</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<a id="cxprintxy.t,int,int,varargs[untyped]"></a>
+<dt><pre><span class="Keyword">template</span> <a href="#cxprintxy.t%2Cint%2Cint%2Cvarargs%5Buntyped%5D"><span class="Identifier">cxprintxy</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">ypos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">args</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">untyped</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<dd>
+
+<p>cxprint</p>
+<p>print to a certain x , y position in the terminal xpos : x position ypos : y position starting from 0,0 Calls styledWrite with args given</p>
+<p>enough space must be available in terminal window</p>
+<p>Backgroundcolors defined in cxconsts.nim colorNames can be used , that is any color ending with xxxxxxbg  like pastelpinkbg </p>
+
 
 </dd>
 <a id="cxwrite.t,varargs[untyped]"></a>
@@ -1599,7 +1601,7 @@ forward declaration
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-08-14 12:32:16 UTC</small>
+        <small>Made with Nim. Generated: 2019-08-21 07:52:10 UTC</small>
       </div>
     </div>
   </div>
