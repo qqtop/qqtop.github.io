@@ -862,6 +862,8 @@ function main() {
     title="getUserName(): string"><wbr />get<wbr />User<wbr />Name<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getPassword%2Cint64"
     title="getPassword(ahash: int64 = 0&apos;i64): string"><wbr />get<wbr />Password<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#cxInput%2Cstring%2Cstring%2Cint"
+    title="cxInput(prompt: string; promptColor: string = greenyellow; xpos: int = 0): string"><wbr />cx<wbr />Input<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxDayOfWeek%2Cstring"
     title="cxDayOfWeek(datestr: string): string"><wbr />cx<wbr />Day<wbr />Of<wbr />Week<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getNextMonday%2Cstring"
@@ -1013,7 +1015,7 @@ Version     : 1.0.0
 
 ProjectStart: 2015-06-20
 
-Latest      : 2019-08-03
+Latest      : 2019-09-18
 
 OS          : Linux
 
@@ -1130,6 +1132,17 @@ showCpuCores
 
 <p>getPassword</p>
 <p>convenience function, prompts user for a password to be checked against a passwordhash which could come from a security database or other source </p>
+
+
+</dd>
+<a id="cxInput,string,string,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#cxInput%2Cstring%2Cstring%2Cint"><span class="Identifier">cxInput</span></a><span class="Other">(</span><span class="Identifier">prompt</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">promptColor</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">greenyellow</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">EOFError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>cxInput</p>
+<p>simple input function with desired color and position</p>
+<p>result is a string for further processing as needed. </p>
 
 
 </dd>
@@ -1807,7 +1820,7 @@ reverse iterator<pre class="listing"><span class="Keyword">let</span> <span clas
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-09-02 09:55:07 UTC</small>
+        <small>Made with Nim. Generated: 2019-09-19 02:34:25 UTC</small>
       </div>
     </div>
   </div>
