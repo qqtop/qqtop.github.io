@@ -844,6 +844,8 @@ function main() {
     title="localRouterIp(): string"><wbr />local<wbr />Router<wbr />Ip<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showLocalIpInfo"
     title="showLocalIpInfo()"><wbr />show<wbr />Local<wbr />Ip<wbr />Info<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#showWanIpInfo"
+    title="showWanIpInfo()"><wbr />show<wbr />Wan<wbr />Ip<wbr />Info<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#pingy%2Cstring%2Cint%2Cstring"
     title="pingy(dest: string; pingcc: int = 3; col: string = termwhite)"><wbr />pingy<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxPortCheck%2Cstring"
@@ -951,6 +953,14 @@ function main() {
 
 
 </dd>
+<a id="showWanIpInfo"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#showWanIpInfo"><span class="Identifier">showWanIpInfo</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+                     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+
+
+</dd>
 <a id="pingy,string,int,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#pingy%2Cstring%2Cint%2Cstring"><span class="Identifier">pingy</span></a><span class="Other">(</span><span class="Identifier">dest</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">pingcc</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span>
@@ -994,8 +1004,8 @@ function main() {
 <dt><pre><span class="Keyword">proc</span> <a href="#cxDns%2Cstring"><span class="Identifier">cxDns</span></a><span class="Other">(</span><span class="Identifier">dns</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">tuple</span></pre></dt>
 <dd>
 
-<p>cxHost</p>
-<p>see showHost() </p>
+<p>cxDns</p>
+<p>also see showHosts() </p>
 
 
 </dd>
@@ -1073,7 +1083,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-10-01 06:20:01 UTC</small>
+        <small>Made with Nim. Generated: 2019-10-02 10:05:39 UTC</small>
       </div>
     </div>
   </div>
