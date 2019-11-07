@@ -882,6 +882,8 @@ function main() {
     title="getRandomSignF(): float"><wbr />get<wbr />Random<wbr />Sign<wbr />F<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#reverseMe%2CopenArray%5BT%5D"
     title="reverseMe[T](xs: openArray[T]): seq[T]"><wbr />reverse<wbr />Me<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#reverse%2Cseq%5BT%5D%5BT%5D"
+    title="reverse[T](s: var seq[T])"><wbr />reverse<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#reverseText%2Cstring"
     title="reverseText(text: string): string"><wbr />reverse<wbr />Text<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#reverseString%2Cstring"
@@ -1226,9 +1228,9 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2019-10-15
+Latest      : 2019-11-07
 
-Compiler    : Nim &gt;= 1.0.0 or 1.0.99
+Compiler    : Nim &gt;= 1.0.0 or 1.1.1
 
 OS          : Linux
 
@@ -1431,6 +1433,15 @@ getRndBool
 <pre class="listing"><span class="Keyword">var</span> <span class="Identifier">z</span> <span class="Operator">=</span> <span class="Operator">@</span><span class="Punctuation">[</span><span class="StringLit">&quot;nice&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;bad&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;abc&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;zztop&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;reverser&quot;</span><span class="Punctuation">]</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">)</span>
 <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">z</span><span class="Operator">.</span><span class="Identifier">reverseMe</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<a id="reverse,seq[T][T]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#reverse%2Cseq%5BT%5D%5BT%5D"><span class="Identifier">reverse</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
+<dd>
+
+<p>reverse</p>
+<p>in place reverse sequence </p>
+
 
 </dd>
 <a id="reverseText,string"></a>
@@ -3077,7 +3088,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-10-15 04:48:03 UTC</small>
+        <small>Made with Nim. Generated: 2019-11-07 11:42:00 UTC</small>
       </div>
     </div>
   </div>
