@@ -1046,9 +1046,9 @@ function main() {
     title="spiralBoxy(w: int = 20; h: int = 20; xpos: int = 1)"><wbr />spiral<wbr />Boxy<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#spiralBoxy2%2Cint%2Cint%2Cint"
     title="spiralBoxy2(w: int = 20; h: int = 20; xpos: int = 1)"><wbr />spiral<wbr />Boxy2<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showSeq%2Cseq%5BT%5D%5BT%5D%2Cstring%2Cint%2Cint%2Cbool"
+  <li><a class="reference" href="#showSeq%2Cseq%5BT%5D%5BT%5D%2Cstring%2Cint%2Cint%2Cbool%2Cint"
     title="showSeq[T](z: seq[T]; fgr: string = truetomato; cols = 6; maxitemwidth: int = 5;
-           displayflag: bool = true): string"><wbr />show<wbr />Seq<span class="attachedType"></span></a></li>
+           displayflag: bool = true; indexstart = 0): string"><wbr />show<wbr />Seq<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#seqHighLite%2Cseq%5BT%5D%5BT%5D%2Cseq%5BT%5D%5BT%5D%2Cstring"
     title="seqHighLite[T](b: seq[T]; b1: seq[T]; col: string = gold)"><wbr />seq<wbr />High<wbr />Lite<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#shift%2Cseq%5BT%5D%5BT%5D%2CNatural"
@@ -1228,9 +1228,9 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2019-11-07
+Latest      : 2019-12-06
 
-Compiler    : Nim &gt;= 1.0.0 or 1.1.1
+Compiler    : Nim &gt;= 1.0.4 or 1.1.1
 
 OS          : Linux
 
@@ -1333,8 +1333,6 @@ remapToString
 <dt><pre><span class="Keyword">proc</span> <a href="#waitOn%2Cint"><span class="Identifier">waitOn</span></a><span class="Other">(</span><span class="Identifier">alen</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>waiton</p>
-<p>stops program to wait for one or more keypresses. default = 1 </p>
 
 
 </dd>
@@ -2379,18 +2377,15 @@ spiralBoxy
 spiralBoxy2   uses boxy2
 
 </dd>
-<a id="showSeq,seq[T][T],string,int,int,bool"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showSeq%2Cseq%5BT%5D%5BT%5D%2Cstring%2Cint%2Cint%2Cbool"><span class="Identifier">showSeq</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span>
-               <span class="Identifier">displayflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="showSeq,seq[T][T],string,int,int,bool,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#showSeq%2Cseq%5BT%5D%5BT%5D%2Cstring%2Cint%2Cint%2Cbool%2Cint"><span class="Identifier">showSeq</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span>
+               <span class="Identifier">displayflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">indexstart</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>showSeq</p>
-<p>simple table routine with default 6 cols for displaying various unicode sets fgr allows color display and fgr = &quot;rand&quot; displays in rand color and maxwidth for displayable items this can also be used to show items of a sequence displayflag == true means to show the output displayflag == false means do not show output , but return it as a string</p>
-<pre class="listing"><span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqCJK</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;rand&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqKatakana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">)</span>
-<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqCJK</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;rand&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqGeoshapes</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
-<span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">1000</span><span class="Punctuation">,</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="DecNumber">100000</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+<p>simple table routine with default 6 cols for displaying various unicode sets fgr allows color display and fgr = &quot;rand&quot; displays in rand color and maxwidth for displayable items this can also be used to show items of a sequence displayflag == true means to show the output displayflag == false means do not show output , but return it as a string indexstart == 0 displays item index from 0 or from whatever indexstart is set to .. code-block:: nim</p>
+<blockquote><p>showSeq(createSeqCJK(),&quot;rand&quot;,indexstart=1) showSeq(createSeqKatakana(),yellowgreen) showSeq(createSeqCJK(),&quot;rand&quot;) showSeq(createSeqGeoshapes(),randcol()) showSeq(createSeqint(1000,10000,100000))</p></blockquote>
+
 <p><strong class="examples_text">Examples:</strong></p>
 <pre class="listing"><span class="Identifier">showSeq</span><span class="Other">(</span><span class="Identifier">createSeqCJK</span><span class="Other">(</span><span class="Other">)</span><span class="Other">,</span> <span class="StringLit">&quot;rand&quot;</span><span class="Other">)</span></pre>
 
@@ -3088,7 +3083,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-11-19 13:45:42 UTC</small>
+        <small>Made with Nim. Generated: 2019-12-06 14:21:18 UTC</small>
       </div>
     </div>
   </div>
