@@ -138,10 +138,6 @@ function main() {
     title="cxDuration(tstart: int | float; tend: int | float): string"><wbr />cx<wbr />Duration<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxTimeZone%2CcxTz"
     title="cxTimeZone(amode: cxTz = long): string"><wbr />cx<wbr />Time<wbr />Zone<span class="attachedType">cxTz</span></a></li>
-  <li><a class="reference" href="#toDateTime%2Cstring"
-    title="toDateTime(date: string = &quot;2000-01-01&quot;): DateTime"><wbr />to<wbr />Date<wbr />Time<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#epochSecs%2Cstring"
-    title="epochSecs(date: string = &quot;2000-01-01&quot;): auto"><wbr />epoch<wbr />Secs<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#sleepy%2CT"
     title="sleepy[T: float | int](secs: T)"><wbr />sleepy<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#validDate%2Cstring"
@@ -201,6 +197,12 @@ function main() {
     title="clearAllTimerResults(quiet: bool = true; xpos: int = 3)"><wbr />clear<wbr />All<wbr />Timer<wbr />Results<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#cxHRTimer%2CTime%2CTime"
     title="cxHRTimer(tstart: Time = getTime(); tend: Time = getTime()): auto"><wbr />cx<wbr />HRTimer<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#cxDayOfWeek%2Cstring"
+    title="cxDayOfWeek(datestr: string): string"><wbr />cx<wbr />Day<wbr />Of<wbr />Week<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#getNextMonday%2Cstring"
+    title="getNextMonday(adate: string): string"><wbr />get<wbr />Next<wbr />Monday<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#getAmzDateString"
+    title="getAmzDateString(): string"><wbr />get<wbr />Amz<wbr />Date<wbr />String<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -227,7 +229,23 @@ function main() {
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
   
-  <p class="module-desc"></p>
+  <p class="module-desc"><pre>
+Library     : nimcx.nim
+
+Module      : cxtime.nim
+
+Status      : stable
+
+License     : MIT opensource
+
+Latest      : 2020-05-06
+
+Compiler    : latest stable or devel branch
+
+OS          : Linux
+
+Description : provides most time related functions for the library</pre>
+</p>
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
@@ -242,10 +260,6 @@ function main() {
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L29"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L29" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="CxTimer"></a>
@@ -258,10 +272,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L35"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L35" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="Cxtimerres"></a>
@@ -269,10 +279,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L44"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L44" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="Cxcounter"></a>
@@ -282,10 +288,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L49"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L49" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -298,10 +300,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L449"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L449" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -321,10 +319,6 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Comment"># output:</span>
 <span class="Comment"># Duration: 2 days, 7 hours, 53 minutes, and 55 seconds</span>
 <span class="Comment"># Duration: 6 days, 13 hours, 44 minutes, and 47 seconds</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L116"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L116" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxTimeZone,cxTz"></a>
@@ -335,38 +329,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns a string with the actual timezone offset in hours as seen from UTC</p>
 <p>default long gives results parsed from getLocalTime like : UTC +08:00 </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L134"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L134" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="toDateTime,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#toDateTime%2Cstring"><span class="Identifier">toDateTime</span></a><span class="Other">(</span><span class="Identifier">date</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;2000-01-01&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">DateTime</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-<p>toDateTime</p>
-<p>converts a date of format yyyy-mm-dd to DateTime time part still to be implemented </p>
-
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L152"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L152" class="link-seesrc" target="_blank" >Edit</a>
-
-</dd>
-<a id="epochSecs,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#epochSecs%2Cstring"><span class="Identifier">epochSecs</span></a><span class="Other">(</span><span class="Identifier">date</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;2000-01-01&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-<p>epochSecs</p>
-<p>converts a date into secs since unix time 0 </p>
-
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L186"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L186" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="sleepy,T"></a>
@@ -376,10 +338,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>sleepy</p>
 <p>imitates sleep but in seconds suitable for shorter sleeps </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L193"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L193" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="validDate,string"></a>
@@ -391,10 +349,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>correct : 2015-08-15</p>
 <p>wrong   : 2015-08-32 , 201508-15, 2015-13-10 etc. </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L206"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L206" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="day,string"></a>
@@ -404,10 +358,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>day,month year extracts the relevant part from</p>
 <p>a date string of format yyyy-MM-dd </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L252"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L252" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="month,string"></a>
@@ -415,10 +365,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L263"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L263" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="year,string"></a>
@@ -426,10 +372,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 Format yyyy
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L270"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L270" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="compareDates,string,string"></a>
@@ -437,16 +379,11 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L274"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L274" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="plusDays,string,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#plusDays%2Cstring%2Cint"><span class="Identifier">plusDays</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>plusDays</p>
@@ -454,16 +391,11 @@ class="link-seesrc" target="_blank">Source</a>
 <p>and returns a string of format yyyy-MM-dd</p>
 <p>the passed in date string must be a valid date or an error message will be returned</p>
 <pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">plusDays</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">343</span><span class="Punctuation">)</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L303"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L303" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="minusDays,string,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#minusDays%2Cstring%2Cint"><span class="Identifier">minusDays</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>minusDays</p>
@@ -471,42 +403,28 @@ class="link-seesrc" target="_blank">Source</a>
 <p>and returns a string of format yyyy-MM-dd</p>
 <p>the passed in date string must be a valid date or an error message will be returned </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L326"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L326" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="createSeqDate,string,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#createSeqDate%2Cstring%2Cstring"><span class="Identifier">createSeqDate</span></a><span class="Other">(</span><span class="Identifier">fromDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">toDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>createSeqDate</p>
 <p>creates a seq of dates in format yyyy-MM-dd</p>
 <p>fromDate and toDate must be a date in form yyyy-MM-dd eg. 2018-06-18</p>
 <pre class="listing"><span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createseqdate</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span> <span class="StringLit">&quot;2022-05-25&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">12</span><span class="Punctuation">)</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L348"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L348" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="createSeqDate,string,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#createSeqDate%2Cstring%2Cint"><span class="Identifier">createSeqDate</span></a><span class="Other">(</span><span class="Identifier">fromDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">Defect</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>createSeqDate</p>
 <p>creates a seq of continous dates in format yyyy-MM-dd</p>
 <p>from fromDate to fromDate + days</p>
 <pre class="listing"><span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createseqdate</span><span class="Punctuation">(</span><span class="Identifier">cxToday</span><span class="Punctuation">,</span> <span class="DecNumber">60</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">12</span><span class="Punctuation">)</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L370"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L370" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="getRndDate,int,int"></a>
@@ -520,10 +438,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>default currently set to  between  +/- 50 years of today</p>
 <pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
 <span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="Identifier">getRndDate</span><span class="Punctuation">(</span><span class="DecNumber">2016</span><span class="Punctuation">,</span><span class="DecNumber">2025</span><span class="Punctuation">)</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L391"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L391" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printTimeMsg,string,int"></a>
@@ -532,10 +446,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L427"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L427" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printLnTimeMsg,string,int"></a>
@@ -544,10 +454,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L430"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L430" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printDTimeMsg,string,int"></a>
@@ -556,10 +462,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L433"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L433" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printLnDTimeMsg,string,int"></a>
@@ -568,10 +470,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L436"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L436" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printDateMsg,string,int"></a>
@@ -580,10 +478,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L439"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L439" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printLnDateMsg,string,int"></a>
@@ -592,10 +486,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L442"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L442" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="newCxtimer,string"></a>
@@ -625,10 +515,6 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">clearAllTimerResults</span><span class="Punctuation">(</span><span class="Punctuation">)</span>               <span class="Comment"># clear all timer results</span>
 <span class="Identifier">showTimerResults</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Identifier">dprint</span> <span class="Identifier">cxtimerresults</span>                <span class="Comment"># dprint is a simple repr utility</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L453"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L453" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="resetTimer,ref."></a>
@@ -636,10 +522,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L494"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L494" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="startTimer,ref."></a>
@@ -647,10 +529,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L499"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L499" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="lapTimer,ref."></a>
@@ -658,10 +536,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L502"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L502" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="stopTimer,ref."></a>
@@ -670,10 +544,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L507"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L507" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="duration,ref."></a>
@@ -681,10 +551,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L513"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L513" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="saveTimerResults,ref."></a>
@@ -694,10 +560,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>saveTimerResults</p>
 <p>saves the current state of a cxtimer </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L515"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L515" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="showTimerResults,string"></a>
@@ -708,10 +570,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>showTimerResults</p>
 <p>shows results for a particular timer name </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L529"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L529" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="showTimerResults"></a>
@@ -721,10 +579,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>showTimerResults</p>
 <p>shows results for all timers </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L560"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L560" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="clearTimerResults,string,bool,int"></a>
@@ -735,10 +589,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>clearTimerResults</p>
 <p>clears cxtimerresults of one named timer or if aname == &quot;&quot; of timer cxtimer</p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L588"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L588" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="clearAllTimerResults,bool,int"></a>
@@ -749,10 +599,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>clearAllTimerResults</p>
 <p>clears cxtimerresults for all timers , set quiet to false to show feedback</p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L606"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L606" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxHRTimer,Time,Time"></a>
@@ -766,10 +612,41 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">sleep</span><span class="Punctuation">(</span><span class="DecNumber">2000</span><span class="Punctuation">)</span>
 <span class="Keyword">let</span> <span class="Identifier">later</span> <span class="Operator">=</span> <span class="Identifier">gettime</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
 <span class="Identifier">echo</span> <span class="Identifier">cxHRTimer</span><span class="Punctuation">(</span><span class="Identifier">currentime</span><span class="Punctuation">,</span><span class="Identifier">later</span><span class="Punctuation">)</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L618"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L618" class="link-seesrc" target="_blank" >Edit</a>
+
+</dd>
+<a id="cxDayOfWeek,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#cxDayOfWeek%2Cstring"><span class="Identifier">cxDayOfWeek</span></a><span class="Other">(</span><span class="Identifier">datestr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+                                        <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>cxDayOfWeek</p>
+<p>returns day of week from a date in format yyyy-MM-dd</p>
+<pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">cxDayOfWeek</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="StringLit">&quot;2017-07-15&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;  &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxDayOfWeek</span><span class="Punctuation">(</span><span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="StringLit">&quot;2017-07-15&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<a id="getNextMonday,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getNextMonday%2Cstring"><span class="Identifier">getNextMonday</span></a><span class="Other">(</span><span class="Identifier">adate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span>
+    <span class="Identifier">TimeParseError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="Identifier">getDateStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+<span class="Comment"># get next 10 mondays</span>
+<span class="Keyword">var</span> <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">getdatestr</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">dw</span>
+<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">:</span>
+   <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">getnextmonday</span><span class="Punctuation">(</span><span class="Identifier">dw</span><span class="Punctuation">)</span>
+   <span class="Identifier">echo</span> <span class="Identifier">dw</span>
+   <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">plusDays</span><span class="Punctuation">(</span><span class="Identifier">dw</span><span class="Punctuation">,</span><span class="DecNumber">1</span><span class="Punctuation">)</span></pre>
+
+</dd>
+<a id="getAmzDateString"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getAmzDateString"><span class="Identifier">getAmzDateString</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>getAmzDateString</p>
+<p>get current GMT date time in amazon format </p>
+
 
 </dd>
 
@@ -790,10 +667,6 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxToday           : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxToday</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxTimeZone(long)  : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTimezone</span><span class="Punctuation">(</span><span class="Identifier">long</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxTimeZone(short) : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTimezone</span><span class="Punctuation">(</span><span class="Identifier">short</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L64"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L64" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxNow.t"></a>
@@ -804,10 +677,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>formated datetime without the T</p>
 <p>eg: 2018-08-23 16:48:50+08.00 </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L82"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L82" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxToday.t"></a>
@@ -818,10 +687,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>returns date string</p>
 <p>eg : 2018-08-23 </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L90"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L90" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxTime.t"></a>
@@ -831,10 +696,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>cxTime</p>
 <p>eg : 16:48:50 </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L98"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L98" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxDateTime.t"></a>
@@ -842,13 +703,9 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 <p>cxDateTime</p>
-<p>restunrs a date time string</p>
+<p>returns a date time string</p>
 <p>eg : 2018-08-23 16:48:50 </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxtime.nim#L108"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxtime.nim#L108" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -861,7 +718,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-02-29 21:36:41 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-05-19 09:50:11 UTC</small>
       </div>
     </div>
   </div>

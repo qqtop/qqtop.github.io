@@ -133,10 +133,10 @@ function main() {
     title="printSlim(ss: string = &quot;&quot;; frg: string = termwhite; xpos: int = 0; align: string = &quot;left&quot;)"><wbr />print<wbr />Slim<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#slimL%2Cstring%2Cstring%2Cint%2Cint"
     title="slimL(astring: string; col: string = truetomato; xpos: int = 5; adjuster: int = 0)"><wbr />slim<wbr />L<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printCxFontLetter%2Cint%2Cint%2Cseq%5BT%5D%5Bseq%5BT%5D%5Bstring%5D%5D%2Cstring%2Cint"
+  <li><a class="reference" href="#printCxFontLetter%2Cint%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint"
     title="printCxFontLetter(n: int; xpos: int; cxfont: seq[seq[string]]; color: string;
                   vertstepping: int)"><wbr />print<wbr />Cx<wbr />Font<wbr />Letter<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printCxFontText%2Cseq%5BT%5D%5Bint%5D%2Cint%2Cseq%5BT%5D%5Bseq%5BT%5D%5Bstring%5D%5D%2Cstring%2Cint%2Cint"
+  <li><a class="reference" href="#printCxFontText%2Cseq%5Bint%5D%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint%2Cint"
     title="printCxFontText(textseq: seq[int]; xpos: int = 2; cxfont: seq[seq[string]];
                 color: string = randcol(); vertstepping: int = 9; kerning: int = 19)"><wbr />print<wbr />Cx<wbr />Font<wbr />Text<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#createCxFont%2Cstring"
@@ -243,7 +243,32 @@ function main() {
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
   
-  <p class="module-desc"></p>
+  <p class="module-desc"><pre>
+Library     : nimcx.nim
+
+Module      : cxfont.nim
+
+Status      : stable
+
+License     : MIT opensource
+
+Latest      : 2020-05-14
+
+Compiler    : latest stable or devel branch
+
+OS          : Linux
+
+Description : Experimental font building
+              provides most printing functions for the library
+              experimental font, slim numbers , swampfont , dotmatrix
+              slimfont and  bracketmatrix font
+
+Usage : import nimcx/cxfont
+
+Notes : experimental! your results may depend on terminal in use.
+        Use konsole for best effect with truecolor,
+        adjust terminal width and char size for desired effect</pre>
+</p>
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
@@ -303,10 +328,6 @@ or use 2 or more print statements for the desired effect</pre>
 <pre class="listing"><span class="Comment"># To achieve colored text with styleReverse try:</span>
 <span class="Identifier">setBackgroundColor</span><span class="Punctuation">(</span><span class="Identifier">bgRed</span><span class="Punctuation">)</span>
 <span class="Identifier">print2</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">pastelBlue</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L57"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L57" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="fprintln,T,string,int,bool,bool,set[Style],string"></a>
@@ -334,10 +355,6 @@ styled</pre>
     <span class="Identifier">fprintln</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
     <span class="Identifier">print</span> <span class="Identifier">cleareol</span>
     <span class="Identifier">sleepy</span><span class="Punctuation">(</span><span class="FloatNumber">0.1</span><span class="Punctuation">)</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L157"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L157" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cx10,int,string,string"></a>
@@ -346,10 +363,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L368"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L368" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printFont,string,string,string,int"></a>
@@ -361,10 +374,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>display experimental cxfont</p>
 <p>search cxTest for example proc printFontTest</p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L853"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L853" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printFontFancy,string,int"></a>
@@ -375,10 +384,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>printFontFancy</p>
 <p>display experimental cxfont with every element in rand color changing of coltop color possible</p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L950"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L950" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printNimCx,int"></a>
@@ -388,10 +393,6 @@ class="link-seesrc" target="_blank">Source</a>
 
 printNimcx<blockquote><p>experiments in block font building , default is center in terminal</p></blockquote>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1044"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1044" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printMadeWithNim,int"></a>
@@ -401,10 +402,6 @@ class="link-seesrc" target="_blank">Source</a>
 
 printMadeWithNim<blockquote><p>experiments in block font building , default is center in terminal</p></blockquote>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1061"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1061" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printNim,int"></a>
@@ -413,10 +410,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1083"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1083" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printSlimNumber,string,string,string,int"></a>
@@ -450,10 +443,6 @@ printSlimNumber
    <span class="Identifier">curup</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span>
    <span class="Identifier">sleep</span><span class="Punctuation">(</span><span class="DecNumber">500</span><span class="Punctuation">)</span>
 <span class="Identifier">curdn</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1096"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1096" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="printSlim,string,string,int,string"></a>
@@ -474,10 +463,6 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">printSlim</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="StringLit">&quot;82233.32&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">25</span><span class="Punctuation">)</span>
 <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span>
 <span class="Identifier">printSlim</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="StringLit">&quot;33.87&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">25</span><span class="Punctuation">)</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1200"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1200" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="slimL,string,string,int,int"></a>
@@ -488,27 +473,19 @@ class="link-seesrc" target="_blank">Source</a>
 <p>slimL</p>
 <p>prints slimfont strings</p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1268"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1268" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="printCxFontLetter,int,int,seq[T][seq[T][string]],string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printCxFontLetter%2Cint%2Cint%2Cseq%5BT%5D%5Bseq%5BT%5D%5Bstring%5D%5D%2Cstring%2Cint"><span class="Identifier">printCxFontLetter</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
+<a id="printCxFontLetter,int,int,seq[seq[string]],string,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#printCxFontLetter%2Cint%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint"><span class="Identifier">printCxFontLetter</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
                       <span class="Identifier">vertstepping</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1331"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1331" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
-<a id="printCxFontText,seq[T][int],int,seq[T][seq[T][string]],string,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printCxFontText%2Cseq%5BT%5D%5Bint%5D%2Cint%2Cseq%5BT%5D%5Bseq%5BT%5D%5Bstring%5D%5D%2Cstring%2Cint%2Cint"><span class="Identifier">printCxFontText</span></a><span class="Other">(</span><span class="Identifier">textseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span>
+<a id="printCxFontText,seq[int],int,seq[seq[string]],string,int,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#printCxFontText%2Cseq%5Bint%5D%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint%2Cint"><span class="Identifier">printCxFontText</span></a><span class="Other">(</span><span class="Identifier">textseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span>
                     <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">vertstepping</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">9</span><span class="Other">;</span> <span class="Identifier">kerning</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">19</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
@@ -517,10 +494,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>printtext in fonts dotmatrix,bracketmatrix,sideways,swamp</p>
 <p>swamp needs vertstepping = 7 and kerning &gt;= 15 </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1340"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1340" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="createCxFont,string"></a>
@@ -528,10 +501,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1354"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1354" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="showCxFont,string"></a>
@@ -540,10 +509,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1418"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1418" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="dotMatrixFontTest"></a>
@@ -563,10 +528,6 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Comment"># lets print &lt;NIM&gt;123</span>
 <span class="Identifier">printCxFontText</span><span class="Punctuation">(</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="DecNumber">12</span><span class="Punctuation">,</span><span class="DecNumber">30</span><span class="Punctuation">,</span><span class="DecNumber">25</span><span class="Punctuation">,</span><span class="DecNumber">29</span><span class="Punctuation">,</span><span class="DecNumber">14</span><span class="Punctuation">,</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="DecNumber">2</span><span class="Punctuation">,</span><span class="DecNumber">3</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">2</span><span class="Punctuation">,</span><span class="Identifier">myfont</span><span class="Punctuation">)</span></pre><p>Alternatively compile cxmatrixfontE1.nim which calls this function </p>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1483"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1483" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="dotMatrixTyper,string,int,string"></a>
@@ -584,10 +545,6 @@ class="link-seesrc" target="_blank">Source</a>
 <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">8</span><span class="Punctuation">)</span>
 <span class="Identifier">bracketMatrixTyper</span><span class="Punctuation">(</span><span class="StringLit">&quot;bracketmatrix&quot;</span><span class="Punctuation">)</span>
 <span class="Identifier">decho</span><span class="Punctuation">(</span><span class="DecNumber">12</span><span class="Punctuation">)</span></pre>
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1577"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1577" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="bracketMatrixTyper,string,int,string"></a>
@@ -599,10 +556,6 @@ class="link-seesrc" target="_blank">Source</a>
 <p>no checking as to terminalwidth is done so adjust terminal width and char sizes accordingly</p>
 <blockquote><p>will be positioned at top right of last character</p></blockquote>
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L1704"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L1704" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -615,10 +568,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L193"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L193" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cx1.t,int,string,string"></a>
@@ -626,10 +575,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L209"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L209" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cx2.t,int,string,string"></a>
@@ -637,10 +582,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L225"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L225" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cx3.t,int,string,string"></a>
@@ -648,10 +589,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L244"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L244" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cx4.t,int,string,string"></a>
@@ -659,10 +596,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L261"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L261" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cx5.t,int,string,string"></a>
@@ -670,10 +603,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L278"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L278" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cx6.t,int,string,string"></a>
@@ -681,10 +610,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L296"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L296" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cx7.t,int,string,string"></a>
@@ -692,10 +617,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L314"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L314" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cx8.t,int,string,string"></a>
@@ -703,10 +624,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L331"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L331" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cx9.t,int,string,string"></a>
@@ -714,10 +631,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L350"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L350" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxa.t,int,string,string"></a>
@@ -725,10 +638,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L374"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L374" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxb.t,int,string,string"></a>
@@ -736,10 +645,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L390"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L390" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxc.t,int,string,string"></a>
@@ -747,10 +652,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L406"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L406" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxd.t,int,string,string"></a>
@@ -758,10 +659,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L423"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L423" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxe.t,int,string,string"></a>
@@ -769,10 +666,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L441"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L441" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxf.t,int,string,string"></a>
@@ -780,10 +673,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L457"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L457" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxg.t,int,string,string"></a>
@@ -791,10 +680,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L474"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L474" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxh.t,int,string,string"></a>
@@ -802,10 +687,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L490"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L490" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxi.t,int,string,string"></a>
@@ -813,10 +694,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L505"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L505" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxj.t,int,string,string"></a>
@@ -824,10 +701,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L523"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L523" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxk.t,int,string,string"></a>
@@ -835,10 +708,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L542"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L542" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxl.t,int,string,string"></a>
@@ -846,10 +715,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L558"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L558" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxm.t,int,string,string"></a>
@@ -857,10 +722,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L574"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L574" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxn.t,int,string,string"></a>
@@ -868,10 +729,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L589"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L589" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxo.t,int,string,string"></a>
@@ -879,10 +736,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L605"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L605" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxp.t,int,string,string"></a>
@@ -890,10 +743,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L621"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L621" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxq.t,int,string,string"></a>
@@ -901,10 +750,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L638"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L638" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxr.t,int,string,string"></a>
@@ -912,10 +757,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L654"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L654" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxs.t,int,string,string"></a>
@@ -923,10 +764,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L670"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L670" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxt.t,int,string,string"></a>
@@ -934,10 +771,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L687"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L687" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxu.t,int,string,string"></a>
@@ -945,10 +778,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L705"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L705" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxv.t,int,string,string"></a>
@@ -956,10 +785,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L723"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L723" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxw.t,int,string,string"></a>
@@ -967,10 +792,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L740"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L740" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxx.t,int,string,string"></a>
@@ -978,10 +799,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L756"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L756" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxy.t,int,string,string"></a>
@@ -989,10 +806,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L772"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L772" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxz.t,int,string,string"></a>
@@ -1000,10 +813,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L788"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L788" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxpoint.t,int,string,string"></a>
@@ -1011,10 +820,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L806"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L806" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxhyphen.t,int,string,string"></a>
@@ -1022,10 +827,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L824"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L824" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 <a id="cxgrid.t,int,string,string"></a>
@@ -1033,10 +834,6 @@ class="link-seesrc" target="_blank">Source</a>
 <dd>
 
 
-&nbsp;&nbsp;<a
-href="https://github.com/qqtop/NimCx/blob/master/tree/devel/nimcx/cxfont.nim#L840"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https://github.com/qqtop/NimCx/blob/master/edit/devel/nimcx/cxfont.nim#L840" class="link-seesrc" target="_blank" >Edit</a>
 
 </dd>
 
@@ -1049,7 +846,7 @@ class="link-seesrc" target="_blank">Source</a>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-02-29 21:36:45 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-05-19 09:50:19 UTC</small>
       </div>
     </div>
   </div>
