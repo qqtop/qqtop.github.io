@@ -83,6 +83,9 @@ function main() {
   </div>
   <div id="global-links">
     <ul class="simple">
+    <li>
+      <a href="theindex.html">Index</a>
+    </li>
     </ul>
   </div>
   <div id="searchInputDiv">
@@ -238,7 +241,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2020-05-06
+Latest      : 2020-05-27
 
 Compiler    : latest stable or devel branch
 
@@ -371,7 +374,7 @@ Description : provides most time related functions for the library</pre>
 <dt><pre><span class="Keyword">proc</span> <a href="#year%2Cstring"><span class="Identifier">year</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-Format yyyy
+
 
 </dd>
 <a id="compareDates,string,string"></a>
@@ -658,24 +661,13 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <dt><pre><span class="Keyword">template</span> <a href="#cxLocal.t"><span class="Identifier">cxLocal</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
-<p>cxLocal</p>
-<p>returns local datetime in a string same as now()</p>
-<p>Examples for var. cx time,date functions</p>
-<pre class="listing"><span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxLocal           : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxLocal</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxNow             : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxNow</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxTime            : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTime</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxToday           : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxToday</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxTimeZone(long)  : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTimezone</span><span class="Punctuation">(</span><span class="Identifier">long</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxTimeZone(short) : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTimezone</span><span class="Punctuation">(</span><span class="Identifier">short</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre>
+
 
 </dd>
 <a id="cxNow.t"></a>
 <dt><pre><span class="Keyword">template</span> <a href="#cxNow.t"><span class="Identifier">cxNow</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
-<p>cxnow</p>
-<p>formated datetime without the T</p>
-<p>eg: 2018-08-23 16:48:50+08.00 </p>
 
 
 </dd>
@@ -683,9 +675,6 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <dt><pre><span class="Keyword">template</span> <a href="#cxToday.t"><span class="Identifier">cxToday</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
-<p>today</p>
-<p>returns date string</p>
-<p>eg : 2018-08-23 </p>
 
 
 </dd>
@@ -693,8 +682,6 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <dt><pre><span class="Keyword">template</span> <a href="#cxTime.t"><span class="Identifier">cxTime</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
-<p>cxTime</p>
-<p>eg : 16:48:50 </p>
 
 
 </dd>
@@ -702,9 +689,6 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 <dt><pre><span class="Keyword">template</span> <a href="#cxDateTime.t"><span class="Identifier">cxDateTime</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
-<p>cxDateTime</p>
-<p>returns a date time string</p>
-<p>eg : 2018-08-23 16:48:50 </p>
 
 
 </dd>
@@ -718,7 +702,7 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-05-19 09:50:11 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-05-28 19:22:52 UTC</small>
       </div>
     </div>
   </div>

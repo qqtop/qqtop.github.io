@@ -83,6 +83,9 @@ function main() {
   </div>
   <div id="global-links">
     <ul class="simple">
+    <li>
+      <a href="theindex.html">Index</a>
+    </li>
     </ul>
   </div>
   <div id="searchInputDiv">
@@ -239,6 +242,8 @@ function main() {
     title="showCpuCores()"><wbr />show<wbr />Cpu<wbr />Cores<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showHostNameCtl"
     title="showHostNameCtl()"><wbr />show<wbr />Host<wbr />Name<wbr />Ctl<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#getProjectDir"
+    title="getProjectDir(): string"><wbr />get<wbr />Project<wbr />Dir<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getUserName"
     title="getUserName(): string"><wbr />get<wbr />User<wbr />Name<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#getPassword%2Cint64"
@@ -342,8 +347,8 @@ function main() {
     title="showEmojisSmall()"><wbr />show<wbr />Emojis<wbr />Small<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#genMacAddress"
     title="genMacAddress(): string"><wbr />gen<wbr />Mac<wbr />Address<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#quickPw"
-    title="quickPw(): string"><wbr />quick<wbr />Pw<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#quickPw%2Cint"
+    title="quickPw(l: int = 1): string"><wbr />quick<wbr />Pw<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#quickLargeInt"
     title="quickLargeInt(): string"><wbr />quick<wbr />Large<wbr />Int<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#quickBinaryString%2Cint"
@@ -501,7 +506,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2020-05-14
+Latest      : 2020-05-27
 
 Compiler    : latest stable or devel branch
 
@@ -623,9 +628,6 @@ rndSample returns one rand sample from a sequence
 <dt><pre><span class="Keyword">proc</span> <a href="#sum%2Cseq%5BT%5D"><span class="Identifier">sum</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">aseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
 <dd>
 
-<p>sum</p>
-<p>returns sum of float or int seqs</p>
-<p>same effect as math.sum </p>
 
 
 </dd>
@@ -633,9 +635,6 @@ rndSample returns one rand sample from a sequence
 <dt><pre><span class="Keyword">proc</span> <a href="#product%2Cseq%5BT%5D"><span class="Identifier">product</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">aseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
 <dd>
 
-<p>product</p>
-<p>returns product of float or int seqs</p>
-<p>if a seq contains a 0 element than result will be 0 </p>
 
 
 </dd>
@@ -808,9 +807,6 @@ getRndBool
 <dt><pre><span class="Keyword">proc</span> <a href="#getRandomFloat"><span class="Identifier">getRandomFloat</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>getRandomFloat</p>
-<p>convenience proc so we do not need to import rand in calling prog</p>
-<p>to get positive or negative rand floats multiply with getRandomSignF </p>
 
 
 </dd>
@@ -818,8 +814,6 @@ getRndBool
 <dt><pre><span class="Keyword">proc</span> <a href="#getRndFloat"><span class="Identifier">getRndFloat</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>getRndFloat</p>
-<p>same as getrandFloat()</p>
 
 
 </dd>
@@ -943,8 +937,6 @@ note that not all unicode chars may be available on all systems</pre>
 <dt><pre><span class="Keyword">proc</span> <a href="#centerX"><span class="Identifier">centerX</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>centerX</p>
-<p>returns an int with best terminal center position </p>
 
 
 </dd>
@@ -1060,8 +1052,6 @@ note that not all unicode chars may be available on all systems</pre>
 <dt><pre><span class="Keyword">proc</span> <a href="#streamFile%2Cstring%2CFileMode"><span class="Identifier">streamFile</span></a><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">FileMode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">FileStream</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>streamFile</p>
-<p>creates a new filestream opened with the desired filemode</p>
 
 
 </dd>
@@ -1191,6 +1181,13 @@ showCpuCores
 
 <p>showHostNameCtl</p>
 <p>output of system hostnamectl command </p>
+
+
+</dd>
+<a id="getProjectDir"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getProjectDir"><span class="Identifier">getProjectDir</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">compileTime</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
 
 
 </dd>
@@ -1651,8 +1648,8 @@ spiralBoxy2   uses boxy2
 <p>simple table routine with default 6 cols for displaying various unicode sets fgr allows color display and fgr = &quot;rand&quot; displays in rand color and maxwidth for displayable items this can also be used to show items of a sequence displayflag == true means to show the output displayflag == false means do not show output , but return it as a string indexstart == 0 displays item index from 0 or from whatever indexstart is set to .. code-block:: nim</p>
 <blockquote><p>showSeq(createSeqCJK(),&quot;rand&quot;,indexstart=1) showSeq(createSeqKatakana(),yellowgreen) showSeq(createSeqCJK(),&quot;rand&quot;) showSeq(createSeqGeoshapes(),randcol()) showSeq(createSeqint(1000,10000,100000))</p></blockquote>
 
-<p><strong class="examples_text">Examples:</strong></p>
-<pre class="listing"><span class="Identifier">showSeq</span><span class="Other">(</span><span class="Identifier">createSeqCJK</span><span class="Other">(</span><span class="Other">)</span><span class="Other">,</span> <span class="StringLit">&quot;rand&quot;</span><span class="Other">)</span></pre>
+<p><strong class="examples_text">Example:</strong></p>
+<pre class="listing"><span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqCJK</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;rand&quot;</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <a id="seqHighLite,seq[T],seq[T],string"></a>
@@ -1764,8 +1761,8 @@ spiralBoxy2   uses boxy2
 generates a random MacAddress<pre class="listing"><span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">1.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">echo</span> <span class="Identifier">genMacAddress</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<a id="quickPw"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#quickPw"><span class="Identifier">quickPw</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="quickPw,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#quickPw%2Cint"><span class="Identifier">quickPw</span></a><span class="Other">(</span><span class="Identifier">l</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>quickPw</p>
@@ -2009,14 +2006,14 @@ returns input string  n times mimicking python
 <dt><pre><span class="Keyword">template</span> <a href="#tw.t"><span class="Identifier">tw</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 
-tw , a global where latest terminal width is always available
+
 
 </dd>
 <a id="th.t"></a>
 <dt><pre><span class="Keyword">template</span> <a href="#th.t"><span class="Identifier">th</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span></pre></dt>
 <dd>
 
-th , a global where latest terminal height is always available
+
 
 </dd>
 <a id="doSomething.t,int,untyped"></a>
@@ -2078,10 +2075,7 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 <dt><pre><span class="Keyword">template</span> <a href="#randCol.t"><span class="Identifier">randCol</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
-<p>randCol</p>
-<p>get a randcolor from colorNames , no filter is applied</p>
-<pre class="listing"><span class="Comment"># print a string 6 times in a rand color selected from colorNames</span>
-<span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello Random Color&quot;</span><span class="Punctuation">,</span><span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+
 
 </dd>
 <a id="rndCol.t,int,int,int"></a>
@@ -2089,10 +2083,7 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
                <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getRndInt</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">254</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
-<p>rndCol</p>
-<p>return a randcolor from the whole rgb spectrum in the ranges of RGB [0..254] expect this colors maybe a bit more drab than the colors returned from randCol()</p>
-<pre class="listing"><span class="Comment"># print a string 6 times in a rand color selected from rgb spectrum</span>
-<span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello Random Color&quot;</span><span class="Punctuation">,</span><span class="Identifier">rndCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+
 
 </dd>
 <a id="curUp.t,int"></a>
@@ -2135,8 +2126,6 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 <dt><pre><span class="Keyword">template</span> <a href="#cxPos.t"><span class="Identifier">cxPos</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
-<p>cxPos</p>
-<p>mirrors terminal setCursorXPos </p>
 
 
 </dd>
@@ -2261,18 +2250,13 @@ returns a colorpalette which can be used to iterate over</pre>
 <dt><pre><span class="Keyword">template</span> <a href="#randPastelCol.t"><span class="Identifier">randPastelCol</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
-<p>randPastelCol</p>
-<p>get a randcolor from pastelSet</p>
-<pre class="listing"><span class="Comment"># print a string 6 times in a rand color selected from pastelSet</span>
-<span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Hello Random Color&quot;</span><span class="Punctuation">,</span><span class="Identifier">randPastelCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+
 
 </dd>
 <a id="upperCase.t,string"></a>
 <dt><pre><span class="Keyword">template</span> <a href="#upperCase.t%2Cstring"><span class="Identifier">upperCase</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
-<p>upperCase</p>
-<p>upper cases a string </p>
 
 
 </dd>
@@ -2280,8 +2264,6 @@ returns a colorpalette which can be used to iterate over</pre>
 <dt><pre><span class="Keyword">template</span> <a href="#lowerCase.t%2Cstring"><span class="Identifier">lowerCase</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
-<p>lowerCase</p>
-<p>lower cases a string </p>
 
 
 </dd>
@@ -2349,7 +2331,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-05-19 09:50:19 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-05-28 19:22:57 UTC</small>
       </div>
     </div>
   </div>
