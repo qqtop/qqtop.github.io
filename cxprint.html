@@ -378,7 +378,9 @@ Description : provides most printing functions for the library</pre>
 <dt><pre><span class="Keyword">proc</span> <a href="#printf%2Ccstring"><span class="Identifier">printf</span></a><span class="Other">(</span><span class="Identifier">formatStr</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;stdio.h&gt;&quot;</span><span class="Other">,</span> <span class="Identifier">varargs</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-
+<p>printf</p>
+<p>make C printf function available</p>
+<pre class="listing"><span class="Identifier">printf</span><span class="Punctuation">(</span><span class="StringLit">&quot;This works %s and this %d,too &quot;</span><span class="Punctuation">,</span> <span class="StringLit">&quot;as expected&quot;</span> <span class="Punctuation">,</span><span class="DecNumber">2</span><span class="Punctuation">)</span></pre>
 
 </dd>
 <a id="print,T,string,string,int,bool,bool,set[Style]"></a>
@@ -487,7 +489,7 @@ Colornames supported for background color: all colors ending with bg
     <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>hline</p>
+forward declaration<p>hline</p>
 <p>draw a full line in stated length and color no linefeed will be issued</p>
 <p>defaults full terminal width and white</p>
 <pre class="listing"><span class="Identifier">hline</span><span class="Punctuation">(</span><span class="DecNumber">30</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="Identifier">xpos</span><span class="Punctuation">)</span></pre>
@@ -498,7 +500,7 @@ Colornames supported for background color: all colors ending with bg
     <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>hLineLn</p>
+forward declaration<p>hLineLn</p>
 <p>draw a full line in stated length and color a linefeed will be issued</p>
 <p>defaults full terminal width and white</p>
 <pre class="listing"><span class="Identifier">hLineLn</span><span class="Punctuation">(</span><span class="DecNumber">30</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">)</span></pre>
@@ -545,7 +547,7 @@ Colornames supported for background color: all colors ending with bg
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
-<p>printRainbow</p>
+forward declaration<p>printRainbow</p>
 <p>print multicolored string with styles , for available styles see print</p>
 <p>may not work with certain Rune </p>
 
@@ -654,7 +656,8 @@ Colornames supported for background color: all colors ending with bg
 <dd>
 
 <p>newCxLine</p>
-<p>creates a new cxLine object with some defaults , ready to be changed according to needs </p>
+<p>creates a new cxLine object with some defaults ,</p>
+<p>ready to be changed according to needs </p>
 
 
 </dd>
@@ -1007,7 +1010,7 @@ Colornames supported for background color: all colors ending with bg
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-05-28 19:22:52 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-06-10 09:27:37 UTC</small>
       </div>
     </div>
   </div>
