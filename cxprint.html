@@ -47,21 +47,12 @@ function main() {
 
   toggleSwitch.addEventListener('change', switchTheme, false);
 
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
 
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', "dark");
-    toggleSwitch.checked = true;
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    document.documentElement.setAttribute('data-theme', "light");
-    toggleSwitch.checked = false;
-  } else {
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-    if (currentTheme) {
-      document.documentElement.setAttribute('data-theme', currentTheme);
-
-      if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-      }
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true;
     }
   }
 }
@@ -249,10 +240,10 @@ function main() {
   <li><a class="reference" href="#printLnPassMsg%2Cstring%2Cint"
     title="printLnPassMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Pass<wbr />Msg<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#printInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"
-    title="printInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
+    title="printInfoMsg(info: string = &quot;&quot;; atext: string = &quot;&quot;; colLeft: string = lightslategray;
              colRight: string = pastelWhite; xpos: int = 1): string"><wbr />print<wbr />Info<wbr />Msg<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#printLnInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"
-    title="printLnInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
+    title="printLnInfoMsg(info: string; atext: string = &quot;&quot;; colLeft: string = lightslategray;
                colRight: string = pastelWhite; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Info<wbr />Msg<span class="attachedType"></span></a></li>
 
   </ul>
@@ -299,7 +290,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2020-05-14
+Latest      : 2020-09-26
 
 Compiler    : latest stable or devel branch
 
@@ -457,7 +448,7 @@ styled
 
 Colornames supported for font colors     :  all
 
-Colornames supported for background color: all colors ending with bg
+Colornames supported for background color:  all colors ending with bg
 
 - use styleBright and styleReverse for various effects</pre>
 <p>Examples</p>
@@ -894,16 +885,17 @@ forward declaration<p>printRainbow</p>
 
 </dd>
 <a id="printInfoMsg,string,string,string,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"><span class="Identifier">printInfoMsg</span></a><span class="Other">(</span><span class="Identifier">info</span><span class="Other">,</span> <span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lightslategray</span><span class="Other">;</span>
-                 <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">pastelWhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#printInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"><span class="Identifier">printInfoMsg</span></a><span class="Other">(</span><span class="Identifier">info</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span>
+                 <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lightslategray</span><span class="Other">;</span> <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">pastelWhite</span><span class="Other">;</span>
+                 <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+                                     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 
 </dd>
 <a id="printLnInfoMsg,string,string,string,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printLnInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"><span class="Identifier">printLnInfoMsg</span></a><span class="Other">(</span><span class="Identifier">info</span><span class="Other">,</span> <span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lightslategray</span><span class="Other">;</span>
+<dt><pre><span class="Keyword">proc</span> <a href="#printLnInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"><span class="Identifier">printLnInfoMsg</span></a><span class="Other">(</span><span class="Identifier">info</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lightslategray</span><span class="Other">;</span>
                    <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">pastelWhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
@@ -1010,7 +1002,7 @@ forward declaration<p>printRainbow</p>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-06-10 09:27:37 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-09-26 17:36:23 UTC</small>
       </div>
     </div>
   </div>

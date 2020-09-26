@@ -47,21 +47,12 @@ function main() {
 
   toggleSwitch.addEventListener('change', switchTheme, false);
 
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
 
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', "dark");
-    toggleSwitch.checked = true;
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    document.documentElement.setAttribute('data-theme', "light");
-    toggleSwitch.checked = false;
-  } else {
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-    if (currentTheme) {
-      document.documentElement.setAttribute('data-theme', currentTheme);
-
-      if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-      }
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true;
     }
   }
 }
@@ -111,16 +102,17 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#showStats%2CRunningStat%2Cint%2Cint"
     title="showStats(x: RunningStat; n: int = 3; xpos: int = 1)"><wbr />show<wbr />Stats<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showRegression%2Cseq%5B%5D%2Cseq%5B%5D%2Cint%2Cint"
-    title="showRegression(x, y: seq[float | int]; n: int = 5; xpos: int = 1)"><wbr />show<wbr />Regression<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#showRegression%2CopenArray%5B%5D%2CopenArray%5B%5D%2Cint%2Cint"
+    title="showRegression(x, y: openArray[float | int]; n: int = 5; xpos: int = 1)"><wbr />show<wbr />Regression<span class="attachedType"></span></a></li>
   <li><a class="reference" href="#showRegression%2CRunningRegress%2Cint%2Cint"
     title="showRegression(rr: RunningRegress; n: int = 5; xpos: int = 1)"><wbr />show<wbr />Regression<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#zscore%2Cseq%5BSomeNumber%5D"
-    title="zscore(data: seq[SomeNumber]): seq[float]"><wbr />zscore<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#rolling_zscore%2Cseq%5Bfloat%5D%2Cseq%5Bfloat%5D%2Cfloat"
-    title="rolling_zscore(data: seq[float]; observed_window: seq[float]; decay: float = 0.9): float"><wbr />rolling_<wbr />zscore<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#median%2Cseq%5Bfloat%5D"
-    title="median(xs: seq[float]): float"><wbr />median<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#zscore%2CopenArray%5BSomeNumber%5D"
+    title="zscore(data: openArray[SomeNumber]): seq[float]"><wbr />zscore<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#rolling_zscore%2CopenArray%5Bfloat%5D%2CopenArray%5Bfloat%5D%2Cfloat"
+    title="rolling_zscore(data: openArray[float]; observed_window: openArray[float];
+               decay: float = 0.9): float"><wbr />rolling_<wbr />zscore<span class="attachedType"></span></a></li>
+  <li><a class="reference" href="#median%2CopenArray%5Bfloat%5D"
+    title="median(xs: openArray[float]): float"><wbr />median<span class="attachedType"></span></a></li>
 
   </ul>
 </li>
@@ -140,7 +132,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2020-04-24
+Latest      : 2020-09-26
 
 Compiler    : latest stable or devel branch
 
@@ -190,8 +182,8 @@ Description : provides functions pertaining to statistcs and calculations</pre>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<a id="showRegression,seq[],seq[],int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showRegression%2Cseq%5B%5D%2Cseq%5B%5D%2Cint%2Cint"><span class="Identifier">showRegression</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
+<a id="showRegression,openArray[],openArray[],int,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#showRegression%2CopenArray%5B%5D%2CopenArray%5B%5D%2Cint%2Cint"><span class="Identifier">showRegression</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
 
 <p>showRegression</p>
@@ -212,8 +204,8 @@ Description : provides functions pertaining to statistcs and calculations</pre>
 
 
 </dd>
-<a id="zscore,seq[SomeNumber]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#zscore%2Cseq%5BSomeNumber%5D"><span class="Identifier">zscore</span></a><span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">SomeNumber</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="zscore,openArray[SomeNumber]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#zscore%2CopenArray%5BSomeNumber%5D"><span class="Identifier">zscore</span></a><span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">SomeNumber</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>zscore</p>
@@ -233,16 +225,16 @@ Description : provides functions pertaining to statistcs and calculations</pre>
 <span class="Identifier">doFinish</span><span class="Punctuation">(</span><span class="Punctuation">)</span> </pre>
 
 </dd>
-<a id="rolling_zscore,seq[float],seq[float],float"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#rolling_zscore%2Cseq%5Bfloat%5D%2Cseq%5Bfloat%5D%2Cfloat"><span class="Identifier">rolling_zscore</span></a><span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">observed_window</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">decay</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">0.9</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="rolling_zscore,openArray[float],openArray[float],float"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#rolling_zscore%2CopenArray%5Bfloat%5D%2CopenArray%5Bfloat%5D%2Cfloat"><span class="Identifier">rolling_zscore</span></a><span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">observed_window</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">;</span>
+                   <span class="Identifier">decay</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">0.9</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 
 </dd>
-<a id="median,seq[float]"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#median%2Cseq%5Bfloat%5D"><span class="Identifier">median</span></a><span class="Other">(</span><span class="Identifier">xs</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<a id="median,openArray[float]"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#median%2CopenArray%5Bfloat%5D"><span class="Identifier">median</span></a><span class="Other">(</span><span class="Identifier">xs</span><span class="Other">:</span> <span class="Identifier">openArray</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -258,7 +250,7 @@ Description : provides functions pertaining to statistcs and calculations</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-06-10 09:27:35 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-09-26 17:36:21 UTC</small>
       </div>
     </div>
   </div>

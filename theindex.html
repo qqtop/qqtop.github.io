@@ -47,21 +47,12 @@ function main() {
 
   toggleSwitch.addEventListener('change', switchTheme, false);
 
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
 
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', "dark");
-    toggleSwitch.checked = true;
-  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-    document.documentElement.setAttribute('data-theme', "light");
-    toggleSwitch.checked = false;
-  } else {
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-    if (currentTheme) {
-      document.documentElement.setAttribute('data-theme', currentTheme);
-
-      if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-      }
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true;
     }
   }
 }
@@ -72,93 +63,137 @@ function main() {
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">Index</h1>
-    Modules: <a href= <a href="cx.html">cx</a>, <a href="cxconsts.html">cxconsts</a>, <a href="cxfont.html">cxfont</a>, <a href="cxfontconsts.html">cxfontconsts</a>, <a href="cxglobal.html">cxglobal</a>, <a href="cxhash.html">cxhash</a>, <a href="cxnetwork.html">cxnetwork</a>, <a href="cxprint.html">cxprint</a>, <a href="cxstats.html">cxstats</a>, <a href="cxtime.html">cxtime</a>, <a href="cxversion.html">cxversion</a>, <a href="cxzenity.html">cxzenity</a>.<br/><p /><h2>API symbols</h2>
+    Modules: <a href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cx.html">../../../../.nimble/pkgs/nimcx-1.0.8/nimcx/cx</a>, <a href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html">../../../../.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts</a>, <a href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxglobal.html">../../../../.nimble/pkgs/nimcx-1.0.8/nimcx/cxglobal</a>, <a href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxhash.html">../../../../.nimble/pkgs/nimcx-1.0.8/nimcx/cxhash</a>, <a href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxnetwork.html">../../../../.nimble/pkgs/nimcx-1.0.8/nimcx/cxnetwork</a>, <a href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxprint.html">../../../../.nimble/pkgs/nimcx-1.0.8/nimcx/cxprint</a>, <a href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxstats.html">../../../../.nimble/pkgs/nimcx-1.0.8/nimcx/cxstats</a>, <a href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxtime.html">../../../../.nimble/pkgs/nimcx-1.0.8/nimcx/cxtime</a>, <a href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxversion.html">../../../../.nimble/pkgs/nimcx-1.0.8/nimcx/cxversion</a>, <a href="cx.html">cx</a>, <a href="cxconsts.html">cxconsts</a>, <a href="cxfont.html">cxfont</a>, <a href="cxfontconsts.html">cxfontconsts</a>, <a href="cxglobal.html">cxglobal</a>, <a href="cxhash.html">cxhash</a>, <a href="cxnetwork.html">cxnetwork</a>, <a href="cxprint.html">cxprint</a>, <a href="cxstats.html">cxstats</a>, <a href="cxtime.html">cxtime</a>, <a href="cxversion.html">cxversion</a>, <a href="cxzenity.html">cxzenity</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="%60%26lt%3B%26gt%3B%60" href="#%60%26lt%3B%26gt%3B%60"><span>`&lt;&gt;`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxglobal: `&lt;&gt;`(a, b: untyped): untyped" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxglobal.html#%3C%3E.t%2Cuntyped%2Cuntyped">cxglobal: `&lt;&gt;`(a, b: untyped): untyped</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxglobal: `&lt;&gt;`(a, b: untyped): untyped" href="cxglobal.html#%3C%3E.t%2Cuntyped%2Cuntyped">cxglobal: `&lt;&gt;`(a, b: untyped): untyped</a></li>
           </ul></dd>
 <dt><a name="%60%2A%60" href="#%60%2A%60"><span>`*`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxglobal: `*`(s: string; n: int): untyped" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxglobal.html#%2A.t%2Cstring%2Cint">cxglobal: `*`(s: string; n: int): untyped</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxglobal: `*`(s: string; n: int): untyped" href="cxglobal.html#%2A.t%2Cstring%2Cint">cxglobal: `*`(s: string; n: int): untyped</a></li>
           </ul></dd>
 <dt><a name="%60%5B%5D%60" href="#%60%5B%5D%60"><span>`[]`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxglobal: `[]`[T; U](a: seq[T]; x: Slice[U]): seq[T]" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxglobal.html#%5B%5D%2Cseq%5BT%5D%2CSlice%5BU%5D">cxglobal: `[]`[T; U](a: seq[T]; x: Slice[U]): seq[T]</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxglobal: `[]`[T; U](a: seq[T]; x: Slice[U]): seq[T]" href="cxglobal.html#%5B%5D%2Cseq%5BT%5D%2CSlice%5BU%5D">cxglobal: `[]`[T; U](a: seq[T]; x: Slice[U]): seq[T]</a></li>
           </ul></dd>
 <dt><a name="%60as%60" href="#%60as%60"><span>`as`:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cx: `as`[T; U; ](x: T; _: typedesc[U]): U" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cx.html#as.t%2CT%2Ctypedesc%5BU%5D">cx: `as`[T; U; ](x: T; _: typedesc[U]): U</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cx: `as`[T; U; ](x: T; _: typedesc[U]): U" href="cx.html#as.t%2CT%2Ctypedesc%5BU%5D">cx: `as`[T; U; ](x: T; _: typedesc[U]): U</a></li>
           </ul></dd>
 <dt><a name="add" href="#add"><span>add:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cx: add(co: ref Cxcounter)" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cx.html#add%2Cref.Cxcounter">cx: add(co: ref Cxcounter)</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cx: add(co: ref Cxcounter)" href="cx.html#add%2Cref.Cxcounter">cx: add(co: ref Cxcounter)</a></li>
           </ul></dd>
 <dt><a name="ae" href="#ae"><span>ae:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: ae" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#ae">cxconsts: ae</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: ae" href="cxconsts.html#ae">cxconsts: ae</a></li>
           </ul></dd>
 <dt><a name="ael" href="#ael"><span>ael:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: ael" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#ael">cxconsts: ael</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: ael" href="cxconsts.html#ael">cxconsts: ael</a></li>
           </ul></dd>
 <dt><a name="aliceblue" href="#aliceblue"><span>aliceblue:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: aliceblue" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#aliceblue">cxconsts: aliceblue</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: aliceblue" href="cxconsts.html#aliceblue">cxconsts: aliceblue</a></li>
           </ul></dd>
 <dt><a name="alicebluebg" href="#alicebluebg"><span>alicebluebg:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: alicebluebg" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#alicebluebg">cxconsts: alicebluebg</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: alicebluebg" href="cxconsts.html#alicebluebg">cxconsts: alicebluebg</a></li>
           </ul></dd>
 <dt><a name="antiquewhite" href="#antiquewhite"><span>antiquewhite:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: antiquewhite" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#antiquewhite">cxconsts: antiquewhite</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: antiquewhite" href="cxconsts.html#antiquewhite">cxconsts: antiquewhite</a></li>
           </ul></dd>
 <dt><a name="antiquewhitebg" href="#antiquewhitebg"><span>antiquewhitebg:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: antiquewhitebg" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#antiquewhitebg">cxconsts: antiquewhitebg</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: antiquewhitebg" href="cxconsts.html#antiquewhitebg">cxconsts: antiquewhitebg</a></li>
           </ul></dd>
 <dt><a name="aPaletteSample" href="#aPaletteSample"><span>aPaletteSample:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxglobal: aPaletteSample(coltype: string): int" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxglobal.html#aPaletteSample.t%2Cstring">cxglobal: aPaletteSample(coltype: string): int</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxglobal: aPaletteSample(coltype: string): int" href="cxglobal.html#aPaletteSample.t%2Cstring">cxglobal: aPaletteSample(coltype: string): int</a></li>
           </ul></dd>
 <dt><a name="aqua" href="#aqua"><span>aqua:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: aqua" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#aqua">cxconsts: aqua</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: aqua" href="cxconsts.html#aqua">cxconsts: aqua</a></li>
           </ul></dd>
 <dt><a name="aquabg" href="#aquabg"><span>aquabg:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: aquabg" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#aquabg">cxconsts: aquabg</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: aquabg" href="cxconsts.html#aquabg">cxconsts: aquabg</a></li>
           </ul></dd>
 <dt><a name="aquamarine" href="#aquamarine"><span>aquamarine:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: aquamarine" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#aquamarine">cxconsts: aquamarine</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: aquamarine" href="cxconsts.html#aquamarine">cxconsts: aquamarine</a></li>
           </ul></dd>
 <dt><a name="aquamarinebg" href="#aquamarinebg"><span>aquamarinebg:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: aquamarinebg" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#aquamarinebg">cxconsts: aquamarinebg</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: aquamarinebg" href="cxconsts.html#aquamarinebg">cxconsts: aquamarinebg</a></li>
           </ul></dd>
 <dt><a name="azure" href="#azure"><span>azure:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: azure" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#azure">cxconsts: azure</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: azure" href="cxconsts.html#azure">cxconsts: azure</a></li>
           </ul></dd>
 <dt><a name="azurebg" href="#azurebg"><span>azurebg:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: azurebg" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#azurebg">cxconsts: azurebg</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: azurebg" href="cxconsts.html#azurebg">cxconsts: azurebg</a></li>
           </ul></dd>
 <dt><a name="backspacebutton" href="#backspacebutton"><span>backspacebutton:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: backspacebutton" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#backspacebutton">cxconsts: backspacebutton</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: backspacebutton" href="cxconsts.html#backspacebutton">cxconsts: backspacebutton</a></li>
           </ul></dd>
 <dt><a name="bblack" href="#bblack"><span>bblack:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: bblack" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#bblack">cxconsts: bblack</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: bblack" href="cxconsts.html#bblack">cxconsts: bblack</a></li>
           </ul></dd>
 <dt><a name="bblue" href="#bblue"><span>bblue:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: bblue" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#bblue">cxconsts: bblue</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: bblue" href="cxconsts.html#bblue">cxconsts: bblue</a></li>
           </ul></dd>
 <dt><a name="bbrightblack" href="#bbrightblack"><span>bbrightblack:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxconsts: bbrightblack" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#bbrightblack">cxconsts: bbrightblack</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxconsts: bbrightblack" href="cxconsts.html#bbrightblack">cxconsts: bbrightblack</a></li>
           </ul></dd>
 <dt><a name="bbrightblue" href="#bbrightblue"><span>bbrightblue:</span></a></dt><dd><ul class="simple">
@@ -1203,7 +1238,7 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="cxtime: cxDateTime(): string" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxtime.html#cxDateTime.t">cxtime: cxDateTime(): string</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="cxtime: cxDateTime(): string" href="cxtime.html#cxDateTime.t">cxtime: cxDateTime(): string</a></li>
+          data-doc-search-tag="cxtime: cxDateTime(): untyped" href="cxtime.html#cxDateTime.t">cxtime: cxDateTime(): untyped</a></li>
           </ul></dd>
 <dt><a name="cxDayOfWeek" href="#cxDayOfWeek"><span>cxDayOfWeek:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1255,6 +1290,10 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="cxfont: cxf(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())" href="cxfont.html#cxf.t%2Cint%2Cstring%2Cstring">cxfont: cxf(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
           </ul></dd>
+<dt><a name="cxFinish" href="#cxFinish"><span>cxFinish:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cx: cxFinish()" href="cx.html#cxFinish">cx: cxFinish()</a></li>
+          </ul></dd>
 <dt><a name="cxflat" href="#cxflat"><span>cxflat:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="cx: cxflat(): untyped" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cx.html#cxflat.t">cx: cxflat(): untyped</a></li>
@@ -1290,6 +1329,12 @@ function main() {
           data-doc-search-tag="CxLineType.cxHorizontal" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxprint.html#cxHorizontal">CxLineType.cxHorizontal</a></li>
           <li><a class="reference external"
           data-doc-search-tag="CxLineType.cxHorizontal" href="cxprint.html#cxHorizontal">CxLineType.cxHorizontal</a></li>
+          </ul></dd>
+<dt><a name="cxhostnamectl" href="#cxhostnamectl"><span>cxhostnamectl:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cx: cxhostnamectl()" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cx.html#cxhostnamectl">cx: cxhostnamectl()</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="cx: cxhostnamectl()" href="cx.html#cxhostnamectl">cx: cxhostnamectl()</a></li>
           </ul></dd>
 <dt><a name="cxHRTimer" href="#cxHRTimer"><span>cxHRTimer:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1367,7 +1412,7 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="cxtime: cxLocal(): string" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxtime.html#cxLocal.t">cxtime: cxLocal(): string</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="cxtime: cxLocal(): string" href="cxtime.html#cxLocal.t">cxtime: cxLocal(): string</a></li>
+          data-doc-search-tag="cxtime: cxLocal(): untyped" href="cxtime.html#cxLocal.t">cxtime: cxLocal(): untyped</a></li>
           </ul></dd>
 <dt><a name="cxLoginDateDialog" href="#cxLoginDateDialog"><span>cxLoginDateDialog:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1429,7 +1474,7 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="cxtime: cxNow(): string" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxtime.html#cxNow.t">cxtime: cxNow(): string</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="cxtime: cxNow(): string" href="cxtime.html#cxNow.t">cxtime: cxNow(): string</a></li>
+          data-doc-search-tag="cxtime: cxNow(): untyped" href="cxtime.html#cxNow.t">cxtime: cxNow(): untyped</a></li>
           </ul></dd>
 <dt><a name="cxo" href="#cxo"><span>cxo:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1493,6 +1538,10 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="cxfont: cxr(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())" href="cxfont.html#cxr.t%2Cint%2Cstring%2Cstring">cxfont: cxr(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())</a></li>
           </ul></dd>
+<dt><a name="cxRegion" href="#cxRegion"><span>cxRegion:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cx: cxRegion(name, body: untyped)" href="cx.html#cxRegion.t%2Cuntyped%2Cuntyped">cx: cxRegion(name, body: untyped)</a></li>
+          </ul></dd>
 <dt><a name="cxReverse" href="#cxReverse"><span>cxReverse:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="cxconsts: cxReverse" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#cxReverse">cxconsts: cxReverse</a></li>
@@ -1553,7 +1602,7 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="cxtime: cxTime(): string" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxtime.html#cxTime.t">cxtime: cxTime(): string</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="cxtime: cxTime(): string" href="cxtime.html#cxTime.t">cxtime: cxTime(): string</a></li>
+          data-doc-search-tag="cxtime: cxTime(): untyped" href="cxtime.html#cxTime.t">cxtime: cxTime(): untyped</a></li>
           </ul></dd>
 <dt><a name="CxTimer" href="#CxTimer"><span>CxTimer:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1589,7 +1638,7 @@ function main() {
 <li><a class="reference external"
           data-doc-search-tag="cxtime: cxToday(): string" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxtime.html#cxToday.t">cxtime: cxToday(): string</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="cxtime: cxToday(): string" href="cxtime.html#cxToday.t">cxtime: cxToday(): string</a></li>
+          data-doc-search-tag="cxtime: cxToday(): untyped" href="cxtime.html#cxToday.t">cxtime: cxToday(): untyped</a></li>
           </ul></dd>
 <dt><a name="cxtoLower" href="#cxtoLower"><span>cxtoLower:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -2763,6 +2812,10 @@ function main() {
           <li><a class="reference external"
           data-doc-search-tag="cxconsts: iso_8601_aws" href="cxconsts.html#iso_8601_aws">cxconsts: iso_8601_aws</a></li>
           </ul></dd>
+<dt><a name="isoweek" href="#isoweek"><span>isoweek:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cxtime: isoweek(dt: DateTime): WeekRange" href="cxtime.html#isoweek%2CDateTime">cxtime: isoweek(dt: DateTime): WeekRange</a></li>
+          </ul></dd>
 <dt><a name="ivory" href="#ivory"><span>ivory:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="cxconsts: ivory" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxconsts.html#ivory">cxconsts: ivory</a></li>
@@ -3201,9 +3254,9 @@ function main() {
           </ul></dd>
 <dt><a name="median" href="#median"><span>median:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="cxstats: median(xs: seq[float]): float" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxstats.html#median%2Cseq%5Bfloat%5D">cxstats: median(xs: seq[float]): float</a></li>
+          data-doc-search-tag="cxstats: median(xs: openArray[float]): float" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxstats.html#median%2CopenArray%5Bfloat%5D">cxstats: median(xs: openArray[float]): float</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="cxstats: median(xs: seq[float]): float" href="cxstats.html#median%2Cseq%5Bfloat%5D">cxstats: median(xs: seq[float]): float</a></li>
+          data-doc-search-tag="cxstats: median(xs: openArray[float]): float" href="cxstats.html#median%2CopenArray%5Bfloat%5D">cxstats: median(xs: openArray[float]): float</a></li>
           </ul></dd>
 <dt><a name="mediumaquamarine" href="#mediumaquamarine"><span>mediumaquamarine:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -4031,8 +4084,8 @@ function main() {
              colRight: string = pastelWhite; xpos: int = 1): string" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxprint.html#printInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint">cxprint: printInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
              colRight: string = pastelWhite; xpos: int = 1): string</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="cxprint: printInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
-             colRight: string = pastelWhite; xpos: int = 1): string" href="cxprint.html#printInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint">cxprint: printInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
+          data-doc-search-tag="cxprint: printInfoMsg(info: string = &quot;&quot;; atext: string = &quot;&quot;; colLeft: string = lightslategray;
+             colRight: string = pastelWhite; xpos: int = 1): string" href="cxprint.html#printInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint">cxprint: printInfoMsg(info: string = &quot;&quot;; atext: string = &quot;&quot;; colLeft: string = lightslategray;
              colRight: string = pastelWhite; xpos: int = 1): string</a></li>
           </ul></dd>
 <dt><a name="printLn" href="#printLn"><span>printLn:</span></a></dt><dd><ul class="simple">
@@ -4145,8 +4198,8 @@ function main() {
                colRight: string = pastelWhite; xpos: int = 1): string" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxprint.html#printLnInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint">cxprint: printLnInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
                colRight: string = pastelWhite; xpos: int = 1): string</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="cxprint: printLnInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
-               colRight: string = pastelWhite; xpos: int = 1): string" href="cxprint.html#printLnInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint">cxprint: printLnInfoMsg(info, atext: string = &quot;&quot;; colLeft: string = lightslategray;
+          data-doc-search-tag="cxprint: printLnInfoMsg(info: string; atext: string = &quot;&quot;; colLeft: string = lightslategray;
+               colRight: string = pastelWhite; xpos: int = 1): string" href="cxprint.html#printLnInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint">cxprint: printLnInfoMsg(info: string; atext: string = &quot;&quot;; colLeft: string = lightslategray;
                colRight: string = pastelWhite; xpos: int = 1): string</a></li>
           </ul></dd>
 <dt><a name="printLnOkMsg" href="#printLnOkMsg"><span>printLnOkMsg:</span></a></dt><dd><ul class="simple">
@@ -4467,9 +4520,13 @@ function main() {
           </ul></dd>
 <dt><a name="rolling_zscore" href="#rolling_zscore"><span>rolling_zscore:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="cxstats: rolling_zscore(data: seq[float]; observed_window: seq[float]; decay: float = 0.9): float" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxstats.html#rolling_zscore%2Cseq%5Bfloat%5D%2Cseq%5Bfloat%5D%2Cfloat">cxstats: rolling_zscore(data: seq[float]; observed_window: seq[float]; decay: float = 0.9): float</a></li>
+          data-doc-search-tag="cxstats: rolling_zscore(data: openArray[float]; observed_window: openArray[float];
+               decay: float = 0.9): float" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxstats.html#rolling_zscore%2CopenArray%5Bfloat%5D%2CopenArray%5Bfloat%5D%2Cfloat">cxstats: rolling_zscore(data: openArray[float]; observed_window: openArray[float];
+               decay: float = 0.9): float</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="cxstats: rolling_zscore(data: seq[float]; observed_window: seq[float]; decay: float = 0.9): float" href="cxstats.html#rolling_zscore%2Cseq%5Bfloat%5D%2Cseq%5Bfloat%5D%2Cfloat">cxstats: rolling_zscore(data: seq[float]; observed_window: seq[float]; decay: float = 0.9): float</a></li>
+          data-doc-search-tag="cxstats: rolling_zscore(data: openArray[float]; observed_window: openArray[float];
+               decay: float = 0.9): float" href="cxstats.html#rolling_zscore%2CopenArray%5Bfloat%5D%2CopenArray%5Bfloat%5D%2Cfloat">cxstats: rolling_zscore(data: openArray[float]; observed_window: openArray[float];
+               decay: float = 0.9): float</a></li>
           </ul></dd>
 <dt><a name="roof" href="#roof"><span>roof:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -4781,13 +4838,13 @@ function main() {
           </ul></dd>
 <dt><a name="showRegression" href="#showRegression"><span>showRegression:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
+          data-doc-search-tag="cxstats: showRegression(x, y: openArray[float | int]; n: int = 5; xpos: int = 1)" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxstats.html#showRegression%2CopenArray%5B%5D%2CopenArray%5B%5D%2Cint%2Cint">cxstats: showRegression(x, y: openArray[float | int]; n: int = 5; xpos: int = 1)</a></li>
+          <li><a class="reference external"
           data-doc-search-tag="cxstats: showRegression(rr: RunningRegress; n: int = 5; xpos: int = 1)" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxstats.html#showRegression%2CRunningRegress%2Cint%2Cint">cxstats: showRegression(rr: RunningRegress; n: int = 5; xpos: int = 1)</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="cxstats: showRegression(x, y: seq[float | int]; n: int = 5; xpos: int = 1)" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxstats.html#showRegression%2Cseq%5B%5D%2Cseq%5B%5D%2Cint%2Cint">cxstats: showRegression(x, y: seq[float | int]; n: int = 5; xpos: int = 1)</a></li>
+          data-doc-search-tag="cxstats: showRegression(x, y: openArray[float | int]; n: int = 5; xpos: int = 1)" href="cxstats.html#showRegression%2CopenArray%5B%5D%2CopenArray%5B%5D%2Cint%2Cint">cxstats: showRegression(x, y: openArray[float | int]; n: int = 5; xpos: int = 1)</a></li>
           <li><a class="reference external"
           data-doc-search-tag="cxstats: showRegression(rr: RunningRegress; n: int = 5; xpos: int = 1)" href="cxstats.html#showRegression%2CRunningRegress%2Cint%2Cint">cxstats: showRegression(rr: RunningRegress; n: int = 5; xpos: int = 1)</a></li>
-          <li><a class="reference external"
-          data-doc-search-tag="cxstats: showRegression(x, y: seq[float | int]; n: int = 5; xpos: int = 1)" href="cxstats.html#showRegression%2Cseq%5B%5D%2Cseq%5B%5D%2Cint%2Cint">cxstats: showRegression(x, y: seq[float | int]; n: int = 5; xpos: int = 1)</a></li>
           </ul></dd>
 <dt><a name="showRuler" href="#showRuler"><span>showRuler:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -5447,6 +5504,12 @@ function main() {
           <li><a class="reference external"
           data-doc-search-tag="cx: toClip[T](s: T)" href="cx.html#toClip%2CT">cx: toClip[T](s: T)</a></li>
           </ul></dd>
+<dt><a name="toCxOpenarray" href="#toCxOpenarray"><span>toCxOpenarray:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cx: toCxOpenarray(aseq: seq[untyped]): untyped" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cx.html#toCxOpenarray.t%2Cseq%5Buntyped%5D">cx: toCxOpenarray(aseq: seq[untyped]): untyped</a></li>
+          <li><a class="reference external"
+          data-doc-search-tag="cx: toCxOpenarray(aseq: seq[untyped]): untyped" href="cx.html#toCxOpenarray.t%2Cseq%5Buntyped%5D">cx: toCxOpenarray(aseq: seq[untyped]): untyped</a></li>
+          </ul></dd>
 <dt><a name="toEnum" href="#toEnum"><span>toEnum:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="cxglobal: toEnum(words: static[string]): untyped" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxglobal.html#toEnum.m%2Cstatic%5Bstring%5D">cxglobal: toEnum(words: static[string]): untyped</a></li>
@@ -5633,6 +5696,10 @@ function main() {
           <li><a class="reference external"
           data-doc-search-tag="cxglobal: upperCase(s: string): string" href="cxglobal.html#upperCase.t%2Cstring">cxglobal: upperCase(s: string): string</a></li>
           </ul></dd>
+<dt><a name="utf8info" href="#utf8info"><span>utf8info:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="cxglobal: utf8info(s: string): string" href="cxglobal.html#utf8info%2Cstring">cxglobal: utf8info(s: string): string</a></li>
+          </ul></dd>
 <dt><a name="validDate" href="#validDate"><span>validDate:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="cxtime: validDate(adate: string): bool" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxtime.html#validDate%2Cstring">cxtime: validDate(adate: string): bool</a></li>
@@ -5791,9 +5858,9 @@ function main() {
           </ul></dd>
 <dt><a name="zscore" href="#zscore"><span>zscore:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="cxstats: zscore(data: seq[SomeNumber]): seq[float]" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxstats.html#zscore%2Cseq%5BSomeNumber%5D">cxstats: zscore(data: seq[SomeNumber]): seq[float]</a></li>
+          data-doc-search-tag="cxstats: zscore(data: openArray[SomeNumber]): seq[float]" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx/cxstats.html#zscore%2CopenArray%5BSomeNumber%5D">cxstats: zscore(data: openArray[SomeNumber]): seq[float]</a></li>
           <li><a class="reference external"
-          data-doc-search-tag="cxstats: zscore(data: seq[SomeNumber]): seq[float]" href="cxstats.html#zscore%2Cseq%5BSomeNumber%5D">cxstats: zscore(data: seq[SomeNumber]): seq[float]</a></li>
+          data-doc-search-tag="cxstats: zscore(data: openArray[SomeNumber]): seq[float]" href="cxstats.html#zscore%2CopenArray%5BSomeNumber%5D">cxstats: zscore(data: openArray[SomeNumber]): seq[float]</a></li>
           </ul></dd>
 <dt><a name="zyclam" href="#zyclam"><span>zyclam:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -5812,7 +5879,7 @@ function main() {
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-06-10 09:27:52 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-09-26 17:36:35 UTC</small>
       </div>
     </div>
   </div>
