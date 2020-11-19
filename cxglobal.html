@@ -101,273 +101,629 @@ function main() {
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#RpointInt"
-    title="RpointInt = tuple[x, y: int]"><wbr />Rpoint<wbr />Int<span class="attachedType"></span></a></li>
+    title="RpointInt = tuple[x, y: int]">RpointInt</a></li>
   <li><a class="reference" href="#RpointFloat"
-    title="RpointFloat = tuple[x, y: float]"><wbr />Rpoint<wbr />Float<span class="attachedType"></span></a></li>
+    title="RpointFloat = tuple[x, y: float]">RpointFloat</a></li>
 
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#tupleTypes"
-    title="tupleTypes(atuple: tuple): seq[string]"><wbr />tuple<wbr />Types<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#newLine%2Cint"
-    title="newLine(n: int = 1): string"><wbr />new<wbr />Line<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxtoLower%2Cchar"
-    title="cxtoLower(c: char): char"><wbr />cxto<wbr />Lower<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#isNumeric%2Cstring"
-    title="isNumeric(s: string): bool"><wbr />is<wbr />Numeric<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#remapIntToFloat%2Cseq%5Bint%5D"
-    title="remapIntToFloat(s: seq[int]): seq[float]"><wbr />remap<wbr />Int<wbr />To<wbr />Float<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#remapFloatToInt%2Cseq%5Bfloat%5D"
-    title="remapFloatToInt(s: seq[float]): seq[int]"><wbr />remap<wbr />Float<wbr />To<wbr />Int<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#remapToString%2Cseq%5BT%5D"
-    title="remapToString[T](s: seq[T]): seq[string]"><wbr />remap<wbr />To<wbr />String<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#fastWrite%2CFile%2Cstring"
-    title="fastWrite(f: File; s: string)"><wbr />fast<wbr />Write<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#rndSample%2Cseq%5BT%5D"
-    title="rndSample[T](asq: seq[T]): T"><wbr />rnd<wbr />Sample<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#rndRGB"
-    title="rndRGB(): auto"><wbr />rnd<wbr />RGB<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#sum%2Cseq%5BT%5D"
-    title="sum[T](aseq: seq[T]): T"><wbr />sum<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#product%2Cseq%5BT%5D"
-    title="product[T](aseq: seq[T]): T"><wbr />product<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#isBlank%2Cstring"
-    title="isBlank(val: string): bool"><wbr />is<wbr />Blank<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#isEmpty%2Cstring"
-    title="isEmpty(val: string): bool"><wbr />is<wbr />Empty<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getRndInt%2Cint%2Cint"
-    title="getRndInt(mi: int = 0; ma: int = int.high): int"><wbr />get<wbr />Rnd<wbr />Int<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getRndBool"
-    title="getRndBool(): bool"><wbr />get<wbr />Rnd<wbr />Bool<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getRandomSignI"
-    title="getRandomSignI(): int"><wbr />get<wbr />Random<wbr />Sign<wbr />I<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getRandomSignF"
-    title="getRandomSignF(): float"><wbr />get<wbr />Random<wbr />Sign<wbr />F<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#reverseMe%2CopenArray%5BT%5D"
-    title="reverseMe[T](xs: openArray[T]): seq[T]"><wbr />reverse<wbr />Me<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#reverse%2Cseq%5BT%5D"
-    title="reverse[T](s: var seq[T])"><wbr />reverse<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#reverseText%2Cstring"
-    title="reverseText(text: string): string"><wbr />reverse<wbr />Text<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#reverseString%2Cstring"
-    title="reverseString(text: string): string"><wbr />reverse<wbr />String<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqBool%2Cint"
-    title="createSeqBool(n: int = 10): seq[bool]"><wbr />create<wbr />Seq<wbr />Bool<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqBinary%2Cint"
-    title="createSeqBinary(n: int = 10): seq[int]"><wbr />create<wbr />Seq<wbr />Binary<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqInt%2Cint%2Cint%2Cint"
-    title="createSeqInt(n: int = 10; mi: int = 0; ma: int = 1000): seq[int]"><wbr />create<wbr />Seq<wbr />Int<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#ff%2Cfloat%2Cint"
-    title="ff(zz: float; n: int = 5): string"><wbr />ff<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#ff2%2CSomeNumber%2Cint"
-    title="ff2(zz: SomeNumber; n: int = 3): string"><wbr />ff2<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#ff2Eu%2CSomeNumber%2Cint"
-    title="ff2Eu(zzz: SomeNumber; n: int = 3): string"><wbr />ff2Eu<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getRandomFloat"
-    title="getRandomFloat(): float"><wbr />get<wbr />Random<wbr />Float<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getRndFloat"
-    title="getRndFloat(): float"><wbr />get<wbr />Rnd<wbr />Float<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqFloat%2Cint%2Cint"
-    title="createSeqFloat(n: int = 10; prec: int = 3): seq[float]"><wbr />create<wbr />Seq<wbr />Float<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#seqLeft%2Cseq%5BT%5D%2Cint"
-    title="seqLeft[T](it: seq[T]; n: int): seq[T]"><wbr />seq<wbr />Left<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#seqRight%2Cseq%5BT%5D%2Cint"
-    title="seqRight[T](it: seq[T]; n: int): seq[T]"><wbr />seq<wbr />Right<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxIsDigit%2Cstring%2Cchar"
-    title="cxIsDigit(s: string; sep: char = &apos;.&apos;): bool"><wbr />cx<wbr />Is<wbr />Digit<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#fmtx%2CopenArray%5Bstring%5D%2Cvarargs%5BT%2C%5D"
-    title="fmtx[T](fmts: openArray[string]; fstrings: varargs[T, `$`]): string"><wbr />fmtx<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showRune%2Cstring"
-    title="showRune(s: string): string"><wbr />show<wbr />Rune<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#unquote%2Cstring"
-    title="unquote(s: string): string"><wbr />unquote<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cleanScreen"
-    title="cleanScreen()"><wbr />clean<wbr />Screen<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#centerX"
-    title="centerX(): int"><wbr />center<wbr />X<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#centerPos%2Cstring"
-    title="centerPos(astring: string)"><wbr />center<wbr />Pos<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#fastsplit%2Cstring%2Cchar"
-    title="fastsplit(s: string; sep: char): seq[string]"><wbr />fastsplit<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#splitty%2Cstring%2Cstring"
-    title="splitty(txt: string; sep: string): seq[string]"><wbr />splitty<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#doFlag%2Cstring%2Cint%2CT%2Cstring"
-    title="doFlag[T](flagcol: string = yellowgreen; flags: int = 1; text: T = &quot;&quot;;
-          textcol: string = termwhite): string"><wbr />do<wbr />Flag<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getAscii%2Cstring"
-    title="getAscii(s: string): seq[int]"><wbr />get<wbr />Ascii<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#curFw%2Cint"
-    title="curFw(x: int = 1): auto"><wbr />cur<wbr />Fw<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#curMove%2Cint%2Cint%2Cint%2Cint"
-    title="curMove(up: int = 0; dn: int = 0; fw: int = 0; bk: int = 0)"><wbr />cur<wbr />Move<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#stripper%2Cstring"
-    title="stripper(str: string): string"><wbr />stripper<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#%5B%5D%2Cseq%5BT%5D%2CSlice%5BU%5D"
-    title="`[]`[T; U](a: seq[T]; x: Slice[U]): seq[T]"><wbr />`[]`<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#fromCString%2Cpointer%2Cint"
-    title="fromCString(p: pointer; len: int): string"><wbr />from<wbr />CString<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#streamFile%2Cstring%2CFileMode"
-    title="streamFile(filename: string; mode: FileMode): FileStream"><wbr />stream<wbr />File<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#uniform%2Cfloat%2Cfloat"
-    title="uniform(a, b: float): float"><wbr />uniform<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#sampleSeq%2Cseq%5BT%5D%2Cint%2Cint"
-    title="sampleSeq[T](x: seq[T]; a: int; b: int): seq[T]"><wbr />sample<wbr />Seq<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#tupleToStr"
-    title="tupleToStr(xs: tuple): string"><wbr />tuple<wbr />To<wbr />Str<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#fibi%2Cint"
-    title="fibi(n: int): int64"><wbr />fibi<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#pswwaux"
-    title="pswwaux()"><wbr />pswwaux<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxCpuInfo"
-    title="cxCpuInfo(): string"><wbr />cx<wbr />Cpu<wbr />Info<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cpuInfo"
-    title="cpuInfo(): seq[string]"><wbr />cpu<wbr />Info<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showCpuInfo"
-    title="showCpuInfo()"><wbr />show<wbr />Cpu<wbr />Info<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxVideoInfo"
-    title="cxVideoInfo(): string"><wbr />cx<wbr />Video<wbr />Info<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showCpuCores"
-    title="showCpuCores()"><wbr />show<wbr />Cpu<wbr />Cores<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showHostNameCtl"
-    title="showHostNameCtl()"><wbr />show<wbr />Host<wbr />Name<wbr />Ctl<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getProjectDir"
-    title="getProjectDir(): string"><wbr />get<wbr />Project<wbr />Dir<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getUserName"
-    title="getUserName(): string"><wbr />get<wbr />User<wbr />Name<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getPassword%2Cint64"
-    title="getPassword(ahash: int64 = 0&apos;i64): string"><wbr />get<wbr />Password<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getPwd"
-    title="getPwd(): string"><wbr />get<wbr />Pwd<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxInput%2Cstring%2Cstring%2Cint%2Cbool"
-    title="cxInput(prompt: string; promptColor: string = greenYellow; xpos: int = 0;
-        allowBlank: bool = false): string"><wbr />cx<wbr />Input<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxYesNo%2Cstring%2Cstring%2Cint%2Cbool"
-    title="cxYesNo(prompt: string = &quot;Continue &quot;; promptColor: string = greenYellow; xpos: int = 0;
-        allowBlank: bool = false): bool"><wbr />cx<wbr />Yes<wbr />No<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getRandomPointInCircle%2Cfloat"
-    title="getRandomPointInCircle(radius: float = 1.0): seq[float]"><wbr />get<wbr />Random<wbr />Point<wbr />In<wbr />Circle<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getRandomPoint%2Cfloat%2Cfloat%2Cfloat%2Cfloat"
+      <ul class="simple nested-toc-section">checkMem
+      <li><a class="reference" href="#checkMem%2Cint"
+    title="checkMem(xpos: int = 2)">checkMem,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">quickLargeInt
+      <li><a class="reference" href="#quickLargeInt"
+    title="quickLargeInt(): string">quickLargeInt</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getRandomPoint
+      <li><a class="reference" href="#getRandomPoint%2Cfloat%2Cfloat%2Cfloat%2Cfloat"
     title="getRandomPoint(minx: float = -500.0; maxx: float = 500.0; miny: float = -500.0;
-               maxy: float = 500.0): RpointFloat"><wbr />get<wbr />Random<wbr />Point<span class="attachedType">RpointFloat</span></a></li>
+               maxy: float = 500.0): RpointFloat">getRandomPoint,<wbr>float,<wbr>float,<wbr>float,<wbr>float</a></li>
   <li><a class="reference" href="#getRandomPoint%2Cint%2Cint%2Cint%2Cint"
-    title="getRandomPoint(minx: int = -500; maxx: int = 500; miny: int = -500; maxy: int = 500): RpointInt"><wbr />get<wbr />Random<wbr />Point<span class="attachedType">RpointInt</span></a></li>
-  <li><a class="reference" href="#getPointInSphere"
-    title="getPointInSphere(): auto"><wbr />get<wbr />Point<wbr />In<wbr />Sphere<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#randpos"
-    title="randpos(): int"><wbr />randpos<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showRandomCard%2Cint"
-    title="showRandomCard(xpos: int = centerX())"><wbr />show<wbr />Random<wbr />Card<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showRuler%2Cint%2Cint%2Cint%2Cstring%2Cstring%2Cbool"
+    title="getRandomPoint(minx: int = -500; maxx: int = 500; miny: int = -500;
+               maxy: int = 500): RpointInt">getRandomPoint,<wbr>int,<wbr>int,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">memCheck
+      <li><a class="reference" href="#memCheck%2Cbool"
+    title="memCheck(stats: bool = false)">memCheck,<wbr>bool</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">checkPrime
+      <li><a class="reference" href="#checkPrime%2Cint"
+    title="checkPrime(a: int): bool">checkPrime,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">showRune
+      <li><a class="reference" href="#showRune%2Cstring"
+    title="showRune(s: string): string">showRune,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">shift
+      <li><a class="reference" href="#shift%2Cseq%5BT%5D%2CNatural"
+    title="shift[T](x: var seq[T]; zz: Natural = 0): T">shift,<wbr>seq[T],<wbr>Natural</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">centerMark
+      <li><a class="reference" href="#centerMark%2Cbool"
+    title="centerMark(showpos: bool = false)">centerMark,<wbr>bool</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">rndSample
+      <li><a class="reference" href="#rndSample%2Cseq%5BT%5D"
+    title="rndSample[T](asq: seq[T]): T">rndSample,<wbr>seq[T]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getRndFloat
+      <li><a class="reference" href="#getRndFloat"
+    title="getRndFloat(): float">getRndFloat</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">pswwaux
+      <li><a class="reference" href="#pswwaux"
+    title="pswwaux()">pswwaux</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">remapToString
+      <li><a class="reference" href="#remapToString%2Cseq%5BT%5D"
+    title="remapToString[T](s: seq[T]): seq[string]">remapToString,<wbr>seq[T]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqGeoshapes
+      <li><a class="reference" href="#createSeqGeoshapes"
+    title="createSeqGeoshapes(): seq[string]">createSeqGeoshapes</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxInput
+      <li><a class="reference" href="#cxInput%2Cstring%2Cstring%2Cint%2Cbool"
+    title="cxInput(prompt: string; promptColor: string = greenYellow; xpos: int = 0;
+        allowBlank: bool = false): string">cxInput,<wbr>string,<wbr>string,<wbr>int,<wbr>bool</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newWord
+      <li><a class="reference" href="#newWord%2Cint%2Cint"
+    title="newWord(minwl: int = 3; maxwl: int = 10): string">newWord,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newWordCJK
+      <li><a class="reference" href="#newWordCJK%2Cint%2Cint"
+    title="newWordCJK(minwl: int = 3; maxwl: int = 10): string">newWordCJK,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getRandomSignF
+      <li><a class="reference" href="#getRandomSignF"
+    title="getRandomSignF(): float">getRandomSignF</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">tupleTypes
+      <li><a class="reference" href="#tupleTypes"
+    title="tupleTypes(atuple: tuple): seq[string]">tupleTypes</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">fastWrite
+      <li><a class="reference" href="#fastWrite%2CFile%2Cstring"
+    title="fastWrite(f: File; s: string)">fastWrite,<wbr>File,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cpuInfo
+      <li><a class="reference" href="#cpuInfo"
+    title="cpuInfo(): seq[string]">cpuInfo</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">isNumeric
+      <li><a class="reference" href="#isNumeric%2Cstring"
+    title="isNumeric(s: string): bool">isNumeric,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">remapIntToFloat
+      <li><a class="reference" href="#remapIntToFloat%2Cseq%5Bint%5D"
+    title="remapIntToFloat(s: seq[int]): seq[float]">remapIntToFloat,<wbr>seq[int]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">fullGcStats
+      <li><a class="reference" href="#fullGcStats%2Cint"
+    title="fullGcStats(xpos: int = 2): int">fullGcStats,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">genMacAddress
+      <li><a class="reference" href="#genMacAddress"
+    title="genMacAddress(): string">genMacAddress</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">fmtx
+      <li><a class="reference" href="#fmtx%2CopenArray%5Bstring%5D%2Cvarargs%5BT%2C%5D"
+    title="fmtx[T](fmts: openArray[string]; fstrings: varargs[T, `$`]): string">fmtx,<wbr>openArray[string],<wbr>varargs[T,<wbr>]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getProjectDir
+      <li><a class="reference" href="#getProjectDir"
+    title="getProjectDir(): string">getProjectDir</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createRandomDataFile
+      <li><a class="reference" href="#createRandomDataFile%2Cstring"
+    title="createRandomDataFile(filename: string = &quot;randomdata.dat&quot;)">createRandomDataFile,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">seqLeft
+      <li><a class="reference" href="#seqLeft%2Cseq%5BT%5D%2Cint"
+    title="seqLeft[T](it: seq[T]; n: int): seq[T]">seqLeft,<wbr>seq[T],<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxVideoInfo
+      <li><a class="reference" href="#cxVideoInfo"
+    title="cxVideoInfo(): string">cxVideoInfo</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">streamFile
+      <li><a class="reference" href="#streamFile%2Cstring%2CFileMode"
+    title="streamFile(filename: string; mode: FileMode): FileStream">streamFile,<wbr>string,<wbr>FileMode</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newKatakana
+      <li><a class="reference" href="#newKatakana%2Cint%2Cint"
+    title="newKatakana(minwl: int = 3; maxwl: int = 10): string">newKatakana,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqBinary
+      <li><a class="reference" href="#createSeqBinary%2Cint"
+    title="createSeqBinary(n: int = 10): seq[int]">createSeqBinary,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">seqRight
+      <li><a class="reference" href="#seqRight%2Cseq%5BT%5D%2Cint"
+    title="seqRight[T](it: seq[T]; n: int): seq[T]">seqRight,<wbr>seq[T],<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqCJK
+      <li><a class="reference" href="#createSeqCJK"
+    title="createSeqCJK(): seq[string]">createSeqCJK</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getEmojisSmall
+      <li><a class="reference" href="#getEmojisSmall"
+    title="getEmojisSmall(): seq[string]">getEmojisSmall</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqInt
+      <li><a class="reference" href="#createSeqInt%2Cint%2Cint%2Cint"
+    title="createSeqInt(n: int = 10; mi: int = 0; ma: int = 1000): seq[int]">createSeqInt,<wbr>int,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">randpos
+      <li><a class="reference" href="#randpos"
+    title="randpos(): int">randpos</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">isBlank
+      <li><a class="reference" href="#isBlank%2Cstring"
+    title="isBlank(val: string): bool">isBlank,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqFloat
+      <li><a class="reference" href="#createSeqFloat%2Cint%2Cint"
+    title="createSeqFloat(n: int = 10; prec: int = 3): seq[float]">createSeqFloat,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newWord2
+      <li><a class="reference" href="#newWord2%2Cint%2Cint"
+    title="newWord2(minwl: int = 3; maxwl: int = 10): string">newWord2,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">centerPos
+      <li><a class="reference" href="#centerPos%2Cstring"
+    title="centerPos(astring: string)">centerPos,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">showRuler
+      <li><a class="reference" href="#showRuler%2Cint%2Cint%2Cint%2Cstring%2Cstring%2Cbool"
     title="showRuler(xpos: int = 0; xposE: int = 0; ypos: int = 0; fgr: string = white;
-          bgr: string = getBg(bgDefault); vert: bool = false)"><wbr />show<wbr />Ruler<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#centerMark%2Cbool"
-    title="centerMark(showpos: bool = false)"><wbr />center<wbr />Mark<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#superHeader%2Cstring"
-    title="superHeader(bstring: string)"><wbr />super<wbr />Header<span class="attachedType"></span></a></li>
+          bgr: string = getBg(bgDefault); vert: bool = false)">showRuler,<wbr>int,<wbr>int,<wbr>int,<wbr>string,<wbr>string,<wbr>bool</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqIching
+      <li><a class="reference" href="#createSeqIching"
+    title="createSeqIching(): seq[string]">createSeqIching</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">product
+      <li><a class="reference" href="#product%2Cseq%5BT%5D"
+    title="product[T](aseq: seq[T]): T">product,<wbr>seq[T]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">seqHighLite
+      <li><a class="reference" href="#seqHighLite%2Cseq%5BT%5D%2Cseq%5BT%5D%2Cstring"
+    title="seqHighLite[T](b: seq[T]; b1: seq[T]; col: string = gold)">seqHighLite,<wbr>seq[T],<wbr>seq[T],<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getAscii
+      <li><a class="reference" href="#getAscii%2Cstring"
+    title="getAscii(s: string): seq[int]">getAscii,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getRndBool
+      <li><a class="reference" href="#getRndBool"
+    title="getRndBool(): bool">getRndBool</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">ff2Eu
+      <li><a class="reference" href="#ff2Eu%2CSomeNumber%2Cint"
+    title="ff2Eu(zzz: SomeNumber; n: int = 3): string">ff2Eu,<wbr>SomeNumber,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">sampleSeq
+      <li><a class="reference" href="#sampleSeq%2Cseq%5BT%5D%2Cint%2Cint"
+    title="sampleSeq[T](x: seq[T]; a: int; b: int): seq[T]">sampleSeq,<wbr>seq[T],<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">isEmpty
+      <li><a class="reference" href="#isEmpty%2Cstring"
+    title="isEmpty(val: string): bool">isEmpty,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">centerX
+      <li><a class="reference" href="#centerX"
+    title="centerX(): int">centerX</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqBool
+      <li><a class="reference" href="#createSeqBool%2Cint"
+    title="createSeqBool(n: int = 10): seq[bool]">createSeqBool,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getPassword
+      <li><a class="reference" href="#getPassword%2Cint64"
+    title="getPassword(ahash: int64 = 0&apos;i64): string">getPassword,<wbr>int64</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">showCpuInfo
+      <li><a class="reference" href="#showCpuInfo"
+    title="showCpuInfo()">showCpuInfo</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newLine
+      <li><a class="reference" href="#newLine%2Cint"
+    title="newLine(n: int = 1): string">newLine,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqHiragana
+      <li><a class="reference" href="#createSeqHiragana"
+    title="createSeqHiragana(): seq[string]">createSeqHiragana</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">spiralBoxy
+      <li><a class="reference" href="#spiralBoxy%2Cint%2Cint%2Cint"
+    title="spiralBoxy(w: int = 20; h: int = 20; xpos: int = 1)">spiralBoxy,<wbr>int,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">[]
+      <li><a class="reference" href="#%5B%5D%2Cseq%5BT%5D%2CSlice%5BU%5D"
+    title="`[]`[T; U](a: seq[T]; x: Slice[U]): seq[T]">[],<wbr>seq[T],<wbr>Slice[U]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newHiragana
+      <li><a class="reference" href="#newHiragana%2Cint%2Cint"
+    title="newHiragana(minwl: int = 3; maxwl: int = 10): string">newHiragana,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">rndStr
+      <li><a class="reference" href="#rndStr%2Cint"
+    title="rndStr(n: int = 20): string">rndStr,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">stripper
+      <li><a class="reference" href="#stripper%2Cstring"
+    title="stripper(str: string): string">stripper,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">showCpuCores
+      <li><a class="reference" href="#showCpuCores"
+    title="showCpuCores()">showCpuCores</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqBoxChars
+      <li><a class="reference" href="#createSeqBoxChars"
+    title="createSeqBoxChars(): seq[string]">createSeqBoxChars</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">fromCString
+      <li><a class="reference" href="#fromCString%2Cpointer%2Cint"
+    title="fromCString(p: pointer; len: int): string">fromCString,<wbr>pointer,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">curFw
+      <li><a class="reference" href="#curFw%2Cint"
+    title="curFw(x: int = 1): auto">curFw,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">showEmojisSmall
+      <li><a class="reference" href="#showEmojisSmall"
+    title="showEmojisSmall()">showEmojisSmall</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">reverseMe
+      <li><a class="reference" href="#reverseMe%2CopenArray%5BT%5D"
+    title="reverseMe[T](xs: openArray[T]): seq[T]">reverseMe,<wbr>openArray[T]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getRndInt
+      <li><a class="reference" href="#getRndInt%2Cint%2Cint"
+    title="getRndInt(mi: int = 0; ma: int = int.high): int">getRndInt,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">reverseText
+      <li><a class="reference" href="#reverseText%2Cstring"
+    title="reverseText(text: string): string">reverseText,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxCpuInfo
+      <li><a class="reference" href="#cxCpuInfo"
+    title="cxCpuInfo(): string">cxCpuInfo</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">fibi
+      <li><a class="reference" href="#fibi%2Cint"
+    title="fibi(n: int): int64">fibi,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">fastsplit
+      <li><a class="reference" href="#fastsplit%2Cstring%2Cchar"
+    title="fastsplit(s: string; sep: char): seq[string]">fastsplit,<wbr>string,<wbr>char</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">showSeq
+      <li><a class="reference" href="#showSeq%2Cseq%5BT%5D%2Cstring%2Cint%2Cint%2Cbool%2Cint"
+    title="showSeq[T](z: seq[T]; fgr: string = pastelgreen; cols = 6;
+           maxitemwidth: int = 5; displayflag: bool = true; indexstart = 0): string">showSeq,<wbr>seq[T],<wbr>string,<wbr>int,<wbr>int,<wbr>bool,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">ff
+      <li><a class="reference" href="#ff%2Cfloat%2Cint"
+    title="ff(zz: float; n: int = 5): string">ff,<wbr>float,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">curMove
+      <li><a class="reference" href="#curMove%2Cint%2Cint%2Cint%2Cint"
+    title="curMove(up: int = 0; dn: int = 0; fw: int = 0; bk: int = 0)">curMove,<wbr>int,<wbr>int,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">showRandomCard
+      <li><a class="reference" href="#showRandomCard%2Cint"
+    title="showRandomCard(xpos: int = centerX())">showRandomCard,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">unquote
+      <li><a class="reference" href="#unquote%2Cstring"
+    title="unquote(s: string): string">unquote,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">superHeader
+      <li><a class="reference" href="#superHeader%2Cstring"
+    title="superHeader(bstring: string)">superHeader,<wbr>string</a></li>
   <li><a class="reference" href="#superHeader%2Cstring%2Cstring%2Cstring"
-    title="superHeader(bstring: string; strcol: string; frmcol: string)"><wbr />super<wbr />Header<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#newWordCJK%2Cint%2Cint"
-    title="newWordCJK(minwl: int = 3; maxwl: int = 10): string"><wbr />new<wbr />Word<wbr />CJK<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#newWord%2Cint%2Cint"
-    title="newWord(minwl: int = 3; maxwl: int = 10): string"><wbr />new<wbr />Word<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#newWord2%2Cint%2Cint"
-    title="newWord2(minwl: int = 3; maxwl: int = 10): string"><wbr />new<wbr />Word2<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#newWord3%2Cint%2Cint%2Cbool"
-    title="newWord3(minwl: int = 3; maxwl: int = 10; nflag: bool = true): string"><wbr />new<wbr />Word3<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#newHiragana%2Cint%2Cint"
-    title="newHiragana(minwl: int = 3; maxwl: int = 10): string"><wbr />new<wbr />Hiragana<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#newKatakana%2Cint%2Cint"
-    title="newKatakana(minwl: int = 3; maxwl: int = 10): string"><wbr />new<wbr />Katakana<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#newText%2Cint%2Cstring"
-    title="newText(textLen: int = 1000; textgen: string = &quot;newWord&quot;): string"><wbr />new<wbr />Text<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#rndStr%2Cint"
-    title="rndStr(n: int = 20): string"><wbr />rnd<wbr />Str<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createRandomDataFile%2Cstring"
-    title="createRandomDataFile(filename: string = &quot;randomdata.dat&quot;)"><wbr />create<wbr />Random<wbr />Data<wbr />File<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#utf8info%2Cstring"
-    title="utf8info(s: string): string"><wbr />utf8info<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxBinomialCoeff%2Cint%2Cint"
-    title="cxBinomialCoeff(n, k: int): int"><wbr />cx<wbr />Binomial<wbr />Coeff<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqAll%2Cint%2Cint"
-    title="createSeqAll(min: int = 0; max: int = 40878): seq[string]"><wbr />create<wbr />Seq<wbr />All<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqGeoshapes"
-    title="createSeqGeoshapes(): seq[string]"><wbr />create<wbr />Seq<wbr />Geoshapes<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqHiragana"
-    title="createSeqHiragana(): seq[string]"><wbr />create<wbr />Seq<wbr />Hiragana<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqKatakana"
-    title="createSeqKatakana(): seq[string]"><wbr />create<wbr />Seq<wbr />Katakana<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqCJK"
-    title="createSeqCJK(): seq[string]"><wbr />create<wbr />Seq<wbr />CJK<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqFractur"
-    title="createSeqFractur(): seq[string]"><wbr />create<wbr />Seq<wbr />Fractur<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqIching"
-    title="createSeqIching(): seq[string]"><wbr />create<wbr />Seq<wbr />Iching<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqApl"
-    title="createSeqApl(): seq[string]"><wbr />create<wbr />Seq<wbr />Apl<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createSeqBoxChars"
-    title="createSeqBoxChars(): seq[string]"><wbr />create<wbr />Seq<wbr />Box<wbr />Chars<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#boxy%2Cint%2Cint%2Cint"
-    title="boxy(w: int = 20; h: int = 5; fgr = randcol(); xpos: int = 1)"><wbr />boxy<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#boxy2%2Cint%2Cint%2Cint"
-    title="boxy2(w: int = 20; h: int = 5; fgr = randcol(); xpos: int = 1)"><wbr />boxy2<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#spiralBoxy%2Cint%2Cint%2Cint"
-    title="spiralBoxy(w: int = 20; h: int = 20; xpos: int = 1)"><wbr />spiral<wbr />Boxy<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#spiralBoxy2%2Cint%2Cint%2Cint"
-    title="spiralBoxy2(w: int = 20; h: int = 20; xpos: int = 1)"><wbr />spiral<wbr />Boxy2<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showSeq%2Cseq%5BT%5D%2Cstring%2Cint%2Cint%2Cbool%2Cint"
-    title="showSeq[T](z: seq[T]; fgr: string = pastelgreen; cols = 6; maxitemwidth: int = 5;
-           displayflag: bool = true; indexstart = 0): string"><wbr />show<wbr />Seq<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#seqHighLite%2Cseq%5BT%5D%2Cseq%5BT%5D%2Cstring"
-    title="seqHighLite[T](b: seq[T]; b1: seq[T]; col: string = gold)"><wbr />seq<wbr />High<wbr />Lite<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#shift%2Cseq%5BT%5D%2CNatural"
-    title="shift[T](x: var seq[T]; zz: Natural = 0): T"><wbr />shift<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#checkMemFull%2Cint"
-    title="checkMemFull(xpos: int = 2)"><wbr />check<wbr />Mem<wbr />Full<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#checkMem%2Cint"
-    title="checkMem(xpos: int = 2)"><wbr />check<wbr />Mem<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#fullGcStats%2Cint"
-    title="fullGcStats(xpos: int = 2): int"><wbr />full<wbr />Gc<wbr />Stats<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#memCheck%2Cbool"
-    title="memCheck(stats: bool = false)"><wbr />mem<wbr />Check<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#distanceTo%2C%2C"
-    title="distanceTo(origin: (float, float); dest: (float, float)): float"><wbr />distance<wbr />To<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getEmojisSmall"
-    title="getEmojisSmall(): seq[string]"><wbr />get<wbr />Emojis<wbr />Small<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showEmojisSmall"
-    title="showEmojisSmall()"><wbr />show<wbr />Emojis<wbr />Small<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#genMacAddress"
-    title="genMacAddress(): string"><wbr />gen<wbr />Mac<wbr />Address<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#quickPw%2Cint"
-    title="quickPw(l: int = 1): string"><wbr />quick<wbr />Pw<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#quickLargeInt"
-    title="quickLargeInt(): string"><wbr />quick<wbr />Large<wbr />Int<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#quickBinaryString%2Cint"
-    title="quickBinaryString(width: int = 10): string"><wbr />quick<wbr />Binary<wbr />String<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#checkPrime%2Cint"
-    title="checkPrime(a: int): bool"><wbr />check<wbr />Prime<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#getPrimeSeq%2Cint%2Cint"
-    title="getPrimeSeq(x, y: int): seq[int]"><wbr />get<wbr />Prime<wbr />Seq<span class="attachedType"></span></a></li>
+    title="superHeader(bstring: string; strcol: string; frmcol: string)">superHeader,<wbr>string,<wbr>string,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">utf8info
+      <li><a class="reference" href="#utf8info%2Cstring"
+    title="utf8info(s: string): string">utf8info,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqKatakana
+      <li><a class="reference" href="#createSeqKatakana"
+    title="createSeqKatakana(): seq[string]">createSeqKatakana</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getUserName
+      <li><a class="reference" href="#getUserName"
+    title="getUserName(): string">getUserName</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">sum
+      <li><a class="reference" href="#sum%2Cseq%5BT%5D"
+    title="sum[T](aseq: seq[T]): T">sum,<wbr>seq[T]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqApl
+      <li><a class="reference" href="#createSeqApl"
+    title="createSeqApl(): seq[string]">createSeqApl</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">uniform
+      <li><a class="reference" href="#uniform%2Cfloat%2Cfloat"
+    title="uniform(a, b: float): float">uniform,<wbr>float,<wbr>float</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqAll
+      <li><a class="reference" href="#createSeqAll%2Cint%2Cint"
+    title="createSeqAll(min: int = 0; max: int = 40878): seq[string]">createSeqAll,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">remapFloatToInt
+      <li><a class="reference" href="#remapFloatToInt%2Cseq%5Bfloat%5D"
+    title="remapFloatToInt(s: seq[float]): seq[int]">remapFloatToInt,<wbr>seq[float]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">tupleToStr
+      <li><a class="reference" href="#tupleToStr"
+    title="tupleToStr(xs: tuple): string">tupleToStr</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newText
+      <li><a class="reference" href="#newText%2Cint%2Cstring"
+    title="newText(textLen: int = 1000; textgen: string = &quot;newWord&quot;): string">newText,<wbr>int,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">checkMemFull
+      <li><a class="reference" href="#checkMemFull%2Cint"
+    title="checkMemFull(xpos: int = 2)">checkMemFull,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxIsDigit
+      <li><a class="reference" href="#cxIsDigit%2Cstring%2Cchar"
+    title="cxIsDigit(s: string; sep: char = &apos;.&apos;): bool">cxIsDigit,<wbr>string,<wbr>char</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqFractur
+      <li><a class="reference" href="#createSeqFractur"
+    title="createSeqFractur(): seq[string]">createSeqFractur</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">quickPw
+      <li><a class="reference" href="#quickPw%2Cint"
+    title="quickPw(l: int = 1): string">quickPw,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">quickBinaryString
+      <li><a class="reference" href="#quickBinaryString%2Cint"
+    title="quickBinaryString(width: int = 10): string">quickBinaryString,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">distanceTo
+      <li><a class="reference" href="#distanceTo%2C%2C"
+    title="distanceTo(origin: (float, float); dest: (float, float)): float">distanceTo,<wbr>,<wbr></a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">reverseString
+      <li><a class="reference" href="#reverseString%2Cstring"
+    title="reverseString(text: string): string">reverseString,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">doFlag
+      <li><a class="reference" href="#doFlag%2Cstring%2Cint%2CT%2Cstring"
+    title="doFlag[T](flagcol: string = yellowgreen; flags: int = 1; text: T = &quot;&quot;;
+          textcol: string = termwhite): string">doFlag,<wbr>string,<wbr>int,<wbr>T,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxYesNo
+      <li><a class="reference" href="#cxYesNo%2Cstring%2Cstring%2Cint%2Cbool"
+    title="cxYesNo(prompt: string = &quot;Continue &quot;; promptColor: string = greenYellow;
+        xpos: int = 0; allowBlank: bool = false): bool">cxYesNo,<wbr>string,<wbr>string,<wbr>int,<wbr>bool</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getPrimeSeq
+      <li><a class="reference" href="#getPrimeSeq%2Cint%2Cint"
+    title="getPrimeSeq(x, y: int): seq[int]">getPrimeSeq,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getRandomFloat
+      <li><a class="reference" href="#getRandomFloat"
+    title="getRandomFloat(): float">getRandomFloat</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">spiralBoxy2
+      <li><a class="reference" href="#spiralBoxy2%2Cint%2Cint%2Cint"
+    title="spiralBoxy2(w: int = 20; h: int = 20; xpos: int = 1)">spiralBoxy2,<wbr>int,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">boxy
+      <li><a class="reference" href="#boxy%2Cint%2Cint%2Cint"
+    title="boxy(w: int = 20; h: int = 5; fgr = randcol(); xpos: int = 1)">boxy,<wbr>int,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">rndRGB
+      <li><a class="reference" href="#rndRGB"
+    title="rndRGB(): auto">rndRGB</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">ff2
+      <li><a class="reference" href="#ff2%2CSomeNumber%2Cint"
+    title="ff2(zz: SomeNumber; n: int = 3): string">ff2,<wbr>SomeNumber,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">splitty
+      <li><a class="reference" href="#splitty%2Cstring%2Cstring"
+    title="splitty(txt: string; sep: string): seq[string]">splitty,<wbr>string,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getRandomPointInCircle
+      <li><a class="reference" href="#getRandomPointInCircle%2Cfloat"
+    title="getRandomPointInCircle(radius: float = 1.0): seq[float]">getRandomPointInCircle,<wbr>float</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxBinomialCoeff
+      <li><a class="reference" href="#cxBinomialCoeff%2Cint%2Cint"
+    title="cxBinomialCoeff(n, k: int): int">cxBinomialCoeff,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">boxy2
+      <li><a class="reference" href="#boxy2%2Cint%2Cint%2Cint"
+    title="boxy2(w: int = 20; h: int = 5; fgr = randcol(); xpos: int = 1)">boxy2,<wbr>int,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getPointInSphere
+      <li><a class="reference" href="#getPointInSphere"
+    title="getPointInSphere(): auto">getPointInSphere</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getRandomSignI
+      <li><a class="reference" href="#getRandomSignI"
+    title="getRandomSignI(): int">getRandomSignI</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newWord3
+      <li><a class="reference" href="#newWord3%2Cint%2Cint%2Cbool"
+    title="newWord3(minwl: int = 3; maxwl: int = 10; nflag: bool = true): string">newWord3,<wbr>int,<wbr>int,<wbr>bool</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">reverse
+      <li><a class="reference" href="#reverse%2Cseq%5BT%5D"
+    title="reverse[T](s: var seq[T])">reverse,<wbr>seq[T]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cleanScreen
+      <li><a class="reference" href="#cleanScreen"
+    title="cleanScreen()">cleanScreen</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">showHostNameCtl
+      <li><a class="reference" href="#showHostNameCtl"
+    title="showHostNameCtl()">showHostNameCtl</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxtoLower
+      <li><a class="reference" href="#cxtoLower%2Cchar"
+    title="cxtoLower(c: char): char">cxtoLower,<wbr>char</a></li>
+
+  </ul>
 
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#13" id="63">Funcs</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#cxpad%2Cstring%2Cint%2Cstring"
-    title="cxpad(s: string; padlen: int; paddy: string = spaces(1)): string"><wbr />cxpad<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxpdx%2Cint%2Cstring%2Cstring"
-    title="cxpdx(padLen: int; s: string; paddy: string = spaces(1)): string"><wbr />cxpdx<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxLpad%2Cstring%2Cint%2Cstring"
-    title="cxLpad(s: string; padlen: int; paddy: string = spaces(1)): string"><wbr />cx<wbr />Lpad<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxLpdx%2Cint%2Cstring%2Cstring"
-    title="cxLpdx(padLen: int; s: string; paddy: string = spaces(1)): string"><wbr />cx<wbr />Lpdx<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cxLpadN%2Cstring%2Cint%2Cstring"
-    title="cxLpadN(s: string; padlen: int; paddy: string = &quot;0&quot;): string"><wbr />cx<wbr />Lpad<wbr />N<span class="attachedType"></span></a></li>
+      <ul class="simple nested-toc-section">cxLpadN
+      <li><a class="reference" href="#cxLpadN%2Cstring%2Cint%2Cstring"
+    title="cxLpadN(s: string; padlen: int; paddy: string = &quot;0&quot;): string">cxLpadN,<wbr>string,<wbr>int,<wbr>string</a></li>
   <li><a class="reference" href="#cxLpadN%2CSomeNumber%2Cint%2Cstring"
-    title="cxLpadN(s: SomeNumber; padlen: int; paddy: string = &quot;0&quot;): string"><wbr />cx<wbr />Lpad<wbr />N<span class="attachedType"></span></a></li>
+    title="cxLpadN(s: SomeNumber; padlen: int; paddy: string = &quot;0&quot;): string">cxLpadN,<wbr>SomeNumber,<wbr>int,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxpad
+      <li><a class="reference" href="#cxpad%2Cstring%2Cint%2Cstring"
+    title="cxpad(s: string; padlen: int; paddy: string = spaces(1)): string">cxpad,<wbr>string,<wbr>int,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxLpdx
+      <li><a class="reference" href="#cxLpdx%2Cint%2Cstring%2Cstring"
+    title="cxLpdx(padLen: int; s: string; paddy: string = spaces(1)): string">cxLpdx,<wbr>int,<wbr>string,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxLpad
+      <li><a class="reference" href="#cxLpad%2Cstring%2Cint%2Cstring"
+    title="cxLpad(s: string; padlen: int; paddy: string = spaces(1)): string">cxLpad,<wbr>string,<wbr>int,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxpdx
+      <li><a class="reference" href="#cxpdx%2Cint%2Cstring%2Cstring"
+    title="cxpdx(padLen: int; s: string; paddy: string = spaces(1)): string">cxpdx,<wbr>int,<wbr>string,<wbr>string</a></li>
+
+  </ul>
 
   </ul>
 </li>
@@ -375,11 +731,11 @@ function main() {
   <a class="reference reference-toplevel" href="#15" id="65">Iterators</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#reverseIter.i%2CopenArray%5BT%5D"
-    title="reverseIter[T](a: openArray[T]): T"><wbr />reverse<wbr />Iter<span class="attachedType"></span></a></li>
+    title="reverseIter[T](a: openArray[T]): T">reverseIter</a></li>
   <li><a class="reference" href="#span.i%2Cstring%2Cint%2CBackwardsIndex"
-    title="span(s: string; first: int; last: BackwardsIndex): char"><wbr />span<span class="attachedType"></span></a></li>
+    title="span(s: string; first: int; last: BackwardsIndex): char">span</a></li>
   <li><a class="reference" href="#primey.i%2Cint%2Cint"
-    title="primey(s: int = 0; e: int): int"><wbr />primey<span class="attachedType"></span></a></li>
+    title="primey(s: int = 0; e: int): int">primey</a></li>
 
   </ul>
 </li>
@@ -387,7 +743,7 @@ function main() {
   <a class="reference reference-toplevel" href="#16" id="66">Converters</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#toTwInt.c%2Ccushort"
-    title="toTwInt(x: cushort): int"><wbr />to<wbr />Tw<wbr />Int<span class="attachedType"></span></a></li>
+    title="toTwInt(x: cushort): int">toTwInt</a></li>
 
   </ul>
 </li>
@@ -395,13 +751,13 @@ function main() {
   <a class="reference reference-toplevel" href="#17" id="67">Macros</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#styledEchoPrint.m%2Cvarargs%5Buntyped%5D"
-    title="styledEchoPrint(m: varargs[untyped]): untyped"><wbr />styled<wbr />Echo<wbr />Print<span class="attachedType"></span></a></li>
+    title="styledEchoPrint(m: varargs[untyped]): untyped">styledEchoPrint</a></li>
   <li><a class="reference" href="#procName.m%2Cuntyped"
-    title="procName(x: untyped): untyped"><wbr />proc<wbr />Name<span class="attachedType"></span></a></li>
+    title="procName(x: untyped): untyped">procName</a></li>
   <li><a class="reference" href="#toEnum.m%2Cstatic%5Bstring%5D"
-    title="toEnum(words: static[string]): untyped"><wbr />to<wbr />Enum<span class="attachedType"></span></a></li>
+    title="toEnum(words: static[string]): untyped">toEnum</a></li>
   <li><a class="reference" href="#cxgetType.m%2Ctyped"
-    title="cxgetType(s: typed): untyped"><wbr />cxget<wbr />Type<span class="attachedType"></span></a></li>
+    title="cxgetType(s: typed): untyped">cxgetType</a></li>
 
   </ul>
 </li>
@@ -409,77 +765,78 @@ function main() {
   <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#unidecodeU.t%2Cuntyped"
-    title="unidecodeU(ustring: untyped): untyped"><wbr />unidecode<wbr />U<span class="attachedType"></span></a></li>
+    title="unidecodeU(ustring: untyped): untyped">unidecodeU</a></li>
   <li><a class="reference" href="#%2A.t%2Cstring%2Cint"
-    title="`*`(s: string; n: int): untyped"><wbr />`*`<span class="attachedType"></span></a></li>
+    title="`*`(s: string; n: int): untyped">`*`</a></li>
   <li><a class="reference" href="#toki.t%2Cuntyped"
-    title="toki(s: untyped): untyped"><wbr />toki<span class="attachedType"></span></a></li>
+    title="toki(s: untyped): untyped">toki</a></li>
   <li><a class="reference" href="#tw.t"
-    title="tw(): int"><wbr />tw<span class="attachedType"></span></a></li>
+    title="tw(): int">tw</a></li>
   <li><a class="reference" href="#th.t"
-    title="th(): int"><wbr />th<span class="attachedType"></span></a></li>
+    title="th(): int">th</a></li>
   <li><a class="reference" href="#doSomething.t%2Cint%2Cuntyped"
-    title="doSomething(secs: int; body: untyped)"><wbr />do<wbr />Something<span class="attachedType"></span></a></li>
+    title="doSomething(secs: int; body: untyped)">doSomething</a></li>
   <li><a class="reference" href="#colPaletteName.t%2Cstring%2Cint"
-    title="colPaletteName(coltype: string; n: int): auto"><wbr />col<wbr />Palette<wbr />Name<span class="attachedType"></span></a></li>
+    title="colPaletteName(coltype: string; n: int): auto">colPaletteName</a></li>
   <li><a class="reference" href="#aPaletteSample.t%2Cstring"
-    title="aPaletteSample(coltype: string): int"><wbr />a<wbr />Palette<wbr />Sample<span class="attachedType"></span></a></li>
+    title="aPaletteSample(coltype: string): int">aPaletteSample</a></li>
   <li><a class="reference" href="#paletix.t%2Cstring"
-    title="paletix(pl: string): untyped"><wbr />paletix<span class="attachedType"></span></a></li>
+    title="paletix(pl: string): untyped">paletix</a></li>
   <li><a class="reference" href="#randCol2.t%2Cstring"
-    title="randCol2(coltype: string): auto"><wbr />rand<wbr />Col2<span class="attachedType"></span></a></li>
+    title="randCol2(coltype: string): auto">randCol2</a></li>
   <li><a class="reference" href="#randCol.t"
-    title="randCol(): string"><wbr />rand<wbr />Col<span class="attachedType"></span></a></li>
+    title="randCol(): string">randCol</a></li>
   <li><a class="reference" href="#rndCol.t%2Cint%2Cint%2Cint"
-    title="rndCol(r: int = getRndInt(0, 254); g: int = getRndInt(0, 254); b: int = getRndInt(0, 254)): string"><wbr />rnd<wbr />Col<span class="attachedType"></span></a></li>
+    title="rndCol(r: int = getRndInt(0, 254); g: int = getRndInt(0, 254);
+       b: int = getRndInt(0, 254)): string">rndCol</a></li>
   <li><a class="reference" href="#curUp.t%2Cint"
-    title="curUp(x: int = 1)"><wbr />cur<wbr />Up<span class="attachedType"></span></a></li>
+    title="curUp(x: int = 1)">curUp</a></li>
   <li><a class="reference" href="#curDn.t%2Cint"
-    title="curDn(x: int = 1)"><wbr />cur<wbr />Dn<span class="attachedType"></span></a></li>
+    title="curDn(x: int = 1)">curDn</a></li>
   <li><a class="reference" href="#curBk.t%2Cint"
-    title="curBk(x: int = 1)"><wbr />cur<wbr />Bk<span class="attachedType"></span></a></li>
+    title="curBk(x: int = 1)">curBk</a></li>
   <li><a class="reference" href="#curSetx.t%2Cint"
-    title="curSetx(x: int)"><wbr />cur<wbr />Setx<span class="attachedType"></span></a></li>
+    title="curSetx(x: int)">curSetx</a></li>
   <li><a class="reference" href="#cxPos.t"
-    title="cxPos(x): string"><wbr />cx<wbr />Pos<span class="attachedType"></span></a></li>
+    title="cxPos(x): string">cxPos</a></li>
   <li><a class="reference" href="#curSet.t%2Cint%2Cint"
-    title="curSet(x: int = 0; y: int = 0)"><wbr />cur<wbr />Set<span class="attachedType"></span></a></li>
+    title="curSet(x: int = 0; y: int = 0)">curSet</a></li>
   <li><a class="reference" href="#clearup.t%2Cint"
-    title="clearup(x: int = 80)"><wbr />clearup<span class="attachedType"></span></a></li>
+    title="clearup(x: int = 80)">clearup</a></li>
   <li><a class="reference" href="#curOn.t"
-    title="curOn()"><wbr />cur<wbr />On<span class="attachedType"></span></a></li>
+    title="curOn()">curOn</a></li>
   <li><a class="reference" href="#curOff.t"
-    title="curOff()"><wbr />cur<wbr />Off<span class="attachedType"></span></a></li>
+    title="curOff()">curOff</a></li>
   <li><a class="reference" href="#%3C%3E.t%2Cuntyped%2Cuntyped"
-    title="`&lt;&gt;`(a, b: untyped): untyped"><wbr />`&lt;&gt;`<span class="attachedType"></span></a></li>
+    title="`&lt;&gt;`(a, b: untyped): untyped">`&lt;&gt;`</a></li>
   <li><a class="reference" href="#loopy.t%2CT%2Cuntyped"
-    title="loopy[T](ite: T; st: untyped)"><wbr />loopy<span class="attachedType"></span></a></li>
+    title="loopy[T](ite: T; st: untyped)">loopy</a></li>
   <li><a class="reference" href="#loopy2.t%2Cint%2Cint%2Cuntyped"
-    title="loopy2(mi: int = 0; ma: int = 5; st: untyped)"><wbr />loopy2<span class="attachedType"></span></a></li>
+    title="loopy2(mi: int = 0; ma: int = 5; st: untyped)">loopy2</a></li>
   <li><a class="reference" href="#colPaletteIndexer.t%2Cseq%5Bstring%5D"
-    title="colPaletteIndexer(colx: seq[string]): auto"><wbr />col<wbr />Palette<wbr />Indexer<span class="attachedType"></span></a></li>
+    title="colPaletteIndexer(colx: seq[string]): auto">colPaletteIndexer</a></li>
   <li><a class="reference" href="#colPaletteLen.t%2Cstring"
-    title="colPaletteLen(coltype: string): auto"><wbr />col<wbr />Palette<wbr />Len<span class="attachedType"></span></a></li>
+    title="colPaletteLen(coltype: string): auto">colPaletteLen</a></li>
   <li><a class="reference" href="#colPalette.t%2Cstring%2Cint"
-    title="colPalette(coltype: string; n: int): auto"><wbr />col<wbr />Palette<span class="attachedType"></span></a></li>
+    title="colPalette(coltype: string; n: int): auto">colPalette</a></li>
   <li><a class="reference" href="#colorsPalette.t%2Cstring"
-    title="colorsPalette(coltype: string): auto"><wbr />colors<wbr />Palette<span class="attachedType"></span></a></li>
+    title="colorsPalette(coltype: string): auto">colorsPalette</a></li>
   <li><a class="reference" href="#randPastelCol.t"
-    title="randPastelCol(): string"><wbr />rand<wbr />Pastel<wbr />Col<span class="attachedType"></span></a></li>
+    title="randPastelCol(): string">randPastelCol</a></li>
   <li><a class="reference" href="#upperCase.t%2Cstring"
-    title="upperCase(s: string): string"><wbr />upper<wbr />Case<span class="attachedType"></span></a></li>
+    title="upperCase(s: string): string">upperCase</a></li>
   <li><a class="reference" href="#lowerCase.t%2Cstring"
-    title="lowerCase(s: string): string"><wbr />lower<wbr />Case<span class="attachedType"></span></a></li>
+    title="lowerCase(s: string): string">lowerCase</a></li>
   <li><a class="reference" href="#currentLine.t"
-    title="currentLine()"><wbr />current<wbr />Line<span class="attachedType"></span></a></li>
+    title="currentLine()">currentLine</a></li>
   <li><a class="reference" href="#hdx.t%2Cuntyped%2Cstring%2Cint%2Cint"
-    title="hdx(code: untyped; frm: string = &quot;+&quot;; width: int = tw; nxpos: int = 0): void"><wbr />hdx<span class="attachedType"></span></a></li>
+    title="hdx(code: untyped; frm: string = &quot;+&quot;; width: int = tw; nxpos: int = 0): void">hdx</a></li>
   <li><a class="reference" href="#getCard.t"
-    title="getCard(): auto"><wbr />get<wbr />Card<span class="attachedType"></span></a></li>
+    title="getCard(): auto">getCard</a></li>
   <li><a class="reference" href="#bitCheck.t%2Cuntyped%2Cuntyped"
-    title="bitCheck(a, b: untyped): bool"><wbr />bit<wbr />Check<span class="attachedType"></span></a></li>
+    title="bitCheck(a, b: untyped): bool">bitCheck</a></li>
   <li><a class="reference" href="#withFile.t%2Cuntyped%2Cuntyped%2Cuntyped%2Cuntyped"
-    title="withFile(f, fn, mode, actions: untyped): untyped"><wbr />with<wbr />File<span class="attachedType"></span></a></li>
+    title="withFile(f, fn, mode, actions: untyped): untyped">withFile</a></li>
 
   </ul>
 </li>
@@ -487,6 +844,7 @@ function main() {
 </ul>
 
   </div>
+  
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
   
@@ -499,7 +857,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2020-09-26
+Latest      : 2020-10-02
 
 Compiler    : latest stable or devel branch
 
@@ -656,7 +1014,8 @@ rndSample returns one rand sample from a sequence
 
 </dd>
 <a id="getRndInt,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getRndInt%2Cint%2Cint"><span class="Identifier">getRndInt</span></a><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">int</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">noInit</span><span class="Other">,</span> <span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getRndInt%2Cint%2Cint"><span class="Identifier">getRndInt</span></a><span class="Other">(</span><span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">int</span><span class="Other">.</span><span class="Identifier">high</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">noInit</span><span class="Other">,</span> <span class="Identifier">inline</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 getRndInt 
@@ -747,8 +1106,8 @@ getRndBool
 
 </dd>
 <a id="createSeqInt,int,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#createSeqInt%2Cint%2Cint%2Cint"><span class="Identifier">createSeqInt</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1000</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#createSeqInt%2Cint%2Cint%2Cint"><span class="Identifier">createSeqInt</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">mi</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ma</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1000</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">inline</span><span class="Other">,</span>
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>createSeqInt</p>
@@ -822,7 +1181,8 @@ getRndBool
 
 </dd>
 <a id="createSeqFloat,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#createSeqFloat%2Cint%2Cint"><span class="Identifier">createSeqFloat</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">prec</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#createSeqFloat%2Cint%2Cint"><span class="Identifier">createSeqFloat</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">;</span> <span class="Identifier">prec</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>createSeqFloat</p>
@@ -948,7 +1308,7 @@ note that not all unicode chars may be available on all systems</pre>
 </dd>
 <a id="centerPos,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#centerPos%2Cstring"><span class="Identifier">centerPos</span></a><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                               <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                                  <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>centerpos</p>
@@ -987,7 +1347,7 @@ note that not all unicode chars may be available on all systems</pre>
 </dd>
 <a id="doFlag,string,int,T,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#doFlag%2Cstring%2Cint%2CT%2Cstring"><span class="Identifier">doFlag</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">flagcol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span> <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">;</span> <span class="Identifier">text</span><span class="Other">:</span> <span class="Identifier">T</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span>
-              <span class="Identifier">textcol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span></span><span class="Other">.}</span></span></pre></dt>
+               <span class="Identifier">textcol</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>doFlag</p>
@@ -1011,7 +1371,7 @@ note that not all unicode chars may be available on all systems</pre>
 </dd>
 <a id="curFw,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#curFw%2Cint"><span class="Identifier">curFw</span></a><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                         <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                               <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>curFw</p>
@@ -1020,8 +1380,8 @@ note that not all unicode chars may be available on all systems</pre>
 
 </dd>
 <a id="curMove,int,int,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#curMove%2Cint%2Cint%2Cint%2Cint"><span class="Identifier">curMove</span></a><span class="Other">(</span><span class="Identifier">up</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">dn</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fw</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">bk</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#curMove%2Cint%2Cint%2Cint%2Cint"><span class="Identifier">curMove</span></a><span class="Other">(</span><span class="Identifier">up</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">dn</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fw</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">bk</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>curMove</p>
@@ -1055,7 +1415,8 @@ note that not all unicode chars may be available on all systems</pre>
 
 </dd>
 <a id="streamFile,string,FileMode"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#streamFile%2Cstring%2CFileMode"><span class="Identifier">streamFile</span></a><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">FileMode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">FileStream</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#streamFile%2Cstring%2CFileMode"><span class="Identifier">streamFile</span></a><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <span class="Identifier">FileMode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">FileStream</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>streamFile</p>
@@ -1128,8 +1489,8 @@ note that not all unicode chars may be available on all systems</pre>
 
 </dd>
 <a id="pswwaux"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#pswwaux"><span class="Identifier">pswwaux</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span>
-    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#pswwaux"><span class="Identifier">pswwaux</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
+    <span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>pswwaux</p>
@@ -1139,7 +1500,7 @@ note that not all unicode chars may be available on all systems</pre>
 </dd>
 <a id="cxCpuInfo"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#cxCpuInfo"><span class="Identifier">cxCpuInfo</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-                        <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                           <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>cxCpuInfo</p>
@@ -1165,7 +1526,7 @@ note that not all unicode chars may be available on all systems</pre>
 </dd>
 <a id="cxVideoInfo"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#cxVideoInfo"><span class="Identifier">cxVideoInfo</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                             <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>cxVideoInfo</p>
@@ -1176,7 +1537,7 @@ note that not all unicode chars may be available on all systems</pre>
 </dd>
 <a id="showCpuCores"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#showCpuCores"><span class="Identifier">showCpuCores</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                      <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 showCpuCores 
@@ -1200,7 +1561,8 @@ showCpuCores
 
 </dd>
 <a id="getUserName"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getUserName"><span class="Identifier">getUserName</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getUserName"><span class="Identifier">getUserName</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+                             <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -1216,19 +1578,9 @@ showCpuCores
 
 
 </dd>
-<a id="getPwd"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getPwd"><span class="Identifier">getPwd</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-                     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
-<dd>
-
-<p>getPwd</p>
-<p>utility function to get password via zenity which is installed in many linux systems and provides GTK dialog boxes in command-line and shell scripts</p>
-
-
-</dd>
 <a id="cxInput,string,string,int,bool"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#cxInput%2Cstring%2Cstring%2Cint%2Cbool"><span class="Identifier">cxInput</span></a><span class="Other">(</span><span class="Identifier">prompt</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">promptColor</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">greenYellow</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-            <span class="Identifier">allowBlank</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+             <span class="Identifier">allowBlank</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">EOFError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -1250,7 +1602,7 @@ showCpuCores
 </dd>
 <a id="cxYesNo,string,string,int,bool"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#cxYesNo%2Cstring%2Cstring%2Cint%2Cbool"><span class="Identifier">cxYesNo</span></a><span class="Other">(</span><span class="Identifier">prompt</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;Continue &quot;</span><span class="Other">;</span> <span class="Identifier">promptColor</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">greenYellow</span><span class="Other">;</span>
-            <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">allowBlank</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+             <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">allowBlank</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">EOFError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -1260,7 +1612,8 @@ showCpuCores
 
 </dd>
 <a id="getRandomPointInCircle,float"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPointInCircle%2Cfloat"><span class="Identifier">getRandomPointInCircle</span></a><span class="Other">(</span><span class="Identifier">radius</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">1.0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPointInCircle%2Cfloat"><span class="Identifier">getRandomPointInCircle</span></a><span class="Other">(</span><span class="Identifier">radius</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">1.0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>getRandomPointInCircle</p>
@@ -1279,8 +1632,9 @@ showCpuCores
 
 </dd>
 <a id="getRandomPoint,float,float,float,float"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPoint%2Cfloat%2Cfloat%2Cfloat%2Cfloat"><span class="Identifier">getRandomPoint</span></a><span class="Other">(</span><span class="Identifier">minx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">500.0</span><span class="Other">;</span> <span class="Identifier">maxx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">500.0</span><span class="Other">;</span> <span class="Identifier">miny</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">500.0</span><span class="Other">;</span>
-                   <span class="Identifier">maxy</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">500.0</span><span class="Other">)</span><span class="Other">:</span> <a href="cxglobal.html#RpointFloat"><span class="Identifier">RpointFloat</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPoint%2Cfloat%2Cfloat%2Cfloat%2Cfloat"><span class="Identifier">getRandomPoint</span></a><span class="Other">(</span><span class="Identifier">minx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">500.0</span><span class="Other">;</span> <span class="Identifier">maxx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">500.0</span><span class="Other">;</span>
+                    <span class="Identifier">miny</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">500.0</span><span class="Other">;</span> <span class="Identifier">maxy</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">500.0</span><span class="Other">)</span><span class="Other">:</span> <a href="cxglobal.html#RpointFloat"><span class="Identifier">RpointFloat</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>getRandomPoint</p>
@@ -1297,8 +1651,8 @@ showCpuCores
 
 </dd>
 <a id="getRandomPoint,int,int,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPoint%2Cint%2Cint%2Cint%2Cint"><span class="Identifier">getRandomPoint</span></a><span class="Other">(</span><span class="Identifier">minx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">500</span><span class="Other">;</span> <span class="Identifier">maxx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">500</span><span class="Other">;</span> <span class="Identifier">miny</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">500</span><span class="Other">;</span> <span class="Identifier">maxy</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">500</span><span class="Other">)</span><span class="Other">:</span> <a href="cxglobal.html#RpointInt"><span class="Identifier">RpointInt</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPoint%2Cint%2Cint%2Cint%2Cint"><span class="Identifier">getRandomPoint</span></a><span class="Other">(</span><span class="Identifier">minx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">500</span><span class="Other">;</span> <span class="Identifier">maxx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">500</span><span class="Other">;</span> <span class="Identifier">miny</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">500</span><span class="Other">;</span>
+                    <span class="Identifier">maxy</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">500</span><span class="Other">)</span><span class="Other">:</span> <a href="cxglobal.html#RpointInt"><span class="Identifier">RpointInt</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>getRandomPoint</p>
@@ -1324,7 +1678,7 @@ showCpuCores
 </dd>
 <a id="randpos"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#randpos"><span class="Identifier">randpos</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                   <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                      <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>randpos</p>
@@ -1338,7 +1692,7 @@ showCpuCores
 </dd>
 <a id="showRandomCard,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#showRandomCard%2Cint"><span class="Identifier">showRandomCard</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">centerX</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                                        <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>showRandomCard</p>
@@ -1347,9 +1701,10 @@ showCpuCores
 
 </dd>
 <a id="showRuler,int,int,int,string,string,bool"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showRuler%2Cint%2Cint%2Cint%2Cstring%2Cstring%2Cbool"><span class="Identifier">showRuler</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">xposE</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ypos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span>
-              <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">vert</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#showRuler%2Cint%2Cint%2Cint%2Cstring%2Cstring%2Cbool"><span class="Identifier">showRuler</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">xposE</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">ypos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
+               <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span>
+               <span class="Identifier">vert</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+                                     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>ruler</p>
@@ -1368,7 +1723,7 @@ showCpuCores
 </dd>
 <a id="centerMark,bool"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#centerMark%2Cbool"><span class="Identifier">centerMark</span></a><span class="Other">(</span><span class="Identifier">showpos</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                                    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>centerMark</p>
@@ -1378,7 +1733,7 @@ showCpuCores
 </dd>
 <a id="superHeader,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#superHeader%2Cstring"><span class="Identifier">superHeader</span></a><span class="Other">(</span><span class="Identifier">bstring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-                                 <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                                    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>superheader</p>
@@ -1404,8 +1759,8 @@ showCpuCores
 
 </dd>
 <a id="newWordCJK,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#newWordCJK%2Cint%2Cint"><span class="Identifier">newWordCJK</span></a><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#newWordCJK%2Cint%2Cint"><span class="Identifier">newWordCJK</span></a><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>newWordCJK</p>
@@ -1418,8 +1773,8 @@ showCpuCores
 
 </dd>
 <a id="newWord,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#newWord%2Cint%2Cint"><span class="Identifier">newWord</span></a><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#newWord%2Cint%2Cint"><span class="Identifier">newWord</span></a><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>newWord</p>
@@ -1430,8 +1785,8 @@ showCpuCores
 
 </dd>
 <a id="newWord2,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#newWord2%2Cint%2Cint"><span class="Identifier">newWord2</span></a><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#newWord2%2Cint%2Cint"><span class="Identifier">newWord2</span></a><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>newWord2</p>
@@ -1455,8 +1810,8 @@ showCpuCores
 
 </dd>
 <a id="newHiragana,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#newHiragana%2Cint%2Cint"><span class="Identifier">newHiragana</span></a><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#newHiragana%2Cint%2Cint"><span class="Identifier">newHiragana</span></a><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>newHiragana</p>
@@ -1467,8 +1822,8 @@ showCpuCores
 
 </dd>
 <a id="newKatakana,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#newKatakana%2Cint%2Cint"><span class="Identifier">newKatakana</span></a><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#newKatakana%2Cint%2Cint"><span class="Identifier">newKatakana</span></a><span class="Other">(</span><span class="Identifier">minwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">;</span> <span class="Identifier">maxwl</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">10</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>newKatakana</p>
@@ -1492,7 +1847,8 @@ showCpuCores
 
 </dd>
 <a id="rndStr,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#rndStr%2Cint"><span class="Identifier">rndStr</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#rndStr%2Cint"><span class="Identifier">rndStr</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+                                   <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>rndStr</p>
@@ -1537,7 +1893,8 @@ showCpuCores
 
 </dd>
 <a id="createSeqAll,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#createSeqAll%2Cint%2Cint"><span class="Identifier">createSeqAll</span></a><span class="Other">(</span><span class="Identifier">min</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">40878</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#createSeqAll%2Cint%2Cint"><span class="Identifier">createSeqAll</span></a><span class="Other">(</span><span class="Identifier">min</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">max</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">40878</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -1642,24 +1999,25 @@ createSeqFracture Fractur chars returned in a seq
 
 </dd>
 <a id="spiralBoxy,int,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#spiralBoxy%2Cint%2Cint%2Cint"><span class="Identifier">spiralBoxy</span></a><span class="Other">(</span><span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#spiralBoxy%2Cint%2Cint%2Cint"><span class="Identifier">spiralBoxy</span></a><span class="Other">(</span><span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 spiralBoxy
 
 </dd>
 <a id="spiralBoxy2,int,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#spiralBoxy2%2Cint%2Cint%2Cint"><span class="Identifier">spiralBoxy2</span></a><span class="Other">(</span><span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#spiralBoxy2%2Cint%2Cint%2Cint"><span class="Identifier">spiralBoxy2</span></a><span class="Other">(</span><span class="Identifier">w</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">h</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">20</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 spiralBoxy2   uses boxy2
 
 </dd>
 <a id="showSeq,seq[T],string,int,int,bool,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showSeq%2Cseq%5BT%5D%2Cstring%2Cint%2Cint%2Cbool%2Cint"><span class="Identifier">showSeq</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">pastelgreen</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span> <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span>
-               <span class="Identifier">displayflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">indexstart</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#showSeq%2Cseq%5BT%5D%2Cstring%2Cint%2Cint%2Cbool%2Cint"><span class="Identifier">showSeq</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">pastelgreen</span><span class="Other">;</span> <span class="Identifier">cols</span> <span class="Other">=</span> <span class="DecNumber">6</span><span class="Other">;</span>
+                <span class="Identifier">maxitemwidth</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">displayflag</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">indexstart</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">discardable</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>showSeq</p>
@@ -1693,9 +2051,9 @@ spiralBoxy2   uses boxy2
 
 </dd>
 <a id="checkMemFull,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#checkMemFull%2Cint"><span class="Identifier">checkMemFull</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span>
-                                      <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-                              <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#checkMemFull%2Cint"><span class="Identifier">checkMemFull</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
+    <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                                   <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>checkMemFull</p>
@@ -1705,7 +2063,7 @@ spiralBoxy2   uses boxy2
 </dd>
 <a id="checkMem,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#checkMem%2Cint"><span class="Identifier">checkMem</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span>
-                          <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                               <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>checkMem</p>
@@ -1714,16 +2072,18 @@ spiralBoxy2   uses boxy2
 
 </dd>
 <a id="fullGcStats,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#fullGcStats%2Cint"><span class="Identifier">fullGcStats</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                                 <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#fullGcStats%2Cint"><span class="Identifier">fullGcStats</span></a><span class="Other">(</span><span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
+                                       <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+                                       <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 
 </dd>
 <a id="memCheck,bool"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#memCheck%2Cbool"><span class="Identifier">memCheck</span></a><span class="Other">(</span><span class="Identifier">stats</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span>
-    <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#memCheck%2Cbool"><span class="Identifier">memCheck</span></a><span class="Other">(</span><span class="Identifier">stats</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span>
+    <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span>
+                     <span class="Identifier">TimeEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>memCheck</p>
@@ -1733,8 +2093,8 @@ spiralBoxy2   uses boxy2
 
 </dd>
 <a id="distanceTo,,"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#distanceTo%2C%2C"><span class="Identifier">distanceTo</span></a><span class="Other">(</span><span class="Identifier">origin</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">float</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">dest</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">float</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#distanceTo%2C%2C"><span class="Identifier">distanceTo</span></a><span class="Other">(</span><span class="Identifier">origin</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">float</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">dest</span><span class="Other">:</span> <span class="Other">(</span><span class="Identifier">float</span><span class="Other">,</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>distanceTo</p>
@@ -1761,7 +2121,7 @@ spiralBoxy2   uses boxy2
 </dd>
 <a id="showEmojisSmall"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#showEmojisSmall"><span class="Identifier">showEmojisSmall</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-                       <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                         <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>showEmojisSmall</p>
@@ -1832,7 +2192,8 @@ generates a random MacAddress<pre class="listing"><span class="Identifier">loopy
 <h1><a class="toc-backref" href="#13">Funcs</a></h1>
 <dl class="item">
 <a id="cxpad,string,int,string"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#cxpad%2Cstring%2Cint%2Cstring"><span class="Identifier">cxpad</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">padlen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">func</span> <a href="#cxpad%2Cstring%2Cint%2Cstring"><span class="Identifier">cxpad</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">padlen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>cxpad</p>
@@ -1841,7 +2202,8 @@ generates a random MacAddress<pre class="listing"><span class="Identifier">loopy
 
 </dd>
 <a id="cxpdx,int,string,string"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#cxpdx%2Cint%2Cstring%2Cstring"><span class="Identifier">cxpdx</span></a><span class="Other">(</span><span class="Identifier">padLen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">func</span> <a href="#cxpdx%2Cint%2Cstring%2Cstring"><span class="Identifier">cxpdx</span></a><span class="Other">(</span><span class="Identifier">padLen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>pdx</p>
@@ -1850,8 +2212,8 @@ generates a random MacAddress<pre class="listing"><span class="Identifier">loopy
 
 </dd>
 <a id="cxLpad,string,int,string"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#cxLpad%2Cstring%2Cint%2Cstring"><span class="Identifier">cxLpad</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">padlen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">func</span> <a href="#cxLpad%2Cstring%2Cint%2Cstring"><span class="Identifier">cxLpad</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">padlen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>cxlpad</p>
@@ -1860,8 +2222,8 @@ generates a random MacAddress<pre class="listing"><span class="Identifier">loopy
 
 </dd>
 <a id="cxLpdx,int,string,string"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#cxLpdx%2Cint%2Cstring%2Cstring"><span class="Identifier">cxLpdx</span></a><span class="Other">(</span><span class="Identifier">padLen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">func</span> <a href="#cxLpdx%2Cint%2Cstring%2Cstring"><span class="Identifier">cxLpdx</span></a><span class="Other">(</span><span class="Identifier">padLen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">spaces</span><span class="Other">(</span><span class="DecNumber">1</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>cxlpdx</p>
@@ -1870,7 +2232,8 @@ generates a random MacAddress<pre class="listing"><span class="Identifier">loopy
 
 </dd>
 <a id="cxLpadN,string,int,string"></a>
-<dt><pre><span class="Keyword">func</span> <a href="#cxLpadN%2Cstring%2Cint%2Cstring"><span class="Identifier">cxLpadN</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">padlen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;0&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">func</span> <a href="#cxLpadN%2Cstring%2Cint%2Cstring"><span class="Identifier">cxLpadN</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">padlen</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">paddy</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;0&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>cxlpadN</p>
@@ -1903,7 +2266,8 @@ reverse iterator<pre class="listing"><span class="Keyword">let</span> <span clas
 
 </dd>
 <a id="span.i,string,int,BackwardsIndex"></a>
-<dt><pre><span class="Keyword">iterator</span> <a href="#span.i%2Cstring%2Cint%2CBackwardsIndex"><span class="Identifier">span</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">first</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">last</span><span class="Other">:</span> <span class="Identifier">BackwardsIndex</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">char</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">iterator</span> <a href="#span.i%2Cstring%2Cint%2CBackwardsIndex"><span class="Identifier">span</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">first</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">last</span><span class="Other">:</span> <span class="Identifier">BackwardsIndex</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">char</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>span</p>
@@ -2101,7 +2465,7 @@ coltype examples : &quot;red&quot;,&quot;blue&quot;,&quot;medium&quot;,&quot;dar
 </dd>
 <a id="rndCol.t,int,int,int"></a>
 <dt><pre><span class="Keyword">template</span> <a href="#rndCol.t%2Cint%2Cint%2Cint"><span class="Identifier">rndCol</span></a><span class="Other">(</span><span class="Identifier">r</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getRndInt</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">254</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">g</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getRndInt</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">254</span><span class="Other">)</span><span class="Other">;</span>
-               <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getRndInt</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">254</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
+                <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">getRndInt</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">,</span> <span class="DecNumber">254</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
 <p>rndCol</p>
@@ -2201,7 +2565,7 @@ unequal operator
 <dd>
 
 <p>loopy</p>
-<p>the lazy programmer's quick simple for-loop template</p>
+<p>simple for-loop template</p>
 <pre class="listing"><span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;The house is in the back.&quot;</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
 
 </dd>
@@ -2364,7 +2728,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-09-26 17:36:27 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-19 15:25:41 UTC</small>
       </div>
     </div>
   </div>

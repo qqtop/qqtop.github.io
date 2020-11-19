@@ -102,7 +102,7 @@ function main() {
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#CxLineType"
     title="CxLineType = enum
-  cxHorizontal = &quot;horizontal&quot;, cxVertical = &quot;vertical&quot;"><wbr />Cx<wbr />Line<wbr />Type<span class="attachedType"></span></a></li>
+  cxHorizontal = &quot;horizontal&quot;, cxVertical = &quot;vertical&quot;">CxLineType</a></li>
   <li><a class="reference" href="#CxlineText"
     title="CxlineText = object
   text*: string
@@ -111,7 +111,7 @@ function main() {
   textpos*: int
   textbracketopen*: string
   textbracketclose*: string
-  textbracketcolor*: string"><wbr />Cxline<wbr />Text<span class="attachedType"></span></a></li>
+  textbracketcolor*: string">CxlineText</a></li>
   <li><a class="reference" href="#Cxline"
     title="Cxline {.inheritable.} = object
   startpos*: int
@@ -136,115 +136,252 @@ function main() {
   dotleftcolor*: string
   dotrightcolor*: string
   linetype*: CxLineType
-  newline*: string"><wbr />Cxline<span class="attachedType"></span></a></li>
+  newline*: string">Cxline</a></li>
 
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">hline
+      <li><a class="reference" href="#hline%2Cint%2Cstring%2Cint%2Cstring"
+    title="hline(n: int = tw; col: string = white; xpos: int = 0; lt: string = &quot;-&quot;): string">hline,<wbr>int,<wbr>string,<wbr>int,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">print
+      <li><a class="reference" href="#print%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"
+    title="print[T](astring: T; fgr: string = getFg(fgDefault);
+         bgr: string = getBg(bgDefault); xpos: int = 0; fitLine: bool = false;
+         centered: bool = false; styled: set[Style] = {})">print,<wbr>T,<wbr>string,<wbr>string,<wbr>int,<wbr>bool,<wbr>bool,<wbr>set[Style]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printf
       <li><a class="reference" href="#printf%2Ccstring"
-    title="printf(formatStr: cstring)"><wbr />printf<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#print%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"
-    title="print[T](astring: T; fgr: string = getFg(fgDefault); bgr: string = getBg(bgDefault);
-         xpos: int = 0; fitLine: bool = false; centered: bool = false;
-         styled: set[Style] = {})"><wbr />print<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLn%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"
-    title="printLn[T](astring: T; fgr: string = getFg(fgDefault); bgr: string = getBg(bgDefault);
-           xpos: int = 0; fitLine: bool = false; centered: bool = false;
-           styled: set[Style] = {})"><wbr />print<wbr />Ln<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#hline%2Cint%2Cstring%2Cint%2Cstring"
-    title="hline(n: int = tw; col: string = white; xpos: int = 0; lt: string = &quot;-&quot;): string"><wbr />hline<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#hlineLn%2Cint%2Cstring%2Cint%2Cstring"
-    title="hlineLn(n: int = tw; col: string = white; xpos: int = 0; lt: string = &quot;-&quot;): string"><wbr />hline<wbr />Ln<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#dline%2Cint%2Cstring%2Cstring"
-    title="dline(n: int = tw; lt: string = &quot;-&quot;; col: string = termwhite)"><wbr />dline<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#dlineLn%2Cint%2Cstring%2Cstring"
-    title="dlineLn(n: int = tw; lt: string = &quot;-&quot;; col: string = termwhite)"><wbr />dline<wbr />Ln<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#decho%2Cint"
-    title="decho(z: int = 2)"><wbr />decho<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printRainbow%2Cstring%2Cset%5BStyle%5D"
-    title="printRainbow(astr: string; styled: set[Style] = {})"><wbr />print<wbr />Rainbow<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnRainbow%2CT%2Cset%5BStyle%5D"
-    title="printLnRainbow[T](s: T; styled: set[Style] = {})"><wbr />print<wbr />Ln<wbr />Rainbow<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printBiCol%2Cvarargs%5BT%2C%5D%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cset%5BStyle%5D"
+    title="printf(formatStr: cstring)">printf,<wbr>cstring</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnBelpMsg
+      <li><a class="reference" href="#printLnBelpMsg%2Cstring%2Cint"
+    title="printLnBelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printLnBelpMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printRainbow
+      <li><a class="reference" href="#printRainbow%2Cstring%2Cset%5BStyle%5D"
+    title="printRainbow(astr: string; styled: set[Style] = {})">printRainbow,<wbr>string,<wbr>set[Style]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnOkMsg
+      <li><a class="reference" href="#printLnOkMsg%2Cstring%2Cint"
+    title="printLnOkMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printLnOkMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnBAlertMsg
+      <li><a class="reference" href="#printLnBAlertMsg%2Cstring%2Cint"
+    title="printLnBAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printLnBAlertMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printBAlertMsg
+      <li><a class="reference" href="#printBAlertMsg%2Cstring%2Cint"
+    title="printBAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printBAlertMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnCodeMsg
+      <li><a class="reference" href="#printLnCodeMsg%2Cstring%2Cint"
+    title="printLnCodeMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printLnCodeMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printAlertMsg
+      <li><a class="reference" href="#printAlertMsg%2Cstring%2Cint"
+    title="printAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printAlertMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnPassMsg
+      <li><a class="reference" href="#printLnPassMsg%2Cstring%2Cint"
+    title="printLnPassMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printLnPassMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printHelpMsg
+      <li><a class="reference" href="#printHelpMsg%2Cstring%2Cint"
+    title="printHelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printHelpMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newCxLine
+      <li><a class="reference" href="#newCxLine"
+    title="newCxLine(): Cxline">newCxLine</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnAlertMsg
+      <li><a class="reference" href="#printLnAlertMsg%2Cstring%2Cint"
+    title="printLnAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printLnAlertMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printBiCol
+      <li><a class="reference" href="#printBiCol%2Cvarargs%5BT%2C%5D%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cset%5BStyle%5D"
     title="printBiCol[T](s: varargs[T, `$`]; colLeft: string = yellowgreen;
               colRight: string = termwhite; sep: string = &quot;:&quot;; xpos: int = 0;
-              centered: bool = false; styled: set[Style] = {})"><wbr />print<wbr />Bi<wbr />Col<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnBiCol%2Cvarargs%5BT%2C%5D%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cset%5BStyle%5D"
+              centered: bool = false; styled: set[Style] = {})">printBiCol,<wbr>varargs[T,<wbr>],<wbr>string,<wbr>string,<wbr>string,<wbr>int,<wbr>bool,<wbr>set[Style]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printCodeMsg
+      <li><a class="reference" href="#printCodeMsg%2Cstring%2Cint"
+    title="printCodeMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printCodeMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newCxlineText
+      <li><a class="reference" href="#newCxlineText"
+    title="newCxlineText(): CxlineText">newCxlineText</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">hlineLn
+      <li><a class="reference" href="#hlineLn%2Cint%2Cstring%2Cint%2Cstring"
+    title="hlineLn(n: int = tw; col: string = white; xpos: int = 0; lt: string = &quot;-&quot;): string">hlineLn,<wbr>int,<wbr>string,<wbr>int,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnRainbow
+      <li><a class="reference" href="#printLnRainbow%2CT%2Cset%5BStyle%5D"
+    title="printLnRainbow[T](s: T; styled: set[Style] = {})">printLnRainbow,<wbr>T,<wbr>set[Style]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnHL
+      <li><a class="reference" href="#printLnHL%2Cstring%2Cstring%2Cstring%2Cstring"
+    title="printLnHL(s: string; substr: string; col: string = lightcyan;
+          bgr: string = getBg(bgDefault))">printLnHL,<wbr>string,<wbr>string,<wbr>string,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printFailMsg
+      <li><a class="reference" href="#printFailMsg%2Cstring%2Cint"
+    title="printFailMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printFailMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnHelpMsg
+      <li><a class="reference" href="#printLnHelpMsg%2Cstring%2Cint"
+    title="printLnHelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printLnHelpMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printStatusMsg
+      <li><a class="reference" href="#printStatusMsg%2Cstring%2Cint"
+    title="printStatusMsg(atext: string = &quot;&quot;; xpos: int = 1; colLeft = lightseagreen)">printStatusMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnEelpMsg
+      <li><a class="reference" href="#printLnEelpMsg%2Cstring%2Cint"
+    title="printLnEelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printLnEelpMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printPassMsg
+      <li><a class="reference" href="#printPassMsg%2Cstring%2Cint"
+    title="printPassMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printPassMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">dotyLn
+      <li><a class="reference" href="#dotyLn%2Cint%2Cstring%2Cstring%2Cint"
+    title="dotyLn(dots: int; fgr: string = termwhite; bgr: string = black; xpos: int = 1)">dotyLn,<wbr>int,<wbr>string,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">decho
+      <li><a class="reference" href="#decho%2Cint"
+    title="decho(z: int = 2)">decho,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printErrorMsg
+      <li><a class="reference" href="#printErrorMsg%2Cstring%2Cint"
+    title="printErrorMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printErrorMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnStatusMsg
+      <li><a class="reference" href="#printLnStatusMsg%2Cstring%2Cint"
+    title="printLnStatusMsg(atext: string = &quot;&quot;; xpos: int = 1; colLeft = lightseagreen)">printLnStatusMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnErrorMsg
+      <li><a class="reference" href="#printLnErrorMsg%2Cstring%2Cint"
+    title="printLnErrorMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printLnErrorMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printHL
+      <li><a class="reference" href="#printHL%2Cstring%2Cstring%2Cstring%2Cstring"
+    title="printHL(s: string; substr: string; col: string = termwhite;
+        bgr: string = getBg(bgDefault))">printHL,<wbr>string,<wbr>string,<wbr>string,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnBErrorMsg
+      <li><a class="reference" href="#printLnBErrorMsg%2Cstring%2Cint"
+    title="printLnBErrorMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printLnBErrorMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printBelpMsg
+      <li><a class="reference" href="#printBelpMsg%2Cstring%2Cint"
+    title="printBelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printBelpMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printEelpMsg
+      <li><a class="reference" href="#printEelpMsg%2Cstring%2Cint"
+    title="printEelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printEelpMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnInfoMsg
+      <li><a class="reference" href="#printLnInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"
+    title="printLnInfoMsg(info: string; atext: string = &quot;&quot;;
+               colLeft: string = lightslategray; colRight: string = pastelWhite;
+               xpos: int = 1): string">printLnInfoMsg,<wbr>string,<wbr>string,<wbr>string,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printCxLine
+      <li><a class="reference" href="#printCxLine%2CCxline"
+    title="printCxLine(aline: var Cxline)">printCxLine,<wbr>Cxline</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLn
+      <li><a class="reference" href="#printLn%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"
+    title="printLn[T](astring: T; fgr: string = getFg(fgDefault);
+           bgr: string = getBg(bgDefault); xpos: int = 0; fitLine: bool = false;
+           centered: bool = false; styled: set[Style] = {})">printLn,<wbr>T,<wbr>string,<wbr>string,<wbr>int,<wbr>bool,<wbr>bool,<wbr>set[Style]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">doty
+      <li><a class="reference" href="#doty%2Cint%2Cstring%2Cstring%2Cint"
+    title="doty(d: int; fgr: string = white; bgr: string = black; xpos: int = 1)">doty,<wbr>int,<wbr>string,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printInfoMsg
+      <li><a class="reference" href="#printInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"
+    title="printInfoMsg(info: string = &quot;&quot;; atext: string = &quot;&quot;;
+             colLeft: string = lightslategray; colRight: string = pastelWhite;
+             xpos: int = 1): string">printInfoMsg,<wbr>string,<wbr>string,<wbr>string,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printOKMsg
+      <li><a class="reference" href="#printOKMsg%2Cstring%2Cint"
+    title="printOKMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printOKMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnFailMsg
+      <li><a class="reference" href="#printLnFailMsg%2Cstring%2Cint"
+    title="printLnFailMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printLnFailMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnBiCol
+      <li><a class="reference" href="#printLnBiCol%2Cvarargs%5BT%2C%5D%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cset%5BStyle%5D"
     title="printLnBiCol[T](s: varargs[T, `$`]; colLeft: string = yellowgreen;
                 colRight: string = termwhite; sep: string = &quot;:&quot;; xpos: int = 0;
-                centered: bool = false; styled: set[Style] = {})"><wbr />print<wbr />Ln<wbr />Bi<wbr />Col<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printHL%2Cstring%2Cstring%2Cstring%2Cstring"
-    title="printHL(s: string; substr: string; col: string = termwhite;
-        bgr: string = getBg(bgDefault))"><wbr />print<wbr />HL<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnHL%2Cstring%2Cstring%2Cstring%2Cstring"
-    title="printLnHL(s: string; substr: string; col: string = lightcyan;
-          bgr: string = getBg(bgDefault))"><wbr />print<wbr />Ln<wbr />HL<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#newCxlineText"
-    title="newCxlineText(): CxlineText"><wbr />new<wbr />Cxline<wbr />Text<span class="attachedType">CxlineText</span></a></li>
-  <li><a class="reference" href="#newCxLine"
-    title="newCxLine(): Cxline"><wbr />new<wbr />Cx<wbr />Line<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printCxLine%2CCxline"
-    title="printCxLine(aline: var Cxline)"><wbr />print<wbr />Cx<wbr />Line<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#doty%2Cint%2Cstring%2Cstring%2Cint"
-    title="doty(d: int; fgr: string = white; bgr: string = black; xpos: int = 1)"><wbr />doty<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#dotyLn%2Cint%2Cstring%2Cstring%2Cint"
-    title="dotyLn(dots: int; fgr: string = termwhite; bgr: string = black; xpos: int = 1)"><wbr />doty<wbr />Ln<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printErrorMsg%2Cstring%2Cint"
-    title="printErrorMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Error<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printBErrorMsg%2Cstring%2Cint"
-    title="printBErrorMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />BError<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnErrorMsg%2Cstring%2Cint"
-    title="printLnErrorMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Error<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnBErrorMsg%2Cstring%2Cint"
-    title="printLnBErrorMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />BError<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printFailMsg%2Cstring%2Cint"
-    title="printFailMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Fail<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnFailMsg%2Cstring%2Cint"
-    title="printLnFailMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Fail<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printAlertMsg%2Cstring%2Cint"
-    title="printAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Alert<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnAlertMsg%2Cstring%2Cint"
-    title="printLnAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Alert<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printBAlertMsg%2Cstring%2Cint"
-    title="printBAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />BAlert<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnBAlertMsg%2Cstring%2Cint"
-    title="printLnBAlertMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />BAlert<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printOKMsg%2Cstring%2Cint"
-    title="printOKMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />OKMsg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnOkMsg%2Cstring%2Cint"
-    title="printLnOkMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Ok<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printStatusMsg%2Cstring%2Cint"
-    title="printStatusMsg(atext: string = &quot;&quot;; xpos: int = 1; colLeft = lightseagreen)"><wbr />print<wbr />Status<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnStatusMsg%2Cstring%2Cint"
-    title="printLnStatusMsg(atext: string = &quot;&quot;; xpos: int = 1; colLeft = lightseagreen)"><wbr />print<wbr />Ln<wbr />Status<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printHelpMsg%2Cstring%2Cint"
-    title="printHelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Help<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnHelpMsg%2Cstring%2Cint"
-    title="printLnHelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Help<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printBelpMsg%2Cstring%2Cint"
-    title="printBelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Belp<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnBelpMsg%2Cstring%2Cint"
-    title="printLnBelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Belp<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printCodeMsg%2Cstring%2Cint"
-    title="printCodeMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Code<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnCodeMsg%2Cstring%2Cint"
-    title="printLnCodeMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Code<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printEelpMsg%2Cstring%2Cint"
-    title="printEelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Eelp<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnEelpMsg%2Cstring%2Cint"
-    title="printLnEelpMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Eelp<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printPassMsg%2Cstring%2Cint"
-    title="printPassMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Pass<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnPassMsg%2Cstring%2Cint"
-    title="printLnPassMsg(atext: string = &quot;&quot;; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Pass<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"
-    title="printInfoMsg(info: string = &quot;&quot;; atext: string = &quot;&quot;; colLeft: string = lightslategray;
-             colRight: string = pastelWhite; xpos: int = 1): string"><wbr />print<wbr />Info<wbr />Msg<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printLnInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"
-    title="printLnInfoMsg(info: string; atext: string = &quot;&quot;; colLeft: string = lightslategray;
-               colRight: string = pastelWhite; xpos: int = 1): string"><wbr />print<wbr />Ln<wbr />Info<wbr />Msg<span class="attachedType"></span></a></li>
+                centered: bool = false; styled: set[Style] = {})">printLnBiCol,<wbr>varargs[T,<wbr>],<wbr>string,<wbr>string,<wbr>string,<wbr>int,<wbr>bool,<wbr>set[Style]</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">dline
+      <li><a class="reference" href="#dline%2Cint%2Cstring%2Cstring"
+    title="dline(n: int = tw; lt: string = &quot;-&quot;; col: string = termwhite)">dline,<wbr>int,<wbr>string,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">dlineLn
+      <li><a class="reference" href="#dlineLn%2Cint%2Cstring%2Cstring"
+    title="dlineLn(n: int = tw; lt: string = &quot;-&quot;; col: string = termwhite)">dlineLn,<wbr>int,<wbr>string,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printBErrorMsg
+      <li><a class="reference" href="#printBErrorMsg%2Cstring%2Cint"
+    title="printBErrorMsg(atext: string = &quot;&quot;; xpos: int = 1): string">printBErrorMsg,<wbr>string,<wbr>int</a></li>
+
+  </ul>
 
   </ul>
 </li>
@@ -252,7 +389,7 @@ function main() {
   <a class="reference reference-toplevel" href="#17" id="67">Macros</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#pdebug.m%2Cvarargs%5Btyped%5D"
-    title="pdebug(n: varargs[typed]): untyped"><wbr />pdebug<span class="attachedType"></span></a></li>
+    title="pdebug(n: varargs[typed]): untyped">pdebug</a></li>
 
   </ul>
 </li>
@@ -260,17 +397,17 @@ function main() {
   <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#cxprint.t%2Cint%2Cvarargs%5Buntyped%5D"
-    title="cxprint(xpos: int; args: varargs[untyped])"><wbr />cxprint<span class="attachedType"></span></a></li>
+    title="cxprint(xpos: int; args: varargs[untyped])">cxprint</a></li>
   <li><a class="reference" href="#cxprintLn.t%2Cint%2Cvarargs%5Buntyped%5D"
-    title="cxprintLn(xpos: int; args: varargs[untyped])"><wbr />cxprint<wbr />Ln<span class="attachedType"></span></a></li>
+    title="cxprintLn(xpos: int; args: varargs[untyped])">cxprintLn</a></li>
   <li><a class="reference" href="#cxprintxy.t%2Cint%2Cint%2Cvarargs%5Buntyped%5D"
-    title="cxprintxy(xpos: int; ypos: int; args: varargs[untyped])"><wbr />cxprintxy<span class="attachedType"></span></a></li>
+    title="cxprintxy(xpos: int; ypos: int; args: varargs[untyped])">cxprintxy</a></li>
   <li><a class="reference" href="#cxwrite.t%2Cvarargs%5Buntyped%5D"
-    title="cxwrite(args: varargs[untyped])"><wbr />cxwrite<span class="attachedType"></span></a></li>
+    title="cxwrite(args: varargs[untyped])">cxwrite</a></li>
   <li><a class="reference" href="#cxwriteLn.t%2Cvarargs%5Buntyped%5D"
-    title="cxwriteLn(args: varargs[untyped])"><wbr />cxwrite<wbr />Ln<span class="attachedType"></span></a></li>
+    title="cxwriteLn(args: varargs[untyped])">cxwriteLn</a></li>
   <li><a class="reference" href="#dprint.t%2CT"
-    title="dprint[T](s: T)"><wbr />dprint<span class="attachedType"></span></a></li>
+    title="dprint[T](s: T)">dprint</a></li>
 
   </ul>
 </li>
@@ -278,6 +415,7 @@ function main() {
 </ul>
 
   </div>
+  
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
   
@@ -290,7 +428,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2020-09-26
+Latest      : 2020-10-19
 
 Compiler    : latest stable or devel branch
 
@@ -376,8 +514,9 @@ Description : provides most printing functions for the library</pre>
 </dd>
 <a id="print,T,string,string,int,bool,bool,set[Style]"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#print%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"><span class="Identifier">print</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getFg</span><span class="Other">(</span><span class="Identifier">fgDefault</span><span class="Other">)</span><span class="Other">;</span>
-             <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
-             <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
+              <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
+              <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+              <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 
 <pre>print
@@ -432,8 +571,9 @@ also available   cxBright,cxReverse,cxBlink,cxReverseBright</pre>
 </dd>
 <a id="printLn,T,string,string,int,bool,bool,set[Style]"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printLn%2CT%2Cstring%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D"><span class="Identifier">printLn</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getFg</span><span class="Other">(</span><span class="Identifier">fgDefault</span><span class="Other">)</span><span class="Other">;</span>
-               <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
-               <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
+                <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
+                <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+                <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 
 <pre>printLn
@@ -477,7 +617,8 @@ Colornames supported for background color:  all colors ending with bg
 </dd>
 <a id="hline,int,string,int,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#hline%2Cint%2Cstring%2Cint%2Cstring"><span class="Identifier">hline</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">lt</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;-&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 forward declaration<p>hline</p>
@@ -488,7 +629,8 @@ forward declaration<p>hline</p>
 </dd>
 <a id="hlineLn,int,string,int,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#hlineLn%2Cint%2Cstring%2Cint%2Cstring"><span class="Identifier">hlineLn</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">tw</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">white</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">lt</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;-&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+    <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 forward declaration<p>hLineLn</p>
@@ -562,8 +704,9 @@ forward declaration<p>printRainbow</p>
 </dd>
 <a id="printBiCol,varargs[T,],string,string,string,int,bool,set[Style]"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printBiCol%2Cvarargs%5BT%2C%5D%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cset%5BStyle%5D"><span class="Identifier">printBiCol</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
-                  <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;:&quot;</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-                  <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
+                   <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;:&quot;</span><span class="Other">;</span>
+                   <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+                   <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 
 <p>printBiCol</p>
@@ -573,8 +716,9 @@ forward declaration<p>printRainbow</p>
 </dd>
 <a id="printLnBiCol,varargs[T,],string,string,string,int,bool,set[Style]"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printLnBiCol%2Cvarargs%5BT%2C%5D%2Cstring%2Cstring%2Cstring%2Cint%2Cbool%2Cset%5BStyle%5D"><span class="Identifier">printLnBiCol</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">,</span> <span class="Other">`</span><span class="Operator">$</span><span class="Other">`</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
-                    <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;:&quot;</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-                    <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
+                     <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">sep</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;:&quot;</span><span class="Other">;</span>
+                     <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+                     <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
 <dd>
 
 <p>printLnBiCol</p>
@@ -611,7 +755,7 @@ forward declaration<p>printRainbow</p>
 </dd>
 <a id="printHL,string,string,string,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printHL%2Cstring%2Cstring%2Cstring%2Cstring"><span class="Identifier">printHL</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span>
-            <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+             <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -624,7 +768,7 @@ forward declaration<p>printRainbow</p>
 </dd>
 <a id="printLnHL,string,string,string,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printLnHL%2Cstring%2Cstring%2Cstring%2Cstring"><span class="Identifier">printLnHL</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lightcyan</span><span class="Other">;</span>
-              <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+               <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -654,7 +798,7 @@ forward declaration<p>printRainbow</p>
 </dd>
 <a id="printCxLine,Cxline"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printCxLine%2CCxline"><span class="Identifier">printCxLine</span></a><span class="Other">(</span><span class="Identifier">aline</span><span class="Other">:</span> <span class="Keyword">var</span> <a href="cxprint.html#Cxline"><span class="Identifier">Cxline</span></a><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                                  <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                                      <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>printCxLine</p>
@@ -680,8 +824,9 @@ forward declaration<p>printRainbow</p>
 
 </dd>
 <a id="dotyLn,int,string,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#dotyLn%2Cint%2Cstring%2Cstring%2Cint"><span class="Identifier">dotyLn</span></a><span class="Other">(</span><span class="Identifier">dots</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#dotyLn%2Cint%2Cstring%2Cstring%2Cint"><span class="Identifier">dotyLn</span></a><span class="Other">(</span><span class="Identifier">dots</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">black</span><span class="Other">;</span>
+            <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+                             <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>dotyLn</p>
@@ -886,18 +1031,21 @@ forward declaration<p>printRainbow</p>
 </dd>
 <a id="printInfoMsg,string,string,string,string,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"><span class="Identifier">printInfoMsg</span></a><span class="Other">(</span><span class="Identifier">info</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span>
-                 <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lightslategray</span><span class="Other">;</span> <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">pastelWhite</span><span class="Other">;</span>
-                 <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                                     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                  <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lightslategray</span><span class="Other">;</span>
+                  <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">pastelWhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
 
 </dd>
 <a id="printLnInfoMsg,string,string,string,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printLnInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"><span class="Identifier">printLnInfoMsg</span></a><span class="Other">(</span><span class="Identifier">info</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lightslategray</span><span class="Other">;</span>
-                   <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">pastelWhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">discardable</span><span class="Other">,</span>
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#printLnInfoMsg%2Cstring%2Cstring%2Cstring%2Cstring%2Cint"><span class="Identifier">printLnInfoMsg</span></a><span class="Other">(</span><span class="Identifier">info</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span>
+                    <span class="Identifier">colLeft</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">lightslategray</span><span class="Other">;</span>
+                    <span class="Identifier">colRight</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">pastelWhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -1002,7 +1150,7 @@ forward declaration<p>printRainbow</p>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-09-26 17:36:23 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-19 15:25:37 UTC</small>
       </div>
     </div>
   </div>

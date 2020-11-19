@@ -101,48 +101,107 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">printFontFancy
+      <li><a class="reference" href="#printFontFancy%2Cstring%2Cint"
+    title="printFontFancy(s: string; coltop1 = rndcol(); xpos: int = -10)">printFontFancy,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printCxFontLetter
+      <li><a class="reference" href="#printCxFontLetter%2Cint%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint"
+    title="printCxFontLetter(n: int; xpos: int; cxfont: seq[seq[string]]; color: string;
+                  vertstepping: int)">printCxFontLetter,<wbr>int,<wbr>int,<wbr>seq[seq[string]],<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">bracketMatrixTyper
+      <li><a class="reference" href="#bracketMatrixTyper%2Cstring%2Cint%2Cstring"
+    title="bracketMatrixTyper(s: string; xpos: int = 1; color: string = randcol())">bracketMatrixTyper,<wbr>string,<wbr>int,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printSlimNumber
+      <li><a class="reference" href="#printSlimNumber%2Cstring%2Cstring%2Cstring%2Cint"
+    title="printSlimNumber(anumber: string; fgr: string = yellowgreen;
+                bgr: string = getBg(bgDefault); xpos: int = 1)">printSlimNumber,<wbr>string,<wbr>string,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createCxFont
+      <li><a class="reference" href="#createCxFont%2Cstring"
+    title="createCxFont(name: string): seq[seq[string]]">createCxFont,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">fprint
       <li><a class="reference" href="#fprint%2CT%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D%2Cstring"
     title="fprint[T](astring: T; fgr: string = getFg(fgDefault); xpos: int = 0;
-          fitLine: bool = false; centered: bool = false; styled: set[Style] = {};
-          substr: string = &quot;&quot;)"><wbr />fprint<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#fprintln%2CT%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D%2Cstring"
-    title="fprintln[T](astring: T; fgr: string = termwhite; xpos: int = 0; fitLine: bool = false;
-            centered: bool = false; styled: set[Style] = {}; substr: string = &quot;&quot;)"><wbr />fprintln<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#cx10%2Cint%2Cstring%2Cstring"
-    title="cx10(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cx10<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printFont%2Cstring%2Cstring%2Cstring%2Cint"
-    title="printFont(s: string; col: string = rndCol(); coltop: string = rndCol(); xpos: int = -10)"><wbr />print<wbr />Font<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printFontFancy%2Cstring%2Cint"
-    title="printFontFancy(s: string; coltop1 = rndcol(); xpos: int = -10)"><wbr />print<wbr />Font<wbr />Fancy<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printNimCx%2Cint"
-    title="printNimCx(npos: int = terminalWidth() div 2 - 30)"><wbr />print<wbr />Nim<wbr />Cx<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printMadeWithNim%2Cint"
-    title="printMadeWithNim(npos: int = terminalWidth() div 2 - 60)"><wbr />print<wbr />Made<wbr />With<wbr />Nim<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printNim%2Cint"
-    title="printNim(npos: int = terminalWidth() div 2 - 60)"><wbr />print<wbr />Nim<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printSlimNumber%2Cstring%2Cstring%2Cstring%2Cint"
-    title="printSlimNumber(anumber: string; fgr: string = yellowgreen;
-                bgr: string = getBg(bgDefault); xpos: int = 1)"><wbr />print<wbr />Slim<wbr />Number<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printSlim%2Cstring%2Cstring%2Cint%2Cstring"
-    title="printSlim(ss: string = &quot;&quot;; frg: string = termwhite; xpos: int = 0; align: string = &quot;left&quot;)"><wbr />print<wbr />Slim<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#slimL%2Cstring%2Cstring%2Cint%2Cint"
-    title="slimL(astring: string; col: string = truetomato; xpos: int = 5; adjuster: int = 0)"><wbr />slim<wbr />L<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printCxFontLetter%2Cint%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint"
-    title="printCxFontLetter(n: int; xpos: int; cxfont: seq[seq[string]]; color: string;
-                  vertstepping: int)"><wbr />print<wbr />Cx<wbr />Font<wbr />Letter<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#printCxFontText%2Cseq%5Bint%5D%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint%2Cint"
+          fitLine: bool = false; centered: bool = false;
+          styled: set[Style] = {}; substr: string = &quot;&quot;)">fprint,<wbr>T,<wbr>string,<wbr>int,<wbr>bool,<wbr>bool,<wbr>set[Style],<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">slimL
+      <li><a class="reference" href="#slimL%2Cstring%2Cstring%2Cint%2Cint"
+    title="slimL(astring: string; col: string = truetomato; xpos: int = 5;
+      adjuster: int = 0)">slimL,<wbr>string,<wbr>string,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printCxFontText
+      <li><a class="reference" href="#printCxFontText%2Cseq%5Bint%5D%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint%2Cint"
     title="printCxFontText(textseq: seq[int]; xpos: int = 2; cxfont: seq[seq[string]];
-                color: string = randcol(); vertstepping: int = 9; kerning: int = 19)"><wbr />print<wbr />Cx<wbr />Font<wbr />Text<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#createCxFont%2Cstring"
-    title="createCxFont(name: string): seq[seq[string]]"><wbr />create<wbr />Cx<wbr />Font<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#showCxFont%2Cstring"
-    title="showCxFont(name: string)"><wbr />show<wbr />Cx<wbr />Font<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#dotMatrixFontTest"
-    title="dotMatrixFontTest()"><wbr />dot<wbr />Matrix<wbr />Font<wbr />Test<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#dotMatrixTyper%2Cstring%2Cint%2Cstring"
-    title="dotMatrixTyper(s: string; xpos: int = 1; color: string = randcol())"><wbr />dot<wbr />Matrix<wbr />Typer<span class="attachedType"></span></a></li>
-  <li><a class="reference" href="#bracketMatrixTyper%2Cstring%2Cint%2Cstring"
-    title="bracketMatrixTyper(s: string; xpos: int = 1; color: string = randcol())"><wbr />bracket<wbr />Matrix<wbr />Typer<span class="attachedType"></span></a></li>
+                color: string = randcol(); vertstepping: int = 9;
+                kerning: int = 19)">printCxFontText,<wbr>seq[int],<wbr>int,<wbr>seq[seq[string]],<wbr>string,<wbr>int,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printNim
+      <li><a class="reference" href="#printNim%2Cint"
+    title="printNim(npos: int = terminalWidth() div 2 - 60)">printNim,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printMadeWithNim
+      <li><a class="reference" href="#printMadeWithNim%2Cint"
+    title="printMadeWithNim(npos: int = terminalWidth() div 2 - 60)">printMadeWithNim,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printSlim
+      <li><a class="reference" href="#printSlim%2Cstring%2Cstring%2Cint%2Cstring"
+    title="printSlim(ss: string = &quot;&quot;; frg: string = termwhite; xpos: int = 0;
+          align: string = &quot;left&quot;)">printSlim,<wbr>string,<wbr>string,<wbr>int,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">dotMatrixFontTest
+      <li><a class="reference" href="#dotMatrixFontTest"
+    title="dotMatrixFontTest()">dotMatrixFontTest</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printFont
+      <li><a class="reference" href="#printFont%2Cstring%2Cstring%2Cstring%2Cint"
+    title="printFont(s: string; col: string = rndCol(); coltop: string = rndCol();
+          xpos: int = -10)">printFont,<wbr>string,<wbr>string,<wbr>string,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printNimCx
+      <li><a class="reference" href="#printNimCx%2Cint"
+    title="printNimCx(npos: int = terminalWidth() div 2 - 30)">printNimCx,<wbr>int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cx10
+      <li><a class="reference" href="#cx10%2Cint%2Cstring%2Cstring"
+    title="cx10(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cx10,<wbr>int,<wbr>string,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">dotMatrixTyper
+      <li><a class="reference" href="#dotMatrixTyper%2Cstring%2Cint%2Cstring"
+    title="dotMatrixTyper(s: string; xpos: int = 1; color: string = randcol())">dotMatrixTyper,<wbr>string,<wbr>int,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">showCxFont
+      <li><a class="reference" href="#showCxFont%2Cstring"
+    title="showCxFont(name: string)">showCxFont,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">fprintln
+      <li><a class="reference" href="#fprintln%2CT%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D%2Cstring"
+    title="fprintln[T](astring: T; fgr: string = termwhite; xpos: int = 0;
+            fitLine: bool = false; centered: bool = false;
+            styled: set[Style] = {}; substr: string = &quot;&quot;)">fprintln,<wbr>T,<wbr>string,<wbr>int,<wbr>bool,<wbr>bool,<wbr>set[Style],<wbr>string</a></li>
+
+  </ul>
 
   </ul>
 </li>
@@ -150,83 +209,83 @@ function main() {
   <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#cxZero.t%2Cint%2Cstring%2Cstring"
-    title="cxZero(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cx<wbr />Zero<span class="attachedType"></span></a></li>
+    title="cxZero(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxZero</a></li>
   <li><a class="reference" href="#cx1.t%2Cint%2Cstring%2Cstring"
-    title="cx1(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cx1<span class="attachedType"></span></a></li>
+    title="cx1(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cx1</a></li>
   <li><a class="reference" href="#cx2.t%2Cint%2Cstring%2Cstring"
-    title="cx2(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cx2<span class="attachedType"></span></a></li>
+    title="cx2(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cx2</a></li>
   <li><a class="reference" href="#cx3.t%2Cint%2Cstring%2Cstring"
-    title="cx3(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cx3<span class="attachedType"></span></a></li>
+    title="cx3(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cx3</a></li>
   <li><a class="reference" href="#cx4.t%2Cint%2Cstring%2Cstring"
-    title="cx4(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cx4<span class="attachedType"></span></a></li>
+    title="cx4(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cx4</a></li>
   <li><a class="reference" href="#cx5.t%2Cint%2Cstring%2Cstring"
-    title="cx5(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cx5<span class="attachedType"></span></a></li>
+    title="cx5(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cx5</a></li>
   <li><a class="reference" href="#cx6.t%2Cint%2Cstring%2Cstring"
-    title="cx6(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cx6<span class="attachedType"></span></a></li>
+    title="cx6(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cx6</a></li>
   <li><a class="reference" href="#cx7.t%2Cint%2Cstring%2Cstring"
-    title="cx7(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cx7<span class="attachedType"></span></a></li>
+    title="cx7(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cx7</a></li>
   <li><a class="reference" href="#cx8.t%2Cint%2Cstring%2Cstring"
-    title="cx8(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cx8<span class="attachedType"></span></a></li>
+    title="cx8(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cx8</a></li>
   <li><a class="reference" href="#cx9.t%2Cint%2Cstring%2Cstring"
-    title="cx9(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cx9<span class="attachedType"></span></a></li>
+    title="cx9(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cx9</a></li>
   <li><a class="reference" href="#cxa.t%2Cint%2Cstring%2Cstring"
-    title="cxa(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxa<span class="attachedType"></span></a></li>
+    title="cxa(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxa</a></li>
   <li><a class="reference" href="#cxb.t%2Cint%2Cstring%2Cstring"
-    title="cxb(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxb<span class="attachedType"></span></a></li>
+    title="cxb(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxb</a></li>
   <li><a class="reference" href="#cxc.t%2Cint%2Cstring%2Cstring"
-    title="cxc(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxc<span class="attachedType"></span></a></li>
+    title="cxc(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxc</a></li>
   <li><a class="reference" href="#cxd.t%2Cint%2Cstring%2Cstring"
-    title="cxd(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxd<span class="attachedType"></span></a></li>
+    title="cxd(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxd</a></li>
   <li><a class="reference" href="#cxe.t%2Cint%2Cstring%2Cstring"
-    title="cxe(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxe<span class="attachedType"></span></a></li>
+    title="cxe(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxe</a></li>
   <li><a class="reference" href="#cxf.t%2Cint%2Cstring%2Cstring"
-    title="cxf(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxf<span class="attachedType"></span></a></li>
+    title="cxf(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxf</a></li>
   <li><a class="reference" href="#cxg.t%2Cint%2Cstring%2Cstring"
-    title="cxg(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxg<span class="attachedType"></span></a></li>
+    title="cxg(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxg</a></li>
   <li><a class="reference" href="#cxh.t%2Cint%2Cstring%2Cstring"
-    title="cxh(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxh<span class="attachedType"></span></a></li>
+    title="cxh(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxh</a></li>
   <li><a class="reference" href="#cxi.t%2Cint%2Cstring%2Cstring"
-    title="cxi(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxi<span class="attachedType"></span></a></li>
+    title="cxi(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxi</a></li>
   <li><a class="reference" href="#cxj.t%2Cint%2Cstring%2Cstring"
-    title="cxj(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxj<span class="attachedType"></span></a></li>
+    title="cxj(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxj</a></li>
   <li><a class="reference" href="#cxk.t%2Cint%2Cstring%2Cstring"
-    title="cxk(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxk<span class="attachedType"></span></a></li>
+    title="cxk(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxk</a></li>
   <li><a class="reference" href="#cxl.t%2Cint%2Cstring%2Cstring"
-    title="cxl(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxl<span class="attachedType"></span></a></li>
+    title="cxl(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxl</a></li>
   <li><a class="reference" href="#cxm.t%2Cint%2Cstring%2Cstring"
-    title="cxm(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxm<span class="attachedType"></span></a></li>
+    title="cxm(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxm</a></li>
   <li><a class="reference" href="#cxn.t%2Cint%2Cstring%2Cstring"
-    title="cxn(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxn<span class="attachedType"></span></a></li>
+    title="cxn(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxn</a></li>
   <li><a class="reference" href="#cxo.t%2Cint%2Cstring%2Cstring"
-    title="cxo(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxo<span class="attachedType"></span></a></li>
+    title="cxo(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxo</a></li>
   <li><a class="reference" href="#cxp.t%2Cint%2Cstring%2Cstring"
-    title="cxp(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxp<span class="attachedType"></span></a></li>
+    title="cxp(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxp</a></li>
   <li><a class="reference" href="#cxq.t%2Cint%2Cstring%2Cstring"
-    title="cxq(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxq<span class="attachedType"></span></a></li>
+    title="cxq(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxq</a></li>
   <li><a class="reference" href="#cxr.t%2Cint%2Cstring%2Cstring"
-    title="cxr(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxr<span class="attachedType"></span></a></li>
+    title="cxr(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxr</a></li>
   <li><a class="reference" href="#cxs.t%2Cint%2Cstring%2Cstring"
-    title="cxs(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxs<span class="attachedType"></span></a></li>
+    title="cxs(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxs</a></li>
   <li><a class="reference" href="#cxt.t%2Cint%2Cstring%2Cstring"
-    title="cxt(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxt<span class="attachedType"></span></a></li>
+    title="cxt(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxt</a></li>
   <li><a class="reference" href="#cxu.t%2Cint%2Cstring%2Cstring"
-    title="cxu(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxu<span class="attachedType"></span></a></li>
+    title="cxu(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxu</a></li>
   <li><a class="reference" href="#cxv.t%2Cint%2Cstring%2Cstring"
-    title="cxv(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxv<span class="attachedType"></span></a></li>
+    title="cxv(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxv</a></li>
   <li><a class="reference" href="#cxw.t%2Cint%2Cstring%2Cstring"
-    title="cxw(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxw<span class="attachedType"></span></a></li>
+    title="cxw(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxw</a></li>
   <li><a class="reference" href="#cxx.t%2Cint%2Cstring%2Cstring"
-    title="cxx(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxx<span class="attachedType"></span></a></li>
+    title="cxx(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxx</a></li>
   <li><a class="reference" href="#cxy.t%2Cint%2Cstring%2Cstring"
-    title="cxy(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxy<span class="attachedType"></span></a></li>
+    title="cxy(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxy</a></li>
   <li><a class="reference" href="#cxz.t%2Cint%2Cstring%2Cstring"
-    title="cxz(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxz<span class="attachedType"></span></a></li>
+    title="cxz(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxz</a></li>
   <li><a class="reference" href="#cxpoint.t%2Cint%2Cstring%2Cstring"
-    title="cxpoint(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxpoint<span class="attachedType"></span></a></li>
+    title="cxpoint(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxpoint</a></li>
   <li><a class="reference" href="#cxhyphen.t%2Cint%2Cstring%2Cstring"
-    title="cxhyphen(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())"><wbr />cxhyphen<span class="attachedType"></span></a></li>
+    title="cxhyphen(npos: int = 0; col: string = rndCol(); coltop: string = rndCol())">cxhyphen</a></li>
   <li><a class="reference" href="#cxgrid.t%2Cint%2Cstring%2Cstring"
-    title="cxgrid(npos: int = 0; col: string = rndCol; coltop: string = rndcol)"><wbr />cxgrid<span class="attachedType"></span></a></li>
+    title="cxgrid(npos: int = 0; col: string = rndCol; coltop: string = rndcol)">cxgrid</a></li>
 
   </ul>
 </li>
@@ -234,6 +293,7 @@ function main() {
 </ul>
 
   </div>
+  
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
   
@@ -273,8 +333,8 @@ Notes : experimental! your results may depend on terminal in use.
 <dl class="item">
 <a id="fprint,T,string,int,bool,bool,set[Style],string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#fprint%2CT%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D%2Cstring"><span class="Identifier">fprint</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getFg</span><span class="Other">(</span><span class="Identifier">fgDefault</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-              <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span>
-              <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
+               <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+               <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
 <dd>
 
 <pre>prev. print2
@@ -325,8 +385,9 @@ or use 2 or more print statements for the desired effect</pre>
 
 </dd>
 <a id="fprintln,T,string,int,bool,bool,set[Style],string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#fprintln%2CT%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D%2Cstring"><span class="Identifier">fprintln</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
-                <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#fprintln%2CT%2Cstring%2Cint%2Cbool%2Cbool%2Cset%5BStyle%5D%2Cstring"><span class="Identifier">fprintln</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
+                 <span class="Identifier">fitLine</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span> <span class="Identifier">centered</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">;</span>
+                 <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">;</span> <span class="Identifier">substr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">)</span></pre></dt>
 <dd>
 
 <pre>fprintln
@@ -361,7 +422,8 @@ styled</pre>
 </dd>
 <a id="printFont,string,string,string,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printFont%2Cstring%2Cstring%2Cstring%2Cint"><span class="Identifier">printFont</span></a><span class="Other">(</span><span class="Identifier">s</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span>
-              <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+               <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">10</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+                                  <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>printFont</p>
@@ -381,8 +443,8 @@ styled</pre>
 
 </dd>
 <a id="printNimCx,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printNimCx%2Cint"><span class="Identifier">printNimCx</span></a><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">terminalWidth</span><span class="Other">(</span><span class="Other">)</span> <span class="Identifier">div</span> <span class="DecNumber">2</span> <span class="Operator">-</span> <span class="DecNumber">30</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#printNimCx%2Cint"><span class="Identifier">printNimCx</span></a><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">terminalWidth</span><span class="Other">(</span><span class="Other">)</span> <span class="Identifier">div</span> <span class="DecNumber">2</span> <span class="Operator">-</span> <span class="DecNumber">30</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 printNimcx<blockquote><p>experiments in block font building , default is center in terminal</p></blockquote>
@@ -399,8 +461,8 @@ printMadeWithNim<blockquote><p>experiments in block font building , default is c
 
 </dd>
 <a id="printNim,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printNim%2Cint"><span class="Identifier">printNim</span></a><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">terminalWidth</span><span class="Other">(</span><span class="Other">)</span> <span class="Identifier">div</span> <span class="DecNumber">2</span> <span class="Operator">-</span> <span class="DecNumber">60</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#printNim%2Cint"><span class="Identifier">printNim</span></a><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">terminalWidth</span><span class="Other">(</span><span class="Other">)</span> <span class="Identifier">div</span> <span class="DecNumber">2</span> <span class="Operator">-</span> <span class="DecNumber">60</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -408,7 +470,7 @@ printMadeWithNim<blockquote><p>experiments in block font building , default is c
 </dd>
 <a id="printSlimNumber,string,string,string,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printSlimNumber%2Cstring%2Cstring%2Cstring%2Cint"><span class="Identifier">printSlimNumber</span></a><span class="Other">(</span><span class="Identifier">anumber</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">fgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">yellowgreen</span><span class="Other">;</span>
-                    <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+                     <span class="Identifier">bgr</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getBg</span><span class="Other">(</span><span class="Identifier">bgDefault</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -441,8 +503,8 @@ printSlimNumber
 </dd>
 <a id="printSlim,string,string,int,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printSlim%2Cstring%2Cstring%2Cint%2Cstring"><span class="Identifier">printSlim</span></a><span class="Other">(</span><span class="Identifier">ss</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">frg</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">termwhite</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span>
-              <span class="Identifier">align</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;left&quot;</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                                    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+               <span class="Identifier">align</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;left&quot;</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>printSlim</p>
@@ -460,8 +522,9 @@ printSlimNumber
 
 </dd>
 <a id="slimL,string,string,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#slimL%2Cstring%2Cstring%2Cint%2Cint"><span class="Identifier">slimL</span></a><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span> <span class="Identifier">adjuster</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#slimL%2Cstring%2Cstring%2Cint%2Cint"><span class="Identifier">slimL</span></a><span class="Other">(</span><span class="Identifier">astring</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">truetomato</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">5</span><span class="Other">;</span>
+           <span class="Identifier">adjuster</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+                                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>slimL</p>
@@ -470,9 +533,9 @@ printSlimNumber
 
 </dd>
 <a id="printCxFontLetter,int,int,seq[seq[string]],string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printCxFontLetter%2Cint%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint"><span class="Identifier">printCxFontLetter</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span>
-                      <span class="Identifier">vertstepping</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dt><pre><span class="Keyword">proc</span> <a href="#printCxFontLetter%2Cint%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint"><span class="Identifier">printCxFontLetter</span></a><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span>
+                       <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">vertstepping</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -480,8 +543,9 @@ printSlimNumber
 </dd>
 <a id="printCxFontText,seq[int],int,seq[seq[string]],string,int,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#printCxFontText%2Cseq%5Bint%5D%2Cint%2Cseq%5Bseq%5Bstring%5D%5D%2Cstring%2Cint%2Cint"><span class="Identifier">printCxFontText</span></a><span class="Other">(</span><span class="Identifier">textseq</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">int</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">;</span> <span class="Identifier">cxfont</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span><span class="Other">]</span><span class="Other">;</span>
-                    <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">vertstepping</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">9</span><span class="Other">;</span> <span class="Identifier">kerning</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">19</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
-    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                     <span class="Identifier">color</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">randcol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">vertstepping</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">9</span><span class="Other">;</span>
+                     <span class="Identifier">kerning</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">19</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>printCxFontText</p>
@@ -499,7 +563,7 @@ printSlimNumber
 </dd>
 <a id="showCxFont,string"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#showCxFont%2Cstring"><span class="Identifier">showCxFont</span></a><span class="Other">(</span><span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                             <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 
@@ -507,7 +571,7 @@ printSlimNumber
 </dd>
 <a id="dotMatrixFontTest"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#dotMatrixFontTest"><span class="Identifier">dotMatrixFontTest</span></a><span class="Other">(</span><span class="Other">)</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-                         <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+                           <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
 <p>dotMatrixFontTest</p>
@@ -810,14 +874,16 @@ printSlimNumber
 
 </dd>
 <a id="cxpoint.t,int,string,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#cxpoint.t%2Cint%2Cstring%2Cstring"><span class="Identifier">cxpoint</span></a><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt><pre><span class="Keyword">template</span> <a href="#cxpoint.t%2Cint%2Cstring%2Cstring"><span class="Identifier">cxpoint</span></a><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span>
+                 <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 
 </dd>
 <a id="cxhyphen.t,int,string,string"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#cxhyphen.t%2Cint%2Cstring%2Cstring"><span class="Identifier">cxhyphen</span></a><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
+<dt><pre><span class="Keyword">template</span> <a href="#cxhyphen.t%2Cint%2Cstring%2Cstring"><span class="Identifier">cxhyphen</span></a><span class="Other">(</span><span class="Identifier">npos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">;</span> <span class="Identifier">col</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span>
+                  <span class="Identifier">coltop</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">rndCol</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
@@ -840,7 +906,7 @@ printSlimNumber
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-09-26 17:36:28 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-19 15:25:42 UTC</small>
       </div>
     </div>
   </div>
