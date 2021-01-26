@@ -275,6 +275,11 @@ window.addEventListener('DOMContentLoaded', main);
     title="showTimerResults()">showTimerResults</a></li>
 
   </ul>
+  <ul class="simple nested-toc-section">getMsecs
+      <li><a class="reference" href="#getMsecs%2CDuration"
+    title="getMsecs(d: Duration): float64">getMsecs,<wbr>Duration</a></li>
+
+  </ul>
   <ul class="simple nested-toc-section">getNextMonday
       <li><a class="reference" href="#getNextMonday%2Cstring"
     title="getNextMonday(adate: string): string">getNextMonday,<wbr>string</a></li>
@@ -336,7 +341,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2020-09-26
+Latest      : 2020-01-26
 
 Compiler    : latest stable or devel branch
 
@@ -761,6 +766,15 @@ getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span cl
 returns isoweek for a given date
 
 </dd>
+<a id="getMsecs,Duration"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#getMsecs%2CDuration"><span class="Identifier">getMsecs</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Duration</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float64</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>getMsecs</p>
+<p>returns duration in milliseconds duration d can be obtained like so let start = getMonoTime() sleep(5) let end   = getMonoTime() let d = end - start printLnBiCol &quot;Timing : &quot; &amp; ff(getMsecs(d),6) &amp; &quot; msn&quot;</p>
+
+
+</dd>
 
 </dl></div>
 <div class="section" id="18">
@@ -773,10 +787,10 @@ returns isoweek for a given date
 <p>cxLocal</p>
 <p>returns local datetime in a string same as now()</p>
 <p>Examples for var. cx time,date functions</p>
-<pre class="listing"><span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxLocal           : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxLocal</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxNow             : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxNow</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxTime            : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTime</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxToday           : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxToday</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
+<pre class="listing"><span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxLocal           : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxLocal</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
+<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxNow             : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxNow</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
+<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxTime            : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTime</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
+<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxToday           : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxToday</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxTimeZone(long)  : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTimezone</span><span class="Punctuation">(</span><span class="Identifier">long</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">)</span>
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxTimeZone(short) : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTimezone</span><span class="Punctuation">(</span><span class="Identifier">short</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre>
 
@@ -830,7 +844,7 @@ returns isoweek for a given date
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2021-01-26 20:16:15 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-01-26 20:52:51 UTC</small>
       </div>
     </div>
   </div>
