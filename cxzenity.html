@@ -56,10 +56,12 @@ function main() {
     }
   }
 }
+
+window.addEventListener('DOMContentLoaded', main);
 </script>
 
 </head>
-<body onload="main()">
+<body>
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">cxzenity</h1>
@@ -138,6 +140,12 @@ function main() {
   <ul class="simple nested-toc-section">cxZError
       <li><a class="reference" href="#cxZError%2Cstring"
     title="cxZError(errortext: string = &quot; An error has occured &quot;)">cxZError,<wbr>string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxZSSHLoginDialog
+      <li><a class="reference" href="#cxZSSHLoginDialog%2Cstring%2Cstring"
+    title="cxZSSHLoginDialog(title: string = &quot;SSH Login Dialog&quot;; text: string = &quot;Login&quot;): tuple[
+    host: string, port: int, username: string, password: string, command: string]">cxZSSHLoginDialog,<wbr>string,<wbr>string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZYesNo
@@ -241,6 +249,20 @@ cxZDialog
 <dd>
 
 <p>cxZLoginDialog</p>
+<p>pressing cancel exits application </p>
+
+
+</dd>
+<a id="cxZSSHLoginDialog,string,string"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#cxZSSHLoginDialog%2Cstring%2Cstring"><span class="Identifier">cxZSSHLoginDialog</span></a><span class="Other">(</span><span class="Identifier">title</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;SSH Login Dialog&quot;</span><span class="Other">;</span>
+                       <span class="Identifier">text</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;Login&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">host</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">port</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">,</span>
+    <span class="Identifier">username</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">password</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">command</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">]</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span>
+    <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">,</span>
+    <span class="Identifier">WriteDirEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+<p>cxZSSHLoginDialog</p>
 <p>pressing cancel exits application </p>
 
 
@@ -417,7 +439,7 @@ with radiobutton
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-19 15:25:56 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-01-26 20:16:33 UTC</small>
       </div>
     </div>
   </div>

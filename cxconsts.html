@@ -56,10 +56,12 @@ function main() {
     }
   }
 }
+
+window.addEventListener('DOMContentLoaded', main);
 </script>
 
 </head>
-<body onload="main()">
+<body>
 <div class="document" id="documentId">
   <div class="container">
     <h1 class="title">cxconsts</h1>
@@ -92,15 +94,6 @@ function main() {
   </div>
   <ul class="simple simple-toc" id="toc-list">
 <li>
-  <a class="reference reference-toplevel" href="#8" id="58">Vars</a>
-  <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#cxindigopal"
-    title="cxindigopal = @[&quot;#ebf4ff&quot;, &quot;#c3dafe&quot;, &quot;#a3bffa&quot;, &quot;#7f9cf5&quot;, &quot;#667eea&quot;,
-                &quot;#5a67d8&quot;, &quot;#4c51bf&quot;, &quot;#434190&quot;, &quot;#3c366b&quot;]">cxindigopal</a></li>
-
-  </ul>
-</li>
-<li>
   <a class="reference reference-toplevel" href="#9" id="59">Lets</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#nimcxl"
@@ -112,6 +105,9 @@ function main() {
   <li><a class="reference" href="#cxgreypal"
     title="cxgreypal = @[&quot;#f7fafc&quot;, &quot;#edf2f7&quot;, &quot;#e2e8f0&quot;, &quot;#cbd5e0&quot;, &quot;#a0aec0&quot;, &quot;#718096&quot;,
               &quot;#4a5568&quot;, &quot;#2d3748&quot;, &quot;#1a202c&quot;]">cxgreypal</a></li>
+  <li><a class="reference" href="#cxindigopal"
+    title="cxindigopal = @[&quot;#ebf4ff&quot;, &quot;#c3dafe&quot;, &quot;#a3bffa&quot;, &quot;#7f9cf5&quot;, &quot;#667eea&quot;,
+                &quot;#5a67d8&quot;, &quot;#4c51bf&quot;, &quot;#434190&quot;, &quot;#3c366b&quot;]">cxindigopal</a></li>
   <li><a class="reference" href="#cxpurplepal"
     title="cxpurplepal = @[&quot;#faf5ff&quot;, &quot;#e9d8fd&quot;, &quot;#d6bcfa&quot;, &quot;#b794f4&quot;, &quot;#9f7aea&quot;,
                 &quot;#805ad5&quot;, &quot;#6b46c1&quot;, &quot;#553c9a&quot;, &quot;#44337a&quot;]">cxpurplepal</a></li>
@@ -139,6 +135,10 @@ function main() {
   <li><a class="reference" href="#cxpals"
     title="cxpals = @[cxgreypal, cxindigopal, cxgreenpal, cxbluepal, cxredpal, cxpinkpal,
            cxorangepal, cxyellowpal, cxpurplepal, cxtealpal]">cxpals</a></li>
+  <li><a class="reference" href="#cxpalnames"
+    title="cxpalnames = @[&quot;cxgreypal&quot;, &quot;cxindigopal&quot;, &quot;cxgreenpal&quot;, &quot;cxbluepal&quot;,
+               &quot;cxredpal&quot;, &quot;cxpinkpal&quot;, &quot;cxorangepal&quot;, &quot;cxyellowpal&quot;,
+               &quot;cxpurplepal&quot;, &quot;cxtealpal&quot;]">cxpalnames</a></li>
 
   </ul>
 </li>
@@ -1514,8 +1514,8 @@ function main() {
 <p>Status      : stable</p>
 <p>License     : MIT opensource</p>
 <p>ProjectStart: 2015-06-20</p>
-<p>Latest      : 2020-11-19</p>
-<p>Compiler    : latest stable or devel branch</p>
+<p>Latest      : 2020-01-02</p>
+<p>Compiler    : Nim latest stable or devel branch</p>
 <p>OS          : Linux</p>
 <p>Docs        : <a class="reference external" href="https://qqtop.github.io/cxconsts.html">https://qqtop.github.io/cxconsts.html</a></p>
 <p>Description : this file is part of nimcx and contains all public const declarations</p>
@@ -1523,20 +1523,7 @@ function main() {
 <p>concerning unicode symbols , our testing system has gnu unicodefonts installed</p>
 </p></blockquote>
 </p>
-  <div class="section" id="8">
-<h1><a class="toc-backref" href="#8">Vars</a></h1>
-<dl class="item">
-<a id="cxindigopal"></a>
-<dt><pre><a href="cxconsts.html#cxindigopal"><span class="Identifier">cxindigopal</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;#ebf4ff&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#c3dafe&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#a3bffa&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#7f9cf5&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#667eea&quot;</span><span class="Other">,</span>
-                <span class="StringLit">&quot;#5a67d8&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#4c51bf&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#434190&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#3c366b&quot;</span><span class="Other">]</span></pre></dt>
-<dd>
-
-
-
-</dd>
-
-</dl></div>
-<div class="section" id="9">
+  <div class="section" id="9">
 <h1><a class="toc-backref" href="#9">Lets</a></h1>
 <dl class="item">
 <a id="nimcxl"></a>
@@ -1553,6 +1540,14 @@ function main() {
 <a id="cxgreypal"></a>
 <dt><pre><a href="cxconsts.html#cxgreypal"><span class="Identifier">cxgreypal</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;#f7fafc&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#edf2f7&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#e2e8f0&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#cbd5e0&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#a0aec0&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#718096&quot;</span><span class="Other">,</span>
               <span class="StringLit">&quot;#4a5568&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#2d3748&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#1a202c&quot;</span><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="cxindigopal"></a>
+<dt><pre><a href="cxconsts.html#cxindigopal"><span class="Identifier">cxindigopal</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;#ebf4ff&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#c3dafe&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#a3bffa&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#7f9cf5&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#667eea&quot;</span><span class="Other">,</span>
+                <span class="StringLit">&quot;#5a67d8&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#4c51bf&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#434190&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;#3c366b&quot;</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
@@ -1625,6 +1620,15 @@ function main() {
 <a id="cxpals"></a>
 <dt><pre><a href="cxconsts.html#cxpals"><span class="Identifier">cxpals</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><a href="cxconsts.html#cxgreypal"><span class="Identifier">cxgreypal</span></a><span class="Other">,</span> <a href="cxconsts.html#cxindigopal"><span class="Identifier">cxindigopal</span></a><span class="Other">,</span> <a href="cxconsts.html#cxgreenpal"><span class="Identifier">cxgreenpal</span></a><span class="Other">,</span> <a href="cxconsts.html#cxbluepal"><span class="Identifier">cxbluepal</span></a><span class="Other">,</span> <a href="cxconsts.html#cxredpal"><span class="Identifier">cxredpal</span></a><span class="Other">,</span> <a href="cxconsts.html#cxpinkpal"><span class="Identifier">cxpinkpal</span></a><span class="Other">,</span>
            <a href="cxconsts.html#cxorangepal"><span class="Identifier">cxorangepal</span></a><span class="Other">,</span> <a href="cxconsts.html#cxyellowpal"><span class="Identifier">cxyellowpal</span></a><span class="Other">,</span> <a href="cxconsts.html#cxpurplepal"><span class="Identifier">cxpurplepal</span></a><span class="Other">,</span> <a href="cxconsts.html#cxtealpal"><span class="Identifier">cxtealpal</span></a><span class="Other">]</span></pre></dt>
+<dd>
+
+
+
+</dd>
+<a id="cxpalnames"></a>
+<dt><pre><a href="cxconsts.html#cxpalnames"><span class="Identifier">cxpalnames</span></a> <span class="Other">=</span> <span class="Operator">@</span><span class="Other">[</span><span class="StringLit">&quot;cxgreypal&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;cxindigopal&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;cxgreenpal&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;cxbluepal&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;cxredpal&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;cxpinkpal&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;cxorangepal&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;cxyellowpal&quot;</span><span class="Other">,</span>
+               <span class="StringLit">&quot;cxpurplepal&quot;</span><span class="Other">,</span> <span class="StringLit">&quot;cxtealpal&quot;</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
@@ -5506,7 +5510,7 @@ index into cxcolorNames
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-11-19 15:25:37 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-01-26 20:16:15 UTC</small>
       </div>
     </div>
   </div>
