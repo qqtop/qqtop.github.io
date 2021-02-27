@@ -106,109 +106,129 @@ window.addEventListener('DOMContentLoaded', main);
       <li><a class="reference" href="#cxLoginEncDialog%2Cstring%2Cstring%2Cstring"
     title="cxLoginEncDialog(title: string = &quot;Login Dialog&quot;; text: string = &quot;Login&quot;;
                  enckeytext: string = &quot;&quot;): tuple[name: string, password: string,
-    enckey: string]">cxLoginEncDialog,<wbr>string,<wbr>string,<wbr>string</a></li>
+    enckey: string]">cxLoginEncDialog(title: string = &quot;Login Dialog&quot;; text: string = &quot;Login&quot;;
+                 enckeytext: string = &quot;&quot;): tuple[name: string, password: string,
+    enckey: string]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZLoginDialog
       <li><a class="reference" href="#cxZLoginDialog%2Cstring%2Cstring"
     title="cxZLoginDialog(title: string = &quot;Login Dialog&quot;; text: string = &quot;Login&quot;): tuple[
-    name: string, password: string]">cxZLoginDialog,<wbr>string,<wbr>string</a></li>
+    name: string, password: string]">cxZLoginDialog(title: string = &quot;Login Dialog&quot;; text: string = &quot;Login&quot;): tuple[
+    name: string, password: string]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZCheckbox
       <li><a class="reference" href="#cxZCheckbox"
-    title="cxZCheckbox(): string">cxZCheckbox</a></li>
+    title="cxZCheckbox(): string">cxZCheckbox(): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZWarn
       <li><a class="reference" href="#cxZWarn%2Cstring%2Cint"
     title="cxZWarn(warntext: string = &quot; This is a warning ! Hope you head it ! &quot;;
-        width: int = 250)">cxZWarn,<wbr>string,<wbr>int</a></li>
+        width: int = 250)">cxZWarn(warntext: string = &quot; This is a warning ! Hope you head it ! &quot;;
+        width: int = 250)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZList
       <li><a class="reference" href="#cxZList"
-    title="cxZList(): string">cxZList</a></li>
+    title="cxZList(): string">cxZList(): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxZCombobox
+      <li><a class="reference" href="#cxZCombobox%2Cstring%2Cstring%2Cstring%2Cint"
+    title="cxZCombobox(title: string = &quot;cxZComboBox&quot;;
+            text: string = &quot;Selections available&quot;;
+            cchoice: string = &quot;London|Birmingham|Paris|Dubai|Vienna|Hongkong&quot;;
+            width: int = 250): string">cxZCombobox(title: string = &quot;cxZComboBox&quot;;
+            text: string = &quot;Selections available&quot;;
+            cchoice: string = &quot;London|Birmingham|Paris|Dubai|Vienna|Hongkong&quot;;
+            width: int = 250): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZScale
       <li><a class="reference" href="#cxZScale%2Cstring%2Cint%2Cint%2Cint%2Cint"
     title="cxZScale(text: string = &quot;cxScale&quot;; value: int = 20; min: int = 0;
-         max: int = 100; step: int = 5): int">cxZScale,<wbr>string,<wbr>int,<wbr>int,<wbr>int,<wbr>int</a></li>
+         max: int = 100; step: int = 5): int">cxZScale(text: string = &quot;cxScale&quot;; value: int = 20; min: int = 0;
+         max: int = 100; step: int = 5): int</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZError
       <li><a class="reference" href="#cxZError%2Cstring"
-    title="cxZError(errortext: string = &quot; An error has occured &quot;)">cxZError,<wbr>string</a></li>
+    title="cxZError(errortext: string = &quot; An error has occured &quot;)">cxZError(errortext: string = &quot; An error has occured &quot;)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZSSHLoginDialog
       <li><a class="reference" href="#cxZSSHLoginDialog%2Cstring%2Cstring"
     title="cxZSSHLoginDialog(title: string = &quot;SSH Login Dialog&quot;; text: string = &quot;Login&quot;): tuple[
-    host: string, port: int, username: string, password: string, command: string]">cxZSSHLoginDialog,<wbr>string,<wbr>string</a></li>
+    host: string, port: int, username: string, password: string, command: string]">cxZSSHLoginDialog(title: string = &quot;SSH Login Dialog&quot;; text: string = &quot;Login&quot;): tuple[
+    host: string, port: int, username: string, password: string, command: string]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZYesNo
       <li><a class="reference" href="#cxZYesNo%2Cstring%2Cint"
-    title="cxZYesNo(text: string = &quot;&quot;; width: int = 300): string">cxZYesNo,<wbr>string,<wbr>int</a></li>
+    title="cxZYesNo(text: string = &quot;&quot;; width: int = 300): string">cxZYesNo(text: string = &quot;&quot;; width: int = 300): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZInfo
       <li><a class="reference" href="#cxZInfo%2Cstring%2Cint"
-    title="cxZInfo(infotext: string = &quot;Stay_calm_, carry_on&quot;; width: int = 300)">cxZInfo,<wbr>string,<wbr>int</a></li>
+    title="cxZInfo(infotext: string = &quot;Stay_calm_, carry_on&quot;; width: int = 300)">cxZInfo(infotext: string = &quot;Stay_calm_, carry_on&quot;; width: int = 300)</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxProgress
       <li><a class="reference" href="#cxProgress"
-    title="cxProgress(): string">cxProgress</a></li>
+    title="cxProgress(): string">cxProgress(): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZQuestion
       <li><a class="reference" href="#cxZQuestion%2Cstring%2Cstring%2Cstring"
     title="cxZQuestion(ask: string = &quot;How Are you ?&quot;; cancel: string = &quot;Tired&quot;;
-            ok: string = &quot;Energetic&quot;): bool">cxZQuestion,<wbr>string,<wbr>string,<wbr>string</a></li>
+            ok: string = &quot;Energetic&quot;): bool">cxZQuestion(ask: string = &quot;How Are you ?&quot;; cancel: string = &quot;Tired&quot;;
+            ok: string = &quot;Energetic&quot;): bool</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZDisplayFile
       <li><a class="reference" href="#cxZDisplayFile%2Cstring%2Cint%2Cint"
-    title="cxZDisplayFile(filename: string; height: int = 400; width: int = 500): string">cxZDisplayFile,<wbr>string,<wbr>int,<wbr>int</a></li>
+    title="cxZDisplayFile(filename: string; height: int = 400; width: int = 500): string">cxZDisplayFile(filename: string; height: int = 400; width: int = 500): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxLoginDateDialog
       <li><a class="reference" href="#cxLoginDateDialog%2Cstring%2Cstring"
     title="cxLoginDateDialog(title: string = &quot;Login Dialog&quot;; text: string = &quot;Login&quot;): tuple[
-    name: string, password: string, date: string]">cxLoginDateDialog,<wbr>string,<wbr>string</a></li>
+    name: string, password: string, date: string]">cxLoginDateDialog(title: string = &quot;Login Dialog&quot;; text: string = &quot;Login&quot;): tuple[
+    name: string, password: string, date: string]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZColorSelector
       <li><a class="reference" href="#cxZColorSelector"
-    title="cxZColorSelector(): string">cxZColorSelector</a></li>
+    title="cxZColorSelector(): string">cxZColorSelector(): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZDialog
       <li><a class="reference" href="#cxZDialog%2Cstring%2Cstring%2Cbool"
     title="cxZDialog(title: string = &quot;cxZDialog&quot;; text: string = &quot;Demo Text&quot;;
-          hideText: bool = false): string">cxZDialog,<wbr>string,<wbr>string,<wbr>bool</a></li>
+          hideText: bool = false): string">cxZDialog(title: string = &quot;cxZDialog&quot;; text: string = &quot;Demo Text&quot;;
+          hideText: bool = false): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZDisplayHtmlFile
       <li><a class="reference" href="#cxZDisplayHtmlFile%2Cstring%2Cint%2Cint"
-    title="cxZDisplayHtmlFile(filename: string; height: int = 600; width: int = 800): string">cxZDisplayHtmlFile,<wbr>string,<wbr>int,<wbr>int</a></li>
+    title="cxZDisplayHtmlFile(filename: string; height: int = 600; width: int = 800): string">cxZDisplayHtmlFile(filename: string; height: int = 600; width: int = 800): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZRadio
       <li><a class="reference" href="#cxZRadio"
-    title="cxZRadio(): string">cxZRadio</a></li>
+    title="cxZRadio(): string">cxZRadio(): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZIPort
       <li><a class="reference" href="#cxZIPort"
-    title="cxZIPort(): tuple[ip: string, port: string]">cxZIPort</a></li>
+    title="cxZIPort(): tuple[ip: string, port: string]">cxZIPort(): tuple[ip: string, port: string]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxZPwd
       <li><a class="reference" href="#cxZPwd"
-    title="cxZPwd(): string">cxZPwd</a></li>
+    title="cxZPwd(): string">cxZPwd(): string</a></li>
 
   </ul>
 
@@ -226,11 +246,22 @@ window.addEventListener('DOMContentLoaded', main);
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
-<a class="reference external" href="cx.html">cx</a>
+<a class="reference external" href="_._/_._/_._/_._/.nimble/pkgs/nimcx-1.0.8/nimcx.html">../../../../.nimble/pkgs/nimcx-1.0.8/nimcx</a>
 </dl></div>
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
+<a id="cxZCombobox,string,string,string,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#cxZCombobox%2Cstring%2Cstring%2Cstring%2Cint"><span class="Identifier">cxZCombobox</span></a><span class="Other">(</span><span class="Identifier">title</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;cxZComboBox&quot;</span><span class="Other">;</span>
+                 <span class="Identifier">text</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;Selections available&quot;</span><span class="Other">;</span> <span class="Identifier">cchoice</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;London|Birmingham|Paris|Dubai|Vienna|Hongkong&quot;</span><span class="Other">;</span>
+                 <span class="Identifier">width</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">250</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+    <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
+<dd>
+
+cxZCombobox 
+
+</dd>
 <a id="cxZDialog,string,string,bool"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#cxZDialog%2Cstring%2Cstring%2Cbool"><span class="Identifier">cxZDialog</span></a><span class="Other">(</span><span class="Identifier">title</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;cxZDialog&quot;</span><span class="Other">;</span> <span class="Identifier">text</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;Demo Text&quot;</span><span class="Other">;</span>
                <span class="Identifier">hideText</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">false</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
@@ -439,7 +470,7 @@ with radiobutton
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2021-01-26 20:16:33 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-02-27 12:19:02 UTC</small>
       </div>
     </div>
   </div>
