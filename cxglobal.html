@@ -17,7 +17,7 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 
 <!-- CSS -->
-<title>cxglobal</title>
+<title>nimcx/cxglobal</title>
 <link rel="stylesheet" type="text/css" href="nimdoc.out.css">
 
 <script type="text/javascript" src="dochack.js"></script>
@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', main);
 <body>
 <div class="document" id="documentId">
   <div class="container">
-    <h1 class="title">cxglobal</h1>
+    <h1 class="title">nimcx/cxglobal</h1>
     <div class="row">
   <div class="three columns">
   <div class="theme-switch-wrapper">
@@ -333,6 +333,11 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple nested-toc-section">centerPos
       <li><a class="reference" href="#centerPos%2Cstring"
     title="centerPos(astring: string)">centerPos(astring: string)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxlastN
+      <li><a class="reference" href="#cxlastN%2CT%2Cint"
+    title="cxlastN[T](aseq: T; n: int): T">cxlastN[T](aseq: T; n: int): T</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">showRuler
@@ -755,113 +760,246 @@ window.addEventListener('DOMContentLoaded', main);
 <li>
   <a class="reference reference-toplevel" href="#15" id="65">Iterators</a>
   <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">primey
+      <li><a class="reference" href="#primey.i%2Cint%2Cint"
+    title="primey(s: int = 0; e: int): int">primey(s: int = 0; e: int): int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">reverseIter
       <li><a class="reference" href="#reverseIter.i%2CopenArray%5BT%5D"
-    title="reverseIter[T](a: openArray[T]): T">reverseIter</a></li>
-  <li><a class="reference" href="#span.i%2Cstring%2Cint%2CBackwardsIndex"
-    title="span(s: string; first: int; last: BackwardsIndex): char">span</a></li>
-  <li><a class="reference" href="#primey.i%2Cint%2Cint"
-    title="primey(s: int = 0; e: int): int">primey</a></li>
+    title="reverseIter[T](a: openArray[T]): T">reverseIter[T](a: openArray[T]): T</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">span
+      <li><a class="reference" href="#span.i%2Cstring%2Cint%2CBackwardsIndex"
+    title="span(s: string; first: int; last: BackwardsIndex): char">span(s: string; first: int; last: BackwardsIndex): char</a></li>
+
+  </ul>
 
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#16" id="66">Converters</a>
   <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">toTwInt
       <li><a class="reference" href="#toTwInt.c%2Ccushort"
-    title="toTwInt(x: cushort): int">toTwInt</a></li>
+    title="toTwInt(x: cushort): int">toTwInt(x: cushort): int</a></li>
+
+  </ul>
 
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#17" id="67">Macros</a>
   <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">cxgetType
+      <li><a class="reference" href="#cxgetType.m%2Ctyped"
+    title="cxgetType(s: typed): untyped">cxgetType(s: typed): untyped</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">toEnum
+      <li><a class="reference" href="#toEnum.m%2Cstatic%5Bstring%5D"
+    title="toEnum(words: static[string]): untyped">toEnum(words: static[string]): untyped</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">styledEchoPrint
       <li><a class="reference" href="#styledEchoPrint.m%2Cvarargs%5Buntyped%5D"
-    title="styledEchoPrint(m: varargs[untyped]): untyped">styledEchoPrint</a></li>
-  <li><a class="reference" href="#procName.m%2Cuntyped"
-    title="procName(x: untyped): untyped">procName</a></li>
-  <li><a class="reference" href="#toEnum.m%2Cstatic%5Bstring%5D"
-    title="toEnum(words: static[string]): untyped">toEnum</a></li>
-  <li><a class="reference" href="#cxgetType.m%2Ctyped"
-    title="cxgetType(s: typed): untyped">cxgetType</a></li>
+    title="styledEchoPrint(m: varargs[untyped]): untyped">styledEchoPrint(m: varargs[untyped]): untyped</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">procName
+      <li><a class="reference" href="#procName.m%2Cuntyped"
+    title="procName(x: untyped): untyped">procName(x: untyped): untyped</a></li>
+
+  </ul>
 
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
   <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">colorsPalette
+      <li><a class="reference" href="#colorsPalette.t%2Cstring"
+    title="colorsPalette(coltype: string): auto">colorsPalette(coltype: string): auto</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">unidecodeU
       <li><a class="reference" href="#unidecodeU.t%2Cuntyped"
-    title="unidecodeU(ustring: untyped): untyped">unidecodeU</a></li>
-  <li><a class="reference" href="#%2A.t%2Cstring%2Cint"
-    title="`*`(s: string; n: int): untyped">`*`</a></li>
-  <li><a class="reference" href="#toki.t%2Cuntyped"
-    title="toki(s: untyped): untyped">toki</a></li>
-  <li><a class="reference" href="#tw.t"
-    title="tw(): int">tw</a></li>
-  <li><a class="reference" href="#th.t"
-    title="th(): int">th</a></li>
-  <li><a class="reference" href="#doSomething.t%2Cint%2Cuntyped"
-    title="doSomething(secs: int; body: untyped)">doSomething</a></li>
-  <li><a class="reference" href="#colPaletteName.t%2Cstring%2Cint"
-    title="colPaletteName(coltype: string; n: int): auto">colPaletteName</a></li>
-  <li><a class="reference" href="#aPaletteSample.t%2Cstring"
-    title="aPaletteSample(coltype: string): int">aPaletteSample</a></li>
-  <li><a class="reference" href="#paletix.t%2Cstring"
-    title="paletix(pl: string): untyped">paletix</a></li>
-  <li><a class="reference" href="#randCol2.t%2Cstring"
-    title="randCol2(coltype: string): auto">randCol2</a></li>
-  <li><a class="reference" href="#randCol.t"
-    title="randCol(): string">randCol</a></li>
-  <li><a class="reference" href="#rndCol.t%2Cint%2Cint%2Cint"
+    title="unidecodeU(ustring: untyped): untyped">unidecodeU(ustring: untyped): untyped</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">toki
+      <li><a class="reference" href="#toki.t%2Cuntyped"
+    title="toki(s: untyped): untyped">toki(s: untyped): untyped</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">colPaletteName
+      <li><a class="reference" href="#colPaletteName.t%2Cstring%2Cint"
+    title="colPaletteName(coltype: string; n: int): auto">colPaletteName(coltype: string; n: int): auto</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">curSet
+      <li><a class="reference" href="#curSet.t%2Cint%2Cint"
+    title="curSet(x: int = 0; y: int = 0)">curSet(x: int = 0; y: int = 0)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">loopy
+      <li><a class="reference" href="#loopy.t%2CT%2Cuntyped"
+    title="loopy[T](ite: T; st: untyped)">loopy[T](ite: T; st: untyped)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">colPalette
+      <li><a class="reference" href="#colPalette.t%2Cstring%2Cint"
+    title="colPalette(coltype: string; n: int): auto">colPalette(coltype: string; n: int): auto</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getCard
+      <li><a class="reference" href="#getCard.t"
+    title="getCard(): auto">getCard(): auto</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">withFile
+      <li><a class="reference" href="#withFile.t%2Cuntyped%2Cuntyped%2Cuntyped%2Cuntyped"
+    title="withFile(f, fn, mode, actions: untyped): untyped">withFile(f, fn, mode, actions: untyped): untyped</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">curBk
+      <li><a class="reference" href="#curBk.t%2Cint"
+    title="curBk(x: int = 1)">curBk(x: int = 1)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">loopy2
+      <li><a class="reference" href="#loopy2.t%2Cint%2Cint%2Cuntyped"
+    title="loopy2(mi: int = 0; ma: int = 5; st: untyped)">loopy2(mi: int = 0; ma: int = 5; st: untyped)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">tw
+      <li><a class="reference" href="#tw.t"
+    title="tw(): int">tw(): int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">curDn
+      <li><a class="reference" href="#curDn.t%2Cint"
+    title="curDn(x: int = 1)">curDn(x: int = 1)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">*
+      <li><a class="reference" href="#%2A.t%2Cstring%2Cint"
+    title="`*`(s: string; n: int): untyped">`*`(s: string; n: int): untyped</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">curOff
+      <li><a class="reference" href="#curOff.t"
+    title="curOff()">curOff()</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">colPaletteLen
+      <li><a class="reference" href="#colPaletteLen.t%2Cstring"
+    title="colPaletteLen(coltype: string): auto">colPaletteLen(coltype: string): auto</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">randCol
+      <li><a class="reference" href="#randCol.t"
+    title="randCol(): string">randCol(): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">curSetx
+      <li><a class="reference" href="#curSetx.t%2Cint"
+    title="curSetx(x: int)">curSetx(x: int)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">currentLine
+      <li><a class="reference" href="#currentLine.t"
+    title="currentLine()">currentLine()</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">randPastelCol
+      <li><a class="reference" href="#randPastelCol.t"
+    title="randPastelCol(): string">randPastelCol(): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">colPaletteIndexer
+      <li><a class="reference" href="#colPaletteIndexer.t%2Cseq%5Bstring%5D"
+    title="colPaletteIndexer(colx: seq[string]): auto">colPaletteIndexer(colx: seq[string]): auto</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">th
+      <li><a class="reference" href="#th.t"
+    title="th(): int">th(): int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section"><>
+      <li><a class="reference" href="#%3C%3E.t%2Cuntyped%2Cuntyped"
+    title="`&lt;&gt;`(a, b: untyped): untyped">`&lt;&gt;`(a, b: untyped): untyped</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">randCol2
+      <li><a class="reference" href="#randCol2.t%2Cstring"
+    title="randCol2(coltype: string): auto">randCol2(coltype: string): auto</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxPos
+      <li><a class="reference" href="#cxPos.t"
+    title="cxPos(x): string">cxPos(x): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">aPaletteSample
+      <li><a class="reference" href="#aPaletteSample.t%2Cstring"
+    title="aPaletteSample(coltype: string): int">aPaletteSample(coltype: string): int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">lowerCase
+      <li><a class="reference" href="#lowerCase.t%2Cstring"
+    title="lowerCase(s: string): string">lowerCase(s: string): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">bitCheck
+      <li><a class="reference" href="#bitCheck.t%2Cuntyped%2Cuntyped"
+    title="bitCheck(a, b: untyped): bool">bitCheck(a, b: untyped): bool</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">doSomething
+      <li><a class="reference" href="#doSomething.t%2Cint%2Cuntyped"
+    title="doSomething(secs: int; body: untyped)">doSomething(secs: int; body: untyped)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">paletix
+      <li><a class="reference" href="#paletix.t%2Cstring"
+    title="paletix(pl: string): untyped">paletix(pl: string): untyped</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">clearup
+      <li><a class="reference" href="#clearup.t%2Cint"
+    title="clearup(x: int = 80)">clearup(x: int = 80)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">curOn
+      <li><a class="reference" href="#curOn.t"
+    title="curOn()">curOn()</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">hdx
+      <li><a class="reference" href="#hdx.t%2Cuntyped%2Cstring%2Cint%2Cint"
+    title="hdx(code: untyped; frm: string = &quot;+&quot;; width: int = tw; nxpos: int = 0): void">hdx(code: untyped; frm: string = &quot;+&quot;; width: int = tw; nxpos: int = 0): void</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">curUp
+      <li><a class="reference" href="#curUp.t%2Cint"
+    title="curUp(x: int = 1)">curUp(x: int = 1)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">upperCase
+      <li><a class="reference" href="#upperCase.t%2Cstring"
+    title="upperCase(s: string): string">upperCase(s: string): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">rndCol
+      <li><a class="reference" href="#rndCol.t%2Cint%2Cint%2Cint"
     title="rndCol(r: int = getRndInt(0, 254); g: int = getRndInt(0, 254);
-       b: int = getRndInt(0, 254)): string">rndCol</a></li>
-  <li><a class="reference" href="#curUp.t%2Cint"
-    title="curUp(x: int = 1)">curUp</a></li>
-  <li><a class="reference" href="#curDn.t%2Cint"
-    title="curDn(x: int = 1)">curDn</a></li>
-  <li><a class="reference" href="#curBk.t%2Cint"
-    title="curBk(x: int = 1)">curBk</a></li>
-  <li><a class="reference" href="#curSetx.t%2Cint"
-    title="curSetx(x: int)">curSetx</a></li>
-  <li><a class="reference" href="#cxPos.t"
-    title="cxPos(x): string">cxPos</a></li>
-  <li><a class="reference" href="#curSet.t%2Cint%2Cint"
-    title="curSet(x: int = 0; y: int = 0)">curSet</a></li>
-  <li><a class="reference" href="#clearup.t%2Cint"
-    title="clearup(x: int = 80)">clearup</a></li>
-  <li><a class="reference" href="#curOn.t"
-    title="curOn()">curOn</a></li>
-  <li><a class="reference" href="#curOff.t"
-    title="curOff()">curOff</a></li>
-  <li><a class="reference" href="#%3C%3E.t%2Cuntyped%2Cuntyped"
-    title="`&lt;&gt;`(a, b: untyped): untyped">`&lt;&gt;`</a></li>
-  <li><a class="reference" href="#loopy.t%2CT%2Cuntyped"
-    title="loopy[T](ite: T; st: untyped)">loopy</a></li>
-  <li><a class="reference" href="#loopy2.t%2Cint%2Cint%2Cuntyped"
-    title="loopy2(mi: int = 0; ma: int = 5; st: untyped)">loopy2</a></li>
-  <li><a class="reference" href="#colPaletteIndexer.t%2Cseq%5Bstring%5D"
-    title="colPaletteIndexer(colx: seq[string]): auto">colPaletteIndexer</a></li>
-  <li><a class="reference" href="#colPaletteLen.t%2Cstring"
-    title="colPaletteLen(coltype: string): auto">colPaletteLen</a></li>
-  <li><a class="reference" href="#colPalette.t%2Cstring%2Cint"
-    title="colPalette(coltype: string; n: int): auto">colPalette</a></li>
-  <li><a class="reference" href="#colorsPalette.t%2Cstring"
-    title="colorsPalette(coltype: string): auto">colorsPalette</a></li>
-  <li><a class="reference" href="#randPastelCol.t"
-    title="randPastelCol(): string">randPastelCol</a></li>
-  <li><a class="reference" href="#upperCase.t%2Cstring"
-    title="upperCase(s: string): string">upperCase</a></li>
-  <li><a class="reference" href="#lowerCase.t%2Cstring"
-    title="lowerCase(s: string): string">lowerCase</a></li>
-  <li><a class="reference" href="#currentLine.t"
-    title="currentLine()">currentLine</a></li>
-  <li><a class="reference" href="#hdx.t%2Cuntyped%2Cstring%2Cint%2Cint"
-    title="hdx(code: untyped; frm: string = &quot;+&quot;; width: int = tw; nxpos: int = 0): void">hdx</a></li>
-  <li><a class="reference" href="#getCard.t"
-    title="getCard(): auto">getCard</a></li>
-  <li><a class="reference" href="#bitCheck.t%2Cuntyped%2Cuntyped"
-    title="bitCheck(a, b: untyped): bool">bitCheck</a></li>
-  <li><a class="reference" href="#withFile.t%2Cuntyped%2Cuntyped%2Cuntyped%2Cuntyped"
-    title="withFile(f, fn, mode, actions: untyped): untyped">withFile</a></li>
+       b: int = getRndInt(0, 254)): string">rndCol(r: int = getRndInt(0, 254); g: int = getRndInt(0, 254);
+       b: int = getRndInt(0, 254)): string</a></li>
+
+  </ul>
 
   </ul>
 </li>
@@ -1222,7 +1360,7 @@ getRndBool
 <p>convenience proc to create a seq of rand int with</p>
 <p>default length 10</p>
 <p>gives @[4556,455,888,234,...] or similar</p>
-<pre class="listing"><span class="Comment"># create a seq with 50 rand integers ,of set 100.. 2000</span>
+<pre class="listing"><span class="Comment"># create a seq with 50 rand integers ,of set 100 .. 2000</span>
 <span class="Comment"># including the limits 100 and 2000</span>
 <span class="Identifier">echo</span> <span class="Identifier">createSeqInt</span><span class="Punctuation">(</span><span class="DecNumber">50</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">,</span><span class="DecNumber">2000</span><span class="Punctuation">)</span></pre>
 
@@ -1754,8 +1892,8 @@ showCpuCores
 
 </dd>
 <a id="getRandomPoint,float,float,float,float"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPoint%2Cfloat%2Cfloat%2Cfloat%2Cfloat"><span class="Identifier">getRandomPoint</span></a><span class="Other">(</span><span class="Identifier">minx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">500.0</span><span class="Other">;</span> <span class="Identifier">maxx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">500.0</span><span class="Other">;</span>
-                    <span class="Identifier">miny</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="Operator">-</span><span class="FloatNumber">500.0</span><span class="Other">;</span> <span class="Identifier">maxy</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">500.0</span><span class="Other">)</span><span class="Other">:</span> <a href="cxglobal.html#RpointFloat"><span class="Identifier">RpointFloat</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
+<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPoint%2Cfloat%2Cfloat%2Cfloat%2Cfloat"><span class="Identifier">getRandomPoint</span></a><span class="Other">(</span><span class="Identifier">minx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">-500.0</span><span class="Other">;</span> <span class="Identifier">maxx</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">500.0</span><span class="Other">;</span>
+                    <span class="Identifier">miny</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">-500.0</span><span class="Other">;</span> <span class="Identifier">maxy</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">=</span> <span class="FloatNumber">500.0</span><span class="Other">)</span><span class="Other">:</span> <a href="cxglobal.html#RpointFloat"><span class="Identifier">RpointFloat</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma">
     <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -1773,7 +1911,7 @@ showCpuCores
 
 </dd>
 <a id="getRandomPoint,int,int,int,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPoint%2Cint%2Cint%2Cint%2Cint"><span class="Identifier">getRandomPoint</span></a><span class="Other">(</span><span class="Identifier">minx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">500</span><span class="Other">;</span> <span class="Identifier">maxx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">500</span><span class="Other">;</span> <span class="Identifier">miny</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Operator">-</span><span class="DecNumber">500</span><span class="Other">;</span>
+<dt><pre><span class="Keyword">proc</span> <a href="#getRandomPoint%2Cint%2Cint%2Cint%2Cint"><span class="Identifier">getRandomPoint</span></a><span class="Other">(</span><span class="Identifier">minx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">-500</span><span class="Other">;</span> <span class="Identifier">maxx</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">500</span><span class="Other">;</span> <span class="Identifier">miny</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">-500</span><span class="Other">;</span>
                     <span class="Identifier">maxy</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">500</span><span class="Other">)</span><span class="Other">:</span> <a href="cxglobal.html#RpointInt"><span class="Identifier">RpointInt</span></a> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
 
@@ -2288,6 +2426,13 @@ generates a random MacAddress<pre class="listing"><span class="Identifier">loopy
 
 
 </dd>
+<a id="cxlastN,T,int"></a>
+<dt><pre><span class="Keyword">proc</span> <a href="#cxlastN%2CT%2Cint"><span class="Identifier">cxlastN</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">aseq</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">T</span></pre></dt>
+<dd>
+
+cxlastN returns a seq with last n items of input seq 
+
+</dd>
 <a id="checkPrime,int"></a>
 <dt><pre><span class="Keyword">proc</span> <a href="#checkPrime%2Cint"><span class="Identifier">checkPrime</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span><span class="Other">{</span><span class="Other pragmadots">...</span><span class="Other">}</span></span><span class="pragmawrap"><span class="Other">{.</span><span class="pragma"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span><span class="Other">.}</span></span></pre></dt>
 <dd>
@@ -2784,7 +2929,7 @@ returns a colorpalette which can be used to iterate over</pre>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2021-02-27 12:18:47 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-03-31 13:58:01 UTC</small>
       </div>
     </div>
   </div>

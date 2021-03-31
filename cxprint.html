@@ -17,7 +17,7 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 
 <!-- CSS -->
-<title>cxprint</title>
+<title>nimcx/cxprint</title>
 <link rel="stylesheet" type="text/css" href="nimdoc.out.css">
 
 <script type="text/javascript" src="dochack.js"></script>
@@ -64,7 +64,7 @@ window.addEventListener('DOMContentLoaded', main);
 <body>
 <div class="document" id="documentId">
   <div class="container">
-    <h1 class="title">cxprint</h1>
+    <h1 class="title">nimcx/cxprint</h1>
     <div class="row">
   <div class="three columns">
   <div class="theme-switch-wrapper">
@@ -412,26 +412,47 @@ window.addEventListener('DOMContentLoaded', main);
 <li>
   <a class="reference reference-toplevel" href="#17" id="67">Macros</a>
   <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">pdebug
       <li><a class="reference" href="#pdebug.m%2Cvarargs%5Btyped%5D"
-    title="pdebug(n: varargs[typed]): untyped">pdebug</a></li>
+    title="pdebug(n: varargs[typed]): untyped">pdebug(n: varargs[typed]): untyped</a></li>
+
+  </ul>
 
   </ul>
 </li>
 <li>
   <a class="reference reference-toplevel" href="#18" id="68">Templates</a>
   <ul class="simple simple-toc-section">
+      <ul class="simple nested-toc-section">cxwrite
+      <li><a class="reference" href="#cxwrite.t%2Cvarargs%5Buntyped%5D"
+    title="cxwrite(args: varargs[untyped])">cxwrite(args: varargs[untyped])</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxwriteLn
+      <li><a class="reference" href="#cxwriteLn.t%2Cvarargs%5Buntyped%5D"
+    title="cxwriteLn(args: varargs[untyped])">cxwriteLn(args: varargs[untyped])</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxprintLn
+      <li><a class="reference" href="#cxprintLn.t%2Cint%2Cvarargs%5Buntyped%5D"
+    title="cxprintLn(xpos: int; args: varargs[untyped])">cxprintLn(xpos: int; args: varargs[untyped])</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxprint
       <li><a class="reference" href="#cxprint.t%2Cint%2Cvarargs%5Buntyped%5D"
-    title="cxprint(xpos: int; args: varargs[untyped])">cxprint</a></li>
-  <li><a class="reference" href="#cxprintLn.t%2Cint%2Cvarargs%5Buntyped%5D"
-    title="cxprintLn(xpos: int; args: varargs[untyped])">cxprintLn</a></li>
-  <li><a class="reference" href="#cxprintxy.t%2Cint%2Cint%2Cvarargs%5Buntyped%5D"
-    title="cxprintxy(xpos: int; ypos: int; args: varargs[untyped])">cxprintxy</a></li>
-  <li><a class="reference" href="#cxwrite.t%2Cvarargs%5Buntyped%5D"
-    title="cxwrite(args: varargs[untyped])">cxwrite</a></li>
-  <li><a class="reference" href="#cxwriteLn.t%2Cvarargs%5Buntyped%5D"
-    title="cxwriteLn(args: varargs[untyped])">cxwriteLn</a></li>
-  <li><a class="reference" href="#dprint.t%2CT"
-    title="dprint[T](s: T)">dprint</a></li>
+    title="cxprint(xpos: int; args: varargs[untyped])">cxprint(xpos: int; args: varargs[untyped])</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxprintxy
+      <li><a class="reference" href="#cxprintxy.t%2Cint%2Cint%2Cvarargs%5Buntyped%5D"
+    title="cxprintxy(xpos: int; ypos: int; args: varargs[untyped])">cxprintxy(xpos: int; ypos: int; args: varargs[untyped])</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">dprint
+      <li><a class="reference" href="#dprint.t%2CT"
+    title="dprint[T](s: T)">dprint[T](s: T)</a></li>
+
+  </ul>
 
   </ul>
 </li>
@@ -452,7 +473,7 @@ Status      : stable
 
 License     : MIT opensource
 
-Latest      : 2020-12-04
+Latest      : 2021-03-30
 
 Compiler    : latest stable or devel branch
 
@@ -1186,7 +1207,7 @@ forward declaration<p>printRainbow</p>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2021-02-27 12:18:41 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-03-31 13:57:56 UTC</small>
       </div>
     </div>
   </div>
