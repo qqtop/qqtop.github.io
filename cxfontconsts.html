@@ -34,7 +34,6 @@ function main() {
     }
   }
 
-  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
   function switchTheme(e) {
       if (e.target.checked) {
           document.documentElement.setAttribute('data-theme', 'dark');
@@ -45,13 +44,19 @@ function main() {
       }
   }
 
-  toggleSwitch.addEventListener('change', switchTheme, false);
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+  if (toggleSwitch !== null) {
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  }
 
-  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  var currentTheme = localStorage.getItem('theme');
+  if (!currentTheme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    currentTheme = 'dark';
+  }
   if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
 
-    if (currentTheme === 'dark') {
+    if (currentTheme === 'dark' && toggleSwitch !== null) {
       toggleSwitch.checked = true;
     }
   }
@@ -184,7 +189,7 @@ window.addEventListener('DOMContentLoaded', main);
 \:::_:\ \    #
    /_\:\ \   #
    \::_:\ \  #
-   /___\:\ &apos; #
+   /___\:\ ' #
    \______/  #
              ##
  __   __       #
@@ -1804,7 +1809,7 @@ window.addEventListener('DOMContentLoaded', main);
   _       #
  / \.-._  #
 [| / _ \] #
- \_.&apos;/_|  #
+ \_.'/_|  #
           #
           ##
      _   #
@@ -1874,9 +1879,9 @@ window.addEventListener('DOMContentLoaded', main);
 /_/    #
        ##
   _____   #
-.&apos; ___ &apos;. #
+.' ___ '. #
 | (___) | #
-&apos;._____.&apos; #
+'._____.' #
           #
           ##
  _     _  #
@@ -1886,9 +1891,9 @@ window.addEventListener('DOMContentLoaded', main);
           #
           ##
  __    _  #
-| _&apos;._\ | #
+| _'._\ | #
 | |`.   / #
-|_|  &apos;-&apos;  #
+|_|  '-'  #
           #
           ##
  _     _  #
@@ -1904,15 +1909,15 @@ window.addEventListener('DOMContentLoaded', main);
    |_|    #
           ##
  _    __  #
-| /_.&apos;  | #
-\   .&apos;| | #
+| /_.'  | #
+\   .'| | #
  `-`  |_| #
           #
           ##
  _______  #
 / ___ __| #
 | \_/ |   #
-&apos;,___,&apos;   #
+',___,'   #
           #
           ##
        _  #
@@ -1922,13 +1927,13 @@ window.addEventListener('DOMContentLoaded', main);
           #
           ##
   __  __  #
-.&apos;  &apos;&apos;  &apos;.#
+.'  ''  '.#
 | ()  () |#
-&apos;.__..__.&apos;#
+'.__..__.'#
           #
           ##
      __   #
-   .&apos;_ &apos;. #
+   .'_ '. #
  __|/_\ | #
 |_______/ #
           #
@@ -1952,21 +1957,21 @@ window.addEventListener('DOMContentLoaded', main);
        #
        ##
  __    #
-\__&apos;.  #
+\__'.  #
  .-`_\ #
  |_|   #
  (_)   #
        ##
  ______   #
-|_. _  &apos;. #
+|_. _  '. #
  _||_/  / #
-|_____.&apos;  #
+|_____.'  #
           #
           ##
  _______  #
 |       | #
 | o v o | #
-&apos;._.&apos;._.&apos; #
+'._.'._.' #
           #
           ##
  _______  #
@@ -1977,8 +1982,8 @@ window.addEventListener('DOMContentLoaded', main);
           ##
  _______  #
 |  ___  | #
-| &apos;._.&apos; | #
-&apos;._____.&apos; #
+| '._.' | #
+'._____.' #
           #
           ##
  _______  #
@@ -1995,8 +2000,8 @@ window.addEventListener('DOMContentLoaded', main);
           ##
  _______  #
 / .---. \ #
-\_&apos;-. / | #
-  &apos;.| \_/ #
+\_'-. / | #
+  '.| \_/ #
           #
           ##
  _______  #
@@ -2019,8 +2024,8 @@ window.addEventListener('DOMContentLoaded', main);
           ##
  _______  #
 |_     _| #
- .&apos; _  &apos;. #
-|_.&apos; &apos;._| #
+ .' _  '. #
+|_.' '._| #
           #
           ##
  _______  #
@@ -2030,14 +2035,14 @@ window.addEventListener('DOMContentLoaded', main);
           #
           ##
  _______  #
-|__   _.&apos; #
+|__   _.' #
  __&gt;  &gt;_  #
 |_______\ #
           #
           ##
  _______  #
-|__   _.&apos; #
- _.&apos; .&apos;_  #
+|__   _.' #
+ _.' .'_  #
 |_______| #
           #
           ##
@@ -2050,7 +2055,7 @@ window.addEventListener('DOMContentLoaded', main);
  _______  #
 |__ ___ \ #
   | \_/ | #
-  &apos;.___.&apos; #
+  '.___.' #
           #
           ##
   _______ #
@@ -2062,13 +2067,13 @@ window.addEventListener('DOMContentLoaded', main);
  _______  #
 |_  ___ \ #
  /  \_/ | #
-|_/&apos;.__.&apos; #
+|_/'.__.' #
           #
           ##
  __       #
 /  / .-.  #
 | /_/ _ \ #
-\___.&apos;/_| #
+\___.'/_| #
           #
           ##
        _  #
@@ -2078,39 +2083,39 @@ window.addEventListener('DOMContentLoaded', main);
           #
           ##
   ______  #
-.&apos; _____\ #
+.' _____\ #
 | /_____  #
-&apos;.______/ #
+'.______/ #
           #
           ##
    _____  #
- / ___.-&apos; #
-| &apos;.____  #
+ / ___.-' #
+| '.____  #
  \______\ #
           #
           ##
  _______  #
-|__   _.&apos; #
+|__   _.' #
  __&lt; &lt;_   #
-|______&apos;. #
+|______'. #
           #
           ##
  _     _  #
-\_&apos;._.&apos;_/ #
+\_'._.'_/ #
  _&gt; _ &lt;_  #
-/_.&apos; &apos;._\ #
+/_.' '._\ #
           #
           ##
        _  #
- ____.&apos;_| #
-|___. &apos;.  #
-     &apos;._| #
+ ____.'_| #
+|___. '.  #
+     '._| #
           #
           ##
  _     _  #
-| &apos;.  | | #
-| ._&apos;.| | #
-|_| &apos;.__| #
+| '.  | | #
+| ._'.| | #
+|_| '.__| #
           #
           ##
  ___  #
@@ -2150,15 +2155,15 @@ __  #
     #
     ##
  ______   #
-|_. _  &apos;. #
+|_. _  '. #
  _||_/  / #
-|_____.&apos;  #
+|_____.'  #
           #
           ##
  _______  #
 |       | #
 | o v o | #
-&apos;._.&apos;._.&apos; #
+'._.'._.' #
           #
           ##
  _______  #
@@ -2169,8 +2174,8 @@ __  #
           ##
  _______  #
 |  ___  | #
-| &apos;._.&apos; | #
-&apos;._____.&apos; #
+| '._.' | #
+'._____.' #
           #
           ##
  _______  #
@@ -2187,8 +2192,8 @@ __  #
           ##
  _______  #
 / .---. \ #
-\_&apos;-. / | #
-  &apos;.| \_/ #
+\_'-. / | #
+  '.| \_/ #
           #
           ##
  _______  #
@@ -2211,8 +2216,8 @@ __  #
           ##
  _______  #
 |_     _| #
- .&apos; _  &apos;. #
-|_.&apos; &apos;._| #
+ .' _  '. #
+|_.' '._| #
           #
           ##
  _______  #
@@ -2222,14 +2227,14 @@ __  #
           #
           ##
  _______  #
-|__   _.&apos; #
+|__   _.' #
  __&gt;  &gt;_  #
 |_______\ #
           #
           ##
  _______  #
-|__   _.&apos; #
- _.&apos; .&apos;_  #
+|__   _.' #
+ _.' .'_  #
 |_______| #
           #
           ##
@@ -2242,7 +2247,7 @@ __  #
  _______  #
 |__ ___ \ #
   | \_/ | #
-  &apos;.___.&apos; #
+  '.___.' #
           #
           ##
   _______ #
@@ -2254,13 +2259,13 @@ __  #
  _______  #
 |_  ___ \ #
  /  \_/ | #
-|_/&apos;.__.&apos; #
+|_/'.__.' #
           #
           ##
  __       #
 /  / .-.  #
 | /_/ _ \ #
-\___.&apos;/_| #
+\___.'/_| #
           #
           ##
        _  #
@@ -2270,39 +2275,39 @@ __  #
           #
           ##
   ______  #
-.&apos; _____\ #
+.' _____\ #
 | /_____  #
-&apos;.______/ #
+'.______/ #
           #
           ##
    _____  #
- / ___.-&apos; #
-| &apos;.____  #
+ / ___.-' #
+| '.____  #
  \______\ #
           #
           ##
  _______  #
-|__   _.&apos; #
+|__   _.' #
  __&lt; &lt;_   #
-|______&apos;. #
+|______'. #
           #
           ##
  _     _  #
-\_&apos;._.&apos;_/ #
+\_'._.'_/ #
  _&gt; _ &lt;_  #
-/_.&apos; &apos;._\ #
+/_.' '._\ #
           #
           ##
        _  #
- ____.&apos;_| #
-|___. &apos;.  #
-     &apos;._| #
+ ____.'_| #
+|___. '.  #
+     '._| #
           #
           ##
  _     _  #
-| &apos;.  | | #
-| ._&apos;.| | #
-|_| &apos;.__| #
+| '.  | | #
+| ._'.| | #
+|_| '.__| #
           #
           ##
   ___  #
@@ -2330,9 +2335,9 @@ __  #
  #
  ##
  ______   #
-|_. _  &apos;. #
+|_. _  '. #
  _||_/  / #
-|_____.&apos;  #
+|_____.'  #
           #
           ##
  _______  #
@@ -2342,15 +2347,15 @@ __  #
           #
           ##
   ______  #
-.&apos; _____\ #
+.' _____\ #
 | /_____  #
-&apos;.______/ #
+'.______/ #
           #
           ##
  ______   #
-|_. _  &apos;. #
+|_. _  '. #
  _||_/  / #
-|_____.&apos;  #
+|_____.'  #
           #
           ##
  _______  #
@@ -2360,9 +2365,9 @@ __  #
           #
           ##
   ______  #
-.&apos; _____\ #
+.' _____\ #
 | /_____  #
-&apos;.______/ #
+'.______/ #
           #
           ##
 &quot;&quot;&quot;">sidewaysraw</a></li>
@@ -5021,7 +5026,7 @@ __  #
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2021-03-31 13:58:01 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2021-07-03 09:58:27 UTC</small>
       </div>
     </div>
   </div>
