@@ -107,9 +107,9 @@ window.addEventListener('DOMContentLoaded', main);
 <li>
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#cxTz"
-    title="cxTz = enum
-  long, short">cxTz</a></li>
+      <li><a class="reference" href="#Cxcounter"
+    title="Cxcounter = object
+  value*: int">Cxcounter</a></li>
   <li><a class="reference" href="#CxTimer"
     title="CxTimer {.packed.} = object
   name*: string
@@ -118,9 +118,9 @@ window.addEventListener('DOMContentLoaded', main);
   lap*: seq[float]">CxTimer</a></li>
   <li><a class="reference" href="#Cxtimerres"
     title="Cxtimerres = tuple[tname: string, start: float, stop: float, lap: seq[float]]">Cxtimerres</a></li>
-  <li><a class="reference" href="#Cxcounter"
-    title="Cxcounter = object
-  value*: int">Cxcounter</a></li>
+  <li><a class="reference" href="#cxTz"
+    title="cxTz = enum
+  long, short">cxTz</a></li>
 
   </ul>
 </li>
@@ -135,44 +135,9 @@ window.addEventListener('DOMContentLoaded', main);
 <li>
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
-      <ul class="simple nested-toc-section">validDate
-      <li><a class="reference" href="#validDate%2Cstring"
-    title="validDate(adate: string): bool">validDate(adate: string): bool</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">printTimeMsg
-      <li><a class="reference" href="#printTimeMsg%2Cstring%2Cint"
-    title="printTimeMsg(atext: string = cxTime; xpos: int = 1): string">printTimeMsg(atext: string = cxTime; xpos: int = 1): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">duration
-      <li><a class="reference" href="#duration%2Cref."
-    title="duration(co: ref (CxTimer)): float">duration(co: ref (CxTimer)): float</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">clearAllTimerResults
+      <ul class="simple nested-toc-section">clearAllTimerResults
       <li><a class="reference" href="#clearAllTimerResults%2Cbool%2Cint"
     title="clearAllTimerResults(quiet: bool = true; xpos: int = 3)">clearAllTimerResults(quiet: bool = true; xpos: int = 3)</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">resetTimer
-      <li><a class="reference" href="#resetTimer%2Cref."
-    title="resetTimer(co: ref (CxTimer))">resetTimer(co: ref (CxTimer))</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">day
-      <li><a class="reference" href="#day%2Cstring"
-    title="day(aDate: string): string">day(aDate: string): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">cxDuration
-      <li><a class="reference" href="#cxDuration%2C%2C"
-    title="cxDuration(tstart: int | float; tend: int | float): string">cxDuration(tstart: int | float; tend: int | float): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">getAmzDateString
-      <li><a class="reference" href="#getAmzDateString"
-    title="getAmzDateString(): string">getAmzDateString(): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">clearTimerResults
@@ -180,93 +145,16 @@ window.addEventListener('DOMContentLoaded', main);
     title="clearTimerResults(aname: string = &quot;&quot;; quiet: bool = true; xpos: int = 3)">clearTimerResults(aname: string = &quot;&quot;; quiet: bool = true; xpos: int = 3)</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">year
-      <li><a class="reference" href="#year%2Cstring"
-    title="year(aDate: string): string">year(aDate: string): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">printLnDateMsg
-      <li><a class="reference" href="#printLnDateMsg%2Cstring%2Cint"
-    title="printLnDateMsg(atext: string = getDateStr(); xpos: int = 1): string">printLnDateMsg(atext: string = getDateStr(); xpos: int = 1): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">printLnTimeMsg
-      <li><a class="reference" href="#printLnTimeMsg%2Cstring%2Cint"
-    title="printLnTimeMsg(atext: string = cxTime; xpos: int = 1): string">printLnTimeMsg(atext: string = cxTime; xpos: int = 1): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">month
-      <li><a class="reference" href="#month%2Cstring"
-    title="month(aDate: string): string">month(aDate: string): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">getRndDate
-      <li><a class="reference" href="#getRndDate%2Cint%2Cint"
-    title="getRndDate(minyear: int = parseInt(year(getDateStr(now()))) - 50;
-           maxyear: int = parseInt(year(getDateStr(now()))) + 50): string">getRndDate(minyear: int = parseInt(year(getDateStr(now()))) - 50;
-           maxyear: int = parseInt(year(getDateStr(now()))) + 50): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">cxSystemUptime
-      <li><a class="reference" href="#cxSystemUptime"
-    title="cxSystemUptime(): string">cxSystemUptime(): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">newCxtimer
-      <li><a class="reference" href="#newCxtimer%2Cstring"
-    title="newCxtimer(aname: string = &quot;cxtimer&quot;): ref (CxTimer)">newCxtimer(aname: string = &quot;cxtimer&quot;): ref (CxTimer)</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">printDateMsg
-      <li><a class="reference" href="#printDateMsg%2Cstring%2Cint"
-    title="printDateMsg(atext: string = getDateStr(); xpos: int = 1): string">printDateMsg(atext: string = getDateStr(); xpos: int = 1): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">printLnDTimeMsg
-      <li><a class="reference" href="#printLnDTimeMsg%2Cstring%2Cint"
-    title="printLnDTimeMsg(atext: string = $toTime(now()); xpos: int = 1): string">printLnDTimeMsg(atext: string = $toTime(now()); xpos: int = 1): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">printDTimeMsg
-      <li><a class="reference" href="#printDTimeMsg%2Cstring%2Cint"
-    title="printDTimeMsg(atext: string = $toTime(now()); xpos: int = 1): string">printDTimeMsg(atext: string = $toTime(now()); xpos: int = 1): string</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">createSeqDate
-      <li><a class="reference" href="#createSeqDate%2Cstring%2Cstring"
-    title="createSeqDate(fromDate: string; toDate: string): seq[string]">createSeqDate(fromDate: string; toDate: string): seq[string]</a></li>
-  <li><a class="reference" href="#createSeqDate%2Cstring%2Cint"
-    title="createSeqDate(fromDate: string; days: int = 1): seq[string]">createSeqDate(fromDate: string; days: int = 1): seq[string]</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">saveTimerResults
-      <li><a class="reference" href="#saveTimerResults%2Cref."
-    title="saveTimerResults(b: ref (CxTimer))">saveTimerResults(b: ref (CxTimer))</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">cxHRTimer
-      <li><a class="reference" href="#cxHRTimer%2CTime%2CTime"
-    title="cxHRTimer(tstart: Time = getTime(); tend: Time = getTime()): auto">cxHRTimer(tstart: Time = getTime(); tend: Time = getTime()): auto</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">sleepy
-      <li><a class="reference" href="#sleepy%2CT"
-    title="sleepy[T: float | int](secs: T)">sleepy[T: float | int](secs: T)</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">startTimer
-      <li><a class="reference" href="#startTimer%2Cref."
-    title="startTimer(co: ref (CxTimer))">startTimer(co: ref (CxTimer))</a></li>
-
-  </ul>
-  <ul class="simple nested-toc-section">isoweek
-      <li><a class="reference" href="#isoweek%2CDateTime"
-    title="isoweek(dt: DateTime): WeekRange">isoweek(dt: DateTime): WeekRange</a></li>
-
-  </ul>
   <ul class="simple nested-toc-section">compareDates
       <li><a class="reference" href="#compareDates%2Cstring%2Cstring"
     title="compareDates(startDate, endDate: string): int">compareDates(startDate, endDate: string): int</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">createSeqDate
+      <li><a class="reference" href="#createSeqDate%2Cstring%2Cint"
+    title="createSeqDate(fromDate: string; days: int = 1): seq[string]">createSeqDate(fromDate: string; days: int = 1): seq[string]</a></li>
+  <li><a class="reference" href="#createSeqDate%2Cstring%2Cstring"
+    title="createSeqDate(fromDate: string; toDate: string): seq[string]">createSeqDate(fromDate: string; toDate: string): seq[string]</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">cxDayOfWeek
@@ -274,16 +162,39 @@ window.addEventListener('DOMContentLoaded', main);
     title="cxDayOfWeek(datestr: string): string">cxDayOfWeek(datestr: string): string</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">plusDays
-      <li><a class="reference" href="#plusDays%2Cstring%2Cint"
-    title="plusDays(aDate: string; days: int): string">plusDays(aDate: string; days: int): string</a></li>
+  <ul class="simple nested-toc-section">cxDuration
+      <li><a class="reference" href="#cxDuration%2C%2C"
+    title="cxDuration(tstart: int | float; tend: int | float): string">cxDuration(tstart: int | float; tend: int | float): string</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">showTimerResults
-      <li><a class="reference" href="#showTimerResults%2Cstring"
-    title="showTimerResults(aname: string)">showTimerResults(aname: string)</a></li>
-  <li><a class="reference" href="#showTimerResults"
-    title="showTimerResults()">showTimerResults()</a></li>
+  <ul class="simple nested-toc-section">cxHRTimer
+      <li><a class="reference" href="#cxHRTimer%2CTime%2CTime"
+    title="cxHRTimer(tstart: Time = getTime(); tend: Time = getTime()): auto">cxHRTimer(tstart: Time = getTime(); tend: Time = getTime()): auto</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxSystemUptime
+      <li><a class="reference" href="#cxSystemUptime"
+    title="cxSystemUptime(): string">cxSystemUptime(): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxTimeZone
+      <li><a class="reference" href="#cxTimeZone%2CcxTz"
+    title="cxTimeZone(amode: cxTz = long): string">cxTimeZone(amode: cxTz = long): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">day
+      <li><a class="reference" href="#day%2Cstring"
+    title="day(aDate: string): string">day(aDate: string): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">duration
+      <li><a class="reference" href="#duration%2Cref."
+    title="duration(co: ref (CxTimer)): float">duration(co: ref (CxTimer)): float</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">getAmzDateString
+      <li><a class="reference" href="#getAmzDateString"
+    title="getAmzDateString(): string">getAmzDateString(): string</a></li>
 
   </ul>
   <ul class="simple nested-toc-section">getMsecs
@@ -296,6 +207,18 @@ window.addEventListener('DOMContentLoaded', main);
     title="getNextMonday(adate: string): string">getNextMonday(adate: string): string</a></li>
 
   </ul>
+  <ul class="simple nested-toc-section">getRndDate
+      <li><a class="reference" href="#getRndDate%2Cint%2Cint"
+    title="getRndDate(minyear: int = parseInt(year(getDateStr(now()))) - 50;
+           maxyear: int = parseInt(year(getDateStr(now()))) + 50): string">getRndDate(minyear: int = parseInt(year(getDateStr(now()))) - 50;
+           maxyear: int = parseInt(year(getDateStr(now()))) + 50): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">isoweek
+      <li><a class="reference" href="#isoweek%2CDateTime"
+    title="isoweek(dt: DateTime): WeekRange">isoweek(dt: DateTime): WeekRange</a></li>
+
+  </ul>
   <ul class="simple nested-toc-section">lapTimer
       <li><a class="reference" href="#lapTimer%2Cref."
     title="lapTimer(co: ref (CxTimer)): auto">lapTimer(co: ref (CxTimer)): auto</a></li>
@@ -306,14 +229,91 @@ window.addEventListener('DOMContentLoaded', main);
     title="minusDays(aDate: string; days: int): string">minusDays(aDate: string; days: int): string</a></li>
 
   </ul>
+  <ul class="simple nested-toc-section">month
+      <li><a class="reference" href="#month%2Cstring"
+    title="month(aDate: string): string">month(aDate: string): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">newCxtimer
+      <li><a class="reference" href="#newCxtimer%2Cstring"
+    title="newCxtimer(aname: string = &quot;cxtimer&quot;): ref (CxTimer)">newCxtimer(aname: string = &quot;cxtimer&quot;): ref (CxTimer)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">plusDays
+      <li><a class="reference" href="#plusDays%2Cstring%2Cint"
+    title="plusDays(aDate: string; days: int): string">plusDays(aDate: string; days: int): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printDateMsg
+      <li><a class="reference" href="#printDateMsg%2Cstring%2Cint"
+    title="printDateMsg(atext: string = getDateStr(); xpos: int = 1): string">printDateMsg(atext: string = getDateStr(); xpos: int = 1): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printDTimeMsg
+      <li><a class="reference" href="#printDTimeMsg%2Cstring%2Cint"
+    title="printDTimeMsg(atext: string = $toTime(now()); xpos: int = 1): string">printDTimeMsg(atext: string = $toTime(now()); xpos: int = 1): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnDateMsg
+      <li><a class="reference" href="#printLnDateMsg%2Cstring%2Cint"
+    title="printLnDateMsg(atext: string = getDateStr(); xpos: int = 1): string">printLnDateMsg(atext: string = getDateStr(); xpos: int = 1): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnDTimeMsg
+      <li><a class="reference" href="#printLnDTimeMsg%2Cstring%2Cint"
+    title="printLnDTimeMsg(atext: string = $toTime(now()); xpos: int = 1): string">printLnDTimeMsg(atext: string = $toTime(now()); xpos: int = 1): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printLnTimeMsg
+      <li><a class="reference" href="#printLnTimeMsg%2Cstring%2Cint"
+    title="printLnTimeMsg(atext: string = cxTime; xpos: int = 1): string">printLnTimeMsg(atext: string = cxTime; xpos: int = 1): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">printTimeMsg
+      <li><a class="reference" href="#printTimeMsg%2Cstring%2Cint"
+    title="printTimeMsg(atext: string = cxTime; xpos: int = 1): string">printTimeMsg(atext: string = cxTime; xpos: int = 1): string</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">resetTimer
+      <li><a class="reference" href="#resetTimer%2Cref."
+    title="resetTimer(co: ref (CxTimer))">resetTimer(co: ref (CxTimer))</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">saveTimerResults
+      <li><a class="reference" href="#saveTimerResults%2Cref."
+    title="saveTimerResults(b: ref (CxTimer))">saveTimerResults(b: ref (CxTimer))</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">showTimerResults
+      <li><a class="reference" href="#showTimerResults"
+    title="showTimerResults()">showTimerResults()</a></li>
+  <li><a class="reference" href="#showTimerResults%2Cstring"
+    title="showTimerResults(aname: string)">showTimerResults(aname: string)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">sleepy
+      <li><a class="reference" href="#sleepy%2CT"
+    title="sleepy[T: float | int](secs: T)">sleepy[T: float | int](secs: T)</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">startTimer
+      <li><a class="reference" href="#startTimer%2Cref."
+    title="startTimer(co: ref (CxTimer))">startTimer(co: ref (CxTimer))</a></li>
+
+  </ul>
   <ul class="simple nested-toc-section">stopTimer
       <li><a class="reference" href="#stopTimer%2Cref."
     title="stopTimer(co: ref (CxTimer))">stopTimer(co: ref (CxTimer))</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">cxTimeZone
-      <li><a class="reference" href="#cxTimeZone%2CcxTz"
-    title="cxTimeZone(amode: cxTz = long): string">cxTimeZone(amode: cxTz = long): string</a></li>
+  <ul class="simple nested-toc-section">validDate
+      <li><a class="reference" href="#validDate%2Cstring"
+    title="validDate(adate: string): bool">validDate(adate: string): bool</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">year
+      <li><a class="reference" href="#year%2Cstring"
+    title="year(aDate: string): string">year(aDate: string): string</a></li>
 
   </ul>
 
@@ -332,11 +332,6 @@ window.addEventListener('DOMContentLoaded', main);
     title="cxLocal(): untyped">cxLocal(): untyped</a></li>
 
   </ul>
-  <ul class="simple nested-toc-section">cxToday
-      <li><a class="reference" href="#cxToday.t"
-    title="cxToday(): untyped">cxToday(): untyped</a></li>
-
-  </ul>
   <ul class="simple nested-toc-section">cxNow
       <li><a class="reference" href="#cxNow.t"
     title="cxNow(): untyped">cxNow(): untyped</a></li>
@@ -345,6 +340,11 @@ window.addEventListener('DOMContentLoaded', main);
   <ul class="simple nested-toc-section">cxTime
       <li><a class="reference" href="#cxTime.t"
     title="cxTime(): untyped">cxTime(): untyped</a></li>
+
+  </ul>
+  <ul class="simple nested-toc-section">cxToday
+      <li><a class="reference" href="#cxToday.t"
+    title="cxToday(): untyped">cxToday(): untyped</a></li>
 
   </ul>
 
@@ -358,8 +358,7 @@ window.addEventListener('DOMContentLoaded', main);
   <div class="nine columns" id="content">
   <div id="tocRoot"></div>
   
-  <p class="module-desc"><pre>
-Library     : nimcx.nim
+  <p class="module-desc"><pre>Library     : nimcx.nim
 
 Module      : cxtime.nim
 
@@ -383,15 +382,17 @@ iso week number borrowed from <a class="reference external" href="https://gist.g
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
-<a id="cxTz"></a>
-<dt><pre><a href="cxtime.html#cxTz"><span class="Identifier">cxTz</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">long</span><span class="Other">,</span> <span class="Identifier">short</span></pre></dt>
+<div id="Cxcounter">
+<dt><pre><a href="cxtime.html#Cxcounter"><span class="Identifier">Cxcounter</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <span class="Identifier">value</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
+</pre></dt>
 <dd>
 
 
 
 </dd>
-<a id="CxTimer"></a>
+</div>
+<div id="CxTimer">
 <dt><pre><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a> {.<span class="Identifier">packed</span>.} <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">name</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">string</span>
   <span class="Identifier">start</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">float</span>
@@ -403,40 +404,134 @@ iso week number borrowed from <a class="reference external" href="https://gist.g
 
 
 </dd>
-<a id="Cxtimerres"></a>
+</div>
+<div id="Cxtimerres">
 <dt><pre><a href="cxtime.html#Cxtimerres"><span class="Identifier">Cxtimerres</span></a> <span class="Other">=</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">tname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">start</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">,</span> <span class="Identifier">stop</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">,</span> <span class="Identifier">lap</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">float</span><span class="Other">]</span><span class="Other">]</span></pre></dt>
 <dd>
 
 
 
 </dd>
-<a id="Cxcounter"></a>
-<dt><pre><a href="cxtime.html#Cxcounter"><span class="Identifier">Cxcounter</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
-  <span class="Identifier">value</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int</span>
-</pre></dt>
+</div>
+<div id="cxTz">
+<dt><pre><a href="cxtime.html#cxTz"><span class="Identifier">cxTz</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">long</span><span class="Other">,</span> <span class="Identifier">short</span></pre></dt>
 <dd>
 
 
 
 </dd>
+</div>
 
 </dl></div>
 <div class="section" id="8">
 <h1><a class="toc-backref" href="#8">Vars</a></h1>
 <dl class="item">
-<a id="cxtimerresults"></a>
+<div id="cxtimerresults">
 <dt><pre><a href="cxtime.html#cxtimerresults"><span class="Identifier">cxtimerresults</span></a> <span class="Other">=</span> <span class="Identifier">newSeq</span><span class="Other">(</span><span class="Identifier">Natural</span><span class="Other">(</span><span class="DecNumber">0</span><span class="Other">)</span><span class="Other">)</span></pre></dt>
 <dd>
 
 
 
 </dd>
+</div>
 
 </dl></div>
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
-<a id="cxDuration,,"></a>
+
+<div id="clearAllTimerResults-procs-all">
+<div id="clearAllTimerResults,bool,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#clearAllTimerResults%2Cbool%2Cint"><span class="Identifier">clearAllTimerResults</span></a><span class="Other">(</span><span class="Identifier">quiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+<p>clearAllTimerResults</p>
+<p>clears cxtimerresults for all timers , set quiet to false to show feedback</p>
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="clearTimerResults-procs-all">
+<div id="clearTimerResults,string,bool,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#clearTimerResults%2Cstring%2Cbool%2Cint"><span class="Identifier">clearTimerResults</span></a><span class="Other">(</span><span class="Identifier">aname</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">quiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+<p>clearTimerResults</p>
+<p>clears cxtimerresults of one named timer or if aname == &quot;&quot; of timer cxtimer</p>
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="compareDates-procs-all">
+<div id="compareDates,string,string">
+<dt><pre><span class="Keyword">proc</span> <a href="#compareDates%2Cstring%2Cstring"><span class="Identifier">compareDates</span></a><span class="Other">(</span><span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="createSeqDate-procs-all">
+<div id="createSeqDate,string,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#createSeqDate%2Cstring%2Cint"><span class="Identifier">createSeqDate</span></a><span class="Other">(</span><span class="Identifier">fromDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+<p>createSeqDate</p>
+<p>creates a seq of continous dates in format yyyy-MM-dd</p>
+<p>from fromDate to fromDate + days</p>
+<pre class="listing"><span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createseqdate</span><span class="Punctuation">(</span><span class="Identifier">cxToday</span><span class="Punctuation">,</span> <span class="DecNumber">60</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">12</span><span class="Punctuation">)</span></pre>
+
+</dd>
+</div>
+<div id="createSeqDate,string,string">
+<dt><pre><span class="Keyword">proc</span> <a href="#createSeqDate%2Cstring%2Cstring"><span class="Identifier">createSeqDate</span></a><span class="Other">(</span><span class="Identifier">fromDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">toDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+<p>createSeqDate</p>
+<p>creates a seq of dates in format yyyy-MM-dd</p>
+<p>fromDate and toDate must be a date in form yyyy-MM-dd eg. 2018-06-18</p>
+<pre class="listing"><span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createseqdate</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span> <span class="StringLit">&quot;2022-05-25&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">12</span><span class="Punctuation">)</span></pre>
+
+</dd>
+</div>
+
+</div>
+
+<div id="cxDayOfWeek-procs-all">
+<div id="cxDayOfWeek,string">
+<dt><pre><span class="Keyword">proc</span> <a href="#cxDayOfWeek%2Cstring"><span class="Identifier">cxDayOfWeek</span></a><span class="Other">(</span><span class="Identifier">datestr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+<p>cxDayOfWeek</p>
+<p>returns day of week from a date in format yyyy-MM-dd</p>
+<pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">cxDayOfWeek</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="StringLit">&quot;2017-07-15&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;  &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxDayOfWeek</span><span class="Punctuation">(</span><span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="StringLit">&quot;2017-07-15&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+
+</dd>
+</div>
+
+</div>
+
+<div id="cxDuration-procs-all">
+<div id="cxDuration,,">
 <dt><pre><span class="Keyword">proc</span> <a href="#cxDuration%2C%2C"><span class="Identifier">cxDuration</span></a><span class="Other">(</span><span class="Identifier">tstart</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">float</span><span class="Other">;</span> <span class="Identifier">tend</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 
@@ -450,7 +545,43 @@ iso week number borrowed from <a class="reference external" href="https://gist.g
 <span class="Comment"># Duration: 6 days, 13 hours, 44 minutes, and 47 seconds</span></pre>
 
 </dd>
-<a id="cxTimeZone,cxTz"></a>
+</div>
+
+</div>
+
+<div id="cxHRTimer-procs-all">
+<div id="cxHRTimer,Time,Time">
+<dt><pre><span class="Keyword">proc</span> <a href="#cxHRTimer%2CTime%2CTime"><span class="Identifier">cxHRTimer</span></a><span class="Other">(</span><span class="Identifier">tstart</span><span class="Other">:</span> <span class="Identifier">Time</span> <span class="Other">=</span> <span class="Identifier">getTime</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">tend</span><span class="Other">:</span> <span class="Identifier">Time</span> <span class="Other">=</span> <span class="Identifier">getTime</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+<p>cxHRTimer</p>
+<p>Example</p>
+<pre class="listing"><span class="Keyword">let</span> <span class="Identifier">currenttime</span> <span class="Operator">=</span> <span class="Identifier">getTime</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">sleep</span><span class="Punctuation">(</span><span class="DecNumber">2000</span><span class="Punctuation">)</span>
+<span class="Keyword">let</span> <span class="Identifier">later</span> <span class="Operator">=</span> <span class="Identifier">gettime</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">cxHRTimer</span><span class="Punctuation">(</span><span class="Identifier">currentime</span><span class="Punctuation">,</span><span class="Identifier">later</span><span class="Punctuation">)</span></pre>
+
+</dd>
+</div>
+
+</div>
+
+<div id="cxSystemUptime-procs-all">
+<div id="cxSystemUptime">
+<dt><pre><span class="Keyword">proc</span> <a href="#cxSystemUptime"><span class="Identifier">cxSystemUptime</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span>
+                                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+Returns system uptime
+
+</dd>
+</div>
+
+</div>
+
+<div id="cxTimeZone-procs-all">
+<div id="cxTimeZone,cxTz">
 <dt><pre><span class="Keyword">proc</span> <a href="#cxTimeZone%2CcxTz"><span class="Identifier">cxTimeZone</span></a><span class="Other">(</span><span class="Identifier">amode</span><span class="Other">:</span> <a href="cxtime.html#cxTz"><span class="Identifier">cxTz</span></a> <span class="Other">=</span> <span class="Identifier">long</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
@@ -460,27 +591,12 @@ iso week number borrowed from <a class="reference external" href="https://gist.g
 
 
 </dd>
-<a id="sleepy,T"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#sleepy%2CT"><span class="Identifier">sleepy</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">secs</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
-<dd>
+</div>
 
-<p>sleepy</p>
-<p>imitates sleep but in seconds suitable for shorter sleeps </p>
+</div>
 
-
-</dd>
-<a id="validDate,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#validDate%2Cstring"><span class="Identifier">validDate</span></a><span class="Other">(</span><span class="Identifier">adate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-<p>validdate</p>
-<p>try to ensure correct dates of form yyyy-MM-dd</p>
-<p>correct : 2015-08-15</p>
-<p>wrong   : 2015-08-32 , 201508-15, 2015-13-10 etc. </p>
-
-
-</dd>
-<a id="day,string"></a>
+<div id="day-procs-all">
+<div id="day,string">
 <dt><pre><span class="Keyword">proc</span> <a href="#day%2Cstring"><span class="Identifier">day</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
@@ -489,79 +605,73 @@ iso week number borrowed from <a class="reference external" href="https://gist.g
 
 
 </dd>
-<a id="month,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#month%2Cstring"><span class="Identifier">month</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+</div>
+
+</div>
+
+<div id="duration-procs-all">
+<div id="duration,ref.">
+<dt><pre><span class="Keyword">proc</span> <a href="#duration%2Cref."><span class="Identifier">duration</span></a><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> {.<span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
 
 </dd>
-<a id="year,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#year%2Cstring"><span class="Identifier">year</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+</div>
+
+</div>
+
+<div id="getAmzDateString-procs-all">
+<div id="getAmzDateString">
+<dt><pre><span class="Keyword">proc</span> <a href="#getAmzDateString"><span class="Identifier">getAmzDateString</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-Format yyyy
-
-</dd>
-<a id="compareDates,string,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#compareDates%2Cstring%2Cstring"><span class="Identifier">compareDates</span></a><span class="Other">(</span><span class="Identifier">startDate</span><span class="Other">,</span> <span class="Identifier">endDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="plusDays,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#plusDays%2Cstring%2Cint"><span class="Identifier">plusDays</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
-    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-<p>plusDays</p>
-<p>adds days to date string of format yyyy-MM-dd  or result of getDateStr()  or today()</p>
-<p>and returns a string of format yyyy-MM-dd</p>
-<p>the passed in date string must be a valid date or an error message will be returned</p>
-<pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">plusDays</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">343</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<a id="minusDays,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#minusDays%2Cstring%2Cint"><span class="Identifier">minusDays</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
-    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-<p>minusDays</p>
-<p>subtracts days from a date string of format yyyy-MM-dd  or result of getDateStr() or today()</p>
-<p>and returns a string of format yyyy-MM-dd</p>
-<p>the passed in date string must be a valid date or an error message will be returned </p>
+<p>getAmzDateString</p>
+<p>get current GMT date time in amazon format </p>
 
 
 </dd>
-<a id="createSeqDate,string,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#createSeqDate%2Cstring%2Cstring"><span class="Identifier">createSeqDate</span></a><span class="Other">(</span><span class="Identifier">fromDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">toDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> {.
-    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+</div>
+
+</div>
+
+<div id="getMsecs-procs-all">
+<div id="getMsecs,Duration">
+<dt><pre><span class="Keyword">proc</span> <a href="#getMsecs%2CDuration"><span class="Identifier">getMsecs</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Duration</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float64</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-<p>createSeqDate</p>
-<p>creates a seq of dates in format yyyy-MM-dd</p>
-<p>fromDate and toDate must be a date in form yyyy-MM-dd eg. 2018-06-18</p>
-<pre class="listing"><span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createseqdate</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span> <span class="StringLit">&quot;2022-05-25&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">12</span><span class="Punctuation">)</span></pre>
+<p>getMsecs</p>
+<p>returns duration in milliseconds duration d can be obtained like so let start = getMonoTime() sleep(5) let end   = getMonoTime() let d = end - start printLnBiCol &quot;Timing : &quot; &amp; ff(getMsecs(d),6) &amp; &quot; msn&quot;</p>
+
 
 </dd>
-<a id="createSeqDate,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#createSeqDate%2Cstring%2Cint"><span class="Identifier">createSeqDate</span></a><span class="Other">(</span><span class="Identifier">fromDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">string</span><span class="Other">]</span> {.
-    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+</div>
+
+</div>
+
+<div id="getNextMonday-procs-all">
+<div id="getNextMonday,string">
+<dt><pre><span class="Keyword">proc</span> <a href="#getNextMonday%2Cstring"><span class="Identifier">getNextMonday</span></a><span class="Other">(</span><span class="Identifier">adate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-<p>createSeqDate</p>
-<p>creates a seq of continous dates in format yyyy-MM-dd</p>
-<p>from fromDate to fromDate + days</p>
-<pre class="listing"><span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createseqdate</span><span class="Punctuation">(</span><span class="Identifier">cxToday</span><span class="Punctuation">,</span> <span class="DecNumber">60</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">maxitemwidth</span><span class="Operator">=</span><span class="DecNumber">12</span><span class="Punctuation">)</span></pre>
+getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="Identifier">getDateStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
+<span class="Comment"># get next 10 mondays</span>
+<span class="Keyword">var</span> <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">getdatestr</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
+<span class="Identifier">echo</span> <span class="Identifier">dw</span>
+<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">:</span>
+   <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">getnextmonday</span><span class="Punctuation">(</span><span class="Identifier">dw</span><span class="Punctuation">)</span>
+   <span class="Identifier">echo</span> <span class="Identifier">dw</span>
+   <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">plusDays</span><span class="Punctuation">(</span><span class="Identifier">dw</span><span class="Punctuation">,</span><span class="DecNumber">1</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<a id="getRndDate,int,int"></a>
+</div>
+
+</div>
+
+<div id="getRndDate-procs-all">
+<div id="getRndDate,int,int">
 <dt><pre><span class="Keyword">proc</span> <a href="#getRndDate%2Cint%2Cint"><span class="Identifier">getRndDate</span></a><span class="Other">(</span><span class="Identifier">minyear</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">parseInt</span><span class="Other">(</span><span class="Identifier">year</span><span class="Other">(</span><span class="Identifier">getDateStr</span><span class="Other">(</span><span class="Identifier">now</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">)</span><span class="Other">)</span> <span class="Operator">-</span> <span class="DecNumber">50</span><span class="Other">;</span>
                 <span class="Identifier">maxyear</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="Identifier">parseInt</span><span class="Other">(</span><span class="Identifier">year</span><span class="Other">(</span><span class="Identifier">getDateStr</span><span class="Other">(</span><span class="Identifier">now</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">)</span><span class="Other">)</span> <span class="Operator">+</span> <span class="DecNumber">50</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
@@ -574,55 +684,67 @@ Format yyyy
 <span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">)</span><span class="Punctuation">:</span> <span class="Identifier">echo</span> <span class="Identifier">getRndDate</span><span class="Punctuation">(</span><span class="DecNumber">2016</span><span class="Punctuation">,</span><span class="DecNumber">2025</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<a id="printTimeMsg,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printTimeMsg%2Cstring%2Cint"><span class="Identifier">printTimeMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">cxTime</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span class="Identifier">discardable</span><span class="Other">,</span>
-    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+</div>
+
+</div>
+
+<div id="isoweek-procs-all">
+<div id="isoweek,DateTime">
+<dt><pre><span class="Keyword">proc</span> <a href="#isoweek%2CDateTime"><span class="Identifier">isoweek</span></a><span class="Other">(</span><span class="Identifier">dt</span><span class="Other">:</span> <span class="Identifier">DateTime</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">WeekRange</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+returns isoweek for a given date
+
+</dd>
+</div>
+
+</div>
+
+<div id="lapTimer-procs-all">
+<div id="lapTimer,ref.">
+<dt><pre><span class="Keyword">proc</span> <a href="#lapTimer%2Cref."><span class="Identifier">lapTimer</span></a><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> {.<span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
 
 </dd>
-<a id="printLnTimeMsg,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printLnTimeMsg%2Cstring%2Cint"><span class="Identifier">printLnTimeMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">cxTime</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
-    <span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+</div>
+
+</div>
+
+<div id="minusDays-procs-all">
+<div id="minusDays,string,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#minusDays%2Cstring%2Cint"><span class="Identifier">minusDays</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+<p>minusDays</p>
+<p>subtracts days from a date string of format yyyy-MM-dd  or result of getDateStr() or today()</p>
+<p>and returns a string of format yyyy-MM-dd</p>
+<p>the passed in date string must be a valid date or an error message will be returned </p>
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="month-procs-all">
+<div id="month,string">
+<dt><pre><span class="Keyword">proc</span> <a href="#month%2Cstring"><span class="Identifier">month</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
 
 </dd>
-<a id="printDTimeMsg,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printDTimeMsg%2Cstring%2Cint"><span class="Identifier">printDTimeMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Operator">$</span><span class="Identifier">toTime</span><span class="Other">(</span><span class="Identifier">now</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
-    <span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
+</div>
 
+</div>
 
-
-</dd>
-<a id="printLnDTimeMsg,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printLnDTimeMsg%2Cstring%2Cint"><span class="Identifier">printLnDTimeMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Operator">$</span><span class="Identifier">toTime</span><span class="Other">(</span><span class="Identifier">now</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
-    <span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="printDateMsg,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printDateMsg%2Cstring%2Cint"><span class="Identifier">printDateMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getDateStr</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
-    <span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="printLnDateMsg,string,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#printLnDateMsg%2Cstring%2Cint"><span class="Identifier">printLnDateMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getDateStr</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
-    <span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="newCxtimer,string"></a>
+<div id="newCxtimer-procs-all">
+<div id="newCxtimer,string">
 <dt><pre><span class="Keyword">proc</span> <a href="#newCxtimer%2Cstring"><span class="Identifier">newCxtimer</span></a><span class="Other">(</span><span class="Identifier">aname</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;cxtimer&quot;</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
@@ -651,44 +773,120 @@ Format yyyy
 <span class="Identifier">dprint</span> <span class="Identifier">cxtimerresults</span>                <span class="Comment"># dprint is a simple repr utility</span></pre>
 
 </dd>
-<a id="resetTimer,ref."></a>
+</div>
+
+</div>
+
+<div id="plusDays-procs-all">
+<div id="plusDays,string,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#plusDays%2Cstring%2Cint"><span class="Identifier">plusDays</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">days</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+<p>plusDays</p>
+<p>adds days to date string of format yyyy-MM-dd  or result of getDateStr()  or today()</p>
+<p>and returns a string of format yyyy-MM-dd</p>
+<p>the passed in date string must be a valid date or an error message will be returned</p>
+<pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">plusDays</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">343</span><span class="Punctuation">)</span></pre>
+
+</dd>
+</div>
+
+</div>
+
+<div id="printDateMsg-procs-all">
+<div id="printDateMsg,string,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#printDateMsg%2Cstring%2Cint"><span class="Identifier">printDateMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getDateStr</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
+    <span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="printDTimeMsg-procs-all">
+<div id="printDTimeMsg,string,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#printDTimeMsg%2Cstring%2Cint"><span class="Identifier">printDTimeMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Operator">$</span><span class="Identifier">toTime</span><span class="Other">(</span><span class="Identifier">now</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
+    <span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="printLnDateMsg-procs-all">
+<div id="printLnDateMsg,string,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#printLnDateMsg%2Cstring%2Cint"><span class="Identifier">printLnDateMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">getDateStr</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
+    <span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="printLnDTimeMsg-procs-all">
+<div id="printLnDTimeMsg,string,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#printLnDTimeMsg%2Cstring%2Cint"><span class="Identifier">printLnDTimeMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Operator">$</span><span class="Identifier">toTime</span><span class="Other">(</span><span class="Identifier">now</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
+    <span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="printLnTimeMsg-procs-all">
+<div id="printLnTimeMsg,string,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#printLnTimeMsg%2Cstring%2Cint"><span class="Identifier">printLnTimeMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">cxTime</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
+    <span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="printTimeMsg-procs-all">
+<div id="printTimeMsg,string,int">
+<dt><pre><span class="Keyword">proc</span> <a href="#printTimeMsg%2Cstring%2Cint"><span class="Identifier">printTimeMsg</span></a><span class="Other">(</span><span class="Identifier">atext</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="Identifier">cxTime</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span class="Identifier">discardable</span><span class="Other">,</span>
+    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="resetTimer-procs-all">
+<div id="resetTimer,ref.">
 <dt><pre><span class="Keyword">proc</span> <a href="#resetTimer%2Cref."><span class="Identifier">resetTimer</span></a><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a><span class="Other">)</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
 
 
 </dd>
-<a id="startTimer,ref."></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#startTimer%2Cref."><span class="Identifier">startTimer</span></a><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a><span class="Other">)</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
+</div>
 
+</div>
 
-
-</dd>
-<a id="lapTimer,ref."></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#lapTimer%2Cref."><span class="Identifier">lapTimer</span></a><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> {.<span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="stopTimer,ref."></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#stopTimer%2Cref."><span class="Identifier">stopTimer</span></a><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a><span class="Other">)</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
-                                    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="duration,ref."></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#duration%2Cref."><span class="Identifier">duration</span></a><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> {.<span class="Identifier">discardable</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-
-
-</dd>
-<a id="saveTimerResults,ref."></a>
+<div id="saveTimerResults-procs-all">
+<div id="saveTimerResults,ref.">
 <dt><pre><span class="Keyword">proc</span> <a href="#saveTimerResults%2Cref."><span class="Identifier">saveTimerResults</span></a><span class="Other">(</span><span class="Identifier">b</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a><span class="Other">)</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
@@ -697,7 +895,22 @@ Format yyyy
 
 
 </dd>
-<a id="showTimerResults,string"></a>
+</div>
+
+</div>
+
+<div id="showTimerResults-procs-all">
+<div id="showTimerResults">
+<dt><pre><span class="Keyword">proc</span> <a href="#showTimerResults"><span class="Identifier">showTimerResults</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+<dd>
+
+<p>showTimerResults</p>
+<p>shows results for all timers </p>
+
+
+</dd>
+</div>
+<div id="showTimerResults,string">
 <dt><pre><span class="Keyword">proc</span> <a href="#showTimerResults%2Cstring"><span class="Identifier">showTimerResults</span></a><span class="Other">(</span><span class="Identifier">aname</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span>
                                        <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
@@ -707,114 +920,99 @@ Format yyyy
 
 
 </dd>
-<a id="showTimerResults"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#showTimerResults"><span class="Identifier">showTimerResults</span></a><span class="Other">(</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+</div>
+
+</div>
+
+<div id="sleepy-procs-all">
+<div id="sleepy,T">
+<dt><pre><span class="Keyword">proc</span> <a href="#sleepy%2CT"><span class="Identifier">sleepy</span></a><span class="Other">[</span><span class="Identifier">T</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Operator">|</span> <span class="Identifier">int</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">secs</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span></pre></dt>
 <dd>
 
-<p>showTimerResults</p>
-<p>shows results for all timers </p>
+<p>sleepy</p>
+<p>imitates sleep but in seconds suitable for shorter sleeps </p>
 
 
 </dd>
-<a id="clearTimerResults,string,bool,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#clearTimerResults%2Cstring%2Cbool%2Cint"><span class="Identifier">clearTimerResults</span></a><span class="Other">(</span><span class="Identifier">aname</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">=</span> <span class="StringLit">&quot;&quot;</span><span class="Other">;</span> <span class="Identifier">quiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span> {.
-    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+</div>
+
+</div>
+
+<div id="startTimer-procs-all">
+<div id="startTimer,ref.">
+<dt><pre><span class="Keyword">proc</span> <a href="#startTimer%2Cref."><span class="Identifier">startTimer</span></a><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a><span class="Other">)</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-<p>clearTimerResults</p>
-<p>clears cxtimerresults of one named timer or if aname == &quot;&quot; of timer cxtimer</p>
 
 
 </dd>
-<a id="clearAllTimerResults,bool,int"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#clearAllTimerResults%2Cbool%2Cint"><span class="Identifier">clearAllTimerResults</span></a><span class="Other">(</span><span class="Identifier">quiet</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">=</span> <span class="Identifier">true</span><span class="Other">;</span> <span class="Identifier">xpos</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">=</span> <span class="DecNumber">3</span><span class="Other">)</span> {.
-    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
+</div>
+
+</div>
+
+<div id="stopTimer-procs-all">
+<div id="stopTimer,ref.">
+<dt><pre><span class="Keyword">proc</span> <a href="#stopTimer%2Cref."><span class="Identifier">stopTimer</span></a><span class="Other">(</span><span class="Identifier">co</span><span class="Other">:</span> <span class="Keyword">ref</span> <span class="Other">(</span><a href="cxtime.html#CxTimer"><span class="Identifier">CxTimer</span></a><span class="Other">)</span><span class="Other">)</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+                                    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-<p>clearAllTimerResults</p>
-<p>clears cxtimerresults for all timers , set quiet to false to show feedback</p>
 
 
 </dd>
-<a id="cxHRTimer,Time,Time"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#cxHRTimer%2CTime%2CTime"><span class="Identifier">cxHRTimer</span></a><span class="Other">(</span><span class="Identifier">tstart</span><span class="Other">:</span> <span class="Identifier">Time</span> <span class="Other">=</span> <span class="Identifier">getTime</span><span class="Other">(</span><span class="Other">)</span><span class="Other">;</span> <span class="Identifier">tend</span><span class="Other">:</span> <span class="Identifier">Time</span> <span class="Other">=</span> <span class="Identifier">getTime</span><span class="Other">(</span><span class="Other">)</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span> {.
-    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+</div>
+
+</div>
+
+<div id="validDate-procs-all">
+<div id="validDate,string">
+<dt><pre><span class="Keyword">proc</span> <a href="#validDate%2Cstring"><span class="Identifier">validDate</span></a><span class="Other">(</span><span class="Identifier">adate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-<p>cxHRTimer</p>
-<p>Example</p>
-<pre class="listing"><span class="Keyword">let</span> <span class="Identifier">currenttime</span> <span class="Operator">=</span> <span class="Identifier">getTime</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">sleep</span><span class="Punctuation">(</span><span class="DecNumber">2000</span><span class="Punctuation">)</span>
-<span class="Keyword">let</span> <span class="Identifier">later</span> <span class="Operator">=</span> <span class="Identifier">gettime</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span> <span class="Identifier">cxHRTimer</span><span class="Punctuation">(</span><span class="Identifier">currentime</span><span class="Punctuation">,</span><span class="Identifier">later</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<a id="cxDayOfWeek,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#cxDayOfWeek%2Cstring"><span class="Identifier">cxDayOfWeek</span></a><span class="Other">(</span><span class="Identifier">datestr</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-<p>cxDayOfWeek</p>
-<p>returns day of week from a date in format yyyy-MM-dd</p>
-<pre class="listing"><span class="Identifier">echo</span> <span class="Identifier">cxDayOfWeek</span><span class="Punctuation">(</span><span class="Identifier">cxtoday</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span> <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="StringLit">&quot;2017-07-15&quot;</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;  &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxDayOfWeek</span><span class="Punctuation">(</span><span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="StringLit">&quot;2017-07-15&quot;</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<a id="getNextMonday,string"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getNextMonday%2Cstring"><span class="Identifier">getNextMonday</span></a><span class="Other">(</span><span class="Identifier">adate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.
-    <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">TimeParseError</span><span class="Other">]</span><span class="Other">,</span>
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-getNextMonday<pre class="listing"><span class="Identifier">echo</span>  <span class="Identifier">getNextMonday</span><span class="Punctuation">(</span><span class="Identifier">getDateStr</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre><pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
-<span class="Comment"># get next 10 mondays</span>
-<span class="Keyword">var</span> <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">getdatestr</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span> <span class="Identifier">dw</span>
-<span class="Keyword">for</span> <span class="Identifier">x</span> <span class="Keyword">in</span> <span class="FloatNumber">1.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">:</span>
-   <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">getnextmonday</span><span class="Punctuation">(</span><span class="Identifier">dw</span><span class="Punctuation">)</span>
-   <span class="Identifier">echo</span> <span class="Identifier">dw</span>
-   <span class="Identifier">dw</span> <span class="Operator">=</span> <span class="Identifier">plusDays</span><span class="Punctuation">(</span><span class="Identifier">dw</span><span class="Punctuation">,</span><span class="DecNumber">1</span><span class="Punctuation">)</span></pre>
-
-</dd>
-<a id="getAmzDateString"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getAmzDateString"><span class="Identifier">getAmzDateString</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">TimeEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-<p>getAmzDateString</p>
-<p>get current GMT date time in amazon format </p>
+<p>validdate</p>
+<p>try to ensure correct dates of form yyyy-MM-dd</p>
+<p>correct : 2015-08-15</p>
+<p>wrong   : 2015-08-32 , 201508-15, 2015-13-10 etc. </p>
 
 
 </dd>
-<a id="isoweek,DateTime"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#isoweek%2CDateTime"><span class="Identifier">isoweek</span></a><span class="Other">(</span><span class="Identifier">dt</span><span class="Other">:</span> <span class="Identifier">DateTime</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">WeekRange</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+</div>
+
+</div>
+
+<div id="year-procs-all">
+<div id="year,string">
+<dt><pre><span class="Keyword">proc</span> <a href="#year%2Cstring"><span class="Identifier">year</span></a><span class="Other">(</span><span class="Identifier">aDate</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
 <dd>
 
-returns isoweek for a given date
+Format yyyy
 
 </dd>
-<a id="cxSystemUptime"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#cxSystemUptime"><span class="Identifier">cxSystemUptime</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">,</span> <span class="Identifier">IOError</span><span class="Other">,</span> <span class="Identifier">OSError</span><span class="Other">]</span><span class="Other">,</span>
-                                <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ExecIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadIOEffect</span><span class="Other">,</span> <span class="Identifier">RootEffect</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
+</div>
 
-Returns system uptime
-
-</dd>
-<a id="getMsecs,Duration"></a>
-<dt><pre><span class="Keyword">proc</span> <a href="#getMsecs%2CDuration"><span class="Identifier">getMsecs</span></a><span class="Other">(</span><span class="Identifier">d</span><span class="Other">:</span> <span class="Identifier">Duration</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float64</span> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
-<dd>
-
-<p>getMsecs</p>
-<p>returns duration in milliseconds duration d can be obtained like so let start = getMonoTime() sleep(5) let end   = getMonoTime() let d = end - start printLnBiCol &quot;Timing : &quot; &amp; ff(getMsecs(d),6) &amp; &quot; msn&quot;</p>
-
-
-</dd>
+</div>
 
 </dl></div>
 <div class="section" id="18">
 <h1><a class="toc-backref" href="#18">Templates</a></h1>
 <dl class="item">
-<a id="cxLocal.t"></a>
+
+<div id="cxDateTime-templates-all">
+<div id="cxDateTime.t">
+<dt><pre><span class="Keyword">template</span> <a href="#cxDateTime.t"><span class="Identifier">cxDateTime</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
+<dd>
+
+<p>cxDateTime</p>
+<p>returns a date time string</p>
+<p>eg : 2018-08-23 16:48:50 </p>
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="cxLocal-templates-all">
+<div id="cxLocal.t">
 <dt><pre><span class="Keyword">template</span> <a href="#cxLocal.t"><span class="Identifier">cxLocal</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 
@@ -829,7 +1027,12 @@ Returns system uptime
 <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;cxTimeZone(short) : &quot;</span><span class="Punctuation">,</span><span class="Identifier">cxTimezone</span><span class="Punctuation">(</span><span class="Identifier">short</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">)</span></pre>
 
 </dd>
-<a id="cxNow.t"></a>
+</div>
+
+</div>
+
+<div id="cxNow-templates-all">
+<div id="cxNow.t">
 <dt><pre><span class="Keyword">template</span> <a href="#cxNow.t"><span class="Identifier">cxNow</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 
@@ -839,7 +1042,26 @@ Returns system uptime
 
 
 </dd>
-<a id="cxToday.t"></a>
+</div>
+
+</div>
+
+<div id="cxTime-templates-all">
+<div id="cxTime.t">
+<dt><pre><span class="Keyword">template</span> <a href="#cxTime.t"><span class="Identifier">cxTime</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
+<dd>
+
+<p>cxTime</p>
+<p>eg : 16:48:50 </p>
+
+
+</dd>
+</div>
+
+</div>
+
+<div id="cxToday-templates-all">
+<div id="cxToday.t">
 <dt><pre><span class="Keyword">template</span> <a href="#cxToday.t"><span class="Identifier">cxToday</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 
@@ -849,25 +1071,9 @@ Returns system uptime
 
 
 </dd>
-<a id="cxTime.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#cxTime.t"><span class="Identifier">cxTime</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
-<dd>
+</div>
 
-<p>cxTime</p>
-<p>eg : 16:48:50 </p>
-
-
-</dd>
-<a id="cxDateTime.t"></a>
-<dt><pre><span class="Keyword">template</span> <a href="#cxDateTime.t"><span class="Identifier">cxDateTime</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
-<dd>
-
-<p>cxDateTime</p>
-<p>returns a date time string</p>
-<p>eg : 2018-08-23 16:48:50 </p>
-
-
-</dd>
+</div>
 
 </dl></div>
 
@@ -878,7 +1084,7 @@ Returns system uptime
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2021-07-03 09:58:22 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2022-01-29 20:06:28 UTC</small>
       </div>
     </div>
   </div>
