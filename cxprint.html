@@ -12,10 +12,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="nimdoc.out.css">
+<link rel="stylesheet" type="text/css" href="nimdoc.out.css?v=2.1.1">
 
 <!-- JS -->
-<script type="text/javascript" src="dochack.js"></script>
+<script type="text/javascript" src="dochack.js?v=2.1.1"></script>
 </head>
 <body>
   <div class="document" id="documentId">
@@ -37,7 +37,7 @@
       </ul>
     </div>
     <div id="searchInputDiv">
-      Search: <input type="search" id="searchInput" onkeyup="search()"/>
+      Search: <input type="search" id="searchInput" oninput="search()"/>
     </div>
     <div>
       Group by:
@@ -381,14 +381,21 @@
     
     <div id="tocRoot"></div>
     
-    <p class="module-desc"><p>Library     : nimcx.nim</p>
-<p>Module      : cxprint.nim</p>
-<p>Status      : stable</p>
-<p>License     : MIT opensource</p>
-<p>Latest      : 2022-07-28</p>
-<p>Compiler    : latest stable or devel branch</p>
-<p>OS          : Linux</p>
-<p>Description : provides most printing functions for the library</p>
+    <p class="module-desc">::<pre>Library     : nimcx.nim
+
+Module      : cxprint.nim
+
+Status      : stable
+
+License     : MIT opensource
+
+Latest      : 2022-07-28
+
+Compiler    : latest stable or devel branch
+
+OS          : Linux
+
+Description : provides most printing functions for the library</pre>
 singleLine,doubleLine, draw a respective dash line in desired fgcol white and desired bgcol</p>
     <div class="section" id="6">
   <h1><a class="toc-backref" href="#6">Imports</a></h1>
@@ -584,10 +591,7 @@ singleLine,doubleLine, draw a respective dash line in desired fgcol white and de
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    forward declaration<p>hline</p>
-<p>draw a full line in stated length and color no linefeed will be issued</p>
-<p>defaults full terminal width and white</p>
-<pre class="listing"><span class="Identifier">hline</span><span class="Punctuation">(</span><span class="DecNumber">30</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="Identifier">xpos</span><span class="Punctuation">)</span></pre>
+    forward declaration
     
   </dd>
 </div>
@@ -600,10 +604,7 @@ singleLine,doubleLine, draw a respective dash line in desired fgcol white and de
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">WriteIOEffect</span><span class="Other">,</span> <span class="Identifier">ReadEnvEffect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    forward declaration<p>hLineLn</p>
-<p>draw a full line in stated length and color a linefeed will be issued</p>
-<p>defaults full terminal width and white</p>
-<pre class="listing"><span class="Identifier">hLineLn</span><span class="Punctuation">(</span><span class="DecNumber">30</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">)</span></pre>
+    forward declaration
     
   </dd>
 </div>
@@ -642,34 +643,7 @@ singleLine,doubleLine, draw a respective dash line in desired fgcol white and de
               <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
   <dd>
     
-    <p>print</p>
-<p>use colornames like darkseagreen , salmon etc as foregroundcolors</p>
-<p>uses colornames like limebg or truebluebg etc as backgroundcolors</p>
-<p>or use original background colors like redbg</p>
-<p>xpos allows positioning on x-axis</p>
-<p>fitLine = true will try to write the text into the current line irrespective of xpos</p>
-<p>centered = true will try to center and disregard xpos</p>
-<p>styled allows style parameters to be set</p>
-<p>available styles :</p>
-<p>styleBright = 1,            # bright/bold text</p>
-<p>styleDim,                   # dim text</p>
-<p>styleUnknown,               # unknown</p>
-<p>styleUnderscore = 4,        # underscored text</p>
-<p>styleBlink,                 # blinking/bold text</p>
-<p>styleReverse = 7,           # reverses currentforground and backgroundcolor</p>
-<p>styleHidden                 # hidden text</p>
-<p>styleItalic                 # italic</p>
-<p>styleStrikethrough          # strikethrough</p>
-<p>for extended colorset background colors use styleReverse</p>
-<p>or use 2 or more print statements for the desired effect</p>
-<p>also available   cxBright,cxReverse,cxBlink,cxReverseBright</p>
-<p>Example</p>
-<pre class="listing"><span class="Comment"># To achieve colored text with styleReverse try:</span>
-<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;what's up with colors now ? &quot;</span><span class="Punctuation">,</span><span class="Identifier">trueblue</span><span class="Punctuation">,</span><span class="Identifier">redbg</span><span class="Punctuation">,</span><span class="Identifier">xpos</span> <span class="Operator">=</span> <span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">styled</span><span class="Operator">=</span><span class="Punctuation">{</span><span class="Identifier">styleBright</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
-<span class="Identifier">print</span><span class="Punctuation">(</span><span class="StringLit">&quot;The end never comes on time ! &quot;</span><span class="Punctuation">,</span><span class="Identifier">yaleblue</span><span class="Punctuation">,</span><span class="Identifier">limebg</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">,</span><span class="Identifier">styleBright</span><span class="Punctuation">,</span><span class="Identifier">styleItalic</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
-<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span></pre><p>There are many more possibilities using the print and PrintLn statements</p>
-<p>printLnBiCol(&quot;this is a &quot; &amp; rightarrow &amp; &quot;  &quot; &amp; termStrikethrough &amp; &quot;print&quot; &amp;  termclear &amp; &quot; aaah,sorry &quot;,colLeft = goldenrod,colRight = cyan,sep = termclear) printLnBiCol(&quot; a printLnBiCol example &quot; &amp; termnegative &amp; &quot;changing color to lime after here&quot; &amp; termclear &amp; &quot; this is lime colored text&quot;,colLeft=salmon,colRight = lime,sep=termclear,styled={})</p>
-
+    
     
   </dd>
 </div>
@@ -735,9 +709,7 @@ singleLine,doubleLine, draw a respective dash line in desired fgcol white and de
                    <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
   <dd>
     
-    <p>printBiCol</p>
-<p>Notes see printLnBiCol </p>
-
+    
     
   </dd>
 </div>
@@ -877,34 +849,7 @@ singleLine,doubleLine, draw a respective dash line in desired fgcol white and de
                 <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
   <dd>
     
-    <p>printLn</p>
-<p>foregroundcolor backgroundcolor position fitLine centered styled</p>
-<p>Colornames supported for font colors     :  all</p>
-<p>Colornames supported for background color:  all colors ending with bg</p>
-<ul class="simple"><li>use styleBright and styleReverse for various effects</li>
-</ul>
-<p>Examples</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
-
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Yes ,  we made it.&quot;</span><span class="Punctuation">,</span><span class="Identifier">green</span><span class="Punctuation">,</span><span class="Identifier">yellowbg</span><span class="Punctuation">)</span>
-<span class="Comment"># or use it almost as a replacement of echo</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">red</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;What's up ? &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">green</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot;Grub's up ! &quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;No need to reset the original color&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Nim does it again&quot;</span><span class="Punctuation">,</span><span class="Identifier">peru</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span> <span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleDim</span><span class="Punctuation">,</span><span class="Identifier">styleUnderscore</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
-<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-
-<span class="Identifier">echo</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">loopy</span><span class="Punctuation">(</span><span class="FloatNumber">0.</span><span class="Operator">.</span><span class="DecNumber">10</span><span class="Punctuation">,</span><span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="Identifier">newword</span><span class="Punctuation">(</span><span class="DecNumber">80</span><span class="Punctuation">,</span><span class="DecNumber">80</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">limegreen</span><span class="Punctuation">,</span><span class="Identifier">centered</span> <span class="Operator">=</span> <span class="Identifier">true</span><span class="Punctuation">,</span><span class="Identifier">styled</span><span class="Operator">=</span><span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
-<span class="Identifier">printlnrainbow</span><span class="Punctuation">(</span><span class="StringLit">&quot;Just asked!&quot;</span><span class="Punctuation">)</span>
-<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-
-<span class="Identifier">loopy2</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="DecNumber">100</span><span class="Punctuation">,</span>
- <span class="Keyword">block</span><span class="Punctuation">:</span>
-   <span class="Keyword">var</span> <span class="Identifier">r</span> <span class="Operator">=</span> <span class="Identifier">getRndint</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">cxtruecol</span><span class="Operator">.</span><span class="Identifier">len</span> <span class="Operator">-</span> <span class="DecNumber">1</span><span class="Punctuation">)</span>
-   <span class="Keyword">var</span> <span class="Identifier">g</span> <span class="Operator">=</span> <span class="Identifier">getRndint</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">cxtruecol</span><span class="Operator">.</span><span class="Identifier">len</span> <span class="Operator">-</span> <span class="DecNumber">1</span><span class="Punctuation">)</span>
-   <span class="Keyword">var</span> <span class="Identifier">b</span> <span class="Operator">=</span> <span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">cxtruecol</span><span class="Operator">.</span><span class="Identifier">len</span> <span class="Operator">-</span> <span class="DecNumber">1</span><span class="Punctuation">)</span>
-   <span class="Identifier">printLn</span><span class="Punctuation">(</span><span class="StringLit">&quot;Color Test rgb &quot;</span> <span class="Operator">&amp;</span> <span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;6&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">r</span><span class="Punctuation">,</span><span class="StringLit">&quot;,&quot;</span><span class="Punctuation">,</span><span class="Identifier">g</span><span class="Punctuation">,</span><span class="StringLit">&quot;,&quot;</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">)</span> <span class="Operator">&amp;</span> <span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span> <span class="Operator">&amp;</span> <span class="Identifier">efb2</span> <span class="Operator">*</span> <span class="DecNumber">30</span> <span class="Operator">&amp;</span> <span class="Identifier">spaces</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span> <span class="Operator">&amp;</span> <span class="Identifier">cxpad</span><span class="Punctuation">(</span><span class="Operator">$</span><span class="Identifier">xloopy</span><span class="Punctuation">,</span><span class="DecNumber">6</span><span class="Punctuation">)</span> <span class="Punctuation">,</span>
-           <span class="Identifier">newColor</span><span class="Punctuation">(</span><span class="Identifier">r</span><span class="Punctuation">,</span><span class="Identifier">g</span><span class="Punctuation">,</span><span class="Identifier">b</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">rndcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">styled</span> <span class="Operator">=</span> <span class="Punctuation">{</span><span class="Identifier">styleReverse</span><span class="Punctuation">}</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+    
     
   </dd>
 </div>
@@ -970,36 +915,7 @@ singleLine,doubleLine, draw a respective dash line in desired fgcol white and de
                      <span class="Identifier">styled</span><span class="Other">:</span> <span class="Identifier">set</span><span class="Other">[</span><span class="Identifier">Style</span><span class="Other">]</span> <span class="Other">=</span> <span class="Other">{</span><span class="Other">}</span><span class="Other">)</span></pre></dt>
   <dd>
     
-    <p>printLnBiCol</p>
-<p>input can be varargs which gives much better flexibility however all parameters need to be specified also see printLnBiCol3</p>
-<p>default seperator = &quot;:&quot;  if not found we execute printLn with available params</p>
-<pre class="listing"><span class="Keyword">import</span> <span class="Identifier">nimcx</span>
-
-<span class="Keyword">for</span> <span class="Identifier">x</span>  <span class="Keyword">in</span> <span class="FloatNumber">0.</span><span class="Operator">.&lt;</span><span class="DecNumber">3</span><span class="Punctuation">:</span>
-   <span class="Comment"># here our input is varargs so we need to specify all params</span>
-    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;Test $1  : Ok &quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="DecNumber">1</span><span class="Punctuation">,</span><span class="StringLit">&quot;this was $1 : what&quot;</span> <span class="Operator">%</span> <span class="Operator">$</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="FloatNumber">23456.789</span><span class="Punctuation">,</span><span class="Identifier">red</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
-<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-
-<span class="Keyword">for</span> <span class="Identifier">x</span>  <span class="Keyword">in</span> <span class="FloatNumber">6.</span><span class="Operator">.</span><span class="DecNumber">18</span><span class="Punctuation">:</span>
-    <span class="Comment"># here we change the default colors</span>
-    <span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="StringLit">&quot;nice&quot;</span><span class="Punctuation">,</span><span class="DecNumber">123</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;check&quot;</span><span class="Punctuation">,</span><span class="Operator">@</span><span class="Punctuation">[</span><span class="Identifier">x</span><span class="Punctuation">,</span><span class="Identifier">x</span> <span class="Operator">*</span> <span class="DecNumber">2</span><span class="Punctuation">,</span><span class="Identifier">x</span> <span class="Operator">*</span> <span class="DecNumber">3</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="Identifier">cyan</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
-
-<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Comment"># usage with fmtx the build in format engine</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Good Idea : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; Number&quot;</span><span class="Punctuation">,</span><span class="DecNumber">50</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Good Idea : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; Number&quot;</span><span class="Punctuation">,</span><span class="DecNumber">50</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">colLeft</span> <span class="Operator">=</span> <span class="Identifier">cyan</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Good Idea : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; Number&quot;</span><span class="Punctuation">,</span><span class="DecNumber">50</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">colLeft</span><span class="Operator">=</span><span class="Identifier">yellow</span><span class="Punctuation">,</span><span class="Identifier">colRight</span><span class="Operator">=</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBiCol</span><span class="Punctuation">(</span><span class="Identifier">fmtx</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;&gt;4&quot;</span><span class="Punctuation">]</span><span class="Punctuation">,</span><span class="StringLit">&quot;Good Idea : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot; Number&quot;</span><span class="Punctuation">,</span><span class="DecNumber">50</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">123</span><span class="Punctuation">,</span><span class="Identifier">colLeft</span> <span class="Operator">=</span> <span class="Identifier">cyan</span><span class="Punctuation">,</span><span class="Identifier">colRight</span><span class="Operator">=</span><span class="Identifier">gold</span><span class="Punctuation">,</span><span class="Identifier">sep</span><span class="Operator">=</span><span class="StringLit">&quot;:&quot;</span><span class="Punctuation">,</span><span class="Identifier">xpos</span><span class="Operator">=</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">centered</span><span class="Operator">=</span><span class="Identifier">false</span><span class="Punctuation">,</span><span class="Identifier">styled</span><span class="Operator">=</span><span class="Punctuation">{</span><span class="Punctuation">}</span><span class="Punctuation">)</span>
-
-<span class="Identifier">decho</span><span class="Punctuation">(</span><span class="Punctuation">)</span>
-<span class="Identifier">printLnBicol</span><span class="Punctuation">(</span><span class="Punctuation">[</span><span class="StringLit">&quot;TEST VARARGS : &quot;</span><span class="Punctuation">,</span><span class="StringLit">&quot;</span><span class="EscapeSequence">\n</span><span class="StringLit">&quot;</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">,</span>
-  <span class="Operator">$</span><span class="Punctuation">(</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">20</span><span class="Punctuation">)</span><span class="Operator">.</span><span class="Identifier">sampleSeq</span><span class="Punctuation">(</span><span class="DecNumber">8</span><span class="Punctuation">,</span><span class="DecNumber">13</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">newLine</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">hotpink</span><span class="Punctuation">,</span>
-  <span class="Operator">$</span><span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">10000</span><span class="Punctuation">,</span><span class="DecNumber">12000</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="StringLit">&quot;</span><span class="EscapeSequence">\n</span><span class="StringLit">&quot;</span><span class="Punctuation">,</span><span class="Identifier">skyblue</span><span class="Punctuation">,</span>
-  <span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqint</span><span class="Punctuation">(</span><span class="DecNumber">3</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">displayflag</span><span class="Operator">=</span><span class="Identifier">false</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">newLine</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">truetomato</span><span class="Punctuation">,</span>
-  <span class="Operator">$</span><span class="Identifier">newword</span><span class="Punctuation">(</span><span class="DecNumber">6</span><span class="Punctuation">,</span><span class="Identifier">getRndInt</span><span class="Punctuation">(</span><span class="DecNumber">7</span><span class="Punctuation">,</span><span class="DecNumber">20</span><span class="Punctuation">)</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">newLine</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">,</span>
-  <span class="Identifier">showSeq</span><span class="Punctuation">(</span><span class="Identifier">createSeqHiragana</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">yellowgreen</span><span class="Punctuation">,</span><span class="Identifier">displayflag</span><span class="Operator">=</span><span class="Identifier">false</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">newLine</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">lime</span><span class="Punctuation">,</span>
-  <span class="StringLit">&quot;My random float ===&gt; &quot;</span><span class="Punctuation">,</span><span class="Identifier">ff2</span><span class="Punctuation">(</span><span class="Identifier">getRndfloat</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="DecNumber">5</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">newLine</span><span class="Punctuation">(</span><span class="DecNumber">2</span><span class="Punctuation">)</span><span class="Punctuation">]</span><span class="Punctuation">,</span>
-  <span class="Identifier">colLeft</span><span class="Operator">=</span><span class="Identifier">randcol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">,</span><span class="Identifier">randCol</span><span class="Punctuation">(</span><span class="Punctuation">)</span><span class="Punctuation">)</span></pre>
+    
     
   </dd>
 </div>
@@ -1193,10 +1109,7 @@ singleLine,doubleLine, draw a respective dash line in desired fgcol white and de
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
-    forward declaration<p>printRainbow</p>
-<p>print multicolored string with styles , for available styles see print</p>
-<p>may not work with certain Rune </p>
-
+    forward declaration
     
   </dd>
 </div>
@@ -1261,7 +1174,7 @@ singleLine,doubleLine, draw a respective dash line in desired fgcol white and de
     <p>cxprint</p>
 <p>xpos : position Calls styledWrite with args given</p>
 <p>remember that first param must be xpos</p>
-<p>Backgroundcolors defined in cxconsts.nim colorNames can be used , that is any color ending with xxxxxxbg  like pastelpinkbg nim doc --project --index:on --outdir:htmldocs --run nimcx/cxprint.nim</p>
+<p>Backgroundcolors defined in cxconsts.nim colorNames can be used , that is any color ending with xxxxxxbg  like pastelpinkbg </p>
 
     
   </dd>
@@ -1280,7 +1193,7 @@ singleLine,doubleLine, draw a respective dash line in desired fgcol white and de
 <p>Another way to specify colors is using the pallettec olors as specified in cxconsts.nim: cxprintLn(0,cxfg(cxgrey0),cxbg(cxgrey9),&quot;BLABLASTRING&quot;,cxfg(cxgreen3),&quot;GREENSTRING&quot;)</p>
 <p>remember that first item must be xpos and that wide unicode chars or Rune may not give desired result if written close to each other</p>
 <pre class="listing"><span class="Identifier">cxprintLn</span><span class="Punctuation">(</span><span class="DecNumber">5</span><span class="Punctuation">,</span><span class="Identifier">yaleblue</span><span class="Punctuation">,</span><span class="Identifier">pastelbluebg</span><span class="Punctuation">,</span><span class="StringLit">&quot;this is a test  &quot;</span><span class="Punctuation">,</span><span class="Identifier">trueblue</span><span class="Punctuation">,</span><span class="Identifier">pastelpinkbg</span><span class="Punctuation">,</span><span class="Identifier">styleReverse</span><span class="Punctuation">,</span><span class="Identifier">stylebright</span><span class="Punctuation">,</span><span class="StringLit">&quot; needed somme color change&quot;</span>
-<span class="Identifier">cxprintln</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">trueblue</span><span class="Punctuation">,</span><span class="Identifier">bgwnim</span> <span class="Identifier">doc</span> <span class="Operator">--</span><span class="Identifier">project</span> <span class="Operator">--</span><span class="Identifier">index</span><span class="Punctuation">:</span><span class="Identifier">on</span> <span class="Operator">--</span><span class="Identifier">outdir</span><span class="Punctuation">:</span><span class="Identifier">htmldocs</span> <span class="Operator">--</span><span class="Identifier">run</span> <span class="Identifier">nimcx</span><span class="Operator">/</span><span class="Identifier">cxprint</span><span class="Operator">.</span><span class="Identifier">nimhite</span><span class="Punctuation">,</span><span class="StringLit">&quot; Yes ! &quot;</span><span class="Punctuation">,</span>
+<span class="Identifier">cxprintln</span><span class="Punctuation">(</span><span class="DecNumber">0</span><span class="Punctuation">,</span><span class="Identifier">trueblue</span><span class="Punctuation">,</span><span class="Identifier">bgwhite</span><span class="Punctuation">,</span><span class="StringLit">&quot; Yes ! &quot;</span><span class="Punctuation">,</span>
           <span class="Identifier">yaleblue</span><span class="Punctuation">,</span><span class="Identifier">truetomatobg</span><span class="Punctuation">,</span><span class="StringLit">&quot; No ! &quot;</span><span class="Punctuation">,</span>
           <span class="Identifier">trueblue</span><span class="Punctuation">,</span><span class="Identifier">bgwhite</span><span class="Punctuation">,</span><span class="Identifier">styleReverse</span><span class="Punctuation">,</span><span class="StringLit">&quot; Yes ! &quot;</span><span class="Punctuation">,</span>
           <span class="Identifier">truetomato</span><span class="Punctuation">,</span><span class="Identifier">darkslatebluebg</span><span class="Punctuation">,</span><span class="Identifier">styleBlink</span><span class="Punctuation">,</span><span class="Identifier">styleBright</span><span class="Punctuation">,</span><span class="StringLit">&quot; Oooh, it blinks too  ! &quot;</span><span class="Punctuation">)</span></pre>
@@ -1309,7 +1222,8 @@ singleLine,doubleLine, draw a respective dash line in desired fgcol white and de
   <dt><pre><span class="Keyword">template</span> <a href="#cxwrite.t%2Cvarargs%5Buntyped%5D"><span class="Identifier">cxwrite</span></a><span class="Other">(</span><span class="Identifier">args</span><span class="Other">:</span> <span class="Identifier">varargs</span><span class="Other">[</span><span class="Identifier">untyped</span><span class="Other">]</span><span class="Other">)</span></pre></dt>
   <dd>
     
-    <p>cxwrite nim doc --project --index:on --outdir:htmldocs --run nimcx/cxprint.nim Calls styledWrite with args given</p>
+    <p>cxwrite</p>
+<p>Calls styledWrite with args given</p>
 <p>Backgroundcolors defined in cxconsts.nim colorNames can be used , that is any color ending with xxxxxxbg  like pastelpinkbg</p>
 <p>x positioning    via cxpos(x) x,y positioning  via cxPosxy(x,y) </p>
 
@@ -1356,7 +1270,7 @@ singleLine,doubleLine, draw a respective dash line in desired fgcol white and de
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2023-01-30 04:35:56 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2023-09-18 02:47:16 UTC</small>
       </div>
     </div>
   </div>
